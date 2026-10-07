@@ -1,13 +1,14 @@
 # Deploying atomus.io and docs.atomus.io
 
-Both sites are static Astro builds hosted free on **Cloudflare Pages**, straight from this repo. Every push to `main` redeploys them.
+Both sites are hosted free on **Cloudflare Pages**, straight from this repo. Every push to `main` redeploys them.
 
 | Site | Folder | Domain |
 | --- | --- | --- |
-| Marketing site | `sites/web` | `atomus.io` (+ `www.atomus.io`) |
+| Marketing site (the current Webflow page, as static files) | `sites/atomus-io` | `atomus.io` (+ `www.atomus.io`) |
 | Documentation | `sites/docs` | `docs.atomus.io` |
+| New 4.0 landing page (draft, not deployed) | `sites/web` | — |
 
-Both read the single sources at build time (`css/atomus.css`, `react/src`, `guidelines/`, `assets/logos/`), so a token or component change shows up on both sites on the next push.
+The docs read the single sources at build time (`css/atomus.css`, `react/src`, `guidelines/`), so a token or component change shows up on the next push. The marketing site is the Webflow page exported as plain files: edit `sites/atomus-io/public/index.html` to change copy.
 
 ## 1. Create the two Pages projects (once)
 
@@ -17,15 +18,15 @@ In the Cloudflare dashboard: **Workers & Pages → Create → Pages → Connect 
 | --- | --- | --- |
 | Project name | `atomus-web` | `atomus-docs` |
 | Production branch | `main` | `main` |
-| Framework preset | Astro | Astro |
-| Root directory | `sites/web` | `sites/docs` |
-| Build command | `npm run build` | `npm run build` |
-| Build output directory | `dist` | `dist` |
-| Environment variable | `NODE_VERSION` = `22` | `NODE_VERSION` = `22` |
+| Framework preset | None | Astro |
+| Root directory | `sites/atomus-io` | `sites/docs` |
+| Build command | (leave empty) | `npm run build` |
+| Build output directory | `public` | `dist` |
+| Environment variable | — | `NODE_VERSION` = `22` |
 
 Optional, under **Settings → Builds → Build watch paths**, so each site only rebuilds when its sources change:
 
-- `atomus-web`: `sites/web/*`, `css/*`, `react/src/*`, `assets/*`
+- `atomus-web`: `sites/atomus-io/*`
 - `atomus-docs`: `sites/docs/*`, `guidelines/*`, `css/*`, `react/src/*`, `assets/*`
 
 ## 2. Point the domains (atomus.io is already on Cloudflare DNS)

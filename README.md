@@ -58,7 +58,7 @@ Dark variant: `dark:` works with `data-theme="dark"` or `.dark`.
 
 ## Websites
 
-`sites/web` is atomus.io and `sites/docs` is docs.atomus.io. Both are Astro sites hosted on Cloudflare Pages and built from the files in this repo. See `DEPLOY.md`.
+`sites/atomus-io` is atomus.io: the current Webflow page as plain static files, hosted on Cloudflare Pages. `sites/docs` is docs.atomus.io, an Astro site built from this repo. `sites/web` is a draft of a new 4.0 landing page. See `DEPLOY.md`.
 
 ## React components
 
