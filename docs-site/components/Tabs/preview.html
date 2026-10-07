@@ -1,4 +1,4 @@
-<!-- @dsCard group="Navigation" height=144 -->
+<!-- @dsCard group="Navigation" height=200 -->
 <!doctype html>
 <html>
 <head><meta charset="utf-8"><title>Tabs — preview</title></head>
@@ -7,8 +7,9 @@
 <script>
   var A = window.Atomus, h = React.createElement;
   ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'at-stack'},
- h(A.Tabs,{items:[{value:'overview',label:'Overview'},{value:'activity',label:'Activity',count:12},{value:'settings',label:'Settings'}]}),
- h(A.Tabs,{variant:'segmented',items:[{value:'d',label:'Day'},{value:'w',label:'Week'},{value:'m',label:'Month'}],defaultValue:'w'})));
+ h(A.Tabs,{'aria-label':'Underline',items:[{value:'o',label:'Overview'},{value:'a',label:'Analytics',count:12},{value:'r',label:'Reports'},{value:'s',label:'Settings'}]}),
+ h(A.Tabs,{variant:'pill','aria-label':'Pill',items:[{value:'o',label:'Overview'},{value:'a',label:'Analytics'},{value:'r',label:'Reports'}]}),
+ h(A.Tabs,{variant:'segmented','aria-label':'Range',items:[{value:'d',label:'Day'},{value:'w',label:'Week'},{value:'m',label:'Month'}],defaultValue:'w'})));
 </script>
 </body>
 </html>

@@ -1,18 +1,17 @@
 # Input
 
-A single-line text field with label, hint and error. Heights match buttons: `sm` 32 · `md` 40 · `lg` 48.
+Single-line text field with label, hint and error. Heights match Button: `sm` 32 · `md` 40 · `lg` 48.
 
 ## Provide
 
-- `label` — always, even when the design hides it visually (`aria-label` then).
+- `label` — always (Figma: Label); use `aria-label` when the design hides it.
 - `placeholder` — an example value, never the label.
-- `hint` — helper text under the field; `error` replaces it and turns the border `border-error`.
-- `size`, `iconLeading`, and any native input attribute (`type`, `value`, `onChange` …).
+- `hint` (Figma: Hint); `error` replaces it and turns the border `border-error` (Figma: State=Error).
+- `size`, `iconLeading`, `iconTrailing` and any native input attribute.
 
 ## Do
 
 - Write errors that say how to fix it: "Enter a date after today".
-- Put inputs and buttons of the same `size` on one row.
 
 ## Don't
 

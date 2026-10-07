@@ -1,11 +1,11 @@
 # ProgressBar
 
-Shows how far a known task or quota has progressed.
+Shows progress of a known task or quota.
 
 ## Provide
 
-- `value` 0–100, `label`, `showValue` (default on).
+- `value` 0–100; `label` — the accessible name; `labelPosition` `none` · `right` · `bottom` (Figma: Label).
 
 ## Don't
 
-- Don't use it for unknown durations — use a spinner (Button `loading`).
+- Don't use it for unknown durations — use a loading indicator.

@@ -1,12 +1,12 @@
 # MetricCard
 
-A single KPI with its change, for dashboards.
+A single KPI for dashboards.
 
 ## Provide
 
-- `label`, `value` (pre-formatted string), optional `change`, `trend` (`up`/`down`, inferred from a leading "-"), `caption`.
+- `label`, `value` (pre-formatted), `type` `simple` · `trend` · `chart` (Figma: Type).
+- `change`, `caption` ("vs last month"), `trend` (inferred from a leading "-"), `data` for the chart sparkline, `action`.
 
 ## Do
 
-- Keep four cards or fewer in a row; let them wrap on mobile.
-- State the comparison period in `caption`.
+- Keep four cards or fewer in a row; state the comparison period.

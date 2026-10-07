@@ -1,4 +1,4 @@
-<!-- @dsCard group="Data display" height=200 -->
+<!-- @dsCard group="Data display" height=232 -->
 <!doctype html>
 <html>
 <head><meta charset="utf-8"><title>MetricCard — preview</title></head>
@@ -7,9 +7,9 @@
 <script>
   var A = window.Atomus, h = React.createElement;
   ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'at-grid'},
+ h(A.MetricCard,{type:'simple',label:'Active projects',value:'128'}),
  h(A.MetricCard,{label:'Monthly revenue',value:'$48.2k',change:'12%',caption:'vs last month'}),
- h(A.MetricCard,{label:'Active users',value:'2,940',change:'4.1%',caption:'vs last week'}),
- h(A.MetricCard,{label:'Churn',value:'1.8%',change:'-0.4%',trend:'down',caption:'vs last month'})));
+ h(A.MetricCard,{type:'chart',label:'Churn',value:'1.8%',change:'-0.4%',caption:'vs last month',data:[5,6,5.5,4.8,4.2,3.9,3.4]})));
 </script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-<!-- @dsCard group="Feedback" height=136 -->
+<!-- @dsCard group="Feedback" height=144 -->
 <!doctype html>
 <html>
 <head><meta charset="utf-8"><title>ProgressBar — preview</title></head>
@@ -7,8 +7,9 @@
 <script>
   var A = window.Atomus, h = React.createElement;
   ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'at-stack',style:{maxWidth:420}},
- h(A.ProgressBar,{label:'Storage',value:64}),
- h(A.ProgressBar,{label:'Onboarding',value:25})));
+ h(A.ProgressBar,{value:64,label:'Storage used'}),
+ h(A.ProgressBar,{value:25,label:'Onboarding',labelPosition:'bottom'}),
+ h(A.ProgressBar,{value:80,label:'Upload',labelPosition:'none'})));
 </script>
 </body>
 </html>

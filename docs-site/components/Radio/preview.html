@@ -1,4 +1,4 @@
-<!-- @dsCard group="Forms" height=144 -->
+<!-- @dsCard group="Forms" height=152 -->
 <!doctype html>
 <html>
 <head><meta charset="utf-8"><title>Radio — preview</title></head>
@@ -7,8 +7,8 @@
 <script>
   var A = window.Atomus, h = React.createElement;
   ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'at-stack',role:'radiogroup','aria-label':'Plan'},
- h(A.Radio,{name:'plan',label:'Starter',hint:'Up to 3 projects',defaultChecked:true}),
- h(A.Radio,{name:'plan',label:'Pro',hint:'Unlimited projects and brands'})));
+ h(A.Radio,{name:'plan',label:'Starter',description:'Up to 3 projects',defaultChecked:true}),
+ h(A.Radio,{name:'plan',label:'Pro',description:'Unlimited projects and brands'})));
 </script>
 </body>
 </html>

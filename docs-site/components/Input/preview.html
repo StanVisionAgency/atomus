@@ -1,4 +1,4 @@
-<!-- @dsCard group="Forms" height=232 -->
+<!-- @dsCard group="Forms" height=240 -->
 <!doctype html>
 <html>
 <head><meta charset="utf-8"><title>Input — preview</title></head>
@@ -8,8 +8,8 @@
   var A = window.Atomus, h = React.createElement;
   ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'at-grid'},
  h(A.Input,{label:'Email',placeholder:'you@company.com',hint:'We never share it.'}),
- h(A.Input,{label:'Search',placeholder:'Search projects',iconLeading:'search'}),
- h(A.Input,{label:'Workspace URL',defaultValue:'atomus',error:'This URL is taken.'}),
+ h(A.Input,{label:'Search',placeholder:'Search projects',iconLeading:h(A.Icon,{name:'search',size:20})}),
+ h(A.Input,{label:'Workspace URL',defaultValue:'atomus',error:'This URL is taken. Try another one.'}),
  h(A.Input,{label:'Small · 32',size:'sm',placeholder:'Small'}),
  h(A.Input,{label:'Large · 48',size:'lg',placeholder:'Large'}),
  h(A.Input,{label:'Disabled',disabled:true,defaultValue:'Read only'})));
