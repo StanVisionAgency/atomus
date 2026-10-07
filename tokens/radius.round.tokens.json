@@ -1,0 +1,171 @@
+{
+  "radius-none": {
+    "$type": "dimension",
+    "$value": "{size.size-0}",
+    "$extensions": {
+      "com.figma": {
+        "collection": "Radius",
+        "variable": "radius-none",
+        "codeSyntax": {
+          "WEB": "var(--radius-none)"
+        }
+      }
+    }
+  },
+  "radius-xxs": {
+    "$type": "dimension",
+    "$value": "{size.size-4}",
+    "$extensions": {
+      "com.figma": {
+        "collection": "Radius",
+        "variable": "radius-xxs",
+        "codeSyntax": {
+          "WEB": "var(--radius-xxs)"
+        }
+      }
+    }
+  },
+  "radius-xs": {
+    "$type": "dimension",
+    "$value": "{size.size-6}",
+    "$extensions": {
+      "com.figma": {
+        "collection": "Radius",
+        "variable": "radius-xs",
+        "codeSyntax": {
+          "WEB": "var(--radius-xs)"
+        }
+      }
+    }
+  },
+  "radius-sm": {
+    "$type": "dimension",
+    "$value": "{size.size-8}",
+    "$extensions": {
+      "com.figma": {
+        "collection": "Radius",
+        "variable": "radius-sm",
+        "codeSyntax": {
+          "WEB": "var(--radius-sm)"
+        }
+      }
+    }
+  },
+  "radius-md": {
+    "$type": "dimension",
+    "$value": "{size.size-12}",
+    "$extensions": {
+      "com.figma": {
+        "collection": "Radius",
+        "variable": "radius-md",
+        "codeSyntax": {
+          "WEB": "var(--radius-md)"
+        }
+      }
+    }
+  },
+  "radius-lg": {
+    "$type": "dimension",
+    "$value": "{size.size-16}",
+    "$extensions": {
+      "com.figma": {
+        "collection": "Radius",
+        "variable": "radius-lg",
+        "codeSyntax": {
+          "WEB": "var(--radius-lg)"
+        }
+      }
+    }
+  },
+  "radius-xl": {
+    "$type": "dimension",
+    "$value": "{size.size-20}",
+    "$extensions": {
+      "com.figma": {
+        "collection": "Radius",
+        "variable": "radius-xl",
+        "codeSyntax": {
+          "WEB": "var(--radius-xl)"
+        }
+      }
+    }
+  },
+  "radius-2xl": {
+    "$type": "dimension",
+    "$value": "{size.size-24}",
+    "$extensions": {
+      "com.figma": {
+        "collection": "Radius",
+        "variable": "radius-2xl",
+        "codeSyntax": {
+          "WEB": "var(--radius-2xl)"
+        }
+      }
+    }
+  },
+  "radius-3xl": {
+    "$type": "dimension",
+    "$value": "{size.size-32}",
+    "$extensions": {
+      "com.figma": {
+        "collection": "Radius",
+        "variable": "radius-3xl",
+        "codeSyntax": {
+          "WEB": "var(--radius-3xl)"
+        }
+      }
+    }
+  },
+  "radius-4xl": {
+    "$type": "dimension",
+    "$value": "{size.size-40}",
+    "$extensions": {
+      "com.figma": {
+        "collection": "Radius",
+        "variable": "radius-4xl",
+        "codeSyntax": {
+          "WEB": "var(--radius-4xl)"
+        }
+      }
+    }
+  },
+  "radius-full": {
+    "$type": "dimension",
+    "$value": "{size.size-9999}",
+    "$extensions": {
+      "com.figma": {
+        "collection": "Radius",
+        "variable": "radius-full",
+        "codeSyntax": {
+          "WEB": "var(--radius-full)"
+        }
+      }
+    }
+  },
+  "radius-5xl": {
+    "$type": "dimension",
+    "$value": "{size.size-48}",
+    "$extensions": {
+      "com.figma": {
+        "collection": "Radius",
+        "variable": "radius-5xl",
+        "codeSyntax": {
+          "WEB": "var(--radius-5xl)"
+        }
+      }
+    }
+  },
+  "radius-6xl": {
+    "$type": "dimension",
+    "$value": "{size.size-64}",
+    "$extensions": {
+      "com.figma": {
+        "collection": "Radius",
+        "variable": "radius-6xl",
+        "codeSyntax": {
+          "WEB": "var(--radius-6xl)"
+        }
+      }
+    }
+  }
+}

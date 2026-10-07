@@ -1,0 +1,158 @@
+{
+  "$schema": "https://www.designtokens.org/tr/2025.10/format/",
+  "primitives": "primitives.tokens.json",
+  "sets": {
+    "_Primitives": [
+      "primitives.tokens.json"
+    ],
+    "Color": [
+      "color.light.tokens.json",
+      "color.dark.tokens.json"
+    ],
+    "Radius": [
+      "radius.default.tokens.json",
+      "radius.sharp.tokens.json",
+      "radius.round.tokens.json"
+    ],
+    "Spacing & Layout": [
+      "spacing-layout.desktop.tokens.json",
+      "spacing-layout.mobile.tokens.json",
+      "spacing-layout.tablet.tokens.json"
+    ],
+    "Typography": [
+      "typography.desktop.tokens.json",
+      "typography.mobile.tokens.json",
+      "typography.tablet.tokens.json"
+    ],
+    "Effects": [
+      "effects.light.tokens.json",
+      "effects.dark.tokens.json"
+    ],
+    "Brand": [
+      "brand.atomus.tokens.json",
+      "brand.violet.tokens.json"
+    ]
+  },
+  "themes": [
+    {
+      "name": "Color / light",
+      "group": "Color",
+      "selectedTokenSets": {
+        "primitives.tokens.json": "source",
+        "color.light.tokens.json": "enabled"
+      }
+    },
+    {
+      "name": "Color / dark",
+      "group": "Color",
+      "selectedTokenSets": {
+        "primitives.tokens.json": "source",
+        "color.dark.tokens.json": "enabled"
+      }
+    },
+    {
+      "name": "Radius / default",
+      "group": "Radius",
+      "selectedTokenSets": {
+        "primitives.tokens.json": "source",
+        "radius.default.tokens.json": "enabled"
+      }
+    },
+    {
+      "name": "Radius / sharp",
+      "group": "Radius",
+      "selectedTokenSets": {
+        "primitives.tokens.json": "source",
+        "radius.sharp.tokens.json": "enabled"
+      }
+    },
+    {
+      "name": "Radius / round",
+      "group": "Radius",
+      "selectedTokenSets": {
+        "primitives.tokens.json": "source",
+        "radius.round.tokens.json": "enabled"
+      }
+    },
+    {
+      "name": "Spacing & Layout / desktop",
+      "group": "Spacing & Layout",
+      "selectedTokenSets": {
+        "primitives.tokens.json": "source",
+        "spacing-layout.desktop.tokens.json": "enabled"
+      }
+    },
+    {
+      "name": "Spacing & Layout / mobile",
+      "group": "Spacing & Layout",
+      "selectedTokenSets": {
+        "primitives.tokens.json": "source",
+        "spacing-layout.mobile.tokens.json": "enabled"
+      }
+    },
+    {
+      "name": "Spacing & Layout / tablet",
+      "group": "Spacing & Layout",
+      "selectedTokenSets": {
+        "primitives.tokens.json": "source",
+        "spacing-layout.tablet.tokens.json": "enabled"
+      }
+    },
+    {
+      "name": "Typography / desktop",
+      "group": "Typography",
+      "selectedTokenSets": {
+        "primitives.tokens.json": "source",
+        "typography.desktop.tokens.json": "enabled"
+      }
+    },
+    {
+      "name": "Typography / mobile",
+      "group": "Typography",
+      "selectedTokenSets": {
+        "primitives.tokens.json": "source",
+        "typography.mobile.tokens.json": "enabled"
+      }
+    },
+    {
+      "name": "Typography / tablet",
+      "group": "Typography",
+      "selectedTokenSets": {
+        "primitives.tokens.json": "source",
+        "typography.tablet.tokens.json": "enabled"
+      }
+    },
+    {
+      "name": "Effects / light",
+      "group": "Effects",
+      "selectedTokenSets": {
+        "primitives.tokens.json": "source",
+        "effects.light.tokens.json": "enabled"
+      }
+    },
+    {
+      "name": "Effects / dark",
+      "group": "Effects",
+      "selectedTokenSets": {
+        "primitives.tokens.json": "source",
+        "effects.dark.tokens.json": "enabled"
+      }
+    },
+    {
+      "name": "Brand / atomus",
+      "group": "Brand",
+      "selectedTokenSets": {
+        "primitives.tokens.json": "source",
+        "brand.atomus.tokens.json": "enabled"
+      }
+    },
+    {
+      "name": "Brand / violet",
+      "group": "Brand",
+      "selectedTokenSets": {
+        "primitives.tokens.json": "source",
+        "brand.violet.tokens.json": "enabled"
+      }
+    }
+  ]
+}

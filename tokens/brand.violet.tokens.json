@@ -1,0 +1,160 @@
+{
+  "brand": {
+    "brand-25": {
+      "$type": "color",
+      "$value": "{colors.violet.25}",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Brand",
+          "variable": "brand-25",
+          "codeSyntax": {
+            "WEB": "var(--color-brand-25)"
+          }
+        }
+      }
+    },
+    "brand-50": {
+      "$type": "color",
+      "$value": "{colors.violet.50}",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Brand",
+          "variable": "brand-50",
+          "codeSyntax": {
+            "WEB": "var(--color-brand-50)"
+          }
+        }
+      }
+    },
+    "brand-100": {
+      "$type": "color",
+      "$value": "{colors.violet.100}",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Brand",
+          "variable": "brand-100",
+          "codeSyntax": {
+            "WEB": "var(--color-brand-100)"
+          }
+        }
+      }
+    },
+    "brand-200": {
+      "$type": "color",
+      "$value": "{colors.violet.200}",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Brand",
+          "variable": "brand-200",
+          "codeSyntax": {
+            "WEB": "var(--color-brand-200)"
+          }
+        }
+      }
+    },
+    "brand-300": {
+      "$type": "color",
+      "$value": "{colors.violet.300}",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Brand",
+          "variable": "brand-300",
+          "codeSyntax": {
+            "WEB": "var(--color-brand-300)"
+          }
+        }
+      }
+    },
+    "brand-400": {
+      "$type": "color",
+      "$value": "{colors.violet.400}",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Brand",
+          "variable": "brand-400",
+          "codeSyntax": {
+            "WEB": "var(--color-brand-400)"
+          }
+        }
+      }
+    },
+    "brand-500": {
+      "$type": "color",
+      "$value": "{colors.violet.500}",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Brand",
+          "variable": "brand-500",
+          "codeSyntax": {
+            "WEB": "var(--color-brand-500)"
+          }
+        }
+      }
+    },
+    "brand-600": {
+      "$type": "color",
+      "$value": "{colors.violet.600}",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Brand",
+          "variable": "brand-600",
+          "codeSyntax": {
+            "WEB": "var(--color-brand-600)"
+          }
+        }
+      }
+    },
+    "brand-700": {
+      "$type": "color",
+      "$value": "{colors.violet.700}",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Brand",
+          "variable": "brand-700",
+          "codeSyntax": {
+            "WEB": "var(--color-brand-700)"
+          }
+        }
+      }
+    },
+    "brand-800": {
+      "$type": "color",
+      "$value": "{colors.violet.800}",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Brand",
+          "variable": "brand-800",
+          "codeSyntax": {
+            "WEB": "var(--color-brand-800)"
+          }
+        }
+      }
+    },
+    "brand-900": {
+      "$type": "color",
+      "$value": "{colors.violet.900}",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Brand",
+          "variable": "brand-900",
+          "codeSyntax": {
+            "WEB": "var(--color-brand-900)"
+          }
+        }
+      }
+    },
+    "brand-950": {
+      "$type": "color",
+      "$value": "{colors.violet.950}",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Brand",
+          "variable": "brand-950",
+          "codeSyntax": {
+            "WEB": "var(--color-brand-950)"
+          }
+        }
+      }
+    }
+  }
+}
