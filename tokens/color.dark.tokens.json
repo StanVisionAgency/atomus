@@ -1200,7 +1200,7 @@
     },
     "bg-success-solid": {
       "$type": "color",
-      "$value": "{colors.green.500}",
+      "$value": "{colors.green.700}",
       "$extensions": {
         "com.figma": {
           "collection": "Color",
