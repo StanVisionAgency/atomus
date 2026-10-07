@@ -52,9 +52,13 @@ Dark variant: `dark:` works with `data-theme="dark"` or `.dark`.
 
 `assets/logos/` — `atomus-logo.svg` (229×48) and `atomus-brandmark.svg` (48×48), single ink #18181B.
 
+## React components
+
+`react/` — `@stanvision/atomus-react`: 14 core components whose props mirror the Figma properties, plus Code Connect files. See `react/README.md`.
+
 ## Docs site
 
-`docs-site/` — source of the Atomus 4.0 design-system artifact (tokens.json, brand book, 14 React components with previews).
+`docs-site/` — source of the Atomus 4.0 design-system artifact (tokens.json, brand book, previews). Its `components/bundle.js` and `bundle.css` are built from `react/` with `npm run build:docs`.
 
 ## Fonts
 

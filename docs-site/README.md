@@ -63,4 +63,4 @@ Atomus is one system for product UI and marketing websites: the same tokens, typ
 ## Components
 
 - Use the components as they are and choose a variant rather than overriding styles. Each component's card lists its props and the do's and don'ts.
-- Pair one primary `Button` with outline or ghost buttons. Put form fields in `Input` with a visible label. Show status with `Badge` (read-only) or `Tag` (removable). Show page-level messages in `Alert`, KPIs in `MetricCard`, and missing content in `EmptyState`.
+- Pair one primary `Button` with outline or tertiary buttons. Put form fields in `Input` with a visible label. Show status with `Badge` (read-only) or `Tag` (removable). Show page-level messages in `Alert`, KPIs in `MetricCard`, and missing content in `EmptyState`.
