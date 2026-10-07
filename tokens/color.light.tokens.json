@@ -194,6 +194,19 @@
           }
         }
       }
+    },
+    "text-on-warning": {
+      "$type": "color",
+      "$value": "{colors.gray.900}",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Color",
+          "variable": "Text/text-on-warning",
+          "codeSyntax": {
+            "WEB": "var(--color-text-on-warning)"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -1471,6 +1484,19 @@
           "variable": "Foreground/fg-inverse",
           "codeSyntax": {
             "WEB": "var(--color-fg-inverse)"
+          }
+        }
+      }
+    },
+    "fg-on-warning": {
+      "$type": "color",
+      "$value": "{colors.gray.900}",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Color",
+          "variable": "Foreground/fg-on-warning",
+          "codeSyntax": {
+            "WEB": "var(--color-fg-on-warning)"
           }
         }
       }
