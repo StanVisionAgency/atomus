@@ -1,0 +1,15 @@
+<!-- @dsCard group="Forms" height=160 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Toggle — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var A = window.Atomus, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'at-stack'},
+ h(A.Toggle,{label:'Dark mode',defaultChecked:true}),
+ h(A.Toggle,{label:'Weekly digest',hint:'Every Monday at 9:00',size:'lg'}),
+ h(A.Toggle,{label:'Disabled',disabled:true})));
+</script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!-- @dsCard group="Navigation" height=144 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Tabs — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var A = window.Atomus, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'at-stack'},
+ h(A.Tabs,{items:[{value:'overview',label:'Overview'},{value:'activity',label:'Activity',count:12},{value:'settings',label:'Settings'}]}),
+ h(A.Tabs,{variant:'segmented',items:[{value:'d',label:'Day'},{value:'w',label:'Week'},{value:'m',label:'Month'}],defaultValue:'w'})));
+</script>
+</body>
+</html>

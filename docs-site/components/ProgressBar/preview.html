@@ -1,0 +1,14 @@
+<!-- @dsCard group="Feedback" height=136 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>ProgressBar — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var A = window.Atomus, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'at-stack',style:{maxWidth:420}},
+ h(A.ProgressBar,{label:'Storage',value:64}),
+ h(A.ProgressBar,{label:'Onboarding',value:25})));
+</script>
+</body>
+</html>

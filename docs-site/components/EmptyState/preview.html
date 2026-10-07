@@ -1,0 +1,13 @@
+<!-- @dsCard group="Feedback" height=248 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>EmptyState — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var A = window.Atomus, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(A.EmptyState,{icon:'folder',title:'No projects yet',description:'Create your first project to start designing with Atomus.',
+  actions:h(React.Fragment,null,h(A.Button,{variant:'outline'},'Import'),h(A.Button,{variant:'primary',iconLeading:'plus'},'New project'))}));
+</script>
+</body>
+</html>

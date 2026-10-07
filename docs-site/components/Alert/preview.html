@@ -1,0 +1,16 @@
+<!-- @dsCard group="Feedback" height=456 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Alert — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var A = window.Atomus, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'at-stack'},
+ h(A.Alert,{tone:'info',title:'New tokens available',onDismiss:function(){}},'Atomus 4.0 adds brand and radius modes.'),
+ h(A.Alert,{tone:'success',title:'Changes saved'},'Your workspace settings are up to date.'),
+ h(A.Alert,{tone:'warning',title:'Trial ends in 3 days',actions:h(A.Button,{size:'sm',variant:'outline'},'Upgrade')},'Add a payment method to keep your projects.'),
+ h(A.Alert,{tone:'error',title:'Payment failed'},'Check the card details and try again.')));
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!-- @dsCard group="Forms" height=200 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Checkbox — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var A = window.Atomus, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'at-stack'},
+ h(A.Checkbox,{label:'Email me product updates',defaultChecked:true}),
+ h(A.Checkbox,{label:'Select all',indeterminate:true}),
+ h(A.Checkbox,{label:'Share analytics',hint:'Anonymous usage data helps us improve Atomus.'}),
+ h(A.Checkbox,{label:'Disabled option',disabled:true})));
+</script>
+</body>
+</html>

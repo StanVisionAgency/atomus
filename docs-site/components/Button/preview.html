@@ -1,0 +1,25 @@
+<!-- @dsCard group="Actions" height=152 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Button — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var A = window.Atomus, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'at-stack'},
+ h('div',{className:'at-row'},
+  h(A.Button,{variant:'primary'},'Save changes'),
+  h(A.Button,{variant:'secondary'},'Preview'),
+  h(A.Button,{variant:'outline',iconLeading:'plus'},'New project'),
+  h(A.Button,{variant:'ghost'},'Cancel'),
+  h(A.Button,{variant:'destructive'},'Delete')),
+ h('div',{className:'at-row'},
+  h(A.Button,{variant:'primary',size:'sm'},'Small · 32'),
+  h(A.Button,{variant:'primary',size:'md'},'Medium · 40'),
+  h(A.Button,{variant:'primary',size:'lg'},'Large · 48'),
+  h(A.Button,{variant:'outline',iconOnly:true,iconLeading:'search','aria-label':'Search'}),
+  h(A.Button,{variant:'primary',loading:true},'Saving'),
+  h(A.Button,{variant:'primary',disabled:true},'Disabled'))));
+</script>
+</body>
+</html>

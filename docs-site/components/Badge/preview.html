@@ -1,0 +1,21 @@
+<!-- @dsCard group="Data display" height=112 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Badge — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var A = window.Atomus, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'at-stack'},
+ h('div',{className:'at-row'},
+  h(A.Badge,{color:'gray'},'Draft'),
+  h(A.Badge,{color:'brand'},'New'),
+  h(A.Badge,{color:'success',dot:true},'Active'),
+  h(A.Badge,{color:'warning',dot:true},'Pending'),
+  h(A.Badge,{color:'error',dot:true},'Overdue')),
+ h('div',{className:'at-row'},
+  h(A.Badge,{color:'brand',size:'sm'},'Small'),
+  h(A.Badge,{color:'gray',size:'sm'},'v4.0'))));
+</script>
+</body>
+</html>

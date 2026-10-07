@@ -1,0 +1,15 @@
+<!-- @dsCard group="Layout" height=288 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Card — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var A = window.Atomus, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(A.Card,{title:'Team members',description:'Invite people and manage their roles.',
+  actions:h(A.Button,{size:'sm',variant:'outline',iconLeading:'plus'},'Invite'),
+  footer:h(React.Fragment,null,h(A.Button,{size:'sm',variant:'ghost'},'Cancel'),h(A.Button,{size:'sm',variant:'primary'},'Save'))},
+ h('div',{className:'at-row'},h(A.Avatar,{name:'Kristina Stan',size:'sm'}),h(A.Avatar,{name:'Mila Petrova',size:'sm'}),h(A.Avatar,{name:'Ivan Georgiev',size:'sm'}),h('span',{className:'small'},'3 members'))));
+</script>
+</body>
+</html>

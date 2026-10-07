@@ -1,0 +1,60 @@
+<!-- @dsCard height=320 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Atomus 4.0 — cover</title>
+<style>
+  html body { margin: 0; padding: 0; background: var(--color-bg-primary); }
+  .cover { position: relative; width: 960px; height: 320px; overflow: hidden; background: var(--color-bg-primary); }
+  .cover svg { position: absolute; inset: 0; }
+  .brand { fill: var(--color-brand-600); }
+  .ink { fill: var(--color-bg-inverse); }
+  .tint { fill: var(--color-brand-200); }
+  .tile { fill: var(--color-bg-tertiary); }
+  .r-md { rx: var(--radius-md); }
+  .r-xl { rx: var(--radius-xl); }
+  .r-full { rx: 24px; }
+  .name { position: absolute; left: 40px; bottom: 40px; max-width: 440px; }
+  .name h1 { margin: 0; font-family: var(--font-title); font-weight: 600; font-size: 112px; line-height: .95; letter-spacing: -1.25px; color: var(--color-text-primary); }
+  .name p { margin: var(--spacing-xl) 0 0; font-family: var(--font-body); font-size: 14px; line-height: 20px; color: var(--color-text-tertiary); }
+</style></head>
+<body>
+<div class="cover">
+  <!-- blocks: color-brand-600 (2x3 + 2x1 tiles), color-bg-inverse (3x2), color-brand-200 (2x2, twice) cut from size-lg 48 units with spacing-md 8 gaps
+       arrangement: a modular grid from x=496 bleeding off the right and bottom edges, merged tiles like the components that span cells
+       pattern: geometric, modular, dense UI -> single size-lg tiles in color-bg-tertiary at radius-md; Atomus builds everything from small units on the 8-point grid
+       scales: unit size-lg 48, gap spacing-md 8, pitch 56; radii radius-md on tiles, radius-xl on blocks, one radius-full disc (rx = half of 48) -->
+  <svg width="960" height="320" viewBox="0 0 960 320" aria-hidden="true">
+    <rect class="brand r-xl" x="552" y="8" width="104" height="160"/>
+    <rect class="ink r-xl" x="664" y="176" width="160" height="104"/>
+    <rect class="tint r-xl" x="776" y="8" width="104" height="104"/>
+    <rect class="brand r-xl" x="664" y="64" width="104" height="48"/>
+    <rect class="tint r-xl" x="496" y="232" width="104" height="104"/>
+    <rect class="tile r-md" x="496" y="64" width="48" height="48"/>
+    <rect class="tile r-md" x="496" y="176" width="48" height="48"/>
+    <rect class="tile r-md" x="552" y="176" width="48" height="48"/>
+    <rect class="tile r-md" x="608" y="176" width="48" height="48"/>
+    <rect class="tile r-md" x="608" y="232" width="48" height="48"/>
+    <rect class="tile r-md" x="608" y="288" width="48" height="48"/>
+    <rect class="tile r-md" x="664" y="8" width="48" height="48"/>
+    <rect class="tile r-md" x="664" y="120" width="48" height="48"/>
+    <rect class="tile r-md" x="664" y="288" width="48" height="48"/>
+    <rect class="tile r-md" x="720" y="120" width="48" height="48"/>
+    <rect class="tile r-md" x="720" y="288" width="48" height="48"/>
+    <rect class="tile r-md" x="776" y="120" width="48" height="48"/>
+    <rect class="tile r-md" x="776" y="288" width="48" height="48"/>
+    <rect class="tile r-md" x="832" y="120" width="48" height="48"/>
+    <rect class="tile r-md" x="832" y="176" width="48" height="48"/>
+    <rect class="tile r-md" x="832" y="232" width="48" height="48"/>
+    <rect class="tile r-md" x="888" y="8" width="48" height="48"/>
+    <rect class="tile r-md" x="888" y="64" width="48" height="48"/>
+    <rect class="tile r-md" x="888" y="176" width="48" height="48"/>
+    <rect class="brand r-full" x="888" y="232" width="48" height="48"/>
+    <rect class="tile r-md" x="888" y="288" width="48" height="48"/>
+  </svg>
+  <div class="name">
+    <h1>Atomus<br>4.0</h1>
+    <p>One system for product UI and marketing websites.</p>
+  </div>
+</div>
+</body>
+</html>
