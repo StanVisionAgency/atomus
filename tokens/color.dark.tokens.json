@@ -54,7 +54,7 @@
     },
     "text-link": {
       "$type": "color",
-      "$value": "{brand.brand-600}",
+      "$value": "{brand.brand-400}",
       "$extensions": {
         "com.figma": {
           "collection": "Color",
@@ -132,7 +132,7 @@
     },
     "text-error": {
       "$type": "color",
-      "$value": "{colors.rose.400}",
+      "$value": "{colors.rose.300}",
       "$extensions": {
         "com.figma": {
           "collection": "Color",
@@ -191,6 +191,19 @@
           "variable": "Text/text-inverse",
           "codeSyntax": {
             "WEB": "var(--color-text-inverse)"
+          }
+        }
+      }
+    },
+    "text-on-warning": {
+      "$type": "color",
+      "$value": "{colors.gray.900}",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Color",
+          "variable": "Text/text-on-warning",
+          "codeSyntax": {
+            "WEB": "var(--color-text-on-warning)"
           }
         }
       }
@@ -1070,7 +1083,7 @@
     },
     "bg-brand-solid": {
       "$type": "color",
-      "$value": "{brand.brand-500}",
+      "$value": "{brand.brand-600}",
       "$extensions": {
         "com.figma": {
           "collection": "Color",
@@ -1083,7 +1096,7 @@
     },
     "bg-brand-solid-hover": {
       "$type": "color",
-      "$value": "{brand.brand-400}",
+      "$value": "{brand.brand-700}",
       "$extensions": {
         "com.figma": {
           "collection": "Color",
@@ -1109,7 +1122,7 @@
     },
     "bg-error-solid": {
       "$type": "color",
-      "$value": "{colors.rose.500}",
+      "$value": "{colors.rose.600}",
       "$extensions": {
         "com.figma": {
           "collection": "Color",
@@ -1471,6 +1484,19 @@
           "variable": "Foreground/fg-inverse",
           "codeSyntax": {
             "WEB": "var(--color-fg-inverse)"
+          }
+        }
+      }
+    },
+    "fg-on-warning": {
+      "$type": "color",
+      "$value": "{colors.gray.900}",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Color",
+          "variable": "Foreground/fg-on-warning",
+          "codeSyntax": {
+            "WEB": "var(--color-fg-on-warning)"
           }
         }
       }
