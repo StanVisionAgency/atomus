@@ -12,17 +12,18 @@ Text colour. `primary` for headings and body, `secondary` for supporting copy, `
 | `--color-text-secondary` (Text/text-secondary) | #3f3f46 | #d4d4d8 |
 | `--color-text-white` (Text/text-white) | #ffffff | #ffffff |
 | `--color-text-opacity` (Text/text-opacity) | #00000099 | #ffffff99 |
-| `--color-text-link` (Text/text-link) | #4057ff | #4057ff |
+| `--color-text-link` (Text/text-link) | #4057ff | #6e96ff |
 | `--color-text-tertiary` (Text/text-tertiary) | #71717a | #a1a1aa |
 | `--color-text-placeholder` (Text/text-placeholder) | #71717a | #a1a1aa |
 | `--color-text-disabled` (Text/text-disabled) | #d4d4d8 | #52525b |
 | `--color-text-brand` (Text/text-brand) | #4057ff | #6e96ff |
 | `--color-text-on-brand` (Text/text-on-brand) | #ffffff | #ffffff |
-| `--color-text-error` (Text/text-error) | #be123c | #fb7185 |
+| `--color-text-error` (Text/text-error) | #be123c | #fda4af |
 | `--color-text-warning` (Text/text-warning) | #b45309 | #fbbf24 |
 | `--color-text-success` (Text/text-success) | #15803d | #49de80 |
 | `--color-text-brand-hover` (Text/text-brand_hover) | #2335d6 | #97bdff |
 | `--color-text-inverse` (Text/text-inverse) | #ffffff | #18181b |
+| `--color-text-on-warning` (Text/text-on-warning) | #18181b | #18181b |
 
 ## Background
 
@@ -36,10 +37,10 @@ Surface fills. `primary` page and cards, `secondary` sections and table headers,
 | `--color-bg-tertiary` (Background/bg-tertiary) | #f4f4f5 | #3f3f46 |
 | `--color-bg-inverse` (Background/bg-inverse) | #18181b | #ffffff |
 | `--color-bg-disabled` (Background/bg-disabled) | #f4f4f5 | #27272a |
-| `--color-bg-brand-solid` (Background/bg-brand-solid) | #4057ff | #4c70ff |
-| `--color-bg-brand-solid-hover` (Background/bg-brand-solid_hover) | #2335d6 | #6e96ff |
+| `--color-bg-brand-solid` (Background/bg-brand-solid) | #4057ff | #4057ff |
+| `--color-bg-brand-solid-hover` (Background/bg-brand-solid_hover) | #2335d6 | #2335d6 |
 | `--color-bg-brand-subtle` (Background/bg-brand-subtle) | #ebf5ff | #121f8c |
-| `--color-bg-error-solid` (Background/bg-error-solid) | #e11d48 | #f43f5e |
+| `--color-bg-error-solid` (Background/bg-error-solid) | #e11d48 | #e11d48 |
 | `--color-bg-error-subtle` (Background/bg-error-subtle) | #fff1f2 | #881337 |
 | `--color-bg-warning-subtle` (Background/bg-warning-subtle) | #fffbeb | #78350f |
 | `--color-bg-success-subtle` (Background/bg-success-subtle) | #f0fdf4 | #14532d |
@@ -81,6 +82,7 @@ Icons and graphics. Same roles as Text.
 | `--color-fg-warning` (Foreground/fg-warning) | #d97706 | #fbbf24 |
 | `--color-fg-success` (Foreground/fg-success) | #16a34a | #49de80 |
 | `--color-fg-inverse` (Foreground/fg-inverse) | #ffffff | #18181b |
+| `--color-fg-on-warning` (Foreground/fg-on-warning) | #18181b | #18181b |
 
 ## Primitives
 Raw ramps (`--color-gray-25 … 950`, `--color-red-*`, … `--color-alpha-black-5 … 90`) exist only to be aliased. The brand ramp is `--color-brand-25 … 950` and changes with the Brand mode.

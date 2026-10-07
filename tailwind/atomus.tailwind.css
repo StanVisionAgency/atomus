@@ -455,5 +455,8 @@
 @utility bg-quaternary-hover { background-color: var(--color-bg-quaternary-hover); }
 @utility border-warning { border-color: var(--color-border-warning); }
 @utility border-success { border-color: var(--color-border-success); }
+@utility text-on-warning { color: var(--color-text-on-warning); }
+@utility fg-on-warning { color: var(--color-fg-on-warning); }
+@utility fill-fg-on-warning { fill: var(--color-fg-on-warning); }
 @utility ring-focus { box-shadow: var(--shadow-focus-ring); }
 @utility ring-focus-error { box-shadow: var(--shadow-focus-ring-error); }
