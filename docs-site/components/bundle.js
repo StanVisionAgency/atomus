@@ -918,7 +918,7 @@ var __atomus = (() => {
     const close = (0, import_react11.useCallback)(() => setOpen(false), []);
     useOutsideClick([wrap], close, open);
     const fmt = (d) => d ? (/* @__PURE__ */ new Date(`${d}T00:00:00Z`)).toLocaleDateString(cal.locale, { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" }) : "";
-    const text = cal.type === "range" ? ((_a = cal.range) == null ? void 0 : _a.start) ? `${fmt(cal.range.start)} – ${fmt(cal.range.end) || "…"}` : "" : fmt(cal.value);
+    const text = cal.type === "range" ? ((_a = cal.range) == null ? void 0 : _a.start) ? `${fmt(cal.range.start)} \u2013 ${fmt(cal.range.end) || "\u2026"}` : "" : fmt(cal.value);
     const message = error || hint;
     return /* @__PURE__ */ jsxs("div", { ref: wrap, className: cx("at-field", "at-datepicker", className), onKeyDown: (e) => {
       if (e.key === "Escape") close();
