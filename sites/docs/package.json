@@ -1,0 +1,19 @@
+{
+  "name": "atomus-docs",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "sync": "node scripts/sync.mjs",
+    "dev": "npm run sync && astro dev",
+    "build": "npm run sync && astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/react": "7.0.0",
+    "@astrojs/starlight": "0.42.3",
+    "astro": "7.3.4",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "sharp": "^0.34.0"
+  }
+}

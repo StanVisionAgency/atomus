@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.astro/
+src/styles/atomus.css
+src/styles/components.css
+src/content/docs/foundations/
+src/content/docs/figma-reference/
+src/content/docs/website-sections.md
