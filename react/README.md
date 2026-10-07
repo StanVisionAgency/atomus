@@ -42,6 +42,13 @@ Theme with attributes on any element: `data-theme="dark"`, `data-brand="violet"`
 | `ProgressBar` | Progress bar | `value`, `label`, `labelPosition` none · right · bottom |
 | `MetricCard` | Metric card | `label`, `value`, `type` simple · trend · chart, `change`, `caption`, `data` |
 | `EmptyState` | Empty state | `title`, `description`, `icon`, `actions`, `size` sm · md |
+| `Select` | Select + Dropdown menu | `options`, `value`/`onChange`, `label`, `hint`, `error`, `size` sm · md · lg |
+| `DropdownMenu`, `MenuItem` | Dropdown menu, Menu item | `trigger`, `items` (item · separator · heading), `align`, `size` |
+| `Modal` | Modal | `open`, `onClose`, `title`, `description`, `actions`, `featuredIcon`, `size` sm · md · lg, `type` |
+| `Toast`, `ToastProvider`, `useToast` | Toast | `color`, `title`, `description`, `action`, `duration` |
+| `Table` | Table header cell, Table cell | `columns`, `rows`, `rowKey`, `size` sm · md, `selectable`, `caption`, `empty` |
+| `DatePicker`, `Calendar` | Date input, Date picker, Calendar day | `type` single · range, `value`/`range`, `min`, `max`, `locale` |
+| `AppHeader`, `SidebarNavigation`, `NavItem` | App header, Sidebar navigation, Nav item | `brand`, `nav`, `actions` · `header`, `footer`, `collapsed` · `label`, `icon`, `badge`, `active` |
 
 ## Scripts
 
@@ -54,7 +61,7 @@ Theme with attributes on any element: `data-theme="dark"`, `data-brand="violet"`
 
 ## Code Connect
 
-`src/components/*.figma.tsx` map every component to its Figma component set in the Atomus 4.0 file, including variant, boolean, text and instance-swap properties. `npx figma connect parse` validates them.
+`src/components/*.figma.tsx` map the first 14 components (the 7 newest follow once Figma access is back) to its Figma component set in the Atomus 4.0 file, including variant, boolean, text and instance-swap properties. `npx figma connect parse` validates them.
 
 Publishing needs a **Dev or Full seat on a Figma Organization or Enterprise plan**:
 

@@ -2,7 +2,7 @@
 import { build } from 'esbuild';
 import { readFileSync, writeFileSync } from 'node:fs';
 
-const components = ['Button', 'Badge', 'Tag', 'Input', 'Checkbox', 'Radio', 'Toggle', 'Avatar', 'Alert', 'Card', 'Tabs', 'ProgressBar', 'MetricCard', 'EmptyState'];
+const components = ['Button', 'Badge', 'Tag', 'Input', 'Checkbox', 'Radio', 'Toggle', 'Avatar', 'Alert', 'Card', 'Tabs', 'ProgressBar', 'MetricCard', 'EmptyState', 'Select', 'DropdownMenu', 'Modal', 'Toast', 'Table', 'DatePicker', 'Navigation'];
 const header = `/* @ds-bundle: ${JSON.stringify({ format: 4, namespace: 'Atomus', components: components.map((name) => ({ name })) })} */\n`;
 
 const reactGlobal = {
