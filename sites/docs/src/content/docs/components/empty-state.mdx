@@ -1,0 +1,41 @@
+---
+title: "Empty state"
+description: "Fills empty pages and tables, and says what to do next."
+sidebar:
+  order: 18
+---
+
+import Demo from '../../../components/Demo.astro';
+import { EmptyDemo } from '../../../components/demos';
+
+Fills empty pages and tables, and says what to do next.
+
+<Demo caption="Empty state">
+  <EmptyDemo client:visible />
+</Demo>
+
+## Usage
+
+```tsx
+import { EmptyState } from '@stanvision/atomus-react';
+
+<EmptyState
+  title="No projects yet"
+  description="Create your first project to start designing with Atomus."
+  actions={<Button hierarchy="primary">New project</Button>}
+/>
+```
+
+Fills an empty page, table or panel and says what to do next.
+
+## Provide
+
+- `title` (what's missing), `description` (one sentence), `actions`, `icon`, `size` `sm` (panels) · `md` (pages).
+
+## Don't
+
+- Don't blame the user ("You haven't…"); describe the state.
+
+## In Figma
+
+Properties, variants and anatomy for the Figma component are on the [Figma reference](/figma-reference/empty-state-file-upload/) page. Prop names in React match the Figma property names.

@@ -1,0 +1,40 @@
+---
+title: "Date picker"
+description: "A date field with a calendar; single dates or ranges."
+sidebar:
+  order: 14
+---
+
+import Demo from '../../../components/Demo.astro';
+import { DateDemo } from '../../../components/demos';
+
+A date field with a calendar; single dates or ranges.
+
+<Demo caption="Date picker">
+  <DateDemo client:visible />
+</Demo>
+
+## Usage
+
+```tsx
+import { DatePicker, Calendar } from '@stanvision/atomus-react';
+
+<DatePicker label="Due date" value={date} onChange={setDate} />
+<Calendar type="range" range={range} onRangeChange={setRange} />
+```
+
+A date field that opens a calendar. `Calendar` is exported on its own for inline use.
+
+## Provide
+
+- `type` `single` (with `value` / `onChange`) or `range` (with `range` / `onRangeChange`); dates are ISO strings like `2026-10-14`.
+- `label`, `hint`, `error`, `placeholder`, `min`, `max`, `weekStartsOn` (Monday by default), `locale`.
+- Keyboard: arrow keys move by day and week, PageUp / PageDown by month, Enter picks, Esc closes.
+
+## Don't
+
+- Don't use for birthdays or dates far away — a typed Date input is faster.
+
+## In Figma
+
+Properties, variants and anatomy for the Figma component are on the [Figma reference](/figma-reference/date-time-pickers/) page. Prop names in React match the Figma property names.

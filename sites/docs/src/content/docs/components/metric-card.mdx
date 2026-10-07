@@ -1,0 +1,38 @@
+---
+title: "Metric card"
+description: "A single KPI for dashboards."
+sidebar:
+  order: 17
+---
+
+import Demo from '../../../components/Demo.astro';
+import { MetricDemo } from '../../../components/demos';
+
+A single KPI for dashboards.
+
+<Demo caption="Metric card">
+  <MetricDemo client:visible />
+</Demo>
+
+## Usage
+
+```tsx
+import { MetricCard } from '@stanvision/atomus-react';
+
+<MetricCard label="Monthly revenue" value="$48.2k" change="12%" caption="vs last month" />
+```
+
+A single KPI for dashboards.
+
+## Provide
+
+- `label`, `value` (pre-formatted), `type` `simple` · `trend` · `chart` (Figma: Type).
+- `change`, `caption` ("vs last month"), `trend` (inferred from a leading "-"), `data` for the chart sparkline, `action`.
+
+## Do
+
+- Keep four cards or fewer in a row; state the comparison period.
+
+## In Figma
+
+Properties, variants and anatomy for the Figma component are on the [Figma reference](/figma-reference/metrics-feeds/) page. Prop names in React match the Figma property names.

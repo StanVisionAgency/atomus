@@ -1,0 +1,48 @@
+---
+title: "Modal"
+description: "A dialog that blocks the page until the person decides."
+sidebar:
+  order: 12
+---
+
+import Demo from '../../../components/Demo.astro';
+import { ModalDemo } from '../../../components/demos';
+
+A dialog that blocks the page until the person decides.
+
+<Demo caption="Modal">
+  <ModalDemo client:visible />
+</Demo>
+
+## Usage
+
+```tsx
+import { Modal } from '@stanvision/atomus-react';
+
+<Modal
+  open={open}
+  onClose={() => setOpen(false)}
+  type="destructive"
+  featuredIcon
+  title="Delete project?"
+  description="You can’t undo this."
+  actions={<><Button hierarchy="outline">Cancel</Button><Button hierarchy="primary">Delete</Button></>}
+/>
+```
+
+A dialog that blocks the page until the person decides. Built on the native `<dialog>`: focus moves in, Esc and the backdrop close it, the page behind is inert.
+
+## Provide
+
+- `open` + `onClose`; `title` and `description`; `children` for the Content slot.
+- `actions` — buttons, the primary last; `featuredIcon` (`true` or an icon); `closeButton` (default on).
+- `size` `sm` 400 · `md` 544 · `lg` 720; `type` `destructive` tints the icon red.
+
+## Don't
+
+- Don't open a modal on page load or stack two.
+- Don't use for long forms — use a Drawer or a page.
+
+## In Figma
+
+Properties, variants and anatomy for the Figma component are on the [Figma reference](/figma-reference/modal/) page. Prop names in React match the Figma property names.

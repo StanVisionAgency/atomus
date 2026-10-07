@@ -1,0 +1,48 @@
+---
+title: "Table"
+description: "Rows of records with sorting and selection."
+sidebar:
+  order: 13
+---
+
+import Demo from '../../../components/Demo.astro';
+import { TableDemo } from '../../../components/demos';
+
+Rows of records with sorting and selection.
+
+<Demo caption="Table">
+  <TableDemo client:visible />
+</Demo>
+
+## Usage
+
+```tsx
+import { Table } from '@stanvision/atomus-react';
+
+<Table
+  caption="Team members"
+  selectable
+  rowKey={(r) => r.id}
+  rows={members}
+  columns={[
+    { key: 'name', header: 'Name', sortable: true },
+    { key: 'projects', header: 'Projects', sortable: true, align: 'end' },
+  ]}
+/>
+```
+
+Rows of records with sortable columns and optional row selection. Pair with Filter bar above and Pagination below.
+
+## Provide
+
+- `columns` — `{ key, header, sortable?, render?, supporting?, align?, width? }`; `rows`; `rowKey`.
+- `size` `sm` (52px rows) · `md` (72px rows); `selectable` + `selected` / `onSelectedChange`; `caption`; `empty` (e.g. an EmptyState).
+- Use Avatar, Badge and tertiary Buttons inside `render` for the Figma cell types.
+
+## Don't
+
+- Don't put more than one primary action per row; group the rest in a DropdownMenu.
+
+## In Figma
+
+Properties, variants and anatomy for the Figma component are on the [Figma reference](/figma-reference/table/) page. Prop names in React match the Figma property names.

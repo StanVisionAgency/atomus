@@ -1,0 +1,43 @@
+---
+title: "Tabs"
+description: "Switch between views. Underline, pill or segmented."
+sidebar:
+  order: 10
+---
+
+import Demo from '../../../components/Demo.astro';
+import { TabsDemo } from '../../../components/demos';
+
+Switch between views. Underline, pill or segmented.
+
+<Demo caption="Tabs">
+  <TabsDemo client:visible />
+</Demo>
+
+## Usage
+
+```tsx
+import { Tabs } from '@stanvision/atomus-react';
+
+<Tabs
+  aria-label="Project sections"
+  variant="underline"
+  items={[{ value: 'overview', label: 'Overview' }, { value: 'activity', label: 'Activity', count: 12 }]}
+/>
+```
+
+Switch between views of the same object. Arrow, Home and End keys move between tabs.
+
+## Provide
+
+- `items` — `[{ value, label, count?, disabled? }]`, two to six; `aria-label`.
+- `variant` — `underline` (page sections) · `pill` (sub-navigation) · `segmented` (filters, chart ranges).
+- `value` + `onChange` (controlled) or `defaultValue`.
+
+## Don't
+
+- Don't use tabs for sequential steps — use Progress steps.
+
+## In Figma
+
+Properties, variants and anatomy for the Figma component are on the [Figma reference](/figma-reference/tabs/) page. Prop names in React match the Figma property names.
