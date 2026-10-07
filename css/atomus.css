@@ -614,7 +614,7 @@
   --color-bg-tertiary-hover: var(--color-gray-200);
   --color-text-brand-hover: var(--color-brand-700);
   --color-bg-warning-solid: var(--color-amber-500);
-  --color-bg-success-solid: var(--color-green-600);
+  --color-bg-success-solid: var(--color-green-700);
   --color-bg-overlay: #18181bb2;
   --color-text-inverse: var(--color-white);
   --color-fg-inverse: var(--color-white);
@@ -730,7 +730,7 @@
   --color-bg-tertiary-hover: var(--color-gray-600);
   --color-text-brand-hover: var(--color-brand-300);
   --color-bg-warning-solid: var(--color-amber-500);
-  --color-bg-success-solid: var(--color-green-500);
+  --color-bg-success-solid: var(--color-green-700);
   --color-bg-overlay: #000000b2;
   --color-text-inverse: var(--color-gray-900);
   --color-fg-inverse: var(--color-gray-900);
@@ -857,7 +857,7 @@
     --color-bg-tertiary-hover: var(--color-gray-600);
     --color-text-brand-hover: var(--color-brand-300);
     --color-bg-warning-solid: var(--color-amber-500);
-    --color-bg-success-solid: var(--color-green-500);
+    --color-bg-success-solid: var(--color-green-700);
     --color-bg-overlay: #000000b2;
     --color-text-inverse: var(--color-gray-900);
     --color-fg-inverse: var(--color-gray-900);
