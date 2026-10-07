@@ -1,0 +1,15 @@
+<!-- @dsCard group="Overlays" height=320 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Modal — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var A = window.Atomus, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(function(){var s=React.useState(true);return h('div',null,
+ h(A.Button,{hierarchy:'outline',onClick:function(){s[1](true)}},'Open modal'),
+ h(A.Modal,{open:s[0],onClose:function(){s[1](false)},featuredIcon:true,type:'destructive',size:'sm',title:'Delete project?',description:'This deletes Atomus Website and its 24 files. You can’t undo this.',
+  actions:h(React.Fragment,null,h(A.Button,{hierarchy:'outline',onClick:function(){s[1](false)}},'Cancel'),h(A.Button,{hierarchy:'primary',onClick:function(){s[1](false)}},'Delete'))}));}));
+</script>
+</body>
+</html>

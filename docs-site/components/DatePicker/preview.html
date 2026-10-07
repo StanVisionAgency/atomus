@@ -1,0 +1,14 @@
+<!-- @dsCard group="Forms" height=440 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>DatePicker — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var A = window.Atomus, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(function(){var s=React.useState('2026-10-14'),r=React.useState({start:'2026-10-07',end:'2026-10-16'});return h('div',{style:{display:'flex',gap:32,flexWrap:'wrap',alignItems:'flex-start'}},
+ h(A.DatePicker,{label:'Due date',value:s[0],onChange:s[1],hint:'Click to open the calendar.'}),
+ h('div',{style:{border:'1px solid var(--color-border-secondary)',borderRadius:12}},h(A.Calendar,{type:'range',range:r[0],onRangeChange:r[1]})));}));
+</script>
+</body>
+</html>

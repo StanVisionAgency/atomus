@@ -1,4 +1,8 @@
-# Atomus 4.0 — code tokens
+# Atomus 4.0
+
+Docs: https://docs.atomus.io · Figma file: https://stanvision.gumroad.com/l/atomus-design-system
+
+## Code tokens
 
 Generated from the Atomus 4.0 Figma variables (October 2026). Every CSS variable name matches the
 **code syntax** shown in Figma Dev Mode, so what developers inspect is what they type.
@@ -52,9 +56,13 @@ Dark variant: `dark:` works with `data-theme="dark"` or `.dark`.
 
 `assets/logos/` — `atomus-logo.svg` (229×48) and `atomus-brandmark.svg` (48×48), single ink #18181B.
 
+## Websites
+
+`sites/web` is atomus.io and `sites/docs` is docs.atomus.io. Both are Astro sites hosted on Cloudflare Pages and built from the files in this repo. See `DEPLOY.md`.
+
 ## React components
 
-`react/` — `@stanvision/atomus-react`: 14 core components whose props mirror the Figma properties, plus Code Connect files. See `react/README.md`.
+`react/` — `@stanvision/atomus-react`: 21 components whose props mirror the Figma properties, plus Code Connect files. See `react/README.md`.
 
 ## Docs site
 

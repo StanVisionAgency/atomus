@@ -1,0 +1,19 @@
+<!-- @dsCard group="Actions" height=264 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>DropdownMenu — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var A = window.Atomus, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div',{style:{display:'flex',gap:24}},
+ h(A.DropdownMenu,{defaultOpen:true,label:'Project actions',trigger:h(A.Button,{hierarchy:'outline',iconTrailing:h(A.Icon,{name:'chevronDown',size:20})},'Actions'),items:[
+  {type:'heading',label:'Project'},
+  {label:'Rename',icon:h(A.Icon,{name:'settings',size:16}),shortcut:'⌘R'},
+  {label:'Duplicate',icon:h(A.Icon,{name:'plus',size:16}),shortcut:'⌘D'},
+  {label:'Archive',disabled:true},
+  {type:'separator'},
+  {label:'Delete project',icon:h(A.Icon,{name:'x',size:16}),destructive:true}]})));
+</script>
+</body>
+</html>

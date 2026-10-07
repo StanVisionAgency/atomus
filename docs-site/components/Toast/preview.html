@@ -1,0 +1,15 @@
+<!-- @dsCard group="Feedback" height=304 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Toast — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var A = window.Atomus, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(A.ToastProvider, null, h(function(){var T=A.useToast();return h('div',{className:'at-stack'},
+ h(A.Toast,{color:'success',title:'Changes saved',description:'Your workspace settings are up to date.',onClose:function(){}}),
+ h(A.Toast,{color:'error',title:'Upload failed',description:'The file is larger than 25 MB.',onClose:function(){},action:h(A.Button,{hierarchy:'link',size:'sm'},'Try again')}),
+ h('div',null,h(A.Button,{hierarchy:'outline',size:'sm',onClick:function(){T.show({color:'brand',title:'New version',description:'Atomus 4.0 is ready.'})}},'Show a toast')));})));
+</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!-- @dsCard group="Forms" height=288 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Select — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var A = window.Atomus, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'at-grid',style:{alignItems:'start'}},
+ h(A.Select,{label:'Team',defaultValue:'design',defaultOpen:true,options:[{value:'design',label:'Design'},{value:'product',label:'Product'},{value:'marketing',label:'Marketing'},{value:'eng',label:'Engineering'},{value:'ops',label:'Operations',disabled:true}]}),
+ h(A.Select,{label:'Role',placeholder:'Select a role',hint:'You can change it later.',options:[{value:'a',label:'Admin'},{value:'e',label:'Editor'}]}),
+ h(A.Select,{label:'Country',error:'Choose a country.',options:[{value:'bg',label:'Bulgaria'}]})));
+</script>
+</body>
+</html>

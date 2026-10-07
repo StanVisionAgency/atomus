@@ -1,0 +1,18 @@
+<!-- @dsCard group="Data display" height=320 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Table — preview</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var A = window.Atomus, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(A.Table,{caption:'Team members',selectable:true,rowKey:function(r){return r.id},
+ columns:[
+  {key:'name',header:'Name',sortable:true,render:function(r){return h('span',{style:{display:'flex',alignItems:'center',gap:12}},h(A.Avatar,{name:r.name,size:'sm'}),r.name)}},
+  {key:'role',header:'Role',sortable:true},
+  {key:'status',header:'Status',render:function(r){return h(A.Badge,{color:r.status==='Active'?'success':'gray',dot:true,size:'sm'},r.status)}},
+  {key:'projects',header:'Projects',sortable:true,align:'end'}],
+ rows:[{id:'1',name:'Kristina Stan',role:'Design lead',status:'Active',projects:12},{id:'2',name:'Mila Petrova',role:'Product designer',status:'Active',projects:8},{id:'3',name:'Ivan Georgiev',role:'Developer',status:'Invited',projects:3}]}));
+</script>
+</body>
+</html>
