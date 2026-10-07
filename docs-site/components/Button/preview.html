@@ -1,4 +1,4 @@
-<!-- @dsCard group="Actions" height=152 -->
+<!-- @dsCard group="Actions" height=216 -->
 <!doctype html>
 <html>
 <head><meta charset="utf-8"><title>Button — preview</title></head>
@@ -8,18 +8,21 @@
   var A = window.Atomus, h = React.createElement;
   ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'at-stack'},
  h('div',{className:'at-row'},
-  h(A.Button,{variant:'primary'},'Save changes'),
-  h(A.Button,{variant:'secondary'},'Preview'),
-  h(A.Button,{variant:'outline',iconLeading:'plus'},'New project'),
-  h(A.Button,{variant:'ghost'},'Cancel'),
-  h(A.Button,{variant:'destructive'},'Delete')),
+  h(A.Button,{hierarchy:'primary'},'Save changes'),
+  h(A.Button,{hierarchy:'secondary'},'Preview'),
+  h(A.Button,{hierarchy:'outline',iconLeading:h(A.Icon,{name:'plus',size:20})},'New project'),
+  h(A.Button,{hierarchy:'tertiary'},'Cancel'),
+  h(A.Button,{hierarchy:'link'},'Learn more')),
  h('div',{className:'at-row'},
-  h(A.Button,{variant:'primary',size:'sm'},'Small · 32'),
-  h(A.Button,{variant:'primary',size:'md'},'Medium · 40'),
-  h(A.Button,{variant:'primary',size:'lg'},'Large · 48'),
-  h(A.Button,{variant:'outline',iconOnly:true,iconLeading:'search','aria-label':'Search'}),
-  h(A.Button,{variant:'primary',loading:true},'Saving'),
-  h(A.Button,{variant:'primary',disabled:true},'Disabled'))));
+  h(A.Button,{hierarchy:'primary',size:'xs'},'xs · 24'),
+  h(A.Button,{hierarchy:'primary',size:'sm'},'sm · 32'),
+  h(A.Button,{hierarchy:'primary',size:'md'},'md · 40'),
+  h(A.Button,{hierarchy:'primary',size:'lg'},'lg · 48'),
+  h(A.Button,{hierarchy:'primary',size:'xl'},'xl · 56')),
+ h('div',{className:'at-row'},
+  h(A.Button,{hierarchy:'outline',iconOnly:true,iconLeading:h(A.Icon,{name:'search',size:20}),'aria-label':'Search'}),
+  h(A.Button,{hierarchy:'primary',loading:true},'Saving'),
+  h(A.Button,{hierarchy:'primary',disabled:true},'Disabled'))));
 </script>
 </body>
 </html>

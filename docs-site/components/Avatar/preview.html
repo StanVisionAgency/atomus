@@ -1,4 +1,4 @@
-<!-- @dsCard group="Data display" height=104 -->
+<!-- @dsCard group="Data display" height=168 -->
 <!doctype html>
 <html>
 <head><meta charset="utf-8"><title>Avatar — preview</title></head>
@@ -6,12 +6,18 @@
 <div id="root"></div>
 <script>
   var A = window.Atomus, h = React.createElement;
-  ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'at-row'},
- h(A.Avatar,{name:'Kristina Stan',size:'xs'}),
- h(A.Avatar,{name:'Mila Petrova',size:'sm',status:'online'}),
- h(A.Avatar,{name:'Ivan Georgiev',size:'md',status:'away'}),
- h(A.Avatar,{name:'Nora Lee',size:'lg',status:'offline'}),
- h(A.Avatar,{name:'Atomus',size:'xl'})));
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'at-stack'},
+ h('div',{className:'at-row'},
+  h(A.Avatar,{name:'Kristina Stan',size:'xs'}),
+  h(A.Avatar,{name:'Mila Petrova',size:'sm',status:'online'}),
+  h(A.Avatar,{name:'Ivan Georgiev',size:'md',status:'away'}),
+  h(A.Avatar,{name:'Nora Lee',size:'lg',status:'offline'}),
+  h(A.Avatar,{name:'Olivia Rhye',size:'xl'}),
+  h(A.Avatar,{name:'Atomus',size:'2xl'})),
+ h('div',{className:'at-row'},
+  h(A.Avatar,{name:'Kristina Stan',shape:'rounded',size:'md'}),
+  h(A.Avatar,{shape:'rounded',size:'md'}),
+  h(A.Avatar,{size:'md'}))));
 </script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-<!-- @dsCard group="Data display" height=112 -->
+<!-- @dsCard group="Data display" height=160 -->
 <!doctype html>
 <html>
 <head><meta charset="utf-8"><title>Badge — preview</title></head>
@@ -14,8 +14,14 @@
   h(A.Badge,{color:'warning',dot:true},'Pending'),
   h(A.Badge,{color:'error',dot:true},'Overdue')),
  h('div',{className:'at-row'},
-  h(A.Badge,{color:'brand',size:'sm'},'Small'),
-  h(A.Badge,{color:'gray',size:'sm'},'v4.0'))));
+  h(A.Badge,{color:'gray',variant:'solid'},'Gray'),
+  h(A.Badge,{color:'brand',variant:'solid'},'Brand'),
+  h(A.Badge,{color:'error',variant:'solid'},'Error'),
+  h(A.Badge,{color:'success',variant:'solid'},'Success')),
+ h('div',{className:'at-row'},
+  h(A.Badge,{color:'brand',size:'sm'},'sm'),
+  h(A.Badge,{color:'brand',size:'md'},'md'),
+  h(A.Badge,{color:'brand',size:'lg',onClose:function(){}},'lg'))));
 </script>
 </body>
 </html>

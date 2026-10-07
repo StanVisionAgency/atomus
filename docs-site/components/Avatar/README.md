@@ -1,13 +1,13 @@
 # Avatar
 
-Shows a person or workspace. Falls back to initials when there is no photo.
+Shows a person or workspace. Falls back to initials, then to a user icon.
 
 ## Provide
 
-- `name` — always (used for initials, the tooltip and the accessible name).
-- `src` — photo URL; `size` `xs` 24 · `sm` 32 · `md` 40 · `lg` 48 · `xl` 56.
-- `status` — `online` · `away` · `offline`.
+- `name` — used for initials, tooltip and accessible name.
+- `src` (Figma: Type=Image), `initials` (Figma: Initials), `icon` (Figma: Icon swap).
+- `size` `xs` 24 · `sm` 32 · `md` 40 · `lg` 48 · `xl` 56 · `2xl` 64; `shape` `circle` · `rounded`; `status` `online` · `away` · `offline`.
 
 ## Don't
 
-- Don't use illustrations or generic stock faces as placeholders — use initials.
+- Don't use stock faces as placeholders — use initials.

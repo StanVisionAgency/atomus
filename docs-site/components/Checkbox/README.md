@@ -1,11 +1,11 @@
 # Checkbox
 
-Lets people pick any number of options, or confirm one setting that applies on submit.
+Pick any number of options, or confirm one setting that applies on submit.
 
 ## Provide
 
-- `label`, optional `hint`.
-- `checked` / `defaultChecked`, `onChange`, `indeterminate` for a partial "select all".
+- `label`, `description` (Figma: Label, Description), `size` `sm` (16 box) · `md` (20 box).
+- `checked`/`defaultChecked`, `onChange`; `indeterminate` for a partial "select all".
 
 ## Don't
 

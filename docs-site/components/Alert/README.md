@@ -1,14 +1,13 @@
 # Alert
 
-An inline message about the page or a section. Use toasts for transient confirmations and modals for blocking decisions.
+An inline message about the page or a section.
 
 ## Provide
 
-- `tone` — `info` · `success` · `warning` · `error`. Each carries its own icon, so the tone never depends on colour alone.
-- `title` — the point in a few words; `children` — one or two sentences.
-- `actions` — up to two small buttons; `onDismiss` adds the close button.
+- `color` — `brand` · `gray` · `error` · `warning` · `success`; `variant` — `subtle` (tinted) or `outline` (Figma: Style).
+- `title` and `children` (Figma: Title, Description); `actions` — up to two small buttons; `onClose` (Figma: Close).
+- Each colour has its own icon, so meaning never depends on colour alone.
 
 ## Don't
 
-- Don't stack more than two alerts.
-- Don't use `error` for anything the user didn't cause or can't fix.
+- Don't stack more than two alerts; use toasts for transient confirmations.

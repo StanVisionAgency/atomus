@@ -1,4 +1,4 @@
-<!-- @dsCard group="Layout" height=288 -->
+<!-- @dsCard group="Layout" height=256 -->
 <!doctype html>
 <html>
 <head><meta charset="utf-8"><title>Card — preview</title></head>
@@ -6,10 +6,12 @@
 <div id="root"></div>
 <script>
   var A = window.Atomus, h = React.createElement;
-  ReactDOM.createRoot(document.getElementById('root')).render(h(A.Card,{title:'Team members',description:'Invite people and manage their roles.',
-  actions:h(A.Button,{size:'sm',variant:'outline',iconLeading:'plus'},'Invite'),
-  footer:h(React.Fragment,null,h(A.Button,{size:'sm',variant:'ghost'},'Cancel'),h(A.Button,{size:'sm',variant:'primary'},'Save'))},
- h('div',{className:'at-row'},h(A.Avatar,{name:'Kristina Stan',size:'sm'}),h(A.Avatar,{name:'Mila Petrova',size:'sm'}),h(A.Avatar,{name:'Ivan Georgiev',size:'sm'}),h('span',{className:'small'},'3 members'))));
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'at-grid'},
+ h(A.Card,{title:'Team members',supportingText:'Invite people and manage roles.',headerAction:h(A.Button,{hierarchy:'outline',size:'sm',iconLeading:h(A.Icon,{name:'plus',size:16})},'Invite'),
+   footer:h(React.Fragment,null,h(A.Button,{hierarchy:'tertiary',size:'sm'},'Cancel'),h(A.Button,{hierarchy:'primary',size:'sm'},'Save'))},
+  h('div',{className:'at-row'},h(A.Avatar,{name:'Kristina Stan',size:'sm'}),h(A.Avatar,{name:'Mila Petrova',size:'sm'}),h(A.Avatar,{name:'Ivan Georgiev',size:'sm'}),h('span',null,'3 members'))),
+ h(A.Card,{variant:'elevated',title:'Elevated',supportingText:'Floats above the page.'},'Use for draggable or overlapping cards.'),
+ h(A.Card,{variant:'filled',title:'Filled',supportingText:'Sits on bg-secondary.'},'Use inside white panels.')));
 </script>
 </body>
 </html>

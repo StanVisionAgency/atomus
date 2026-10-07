@@ -1,4 +1,4 @@
-<!-- @dsCard group="Feedback" height=248 -->
+<!-- @dsCard group="Feedback" height=240 -->
 <!doctype html>
 <html>
 <head><meta charset="utf-8"><title>EmptyState — preview</title></head>
@@ -6,8 +6,8 @@
 <div id="root"></div>
 <script>
   var A = window.Atomus, h = React.createElement;
-  ReactDOM.createRoot(document.getElementById('root')).render(h(A.EmptyState,{icon:'folder',title:'No projects yet',description:'Create your first project to start designing with Atomus.',
-  actions:h(React.Fragment,null,h(A.Button,{variant:'outline'},'Import'),h(A.Button,{variant:'primary',iconLeading:'plus'},'New project'))}));
+  ReactDOM.createRoot(document.getElementById('root')).render(h(A.EmptyState,{icon:h(A.Icon,{name:'folder',size:24}),title:'No projects yet',description:'Create your first project to start designing with Atomus.',
+  actions:h(React.Fragment,null,h(A.Button,{hierarchy:'outline'},'Import'),h(A.Button,{hierarchy:'primary',iconLeading:h(A.Icon,{name:'plus',size:20})},'New project'))}));
 </script>
 </body>
 </html>

@@ -1,15 +1,15 @@
 # Badge
 
-Labels a status or a count next to content. Read-only — for removable chips use Tag.
+Labels a status or count next to content.
 
 ## Provide
 
-- `children` — one or two words.
-- `color` — `gray` · `brand` · `success` · `warning` · `error` (default `gray`).
-- `size` — `sm` 20px or `md` 24px.
-- `dot` — a leading status dot. Always keep the word too: colour alone never carries the status.
+- `children` — one or two words (Figma: Label).
+- `color` — `gray` · `brand` · `error` · `warning` · `success`; `variant` — `light` (tinted) or `solid` (Figma: Style).
+- `size` — `sm` 20 · `md` 24 · `lg` 28; `dot`, `icon`, `onClose` (Figma: Dot, Leading icon, Close).
+- Always keep the word: colour alone never carries the status.
 
 ## Don't
 
-- Don't use badges as buttons or links.
-- Don't put more than one badge on a table cell.
+- Don't use solid **warning** with small text — white on amber is 2.2:1. Prefer the light warning badge.
+- Don't use badges as buttons; for removable values use Tag.
