@@ -38,7 +38,7 @@
       h('path', { d: PATHS[p.name] || PATHS.info }));
   }
 
-  /* Button --------------------------------------------------------------- */
+  /* Button ---------------------------------------------------------------- */
   function Button(props) {
     var variant = props.variant || 'secondary';
     var size = props.size || 'md';
@@ -53,21 +53,21 @@
       props.iconTrailing ? h(Icon, { name: props.iconTrailing, size: size === 'sm' ? 16 : 20 }) : null);
   }
 
-  /* Badge ---------------------------------------------------------------- */
+  /* Badge ----------------------------------------------------------------- */
   function Badge(props) {
     var color = props.color || 'gray';
     return h('span', { className: cx('at-badge', 'at-badge--' + color, 'at-badge--' + (props.size || 'md'), props.size === 'sm' ? 'caption-sm' : 'tiny-bold', props.className) },
       props.dot ? h('span', { className: 'at-badge__dot', 'aria-hidden': 'true' }) : null, props.children);
   }
 
-  /* Tag ------------------------------------------------------------------ */
+  /* Tag ------------------------------------------------------------------- */
   function Tag(props) {
     return h('span', { className: cx('at-tag', 'tiny-bold', props.className) },
       props.children,
       props.onRemove ? h('button', { type: 'button', className: 'at-tag__x', 'aria-label': 'Remove ' + (typeof props.children === 'string' ? props.children : 'tag'), onClick: props.onRemove }, h(Icon, { name: 'x', size: 12 })) : null);
   }
 
-  /* Input ---------------------------------------------------------------- */
+  /* Input ----------------------------------------------------------------- */
   function Input(props) {
     var id = useId(props.id);
     var size = props.size || 'md';
@@ -81,7 +81,7 @@
       msg ? h('p', { id: id + '-msg', className: cx('at-field__hint', 'small', props.error && 'at-field__hint--error') }, msg) : null);
   }
 
-  /* Checkbox / Radio ----------------------------------------------------- */
+  /* Checkbox / Radio ------------------------------------------------------ */
   function choice(type) {
     return function (props) {
       var id = useId(props.id);
@@ -98,7 +98,7 @@
   var Checkbox = choice('checkbox');
   var Radio = choice('radio');
 
-  /* Toggle --------------------------------------------------------------- */
+  /* Toggle ---------------------------------------------------------------- */
   function Toggle(props) {
     var id = useId(props.id);
     var rest = omit(props, ['label', 'hint', 'className', 'id', 'size']);
@@ -109,7 +109,7 @@
         props.hint ? h('span', { className: 'small at-choice__hint' }, props.hint) : null));
   }
 
-  /* Avatar --------------------------------------------------------------- */
+  /* Avatar ---------------------------------------------------------------- */
   function initials(name) {
     if (!name) return '';
     var p = String(name).trim().split(/\s+/);
@@ -122,7 +122,7 @@
       props.status ? h('span', { className: 'at-avatar__status at-avatar__status--' + props.status, 'aria-label': props.status }) : null);
   }
 
-  /* Alert ---------------------------------------------------------------- */
+  /* Alert ----------------------------------------------------------------- */
   var ALERT_ICON = { info: 'info', success: 'success', warning: 'alert', error: 'alert' };
   function Alert(props) {
     var tone = props.tone || 'info';
@@ -135,7 +135,7 @@
       props.onDismiss ? h('button', { type: 'button', className: 'at-alert__x', 'aria-label': 'Dismiss', onClick: props.onDismiss }, h(Icon, { name: 'x', size: 20 })) : null);
   }
 
-  /* Card ----------------------------------------------------------------- */
+  /* Card ------------------------------------------------------------------ */
   function Card(props) {
     var rest = omit(props, ['title', 'description', 'actions', 'footer', 'className', 'children', 'padding']);
     return h('section', Object.assign({}, rest, { className: cx('at-card', props.padding === 'lg' && 'at-card--lg', props.className) }),
@@ -148,7 +148,7 @@
       props.footer ? h('footer', { className: 'at-card__foot' }, props.footer) : null);
   }
 
-  /* Tabs ----------------------------------------------------------------- */
+  /* Tabs ------------------------------------------------------------------ */
   function Tabs(props) {
     var items = props.items || [];
     var controlled = props.value !== undefined;
@@ -168,7 +168,7 @@
       }));
   }
 
-  /* ProgressBar ---------------------------------------------------------- */
+  /* ProgressBar ----------------------------------------------------------- */
   function ProgressBar(props) {
     var v = Math.max(0, Math.min(100, props.value || 0));
     return h('div', { className: cx('at-progress', props.className) },
@@ -177,7 +177,7 @@
         h('div', { className: 'at-progress__fill', style: { width: v + '%' } })));
   }
 
-  /* MetricCard ----------------------------------------------------------- */
+  /* MetricCard ------------------------------------------------------------ */
   function MetricCard(props) {
     var trend = props.trend || (props.change && String(props.change).trim()[0] === '-' ? 'down' : 'up');
     return h('div', { className: cx('at-metric', props.className) },
@@ -188,7 +188,7 @@
       props.caption ? h('p', { className: 'tiny at-metric__caption' }, props.caption) : null);
   }
 
-  /* EmptyState ----------------------------------------------------------- */
+  /* EmptyState ------------------------------------------------------------ */
   function EmptyState(props) {
     return h('div', { className: cx('at-empty', props.className) },
       h('span', { className: 'at-empty__icon' }, h(Icon, { name: props.icon || 'search', size: 24 })),
