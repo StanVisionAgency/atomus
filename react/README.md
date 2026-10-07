@@ -61,7 +61,7 @@ Theme with attributes on any element: `data-theme="dark"`, `data-brand="violet"`
 
 ## Code Connect
 
-`src/components/*.figma.tsx` map the first 14 components (the 7 newest follow once Figma access is back) to its Figma component set in the Atomus 4.0 file, including variant, boolean, text and instance-swap properties. `npx figma connect parse` validates them.
+`src/components/*.figma.tsx` map all 21 components to its Figma component set in the Atomus 4.0 file, including variant, boolean, text and instance-swap properties. `npx figma connect parse` validates them.
 
 Publishing needs a **Dev or Full seat on a Figma Organization or Enterprise plan**:
 

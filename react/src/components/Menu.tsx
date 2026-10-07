@@ -8,7 +8,7 @@ export interface MenuItemProps {
   icon?: ReactNode;
   /** Figma: Shortcut + Shortcut text */
   shortcut?: string;
-  /** Figma: Size — sm 36 · md 40 */
+  /** Figma: Size — sm 32 · md 40 */
   size?: 'sm' | 'md';
   /** Figma: State=Selected — shows a check */
   selected?: boolean;
