@@ -1,0 +1,47 @@
+/* Starlight → Atomus tokens. Starlight and Atomus both switch on html[data-theme], so the docs follow the same light/dark tokens as the components. */
+:root {
+  --sl-font: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --sl-font-mono: 'Roboto Mono', ui-monospace, Menlo, monospace;
+  --sl-color-accent-low: var(--color-brand-950);
+  --sl-color-accent: var(--color-brand-500);
+  --sl-color-accent-high: var(--color-brand-200);
+  --sl-color-white: var(--color-gray-25);
+  --sl-color-gray-1: var(--color-gray-100);
+  --sl-color-gray-2: var(--color-gray-300);
+  --sl-color-gray-3: var(--color-gray-400);
+  --sl-color-gray-4: var(--color-gray-600);
+  --sl-color-gray-5: var(--color-gray-700);
+  --sl-color-gray-6: var(--color-gray-800);
+  --sl-color-black: var(--color-gray-900);
+  --sl-content-width: 52rem;
+}
+:root[data-theme='light'] {
+  --sl-color-accent-low: var(--color-brand-100);
+  --sl-color-accent: var(--color-brand-600);
+  --sl-color-accent-high: var(--color-brand-900);
+  --sl-color-white: var(--color-gray-900);
+  --sl-color-gray-1: var(--color-gray-800);
+  --sl-color-gray-2: var(--color-gray-700);
+  --sl-color-gray-3: var(--color-gray-500);
+  --sl-color-gray-4: var(--color-gray-400);
+  --sl-color-gray-5: var(--color-gray-300);
+  --sl-color-gray-6: var(--color-gray-100);
+  --sl-color-gray-7: var(--color-gray-50);
+  --sl-color-black: #ffffff;
+}
+.sl-markdown-content h1, .sl-markdown-content h2, .sl-markdown-content h3, h1#_top { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; font-optical-sizing: auto; letter-spacing: -0.01em; }
+
+/* Live examples */
+.atomus-demo { margin: 1.5rem 0; border: 1px solid var(--color-border-secondary); border-radius: var(--radius-xl); overflow: visible; background: var(--color-bg-primary); color: var(--color-text-primary); }
+.atomus-demo__stage { padding: var(--spacing-3xl); display: flex; flex-direction: column; gap: var(--spacing-xl); min-height: 96px; }
+.atomus-demo__bar { display: flex; justify-content: space-between; align-items: center; padding: var(--spacing-md) var(--spacing-xl); border-top: 1px solid var(--color-border-secondary); color: var(--color-text-tertiary); font-size: var(--font-size-tiny); }
+.at-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--spacing-lg); }
+.at-stack { display: flex; flex-direction: column; gap: var(--spacing-xl); }
+.at-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--spacing-xl); }
+
+/* Swatches on the colour page */
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: var(--spacing-lg); margin: 1rem 0 2rem; }
+.swatch { border: 1px solid var(--color-border-secondary); border-radius: var(--radius-lg); overflow: hidden; font-size: var(--font-size-tiny); line-height: var(--line-height-tiny); }
+.swatch__chip { height: 56px; }
+.swatch__meta { padding: var(--spacing-md); display: flex; flex-direction: column; gap: 2px; }
+.swatch__meta code { font-size: 11px; background: none; padding: 0; }
