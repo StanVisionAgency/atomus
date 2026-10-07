@@ -1,0 +1,235 @@
+---
+import '../styles/atomus.css';
+import '../styles/components.css';
+import '../styles/site.css';
+import logoRaw from '../../../../assets/logos/atomus-logo.svg?raw';
+import { Showcase } from '../components/Showcase';
+
+const logo = logoRaw.replace(/#18181B/gi, 'currentColor').replace('<svg ', '<svg aria-hidden="true" ');
+const GUMROAD = 'https://stanvision.gumroad.com/l/atomus-design-system';
+const DOCS = 'https://docs.atomus.io';
+const GITHUB = 'https://github.com/StanVisionAgency/atomus';
+const title = 'Atomus® 4.0 — Design system for Figma, product and web';
+const description = 'Design system built for efficiency and scaling. One Figma file for product UI and websites, with free design tokens, React components, docs and AI guidelines.';
+---
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href="https://atomus.io/" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content="https://atomus.io/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" />
+  <script is:inline>
+    try { const t = localStorage.getItem('atomus-theme'); if (t) document.documentElement.dataset.theme = t; else if (matchMedia('(prefers-color-scheme: dark)').matches) document.documentElement.dataset.theme = 'dark'; } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="nav">
+    <div class="wrap nav__inner">
+      <a class="nav__logo" href="/" aria-label="Atomus home" set:html={logo} />
+      <nav class="nav__links" aria-label="Main">
+        <a href="#inside">What's inside</a>
+        <a href="#free">Free stuff</a>
+        <a href="#pricing">Pricing</a>
+        <a href={DOCS}>Docs</a>
+        <a href={GITHUB}>GitHub</a>
+      </nav>
+      <div class="nav__actions">
+        <button class="theme-toggle" type="button" aria-label="Switch light or dark" data-theme-toggle>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" aria-hidden="true"><path d="M10 3v1M10 16v1M3 10h1M16 10h1M5 5l.7.7M14.3 14.3l.7.7M5 15l.7-.7M14.3 5.7L15 5"/><circle cx="10" cy="10" r="3.2"/></svg>
+        </button>
+        <a class="at-btn at-btn--primary at-btn--md" href={GUMROAD}>Get Atomus</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="wrap hero__inner">
+        <div class="hero__copy">
+          <span class="at-badge at-badge--md at-badge--light-brand">New · Atomus 4.0</span>
+          <h1>Design system built for efficiency and scaling</h1>
+          <p class="hero__aside">(from our studio to your studio with ❤️)</p>
+          <p class="hero__lead">One Figma file for product UI <em>and</em> websites. Duplicate it, set the client's brand, ship. The tokens, React components and docs come free.</p>
+          <div class="hero__ctas">
+            <a class="at-btn at-btn--primary at-btn--lg" href={GUMROAD}>Get the Figma file</a>
+            <a class="at-btn at-btn--outline at-btn--lg" href={DOCS}>Read the docs</a>
+          </div>
+        </div>
+        <div class="hero__visual" data-theme-target>
+          <Showcase />
+        </div>
+      </div>
+    </section>
+
+    <section class="pillars">
+      <div class="wrap pillars__grid">
+        <article>
+          <h2>Speeeeeed</h2>
+          <p>Duplicate, rename, set a brand mode — you're designing in minutes, not days. 140 components and 30 website sections are already done.</p>
+        </article>
+        <article>
+          <h2>Consistency</h2>
+          <p>Every fill, gap and radius is a variable. Change one token and the product, the website and the code all follow.</p>
+        </article>
+        <article>
+          <h2>Standards</h2>
+          <p>8-point grid, shared control heights, WCAG-checked colours in light and dark. The boring stuff, done right, once.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="use">
+      <div class="wrap">
+        <p class="eyebrow">What you'll do with it</p>
+        <div class="uses">
+          <article>
+            <h3>Streamlined process</h3>
+            <p>Just duplicate the file, rename it and start your project. We found that after experimenting on the design and prototyping the product or website it's time to make it all part of history. Just create your typography styles, add primary colors, edit the master buttons and you're more or less good to go.</p>
+          </article>
+          <article>
+            <h3>Maintain and scale</h3>
+            <p>In times of great pressure and deadlines that can kill — you'll be fully equipped to maintain, update and scale a product or website. Every god d*mn project that the client decides to "revise" or scale from 1 to humongous will be a child's play to you. This is what design systems are for. Use them right.</p>
+          </article>
+          <article>
+            <h3>C*nsistency is not a bad word</h3>
+            <p>Imagine: there is a new designer in the office. Oh, boy is she lost. Onboard her with the system and her new project. Or an old one, and let her in the wild. That's what makes a goood night's sleep even better. Feeling calm and safe because everybody is working effortlessly to keep a f*cking consistency throughout.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="inside">
+      <div class="wrap">
+        <p class="eyebrow">What's inside 4.0</p>
+        <h2 class="section__title">Everything a product team and a web team need, in one file</h2>
+        <dl class="stats">
+          <div><dt>Component sets</dt><dd>~140</dd></div>
+          <div><dt>Website sections</dt><dd>30</dd></div>
+          <div><dt>Example pages</dt><dd>13</dd></div>
+          <div><dt>Variables</dt><dd>671</dd></div>
+        </dl>
+        <ul class="features">
+          <li><strong>Modes for everything.</strong> Light and dark, client brands, Sharp/Default/Round corners, Desktop/Tablet/Mobile.</li>
+          <li><strong>Product UI.</strong> Inputs, menus, tables, charts, modals, drawers, notifications, chat, date pickers.</li>
+          <li><strong>Websites.</strong> Hero, features, pricing, FAQ, blog, careers, legal, auth — responsive at three breakpoints.</li>
+          <li><strong>App examples.</strong> Dashboard, table view, settings and empty states built only from components.</li>
+          <li><strong>Brand guidelines deck.</strong> Hand clients their logo, colour and type rules.</li>
+          <li><strong>Docs in the file.</strong> Anatomy, properties and do / don't on every component page.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="playground">
+      <div class="wrap playground">
+        <div>
+          <p class="eyebrow">Try it</p>
+          <h2 class="section__title">Same components, any brand</h2>
+          <p class="muted">These are the real Atomus components. Flip the modes — exactly what the Figma variable modes do.</p>
+          <fieldset class="switches" aria-label="Preview modes">
+            <div class="switch-group" role="group" aria-label="Theme">
+              <span>Theme</span>
+              <button type="button" data-set="theme" data-value="light" aria-pressed="true">Light</button>
+              <button type="button" data-set="theme" data-value="dark" aria-pressed="false">Dark</button>
+            </div>
+            <div class="switch-group" role="group" aria-label="Brand">
+              <span>Brand</span>
+              <button type="button" data-set="brand" data-value="" aria-pressed="true">Atomus</button>
+              <button type="button" data-set="brand" data-value="violet" aria-pressed="false">Violet</button>
+            </div>
+            <div class="switch-group" role="group" aria-label="Corners">
+              <span>Corners</span>
+              <button type="button" data-set="radius" data-value="sharp" aria-pressed="false">Sharp</button>
+              <button type="button" data-set="radius" data-value="" aria-pressed="true">Default</button>
+              <button type="button" data-set="radius" data-value="round" aria-pressed="false">Round</button>
+            </div>
+          </fieldset>
+        </div>
+        <div class="playground__stage" id="stage" data-theme="light">
+          <Showcase />
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="free">
+      <div class="wrap">
+        <p class="eyebrow">Free and open source</p>
+        <h2 class="section__title">You pay for the Figma file. The rest is on us.</h2>
+        <div class="free">
+          <a class="free__card" href={DOCS}><h3>Docs</h3><p>Foundations, components and usage rules at docs.atomus.io.</p></a>
+          <a class="free__card" href={`${DOCS}/code/tokens/`}><h3>Design tokens</h3><p>DTCG JSON, CSS, Tailwind v4 and shadcn/ui themes with Dev Mode names.</p></a>
+          <a class="free__card" href={`${DOCS}/react/`}><h3>React components</h3><p>21 accessible components; props match the Figma properties.</p></a>
+          <a class="free__card" href={`${DOCS}/code/ai-guidelines/`}><h3>AI guidelines</h3><p>Rules for Figma Make, MCP, Claude, Cursor and v0.</p></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pricing">
+      <div class="wrap pricing">
+        <div>
+          <p class="eyebrow">Pricing</p>
+          <h2 class="section__title">Get started — it's reasonably priced</h2>
+          <p class="muted">One payment, every update. Use it on as many client projects as you like.</p>
+        </div>
+        <div class="price-card">
+          <p class="price-card__name">Atomus 4.0 Figma file</p>
+          <p class="price-card__price"><span>$99</span> one time</p>
+          <ul>
+            <li>Figma variables with brand, theme, radius and breakpoint modes</li>
+            <li>Unlimited seats</li>
+            <li>Dark mode everywhere</li>
+            <li>Templates like tables and sh*t</li>
+            <li>Free updates forever</li>
+          </ul>
+          <a class="at-btn at-btn--primary at-btn--lg at-btn--full" href={GUMROAD}>Take my money</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <div>
+        <a class="nav__logo" href="/" aria-label="Atomus home" set:html={logo} />
+        <p>©{new Date().getFullYear()} Atomus™. All rights reserved. Atomus is a product of stan+vision digital design agency. Created to help our team — now it will save yours some valuable time.</p>
+      </div>
+      <nav aria-label="Footer" class="footer__links">
+        <a href={DOCS}>Docs</a>
+        <a href={GITHUB}>GitHub</a>
+        <a href={GUMROAD}>Gumroad</a>
+        <a href="https://www.stan.vision/">About the creators</a>
+        <a href="https://www.stan.vision/agency">Meet the team</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script is:inline>
+    (function () {
+      var root = document.documentElement;
+      document.querySelector('[data-theme-toggle]').addEventListener('click', function () {
+        var next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+        root.dataset.theme = next;
+        try { localStorage.setItem('atomus-theme', next); } catch (e) {}
+      });
+      var stage = document.getElementById('stage');
+      document.querySelectorAll('[data-set]').forEach(function (b) {
+        b.addEventListener('click', function () {
+          var key = b.dataset.set, val = b.dataset.value;
+          if (val) stage.setAttribute('data-' + key, val); else stage.removeAttribute('data-' + key);
+          document.querySelectorAll('[data-set="' + key + '"]').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
