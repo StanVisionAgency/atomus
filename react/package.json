@@ -1,0 +1,41 @@
+{
+  "name": "@stanvision/atomus-react",
+  "version": "4.0.0",
+  "description": "Atomus 4.0 React components — props mirror the Figma component properties.",
+  "license": "UNLICENSED",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./styles.css": "./dist/styles.css",
+    "./atomus.css": "./dist/atomus.css"
+  },
+  "files": ["dist"],
+  "sideEffects": ["*.css"],
+  "scripts": {
+    "build": "tsup && node scripts/copy-css.mjs",
+    "build:docs": "node scripts/build-docs.mjs",
+    "typecheck": "tsc --noEmit",
+    "figma:publish": "figma connect publish"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "devDependencies": {
+    "@figma/code-connect": "^1.3.0",
+    "@types/react": "^18.3.3",
+    "esbuild": "^0.23.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tsup": "^8.2.0",
+    "typescript": "^5.5.0"
+  }
+}
