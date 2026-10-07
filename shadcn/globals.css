@@ -1,0 +1,79 @@
+/* Atomus 4.0 — shadcn/ui theme. Replace the :root/.dark blocks in your globals.css with this file
+   (after @import "tailwindcss"). Colours follow Atomus brand, theme and radius modes automatically. */
+@import "../css/atomus.css";
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *, .dark, .dark *));
+:root, .dark, [data-theme], [data-brand] {
+  --background: var(--color-bg-primary);
+  --foreground: var(--color-text-primary);
+  --card: var(--color-bg-primary);
+  --card-foreground: var(--color-text-primary);
+  --popover: var(--color-bg-primary);
+  --popover-foreground: var(--color-text-primary);
+  --primary: var(--color-bg-brand-solid);
+  --primary-foreground: var(--color-text-on-brand);
+  --secondary: var(--color-bg-secondary);
+  --secondary-foreground: var(--color-text-primary);
+  --muted: var(--color-bg-tertiary);
+  --muted-foreground: var(--color-text-tertiary);
+  --accent: var(--color-bg-brand-subtle);
+  --accent-foreground: var(--color-text-brand);
+  --destructive: var(--color-bg-error-solid);
+  --destructive-foreground: var(--color-text-white);
+  --border: var(--color-border-secondary);
+  --input: var(--color-border-primary);
+  --ring: var(--color-border-focus);
+  --chart-1: var(--color-brand-600);
+  --chart-2: var(--color-brand-400);
+  --chart-3: var(--color-brand-200);
+  --chart-4: var(--color-gray-400);
+  --chart-5: var(--color-gray-200);
+  --sidebar: var(--color-bg-secondary);
+  --sidebar-foreground: var(--color-text-secondary);
+  --sidebar-primary: var(--color-bg-brand-solid);
+  --sidebar-primary-foreground: var(--color-text-on-brand);
+  --sidebar-accent: var(--color-bg-tertiary);
+  --sidebar-accent-foreground: var(--color-text-primary);
+  --sidebar-border: var(--color-border-secondary);
+  --sidebar-ring: var(--color-border-focus);
+  --radius: var(--radius-lg);
+}
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --font-sans: var(--font-family-body);
+  --font-heading: var(--font-family-title);
+}
+@layer base {
+  * { @apply border-border outline-ring/50; }
+  body { @apply bg-background text-foreground; }
+}
