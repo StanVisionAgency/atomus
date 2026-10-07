@@ -6,7 +6,7 @@ A list of actions that opens from a button. `MenuItem` is exported for custom li
 
 - `trigger` — the button that opens it (it gets `aria-haspopup`, `aria-expanded` and arrow-key opening).
 - `items` — `{ label, icon?, shortcut?, disabled?, destructive?, onSelect }`, `{ type: 'separator' }` or `{ type: 'heading', label }`.
-- `align` `start` · `end`; `size` `sm` 36 · `md` 40; `label` names the menu.
+- `align` `start` · `end`; `size` `sm` 32 · `md` 40; `label` names the menu.
 
 ## Do
 

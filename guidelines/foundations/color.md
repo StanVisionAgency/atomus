@@ -46,7 +46,7 @@ Surface fills. `primary` page and cards, `secondary` sections and table headers,
 | `--color-bg-success-subtle` (Background/bg-success-subtle) | #f0fdf4 | #14532d |
 | `--color-bg-tertiary-hover` (Background/bg-tertiary_hover) | #e4e4e7 | #52525b |
 | `--color-bg-warning-solid` (Background/bg-warning-solid) | #f59e0b | #f59e0b |
-| `--color-bg-success-solid` (Background/bg-success-solid) | #16a34a | #22c55d |
+| `--color-bg-success-solid` (Background/bg-success-solid) | #15803d | #15803d |
 | `--color-bg-overlay` (Background/bg-overlay) | #18181bb2 | #000000b2 |
 | `--color-bg-quaternary` (Background/bg-quaternary) | #e4e4e7 | #3f3f46 |
 | `--color-bg-quaternary-hover` (Background/bg-quaternary_hover) | #d4d4d8 | #52525b |
