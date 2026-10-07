@@ -1,0 +1,40 @@
+---
+title: Getting started
+description: Use Atomus in Figma, in code, or both.
+---
+
+import { Steps, Tabs, TabItem } from '@astrojs/starlight/components';
+
+Atomus works the same way in Figma and in code: the same tokens, the same component names, the same modes. Start wherever your work starts.
+
+<Tabs>
+<TabItem label="Designers (Figma)">
+<Steps>
+
+1. **Get the file** from [Gumroad](https://stanvision.gumroad.com/l/atomus-design-system) and duplicate it into your team.
+2. **One file per project.** Duplicate Atomus for every client project and rename it. Everything — variables, components, pages — lives in that one file.
+3. **Set the brand.** In the **Brand** variable collection, add a mode and point `brand-25 … brand-950` at the client's ramp. Every brand colour follows.
+4. **Pick the shape and type.** Switch the **Radius** mode (Default, Sharp, Round) and edit the font families in **Typography**.
+5. **Design.** Use the components and website sections; set Light/Dark and Desktop/Tablet/Mobile modes on the top frame. See [Figma](/figma/).
+
+</Steps>
+</TabItem>
+<TabItem label="Developers (code)">
+<Steps>
+
+1. **Add the tokens.** Copy `css/atomus.css` from the [repo](https://github.com/StanVisionAgency/atomus), or use the [Tailwind v4](/code/tailwind/) or [shadcn/ui](/code/shadcn/) theme.
+2. **Add the components** (optional): `@stanvision/atomus-react` from the repo's `react/` folder. See [React](/react/).
+3. **Theme with attributes:** `data-theme="dark"`, `data-brand="violet"`, `data-radius="round"` on any element.
+4. **Point your AI tools** at the `guidelines/` folder. See [AI guidelines](/code/ai-guidelines/).
+
+</Steps>
+</TabItem>
+</Tabs>
+
+## Principles
+
+1. **Tokens first.** Every fill, stroke, gap, padding, radius and text size is a variable.
+2. **Roles, not hues.** Colours are named by job (`text-secondary`, `bg-brand-solid`), so themes and dark mode just work.
+3. **8-point grid.** Sizes are multiples of 8; 4 and 2 only for fine detail. Controls share heights: 32, 40, 48.
+4. **Slots over detaching.** Open content areas are slots; icons are instance swaps.
+5. **Responsive by mode.** Switch Spacing & Layout and Typography to Tablet or Mobile and layouts reflow.

@@ -1,0 +1,55 @@
+---
+title: React
+description: "@stanvision/atomus-react — accessible React components whose props match the Figma properties."
+---
+
+`@stanvision/atomus-react` is free and open source. Its props mirror the Figma component properties — Hierarchy → `hierarchy`, Size → `size`, Style → `variant` — so a Figma spec reads straight into code.
+
+## Install
+
+The package lives in the [`react/`](https://github.com/StanVisionAgency/atomus/tree/main/react) folder of the repo (npm publishing comes later).
+
+```bash
+git clone https://github.com/StanVisionAgency/atomus.git
+cd atomus/react && npm install && npm run build
+# then in your app
+npm install ../atomus/react
+```
+
+```tsx
+import '@stanvision/atomus-react/atomus.css';  // tokens and themes
+import '@stanvision/atomus-react/styles.css';  // component styles
+import { Button, Input, Card } from '@stanvision/atomus-react';
+```
+
+## Components
+
+| Component | Figma component |
+| --- | --- |
+| `Button` | Button |
+| `Badge`, `Tag` | Badge, Tag |
+| `Input`, `Select` | Input, Select |
+| `Checkbox`, `Radio`, `Toggle` | Checkbox, Radio, Toggle |
+| `Avatar` | Avatar |
+| `Alert`, `Toast`, `ToastProvider` | Alert, Toast |
+| `Card` | Card |
+| `Tabs` | Tabs |
+| `DropdownMenu`, `MenuItem` | Dropdown menu, Menu item |
+| `Modal` | Modal |
+| `Table` | Table header cell, Table cell |
+| `DatePicker`, `Calendar` | Date input, Date picker, Calendar day |
+| `AppHeader`, `SidebarNavigation`, `NavItem` | App header, Sidebar navigation, Nav item |
+| `ProgressBar` | Progress bar |
+| `MetricCard` | Metric card |
+| `EmptyState` | Empty state |
+
+## Accessibility
+
+- Every control has a visible label or an `aria-label`, and a focus ring (`border-focus` + `shadow-focus-ring`).
+- Select, DropdownMenu, Tabs and the Calendar follow the WAI-ARIA keyboard patterns.
+- Modal is the native `<dialog>`: focus is trapped, Esc closes, the page behind is inert.
+- Status is never colour alone: alerts and toasts carry an icon, badges keep their word.
+
+## Code Connect
+
+`react/src/components/*.figma.tsx` maps the components to the Figma file. Publishing it to Dev Mode needs a Figma Organization plan; until then the mapping files document the prop names.

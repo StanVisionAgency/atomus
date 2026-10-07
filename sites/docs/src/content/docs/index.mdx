@@ -1,0 +1,46 @@
+---
+title: Atomus 4.0
+description: One design system for product UI and marketing websites — Figma file, design tokens, React components and AI guidelines.
+template: splash
+hero:
+  title: One design system for product <em>and</em> web
+  tagline: Atomus 4.0 is a Figma design system with matching design tokens, React components and guidelines for AI tools. Docs and code are free and open source; the Figma file is on Gumroad.
+  actions:
+    - text: Get started
+      link: /getting-started/
+      icon: right-arrow
+    - text: Get the Figma file
+      link: https://stanvision.gumroad.com/l/atomus-design-system
+      icon: external
+      variant: secondary
+    - text: GitHub
+      link: https://github.com/StanVisionAgency/atomus
+      icon: github
+      variant: minimal
+---
+
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+<CardGrid>
+  <Card title="Figma library" icon="puzzle">
+    ~140 component sets, 30 responsive website sections and 13 example pages, all on 671 variables with Light/Dark, brand, radius and breakpoint modes.
+  </Card>
+  <Card title="Design tokens" icon="seti:json">
+    W3C DTCG JSON, plain CSS, a Tailwind v4 theme and a shadcn/ui theme, generated from the Figma variables, with the same names as Dev Mode.
+  </Card>
+  <Card title="React components" icon="seti:react">
+    `@stanvision/atomus-react`: 21 accessible components whose props match the Figma properties one to one.
+  </Card>
+  <Card title="AI guidelines" icon="open-book">
+    Markdown rules that teach Figma Make, the Figma MCP, Claude, Cursor and v0 to build with Atomus.
+  </Card>
+</CardGrid>
+
+## Start here
+
+<CardGrid>
+  <LinkCard title="Getting started" href="/getting-started/" description="Pick your path: Figma, code, or both." />
+  <LinkCard title="Foundations" href="/foundations/color/" description="Colour, type, spacing, radius, icons and theming." />
+  <LinkCard title="Components" href="/components/button/" description="Live React examples with usage rules." />
+  <LinkCard title="Tokens for code" href="/code/tokens/" description="DTCG, CSS, Tailwind and shadcn/ui." />
+</CardGrid>
