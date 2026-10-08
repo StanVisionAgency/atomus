@@ -3,6 +3,8 @@
 // Pages with a React component have a hand-written source in src/component-pages/<slug>.mdx (demo + usage);
 // pages without one are generated from the guidelines alone and marked "Figma only".
 // `figma` lists the Code Connect components (react/src/components/*.figma.tsx) whose Figma links the page shows.
+// `api` lists the React exports whose generated "React API" tables (guidelines/components/*.md) the page shows;
+// it defaults to `figma`. Every React API entry must land on a page, like every guideline section.
 // Old /figma-reference/<file>/ URLs redirect to the first page that uses <file>.
 
 export const CATEGORIES = [
@@ -36,7 +38,7 @@ export const COMPONENT_PAGES = [
 
   // Feedback
   { slug: 'alert', category: 'Feedback', react: true, figma: ['Alert'], sections: s('message-alert', 'Alert') },
-  { slug: 'toast', category: 'Feedback', react: true, figma: ['Toast'], sections: s('message-alert', 'Toast') },
+  { slug: 'toast', category: 'Feedback', react: true, figma: ['Toast'], api: ['Toast', 'ToastProvider', 'useToast'], sections: s('message-alert', 'Toast') },
   { slug: 'banner', title: 'Banner', category: 'Feedback', sections: s('metrics-feeds', 'Banner') },
   { slug: 'notifications', title: 'Notifications', category: 'Feedback', sections: s('message-alert', 'Notifications panel', 'Notification item') },
   { slug: 'progress-bar', category: 'Feedback', react: true, figma: ['ProgressBar'], sections: s('progress-loading', 'Progress bar', 'Progress circle') },
@@ -83,6 +85,7 @@ export const COMPONENT_PAGES = [
 export function componentSidebar() {
   return [
     { label: 'Overview', link: '/components/' },
+    { label: 'Choosing a component', link: '/components/choosing/' },
     ...CATEGORIES.map((label) => ({
       label,
       collapsed: true,
