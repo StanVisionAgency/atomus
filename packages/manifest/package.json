@@ -1,0 +1,55 @@
+{
+  "name": "@stanvision/atomus-manifest",
+  "version": "4.1.0",
+  "description": "Machine-readable manifest of the Atomus design system: every component (React and Figma-only) with props, enums, defaults, Figma mappings, rules, examples and accessibility notes, plus semantic tokens by intent with Light/Dark values.",
+  "license": "MIT",
+  "author": "StanVision (https://stan.vision)",
+  "homepage": "https://docs.atomus.io",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StanVisionAgency/atomus.git",
+    "directory": "packages/manifest"
+  },
+  "bugs": {
+    "url": "https://github.com/StanVisionAgency/atomus/issues"
+  },
+  "keywords": [
+    "design-system",
+    "manifest",
+    "json-schema",
+    "components",
+    "design-tokens",
+    "figma",
+    "ai-agents",
+    "atomus"
+  ],
+  "type": "module",
+  "main": "./atomus.manifest.json",
+  "exports": {
+    ".": "./atomus.manifest.json",
+    "./atomus.manifest.json": "./atomus.manifest.json",
+    "./schema": "./schemas/manifest.schema.json",
+    "./schemas/*": "./schemas/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "atomus.manifest.json",
+    "schemas",
+    "LICENSE",
+    "NOTICE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "node ../../scripts/build-manifest.mjs",
+    "check": "node ../../scripts/build-manifest.mjs --check",
+    "assemble": "node scripts/assemble.mjs",
+    "prepack": "node scripts/assemble.mjs && node scripts/prepack.mjs"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "ajv": "^8.17.1",
+    "typescript": "~5.9.3"
+  }
+}
