@@ -11,7 +11,8 @@
             "WEB": "var(--color-text-primary)"
           }
         }
-      }
+      },
+      "$description": "Headings and body text on bg-primary, bg-secondary and bg-tertiary. Don't use on brand or inverse fills — use text-on-brand / text-inverse."
     },
     "text-secondary": {
       "$type": "color",
@@ -24,7 +25,8 @@
             "WEB": "var(--color-text-secondary)"
           }
         }
-      }
+      },
+      "$description": "Supporting copy, labels, descriptions and table cells on bg-primary and bg-secondary. Don't use for disabled text — use text-disabled."
     },
     "text-white": {
       "$type": "color",
@@ -37,7 +39,8 @@
             "WEB": "var(--color-text-white)"
           }
         }
-      }
+      },
+      "$description": "Always white in both themes — text on photos and fixed dark fills. Don't use on theme-aware surfaces — use text-primary or text-inverse."
     },
     "text-opacity": {
       "$type": "color",
@@ -50,7 +53,8 @@
             "WEB": "var(--color-text-opacity)"
           }
         }
-      }
+      },
+      "$description": "Text at 60% opacity over imagery or any background. Don't use for hint text on surfaces — use text-tertiary."
     },
     "text-link": {
       "$type": "color",
@@ -63,7 +67,8 @@
             "WEB": "var(--color-text-link)"
           }
         }
-      }
+      },
+      "$description": "Inline links on bg-primary and bg-secondary. Pair with an underline or hover change; don't use for non-interactive emphasis — use text-brand."
     },
     "text-tertiary": {
       "$type": "color",
@@ -76,7 +81,8 @@
             "WEB": "var(--color-text-tertiary)"
           }
         }
-      }
+      },
+      "$description": "Hints, timestamps, metadata and helper text on bg-primary and bg-secondary. Don't use for body copy or placeholders."
     },
     "text-placeholder": {
       "$type": "color",
@@ -89,7 +95,8 @@
             "WEB": "var(--color-text-placeholder)"
           }
         }
-      }
+      },
+      "$description": "Placeholder text inside inputs only, on bg-primary. Never use for labels or entered values."
     },
     "text-disabled": {
       "$type": "color",
@@ -102,7 +109,8 @@
             "WEB": "var(--color-text-disabled)"
           }
         }
-      }
+      },
+      "$description": "Labels of disabled controls; exempt from contrast rules. Don't use to de-emphasise active content — use text-tertiary."
     },
     "text-brand": {
       "$type": "color",
@@ -115,7 +123,8 @@
             "WEB": "var(--color-text-brand)"
           }
         }
-      }
+      },
+      "$description": "Brand-coloured text: highlighted words and active nav labels on bg-primary and bg-brand-subtle. Don't use on bg-brand-solid — use text-on-brand."
     },
     "text-on-brand": {
       "$type": "color",
@@ -128,7 +137,8 @@
             "WEB": "var(--color-text-on-brand)"
           }
         }
-      }
+      },
+      "$description": "Labels on bg-brand-solid (the primary button). Only on brand-solid fills."
     },
     "text-error": {
       "$type": "color",
@@ -141,7 +151,8 @@
             "WEB": "var(--color-text-error)"
           }
         }
-      }
+      },
+      "$description": "Error messages and destructive labels on bg-primary and bg-error-subtle. Don't use on bg-error-solid — use text-white."
     },
     "text-warning": {
       "$type": "color",
@@ -154,7 +165,8 @@
             "WEB": "var(--color-text-warning)"
           }
         }
-      }
+      },
+      "$description": "Warning text on bg-primary and bg-warning-subtle. Don't use on bg-warning-solid — use text-on-warning."
     },
     "text-success": {
       "$type": "color",
@@ -167,7 +179,8 @@
             "WEB": "var(--color-text-success)"
           }
         }
-      }
+      },
+      "$description": "Success text on bg-primary and bg-success-subtle."
     },
     "text-brand-hover": {
       "$type": "color",
@@ -180,7 +193,8 @@
             "WEB": "var(--color-text-brand-hover)"
           }
         }
-      }
+      },
+      "$description": "Hover state of text-brand and text-link. Only for the hover state."
     },
     "text-inverse": {
       "$type": "color",
@@ -193,7 +207,8 @@
             "WEB": "var(--color-text-inverse)"
           }
         }
-      }
+      },
+      "$description": "Text on bg-inverse (tooltips, dark banners). Only on bg-inverse."
     },
     "text-on-warning": {
       "$type": "color",
@@ -206,7 +221,8 @@
             "WEB": "var(--color-text-on-warning)"
           }
         }
-      }
+      },
+      "$description": "Text on bg-warning-solid (solid warning badges). Always Gray 900 — white on amber is only 2.2:1."
     }
   },
   "components": {
@@ -223,7 +239,8 @@
                 "WEB": "var(--color-button-primary-color)"
               }
             }
-          }
+          },
+          "$description": "Component token: primary button fill. Use only inside Button; in custom UI use the semantic Background / Text / Border roles."
         },
         "button-primary-text": {
           "$type": "color",
@@ -236,7 +253,8 @@
                 "WEB": "var(--color-button-primary-text)"
               }
             }
-          }
+          },
+          "$description": "Component token: primary button label. Use only inside Button; in custom UI use the semantic Background / Text / Border roles."
         },
         "button-primary-text-hover": {
           "$type": "color",
@@ -249,7 +267,8 @@
                 "WEB": "var(--color-button-primary-text-hover)"
               }
             }
-          }
+          },
+          "$description": "Component token: primary button label — hover state. Use only inside Button; in custom UI use the semantic Background / Text / Border roles."
         },
         "button-primary-color-hover": {
           "$type": "color",
@@ -262,7 +281,8 @@
                 "WEB": "var(--color-button-primary-color-hover)"
               }
             }
-          }
+          },
+          "$description": "Component token: primary button fill — hover state. Use only inside Button; in custom UI use the semantic Background / Text / Border roles."
         },
         "button-primary-border": {
           "$type": "color",
@@ -275,7 +295,8 @@
                 "WEB": "var(--color-button-primary-border)"
               }
             }
-          }
+          },
+          "$description": "Component token: primary button border. Use only inside Button; in custom UI use the semantic Background / Text / Border roles."
         },
         "button-primary-border-focus": {
           "$type": "color",
@@ -288,7 +309,8 @@
                 "WEB": "var(--color-button-primary-border-focus)"
               }
             }
-          }
+          },
+          "$description": "Component token: primary button border — focus state. Use only inside Button; in custom UI use the semantic Background / Text / Border roles."
         }
       },
       "secondary": {
@@ -303,7 +325,8 @@
                 "WEB": "var(--color-button-secondary-text)"
               }
             }
-          }
+          },
+          "$description": "Component token: secondary button label. Use only inside Button; in custom UI use the semantic Background / Text / Border roles."
         },
         "button-secondary-text-hover": {
           "$type": "color",
@@ -316,7 +339,8 @@
                 "WEB": "var(--color-button-secondary-text-hover)"
               }
             }
-          }
+          },
+          "$description": "Component token: secondary button label — hover state. Use only inside Button; in custom UI use the semantic Background / Text / Border roles."
         },
         "button-secondary-color": {
           "$type": "color",
@@ -329,7 +353,8 @@
                 "WEB": "var(--color-button-secondary-color)"
               }
             }
-          }
+          },
+          "$description": "Component token: secondary button fill. Use only inside Button; in custom UI use the semantic Background / Text / Border roles."
         },
         "button-secondary-color-hover": {
           "$type": "color",
@@ -342,7 +367,8 @@
                 "WEB": "var(--color-button-secondary-color-hover)"
               }
             }
-          }
+          },
+          "$description": "Component token: secondary button fill — hover state. Use only inside Button; in custom UI use the semantic Background / Text / Border roles."
         },
         "button-secondary-border": {
           "$type": "color",
@@ -355,7 +381,8 @@
                 "WEB": "var(--color-button-secondary-border)"
               }
             }
-          }
+          },
+          "$description": "Component token: secondary button border. Use only inside Button; in custom UI use the semantic Background / Text / Border roles."
         },
         "button-secondary-border-focus": {
           "$type": "color",
@@ -368,7 +395,8 @@
                 "WEB": "var(--color-button-secondary-border-focus)"
               }
             }
-          }
+          },
+          "$description": "Component token: secondary button border — focus state. Use only inside Button; in custom UI use the semantic Background / Text / Border roles."
         }
       },
       "outline": {
@@ -383,7 +411,8 @@
                 "WEB": "var(--color-button-outline-color)"
               }
             }
-          }
+          },
+          "$description": "Component token: outline button outline stroke. Use only inside Button; in custom UI use the semantic Background / Text / Border roles."
         },
         "button-outline-text-hover": {
           "$type": "color",
@@ -396,7 +425,8 @@
                 "WEB": "var(--color-button-outline-text-hover)"
               }
             }
-          }
+          },
+          "$description": "Component token: outline button label — hover state. Use only inside Button; in custom UI use the semantic Background / Text / Border roles."
         },
         "button-outline-color-hover": {
           "$type": "color",
@@ -409,7 +439,8 @@
                 "WEB": "var(--color-button-outline-color-hover)"
               }
             }
-          }
+          },
+          "$description": "Component token: outline button outline stroke — hover state. Use only inside Button; in custom UI use the semantic Background / Text / Border roles."
         },
         "button-outline-text": {
           "$type": "color",
@@ -422,7 +453,8 @@
                 "WEB": "var(--color-button-outline-text)"
               }
             }
-          }
+          },
+          "$description": "Component token: outline button label. Use only inside Button; in custom UI use the semantic Background / Text / Border roles."
         },
         "button-outline-border-focus": {
           "$type": "color",
@@ -435,7 +467,8 @@
                 "WEB": "var(--color-button-outline-border-focus)"
               }
             }
-          }
+          },
+          "$description": "Component token: outline button border — focus state. Use only inside Button; in custom UI use the semantic Background / Text / Border roles."
         }
       },
       "invisible": {
@@ -450,7 +483,8 @@
                 "WEB": "var(--color-button-inv-text)"
               }
             }
-          }
+          },
+          "$description": "Component token: invisible (tertiary) button label. Use only inside Button; in custom UI use the semantic Background / Text / Border roles."
         },
         "button-inv-color": {
           "$type": "color",
@@ -463,7 +497,8 @@
                 "WEB": "var(--color-button-inv-color)"
               }
             }
-          }
+          },
+          "$description": "Component token: invisible (tertiary) button fill. Use only inside Button; in custom UI use the semantic Background / Text / Border roles."
         },
         "button-inv-text-hover": {
           "$type": "color",
@@ -476,7 +511,8 @@
                 "WEB": "var(--color-button-inv-text-hover)"
               }
             }
-          }
+          },
+          "$description": "Component token: invisible (tertiary) button label — hover state. Use only inside Button; in custom UI use the semantic Background / Text / Border roles."
         },
         "button-inv-color-hover": {
           "$type": "color",
@@ -489,7 +525,8 @@
                 "WEB": "var(--color-button-inv-color-hover)"
               }
             }
-          }
+          },
+          "$description": "Component token: invisible (tertiary) button fill — hover state. Use only inside Button; in custom UI use the semantic Background / Text / Border roles."
         },
         "button-inv-border-active": {
           "$type": "color",
@@ -502,7 +539,8 @@
                 "WEB": "var(--color-button-inv-border-active)"
               }
             }
-          }
+          },
+          "$description": "Component token: invisible (tertiary) button border — active state. Use only inside Button; in custom UI use the semantic Background / Text / Border roles."
         }
       },
       "link": {
@@ -517,7 +555,8 @@
                 "WEB": "var(--color-button-link-text)"
               }
             }
-          }
+          },
+          "$description": "Component token: link button label. Use only inside Button; in custom UI use the semantic Background / Text / Border roles."
         },
         "button-link-text-hover": {
           "$type": "color",
@@ -530,7 +569,8 @@
                 "WEB": "var(--color-button-link-text-hover)"
               }
             }
-          }
+          },
+          "$description": "Component token: link button label — hover state. Use only inside Button; in custom UI use the semantic Background / Text / Border roles."
         },
         "button-link-border-active": {
           "$type": "color",
@@ -543,7 +583,8 @@
                 "WEB": "var(--color-button-link-border-active)"
               }
             }
-          }
+          },
+          "$description": "Component token: link button border — active state. Use only inside Button; in custom UI use the semantic Background / Text / Border roles."
         },
         "button-link-border-hover": {
           "$type": "color",
@@ -556,7 +597,8 @@
                 "WEB": "var(--color-button-link-border-hover)"
               }
             }
-          }
+          },
+          "$description": "Component token: link button border — hover state. Use only inside Button; in custom UI use the semantic Background / Text / Border roles."
         }
       }
     },
@@ -572,7 +614,8 @@
               "WEB": "var(--color-button-disabled-color)"
             }
           }
-        }
+        },
+        "$description": "Component token: fill of disabled buttons. Aliases the disabled ramp; prefer bg-disabled in new code."
       },
       "button-disabled-text": {
         "$type": "color",
@@ -585,7 +628,8 @@
               "WEB": "var(--color-button-disabled-text)"
             }
           }
-        }
+        },
+        "$description": "Component token: label of disabled buttons. Prefer text-disabled in new code."
       },
       "focus-m-color": {
         "$type": "color",
@@ -598,7 +642,8 @@
               "WEB": "var(--color-focus-m-color)"
             }
           }
-        }
+        },
+        "$description": "Component token: colour of the medium (3px) focus ring."
       },
       "focus-m-spread": {
         "$type": "dimension",
@@ -614,7 +659,8 @@
               "WEB": "var(--focus-m-spread)"
             }
           }
-        }
+        },
+        "$description": "Component token: spread of the medium focus ring (3px)."
       },
       "focus-s-spread": {
         "$type": "dimension",
@@ -630,7 +676,8 @@
               "WEB": "var(--focus-s-spread)"
             }
           }
-        }
+        },
+        "$description": "Component token: spread of the small focus ring (2px)."
       },
       "focus-s-color": {
         "$type": "color",
@@ -643,7 +690,8 @@
               "WEB": "var(--color-focus-s-color)"
             }
           }
-        }
+        },
+        "$description": "Component token: colour of the small (2px) focus ring."
       }
     },
     "badge": {
@@ -658,7 +706,8 @@
               "WEB": "var(--color-badge-primary-text)"
             }
           }
-        }
+        },
+        "$description": "Component token: primary badge label. Use only inside Badge; in custom UI use the semantic roles."
       },
       "badge-primary-border": {
         "$type": "color",
@@ -671,7 +720,8 @@
               "WEB": "var(--color-badge-primary-border)"
             }
           }
-        }
+        },
+        "$description": "Component token: primary badge border. Use only inside Badge; in custom UI use the semantic roles."
       },
       "badge-primary-color": {
         "$type": "color",
@@ -684,7 +734,8 @@
               "WEB": "var(--color-badge-primary-color)"
             }
           }
-        }
+        },
+        "$description": "Component token: primary badge fill. Use only inside Badge; in custom UI use the semantic roles."
       },
       "badge-light-color": {
         "$type": "color",
@@ -697,7 +748,8 @@
               "WEB": "var(--color-badge-light-color)"
             }
           }
-        }
+        },
+        "$description": "Component token: light badge fill. Use only inside Badge; in custom UI use the semantic roles."
       },
       "badge-light-text": {
         "$type": "color",
@@ -710,7 +762,8 @@
               "WEB": "var(--color-badge-light-text)"
             }
           }
-        }
+        },
+        "$description": "Component token: light badge label. Use only inside Badge; in custom UI use the semantic roles."
       },
       "badge-light-border": {
         "$type": "color",
@@ -723,7 +776,8 @@
               "WEB": "var(--color-badge-light-border)"
             }
           }
-        }
+        },
+        "$description": "Component token: light badge border. Use only inside Badge; in custom UI use the semantic roles."
       },
       "badge-success-color": {
         "$type": "color",
@@ -736,7 +790,8 @@
               "WEB": "var(--color-badge-success-color)"
             }
           }
-        }
+        },
+        "$description": "Component token: success badge fill. Use only inside Badge; in custom UI use the semantic roles."
       },
       "badge-success-border": {
         "$type": "color",
@@ -749,7 +804,8 @@
               "WEB": "var(--color-badge-success-border)"
             }
           }
-        }
+        },
+        "$description": "Component token: success badge border. Use only inside Badge; in custom UI use the semantic roles."
       },
       "badge-success-text": {
         "$type": "color",
@@ -762,7 +818,8 @@
               "WEB": "var(--color-badge-success-text)"
             }
           }
-        }
+        },
+        "$description": "Component token: success badge label. Use only inside Badge; in custom UI use the semantic roles."
       },
       "badge-danger-color": {
         "$type": "color",
@@ -775,7 +832,8 @@
               "WEB": "var(--color-badge-danger-color)"
             }
           }
-        }
+        },
+        "$description": "Component token: danger badge fill. Use only inside Badge; in custom UI use the semantic roles."
       },
       "badge-danger-border": {
         "$type": "color",
@@ -788,7 +846,8 @@
               "WEB": "var(--color-badge-danger-border)"
             }
           }
-        }
+        },
+        "$description": "Component token: danger badge border. Use only inside Badge; in custom UI use the semantic roles."
       },
       "badge-danger-text": {
         "$type": "color",
@@ -801,7 +860,8 @@
               "WEB": "var(--color-badge-danger-text)"
             }
           }
-        }
+        },
+        "$description": "Component token: danger badge label. Use only inside Badge; in custom UI use the semantic roles."
       },
       "badge-info-color": {
         "$type": "color",
@@ -814,7 +874,8 @@
               "WEB": "var(--color-badge-info-color)"
             }
           }
-        }
+        },
+        "$description": "Component token: info badge fill. Use only inside Badge; in custom UI use the semantic roles."
       },
       "badge-info-border": {
         "$type": "color",
@@ -827,7 +888,8 @@
               "WEB": "var(--color-badge-info-border)"
             }
           }
-        }
+        },
+        "$description": "Component token: info badge border. Use only inside Badge; in custom UI use the semantic roles."
       },
       "badge-info-text": {
         "$type": "color",
@@ -840,7 +902,8 @@
               "WEB": "var(--color-badge-info-text)"
             }
           }
-        }
+        },
+        "$description": "Component token: info badge label. Use only inside Badge; in custom UI use the semantic roles."
       },
       "badge-warning-color": {
         "$type": "color",
@@ -853,7 +916,8 @@
               "WEB": "var(--color-badge-warning-color)"
             }
           }
-        }
+        },
+        "$description": "Component token: warning badge fill. Use only inside Badge; in custom UI use the semantic roles."
       },
       "badge-warning-border": {
         "$type": "color",
@@ -866,7 +930,8 @@
               "WEB": "var(--color-badge-warning-border)"
             }
           }
-        }
+        },
+        "$description": "Component token: warning badge border. Use only inside Badge; in custom UI use the semantic roles."
       },
       "badge-warning-text": {
         "$type": "color",
@@ -879,7 +944,8 @@
               "WEB": "var(--color-badge-warning-text)"
             }
           }
-        }
+        },
+        "$description": "Component token: warning badge label. Use only inside Badge; in custom UI use the semantic roles."
       },
       "badge-dark-text": {
         "$type": "color",
@@ -892,7 +958,8 @@
               "WEB": "var(--color-badge-dark-text)"
             }
           }
-        }
+        },
+        "$description": "Component token: dark badge label. Use only inside Badge; in custom UI use the semantic roles."
       },
       "badge-dark-border": {
         "$type": "color",
@@ -905,7 +972,8 @@
               "WEB": "var(--color-badge-dark-border)"
             }
           }
-        }
+        },
+        "$description": "Component token: dark badge border. Use only inside Badge; in custom UI use the semantic roles."
       },
       "badge-dark-color": {
         "$type": "color",
@@ -918,7 +986,8 @@
               "WEB": "var(--color-badge-dark-color)"
             }
           }
-        }
+        },
+        "$description": "Component token: dark badge fill. Use only inside Badge; in custom UI use the semantic roles."
       }
     },
     "alert": {
@@ -1216,7 +1285,8 @@
             "WEB": "var(--color-gradient-primary-start)"
           }
         }
-      }
+      },
+      "$description": "Start stop of the primary gradient (hero and promo backgrounds). Decorative only — never behind body text without a scrim."
     },
     "primary-end": {
       "$type": "color",
@@ -1229,7 +1299,8 @@
             "WEB": "var(--color-gradient-primary-end)"
           }
         }
-      }
+      },
+      "$description": "End stop of the primary gradient (hero and promo backgrounds). Decorative only."
     },
     "secondary-start": {
       "$type": "color",
@@ -1242,7 +1313,8 @@
             "WEB": "var(--color-gradient-secondary-start)"
           }
         }
-      }
+      },
+      "$description": "Start stop of the secondary gradient (hero and promo backgrounds). Decorative only."
     },
     "secondary-end": {
       "$type": "color",
@@ -1255,7 +1327,8 @@
             "WEB": "var(--color-gradient-secondary-end)"
           }
         }
-      }
+      },
+      "$description": "End stop of the secondary gradient (hero and promo backgrounds). Decorative only."
     },
     "tertiary-start": {
       "$type": "color",
@@ -1268,7 +1341,8 @@
             "WEB": "var(--color-gradient-tertiary-start)"
           }
         }
-      }
+      },
+      "$description": "Start stop of the tertiary (neutral) gradient. Decorative only."
     },
     "tertiary-end": {
       "$type": "color",
@@ -1281,7 +1355,8 @@
             "WEB": "var(--color-gradient-tertiary-end)"
           }
         }
-      }
+      },
+      "$description": "End stop of the tertiary (neutral) gradient. Decorative only."
     }
   },
   "background": {
@@ -1296,7 +1371,8 @@
             "WEB": "var(--color-bg-primary)"
           }
         }
-      }
+      },
+      "$description": "Default page and card surface. Pair with text-primary and border-secondary."
     },
     "bg-primary-hover": {
       "$type": "color",
@@ -1309,7 +1385,8 @@
             "WEB": "var(--color-bg-primary-hover)"
           }
         }
-      }
+      },
+      "$description": "Hover on rows, menu items and list items that sit on bg-primary. Only for hover, never as a resting fill."
     },
     "bg-secondary": {
       "$type": "color",
@@ -1322,7 +1399,8 @@
             "WEB": "var(--color-bg-secondary)"
           }
         }
-      }
+      },
+      "$description": "Sidebars, section bands, table headers and subtle panels. Don't nest bg-secondary inside bg-secondary — step to bg-tertiary."
     },
     "bg-tertiary": {
       "$type": "color",
@@ -1335,7 +1413,8 @@
             "WEB": "var(--color-bg-tertiary)"
           }
         }
-      }
+      },
+      "$description": "Stronger neutral fill: chips, wells, tracks, image placeholders and secondary buttons."
     },
     "bg-inverse": {
       "$type": "color",
@@ -1348,7 +1427,8 @@
             "WEB": "var(--color-bg-inverse)"
           }
         }
-      }
+      },
+      "$description": "Inverted surfaces: tooltips and dark banners. Always pair with text-inverse and fg-inverse."
     },
     "bg-disabled": {
       "$type": "color",
@@ -1361,7 +1441,8 @@
             "WEB": "var(--color-bg-disabled)"
           }
         }
-      }
+      },
+      "$description": "Fill of disabled controls. Pair with text-disabled and border-disabled."
     },
     "bg-brand-solid": {
       "$type": "color",
@@ -1374,7 +1455,8 @@
             "WEB": "var(--color-bg-brand-solid)"
           }
         }
-      }
+      },
+      "$description": "Primary brand fill: primary buttons, checked controls, progress fills, active states. Use text-on-brand / fg-on-brand on top; one primary action per view."
     },
     "bg-brand-solid-hover": {
       "$type": "color",
@@ -1387,7 +1469,8 @@
             "WEB": "var(--color-bg-brand-solid-hover)"
           }
         }
-      }
+      },
+      "$description": "Hover of bg-brand-solid. Only for the hover state."
     },
     "bg-brand-subtle": {
       "$type": "color",
@@ -1400,7 +1483,8 @@
             "WEB": "var(--color-bg-brand-subtle)"
           }
         }
-      }
+      },
+      "$description": "Light brand tint: selected rows, info areas, brand badges. Use text-brand or text-primary on top."
     },
     "bg-error-solid": {
       "$type": "color",
@@ -1413,7 +1497,8 @@
             "WEB": "var(--color-bg-error-solid)"
           }
         }
-      }
+      },
+      "$description": "Destructive buttons and error dots. Use text-white on top; reserve for destructive actions."
     },
     "bg-error-subtle": {
       "$type": "color",
@@ -1426,7 +1511,8 @@
             "WEB": "var(--color-bg-error-subtle)"
           }
         }
-      }
+      },
+      "$description": "Error alert, field and badge background. Use text-error on top."
     },
     "bg-warning-subtle": {
       "$type": "color",
@@ -1439,7 +1525,8 @@
             "WEB": "var(--color-bg-warning-subtle)"
           }
         }
-      }
+      },
+      "$description": "Warning alert and badge background. Use text-warning on top."
     },
     "bg-success-subtle": {
       "$type": "color",
@@ -1452,7 +1539,8 @@
             "WEB": "var(--color-bg-success-subtle)"
           }
         }
-      }
+      },
+      "$description": "Success alert and badge background. Use text-success on top."
     },
     "bg-tertiary-hover": {
       "$type": "color",
@@ -1465,7 +1553,8 @@
             "WEB": "var(--color-bg-tertiary-hover)"
           }
         }
-      }
+      },
+      "$description": "Hover on bg-tertiary fills (secondary buttons, chips). Only for the hover state."
     },
     "bg-warning-solid": {
       "$type": "color",
@@ -1478,7 +1567,8 @@
             "WEB": "var(--color-bg-warning-solid)"
           }
         }
-      }
+      },
+      "$description": "Solid warning fill: badges, dots. Use text-on-warning / fg-on-warning on top — never white."
     },
     "bg-success-solid": {
       "$type": "color",
@@ -1491,7 +1581,8 @@
             "WEB": "var(--color-bg-success-solid)"
           }
         }
-      }
+      },
+      "$description": "Solid success fill: badges, dots. Use text-white on top."
     },
     "bg-overlay": {
       "$type": "color",
@@ -1504,7 +1595,8 @@
             "WEB": "var(--color-bg-overlay)"
           }
         }
-      }
+      },
+      "$description": "Scrim behind modals and drawers. Only for overlays, never as a surface."
     },
     "bg-quaternary": {
       "$type": "color",
@@ -1517,7 +1609,8 @@
             "WEB": "var(--color-bg-quaternary)"
           }
         }
-      }
+      },
+      "$description": "Strongest neutral fill: toggle tracks (off), slider and progress tracks."
     },
     "bg-quaternary-hover": {
       "$type": "color",
@@ -1530,7 +1623,8 @@
             "WEB": "var(--color-bg-quaternary-hover)"
           }
         }
-      }
+      },
+      "$description": "Hover on bg-quaternary fills. Only for the hover state."
     }
   },
   "border": {
@@ -1545,7 +1639,8 @@
             "WEB": "var(--color-border-primary)"
           }
         }
-      }
+      },
+      "$description": "Borders of inputs and outlined controls. Decorative strength (≈1.5:1) — always pair a control border with a visible label; use border-focus for focus."
     },
     "border-secondary": {
       "$type": "color",
@@ -1558,7 +1653,8 @@
             "WEB": "var(--color-border-secondary)"
           }
         }
-      }
+      },
+      "$description": "Card outlines, dividers and table rules. Don't use for input borders — use border-primary."
     },
     "border-disabled": {
       "$type": "color",
@@ -1571,7 +1667,8 @@
             "WEB": "var(--color-border-disabled)"
           }
         }
-      }
+      },
+      "$description": "Borders of disabled controls."
     },
     "border-brand": {
       "$type": "color",
@@ -1584,7 +1681,8 @@
             "WEB": "var(--color-border-brand)"
           }
         }
-      }
+      },
+      "$description": "Selected / active border: selected cards, active tabs. Don't use for focus — use border-focus."
     },
     "border-focus": {
       "$type": "color",
@@ -1597,7 +1695,8 @@
             "WEB": "var(--color-border-focus)"
           }
         }
-      }
+      },
+      "$description": "Focus outline colour of every interactive control; pair with the focus ring shadow. Only for :focus-visible."
     },
     "border-error": {
       "$type": "color",
@@ -1610,7 +1709,8 @@
             "WEB": "var(--color-border-error)"
           }
         }
-      }
+      },
+      "$description": "Inputs and cards in an error state. Pair with a text-error message."
     },
     "border-warning": {
       "$type": "color",
@@ -1623,7 +1723,8 @@
             "WEB": "var(--color-border-warning)"
           }
         }
-      }
+      },
+      "$description": "Inputs, alerts and cards in a warning state."
     },
     "border-success": {
       "$type": "color",
@@ -1636,7 +1737,8 @@
             "WEB": "var(--color-border-success)"
           }
         }
-      }
+      },
+      "$description": "Inputs, alerts and cards in a success state."
     }
   },
   "foreground": {
@@ -1651,7 +1753,8 @@
             "WEB": "var(--color-fg-primary)"
           }
         }
-      }
+      },
+      "$description": "Primary icons and non-text graphics next to text-primary."
     },
     "fg-secondary": {
       "$type": "color",
@@ -1664,7 +1767,8 @@
             "WEB": "var(--color-fg-secondary)"
           }
         }
-      }
+      },
+      "$description": "Secondary icons: inputs, nav items, buttons."
     },
     "fg-tertiary": {
       "$type": "color",
@@ -1677,7 +1781,8 @@
             "WEB": "var(--color-fg-tertiary)"
           }
         }
-      }
+      },
+      "$description": "Muted and decorative icons. Don't use for icons that are the only label of an action."
     },
     "fg-disabled": {
       "$type": "color",
@@ -1690,7 +1795,8 @@
             "WEB": "var(--color-fg-disabled)"
           }
         }
-      }
+      },
+      "$description": "Icons in disabled controls."
     },
     "fg-brand": {
       "$type": "color",
@@ -1703,7 +1809,8 @@
             "WEB": "var(--color-fg-brand)"
           }
         }
-      }
+      },
+      "$description": "Brand icons, featured-icon glyphs and active indicators. Don't use on bg-brand-solid — use fg-on-brand."
     },
     "fg-on-brand": {
       "$type": "color",
@@ -1716,7 +1823,8 @@
             "WEB": "var(--color-fg-on-brand)"
           }
         }
-      }
+      },
+      "$description": "Icons on bg-brand-solid fills. Only on brand-solid fills."
     },
     "fg-error": {
       "$type": "color",
@@ -1729,7 +1837,8 @@
             "WEB": "var(--color-fg-error)"
           }
         }
-      }
+      },
+      "$description": "Error icons."
     },
     "fg-warning": {
       "$type": "color",
@@ -1742,7 +1851,8 @@
             "WEB": "var(--color-fg-warning)"
           }
         }
-      }
+      },
+      "$description": "Warning icons."
     },
     "fg-success": {
       "$type": "color",
@@ -1755,7 +1865,8 @@
             "WEB": "var(--color-fg-success)"
           }
         }
-      }
+      },
+      "$description": "Success icons."
     },
     "fg-inverse": {
       "$type": "color",
@@ -1768,7 +1879,8 @@
             "WEB": "var(--color-fg-inverse)"
           }
         }
-      }
+      },
+      "$description": "Icons on bg-inverse."
     },
     "fg-on-warning": {
       "$type": "color",
@@ -1781,7 +1893,8 @@
             "WEB": "var(--color-fg-on-warning)"
           }
         }
-      }
+      },
+      "$description": "Icons and dots on bg-warning-solid. Always Gray 900."
     }
   }
 }
