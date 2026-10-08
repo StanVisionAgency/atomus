@@ -11,7 +11,8 @@
             "WEB": "var(--spacing-none)"
           }
         }
-      }
+      },
+      "$description": "Component spacing: gap and padding inside components. 0px on all breakpoints. Don't use for gaps between page sections — use layout-*."
     },
     "spacing-xxs": {
       "$type": "dimension",
@@ -24,7 +25,8 @@
             "WEB": "var(--spacing-xxs)"
           }
         }
-      }
+      },
+      "$description": "Component spacing: gap and padding inside components. 2px on all breakpoints. Don't use for gaps between page sections — use layout-*."
     },
     "spacing-xs": {
       "$type": "dimension",
@@ -37,7 +39,8 @@
             "WEB": "var(--spacing-xs)"
           }
         }
-      }
+      },
+      "$description": "Component spacing: gap and padding inside components. 4px on all breakpoints. Don't use for gaps between page sections — use layout-*."
     },
     "spacing-sm": {
       "$type": "dimension",
@@ -50,7 +53,8 @@
             "WEB": "var(--spacing-sm)"
           }
         }
-      }
+      },
+      "$description": "Component spacing: gap and padding inside components. 6px on all breakpoints. Don't use for gaps between page sections — use layout-*."
     },
     "spacing-md": {
       "$type": "dimension",
@@ -63,7 +67,8 @@
             "WEB": "var(--spacing-md)"
           }
         }
-      }
+      },
+      "$description": "Component spacing: gap and padding inside components. 8px on all breakpoints. Don't use for gaps between page sections — use layout-*."
     },
     "spacing-lg": {
       "$type": "dimension",
@@ -76,7 +81,8 @@
             "WEB": "var(--spacing-lg)"
           }
         }
-      }
+      },
+      "$description": "Component spacing: gap and padding inside components. 12px on all breakpoints. Don't use for gaps between page sections — use layout-*."
     },
     "spacing-xl": {
       "$type": "dimension",
@@ -89,7 +95,8 @@
             "WEB": "var(--spacing-xl)"
           }
         }
-      }
+      },
+      "$description": "Component spacing: gap and padding inside components. 16px on all breakpoints. Don't use for gaps between page sections — use layout-*."
     },
     "spacing-2xl": {
       "$type": "dimension",
@@ -102,7 +109,8 @@
             "WEB": "var(--spacing-2xl)"
           }
         }
-      }
+      },
+      "$description": "Component spacing: gap and padding inside components. 20px on all breakpoints. Don't use for gaps between page sections — use layout-*."
     },
     "spacing-3xl": {
       "$type": "dimension",
@@ -115,7 +123,8 @@
             "WEB": "var(--spacing-3xl)"
           }
         }
-      }
+      },
+      "$description": "Component spacing: gap and padding inside components. 24px on all breakpoints. Don't use for gaps between page sections — use layout-*."
     }
   },
   "layout": {
@@ -130,7 +139,8 @@
             "WEB": "var(--layout-xs)"
           }
         }
-      }
+      },
+      "$description": "Responsive layout spacing between blocks and sections; shrinks on smaller breakpoints. Desktop 32px · tablet 32px · mobile 24px. Don't use inside components — use spacing-*."
     },
     "layout-sm": {
       "$type": "dimension",
@@ -143,7 +153,8 @@
             "WEB": "var(--layout-sm)"
           }
         }
-      }
+      },
+      "$description": "Responsive layout spacing between blocks and sections; shrinks on smaller breakpoints. Desktop 40px · tablet 32px · mobile 24px. Don't use inside components — use spacing-*."
     },
     "layout-md": {
       "$type": "dimension",
@@ -156,7 +167,8 @@
             "WEB": "var(--layout-md)"
           }
         }
-      }
+      },
+      "$description": "Responsive layout spacing between blocks and sections; shrinks on smaller breakpoints. Desktop 48px · tablet 40px · mobile 32px. Don't use inside components — use spacing-*."
     },
     "layout-lg": {
       "$type": "dimension",
@@ -169,7 +181,8 @@
             "WEB": "var(--layout-lg)"
           }
         }
-      }
+      },
+      "$description": "Responsive layout spacing between blocks and sections; shrinks on smaller breakpoints. Desktop 56px · tablet 48px · mobile 32px. Don't use inside components — use spacing-*."
     },
     "layout-xl": {
       "$type": "dimension",
@@ -182,7 +195,8 @@
             "WEB": "var(--layout-xl)"
           }
         }
-      }
+      },
+      "$description": "Responsive layout spacing between blocks and sections; shrinks on smaller breakpoints. Desktop 64px · tablet 48px · mobile 40px. Don't use inside components — use spacing-*."
     },
     "layout-2xl": {
       "$type": "dimension",
@@ -195,7 +209,8 @@
             "WEB": "var(--layout-2xl)"
           }
         }
-      }
+      },
+      "$description": "Responsive layout spacing between blocks and sections; shrinks on smaller breakpoints. Desktop 72px · tablet 56px · mobile 40px. Don't use inside components — use spacing-*."
     },
     "layout-3xl": {
       "$type": "dimension",
@@ -208,7 +223,8 @@
             "WEB": "var(--layout-3xl)"
           }
         }
-      }
+      },
+      "$description": "Responsive layout spacing between blocks and sections; shrinks on smaller breakpoints. Desktop 80px · tablet 64px · mobile 40px. Don't use inside components — use spacing-*."
     },
     "layout-4xl": {
       "$type": "dimension",
@@ -221,7 +237,8 @@
             "WEB": "var(--layout-4xl)"
           }
         }
-      }
+      },
+      "$description": "Responsive layout spacing between blocks and sections; shrinks on smaller breakpoints. Desktop 96px · tablet 72px · mobile 56px. Don't use inside components — use spacing-*."
     },
     "layout-5xl": {
       "$type": "dimension",
@@ -234,7 +251,8 @@
             "WEB": "var(--layout-5xl)"
           }
         }
-      }
+      },
+      "$description": "Responsive layout spacing between blocks and sections; shrinks on smaller breakpoints. Desktop 120px · tablet 80px · mobile 56px. Don't use inside components — use spacing-*."
     },
     "layout-6xl": {
       "$type": "dimension",
@@ -247,7 +265,8 @@
             "WEB": "var(--layout-6xl)"
           }
         }
-      }
+      },
+      "$description": "Responsive layout spacing between blocks and sections; shrinks on smaller breakpoints. Desktop 160px · tablet 120px · mobile 80px. Don't use inside components — use spacing-*."
     },
     "layout-7xl": {
       "$type": "dimension",
@@ -260,7 +279,8 @@
             "WEB": "var(--layout-7xl)"
           }
         }
-      }
+      },
+      "$description": "Responsive layout spacing between blocks and sections; shrinks on smaller breakpoints. Desktop 200px · tablet 160px · mobile 80px. Don't use inside components — use spacing-*."
     },
     "layout-8xl": {
       "$type": "dimension",
@@ -273,7 +293,8 @@
             "WEB": "var(--layout-8xl)"
           }
         }
-      }
+      },
+      "$description": "Responsive layout spacing between blocks and sections; shrinks on smaller breakpoints. Desktop 240px · tablet 160px · mobile 80px. Don't use inside components — use spacing-*."
     }
   },
   "icon": {
@@ -291,7 +312,8 @@
             "WEB": "var(--icon-xs)"
           }
         }
-      }
+      },
+      "$description": "Icon box size. 12px on all breakpoints. Match the icon size to the control size (sm controls → icon-sm)."
     },
     "icon-sm": {
       "$type": "dimension",
@@ -307,7 +329,8 @@
             "WEB": "var(--icon-sm)"
           }
         }
-      }
+      },
+      "$description": "Icon box size. 16px on all breakpoints. Match the icon size to the control size (sm controls → icon-sm)."
     },
     "icon-md": {
       "$type": "dimension",
@@ -323,7 +346,8 @@
             "WEB": "var(--icon-md)"
           }
         }
-      }
+      },
+      "$description": "Icon box size. 20px on all breakpoints. Match the icon size to the control size (sm controls → icon-sm)."
     },
     "icon-lg": {
       "$type": "dimension",
@@ -339,7 +363,8 @@
             "WEB": "var(--icon-lg)"
           }
         }
-      }
+      },
+      "$description": "Icon box size. 24px on all breakpoints. Match the icon size to the control size (sm controls → icon-sm)."
     },
     "icon-xl": {
       "$type": "dimension",
@@ -355,7 +380,8 @@
             "WEB": "var(--icon-xl)"
           }
         }
-      }
+      },
+      "$description": "Icon box size. 32px on all breakpoints. Match the icon size to the control size (sm controls → icon-sm)."
     }
   },
   "size": {
@@ -373,7 +399,8 @@
             "WEB": "var(--size-xs)"
           }
         }
-      }
+      },
+      "$description": "Component size: control height for buttons and inputs, avatars, featured icons. 24px on all breakpoints. Buttons and inputs of the same size share it."
     },
     "size-sm": {
       "$type": "dimension",
@@ -389,7 +416,8 @@
             "WEB": "var(--size-sm)"
           }
         }
-      }
+      },
+      "$description": "Component size: control height for buttons and inputs, avatars, featured icons. 32px on all breakpoints. Buttons and inputs of the same size share it."
     },
     "size-md": {
       "$type": "dimension",
@@ -405,7 +433,8 @@
             "WEB": "var(--size-md)"
           }
         }
-      }
+      },
+      "$description": "Component size: control height for buttons and inputs, avatars, featured icons. 40px on all breakpoints. Buttons and inputs of the same size share it."
     },
     "size-lg": {
       "$type": "dimension",
@@ -421,7 +450,8 @@
             "WEB": "var(--size-lg)"
           }
         }
-      }
+      },
+      "$description": "Component size: control height for buttons and inputs, avatars, featured icons. 48px on all breakpoints. Buttons and inputs of the same size share it."
     },
     "size-xl": {
       "$type": "dimension",
@@ -437,7 +467,8 @@
             "WEB": "var(--size-xl)"
           }
         }
-      }
+      },
+      "$description": "Component size: control height for buttons and inputs, avatars, featured icons. 56px on all breakpoints. Buttons and inputs of the same size share it."
     },
     "size-2xl": {
       "$type": "dimension",
@@ -453,7 +484,8 @@
             "WEB": "var(--size-2xl)"
           }
         }
-      }
+      },
+      "$description": "Component size: control height for buttons and inputs, avatars, featured icons. 64px on all breakpoints. Buttons and inputs of the same size share it."
     }
   },
   "container": {
@@ -471,7 +503,8 @@
             "WEB": "var(--container-padding)"
           }
         }
-      }
+      },
+      "$description": "Horizontal page padding of the content container. Desktop 80px · tablet 32px · mobile 16px."
     },
     "container-max-width": {
       "$type": "dimension",
@@ -487,7 +520,8 @@
             "WEB": "var(--container-max-width)"
           }
         }
-      }
+      },
+      "$description": "Max content width of the page container. Desktop 1280px · tablet 704px · mobile 343px."
     },
     "section-padding": {
       "$type": "dimension",
@@ -503,7 +537,8 @@
             "WEB": "var(--section-padding)"
           }
         }
-      }
+      },
+      "$description": "Vertical padding of website sections. Desktop 96px · tablet 72px · mobile 56px."
     }
   }
 }
