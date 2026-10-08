@@ -1,0 +1,13 @@
+/* Dashboard — metric grid and content columns. */
+.ab-metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--spacing-3xl); }
+.ab-columns { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: var(--spacing-3xl); align-items: start; }
+.ab-person { display: inline-flex; align-items: center; gap: var(--spacing-lg); }
+.ab-usage { display: flex; flex-direction: column; gap: var(--spacing-xl); }
+.ab-usage__row { display: flex; flex-direction: column; gap: var(--spacing-xs); color: var(--color-text-secondary); }
+@media (max-width: 1023px) {
+  .ab-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ab-columns { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 767px) {
+  .ab-metrics { grid-template-columns: minmax(0, 1fr); }
+}
