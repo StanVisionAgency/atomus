@@ -4,7 +4,7 @@
       "huge": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-title}",
+          "fontFamily": "{family.font-face-title}",
           "fontWeight": 600,
           "fontSize": "{headline.huge.font-size}",
           "lineHeight": "{headline.huge.line-height}",
@@ -12,12 +12,13 @@
             "value": -1.25,
             "unit": "px"
           }
-        }
+        },
+        "$description": "Headline text style Huge. Hero display headlines only. Use text-primary; one H1 per page, don't skip levels."
       },
       "h1": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-title}",
+          "fontFamily": "{family.font-face-title}",
           "fontWeight": 600,
           "fontSize": "{headline.h1.font-size}",
           "lineHeight": "{headline.h1.line-height}",
@@ -25,12 +26,13 @@
             "value": -1.25,
             "unit": "px"
           }
-        }
+        },
+        "$description": "Headline text style H1. Page title — one per page. Use text-primary; one H1 per page, don't skip levels."
       },
       "h2": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-title}",
+          "fontFamily": "{family.font-face-title}",
           "fontWeight": 500,
           "fontSize": "{headline.h2.font-size}",
           "lineHeight": "{headline.h2.line-height}",
@@ -38,12 +40,13 @@
             "value": -0.75,
             "unit": "px"
           }
-        }
+        },
+        "$description": "Headline text style H2. Section titles. Use text-primary; one H1 per page, don't skip levels."
       },
       "h3": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-title}",
+          "fontFamily": "{family.font-face-title}",
           "fontWeight": 500,
           "fontSize": "{headline.h3.font-size}",
           "lineHeight": "{headline.h3.line-height}",
@@ -51,12 +54,13 @@
             "value": -0.5,
             "unit": "px"
           }
-        }
+        },
+        "$description": "Headline text style H3. Sub-section titles. Use text-primary; one H1 per page, don't skip levels."
       },
       "h4": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-title}",
+          "fontFamily": "{family.font-face-title}",
           "fontWeight": 500,
           "fontSize": "{headline.h4.font-size}",
           "lineHeight": "{headline.h4.line-height}",
@@ -64,12 +68,13 @@
             "value": 0.0,
             "unit": "em"
           }
-        }
+        },
+        "$description": "Headline text style H4. Card and panel titles. Use text-primary; one H1 per page, don't skip levels."
       },
       "h5": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-title}",
+          "fontFamily": "{family.font-face-title}",
           "fontWeight": 500,
           "fontSize": "{headline.h5.font-size}",
           "lineHeight": "{headline.h5.line-height}",
@@ -77,12 +82,13 @@
             "value": 0.0,
             "unit": "em"
           }
-        }
+        },
+        "$description": "Headline text style H5. Small headings. Use text-primary; one H1 per page, don't skip levels."
       },
       "h6": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-title}",
+          "fontFamily": "{family.font-face-title}",
           "fontWeight": 500,
           "fontSize": "{headline.h6.font-size}",
           "lineHeight": "{headline.h6.line-height}",
@@ -90,12 +96,13 @@
             "value": 0.0,
             "unit": "em"
           }
-        }
+        },
+        "$description": "Headline text style H6. Smallest heading. Use text-primary; one H1 per page, don't skip levels."
       },
       "subtitle": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-title}",
+          "fontFamily": "{family.font-face-title}",
           "fontWeight": 500,
           "fontSize": "{headline.subtitle.font-size}",
           "lineHeight": "{headline.subtitle.line-height}",
@@ -103,12 +110,13 @@
             "value": 0.0,
             "unit": "em"
           }
-        }
+        },
+        "$description": "Headline text style Subtitle. Supporting line under a headline. Use text-primary; one H1 per page, don't skip levels."
       },
       "overline": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-title}",
+          "fontFamily": "{family.font-face-title}",
           "fontWeight": 700,
           "fontSize": "{headline.overline.font-size}",
           "lineHeight": "{headline.overline.line-height}",
@@ -116,14 +124,15 @@
             "value": 0.05,
             "unit": "em"
           }
-        }
+        },
+        "$description": "Headline text style Overline. Uppercase eyebrow above a headline. Use text-primary; one H1 per page, don't skip levels."
       }
     },
     "content": {
       "body-leading": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-body}",
+          "fontFamily": "{family.font-face-body}",
           "fontWeight": 500,
           "fontSize": "{content.body-leading.font-size}",
           "lineHeight": "{content.body-leading.line-height}",
@@ -131,12 +140,13 @@
             "value": 0.0,
             "unit": "em"
           }
-        }
+        },
+        "$description": "Content text style body-leading. Lead paragraphs, card titles."
       },
       "body-leading-bold": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-body}",
+          "fontFamily": "{family.font-face-body}",
           "fontWeight": 700,
           "fontSize": "{content.body-leading.font-size}",
           "lineHeight": "{content.body-leading.line-height}",
@@ -144,12 +154,13 @@
             "value": 0.0,
             "unit": "em"
           }
-        }
+        },
+        "$description": "Content text style body-leading-bold. Emphasis inside lead paragraphs."
       },
       "body": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-body}",
+          "fontFamily": "{family.font-face-body}",
           "fontWeight": 400,
           "fontSize": "{content.body.font-size}",
           "lineHeight": "{content.body.line-height}",
@@ -157,12 +168,13 @@
             "value": 0.0,
             "unit": "em"
           }
-        }
+        },
+        "$description": "Content text style body. Default body copy."
       },
       "body-bold": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-body}",
+          "fontFamily": "{family.font-face-body}",
           "fontWeight": 600,
           "fontSize": "{content.body.font-size}",
           "lineHeight": "{content.body.line-height}",
@@ -170,12 +182,13 @@
             "value": 0.0,
             "unit": "em"
           }
-        }
+        },
+        "$description": "Content text style body-bold. Emphasis inside body copy."
       },
       "small": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-body}",
+          "fontFamily": "{family.font-face-body}",
           "fontWeight": 400,
           "fontSize": "{content.small.font-size}",
           "lineHeight": "{content.small.line-height}",
@@ -183,12 +196,13 @@
             "value": 0.0,
             "unit": "em"
           }
-        }
+        },
+        "$description": "Content text style small. Dense UI: labels, inputs, table cells."
       },
       "small-bold": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-body}",
+          "fontFamily": "{family.font-face-body}",
           "fontWeight": 600,
           "fontSize": "{content.small.font-size}",
           "lineHeight": "{content.small.line-height}",
@@ -196,12 +210,13 @@
             "value": 0.0,
             "unit": "em"
           }
-        }
+        },
+        "$description": "Content text style small-bold. Labels and emphasis in dense UI."
       },
       "tiny": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-body}",
+          "fontFamily": "{family.font-face-body}",
           "fontWeight": 400,
           "fontSize": "{content.tiny.font-size}",
           "lineHeight": "{content.tiny.line-height}",
@@ -209,12 +224,13 @@
             "value": 0.0,
             "unit": "em"
           }
-        }
+        },
+        "$description": "Content text style tiny. Captions, metadata, small badges."
       },
       "tiny-bold": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-body}",
+          "fontFamily": "{family.font-face-body}",
           "fontWeight": 500,
           "fontSize": "{content.tiny.font-size}",
           "lineHeight": "{content.tiny.line-height}",
@@ -222,12 +238,13 @@
             "value": 0.0,
             "unit": "em"
           }
-        }
+        },
+        "$description": "Content text style tiny-bold. Emphasised captions."
       },
       "micro": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-body}",
+          "fontFamily": "{family.font-face-body}",
           "fontWeight": 400,
           "fontSize": "{content.micro.font-size}",
           "lineHeight": "{content.micro.line-height}",
@@ -235,12 +252,13 @@
             "value": 0.0,
             "unit": "em"
           }
-        }
+        },
+        "$description": "Content text style micro. Micro labels, xs avatars."
       },
       "micro-bold": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-body}",
+          "fontFamily": "{family.font-face-body}",
           "fontWeight": 600,
           "fontSize": "{content.micro.font-size}",
           "lineHeight": "{content.micro.line-height}",
@@ -248,14 +266,15 @@
             "value": 0.0,
             "unit": "em"
           }
-        }
+        },
+        "$description": "Content text style micro-bold. Emphasised micro labels."
       }
     },
     "components": {
       "button-xsmall": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-body}",
+          "fontFamily": "{family.font-face-body}",
           "fontWeight": 600,
           "fontSize": "{elements.button.xsmall.font-size}",
           "lineHeight": "{elements.button.xsmall.line-height}",
@@ -263,12 +282,13 @@
             "value": 0.0,
             "unit": "em"
           }
-        }
+        },
+        "$description": "Component text style: button xsmall. Use only inside the matching component size."
       },
       "button-small": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-body}",
+          "fontFamily": "{family.font-face-body}",
           "fontWeight": 600,
           "fontSize": "{elements.button.small.font-size}",
           "lineHeight": "{elements.button.small.line-height}",
@@ -276,12 +296,13 @@
             "value": 0.0,
             "unit": "em"
           }
-        }
+        },
+        "$description": "Component text style: button small. Use only inside the matching component size."
       },
       "button-medium": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-body}",
+          "fontFamily": "{family.font-face-body}",
           "fontWeight": 600,
           "fontSize": "{elements.button.medium.font-size}",
           "lineHeight": "{elements.button.medium.line-height}",
@@ -289,12 +310,13 @@
             "value": 0.0,
             "unit": "em"
           }
-        }
+        },
+        "$description": "Component text style: button medium. Use only inside the matching component size."
       },
       "button-large": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-body}",
+          "fontFamily": "{family.font-face-body}",
           "fontWeight": 600,
           "fontSize": "{elements.button.large.font-size}",
           "lineHeight": "{elements.button.large.line-height}",
@@ -302,12 +324,13 @@
             "value": 0.0,
             "unit": "em"
           }
-        }
+        },
+        "$description": "Component text style: button large. Use only inside the matching component size."
       },
       "button-xlarge": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-body}",
+          "fontFamily": "{family.font-face-body}",
           "fontWeight": 600,
           "fontSize": "{elements.button.xlarge.font-size}",
           "lineHeight": "{elements.button.xlarge.line-height}",
@@ -315,12 +338,13 @@
             "value": 0.0,
             "unit": "em"
           }
-        }
+        },
+        "$description": "Component text style: button xlarge. Use only inside the matching component size."
       },
       "input-xsmall": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-body}",
+          "fontFamily": "{family.font-face-body}",
           "fontWeight": 400,
           "fontSize": "{elements.input.xsmall.font-size}",
           "lineHeight": "{elements.input.xsmall.line-height}",
@@ -328,12 +352,13 @@
             "value": 0.0,
             "unit": "em"
           }
-        }
+        },
+        "$description": "Component text style: input xsmall. Use only inside the matching component size."
       },
       "input-small": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-body}",
+          "fontFamily": "{family.font-face-body}",
           "fontWeight": 400,
           "fontSize": "{elements.input.small.font-size}",
           "lineHeight": "{elements.input.small.line-height}",
@@ -341,12 +366,13 @@
             "value": 0.0,
             "unit": "em"
           }
-        }
+        },
+        "$description": "Component text style: input small. Use only inside the matching component size."
       },
       "input-medium": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-body}",
+          "fontFamily": "{family.font-face-body}",
           "fontWeight": 400,
           "fontSize": "{elements.input.medium.font-size}",
           "lineHeight": "{elements.input.medium.line-height}",
@@ -354,12 +380,13 @@
             "value": 0.0,
             "unit": "em"
           }
-        }
+        },
+        "$description": "Component text style: input medium. Use only inside the matching component size."
       },
       "input-large": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-body}",
+          "fontFamily": "{family.font-face-body}",
           "fontWeight": 400,
           "fontSize": "{elements.input.large.font-size}",
           "lineHeight": "{elements.input.large.line-height}",
@@ -367,12 +394,13 @@
             "value": 0.0,
             "unit": "em"
           }
-        }
+        },
+        "$description": "Component text style: input large. Use only inside the matching component size."
       },
       "caption-xsmall": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-body}",
+          "fontFamily": "{family.font-face-body}",
           "fontWeight": 600,
           "fontSize": "{elements.caption.xsmall.font-size}",
           "lineHeight": "{elements.caption.xsmall.line-height}",
@@ -380,12 +408,13 @@
             "value": 0.0,
             "unit": "em"
           }
-        }
+        },
+        "$description": "Component text style: caption xsmall. Use only inside the matching component size."
       },
       "caption-small": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-body}",
+          "fontFamily": "{family.font-face-body}",
           "fontWeight": 500,
           "fontSize": "{elements.caption.small.font-size}",
           "lineHeight": "{elements.caption.small.line-height}",
@@ -393,12 +422,13 @@
             "value": 0.0,
             "unit": "em"
           }
-        }
+        },
+        "$description": "Component text style: caption small. Use only inside the matching component size."
       },
       "caption-medium": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-body}",
+          "fontFamily": "{family.font-face-body}",
           "fontWeight": 600,
           "fontSize": "{elements.caption.medium.font-size}",
           "lineHeight": "{elements.caption.medium.line-height}",
@@ -406,12 +436,13 @@
             "value": 0.0,
             "unit": "em"
           }
-        }
+        },
+        "$description": "Component text style: caption medium. Use only inside the matching component size."
       },
       "caption-large": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-body}",
+          "fontFamily": "{family.font-face-body}",
           "fontWeight": 600,
           "fontSize": "{elements.caption.large.font-size}",
           "lineHeight": "{elements.caption.large.line-height}",
@@ -419,12 +450,13 @@
             "value": 0.0,
             "unit": "em"
           }
-        }
+        },
+        "$description": "Component text style: caption large. Use only inside the matching component size."
       },
       "metric-value": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-body}",
+          "fontFamily": "{family.font-face-body}",
           "fontWeight": 600,
           "fontSize": {
             "value": 36.0,
@@ -438,7 +470,8 @@
             "value": -0.72,
             "unit": "px"
           }
-        }
+        },
+        "$description": "Component text style: Large numbers in metric cards."
       },
       "code": {
         "$type": "typography",
@@ -457,14 +490,15 @@
             "value": 0.0,
             "unit": "em"
           }
-        }
+        },
+        "$description": "Component text style: Inline and block code (Roboto Mono)."
       }
     },
     "template": {
       "title": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-body}",
+          "fontFamily": "{family.font-face-body}",
           "fontWeight": 600,
           "fontSize": {
             "value": 48.0,
@@ -478,12 +512,13 @@
             "value": -0.96,
             "unit": "px"
           }
-        }
+        },
+        "$description": "Template text style title. Template (docs/cover) title."
       },
       "heading": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-body}",
+          "fontFamily": "{family.font-face-body}",
           "fontWeight": 600,
           "fontSize": {
             "value": 24.0,
@@ -497,12 +532,13 @@
             "value": -0.24,
             "unit": "px"
           }
-        }
+        },
+        "$description": "Template text style heading. Template (docs/cover) heading."
       },
       "eyebrow": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-body}",
+          "fontFamily": "{family.font-face-body}",
           "fontWeight": 600,
           "fontSize": {
             "value": 14.0,
@@ -516,14 +552,15 @@
             "value": 0.6,
             "unit": "px"
           }
-        }
+        },
+        "$description": "Template text style eyebrow. Eyebrow above a heading."
       }
     },
     "web": {
       "display": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-body}",
+          "fontFamily": "{family.font-face-body}",
           "fontWeight": 600,
           "fontSize": "{headline.h1.font-size}",
           "lineHeight": "{headline.h1.line-height}",
@@ -531,12 +568,13 @@
             "value": -0.02,
             "unit": "em"
           }
-        }
+        },
+        "$description": "Website text style display. Website hero headline."
       },
       "heading-xl": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-body}",
+          "fontFamily": "{family.font-face-body}",
           "fontWeight": 600,
           "fontSize": "{headline.h2.font-size}",
           "lineHeight": "{headline.h2.line-height}",
@@ -544,12 +582,13 @@
             "value": -0.02,
             "unit": "em"
           }
-        }
+        },
+        "$description": "Website text style heading-xl. Website sections only (marketing pages), not app UI."
       },
       "heading-lg": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-body}",
+          "fontFamily": "{family.font-face-body}",
           "fontWeight": 600,
           "fontSize": "{headline.h3.font-size}",
           "lineHeight": "{headline.h3.line-height}",
@@ -557,12 +596,13 @@
             "value": -0.01,
             "unit": "em"
           }
-        }
+        },
+        "$description": "Website text style heading-lg. Website sections only (marketing pages), not app UI."
       },
       "heading-md": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-body}",
+          "fontFamily": "{family.font-face-body}",
           "fontWeight": 600,
           "fontSize": "{headline.h4.font-size}",
           "lineHeight": "{headline.h4.line-height}",
@@ -570,12 +610,13 @@
             "value": -0.01,
             "unit": "em"
           }
-        }
+        },
+        "$description": "Website text style heading-md. Website sections only (marketing pages), not app UI."
       },
       "heading-sm": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-body}",
+          "fontFamily": "{family.font-face-body}",
           "fontWeight": 600,
           "fontSize": "{headline.h5.font-size}",
           "lineHeight": "{headline.h5.line-height}",
@@ -583,12 +624,13 @@
             "value": 0.0,
             "unit": "em"
           }
-        }
+        },
+        "$description": "Website text style heading-sm. Website sections only (marketing pages), not app UI."
       },
       "heading-xs": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-body}",
+          "fontFamily": "{family.font-face-body}",
           "fontWeight": 600,
           "fontSize": "{headline.h6.font-size}",
           "lineHeight": "{headline.h6.line-height}",
@@ -596,12 +638,13 @@
             "value": 0.0,
             "unit": "em"
           }
-        }
+        },
+        "$description": "Website text style heading-xs. Website sections only (marketing pages), not app UI."
       },
       "body-lg": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-body}",
+          "fontFamily": "{family.font-face-body}",
           "fontWeight": 400,
           "fontSize": "{content.body-leading.font-size}",
           "lineHeight": "{content.body-leading.line-height}",
@@ -609,12 +652,13 @@
             "value": 0.0,
             "unit": "em"
           }
-        }
+        },
+        "$description": "Website text style body-lg. Website sections only (marketing pages), not app UI."
       },
       "body": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-body}",
+          "fontFamily": "{family.font-face-body}",
           "fontWeight": 400,
           "fontSize": "{content.body.font-size}",
           "lineHeight": "{content.body.line-height}",
@@ -622,12 +666,13 @@
             "value": 0.0,
             "unit": "em"
           }
-        }
+        },
+        "$description": "Website text style body. Default body copy. Website sections only, not app UI."
       },
       "eyebrow": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-body}",
+          "fontFamily": "{family.font-face-body}",
           "fontWeight": 600,
           "fontSize": "{headline.overline.font-size}",
           "lineHeight": "{headline.overline.line-height}",
@@ -635,12 +680,13 @@
             "value": 0.04,
             "unit": "em"
           }
-        }
+        },
+        "$description": "Website text style eyebrow. Eyebrow above a heading. Website sections only, not app UI."
       },
       "quote": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{typography.family.font-face-body}",
+          "fontFamily": "{family.font-face-body}",
           "fontWeight": 400,
           "fontSize": "{headline.h6.font-size}",
           "lineHeight": "{headline.h6.line-height}",
@@ -648,7 +694,8 @@
             "value": 0.0,
             "unit": "em"
           }
-        }
+        },
+        "$description": "Website text style quote. Testimonial and pull quotes. Website sections only, not app UI."
       }
     }
   }

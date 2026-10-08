@@ -1,0 +1,10 @@
+{
+  "codeConnect": {
+    "include": ["src/components/*.figma.ts"],
+    "label": "React",
+    "language": "jsx",
+    "documentUrlSubstitutions": {
+      "/bC42e82J3PYg2LMkryodIA/": "/<CLIENT_FILE_KEY>/"
+    }
+  }
+}

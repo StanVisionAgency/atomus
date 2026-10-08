@@ -1,0 +1,47 @@
+# Publishes the Code Connect templates (react/src/components/*.figma.ts) to the Atomus Figma file,
+# so Dev Mode shows real @stanvision/atomus-react snippets.
+#
+# One-time setup by the repo owner: create a Figma personal access token with the "Code Connect: Write" and
+# "File content: Read" scopes (Figma > Settings > Security), from an account with a Dev or Full seat on an
+# Organization or Enterprise plan that can edit the Atomus file, and add it as the repository secret
+# FIGMA_ACCESS_TOKEN. Without the secret the job only parses the templates.
+name: Code Connect
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'react/src/**/*.figma.*'
+      - 'react/figma.config.json'
+      - '.github/workflows/code-connect.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: code-connect
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: react
+    env:
+      FIGMA_ACCESS_TOKEN: ${{ secrets.FIGMA_ACCESS_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - name: Check templates
+        run: npm run figma:check
+      - name: Publish to Figma
+        if: ${{ env.FIGMA_ACCESS_TOKEN != '' }}
+        run: npx figma connect publish --exit-on-unreadable-files --skip-update-check
+      - name: Skipped publish
+        if: ${{ env.FIGMA_ACCESS_TOKEN == '' }}
+        run: echo "::warning::FIGMA_ACCESS_TOKEN is not set, so Code Connect was parsed but not published."

@@ -1,36 +1,77 @@
 {
   "name": "@stanvision/atomus-react",
-  "version": "4.0.0",
-  "description": "Atomus 4.0 React components — props mirror the Figma component properties.",
-  "license": "UNLICENSED",
-  "private": true,
+  "version": "4.1.0",
+  "description": "Atomus React components — props mirror the Figma component properties, with Code Connect templates for Figma Dev Mode.",
+  "license": "MIT",
+  "author": "StanVision (https://stan.vision)",
+  "homepage": "https://docs.atomus.io",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StanVisionAgency/atomus.git",
+    "directory": "react"
+  },
+  "bugs": {
+    "url": "https://github.com/StanVisionAgency/atomus/issues"
+  },
+  "keywords": [
+    "design-system",
+    "react",
+    "figma",
+    "ai-agents",
+    "tokens",
+    "components",
+    "code-connect",
+    "atomus"
+  ],
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
     },
     "./styles.css": "./dist/styles.css",
-    "./atomus.css": "./dist/atomus.css"
+    "./atomus.css": "./dist/atomus.css",
+    "./package.json": "./package.json"
   },
-  "files": ["dist"],
-  "sideEffects": ["*.css"],
+  "files": [
+    "dist",
+    "LICENSE",
+    "NOTICE"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "build": "tsup && node scripts/copy-css.mjs",
     "build:docs": "node scripts/build-docs.mjs",
-    "typecheck": "tsc --noEmit",
-    "figma:publish": "figma connect publish"
+    "typecheck": "tsc --noEmit && tsc -p tsconfig.figma.json",
+    "prepack": "node -e \"for (const f of ['LICENSE', 'NOTICE']) require('fs').copyFileSync('../' + f, f)\"",
+    "figma:check": "node scripts/code-connect-smoke.cjs",
+    "figma:publish": "figma connect publish --exit-on-unreadable-files",
+    "figma:connect-client": "node scripts/figma-connect-client.mjs",
+    "figma:publish:client": "figma connect publish --config figma.client.config.json --exit-on-unreadable-files"
   },
   "peerDependencies": {
     "react": ">=18",
     "react-dom": ">=18"
   },
   "devDependencies": {
-    "@figma/code-connect": "^1.3.0",
+    "@figma/code-connect": "^2.0.1",
     "@types/react": "^18.3.3",
     "esbuild": "^0.23.0",
     "react": "^18.3.1",
