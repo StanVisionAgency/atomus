@@ -104,7 +104,12 @@
         "mappings": [
           {"figma":"Description","prop":"children","kind":"text","visibleWhen":"Show description"},
           {"figma":"Title","prop":"title","kind":"text"},
-          {"figma":"Style","prop":"variant","kind":"enum","values":{"Subtle":"subtle","Outline":"outline"}},
+          {
+            "figma": "Style",
+            "prop": "variant",
+            "kind": "enum",
+            "values": {"Subtle":"subtle","Outline":"outline","Solid":"solid"}
+          },
           {
             "figma": "Color",
             "prop": "color",
@@ -123,7 +128,7 @@
       {"componentSet":"Alert","name":"Show description","type":"boolean (on)"},
       {"componentSet":"Alert","name":"Actions","type":"boolean (on)"},
       {"componentSet":"Alert","name":"Close","type":"boolean (on)"},
-      {"componentSet":"Alert","name":"Style","type":"variant","options":["Subtle","Outline"]},
+      {"componentSet":"Alert","name":"Style","type":"variant","options":["Subtle","Outline","Solid"]},
       {
         "componentSet": "Alert",
         "name": "Color",

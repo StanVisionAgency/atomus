@@ -1,0 +1,161 @@
+{
+  "name": "Approval",
+  "kind": "component",
+  "status": "stable",
+  "since": "4.0.0",
+  "category": "AI (Agent kit)",
+  "import": "import { Approval } from '@stanvision/atomus-react';",
+  "source": "react/src/components/ai/Approval.tsx",
+  "purpose": "Human-in-the-loop confirmation before an agent acts; risk level, edit then approve, always allow.",
+  "description": "Human-in-the-loop confirmation before an agent acts: the action as a question, a short summary, the risk level, a preview of what will be sent or changed, and Approve / Deny. People can edit the content before approving and can allow the action for the rest of the chat. After they decide, the card stays in the thread with the outcome. Part of the Agent kit.",
+  "aliases": ["confirmation (agent)","human-in-the-loop","permission prompt"],
+  "alternative": null,
+  "native": {"elements":[],"omit":[],"ref":false},
+  "props": {
+    "title": {
+      "type": "ReactNode",
+      "default": null,
+      "required": true,
+      "figma": "Title",
+      "notes": "Figma: Title — the action as a question: \"Send this email to 12 people?\""
+    },
+    "children": {
+      "type": "ReactNode",
+      "default": null,
+      "required": false,
+      "figma": "Summary",
+      "notes": "Figma: Summary — what will happen and what it affects, in one or two sentences."
+    },
+    "risk": {
+      "type": "'low' | 'medium' | 'high'",
+      "values": ["low","medium","high"],
+      "default": "medium",
+      "required": false,
+      "figma": "Risk",
+      "notes": "Figma: Risk — low · medium · high; shown with an icon and a word, never colour alone."
+    },
+    "toolName": {
+      "type": "string",
+      "default": null,
+      "required": false,
+      "figma": "Tool name",
+      "notes": "Figma: Tool name — the function that will run (`send_email`)."
+    },
+    "details": {
+      "type": "ReactNode",
+      "default": null,
+      "required": false,
+      "figma": "Details",
+      "notes": "Figma: Details — a preview of what will be sent or changed (read-only)."
+    },
+    "editableText": {
+      "type": "string",
+      "default": null,
+      "required": false,
+      "figma": "Editable",
+      "notes": "Figma: Editable — plain text the person may edit before approving (\"edit then approve\")."
+    },
+    "editLabel": {
+      "type": "string",
+      "default": "Edit before approving",
+      "required": false,
+      "figma": null,
+      "notes": "Label of the editable field"
+    },
+    "alwaysAllowLabel": {
+      "type": "string",
+      "default": null,
+      "required": false,
+      "figma": "Always allow",
+      "notes": "Figma: Always allow — shows the checkbox with this label (\"Always allow send_email in this chat\")."
+    },
+    "status": {
+      "type": "'pending' | 'approved' | 'denied'",
+      "values": ["pending","approved","denied"],
+      "default": "pending",
+      "required": false,
+      "figma": "State",
+      "notes": "Figma: State — `pending` asks; `approved` and `denied` show the outcome in place of the buttons."
+    },
+    "approveLabel": {
+      "type": "string",
+      "default": "Approve",
+      "required": false,
+      "figma": "Approve label",
+      "notes": "Figma: Approve label — name the action for high risk (\"Delete variables\")"
+    },
+    "denyLabel": {"type":"string","default":"Deny","required":false,"figma":"Deny label","notes":"Figma: Deny label"},
+    "onApprove": {
+      "type": "(decision: ApprovalDecision) => void",
+      "default": null,
+      "required": false,
+      "figma": null,
+      "notes": "Called with the decision when the person approves (after any edits)"
+    },
+    "onDeny": {
+      "type": "() => void",
+      "default": null,
+      "required": false,
+      "figma": null,
+      "notes": "Called when the person denies; keep the card and set `status=\"denied\"`"
+    },
+    "className": {"type":"string","default":null,"required":false,"figma":null,"notes":null}
+  },
+  "rules": {
+    "do": [
+      "Phrase the title as a yes/no question with the scope: \"File 3 issues in Linear?\".",
+      "Show exactly what will be sent or changed, and let people edit it when it is text.",
+      "Keep the card in the thread after the decision so the record stays visible.",
+      "Offer \"Always allow\" only for low- and medium-risk actions, scoped to this chat."
+    ],
+    "dont": [],
+    "forbidden": [
+      "Never run the action before the person approves.",
+      "Never pre-tick \"Always allow\".",
+      "Never offer \"Always allow\" for high-risk actions.",
+      "Never use a vague label such as \"OK\" or \"Continue\" — say what Approve does."
+    ]
+  },
+  "examples": [
+    {
+      "title": "Usage",
+      "code": "import { Approval } from '@stanvision/atomus-react';\n\n<Approval\n  title=\"Send this summary to #design-system?\"\n  risk=\"medium\"\n  toolName=\"slack.post_message\"\n  editableText={draft}\n  alwaysAllowLabel=\"Always allow posting to #design-system\"\n  status={decision}                               // 'pending' | 'approved' | 'denied'\n  onApprove={({ alwaysAllow, editedText }) => run(editedText ?? draft, alwaysAllow)}\n  onDeny={cancel}\n>\n  The assistant will post one message as you.\n</Approval>",
+      "language": "tsx",
+      "source": "sites/docs/src/component-pages/ai-approval.mdx"
+    }
+  ],
+  "figma": {
+    "componentSet": ["Approval"],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": null,
+    "properties": [
+      {"componentSet":"Approval","name":"Title","type":"text"},
+      {"componentSet":"Approval","name":"Summary","type":"text"},
+      {"componentSet":"Approval","name":"Risk","type":"variant","options":["Low","Medium","High"]},
+      {"componentSet":"Approval","name":"Tool name","type":"text"},
+      {"componentSet":"Approval","name":"Details","type":"slot (preview)"},
+      {"componentSet":"Approval","name":"Editable","type":"boolean (off)"},
+      {"componentSet":"Approval","name":"Always allow","type":"boolean (off) + label"},
+      {"componentSet":"Approval","name":"State","type":"variant","options":["Pending","Approved","Denied"]},
+      {"componentSet":"Approval","name":"Approve label · Deny label","type":"text"}
+    ],
+    "docs": "https://docs.atomus.io/components/ai-approval/"
+  },
+  "docs": "https://docs.atomus.io/components/ai-approval/",
+  "related": [],
+  "a11y": {
+    "element": null,
+    "requiresLabel": false,
+    "notes": [
+      "`risk`: Figma: Risk — low · medium · high; shown with an icon and a word, never colour alone.",
+      "`editLabel`: Label of the editable field",
+      "`alwaysAllowLabel`: Figma: Always allow — shows the checkbox with this label (\"Always allow send_email in this chat\").",
+      "`approveLabel`: Figma: Approve label — name the action for high risk (\"Delete variables\")",
+      "`denyLabel`: Figma: Deny label",
+      "Never use a vague label such as \"OK\" or \"Continue\" — say what Approve does."
+    ]
+  }
+}
