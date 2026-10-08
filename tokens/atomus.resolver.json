@@ -1,0 +1,60 @@
+{
+  "$schema": "https://www.designtokens.org/schemas/2025.10/resolver.json",
+  "version": "2025.10",
+  "name": "Atomus",
+  "description": "DTCG 2025.10 resolver for the Atomus design tokens. Pick one context per modifier (e.g. { \"theme\": \"dark\", \"brand\": \"violet\", \"radius\": \"round\", \"breakpoint\": \"mobile\" }); defaults reproduce css/atomus.css :root. Later entries in resolutionOrder win.",
+  "sets": {
+    "primitives": {
+      "description": "Raw colour ramps, alpha steps and the size scale. Alias these from semantic tokens; never use them directly in components.",
+      "sources": [{ "$ref": "primitives.tokens.json" }]
+    },
+    "text-styles": {
+      "description": "Composite typography tokens (Figma text styles). They alias the Typography family tokens, so they resolve after the breakpoint modifier.",
+      "sources": [{ "$ref": "text-styles.tokens.json" }]
+    }
+  },
+  "modifiers": {
+    "brand": {
+      "description": "Brand ramp (brand-25 … brand-950). Every brand-coloured semantic token follows it. Mirrors the Figma Brand collection and [data-brand] in CSS.",
+      "contexts": {
+        "atomus": [{ "$ref": "brand.atomus.tokens.json" }],
+        "violet": [{ "$ref": "brand.violet.tokens.json" }]
+      },
+      "default": "atomus"
+    },
+    "theme": {
+      "description": "Light or dark semantic colours and elevation shadows. Mirrors the Figma Color + Effects collections and [data-theme] / .dark in CSS.",
+      "contexts": {
+        "light": [{ "$ref": "color.light.tokens.json" }, { "$ref": "effects.light.tokens.json" }],
+        "dark": [{ "$ref": "color.dark.tokens.json" }, { "$ref": "effects.dark.tokens.json" }]
+      },
+      "default": "light"
+    },
+    "radius": {
+      "description": "Corner-radius personality. Mirrors the Figma Radius collection and [data-radius] in CSS.",
+      "contexts": {
+        "default": [{ "$ref": "radius.default.tokens.json" }],
+        "round": [{ "$ref": "radius.round.tokens.json" }],
+        "sharp": [{ "$ref": "radius.sharp.tokens.json" }]
+      },
+      "default": "default"
+    },
+    "breakpoint": {
+      "description": "Responsive spacing, layout and typography values. Mirrors the Figma Spacing & Layout + Typography collections (Desktop / Tablet / Mobile modes) and the media queries in css/atomus.css.",
+      "contexts": {
+        "desktop": [{ "$ref": "spacing-layout.desktop.tokens.json" }, { "$ref": "typography.desktop.tokens.json" }],
+        "tablet": [{ "$ref": "spacing-layout.tablet.tokens.json" }, { "$ref": "typography.tablet.tokens.json" }],
+        "mobile": [{ "$ref": "spacing-layout.mobile.tokens.json" }, { "$ref": "typography.mobile.tokens.json" }]
+      },
+      "default": "desktop"
+    }
+  },
+  "resolutionOrder": [
+    { "$ref": "#/sets/primitives" },
+    { "$ref": "#/modifiers/brand" },
+    { "$ref": "#/modifiers/theme" },
+    { "$ref": "#/modifiers/radius" },
+    { "$ref": "#/modifiers/breakpoint" },
+    { "$ref": "#/sets/text-styles" }
+  ]
+}

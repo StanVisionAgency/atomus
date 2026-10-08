@@ -10,7 +10,8 @@
           "WEB": "var(--radius-none)"
         }
       }
-    }
+    },
+    "$description": "Square corners: tables, full-bleed media. Switch the Radius mode (default / sharp / round) to reshape every component; don't hard-code px radii."
   },
   "radius-xxs": {
     "$type": "dimension",
@@ -23,7 +24,8 @@
           "WEB": "var(--radius-xxs)"
         }
       }
-    }
+    },
+    "$description": "Checkbox ticks, tiny chips. Switch the Radius mode (default / sharp / round) to reshape every component; don't hard-code px radii."
   },
   "radius-xs": {
     "$type": "dimension",
@@ -36,7 +38,8 @@
           "WEB": "var(--radius-xs)"
         }
       }
-    }
+    },
+    "$description": "Checkboxes, small tags. Switch the Radius mode (default / sharp / round) to reshape every component; don't hard-code px radii."
   },
   "radius-sm": {
     "$type": "dimension",
@@ -49,7 +52,8 @@
           "WEB": "var(--radius-sm)"
         }
       }
-    }
+    },
+    "$description": "Small buttons and badges. Switch the Radius mode (default / sharp / round) to reshape every component; don't hard-code px radii."
   },
   "radius-md": {
     "$type": "dimension",
@@ -62,7 +66,8 @@
           "WEB": "var(--radius-md)"
         }
       }
-    }
+    },
+    "$description": "Buttons and inputs. Switch the Radius mode (default / sharp / round) to reshape every component; don't hard-code px radii."
   },
   "radius-lg": {
     "$type": "dimension",
@@ -75,7 +80,8 @@
           "WEB": "var(--radius-lg)"
         }
       }
-    }
+    },
+    "$description": "Cards, menus, popovers. Switch the Radius mode (default / sharp / round) to reshape every component; don't hard-code px radii."
   },
   "radius-xl": {
     "$type": "dimension",
@@ -88,7 +94,8 @@
           "WEB": "var(--radius-xl)"
         }
       }
-    }
+    },
+    "$description": "Large cards and modals. Switch the Radius mode (default / sharp / round) to reshape every component; don't hard-code px radii."
   },
   "radius-2xl": {
     "$type": "dimension",
@@ -101,7 +108,8 @@
           "WEB": "var(--radius-2xl)"
         }
       }
-    }
+    },
+    "$description": "Feature cards. Switch the Radius mode (default / sharp / round) to reshape every component; don't hard-code px radii."
   },
   "radius-3xl": {
     "$type": "dimension",
@@ -114,7 +122,8 @@
           "WEB": "var(--radius-3xl)"
         }
       }
-    }
+    },
+    "$description": "Hero media. Switch the Radius mode (default / sharp / round) to reshape every component; don't hard-code px radii."
   },
   "radius-4xl": {
     "$type": "dimension",
@@ -127,7 +136,8 @@
           "WEB": "var(--radius-4xl)"
         }
       }
-    }
+    },
+    "$description": "Large decorative surfaces. Switch the Radius mode (default / sharp / round) to reshape every component; don't hard-code px radii."
   },
   "radius-full": {
     "$type": "dimension",
@@ -140,7 +150,8 @@
           "WEB": "var(--radius-full)"
         }
       }
-    }
+    },
+    "$description": "Pills, avatars, toggles. Switch the Radius mode (default / sharp / round) to reshape every component; don't hard-code px radii."
   },
   "radius-5xl": {
     "$type": "dimension",
@@ -153,7 +164,8 @@
           "WEB": "var(--radius-5xl)"
         }
       }
-    }
+    },
+    "$description": "Large decorative surfaces. Switch the Radius mode (default / sharp / round) to reshape every component; don't hard-code px radii."
   },
   "radius-6xl": {
     "$type": "dimension",
@@ -166,6 +178,7 @@
           "WEB": "var(--radius-6xl)"
         }
       }
-    }
+    },
+    "$description": "Large decorative surfaces. Switch the Radius mode (default / sharp / round) to reshape every component; don't hard-code px radii."
   }
 }

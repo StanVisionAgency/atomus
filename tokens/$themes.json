@@ -1,5 +1,5 @@
 {
-  "$schema": "https://www.designtokens.org/tr/2025.10/format/",
+  "$description": "Tokens Studio-style theme map (sets + themes) kept for Tokens Studio users. This is NOT a DTCG file — the DTCG 2025.10 resolver is atomus.resolver.json.",
   "primitives": "primitives.tokens.json",
   "sets": {
     "_Primitives": [
