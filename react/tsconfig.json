@@ -11,5 +11,5 @@
     "lib": ["ES2020", "DOM"]
   },
   "include": ["src"],
-  "exclude": ["src/**/*.figma.ts"]
+  "exclude": ["src/**/*.figma.ts", "src/**/*.stories.tsx"]
 }

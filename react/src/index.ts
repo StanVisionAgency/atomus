@@ -18,3 +18,16 @@ export { Toast, ToastProvider, useToast, type ToastProps, type ToastOptions, typ
 export { Table, type TableProps, type TableColumn } from './components/Table';
 export { Calendar, DatePicker, type CalendarProps, type DatePickerProps, type DateRange, type ISODate } from './components/DatePicker';
 export { NavItem, SidebarNavigation, AppHeader, type NavItemProps, type SidebarNavigationProps, type AppHeaderProps } from './components/Navigation';
+// Agent kit — components for AI products
+export { PromptInput, type PromptInputProps, type PromptAttachment, type PromptCommand, type PromptTrigger } from './components/ai/PromptInput';
+export { Message, type MessageProps, type MessageRole, type MessageStatus, type MessageBranch } from './components/ai/Message';
+export { StreamingText, Shimmer, type StreamingTextProps, type ShimmerProps } from './components/ai/StreamingText';
+export { Reasoning, type ReasoningProps, type ReasoningStep } from './components/ai/Reasoning';
+export { ToolCall, type ToolCallProps, type ToolCallStatus } from './components/ai/ToolCall';
+export { Approval, type ApprovalProps, type ApprovalRisk, type ApprovalDecision } from './components/ai/Approval';
+export { Sources, InlineCitation, type SourcesProps, type InlineCitationProps, type SourceItem } from './components/ai/Sources';
+export { Suggestions, type SuggestionsProps, type SuggestionItem } from './components/ai/Suggestions';
+export { ModelSelector, type ModelSelectorProps, type ModelOption } from './components/ai/ModelSelector';
+export { Feedback, type FeedbackProps, type FeedbackRating, type FeedbackSubmission } from './components/ai/Feedback';
+export { AILabel, type AILabelProps } from './components/ai/AILabel';
+export { ContextMeter, type ContextMeterProps, type ContextUsagePart } from './components/ai/ContextMeter';

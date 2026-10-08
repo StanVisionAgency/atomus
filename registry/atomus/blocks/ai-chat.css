@@ -1,0 +1,23 @@
+/* AI chat — the Conversation pattern: header, scrolling thread, docked composer. */
+.ab-ai-chat { display: flex; flex-direction: column; height: 100vh; min-height: 480px; background: var(--color-bg-primary); font-family: var(--font-family-body); box-sizing: border-box; }
+.ab-ai-chat__header { display: flex; align-items: center; justify-content: space-between; gap: var(--spacing-lg); padding: var(--spacing-md) var(--spacing-xl); border-bottom: 1px solid var(--color-border-secondary); }
+.ab-ai-chat__title { display: flex; align-items: center; gap: var(--spacing-md); min-width: 0; }
+.ab-ai-chat__name { margin: 0; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--color-text-primary); font-size: var(--font-size-small); line-height: var(--line-height-small); font-weight: var(--font-weight-semi-bold); }
+.ab-ai-chat__logo { flex: none; display: inline-flex; align-items: center; justify-content: center; width: var(--size-xs); height: var(--size-xs); border-radius: var(--radius-md); background: var(--gradient-ai); color: var(--color-fg-on-brand); }
+.ab-ai-chat__header-actions { display: flex; align-items: center; gap: var(--spacing-xs); }
+.ab-ai-chat__thread { flex: 1; overflow-y: auto; padding: var(--spacing-3xl) var(--spacing-3xl) var(--spacing-xl); outline: none; }
+.ab-ai-chat__thread:focus-visible { box-shadow: inset 0 0 0 2px var(--color-border-focus); }
+.ab-ai-chat__messages { display: flex; flex-direction: column; gap: var(--spacing-3xl); max-width: 720px; margin: 0 auto; }
+.ab-ai-chat__messages p { margin: 0; }
+.ab-ai-chat__composer { width: 100%; max-width: 768px; margin: 0 auto; padding: var(--spacing-md) var(--spacing-3xl) var(--spacing-xl); box-sizing: border-box; }
+.ab-ai-chat__welcome { display: flex; flex-direction: column; align-items: center; gap: var(--spacing-lg); max-width: 640px; margin: var(--layout-xs) auto 0; text-align: center; }
+.ab-ai-chat__mark { display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; border: 1px solid var(--color-border-ai); border-radius: var(--radius-xl); background: var(--color-bg-ai-subtle); }
+.ab-ai-chat__mark-icon { width: 28px; height: 28px; }
+.ab-ai-chat__welcome-title { margin: var(--spacing-md) 0 0; color: var(--color-text-primary); }
+.ab-ai-chat__welcome-text { margin: 0 0 var(--spacing-xl); max-width: 460px; color: var(--color-text-tertiary); font-size: var(--font-size-small); line-height: var(--line-height-small); }
+.ab-ai-chat__welcome .at-suggestions { width: 100%; text-align: left; }
+@media (max-width: 767px) {
+  .ab-ai-chat__header { padding: var(--spacing-md) var(--spacing-lg); }
+  .ab-ai-chat__thread { padding: var(--spacing-xl) var(--spacing-lg); }
+  .ab-ai-chat__composer { padding: var(--spacing-sm) var(--spacing-lg) var(--spacing-lg); }
+}
