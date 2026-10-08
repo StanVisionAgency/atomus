@@ -46,7 +46,7 @@
 .at-badge--solid-gray { background: var(--color-bg-inverse); color: var(--color-text-inverse); }
 .at-badge--solid-brand { background: var(--color-bg-brand-solid); color: var(--color-text-on-brand); }
 .at-badge--solid-error { background: var(--color-bg-error-solid); color: var(--color-text-on-brand); }
-.at-badge--solid-warning { background: var(--color-bg-warning-solid); color: var(--color-text-on-brand); }
+.at-badge--solid-warning { background: var(--color-bg-warning-solid); color: var(--color-text-on-warning); }
 .at-badge--solid-success { background: var(--color-bg-success-solid); color: var(--color-text-on-brand); }
 
 /* Tag — Figma: Tag (Size) */
@@ -196,7 +196,9 @@
 .at-tabs--pill .at-tab { padding: 0 var(--spacing-lg); border-radius: var(--radius-sm); }
 .at-tabs--pill .at-tab.is-active { background: var(--color-bg-brand-subtle); color: var(--color-text-brand); }
 .at-tabs--segmented { display: inline-flex; align-self: flex-start; gap: var(--spacing-xxs); padding: var(--spacing-xs); border-radius: var(--radius-md); background: var(--color-bg-tertiary); }
-.at-tabs--segmented .at-tab { height: var(--size-sm); padding: 0 var(--spacing-lg); border-radius: var(--radius-sm); }
+.at-tabs--segmented .at-tab { height: var(--size-sm); padding: 0 var(--spacing-lg); border-radius: var(--radius-sm); color: var(--color-text-secondary); }
+.at-tabs--segmented .at-tab:hover { color: var(--color-text-primary); }
+.at-tabs--segmented .at-tab:disabled { color: var(--color-text-disabled); }
 .at-tabs--segmented .at-tab.is-active { background: var(--color-bg-primary); color: var(--color-text-primary); box-shadow: var(--shadow-elevation-1); }
 .at-tabs--segmented .at-tab.is-active .at-tab__count { background: var(--color-bg-tertiary); color: var(--color-text-secondary); }
 
