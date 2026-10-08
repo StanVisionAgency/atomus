@@ -61,6 +61,18 @@ Theme with attributes on any element: `data-theme="dark"`, `data-brand="violet"`
 | `npm run figma:publish` | Publishes Code Connect to the Atomus Figma file |
 | `npm run figma:connect-client -- <url>` | Writes `figma.client.config.json` for a client's copy of the Figma file (see below) |
 | `npm run figma:publish:client` | Publishes Code Connect to that client file |
+| `npm run storybook` | Storybook dev server on http://localhost:6006 (MCP server for agents at `/mcp`) |
+| `npm run build-storybook` | Static Storybook in `storybook-static/` (`build-storybook:docs` writes it to the docs site's `/storybook/`) |
+| `npm run test-storybook` | Runs every story, its play function and the axe accessibility checks against the static build; any violation fails |
+| `npm run test:visual` | Screenshots every story in light/dark × atomus/violet and compares them with `tests/__screenshots__/` (`test:visual:update` rewrites them) |
+
+## Storybook
+
+Every component has a story file next to it (`src/components/*.stories.tsx`) that covers its variants and states. The toolbar switches the three Atomus modes, which set the same attributes products use: **Theme** (`data-theme` light · dark), **Brand** (`data-brand` atomus · violet) and **Radius** (`data-radius` default · round · sharp). The published build is at https://docs.atomus.io/storybook/.
+
+- **Accessibility**: `@storybook/addon-a11y` runs axe on every story (`parameters.a11y.test = 'error'`), and `npm run test-storybook` fails on any violation.
+- **Visual regression**: `npm run test:visual` (Playwright) takes one screenshot per story × theme × brand, clipped to the story at 1× DPR. A missing baseline is recorded and the test passes, so the first run (or a new story) creates it; CI uploads the screenshots as the `storybook-screenshots` artifact, to commit into `tests/__screenshots__/`. Set `CHROMIUM_PATH` to use a Chromium you already have.
+- **For agents**: the build includes the component manifest (`/manifests/components.json`, every component's props) and `@storybook/addon-mcp` serves Storybook's MCP tools at http://localhost:6006/mcp while `npm run storybook` runs: `npx mcp-add --type http --url "http://localhost:6006/mcp" --scope project`.
 
 ## Code Connect
 
