@@ -1,0 +1,39 @@
+{
+  "name": "Section header",
+  "kind": "component",
+  "status": "figma-only",
+  "since": "4.0.0",
+  "category": "Layout and content",
+  "import": null,
+  "source": "guidelines/components/headers-dividers.md",
+  "purpose": "A heading for a section inside a page.",
+  "description": "Heading for a section inside a page.",
+  "aliases": [],
+  "alternative": "Compose Page header and Section header from text styles (`.text-headline-h4`, `.text-content-body`) plus `Button`s and `Tabs`; use `<hr>` with `--color-border-secondary` for Divider.",
+  "props": {
+    "Title": {"type":"text","default":null,"required":false,"figma":"Title","notes":null},
+    "Supporting text": {"type":"text","default":null,"required":false,"figma":"Supporting text","notes":null},
+    "Type": {
+      "type": "variant",
+      "values": ["Default","Actions"],
+      "default": null,
+      "required": false,
+      "figma": "Type",
+      "notes": null
+    }
+  },
+  "rules": {"do":[],"dont":[],"forbidden":[]},
+  "examples": [],
+  "figma": {
+    "componentSet": ["Section header"],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": 2,
+    "docs": "https://docs.atomus.io/components/headers-dividers/"
+  },
+  "docs": "https://docs.atomus.io/components/headers-dividers/",
+  "related": ["Page header","Divider"],
+  "a11y": {"element":null,"requiresLabel":false,"notes":[]}
+}

@@ -1,0 +1,53 @@
+{
+  "name": "Page header",
+  "kind": "component",
+  "status": "figma-only",
+  "since": "4.0.0",
+  "category": "Layout and content",
+  "import": null,
+  "source": "guidelines/components/headers-dividers.md",
+  "purpose": "Top of an app page: breadcrumb, title, description, actions, tabs.",
+  "description": "Top of an app page: breadcrumb, title, description, actions, divider or tabs.",
+  "aliases": ["page title","page heading"],
+  "alternative": "Compose Page header and Section header from text styles (`.text-headline-h4`, `.text-content-body`) plus `Button`s and `Tabs`; use `<hr>` with `--color-border-secondary` for Divider.",
+  "props": {
+    "Title": {"type":"text","default":null,"required":false,"figma":"Title","notes":null},
+    "Supporting text": {"type":"text","default":null,"required":false,"figma":"Supporting text","notes":null},
+    "Breadcrumb": {"type":"boolean (on)","default":true,"required":false,"figma":"Breadcrumb","notes":null},
+    "Show supporting": {"type":"boolean (on)","default":true,"required":false,"figma":"Show supporting","notes":null},
+    "Type": {
+      "type": "variant",
+      "values": ["Simple","Actions","Tabs"],
+      "default": null,
+      "required": false,
+      "figma": "Type",
+      "notes": null
+    }
+  },
+  "rules": {
+    "do": [
+      "Use one page header per screen.",
+      "Keep supporting text to one sentence.",
+      "Use the Tabs variant for sub-views."
+    ],
+    "dont": [],
+    "forbidden": [
+      "Never put more than two buttons in the actions.",
+      "Never repeat the sidebar label as the breadcrumb.",
+      "Never use a page header inside a card — use Card header."
+    ]
+  },
+  "examples": [],
+  "figma": {
+    "componentSet": ["Page header"],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": 3,
+    "docs": "https://docs.atomus.io/components/headers-dividers/"
+  },
+  "docs": "https://docs.atomus.io/components/headers-dividers/",
+  "related": ["Section header","Divider"],
+  "a11y": {"element":null,"requiresLabel":false,"notes":["Never repeat the sidebar label as the breadcrumb."]}
+}

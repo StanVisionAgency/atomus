@@ -1,0 +1,32 @@
+{
+  "name": "Line chart",
+  "kind": "component",
+  "status": "figma-only",
+  "since": "4.0.0",
+  "category": "Data display",
+  "import": null,
+  "source": "guidelines/components/charts.md",
+  "purpose": "Line chart (12 months, 2 series).",
+  "description": "Line chart (12 months, 2 series).",
+  "aliases": [],
+  "alternative": "Use a charting library (Recharts, Chart.js, ECharts) and colour the key series with `--color-fg-brand` and comparisons with `--color-fg-tertiary`; grid lines use `--color-border-secondary`. `MetricCard type=\"chart\"` covers sparklines.",
+  "props": {},
+  "rules": {
+    "do": ["Use for trends over continuous time.","Label axes with units."],
+    "dont": [],
+    "forbidden": ["Never draw categories as a line — use a bar chart."]
+  },
+  "examples": [],
+  "figma": {
+    "componentSet": ["Line chart"],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": 1,
+    "docs": "https://docs.atomus.io/components/charts/"
+  },
+  "docs": "https://docs.atomus.io/components/charts/",
+  "related": ["Chart legend item","Bar chart","Pie chart","Activity gauge","Radar chart"],
+  "a11y": {"element":null,"requiresLabel":false,"notes":["Label axes with units."]}
+}

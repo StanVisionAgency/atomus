@@ -1,0 +1,30 @@
+{
+  "name": "Activity gauge",
+  "kind": "component",
+  "status": "figma-only",
+  "since": "4.0.0",
+  "category": "Data display",
+  "import": null,
+  "source": "guidelines/components/charts.md",
+  "purpose": "Concentric progress rings for up to three metrics.",
+  "description": "Concentric progress rings for up to three metrics.",
+  "aliases": [],
+  "alternative": "Use a charting library (Recharts, Chart.js, ECharts) and colour the key series with `--color-fg-brand` and comparisons with `--color-fg-tertiary`; grid lines use `--color-border-secondary`. `MetricCard type=\"chart\"` covers sparklines.",
+  "props": {
+    "Size": {"type":"variant","values":["sm","md","lg"],"default":null,"required":false,"figma":"Size","notes":null}
+  },
+  "rules": {"do":[],"dont":[],"forbidden":[]},
+  "examples": [],
+  "figma": {
+    "componentSet": ["Activity gauge"],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": 3,
+    "docs": "https://docs.atomus.io/components/charts/"
+  },
+  "docs": "https://docs.atomus.io/components/charts/",
+  "related": ["Chart legend item","Bar chart","Line chart","Pie chart","Radar chart"],
+  "a11y": {"element":null,"requiresLabel":false,"notes":[]}
+}

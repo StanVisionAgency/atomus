@@ -1,0 +1,35 @@
+{
+  "name": "Pie chart",
+  "kind": "component",
+  "status": "figma-only",
+  "since": "4.0.0",
+  "category": "Data display",
+  "import": null,
+  "source": "guidelines/components/charts.md",
+  "purpose": "Pie and donut chart, sizes 160/200/240. Segment colours follow the Brand collection.",
+  "description": "Pie and donut chart, sizes 160/200/240. Segment colours follow the Brand collection.",
+  "aliases": [],
+  "alternative": "Use a charting library (Recharts, Chart.js, ECharts) and colour the key series with `--color-fg-brand` and comparisons with `--color-fg-tertiary`; grid lines use `--color-border-secondary`. `MetricCard type=\"chart\"` covers sparklines.",
+  "props": {
+    "Type": {"type":"variant","values":["Pie","Donut"],"default":null,"required":false,"figma":"Type","notes":null},
+    "Size": {"type":"variant","values":["sm","md","lg"],"default":null,"required":false,"figma":"Size","notes":null}
+  },
+  "rules": {
+    "do": ["Use for parts of a whole, with five slices or fewer."],
+    "dont": [],
+    "forbidden": ["Never compare values across several pies — use a bar chart."]
+  },
+  "examples": [],
+  "figma": {
+    "componentSet": ["Pie chart"],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": 6,
+    "docs": "https://docs.atomus.io/components/charts/"
+  },
+  "docs": "https://docs.atomus.io/components/charts/",
+  "related": ["Chart legend item","Bar chart","Line chart","Activity gauge","Radar chart"],
+  "a11y": {"element":null,"requiresLabel":false,"notes":[]}
+}
