@@ -27,14 +27,12 @@ import { DatePicker, Calendar } from '@stanvision/atomus-react';
 
 A date field that opens a calendar. `Calendar` is exported on its own for inline use.
 
-### Props
+### Props at a glance
+
+Full types and defaults are in [React API](#react-api) at the end of the page.
 
 - `type` `single` (with `value` / `onChange`) or `range` (with `range` / `onRangeChange`); dates are ISO strings like `2026-10-14`.
 - `label`, `hint`, `error`, `placeholder`, `min`, `max`, `weekStartsOn` (Monday by default), `locale`.
 - Keyboard: arrow keys move by day and week, PageUp / PageDown by month, Enter picks, Esc closes.
-
-**Don’t**
-
-- Don't use for birthdays or dates far away — a typed Date input is faster.
 
 {/* @guidance — sync.mjs appends the design Do/Don’t from the Figma guidelines here */}

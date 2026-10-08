@@ -31,14 +31,12 @@ toast.show({ color: 'success', title: 'Changes saved' });
 
 A short, floating confirmation. Wrap the app in `ToastProvider` and call `useToast().show({...})`.
 
-### Props
+### Props at a glance
+
+Full types and defaults are in [React API](#react-api) at the end of the page.
 
 - `title`, `description`, `color` (`brand` · `gray` · `error` · `warning` · `success`), an optional `action`.
 - `duration` in ms (default 5000; errors stay until closed). Hover or focus pauses the timer.
 - `ToastProvider position` — `bottom-right` (default), `top-right`, `bottom-center`; at most 4 at once.
-
-**Don’t**
-
-- Don't put the only copy of important information in a toast — it disappears.
 
 {/* @guidance — sync.mjs appends the design Do/Don’t from the Figma guidelines here */}

@@ -30,14 +30,12 @@ import { Tabs } from '@stanvision/atomus-react';
 
 Switch between views of the same object. Arrow, Home and End keys move between tabs.
 
-### Props
+### Props at a glance
+
+Full types and defaults are in [React API](#react-api) at the end of the page.
 
 - `items` — `[{ value, label, count?, disabled? }]`, two to six; `aria-label`.
 - `variant` — `underline` (page sections) · `pill` (sub-navigation) · `segmented` (filters, chart ranges).
 - `value` + `onChange` (controlled) or `defaultValue`.
-
-**Don’t**
-
-- Don't use tabs for sequential steps — use Progress steps.
 
 {/* @guidance — sync.mjs appends the design Do/Don’t from the Figma guidelines here */}
