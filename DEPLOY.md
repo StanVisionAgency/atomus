@@ -27,7 +27,9 @@ In the Cloudflare dashboard: **Workers & Pages → Create → Pages → Connect 
 Optional, under **Settings → Builds → Build watch paths**, so each site only rebuilds when its sources change:
 
 - `atomus-web`: `sites/atomus-io/*`
-- `atomus-docs`: `sites/docs/*`, `guidelines/*`, `css/*`, `react/src/*`, `assets/*`
+- `atomus-docs`: `sites/docs/*`, `guidelines/*`, `css/*`, `shadcn/*`, `react/*`, `registry/*`, `assets/*`
+
+The docs build also builds the shadcn registry (`registry/` → `/r/`) and Storybook (`react/` → `/storybook/`), so `npm run build` installs the `registry` and `react` dependencies too.
 
 ## 2. Point the domains (atomus.io is already on Cloudflare DNS)
 
