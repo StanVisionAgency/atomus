@@ -6,6 +6,7 @@ description: "A dialog that blocks the page until the person decides."
 {/* Source for /components/modal/ — scripts/sync.mjs writes the page to src/content/docs/components/. Imports are relative to that folder. */}
 
 import Demo from '../../../components/Demo.astro';
+import RegistryActions from '../../../components/RegistryActions.astro';
 import { ModalDemo } from '../../../components/demos';
 
 A dialog that blocks the page until the person decides.
@@ -13,6 +14,8 @@ A dialog that blocks the page until the person decides.
 <Demo caption="Modal">
   <ModalDemo client:visible />
 </Demo>
+
+<RegistryActions items="modal" />
 
 {/* @figma — sync.mjs inserts the "In Figma" section (from guidelines/components) here */}
 

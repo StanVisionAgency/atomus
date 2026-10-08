@@ -6,6 +6,7 @@ description: "Fills empty pages and tables, and says what to do next."
 {/* Source for /components/empty-state/ — scripts/sync.mjs writes the page to src/content/docs/components/. Imports are relative to that folder. */}
 
 import Demo from '../../../components/Demo.astro';
+import RegistryActions from '../../../components/RegistryActions.astro';
 import { EmptyDemo } from '../../../components/demos';
 
 Fills empty pages and tables, and says what to do next.
@@ -13,6 +14,8 @@ Fills empty pages and tables, and says what to do next.
 <Demo caption="Empty state">
   <EmptyDemo client:visible />
 </Demo>
+
+<RegistryActions items="empty-state" />
 
 {/* @figma — sync.mjs inserts the "In Figma" section (from guidelines/components) here */}
 

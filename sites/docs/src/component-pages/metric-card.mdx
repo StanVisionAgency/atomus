@@ -6,6 +6,7 @@ description: "A single KPI for dashboards."
 {/* Source for /components/metric-card/ — scripts/sync.mjs writes the page to src/content/docs/components/. Imports are relative to that folder. */}
 
 import Demo from '../../../components/Demo.astro';
+import RegistryActions from '../../../components/RegistryActions.astro';
 import { MetricDemo } from '../../../components/demos';
 
 A single KPI for dashboards.
@@ -13,6 +14,8 @@ A single KPI for dashboards.
 <Demo caption="Metric card">
   <MetricDemo client:visible />
 </Demo>
+
+<RegistryActions items="metric-card" />
 
 {/* @figma — sync.mjs inserts the "In Figma" section (from guidelines/components) here */}
 
