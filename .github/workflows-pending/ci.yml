@@ -61,3 +61,62 @@ jobs:
           node-version: 22
       - run: npm install --no-audit --no-fund
       - run: npm run build
+
+  registry:
+    name: shadcn registry
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: registry
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - name: registry.json is up to date (react/src, css/, shadcn/, docs sections → registry/)
+        run: npm run check
+      - name: Generate sources and shadcn build
+        run: npm run build -- --output ../dist-registry/r
+      - name: Type-check the registry sources (generated copies + app blocks)
+        run: npm run typecheck
+      - name: Validate every item against the shadcn schema
+        run: npm run validate -- ../dist-registry/r
+      - name: Install the theme, every component and every block into a fresh Vite + Tailwind v4 app and build it
+        run: npm run test:install
+
+  storybook:
+    name: Storybook (build, a11y, visual)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: react
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - name: Install Chromium for Playwright
+        run: npx playwright install --with-deps chromium
+      - name: Type-check stories, Storybook config and tests
+        run: npm run typecheck:storybook
+      - name: Build Storybook (with the component manifest)
+        run: npm run build-storybook
+      - name: Component manifest exists
+        run: test -s storybook-static/manifests/components.json
+      - name: Stories, play functions and axe checks (test-runner; fails on any a11y violation)
+        run: npm run test-storybook
+      - name: Visual regression (every story × light/dark × atomus/violet)
+        run: npm run test:visual
+      - name: Upload new or changed screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: storybook-screenshots
+          path: |
+            react/tests/__screenshots__/
+            react/test-results/
+            react/playwright-report/
+          if-no-files-found: ignore
+          retention-days: 14
