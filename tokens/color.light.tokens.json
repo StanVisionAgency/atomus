@@ -920,6 +920,288 @@
           }
         }
       }
+    },
+    "alert": {
+      "alert-brand-bg": {
+        "$type": "color",
+        "$value": "{brand.brand-100}",
+        "$description": "Alert background (Subtle style).",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Color",
+            "variable": "Components/Alert/alert-brand-bg",
+            "codeSyntax": {
+              "WEB": "var(--color-alert-brand-bg)"
+            }
+          }
+        }
+      },
+      "alert-brand-border": {
+        "$type": "color",
+        "$value": "{brand.brand-200}",
+        "$description": "Alert hairline border.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Color",
+            "variable": "Components/Alert/alert-brand-border",
+            "codeSyntax": {
+              "WEB": "var(--color-alert-brand-border)"
+            }
+          }
+        }
+      },
+      "alert-brand-title": {
+        "$type": "color",
+        "$value": "{brand.brand-800}",
+        "$description": "Alert title, link and action text.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Color",
+            "variable": "Components/Alert/alert-brand-title",
+            "codeSyntax": {
+              "WEB": "var(--color-alert-brand-title)"
+            }
+          }
+        }
+      },
+      "alert-brand-icon": {
+        "$type": "color",
+        "$value": "{brand.brand-700}",
+        "$description": "Alert status icon and close button.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Color",
+            "variable": "Components/Alert/alert-brand-icon",
+            "codeSyntax": {
+              "WEB": "var(--color-alert-brand-icon)"
+            }
+          }
+        }
+      },
+      "alert-error-bg": {
+        "$type": "color",
+        "$value": "{colors.rose.100}",
+        "$description": "Alert background (Subtle style).",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Color",
+            "variable": "Components/Alert/alert-error-bg",
+            "codeSyntax": {
+              "WEB": "var(--color-alert-error-bg)"
+            }
+          }
+        }
+      },
+      "alert-error-border": {
+        "$type": "color",
+        "$value": "{colors.rose.200}",
+        "$description": "Alert hairline border.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Color",
+            "variable": "Components/Alert/alert-error-border",
+            "codeSyntax": {
+              "WEB": "var(--color-alert-error-border)"
+            }
+          }
+        }
+      },
+      "alert-error-title": {
+        "$type": "color",
+        "$value": "{colors.rose.800}",
+        "$description": "Alert title, link and action text.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Color",
+            "variable": "Components/Alert/alert-error-title",
+            "codeSyntax": {
+              "WEB": "var(--color-alert-error-title)"
+            }
+          }
+        }
+      },
+      "alert-error-icon": {
+        "$type": "color",
+        "$value": "{colors.rose.700}",
+        "$description": "Alert status icon and close button.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Color",
+            "variable": "Components/Alert/alert-error-icon",
+            "codeSyntax": {
+              "WEB": "var(--color-alert-error-icon)"
+            }
+          }
+        }
+      },
+      "alert-warning-bg": {
+        "$type": "color",
+        "$value": "{colors.amber.100}",
+        "$description": "Alert background (Subtle style).",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Color",
+            "variable": "Components/Alert/alert-warning-bg",
+            "codeSyntax": {
+              "WEB": "var(--color-alert-warning-bg)"
+            }
+          }
+        }
+      },
+      "alert-warning-border": {
+        "$type": "color",
+        "$value": "{colors.amber.300}",
+        "$description": "Alert hairline border.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Color",
+            "variable": "Components/Alert/alert-warning-border",
+            "codeSyntax": {
+              "WEB": "var(--color-alert-warning-border)"
+            }
+          }
+        }
+      },
+      "alert-warning-title": {
+        "$type": "color",
+        "$value": "{colors.amber.800}",
+        "$description": "Alert title, link and action text.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Color",
+            "variable": "Components/Alert/alert-warning-title",
+            "codeSyntax": {
+              "WEB": "var(--color-alert-warning-title)"
+            }
+          }
+        }
+      },
+      "alert-warning-icon": {
+        "$type": "color",
+        "$value": "{colors.amber.700}",
+        "$description": "Alert status icon and close button.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Color",
+            "variable": "Components/Alert/alert-warning-icon",
+            "codeSyntax": {
+              "WEB": "var(--color-alert-warning-icon)"
+            }
+          }
+        }
+      },
+      "alert-success-bg": {
+        "$type": "color",
+        "$value": "{colors.green.100}",
+        "$description": "Alert background (Subtle style).",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Color",
+            "variable": "Components/Alert/alert-success-bg",
+            "codeSyntax": {
+              "WEB": "var(--color-alert-success-bg)"
+            }
+          }
+        }
+      },
+      "alert-success-border": {
+        "$type": "color",
+        "$value": "{colors.green.300}",
+        "$description": "Alert hairline border.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Color",
+            "variable": "Components/Alert/alert-success-border",
+            "codeSyntax": {
+              "WEB": "var(--color-alert-success-border)"
+            }
+          }
+        }
+      },
+      "alert-success-title": {
+        "$type": "color",
+        "$value": "{colors.green.800}",
+        "$description": "Alert title, link and action text.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Color",
+            "variable": "Components/Alert/alert-success-title",
+            "codeSyntax": {
+              "WEB": "var(--color-alert-success-title)"
+            }
+          }
+        }
+      },
+      "alert-success-icon": {
+        "$type": "color",
+        "$value": "{colors.green.700}",
+        "$description": "Alert status icon and close button.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Color",
+            "variable": "Components/Alert/alert-success-icon",
+            "codeSyntax": {
+              "WEB": "var(--color-alert-success-icon)"
+            }
+          }
+        }
+      },
+      "alert-gray-bg": {
+        "$type": "color",
+        "$value": "{colors.gray.100}",
+        "$description": "Alert background (Subtle style).",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Color",
+            "variable": "Components/Alert/alert-gray-bg",
+            "codeSyntax": {
+              "WEB": "var(--color-alert-gray-bg)"
+            }
+          }
+        }
+      },
+      "alert-gray-border": {
+        "$type": "color",
+        "$value": "{colors.gray.300}",
+        "$description": "Alert hairline border.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Color",
+            "variable": "Components/Alert/alert-gray-border",
+            "codeSyntax": {
+              "WEB": "var(--color-alert-gray-border)"
+            }
+          }
+        }
+      },
+      "alert-gray-title": {
+        "$type": "color",
+        "$value": "{colors.gray.900}",
+        "$description": "Alert title, link and action text.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Color",
+            "variable": "Components/Alert/alert-gray-title",
+            "codeSyntax": {
+              "WEB": "var(--color-alert-gray-title)"
+            }
+          }
+        }
+      },
+      "alert-gray-icon": {
+        "$type": "color",
+        "$value": "{colors.gray.600}",
+        "$description": "Alert status icon and close button.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Color",
+            "variable": "Components/Alert/alert-gray-icon",
+            "codeSyntax": {
+              "WEB": "var(--color-alert-gray-icon)"
+            }
+          }
+        }
+      }
     }
   },
   "gradient": {
