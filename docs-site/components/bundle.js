@@ -967,7 +967,7 @@ var __atomus = (() => {
     const close = (0, import_react11.useCallback)(() => setOpen(false), []);
     useOutsideClick([wrap], close, open);
     const fmt2 = (d) => d ? (/* @__PURE__ */ new Date(`${d}T00:00:00Z`)).toLocaleDateString(cal.locale, { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" }) : "";
-    const text = cal.type === "range" ? ((_a = cal.range) == null ? void 0 : _a.start) ? `${fmt2(cal.range.start)} \\u2013 ${fmt2(cal.range.end) || "\\u2026"}` : "" : fmt2(cal.value);
+    const text = cal.type === "range" ? ((_a = cal.range) == null ? void 0 : _a.start) ? `${fmt2(cal.range.start)} – ${fmt2(cal.range.end) || "…"}` : "" : fmt2(cal.value);
     const message = error || hint;
     return /* @__PURE__ */ jsxs("div", { ref: wrap, className: cx("at-field", "at-datepicker", className), onKeyDown: (e) => {
       if (e.key === "Escape") close();
@@ -1107,7 +1107,7 @@ var __atomus = (() => {
 
   // src/components/ai/PromptInput.tsx
   var escapeRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  function PromptInput({ value, defaultValue = "", onChange, onSubmit, onStop, status = "ready", placeholder = "Ask anything\\u2026", label = "Message", attachments = [], onAttach, onRemoveAttachment, toolbar, actions, triggers = [], disclaimer, minRows = 1, maxRows = 8, size = "md", disabled, autoFocus, submitLabel = "Send message", stopLabel = "Stop generating", clearOnSubmit = true, className }) {
+  function PromptInput({ value, defaultValue = "", onChange, onSubmit, onStop, status = "ready", placeholder = "Ask anything…", label = "Message", attachments = [], onAttach, onRemoveAttachment, toolbar, actions, triggers = [], disclaimer, minRows = 1, maxRows = 8, size = "md", disabled, autoFocus, submitLabel = "Send message", stopLabel = "Stop generating", clearOnSubmit = true, className }) {
     var _a;
     const id = useFieldId();
     const [text, setText] = useControllable(value, defaultValue, onChange);
@@ -1218,7 +1218,7 @@ var __atomus = (() => {
               /* @__PURE__ */ jsx("span", { className: "at-prompt__file-thumb", "aria-hidden": "true", children: a.status === "uploading" ? /* @__PURE__ */ jsx("span", { className: "at-spinner" }) : a.kind === "image" && a.previewUrl ? /* @__PURE__ */ jsx("img", { src: a.previewUrl, alt: "" }) : /* @__PURE__ */ jsx(Icon, { name: "file", size: 16 }) }),
               /* @__PURE__ */ jsxs("span", { className: "at-prompt__file-text", children: [
                 /* @__PURE__ */ jsx("span", { className: "at-prompt__file-name", children: a.name }),
-                a.size || a.status === "uploading" || a.status === "error" ? /* @__PURE__ */ jsx("span", { className: "at-prompt__file-meta", children: a.status === "uploading" ? "Uploading\\u2026" : a.status === "error" ? "Upload failed" : a.size }) : null
+                a.size || a.status === "uploading" || a.status === "error" ? /* @__PURE__ */ jsx("span", { className: "at-prompt__file-meta", children: a.status === "uploading" ? "Uploading…" : a.status === "error" ? "Upload failed" : a.size }) : null
               ] }),
               onRemoveAttachment ? /* @__PURE__ */ jsx("button", { type: "button", className: "at-prompt__file-x", "aria-label": `Remove ${a.name}`, onClick: () => onRemoveAttachment(a.id), children: /* @__PURE__ */ jsx(Icon, { name: "x", size: 14 }) }) : null
             ] }, a.id)) }) : null,
@@ -1490,7 +1490,7 @@ var __atomus = (() => {
       if (autoCollapse && open === void 0 && prev.current === "thinking" && status === "done") setOpen(false);
       prev.current = status;
     }, [status, autoCollapse, open, setOpen]);
-    const text = label != null ? label : thinking ? "Thinking\\u2026" : duration !== void 0 ? `Thought for ${formatDuration(duration)}` : "Reasoning";
+    const text = label != null ? label : thinking ? "Thinking…" : duration !== void 0 ? `Thought for ${formatDuration(duration)}` : "Reasoning";
     const hasBody = !!((steps == null ? void 0 : steps.length) || children);
     return /* @__PURE__ */ jsxs("div", { className: cx("at-reasoning", thinking && "is-thinking", isOpen && "is-open", className), children: [
       /* @__PURE__ */ jsxs(
@@ -1886,7 +1886,7 @@ var __atomus = (() => {
 
   // src/components/ai/Feedback.tsx
   var import_react21 = __toESM(require_react(), 1);
-  var DEFAULT_REASONS = ["Not accurate", "Not helpful", "Too long", "Didn\\u2019t follow instructions", "Unsafe or harmful"];
+  var DEFAULT_REASONS = ["Not accurate", "Not helpful", "Too long", "Didn’t follow instructions", "Unsafe or harmful"];
   function Feedback({ value, defaultValue = null, onChange, onSubmit, reasons = DEFAULT_REASONS, positiveReasons = [], size = "xs", className }) {
     const id = useFieldId();
     const [rating, setRating] = useControllable(value, defaultValue, onChange);
