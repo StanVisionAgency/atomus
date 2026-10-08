@@ -5,7 +5,10 @@
   "scripts": {
     "sync": "node scripts/sync.mjs",
     "dev": "npm run sync && astro dev",
-    "build": "npm run sync && astro build && node scripts/llms.mjs",
+    "build": "npm run sync && npm run registry && npm run storybook && astro build && node scripts/llms.mjs",
+    "build:site": "npm run sync && astro build && node scripts/llms.mjs",
+    "registry": "npm --prefix ../../registry install --no-audit --no-fund && npm --prefix ../../registry run build",
+    "storybook": "npm --prefix ../../react install --no-audit --no-fund && npm --prefix ../../react run build-storybook:docs",
     "preview": "astro preview",
     "llms": "node scripts/llms.mjs"
   },

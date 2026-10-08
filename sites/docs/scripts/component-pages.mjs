@@ -2,7 +2,7 @@
 // Each page pulls its "In Figma" content from guideline sections: [file in guidelines/components, "## Section" name].
 // Pages with a React component have a hand-written source in src/component-pages/<slug>.mdx (demo + usage);
 // pages without one are generated from the guidelines alone and marked "Figma only".
-// `figma` lists the Code Connect components (react/src/components/*.figma.tsx) whose Figma links the page shows.
+// `figma` lists the Code Connect components (react/src/components/*.figma.ts, `// component=` header) whose Figma links the page shows.
 // `api` lists the React exports whose generated "React API" tables (guidelines/components/*.md) the page shows;
 // it defaults to `figma`. Every React API entry must land on a page, like every guideline section.
 // Old /figma-reference/<file>/ URLs redirect to the first page that uses <file>.
@@ -17,6 +17,7 @@ export const CATEGORIES = [
   'Layout & content',
   'Media & assets',
   'Charts',
+  'AI',
 ];
 
 const s = (file, ...sections) => sections.map((name) => [file, name]);
@@ -79,6 +80,21 @@ export const COMPONENT_PAGES = [
 
   // Charts
   { slug: 'charts', title: 'Charts', intro: 'Line, bar, pie, radar and gauge charts for dashboards and reports, with a shared legend item.', category: 'Charts', sections: s('charts', 'Line chart', 'Bar chart', 'Pie chart', 'Radar chart', 'Activity gauge', 'Chart legend item') },
+
+  // AI — Agent kit (react/src/components/ai). Conversation is a docs-only composition of the parts.
+  { slug: 'ai-conversation', category: 'AI', react: true, api: ['Message'], sections: s('ai-message', 'Conversation') },
+  { slug: 'ai-prompt-input', category: 'AI', react: true, api: ['PromptInput'], sections: s('ai-prompt-input', 'Prompt input') },
+  { slug: 'ai-message', category: 'AI', react: true, api: ['Message'], sections: s('ai-message', 'Message') },
+  { slug: 'ai-streaming-text', category: 'AI', react: true, api: ['StreamingText', 'Shimmer'], sections: s('ai-streaming-text', 'Streaming text', 'Shimmer') },
+  { slug: 'ai-reasoning', category: 'AI', react: true, api: ['Reasoning'], sections: s('ai-reasoning', 'Reasoning') },
+  { slug: 'ai-tool-call', category: 'AI', react: true, api: ['ToolCall'], sections: s('ai-tool-call', 'Tool call') },
+  { slug: 'ai-approval', category: 'AI', react: true, api: ['Approval'], sections: s('ai-approval', 'Approval') },
+  { slug: 'ai-sources', category: 'AI', react: true, api: ['Sources', 'InlineCitation'], sections: s('ai-sources', 'Sources', 'Inline citation') },
+  { slug: 'ai-suggestions', category: 'AI', react: true, api: ['Suggestions'], sections: s('ai-suggestions', 'Suggestions') },
+  { slug: 'ai-model-selector', category: 'AI', react: true, api: ['ModelSelector'], sections: s('ai-model-selector', 'Model selector') },
+  { slug: 'ai-feedback', category: 'AI', react: true, api: ['Feedback'], sections: s('ai-feedback', 'Feedback') },
+  { slug: 'ai-label', category: 'AI', react: true, api: ['AILabel'], sections: s('ai-label', 'AI label') },
+  { slug: 'ai-context-meter', category: 'AI', react: true, api: ['ContextMeter'], sections: s('ai-context-meter', 'Context meter') },
 ];
 
 /** Sidebar groups for astro.config.mjs. */
