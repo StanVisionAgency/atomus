@@ -1,0 +1,1792 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "atomus",
+  "homepage": "https://docs.atomus.io",
+  "items": [
+    {
+      "name": "atomus",
+      "type": "registry:base",
+      "title": "Atomus design system",
+      "description": "The whole Atomus 4.0 system for a shadcn project: tokens (light/dark, brand and radius modes, breakpoints), the shadcn/ui theme mapped to Atomus, Inter and Roboto Mono, base styles, and the @stanvision/atomus-react and @stanvision/atomus-tokens packages.",
+      "dependencies": [
+        "@stanvision/atomus-react",
+        "@stanvision/atomus-tokens"
+      ],
+      "registryDependencies": [
+        "https://docs.atomus.io/r/atomus-theme.json",
+        "https://docs.atomus.io/r/atomus-utils.json"
+      ],
+      "docs": "Atomus is installed: tokens, the shadcn/ui theme, fonts and base styles are in your CSS file.\nComponents: add them as source with `npx shadcn@latest add @atomus/button` (see https://docs.atomus.io/ai/registry/) or import them from \"@stanvision/atomus-react\" (and import \"@stanvision/atomus-react/styles.css\" once).\nAgents: read https://docs.atomus.io/llms.txt and the rules at https://docs.atomus.io/ai/rules/",
+      "categories": [
+        "base"
+      ],
+      "meta": {
+        "page": "https://docs.atomus.io/"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "atomus-tokens",
+      "type": "registry:style",
+      "title": "Atomus tokens",
+      "description": "All Atomus design tokens as CSS custom properties: light and dark themes, the violet brand, sharp and round radius modes, tablet and mobile breakpoints, plus the Figma text-style classes.",
+      "extends": "none",
+      "dependencies": [
+        "@fontsource/inter",
+        "@fontsource/roboto-mono"
+      ],
+      "docs": "Atomus tokens were added to your CSS file (unlayered custom properties on :root), with the Inter and Roboto Mono fonts.\nSwitch themes with attributes on <html> or any element: data-theme=\"dark\", data-brand=\"violet\", data-radius=\"round\" | \"sharp\".\nUse semantic tokens only, e.g. var(--color-text-primary), var(--spacing-xl), var(--radius-md). Reference: https://docs.atomus.io/code/tokens/",
+      "categories": [
+        "tokens"
+      ],
+      "meta": {
+        "source": "css/atomus.css",
+        "page": "https://docs.atomus.io/code/tokens/"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "atomus-theme",
+      "type": "registry:theme",
+      "title": "Atomus theme for shadcn/ui",
+      "description": "Maps the shadcn/ui variables (background, primary, muted, border, ring, sidebar, chart …) to Atomus semantic tokens, so shadcn/ui components follow the Atomus theme, brand and radius modes.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/atomus-tokens.json"
+      ],
+      "cssVars": {
+        "theme": {
+          "font-sans": "var(--font-family-body)",
+          "font-heading": "var(--font-family-title)"
+        },
+        "light": {
+          "background": "var(--color-bg-primary)",
+          "foreground": "var(--color-text-primary)",
+          "card": "var(--color-bg-primary)",
+          "card-foreground": "var(--color-text-primary)",
+          "popover": "var(--color-bg-primary)",
+          "popover-foreground": "var(--color-text-primary)",
+          "primary": "var(--color-bg-brand-solid)",
+          "primary-foreground": "var(--color-text-on-brand)",
+          "secondary": "var(--color-bg-secondary)",
+          "secondary-foreground": "var(--color-text-primary)",
+          "muted": "var(--color-bg-tertiary)",
+          "muted-foreground": "var(--color-text-tertiary)",
+          "accent": "var(--color-bg-brand-subtle)",
+          "accent-foreground": "var(--color-text-brand)",
+          "destructive": "var(--color-bg-error-solid)",
+          "destructive-foreground": "var(--color-text-white)",
+          "border": "var(--color-border-secondary)",
+          "input": "var(--color-border-primary)",
+          "ring": "var(--color-border-focus)",
+          "chart-1": "var(--color-brand-600)",
+          "chart-2": "var(--color-brand-400)",
+          "chart-3": "var(--color-brand-200)",
+          "chart-4": "var(--color-gray-400)",
+          "chart-5": "var(--color-gray-200)",
+          "sidebar": "var(--color-bg-secondary)",
+          "sidebar-foreground": "var(--color-text-secondary)",
+          "sidebar-primary": "var(--color-bg-brand-solid)",
+          "sidebar-primary-foreground": "var(--color-text-on-brand)",
+          "sidebar-accent": "var(--color-bg-tertiary)",
+          "sidebar-accent-foreground": "var(--color-text-primary)",
+          "sidebar-border": "var(--color-border-secondary)",
+          "sidebar-ring": "var(--color-border-focus)",
+          "radius": "var(--radius-lg)"
+        },
+        "dark": {
+          "background": "var(--color-bg-primary)",
+          "foreground": "var(--color-text-primary)",
+          "card": "var(--color-bg-primary)",
+          "card-foreground": "var(--color-text-primary)",
+          "popover": "var(--color-bg-primary)",
+          "popover-foreground": "var(--color-text-primary)",
+          "primary": "var(--color-bg-brand-solid)",
+          "primary-foreground": "var(--color-text-on-brand)",
+          "secondary": "var(--color-bg-secondary)",
+          "secondary-foreground": "var(--color-text-primary)",
+          "muted": "var(--color-bg-tertiary)",
+          "muted-foreground": "var(--color-text-tertiary)",
+          "accent": "var(--color-bg-brand-subtle)",
+          "accent-foreground": "var(--color-text-brand)",
+          "destructive": "var(--color-bg-error-solid)",
+          "destructive-foreground": "var(--color-text-white)",
+          "border": "var(--color-border-secondary)",
+          "input": "var(--color-border-primary)",
+          "ring": "var(--color-border-focus)",
+          "chart-1": "var(--color-brand-600)",
+          "chart-2": "var(--color-brand-400)",
+          "chart-3": "var(--color-brand-200)",
+          "chart-4": "var(--color-gray-400)",
+          "chart-5": "var(--color-gray-200)",
+          "sidebar": "var(--color-bg-secondary)",
+          "sidebar-foreground": "var(--color-text-secondary)",
+          "sidebar-primary": "var(--color-bg-brand-solid)",
+          "sidebar-primary-foreground": "var(--color-text-on-brand)",
+          "sidebar-accent": "var(--color-bg-tertiary)",
+          "sidebar-accent-foreground": "var(--color-text-primary)",
+          "sidebar-border": "var(--color-border-secondary)",
+          "sidebar-ring": "var(--color-border-focus)",
+          "radius": "var(--radius-lg)"
+        }
+      },
+      "docs": "shadcn/ui variables now point at Atomus tokens. Dark mode: set data-theme=\"dark\" (or the .dark class) on <html>.\nFor Tailwind's dark: variant to follow data-theme too, use: @custom-variant dark (&:where([data-theme=\"dark\"], [data-theme=\"dark\"] *, .dark, .dark *));\nBrand and shape: data-brand=\"violet\", data-radius=\"round\" | \"sharp\". Docs: https://docs.atomus.io/code/shadcn/",
+      "categories": [
+        "theme"
+      ],
+      "meta": {
+        "source": "shadcn/globals.css",
+        "page": "https://docs.atomus.io/code/shadcn/"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "atomus-utils",
+      "type": "registry:lib",
+      "title": "Atomus utils",
+      "description": "Helpers the Atomus components share (cx, useFieldId, useOutsideClick) and their base CSS. Installed automatically with any component.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/atomus-tokens.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/utils.ts",
+          "type": "registry:lib",
+          "target": "components/atomus/utils.ts"
+        }
+      ],
+      "categories": [
+        "lib"
+      ],
+      "meta": {
+        "source": "react/src/utils.ts"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "Triggers an action. Five hierarchies (primary, secondary, outline, tertiary, link), five sizes, icons and a loading state.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/atomus-utils.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/button.tsx",
+          "type": "registry:ui",
+          "target": "components/atomus/button.tsx"
+        }
+      ],
+      "docs": "import { Button } from \"@/components/atomus/button\";\nProps mirror the Figma component properties. Usage and React API: https://docs.atomus.io/components/button/\nPrefer the npm package instead? npm i @stanvision/atomus-react and import from \"@stanvision/atomus-react\".",
+      "categories": [
+        "component"
+      ],
+      "meta": {
+        "source": "react/src/components/Button.tsx",
+        "exports": [
+          "Button"
+        ],
+        "page": "https://docs.atomus.io/components/button/"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "Short status or category label in five colours, light or solid, with an optional dot, icon or remove button.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/atomus-utils.json",
+        "https://docs.atomus.io/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/badge.tsx",
+          "type": "registry:ui",
+          "target": "components/atomus/badge.tsx"
+        }
+      ],
+      "docs": "import { Badge } from \"@/components/atomus/badge\";\nProps mirror the Figma component properties. Usage and React API: https://docs.atomus.io/components/badge-tag/\nPrefer the npm package instead? npm i @stanvision/atomus-react and import from \"@stanvision/atomus-react\".",
+      "categories": [
+        "component"
+      ],
+      "meta": {
+        "source": "react/src/components/Badge.tsx",
+        "exports": [
+          "Badge"
+        ],
+        "page": "https://docs.atomus.io/components/badge-tag/"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "tag",
+      "type": "registry:ui",
+      "title": "Tag",
+      "description": "Removable keyword chip for filters and multi-value fields.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/atomus-utils.json",
+        "https://docs.atomus.io/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/tag.tsx",
+          "type": "registry:ui",
+          "target": "components/atomus/tag.tsx"
+        }
+      ],
+      "docs": "import { Tag } from \"@/components/atomus/tag\";\nProps mirror the Figma component properties. Usage and React API: https://docs.atomus.io/components/badge-tag/\nPrefer the npm package instead? npm i @stanvision/atomus-react and import from \"@stanvision/atomus-react\".",
+      "categories": [
+        "component"
+      ],
+      "meta": {
+        "source": "react/src/components/Tag.tsx",
+        "exports": [
+          "Tag"
+        ],
+        "page": "https://docs.atomus.io/components/badge-tag/"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "Text field with label, hint, error message, three sizes and leading/trailing icons.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/atomus-utils.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/input.tsx",
+          "type": "registry:ui",
+          "target": "components/atomus/input.tsx"
+        }
+      ],
+      "docs": "import { Input } from \"@/components/atomus/input\";\nProps mirror the Figma component properties. Usage and React API: https://docs.atomus.io/components/input/\nPrefer the npm package instead? npm i @stanvision/atomus-react and import from \"@stanvision/atomus-react\".",
+      "categories": [
+        "component"
+      ],
+      "meta": {
+        "source": "react/src/components/Input.tsx",
+        "exports": [
+          "Input"
+        ],
+        "page": "https://docs.atomus.io/components/input/"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "checkbox-radio-toggle",
+      "type": "registry:ui",
+      "title": "Checkbox, Radio, Toggle",
+      "description": "Native checkbox (with indeterminate), radio and switch controls with label and description.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/atomus-utils.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/checkbox-radio-toggle.tsx",
+          "type": "registry:ui",
+          "target": "components/atomus/checkbox-radio-toggle.tsx"
+        }
+      ],
+      "docs": "import { Checkbox, Radio, Toggle } from \"@/components/atomus/checkbox-radio-toggle\";\nProps mirror the Figma component properties. Usage and React API: https://docs.atomus.io/components/checkbox-radio-toggle/\nPrefer the npm package instead? npm i @stanvision/atomus-react and import from \"@stanvision/atomus-react\".",
+      "categories": [
+        "component"
+      ],
+      "meta": {
+        "source": "react/src/components/Choice.tsx",
+        "exports": [
+          "Checkbox",
+          "Radio",
+          "Toggle"
+        ],
+        "page": "https://docs.atomus.io/components/checkbox-radio-toggle/"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "Avatar",
+      "description": "Image, initials or icon avatar in six sizes, circle or rounded, with an online/away/offline status.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/atomus-utils.json",
+        "https://docs.atomus.io/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/avatar.tsx",
+          "type": "registry:ui",
+          "target": "components/atomus/avatar.tsx"
+        }
+      ],
+      "docs": "import { Avatar } from \"@/components/atomus/avatar\";\nProps mirror the Figma component properties. Usage and React API: https://docs.atomus.io/components/avatar/\nPrefer the npm package instead? npm i @stanvision/atomus-react and import from \"@stanvision/atomus-react\".",
+      "categories": [
+        "component"
+      ],
+      "meta": {
+        "source": "react/src/components/Avatar.tsx",
+        "exports": [
+          "Avatar"
+        ],
+        "page": "https://docs.atomus.io/components/avatar/"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "Alert",
+      "description": "Inline message in five colours and three styles (subtle, outline, solid) with actions and dismiss.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/atomus-utils.json",
+        "https://docs.atomus.io/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/alert.tsx",
+          "type": "registry:ui",
+          "target": "components/atomus/alert.tsx"
+        }
+      ],
+      "docs": "import { Alert } from \"@/components/atomus/alert\";\nProps mirror the Figma component properties. Usage and React API: https://docs.atomus.io/components/alert/\nPrefer the npm package instead? npm i @stanvision/atomus-react and import from \"@stanvision/atomus-react\".",
+      "categories": [
+        "component"
+      ],
+      "meta": {
+        "source": "react/src/components/Alert.tsx",
+        "exports": [
+          "Alert"
+        ],
+        "page": "https://docs.atomus.io/components/alert/"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "Surface with header (title, supporting text, action), content slot and footer; outlined, elevated or filled.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/atomus-utils.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/card.tsx",
+          "type": "registry:ui",
+          "target": "components/atomus/card.tsx"
+        }
+      ],
+      "docs": "import { Card } from \"@/components/atomus/card\";\nProps mirror the Figma component properties. Usage and React API: https://docs.atomus.io/components/card/\nPrefer the npm package instead? npm i @stanvision/atomus-react and import from \"@stanvision/atomus-react\".",
+      "categories": [
+        "component"
+      ],
+      "meta": {
+        "source": "react/src/components/Card.tsx",
+        "exports": [
+          "Card"
+        ],
+        "page": "https://docs.atomus.io/components/card/"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "Accessible tab list (arrow keys, Home, End) in underline, pill and segmented styles with counts.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/atomus-utils.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/tabs.tsx",
+          "type": "registry:ui",
+          "target": "components/atomus/tabs.tsx"
+        }
+      ],
+      "docs": "import { Tabs } from \"@/components/atomus/tabs\";\nProps mirror the Figma component properties. Usage and React API: https://docs.atomus.io/components/tabs/\nPrefer the npm package instead? npm i @stanvision/atomus-react and import from \"@stanvision/atomus-react\".",
+      "categories": [
+        "component"
+      ],
+      "meta": {
+        "source": "react/src/components/Tabs.tsx",
+        "exports": [
+          "Tabs"
+        ],
+        "page": "https://docs.atomus.io/components/tabs/"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "progress-bar",
+      "type": "registry:ui",
+      "title": "Progress bar",
+      "description": "Determinate progress bar with the percentage on the right, below or hidden.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/atomus-utils.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/progress-bar.tsx",
+          "type": "registry:ui",
+          "target": "components/atomus/progress-bar.tsx"
+        }
+      ],
+      "docs": "import { ProgressBar } from \"@/components/atomus/progress-bar\";\nProps mirror the Figma component properties. Usage and React API: https://docs.atomus.io/components/progress-bar/\nPrefer the npm package instead? npm i @stanvision/atomus-react and import from \"@stanvision/atomus-react\".",
+      "categories": [
+        "component"
+      ],
+      "meta": {
+        "source": "react/src/components/ProgressBar.tsx",
+        "exports": [
+          "ProgressBar"
+        ],
+        "page": "https://docs.atomus.io/components/progress-bar/"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "metric-card",
+      "type": "registry:ui",
+      "title": "Metric card",
+      "description": "KPI card: label, value, change vs a period and an optional sparkline.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/atomus-utils.json",
+        "https://docs.atomus.io/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/metric-card.tsx",
+          "type": "registry:ui",
+          "target": "components/atomus/metric-card.tsx"
+        }
+      ],
+      "docs": "import { MetricCard } from \"@/components/atomus/metric-card\";\nProps mirror the Figma component properties. Usage and React API: https://docs.atomus.io/components/metric-card/\nPrefer the npm package instead? npm i @stanvision/atomus-react and import from \"@stanvision/atomus-react\".",
+      "categories": [
+        "component"
+      ],
+      "meta": {
+        "source": "react/src/components/MetricCard.tsx",
+        "exports": [
+          "MetricCard"
+        ],
+        "page": "https://docs.atomus.io/components/metric-card/"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "empty-state",
+      "type": "registry:ui",
+      "title": "Empty state",
+      "description": "Featured icon, title, description and actions for empty lists, searches and first runs.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/atomus-utils.json",
+        "https://docs.atomus.io/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/empty-state.tsx",
+          "type": "registry:ui",
+          "target": "components/atomus/empty-state.tsx"
+        }
+      ],
+      "docs": "import { EmptyState } from \"@/components/atomus/empty-state\";\nProps mirror the Figma component properties. Usage and React API: https://docs.atomus.io/components/empty-state/\nPrefer the npm package instead? npm i @stanvision/atomus-react and import from \"@stanvision/atomus-react\".",
+      "categories": [
+        "component"
+      ],
+      "meta": {
+        "source": "react/src/components/EmptyState.tsx",
+        "exports": [
+          "EmptyState"
+        ],
+        "page": "https://docs.atomus.io/components/empty-state/"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "icon",
+      "type": "registry:ui",
+      "title": "Icon",
+      "description": "The small set of glyphs the Atomus components use internally (check, close, status, chevrons, navigation).",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/atomus-utils.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/icon.tsx",
+          "type": "registry:ui",
+          "target": "components/atomus/icon.tsx"
+        }
+      ],
+      "docs": "import { Icon } from \"@/components/atomus/icon\";\nProps mirror the Figma component properties. Usage and React API: https://docs.atomus.io/foundations/icons/\nPrefer the npm package instead? npm i @stanvision/atomus-react and import from \"@stanvision/atomus-react\".",
+      "categories": [
+        "component"
+      ],
+      "meta": {
+        "source": "react/src/components/Icon.tsx",
+        "exports": [
+          "Icon"
+        ],
+        "page": "https://docs.atomus.io/foundations/icons/"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:ui",
+      "title": "Dropdown menu",
+      "description": "Menu item rows and a keyboard-accessible dropdown / context menu with headings, separators and shortcuts.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/atomus-utils.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/dropdown-menu.tsx",
+          "type": "registry:ui",
+          "target": "components/atomus/dropdown-menu.tsx"
+        }
+      ],
+      "docs": "import { MenuItem, DropdownMenu } from \"@/components/atomus/dropdown-menu\";\nProps mirror the Figma component properties. Usage and React API: https://docs.atomus.io/components/dropdown-menu/\nPrefer the npm package instead? npm i @stanvision/atomus-react and import from \"@stanvision/atomus-react\".",
+      "categories": [
+        "component"
+      ],
+      "meta": {
+        "source": "react/src/components/Menu.tsx",
+        "exports": [
+          "MenuItem",
+          "DropdownMenu"
+        ],
+        "page": "https://docs.atomus.io/components/dropdown-menu/"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "WAI-ARIA select-only combobox with label, hint, error, type-ahead and a hidden input for forms.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/atomus-utils.json",
+        "https://docs.atomus.io/r/icon.json",
+        "https://docs.atomus.io/r/dropdown-menu.json",
+        "https://docs.atomus.io/r/input.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/select.tsx",
+          "type": "registry:ui",
+          "target": "components/atomus/select.tsx"
+        }
+      ],
+      "docs": "import { Select } from \"@/components/atomus/select\";\nProps mirror the Figma component properties. Usage and React API: https://docs.atomus.io/components/select/\nPrefer the npm package instead? npm i @stanvision/atomus-react and import from \"@stanvision/atomus-react\".",
+      "categories": [
+        "component"
+      ],
+      "meta": {
+        "source": "react/src/components/Select.tsx",
+        "exports": [
+          "Select"
+        ],
+        "page": "https://docs.atomus.io/components/select/"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "modal",
+      "type": "registry:ui",
+      "title": "Modal",
+      "description": "Dialog on the native <dialog> element (focus trap, Esc, inert background) in three sizes, with a destructive type.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/atomus-utils.json",
+        "https://docs.atomus.io/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/modal.tsx",
+          "type": "registry:ui",
+          "target": "components/atomus/modal.tsx"
+        }
+      ],
+      "docs": "import { Modal } from \"@/components/atomus/modal\";\nProps mirror the Figma component properties. Usage and React API: https://docs.atomus.io/components/modal/\nPrefer the npm package instead? npm i @stanvision/atomus-react and import from \"@stanvision/atomus-react\".",
+      "categories": [
+        "component"
+      ],
+      "meta": {
+        "source": "react/src/components/Modal.tsx",
+        "exports": [
+          "Modal"
+        ],
+        "page": "https://docs.atomus.io/components/modal/"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "toast",
+      "type": "registry:ui",
+      "title": "Toast",
+      "description": "Floating notifications: Toast, ToastProvider and the useToast() hook, with auto-dismiss that pauses on hover and focus.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/atomus-utils.json",
+        "https://docs.atomus.io/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/toast.tsx",
+          "type": "registry:ui",
+          "target": "components/atomus/toast.tsx"
+        }
+      ],
+      "docs": "import { Toast, ToastProvider, useToast } from \"@/components/atomus/toast\";\nProps mirror the Figma component properties. Usage and React API: https://docs.atomus.io/components/toast/\nPrefer the npm package instead? npm i @stanvision/atomus-react and import from \"@stanvision/atomus-react\".",
+      "categories": [
+        "component"
+      ],
+      "meta": {
+        "source": "react/src/components/Toast.tsx",
+        "exports": [
+          "Toast",
+          "ToastProvider",
+          "useToast"
+        ],
+        "page": "https://docs.atomus.io/components/toast/"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "title": "Table",
+      "description": "Data table with sortable columns, row selection, supporting text, two densities and an empty slot.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/atomus-utils.json",
+        "https://docs.atomus.io/r/icon.json",
+        "https://docs.atomus.io/r/checkbox-radio-toggle.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/table.tsx",
+          "type": "registry:ui",
+          "target": "components/atomus/table.tsx"
+        }
+      ],
+      "docs": "import { Table } from \"@/components/atomus/table\";\nProps mirror the Figma component properties. Usage and React API: https://docs.atomus.io/components/table/\nPrefer the npm package instead? npm i @stanvision/atomus-react and import from \"@stanvision/atomus-react\".",
+      "categories": [
+        "component"
+      ],
+      "meta": {
+        "source": "react/src/components/Table.tsx",
+        "exports": [
+          "Table"
+        ],
+        "page": "https://docs.atomus.io/components/table/"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "date-picker",
+      "type": "registry:ui",
+      "title": "Date picker",
+      "description": "Calendar (single or range, keyboard navigation) and a date field that opens it in a popover.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/atomus-utils.json",
+        "https://docs.atomus.io/r/icon.json",
+        "https://docs.atomus.io/r/input.json",
+        "https://docs.atomus.io/r/select.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/date-picker.tsx",
+          "type": "registry:ui",
+          "target": "components/atomus/date-picker.tsx"
+        }
+      ],
+      "docs": "import { Calendar, DatePicker } from \"@/components/atomus/date-picker\";\nProps mirror the Figma component properties. Usage and React API: https://docs.atomus.io/components/date-picker/\nPrefer the npm package instead? npm i @stanvision/atomus-react and import from \"@stanvision/atomus-react\".",
+      "categories": [
+        "component"
+      ],
+      "meta": {
+        "source": "react/src/components/DatePicker.tsx",
+        "exports": [
+          "Calendar",
+          "DatePicker"
+        ],
+        "page": "https://docs.atomus.io/components/date-picker/"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "navigation",
+      "type": "registry:ui",
+      "title": "Navigation",
+      "description": "NavItem, SidebarNavigation (280px or a 72px rail) and AppHeader for product apps.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/atomus-utils.json",
+        "https://docs.atomus.io/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/navigation.tsx",
+          "type": "registry:ui",
+          "target": "components/atomus/navigation.tsx"
+        }
+      ],
+      "docs": "import { NavItem, SidebarNavigation, AppHeader } from \"@/components/atomus/navigation\";\nProps mirror the Figma component properties. Usage and React API: https://docs.atomus.io/components/navigation/\nPrefer the npm package instead? npm i @stanvision/atomus-react and import from \"@stanvision/atomus-react\".",
+      "categories": [
+        "component"
+      ],
+      "meta": {
+        "source": "react/src/components/Navigation.tsx",
+        "exports": [
+          "NavItem",
+          "SidebarNavigation",
+          "AppHeader"
+        ],
+        "page": "https://docs.atomus.io/components/navigation/"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "app-shell",
+      "type": "registry:component",
+      "title": "App shell",
+      "description": "Product layout: sidebar navigation, app header and a scrolling main area. The app screen blocks are built on it.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/navigation.json",
+        "https://docs.atomus.io/r/avatar.json",
+        "https://docs.atomus.io/r/button.json",
+        "https://docs.atomus.io/r/icon.json",
+        "https://docs.atomus.io/r/input.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/blocks/app-shell.tsx",
+          "type": "registry:component",
+          "target": "components/atomus/blocks/app-shell.tsx"
+        }
+      ],
+      "docs": "import { AppShell } from \"@/components/atomus/blocks/app-shell\";\nReplace the sample data with yours; every colour, space and radius is an Atomus token. Rules: https://docs.atomus.io/ai/rules/",
+      "categories": [
+        "block",
+        "app"
+      ],
+      "meta": {
+        "kind": "app",
+        "component": "AppShell"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "dashboard",
+      "type": "registry:block",
+      "title": "Dashboard",
+      "description": "Dashboard screen: KPI metric cards with sparklines, a recent-activity table and a usage card inside the app shell.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/app-shell.json",
+        "https://docs.atomus.io/r/metric-card.json",
+        "https://docs.atomus.io/r/table.json",
+        "https://docs.atomus.io/r/card.json",
+        "https://docs.atomus.io/r/badge.json",
+        "https://docs.atomus.io/r/avatar.json",
+        "https://docs.atomus.io/r/button.json",
+        "https://docs.atomus.io/r/progress-bar.json",
+        "https://docs.atomus.io/r/tabs.json",
+        "https://docs.atomus.io/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/blocks/dashboard.tsx",
+          "type": "registry:component",
+          "target": "components/atomus/blocks/dashboard.tsx"
+        }
+      ],
+      "docs": "import { Dashboard } from \"@/components/atomus/blocks/dashboard\";\nReplace the sample data with yours; every colour, space and radius is an Atomus token. Rules: https://docs.atomus.io/ai/rules/",
+      "categories": [
+        "block",
+        "app"
+      ],
+      "meta": {
+        "kind": "app",
+        "component": "Dashboard"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "settings",
+      "type": "registry:block",
+      "title": "Settings",
+      "description": "Account settings screen: tabs, profile form, notification toggles and a danger zone with a confirmation modal.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/app-shell.json",
+        "https://docs.atomus.io/r/tabs.json",
+        "https://docs.atomus.io/r/card.json",
+        "https://docs.atomus.io/r/input.json",
+        "https://docs.atomus.io/r/select.json",
+        "https://docs.atomus.io/r/checkbox-radio-toggle.json",
+        "https://docs.atomus.io/r/button.json",
+        "https://docs.atomus.io/r/avatar.json",
+        "https://docs.atomus.io/r/modal.json",
+        "https://docs.atomus.io/r/alert.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/blocks/settings.tsx",
+          "type": "registry:component",
+          "target": "components/atomus/blocks/settings.tsx"
+        }
+      ],
+      "docs": "import { Settings } from \"@/components/atomus/blocks/settings\";\nReplace the sample data with yours; every colour, space and radius is an Atomus token. Rules: https://docs.atomus.io/ai/rules/",
+      "categories": [
+        "block",
+        "app"
+      ],
+      "meta": {
+        "kind": "app",
+        "component": "Settings"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "auth",
+      "type": "registry:block",
+      "title": "Sign in",
+      "description": "Centered sign-in card for product apps: email and password, remember me, SSO button and a sign-up link.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/card.json",
+        "https://docs.atomus.io/r/input.json",
+        "https://docs.atomus.io/r/checkbox-radio-toggle.json",
+        "https://docs.atomus.io/r/button.json",
+        "https://docs.atomus.io/r/alert.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/blocks/auth.tsx",
+          "type": "registry:component",
+          "target": "components/atomus/blocks/auth.tsx"
+        }
+      ],
+      "docs": "import { Auth } from \"@/components/atomus/blocks/auth\";\nReplace the sample data with yours; every colour, space and radius is an Atomus token. Rules: https://docs.atomus.io/ai/rules/",
+      "categories": [
+        "block",
+        "app"
+      ],
+      "meta": {
+        "kind": "app",
+        "component": "Auth"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "table-view",
+      "type": "registry:block",
+      "title": "Table view",
+      "description": "List screen: page header, search and filters, a selectable sortable table with status badges and row actions, an empty state and pagination.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/app-shell.json",
+        "https://docs.atomus.io/r/table.json",
+        "https://docs.atomus.io/r/input.json",
+        "https://docs.atomus.io/r/select.json",
+        "https://docs.atomus.io/r/badge.json",
+        "https://docs.atomus.io/r/avatar.json",
+        "https://docs.atomus.io/r/button.json",
+        "https://docs.atomus.io/r/empty-state.json",
+        "https://docs.atomus.io/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/blocks/table-view.tsx",
+          "type": "registry:component",
+          "target": "components/atomus/blocks/table-view.tsx"
+        }
+      ],
+      "docs": "import { TableView } from \"@/components/atomus/blocks/table-view\";\nReplace the sample data with yours; every colour, space and radius is an Atomus token. Rules: https://docs.atomus.io/ai/rules/",
+      "categories": [
+        "block",
+        "app"
+      ],
+      "meta": {
+        "kind": "app",
+        "component": "TableView"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "website-parts",
+      "type": "registry:component",
+      "title": "Website section parts",
+      "description": "Layout building blocks for the Atomus website sections (Section, Head, Img, logo and brand marks) and the responsive section CSS. Installed with every website section.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/sections/parts.tsx",
+          "type": "registry:component",
+          "target": "components/atomus/sections/parts.tsx"
+        }
+      ],
+      "categories": [
+        "website"
+      ],
+      "meta": {
+        "source": "sites/docs/src/components/sections/parts.tsx"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "header-navigation",
+      "type": "registry:block",
+      "title": "Header navigation",
+      "description": "Website section: Header navigation. Logo (links home); Primary links — 4 to 6, sentence case; Secondary action (Log in, tertiary) and primary CTA; Tablet and mobile: links and actions collapse into a menu button (Type = Mobile menu open shows the panel).",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/website-parts.json",
+        "https://docs.atomus.io/r/button.json",
+        "https://docs.atomus.io/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/sections/header-navigation.tsx",
+          "type": "registry:component",
+          "target": "components/atomus/sections/header-navigation.tsx"
+        }
+      ],
+      "docs": "import HeaderNavigation from \"@/components/atomus/sections/header-navigation\";\nReplace the sample copy and images with yours. Layout and type switch at the Atomus tablet (1023px) and mobile (767px) breakpoints.\nPreview and Figma variants: https://docs.atomus.io/website-sections/#header-navigation",
+      "categories": [
+        "block",
+        "website"
+      ],
+      "meta": {
+        "kind": "website",
+        "section": "Header navigation",
+        "component": "HeaderNavigation"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "footer",
+      "type": "registry:block",
+      "title": "Footer",
+      "description": "Website section: Footer. Brand column: logo and one-line pitch; 4 link columns with a bold heading each; Bottom bar: copyright and legal links; Style = Dark sets data-theme=\"dark\" on the footer, so every token flips.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/website-parts.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/sections/footer.tsx",
+          "type": "registry:component",
+          "target": "components/atomus/sections/footer.tsx"
+        }
+      ],
+      "docs": "import Footer from \"@/components/atomus/sections/footer\";\nReplace the sample copy and images with yours. Layout and type switch at the Atomus tablet (1023px) and mobile (767px) breakpoints.\nPreview and Figma variants: https://docs.atomus.io/website-sections/#footer",
+      "categories": [
+        "block",
+        "website"
+      ],
+      "meta": {
+        "kind": "website",
+        "section": "Footer",
+        "component": "Footer"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "hero-section",
+      "type": "registry:block",
+      "title": "Hero section",
+      "description": "Website section: Hero section. Badge or eyebrow (optional); Headline — Web/Display; Supporting text — Web/Body lg, max ~2 lines; Primary + secondary CTA; Product image or screenshot; Split image puts it beside the text, Email capture swaps the CTAs for an email field.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/website-parts.json",
+        "https://docs.atomus.io/r/badge.json",
+        "https://docs.atomus.io/r/button.json",
+        "https://docs.atomus.io/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/sections/hero-section.tsx",
+          "type": "registry:component",
+          "target": "components/atomus/sections/hero-section.tsx"
+        }
+      ],
+      "docs": "import HeroSection from \"@/components/atomus/sections/hero-section\";\nReplace the sample copy and images with yours. Layout and type switch at the Atomus tablet (1023px) and mobile (767px) breakpoints.\nPreview and Figma variants: https://docs.atomus.io/website-sections/#hero-section",
+      "categories": [
+        "block",
+        "website"
+      ],
+      "meta": {
+        "kind": "website",
+        "section": "Hero section",
+        "component": "HeroSection"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "features-section",
+      "type": "registry:block",
+      "title": "Features section",
+      "description": "Website section: Features section. Section heading: eyebrow, title, supporting text; 6 features: featured icon, title (Web/Heading xs), one or two lines of text; Grid: 3 columns on desktop, 2 on tablet, 1 on mobile.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/website-parts.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/sections/features-section.tsx",
+          "type": "registry:component",
+          "target": "components/atomus/sections/features-section.tsx"
+        }
+      ],
+      "docs": "import FeaturesSection from \"@/components/atomus/sections/features-section\";\nReplace the sample copy and images with yours. Layout and type switch at the Atomus tablet (1023px) and mobile (767px) breakpoints.\nPreview and Figma variants: https://docs.atomus.io/website-sections/#features-section",
+      "categories": [
+        "block",
+        "website"
+      ],
+      "meta": {
+        "kind": "website",
+        "section": "Features section",
+        "component": "FeaturesSection"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "feature-split-section",
+      "type": "registry:block",
+      "title": "Feature split section",
+      "description": "Website section: Feature split section. Text column: eyebrow, title, supporting text; Checklist — 3 to 5 short benefits; Optional CTA; Image column; Type = Image left mirrors the order. Stacks text-first on tablet and mobile.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/website-parts.json",
+        "https://docs.atomus.io/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/sections/feature-split-section.tsx",
+          "type": "registry:component",
+          "target": "components/atomus/sections/feature-split-section.tsx"
+        }
+      ],
+      "docs": "import FeatureSplitSection from \"@/components/atomus/sections/feature-split-section\";\nReplace the sample copy and images with yours. Layout and type switch at the Atomus tablet (1023px) and mobile (767px) breakpoints.\nPreview and Figma variants: https://docs.atomus.io/website-sections/#feature-split-section",
+      "categories": [
+        "block",
+        "website"
+      ],
+      "meta": {
+        "kind": "website",
+        "section": "Feature split section",
+        "component": "FeatureSplitSection"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "bento-section",
+      "type": "registry:block",
+      "title": "Bento section",
+      "description": "Website section: Bento section. Section heading; Bento grid of feature cards — one wide and one tall card for rhythm; Each card: icon or image, title, one line of text; 3 columns → 2 → 1.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/website-parts.json",
+        "https://docs.atomus.io/r/badge.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/sections/bento-section.tsx",
+          "type": "registry:component",
+          "target": "components/atomus/sections/bento-section.tsx"
+        }
+      ],
+      "docs": "import BentoSection from \"@/components/atomus/sections/bento-section\";\nReplace the sample copy and images with yours. Layout and type switch at the Atomus tablet (1023px) and mobile (767px) breakpoints.\nPreview and Figma variants: https://docs.atomus.io/website-sections/#bento-section",
+      "categories": [
+        "block",
+        "website"
+      ],
+      "meta": {
+        "kind": "website",
+        "section": "Bento section",
+        "component": "BentoSection"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "logo-cloud",
+      "type": "registry:block",
+      "title": "Logo cloud",
+      "description": "Website section: Logo cloud. One-line label (\"Trusted by …\"), Web/Body, tertiary text; 5–6 customer logos in fg-tertiary (one colour); Wraps to 2 columns on mobile.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/website-parts.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/sections/logo-cloud.tsx",
+          "type": "registry:component",
+          "target": "components/atomus/sections/logo-cloud.tsx"
+        }
+      ],
+      "docs": "import LogoCloud from \"@/components/atomus/sections/logo-cloud\";\nReplace the sample copy and images with yours. Layout and type switch at the Atomus tablet (1023px) and mobile (767px) breakpoints.\nPreview and Figma variants: https://docs.atomus.io/website-sections/#logo-cloud",
+      "categories": [
+        "block",
+        "website"
+      ],
+      "meta": {
+        "kind": "website",
+        "section": "Logo cloud",
+        "component": "LogoCloud"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "testimonial",
+      "type": "registry:block",
+      "title": "Testimonial",
+      "description": "Website section: Testimonial. Company logo or star rating; Quote — Web/Heading md, centred, max ~3 lines; Author: avatar, name, role and company.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/website-parts.json",
+        "https://docs.atomus.io/r/avatar.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/sections/testimonial.tsx",
+          "type": "registry:component",
+          "target": "components/atomus/sections/testimonial.tsx"
+        }
+      ],
+      "docs": "import Testimonial from \"@/components/atomus/sections/testimonial\";\nReplace the sample copy and images with yours. Layout and type switch at the Atomus tablet (1023px) and mobile (767px) breakpoints.\nPreview and Figma variants: https://docs.atomus.io/website-sections/#testimonial",
+      "categories": [
+        "block",
+        "website"
+      ],
+      "meta": {
+        "kind": "website",
+        "section": "Testimonial",
+        "component": "Testimonial"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "testimonials-grid",
+      "type": "registry:block",
+      "title": "Testimonials grid",
+      "description": "Website section: Testimonials grid. Section heading; Testimonial cards: rating, quote (Web/Body), author row; 3 columns → 2 → 1.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/website-parts.json",
+        "https://docs.atomus.io/r/avatar.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/sections/testimonials-grid.tsx",
+          "type": "registry:component",
+          "target": "components/atomus/sections/testimonials-grid.tsx"
+        }
+      ],
+      "docs": "import TestimonialsGrid from \"@/components/atomus/sections/testimonials-grid\";\nReplace the sample copy and images with yours. Layout and type switch at the Atomus tablet (1023px) and mobile (767px) breakpoints.\nPreview and Figma variants: https://docs.atomus.io/website-sections/#testimonials-grid",
+      "categories": [
+        "block",
+        "website"
+      ],
+      "meta": {
+        "kind": "website",
+        "section": "Testimonials grid",
+        "component": "TestimonialsGrid"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "metrics-section",
+      "type": "registry:block",
+      "title": "Metrics section",
+      "description": "Website section: Metrics section. Brand background (bg-brand-solid) with on-brand text; Short heading and supporting line; 3–4 key numbers: value (Web/Heading xl) and label; 4 → 2 → 1 columns.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/website-parts.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/sections/metrics-section.tsx",
+          "type": "registry:component",
+          "target": "components/atomus/sections/metrics-section.tsx"
+        }
+      ],
+      "docs": "import MetricsSection from \"@/components/atomus/sections/metrics-section\";\nReplace the sample copy and images with yours. Layout and type switch at the Atomus tablet (1023px) and mobile (767px) breakpoints.\nPreview and Figma variants: https://docs.atomus.io/website-sections/#metrics-section",
+      "categories": [
+        "block",
+        "website"
+      ],
+      "meta": {
+        "kind": "website",
+        "section": "Metrics section",
+        "component": "MetricsSection"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "pricing-card",
+      "type": "registry:block",
+      "title": "Pricing card",
+      "description": "Website section: Pricing card. Plan name and short description; Price (Web/Heading xl) with billing period; CTA — primary on the highlighted plan, outline on the rest; Feature checklist; Highlighted = True adds the brand border, shadow and a \"Most popular\" badge.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/website-parts.json",
+        "https://docs.atomus.io/r/badge.json",
+        "https://docs.atomus.io/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/sections/pricing-card.tsx",
+          "type": "registry:component",
+          "target": "components/atomus/sections/pricing-card.tsx"
+        }
+      ],
+      "docs": "import PricingCard from \"@/components/atomus/sections/pricing-card\";\nReplace the sample copy and images with yours. Layout and type switch at the Atomus tablet (1023px) and mobile (767px) breakpoints.\nPreview and Figma variants: https://docs.atomus.io/website-sections/#pricing-card",
+      "categories": [
+        "block",
+        "website"
+      ],
+      "meta": {
+        "kind": "website",
+        "section": "Pricing card",
+        "component": "PricingCard"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "pricing-section",
+      "type": "registry:block",
+      "title": "Pricing section",
+      "description": "Website section: Pricing section. Section heading; Billing toggle (Tabs, segmented): Monthly / Yearly; 3 Pricing cards, the recommended plan highlighted; Cards stack on tablet and mobile with the highlighted plan kept in order.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/website-parts.json",
+        "https://docs.atomus.io/r/tabs.json",
+        "https://docs.atomus.io/r/pricing-card.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/sections/pricing-section.tsx",
+          "type": "registry:component",
+          "target": "components/atomus/sections/pricing-section.tsx"
+        }
+      ],
+      "docs": "import PricingSection from \"@/components/atomus/sections/pricing-section\";\nReplace the sample copy and images with yours. Layout and type switch at the Atomus tablet (1023px) and mobile (767px) breakpoints.\nPreview and Figma variants: https://docs.atomus.io/website-sections/#pricing-section",
+      "categories": [
+        "block",
+        "website"
+      ],
+      "meta": {
+        "kind": "website",
+        "section": "Pricing section",
+        "component": "PricingSection"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "faq-item",
+      "type": "registry:block",
+      "title": "FAQ item",
+      "description": "Website section: FAQ item. Question — Web/Body lg, semibold; Plus icon that turns into × when open; Answer — Web/Body, secondary text; State: Closed · Open; a hairline divider between items.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/website-parts.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/sections/faq-item.tsx",
+          "type": "registry:component",
+          "target": "components/atomus/sections/faq-item.tsx"
+        }
+      ],
+      "docs": "import FaqItem from \"@/components/atomus/sections/faq-item\";\nReplace the sample copy and images with yours. Layout and type switch at the Atomus tablet (1023px) and mobile (767px) breakpoints.\nPreview and Figma variants: https://docs.atomus.io/website-sections/#faq-item",
+      "categories": [
+        "block",
+        "website"
+      ],
+      "meta": {
+        "kind": "website",
+        "section": "FAQ item",
+        "component": "FaqItem"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "faq-section",
+      "type": "registry:block",
+      "title": "FAQ section",
+      "description": "Website section: FAQ section. Section heading; 6 FAQ items (first one open); Optional \"Still have questions?\" line with a contact link.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/website-parts.json",
+        "https://docs.atomus.io/r/button.json",
+        "https://docs.atomus.io/r/faq-item.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/sections/faq-section.tsx",
+          "type": "registry:component",
+          "target": "components/atomus/sections/faq-section.tsx"
+        }
+      ],
+      "docs": "import FaqSection from \"@/components/atomus/sections/faq-section\";\nReplace the sample copy and images with yours. Layout and type switch at the Atomus tablet (1023px) and mobile (767px) breakpoints.\nPreview and Figma variants: https://docs.atomus.io/website-sections/#faq-section",
+      "categories": [
+        "block",
+        "website"
+      ],
+      "meta": {
+        "kind": "website",
+        "section": "FAQ section",
+        "component": "FaqSection"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "cta-section",
+      "type": "registry:block",
+      "title": "CTA section",
+      "description": "Website section: CTA section. Brand band: bg-brand-solid with on-brand text and a large radius; Title (Web/Heading lg) and one supporting line; Two CTAs — white primary, translucent outline; Type = Card with image adds an image beside the text; stacks on tablet and mobile.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/website-parts.json",
+        "https://docs.atomus.io/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/sections/cta-section.tsx",
+          "type": "registry:component",
+          "target": "components/atomus/sections/cta-section.tsx"
+        }
+      ],
+      "docs": "import CtaSection from \"@/components/atomus/sections/cta-section\";\nReplace the sample copy and images with yours. Layout and type switch at the Atomus tablet (1023px) and mobile (767px) breakpoints.\nPreview and Figma variants: https://docs.atomus.io/website-sections/#cta-section",
+      "categories": [
+        "block",
+        "website"
+      ],
+      "meta": {
+        "kind": "website",
+        "section": "CTA section",
+        "component": "CtaSection"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "newsletter-section",
+      "type": "registry:block",
+      "title": "Newsletter section",
+      "description": "Website section: Newsletter section. Title and one line of value; Email input (lg) + primary button on one row; stacks on mobile; Privacy hint under the field.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/website-parts.json",
+        "https://docs.atomus.io/r/button.json",
+        "https://docs.atomus.io/r/input.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/sections/newsletter-section.tsx",
+          "type": "registry:component",
+          "target": "components/atomus/sections/newsletter-section.tsx"
+        }
+      ],
+      "docs": "import NewsletterSection from \"@/components/atomus/sections/newsletter-section\";\nReplace the sample copy and images with yours. Layout and type switch at the Atomus tablet (1023px) and mobile (767px) breakpoints.\nPreview and Figma variants: https://docs.atomus.io/website-sections/#newsletter-section",
+      "categories": [
+        "block",
+        "website"
+      ],
+      "meta": {
+        "kind": "website",
+        "section": "Newsletter section",
+        "component": "NewsletterSection"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "blog-card",
+      "type": "registry:block",
+      "title": "Blog card",
+      "description": "Website section: Blog card. Cover image (16:10); Category badge; Title — Web/Heading xs, max 2 lines; Excerpt — 2 lines; Author row: avatar, name, date.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/website-parts.json",
+        "https://docs.atomus.io/r/avatar.json",
+        "https://docs.atomus.io/r/badge.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/sections/blog-card.tsx",
+          "type": "registry:component",
+          "target": "components/atomus/sections/blog-card.tsx"
+        }
+      ],
+      "docs": "import BlogCard from \"@/components/atomus/sections/blog-card\";\nReplace the sample copy and images with yours. Layout and type switch at the Atomus tablet (1023px) and mobile (767px) breakpoints.\nPreview and Figma variants: https://docs.atomus.io/website-sections/#blog-card",
+      "categories": [
+        "block",
+        "website"
+      ],
+      "meta": {
+        "kind": "website",
+        "section": "Blog card",
+        "component": "BlogCard"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "blog-section",
+      "type": "registry:block",
+      "title": "Blog section",
+      "description": "Website section: Blog section. Heading with a \"View all posts\" action; 3 Blog cards — 3 → 2 → 1 columns.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/website-parts.json",
+        "https://docs.atomus.io/r/button.json",
+        "https://docs.atomus.io/r/blog-card.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/sections/blog-section.tsx",
+          "type": "registry:component",
+          "target": "components/atomus/sections/blog-section.tsx"
+        }
+      ],
+      "docs": "import BlogSection from \"@/components/atomus/sections/blog-section\";\nReplace the sample copy and images with yours. Layout and type switch at the Atomus tablet (1023px) and mobile (767px) breakpoints.\nPreview and Figma variants: https://docs.atomus.io/website-sections/#blog-section",
+      "categories": [
+        "block",
+        "website"
+      ],
+      "meta": {
+        "kind": "website",
+        "section": "Blog section",
+        "component": "BlogSection"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "team-member",
+      "type": "registry:block",
+      "title": "Team member",
+      "description": "Website section: Team member. Square photo; Name (Web/Heading xs) and role in brand text; Short bio — 2 lines; Social links (optional).",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/website-parts.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/sections/team-member.tsx",
+          "type": "registry:component",
+          "target": "components/atomus/sections/team-member.tsx"
+        }
+      ],
+      "docs": "import TeamMember from \"@/components/atomus/sections/team-member\";\nReplace the sample copy and images with yours. Layout and type switch at the Atomus tablet (1023px) and mobile (767px) breakpoints.\nPreview and Figma variants: https://docs.atomus.io/website-sections/#team-member",
+      "categories": [
+        "block",
+        "website"
+      ],
+      "meta": {
+        "kind": "website",
+        "section": "Team member",
+        "component": "TeamMember"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "team-section",
+      "type": "registry:block",
+      "title": "Team section",
+      "description": "Website section: Team section. Section heading with an optional \"We’re hiring\" CTA; Team member cards — 4 → 2 → 1 columns.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/website-parts.json",
+        "https://docs.atomus.io/r/button.json",
+        "https://docs.atomus.io/r/team-member.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/sections/team-section.tsx",
+          "type": "registry:component",
+          "target": "components/atomus/sections/team-section.tsx"
+        }
+      ],
+      "docs": "import TeamSection from \"@/components/atomus/sections/team-section\";\nReplace the sample copy and images with yours. Layout and type switch at the Atomus tablet (1023px) and mobile (767px) breakpoints.\nPreview and Figma variants: https://docs.atomus.io/website-sections/#team-section",
+      "categories": [
+        "block",
+        "website"
+      ],
+      "meta": {
+        "kind": "website",
+        "section": "Team section",
+        "component": "TeamSection"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "contact-section",
+      "type": "registry:block",
+      "title": "Contact section",
+      "description": "Website section: Contact section. Heading and supporting text; Form: first/last name row, email, message, consent checkbox, full-width submit; Contact info cards: icon, label, value (email, office, phone); Form and cards sit side by side on desktop and stack below.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/website-parts.json",
+        "https://docs.atomus.io/r/button.json",
+        "https://docs.atomus.io/r/checkbox-radio-toggle.json",
+        "https://docs.atomus.io/r/icon.json",
+        "https://docs.atomus.io/r/input.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/sections/contact-section.tsx",
+          "type": "registry:component",
+          "target": "components/atomus/sections/contact-section.tsx"
+        }
+      ],
+      "docs": "import ContactSection from \"@/components/atomus/sections/contact-section\";\nReplace the sample copy and images with yours. Layout and type switch at the Atomus tablet (1023px) and mobile (767px) breakpoints.\nPreview and Figma variants: https://docs.atomus.io/website-sections/#contact-section",
+      "categories": [
+        "block",
+        "website"
+      ],
+      "meta": {
+        "kind": "website",
+        "section": "Contact section",
+        "component": "ContactSection"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "careers-section",
+      "type": "registry:block",
+      "title": "Careers section",
+      "description": "Website section: Careers section. Heading and supporting text; Department filter (Tabs, pill); Job cards: title, department badge, location and type, \"Apply\" action; Job cards stack their action under the text on mobile.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/website-parts.json",
+        "https://docs.atomus.io/r/badge.json",
+        "https://docs.atomus.io/r/button.json",
+        "https://docs.atomus.io/r/icon.json",
+        "https://docs.atomus.io/r/tabs.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/sections/careers-section.tsx",
+          "type": "registry:component",
+          "target": "components/atomus/sections/careers-section.tsx"
+        }
+      ],
+      "docs": "import CareersSection from \"@/components/atomus/sections/careers-section\";\nReplace the sample copy and images with yours. Layout and type switch at the Atomus tablet (1023px) and mobile (767px) breakpoints.\nPreview and Figma variants: https://docs.atomus.io/website-sections/#careers-section",
+      "categories": [
+        "block",
+        "website"
+      ],
+      "meta": {
+        "kind": "website",
+        "section": "Careers section",
+        "component": "CareersSection"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "comparison-table-section",
+      "type": "registry:block",
+      "title": "Comparison table section",
+      "description": "Website section: Comparison table section. Section heading; Table header: plan names, prices and CTAs; the recommended plan column is tinted; Grouped feature rows with check / dash cells (never colour alone); Scrolls horizontally on mobile instead of squeezing columns.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/website-parts.json",
+        "https://docs.atomus.io/r/button.json",
+        "https://docs.atomus.io/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/sections/comparison-table-section.tsx",
+          "type": "registry:component",
+          "target": "components/atomus/sections/comparison-table-section.tsx"
+        }
+      ],
+      "docs": "import ComparisonTableSection from \"@/components/atomus/sections/comparison-table-section\";\nReplace the sample copy and images with yours. Layout and type switch at the Atomus tablet (1023px) and mobile (767px) breakpoints.\nPreview and Figma variants: https://docs.atomus.io/website-sections/#comparison-table-section",
+      "categories": [
+        "block",
+        "website"
+      ],
+      "meta": {
+        "kind": "website",
+        "section": "Comparison table section",
+        "component": "ComparisonTableSection"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "integrations-section",
+      "type": "registry:block",
+      "title": "Integrations section",
+      "description": "Website section: Integrations section. Section heading; Integration cards: app tile, name, one-line description, \"View integration\" link; 3 → 2 → 1 columns.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/website-parts.json",
+        "https://docs.atomus.io/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/sections/integrations-section.tsx",
+          "type": "registry:component",
+          "target": "components/atomus/sections/integrations-section.tsx"
+        }
+      ],
+      "docs": "import IntegrationsSection from \"@/components/atomus/sections/integrations-section\";\nReplace the sample copy and images with yours. Layout and type switch at the Atomus tablet (1023px) and mobile (767px) breakpoints.\nPreview and Figma variants: https://docs.atomus.io/website-sections/#integrations-section",
+      "categories": [
+        "block",
+        "website"
+      ],
+      "meta": {
+        "kind": "website",
+        "section": "Integrations section",
+        "component": "IntegrationsSection"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "not-found-section",
+      "type": "registry:block",
+      "title": "404 section",
+      "description": "Website section: 404 section. Large \"404\" in brand text; Title and one line of help; Search field; Back and Home actions.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/website-parts.json",
+        "https://docs.atomus.io/r/button.json",
+        "https://docs.atomus.io/r/icon.json",
+        "https://docs.atomus.io/r/input.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/sections/not-found-section.tsx",
+          "type": "registry:component",
+          "target": "components/atomus/sections/not-found-section.tsx"
+        }
+      ],
+      "docs": "import NotFoundSection from \"@/components/atomus/sections/not-found-section\";\nReplace the sample copy and images with yours. Layout and type switch at the Atomus tablet (1023px) and mobile (767px) breakpoints.\nPreview and Figma variants: https://docs.atomus.io/website-sections/#404-section",
+      "categories": [
+        "block",
+        "website"
+      ],
+      "meta": {
+        "kind": "website",
+        "section": "404 section",
+        "component": "NotFoundSection"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "blog-post-content",
+      "type": "registry:block",
+      "title": "Blog post content",
+      "description": "Website section: Blog post content. Meta: category badge and reading time; Title (Web/Heading xl) and lead paragraph; Author row; Cover image; Rich-text body (max 720px): Web/Body paragraphs, Web/Heading sm subheads, quotes, lists.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/website-parts.json",
+        "https://docs.atomus.io/r/avatar.json",
+        "https://docs.atomus.io/r/badge.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/sections/blog-post-content.tsx",
+          "type": "registry:component",
+          "target": "components/atomus/sections/blog-post-content.tsx"
+        }
+      ],
+      "docs": "import BlogPostContent from \"@/components/atomus/sections/blog-post-content\";\nReplace the sample copy and images with yours. Layout and type switch at the Atomus tablet (1023px) and mobile (767px) breakpoints.\nPreview and Figma variants: https://docs.atomus.io/website-sections/#blog-post-content",
+      "categories": [
+        "block",
+        "website"
+      ],
+      "meta": {
+        "kind": "website",
+        "section": "Blog post content",
+        "component": "BlogPostContent"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "content-section",
+      "type": "registry:block",
+      "title": "Content section",
+      "description": "Website section: Content section. Eyebrow and title; Long-form copy in two to four paragraphs; Supporting image beside the text (below on tablet and mobile); Optional pull quote.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/website-parts.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/sections/content-section.tsx",
+          "type": "registry:component",
+          "target": "components/atomus/sections/content-section.tsx"
+        }
+      ],
+      "docs": "import ContentSection from \"@/components/atomus/sections/content-section\";\nReplace the sample copy and images with yours. Layout and type switch at the Atomus tablet (1023px) and mobile (767px) breakpoints.\nPreview and Figma variants: https://docs.atomus.io/website-sections/#content-section",
+      "categories": [
+        "block",
+        "website"
+      ],
+      "meta": {
+        "kind": "website",
+        "section": "Content section",
+        "component": "ContentSection"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "press-mentions",
+      "type": "registry:block",
+      "title": "Press mentions",
+      "description": "Website section: Press mentions. Heading; Press items: publication logo, short quote, \"Read article\" link; 3 columns → 1, separated by a left rule.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/website-parts.json",
+        "https://docs.atomus.io/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/sections/press-mentions.tsx",
+          "type": "registry:component",
+          "target": "components/atomus/sections/press-mentions.tsx"
+        }
+      ],
+      "docs": "import PressMentions from \"@/components/atomus/sections/press-mentions\";\nReplace the sample copy and images with yours. Layout and type switch at the Atomus tablet (1023px) and mobile (767px) breakpoints.\nPreview and Figma variants: https://docs.atomus.io/website-sections/#press-mentions",
+      "categories": [
+        "block",
+        "website"
+      ],
+      "meta": {
+        "kind": "website",
+        "section": "Press mentions",
+        "component": "PressMentions"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "legal-content",
+      "type": "registry:block",
+      "title": "Legal content",
+      "description": "Website section: Legal content. Title and \"Last updated\" date; Sticky table of contents (current section in brand text); moves above the content on tablet and mobile; Numbered sections: Web/Heading sm + Web/Body paragraphs.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/website-parts.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/sections/legal-content.tsx",
+          "type": "registry:component",
+          "target": "components/atomus/sections/legal-content.tsx"
+        }
+      ],
+      "docs": "import LegalContent from \"@/components/atomus/sections/legal-content\";\nReplace the sample copy and images with yours. Layout and type switch at the Atomus tablet (1023px) and mobile (767px) breakpoints.\nPreview and Figma variants: https://docs.atomus.io/website-sections/#legal-content",
+      "categories": [
+        "block",
+        "website"
+      ],
+      "meta": {
+        "kind": "website",
+        "section": "Legal content",
+        "component": "LegalContent"
+      },
+      "author": "StanVision (https://stan.vision)"
+    },
+    {
+      "name": "auth-section",
+      "type": "registry:block",
+      "title": "Auth section",
+      "description": "Website section: Auth section. Logo, title and one line of context; Form: email, password, \"Remember me\" and \"Forgot password\" row, full-width primary button; Divider and social sign-in; Footer link to the other flow (Sign up / Log in); Desktop adds a brand panel with a testimonial; Type switches between Log in, Sign up, Forgot password and Verification.",
+      "registryDependencies": [
+        "https://docs.atomus.io/r/website-parts.json",
+        "https://docs.atomus.io/r/button.json",
+        "https://docs.atomus.io/r/checkbox-radio-toggle.json",
+        "https://docs.atomus.io/r/input.json"
+      ],
+      "files": [
+        {
+          "path": "atomus/sections/auth-section.tsx",
+          "type": "registry:component",
+          "target": "components/atomus/sections/auth-section.tsx"
+        }
+      ],
+      "docs": "import AuthSection from \"@/components/atomus/sections/auth-section\";\nReplace the sample copy and images with yours. Layout and type switch at the Atomus tablet (1023px) and mobile (767px) breakpoints.\nPreview and Figma variants: https://docs.atomus.io/website-sections/#auth-section",
+      "categories": [
+        "block",
+        "website"
+      ],
+      "meta": {
+        "kind": "website",
+        "section": "Auth section",
+        "component": "AuthSection"
+      },
+      "author": "StanVision (https://stan.vision)"
+    }
+  ]
+}
