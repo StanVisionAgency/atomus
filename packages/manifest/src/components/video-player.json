@@ -1,0 +1,53 @@
+{
+  "name": "Video player",
+  "kind": "component",
+  "status": "figma-only",
+  "since": "4.0.0",
+  "category": "Media and assets",
+  "import": null,
+  "source": "guidelines/components/shared-assets.md",
+  "purpose": "16:9 player with play button and controls.",
+  "description": "16:9 player with play button and controls.",
+  "aliases": [],
+  "alternative": "These are design-only mockups and annotations; they have no code counterpart.",
+  "props": {
+    "Breakpoint": {
+      "type": "variant",
+      "values": ["Desktop","Mobile"],
+      "default": null,
+      "required": false,
+      "figma": "Breakpoint",
+      "notes": null
+    },
+    "State": {
+      "type": "variant",
+      "values": ["Paused","Playing"],
+      "default": null,
+      "required": false,
+      "figma": "State",
+      "notes": null
+    }
+  },
+  "rules": {"do":[],"dont":[],"forbidden":[]},
+  "examples": [],
+  "figma": {
+    "componentSet": ["Video player"],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": 4,
+    "docs": "https://docs.atomus.io/components/shared-assets/"
+  },
+  "docs": "https://docs.atomus.io/components/shared-assets/",
+  "related": [
+    "Credit card",
+    "Email template",
+    "Annotation marker",
+    "Annotation note",
+    "Spec line",
+    "Status tag",
+    "A11y annotation"
+  ],
+  "a11y": {"element":null,"requiresLabel":false,"notes":[]}
+}

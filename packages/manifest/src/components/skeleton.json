@@ -1,0 +1,41 @@
+{
+  "name": "Skeleton",
+  "kind": "component",
+  "status": "figma-only",
+  "since": "4.0.0",
+  "category": "Feedback",
+  "import": null,
+  "source": "guidelines/components/progress-loading.md",
+  "purpose": "A placeholder that holds the layout while content loads.",
+  "description": "Loading placeholders.",
+  "aliases": ["placeholder","shimmer"],
+  "alternative": "Progress circle, Progress steps, Loading indicator and Skeleton are Figma-only. For a spinner inside a button use `<Button loading>`.",
+  "props": {
+    "Type": {
+      "type": "variant",
+      "values": ["Text","Avatar + text","Card"],
+      "default": null,
+      "required": false,
+      "figma": "Type",
+      "notes": null
+    }
+  },
+  "rules": {
+    "do": ["Match the skeleton to the layout that will load."],
+    "dont": [],
+    "forbidden": ["Never leave a skeleton for more than a few seconds without a message."]
+  },
+  "examples": [],
+  "figma": {
+    "componentSet": ["Skeleton"],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": 3,
+    "docs": "https://docs.atomus.io/components/loading-skeleton/"
+  },
+  "docs": "https://docs.atomus.io/components/loading-skeleton/",
+  "related": ["ProgressBar","Step","Progress steps","Progress circle","Loading indicator"],
+  "a11y": {"element":null,"requiresLabel":false,"notes":[]}
+}

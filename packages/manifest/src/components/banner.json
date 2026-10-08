@@ -1,0 +1,47 @@
+{
+  "name": "Banner",
+  "kind": "component",
+  "status": "figma-only",
+  "since": "4.0.0",
+  "category": "Feedback",
+  "import": null,
+  "source": "guidelines/components/metrics-feeds.md",
+  "purpose": "One product- or account-wide announcement across the top of the page.",
+  "description": "Full-width announcement bar.",
+  "aliases": ["announcement bar","top bar message"],
+  "alternative": "Activity item, Banner and Code snippet are Figma-only.",
+  "props": {
+    "Title": {"type":"text","default":null,"required":false,"figma":"Title","notes":null},
+    "Message": {"type":"text","default":null,"required":false,"figma":"Message","notes":null},
+    "Action": {"type":"boolean (on)","default":true,"required":false,"figma":"Action","notes":null},
+    "Color": {
+      "type": "variant",
+      "values": ["Default","Brand"],
+      "default": null,
+      "required": false,
+      "figma": "Color",
+      "notes": null
+    }
+  },
+  "rules": {
+    "do": ["Use for one product- or account-wide message at the top of the page, and let people dismiss it."],
+    "dont": [],
+    "forbidden": [
+      "Never show more than one banner at a time.",
+      "Never use a banner for form or section errors — use Alert."
+    ]
+  },
+  "examples": [],
+  "figma": {
+    "componentSet": ["Banner"],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": 2,
+    "docs": "https://docs.atomus.io/components/banner/"
+  },
+  "docs": "https://docs.atomus.io/components/banner/",
+  "related": ["MetricCard","Activity item","Code snippet"],
+  "a11y": {"element":null,"requiresLabel":false,"notes":[]}
+}
