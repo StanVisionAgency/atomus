@@ -1,0 +1,9 @@
+/* Storybook canvas: the page follows the Atomus theme, like a product page would. */
+html, body { background: var(--color-bg-primary); color: var(--color-text-secondary); font-family: var(--font-family-body); }
+body { margin: 0; -webkit-font-smoothing: antialiased; }
+/* Story layout helpers (only used in *.stories.tsx). */
+.sb-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--spacing-lg); }
+.sb-stack { display: flex; flex-direction: column; gap: var(--spacing-xl); }
+.sb-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: var(--spacing-3xl); align-items: start; }
+/* Room for popovers and listboxes that open below their trigger. */
+.sb-pop { min-height: 320px; }

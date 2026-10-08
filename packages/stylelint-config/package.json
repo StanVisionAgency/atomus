@@ -52,8 +52,8 @@
   "scripts": {
     "pretest": "node scripts/copy-data.mjs",
     "test": "node --test tests/*.test.js",
-    "lint:repo": "node scripts/copy-data.mjs && stylelint --config index.js \"../../react/src/**/*.css\"",
-    "lint:repo:sarif": "node scripts/copy-data.mjs && stylelint --config index.js --custom-formatter ./sarif-formatter.js --output-file atomus-stylelint.sarif \"../../react/src/**/*.css\"",
+    "lint:repo": "node scripts/copy-data.mjs && stylelint --config repo.config.js \"../../react/src/**/*.css\"",
+    "lint:repo:sarif": "node scripts/copy-data.mjs && stylelint --config repo.config.js --custom-formatter ./sarif-formatter.js --output-file atomus-stylelint.sarif \"../../react/src/**/*.css\"",
     "prepack": "node scripts/copy-data.mjs --with-licence"
   },
   "devDependencies": {
