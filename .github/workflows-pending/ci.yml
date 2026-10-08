@@ -61,3 +61,69 @@ jobs:
           node-version: 22
       - run: npm install --no-audit --no-fund
       - run: npm run build
+
+  manifest:
+    name: Component manifest
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/manifest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - name: Manifest is up to date and matches the JSON Schema
+        run: node ../../scripts/build-manifest.mjs --check
+      - name: Package contents
+        run: npm pack --dry-run
+
+  lint-packages:
+    name: ESLint plugin and Stylelint config
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: ESLint plugin — RuleTester suites
+        working-directory: packages/eslint-plugin
+        run: |
+          npm install --no-audit --no-fund
+          npm test
+      - name: ESLint plugin — lint react/src (strict)
+        working-directory: packages/eslint-plugin
+        run: npm run lint:repo
+      - name: Stylelint config — tests
+        working-directory: packages/stylelint-config
+        run: |
+          npm install --no-audit --no-fund
+          npm test
+      - name: Stylelint config — lint react/src/styles.css
+        working-directory: packages/stylelint-config
+        run: npm run lint:repo
+      - name: Package contents
+        run: |
+          (cd packages/eslint-plugin && npm pack --dry-run)
+          (cd packages/stylelint-config && npm pack --dry-run)
+
+  mcp:
+    name: Atomus MCP server
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/mcp
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npm run typecheck
+      - name: Build, then call every tool over stdio and through the Worker (wrangler dev)
+        run: npm test
+      - name: Worker bundle fits the Workers size limit (dry run, no deploy)
+        run: npx wrangler deploy --dry-run --outdir /tmp/atomus-worker -c worker/wrangler.toml
+      - name: Package contents
+        run: npm pack --dry-run
