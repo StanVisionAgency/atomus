@@ -1,0 +1,28 @@
+{
+  "name": "Icon payment",
+  "kind": "component",
+  "status": "figma-only",
+  "since": "4.0.0",
+  "category": "Media and assets",
+  "import": null,
+  "source": "guidelines/components/atomus-icons.md",
+  "purpose": "Payment method marks, 48×32. Use in checkout, pricing and footers.",
+  "description": "Payment method marks, 48×32. Use in checkout, pricing and footers.",
+  "aliases": [],
+  "alternative": "Use your icon library (Font Awesome names match the Figma icons) and pass icons as React nodes to `icon`, `iconLeading` and `iconTrailing` props. `Icon` from the package only ships the few glyphs the components use internally.",
+  "props": {"Name":{"type":"24 methods (Apple Pay … Zip)","default":null,"required":false,"figma":"Name","notes":null}},
+  "rules": {"do":[],"dont":[],"forbidden":[]},
+  "examples": [],
+  "figma": {
+    "componentSet": ["Icon payment"],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": 24,
+    "docs": "https://docs.atomus.io/components/atomus-icons/"
+  },
+  "docs": "https://docs.atomus.io/components/atomus-icons/",
+  "related": ["Featured icon","Icon brand","Icon flag","Star rating","Icon file type","Icon folder","Icon integration"],
+  "a11y": {"element":null,"requiresLabel":false,"notes":[]}
+}

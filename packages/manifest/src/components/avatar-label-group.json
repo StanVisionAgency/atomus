@@ -1,0 +1,32 @@
+{
+  "name": "Avatar label group",
+  "kind": "component",
+  "status": "figma-only",
+  "since": "4.0.0",
+  "category": "Data display",
+  "import": null,
+  "source": "guidelines/components/avatar.md",
+  "purpose": "A person or workspace.",
+  "description": "Avatar with name and email — for tables, nav and comments.",
+  "aliases": [],
+  "alternative": "Avatar group and Avatar label group are Figma-only: render several `Avatar`s in a row (negative inline margin) or an `Avatar` next to the name and email text.",
+  "props": {
+    "Name": {"type":"text","default":null,"required":false,"figma":"Name","notes":null},
+    "Supporting text": {"type":"text","default":null,"required":false,"figma":"Supporting text","notes":null},
+    "Size": {"type":"variant","values":["sm","md"],"default":null,"required":false,"figma":"Size","notes":null}
+  },
+  "rules": {"do":[],"dont":["Don't use stock faces as placeholders — use initials."],"forbidden":[]},
+  "examples": [],
+  "figma": {
+    "componentSet": ["Avatar label group"],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": 2,
+    "docs": "https://docs.atomus.io/components/avatar/"
+  },
+  "docs": "https://docs.atomus.io/components/avatar/",
+  "related": ["Avatar","Avatar photo","Avatar group"],
+  "a11y": {"element":null,"requiresLabel":false,"notes":[]}
+}
