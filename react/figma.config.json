@@ -1,10 +1,7 @@
 {
   "codeConnect": {
-    "include": ["src/components/*.figma.tsx"],
+    "include": ["src/components/*.figma.ts"],
     "label": "React",
-    "language": "tsx",
-    "importPaths": {
-      "src/components/*": "@stanvision/atomus-react"
-    }
+    "language": "jsx"
   }
 }

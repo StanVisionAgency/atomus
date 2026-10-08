@@ -1,6 +1,6 @@
 # @stanvision/atomus-react
 
-Atomus 4.0 React components. Props mirror the Figma component properties (Hierarchy → `hierarchy`, Size → `size`, Style → `variant` …), so what designers set in Figma maps 1:1 to code.
+Atomus React components (MIT). Props mirror the Figma component properties (Hierarchy → `hierarchy`, Size → `size`, Style → `variant` …), so what designers set in Figma maps 1:1 to code.
 
 ## Install and use
 
@@ -55,23 +55,43 @@ Theme with attributes on any element: `data-theme="dark"`, `data-brand="violet"`
 | Script | What it does |
 |---|---|
 | `npm run build` | Builds `dist/` (ESM, CJS, types) and copies `styles.css` + `atomus.css` |
-| `npm run typecheck` | TypeScript check |
+| `npm run typecheck` | TypeScript check of the components and the Code Connect templates |
 | `npm run build:docs` | Rebuilds `../docs-site/components/bundle.js` and `bundle.css` from this source, so the docs site always shows the real components |
-| `npm run figma:publish` | Publishes Code Connect (see below) |
+| `npm run figma:check` | Parses the Code Connect templates and renders each one against mocked Figma instances (no token needed) |
+| `npm run figma:publish` | Publishes Code Connect to the Atomus Figma file |
+| `npm run figma:connect-client -- <url>` | Writes `figma.client.config.json` for a client's copy of the Figma file (see below) |
+| `npm run figma:publish:client` | Publishes Code Connect to that client file |
 
 ## Code Connect
 
-`src/components/*.figma.tsx` map all 21 components to its Figma component set in the Atomus 4.0 file, including variant, boolean, text and instance-swap properties. `npx figma connect parse` validates them.
-
-Publishing needs a **Dev or Full seat on a Figma Organization or Enterprise plan**:
+`src/components/*.figma.ts` are Code Connect **template files** (Figma retired the parser-based `.figma.tsx` format on 17 August 2026). They map 27 Figma components to the React components: variants, booleans, text and instance swaps. Nested content flows through from the instance. For example, the buttons in a Card footer, a Modal's actions or an Alert's actions render from the actual Button instances, the Content slots render as slots, Tabs build `items` from their Tab layers, and a Dropdown menu builds `items` from the Menu items in its slot. Figma's "Button icon" maps to `<Button iconOnly>`.
 
 ```bash
-FIGMA_ACCESS_TOKEN=<token with Code Connect write scope> npm run figma:publish
+npm run figma:check     # parse + render every template, no Figma token needed
 ```
 
-Once published, Dev Mode shows the real React snippet (with `@stanvision/atomus-react` imports) for each selected instance.
+Publishing needs a **Dev or Full seat on a Figma Organization or Enterprise plan** and a token with the Code Connect write scope:
 
-Note: Figma now recommends Code Connect *template files* over the parser-based `.figma.tsx` files used here; they still parse with CLI 1.5, and Figma's templates migration guide covers the switch.
+```bash
+FIGMA_ACCESS_TOKEN=<token> npm run figma:publish
+```
+
+On every push to `main` that changes a template, `.github/workflows/code-connect.yml` publishes automatically. It needs the repository secret `FIGMA_ACCESS_TOKEN`.
+
+### Client copies of the Figma file
+
+Teams that duplicate the Atomus Figma file into their own workspace can publish the same snippets to their copy. Duplicated files keep their node IDs, so only the file key changes:
+
+```bash
+npm run figma:connect-client -- https://www.figma.com/design/<clientFileKey>/<name>
+FIGMA_ACCESS_TOKEN=<token for the client org> npm run figma:publish:client
+```
+
+The first command writes `figma.client.config.json` (git-ignored) from `figma.client.config.template.json`. It adds a `documentUrlSubstitutions` entry that rewrites the master file key `bC42e82J3PYg2LMkryodIA` to the client's key in every template URL. The templates themselves stay unchanged.
+
+## Licence
+
+MIT (see `LICENSE` at the repo root). The Atomus Figma file is not covered by the MIT licence; it is sold separately at [stanvision.gumroad.com/l/atomus-design-system](https://stanvision.gumroad.com/l/atomus-design-system). See `NOTICE`.
 
 ## Icons
 
