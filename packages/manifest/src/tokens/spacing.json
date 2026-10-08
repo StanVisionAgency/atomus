@@ -1,0 +1,247 @@
+[
+  {
+    "name": "--spacing-none",
+    "values": {"desktop":"0px","tablet":"0px","mobile":"0px"},
+    "description": "Component spacing: gap and padding inside components. 0px on all breakpoints. Don't use for gaps between page sections — use layout-*.",
+    "tailwind": ["{p,m,gap}-none"],
+    "figma": "Spacing/spacing-none"
+  },
+  {
+    "name": "--spacing-xxs",
+    "values": {"desktop":"2px","tablet":"2px","mobile":"2px"},
+    "description": "Component spacing: gap and padding inside components. 2px on all breakpoints. Don't use for gaps between page sections — use layout-*.",
+    "tailwind": ["{p,m,gap}-xxs"],
+    "figma": "Spacing/spacing-xxs"
+  },
+  {
+    "name": "--spacing-xs",
+    "values": {"desktop":"4px","tablet":"4px","mobile":"4px"},
+    "description": "Component spacing: gap and padding inside components. 4px on all breakpoints. Don't use for gaps between page sections — use layout-*.",
+    "tailwind": ["{p,m,gap}-xs"],
+    "figma": "Spacing/spacing-xs"
+  },
+  {
+    "name": "--spacing-sm",
+    "values": {"desktop":"6px","tablet":"6px","mobile":"6px"},
+    "description": "Component spacing: gap and padding inside components. 6px on all breakpoints. Don't use for gaps between page sections — use layout-*.",
+    "tailwind": ["{p,m,gap}-sm"],
+    "figma": "Spacing/spacing-sm"
+  },
+  {
+    "name": "--spacing-md",
+    "values": {"desktop":"8px","tablet":"8px","mobile":"8px"},
+    "description": "Component spacing: gap and padding inside components. 8px on all breakpoints. Don't use for gaps between page sections — use layout-*.",
+    "tailwind": ["{p,m,gap}-md"],
+    "figma": "Spacing/spacing-md"
+  },
+  {
+    "name": "--spacing-lg",
+    "values": {"desktop":"12px","tablet":"12px","mobile":"12px"},
+    "description": "Component spacing: gap and padding inside components. 12px on all breakpoints. Don't use for gaps between page sections — use layout-*.",
+    "tailwind": ["{p,m,gap}-lg"],
+    "figma": "Spacing/spacing-lg"
+  },
+  {
+    "name": "--spacing-xl",
+    "values": {"desktop":"16px","tablet":"16px","mobile":"16px"},
+    "description": "Component spacing: gap and padding inside components. 16px on all breakpoints. Don't use for gaps between page sections — use layout-*.",
+    "tailwind": ["{p,m,gap}-xl"],
+    "figma": "Spacing/spacing-xl"
+  },
+  {
+    "name": "--spacing-2xl",
+    "values": {"desktop":"20px","tablet":"20px","mobile":"20px"},
+    "description": "Component spacing: gap and padding inside components. 20px on all breakpoints. Don't use for gaps between page sections — use layout-*.",
+    "tailwind": ["{p,m,gap}-2xl"],
+    "figma": "Spacing/spacing-2xl"
+  },
+  {
+    "name": "--spacing-3xl",
+    "values": {"desktop":"24px","tablet":"24px","mobile":"24px"},
+    "description": "Component spacing: gap and padding inside components. 24px on all breakpoints. Don't use for gaps between page sections — use layout-*.",
+    "tailwind": ["{p,m,gap}-3xl"],
+    "figma": "Spacing/spacing-3xl"
+  },
+  {
+    "name": "--layout-xs",
+    "values": {"desktop":"32px","tablet":"32px","mobile":"24px"},
+    "description": "Responsive layout spacing between blocks and sections; shrinks on smaller breakpoints. Desktop 32px · tablet 32px · mobile 24px. Don't use inside components — use spacing-*.",
+    "tailwind": [],
+    "figma": "Layout/layout-xs"
+  },
+  {
+    "name": "--layout-sm",
+    "values": {"desktop":"40px","tablet":"32px","mobile":"24px"},
+    "description": "Responsive layout spacing between blocks and sections; shrinks on smaller breakpoints. Desktop 40px · tablet 32px · mobile 24px. Don't use inside components — use spacing-*.",
+    "tailwind": [],
+    "figma": "Layout/layout-sm"
+  },
+  {
+    "name": "--layout-md",
+    "values": {"desktop":"48px","tablet":"40px","mobile":"32px"},
+    "description": "Responsive layout spacing between blocks and sections; shrinks on smaller breakpoints. Desktop 48px · tablet 40px · mobile 32px. Don't use inside components — use spacing-*.",
+    "tailwind": [],
+    "figma": "Layout/layout-md"
+  },
+  {
+    "name": "--layout-lg",
+    "values": {"desktop":"56px","tablet":"48px","mobile":"32px"},
+    "description": "Responsive layout spacing between blocks and sections; shrinks on smaller breakpoints. Desktop 56px · tablet 48px · mobile 32px. Don't use inside components — use spacing-*.",
+    "tailwind": [],
+    "figma": "Layout/layout-lg"
+  },
+  {
+    "name": "--layout-xl",
+    "values": {"desktop":"64px","tablet":"48px","mobile":"40px"},
+    "description": "Responsive layout spacing between blocks and sections; shrinks on smaller breakpoints. Desktop 64px · tablet 48px · mobile 40px. Don't use inside components — use spacing-*.",
+    "tailwind": [],
+    "figma": "Layout/layout-xl"
+  },
+  {
+    "name": "--layout-2xl",
+    "values": {"desktop":"72px","tablet":"56px","mobile":"40px"},
+    "description": "Responsive layout spacing between blocks and sections; shrinks on smaller breakpoints. Desktop 72px · tablet 56px · mobile 40px. Don't use inside components — use spacing-*.",
+    "tailwind": [],
+    "figma": "Layout/layout-2xl"
+  },
+  {
+    "name": "--layout-3xl",
+    "values": {"desktop":"80px","tablet":"64px","mobile":"40px"},
+    "description": "Responsive layout spacing between blocks and sections; shrinks on smaller breakpoints. Desktop 80px · tablet 64px · mobile 40px. Don't use inside components — use spacing-*.",
+    "tailwind": [],
+    "figma": "Layout/layout-3xl"
+  },
+  {
+    "name": "--layout-4xl",
+    "values": {"desktop":"96px","tablet":"72px","mobile":"56px"},
+    "description": "Responsive layout spacing between blocks and sections; shrinks on smaller breakpoints. Desktop 96px · tablet 72px · mobile 56px. Don't use inside components — use spacing-*.",
+    "tailwind": [],
+    "figma": "Layout/layout-4xl"
+  },
+  {
+    "name": "--layout-5xl",
+    "values": {"desktop":"120px","tablet":"80px","mobile":"56px"},
+    "description": "Responsive layout spacing between blocks and sections; shrinks on smaller breakpoints. Desktop 120px · tablet 80px · mobile 56px. Don't use inside components — use spacing-*.",
+    "tailwind": [],
+    "figma": "Layout/layout-5xl"
+  },
+  {
+    "name": "--layout-6xl",
+    "values": {"desktop":"160px","tablet":"120px","mobile":"80px"},
+    "description": "Responsive layout spacing between blocks and sections; shrinks on smaller breakpoints. Desktop 160px · tablet 120px · mobile 80px. Don't use inside components — use spacing-*.",
+    "tailwind": [],
+    "figma": "Layout/layout-6xl"
+  },
+  {
+    "name": "--layout-7xl",
+    "values": {"desktop":"200px","tablet":"160px","mobile":"80px"},
+    "description": "Responsive layout spacing between blocks and sections; shrinks on smaller breakpoints. Desktop 200px · tablet 160px · mobile 80px. Don't use inside components — use spacing-*.",
+    "tailwind": [],
+    "figma": "Layout/layout-7xl"
+  },
+  {
+    "name": "--layout-8xl",
+    "values": {"desktop":"240px","tablet":"160px","mobile":"80px"},
+    "description": "Responsive layout spacing between blocks and sections; shrinks on smaller breakpoints. Desktop 240px · tablet 160px · mobile 80px. Don't use inside components — use spacing-*.",
+    "tailwind": [],
+    "figma": "Layout/layout-8xl"
+  },
+  {
+    "name": "--icon-xs",
+    "values": {"desktop":"12px","tablet":"12px","mobile":"12px"},
+    "description": "Icon box size. 12px on all breakpoints. Match the icon size to the control size (sm controls → icon-sm).",
+    "tailwind": [],
+    "figma": "Icon/icon-xs"
+  },
+  {
+    "name": "--icon-sm",
+    "values": {"desktop":"16px","tablet":"16px","mobile":"16px"},
+    "description": "Icon box size. 16px on all breakpoints. Match the icon size to the control size (sm controls → icon-sm).",
+    "tailwind": [],
+    "figma": "Icon/icon-sm"
+  },
+  {
+    "name": "--icon-md",
+    "values": {"desktop":"20px","tablet":"20px","mobile":"20px"},
+    "description": "Icon box size. 20px on all breakpoints. Match the icon size to the control size (sm controls → icon-sm).",
+    "tailwind": [],
+    "figma": "Icon/icon-md"
+  },
+  {
+    "name": "--icon-lg",
+    "values": {"desktop":"24px","tablet":"24px","mobile":"24px"},
+    "description": "Icon box size. 24px on all breakpoints. Match the icon size to the control size (sm controls → icon-sm).",
+    "tailwind": [],
+    "figma": "Icon/icon-lg"
+  },
+  {
+    "name": "--icon-xl",
+    "values": {"desktop":"32px","tablet":"32px","mobile":"32px"},
+    "description": "Icon box size. 32px on all breakpoints. Match the icon size to the control size (sm controls → icon-sm).",
+    "tailwind": [],
+    "figma": "Icon/icon-xl"
+  },
+  {
+    "name": "--size-xs",
+    "values": {"desktop":"24px","tablet":"24px","mobile":"24px"},
+    "description": "Component size: control height for buttons and inputs, avatars, featured icons. 24px on all breakpoints. Buttons and inputs of the same size share it.",
+    "tailwind": [],
+    "figma": "Size/size-xs"
+  },
+  {
+    "name": "--size-sm",
+    "values": {"desktop":"32px","tablet":"32px","mobile":"32px"},
+    "description": "Component size: control height for buttons and inputs, avatars, featured icons. 32px on all breakpoints. Buttons and inputs of the same size share it.",
+    "tailwind": [],
+    "figma": "Size/size-sm"
+  },
+  {
+    "name": "--size-md",
+    "values": {"desktop":"40px","tablet":"40px","mobile":"40px"},
+    "description": "Component size: control height for buttons and inputs, avatars, featured icons. 40px on all breakpoints. Buttons and inputs of the same size share it.",
+    "tailwind": [],
+    "figma": "Size/size-md"
+  },
+  {
+    "name": "--size-lg",
+    "values": {"desktop":"48px","tablet":"48px","mobile":"48px"},
+    "description": "Component size: control height for buttons and inputs, avatars, featured icons. 48px on all breakpoints. Buttons and inputs of the same size share it.",
+    "tailwind": [],
+    "figma": "Size/size-lg"
+  },
+  {
+    "name": "--size-xl",
+    "values": {"desktop":"56px","tablet":"56px","mobile":"56px"},
+    "description": "Component size: control height for buttons and inputs, avatars, featured icons. 56px on all breakpoints. Buttons and inputs of the same size share it.",
+    "tailwind": [],
+    "figma": "Size/size-xl"
+  },
+  {
+    "name": "--size-2xl",
+    "values": {"desktop":"64px","tablet":"64px","mobile":"64px"},
+    "description": "Component size: control height for buttons and inputs, avatars, featured icons. 64px on all breakpoints. Buttons and inputs of the same size share it.",
+    "tailwind": [],
+    "figma": "Size/size-2xl"
+  },
+  {
+    "name": "--container-padding",
+    "values": {"desktop":"80px","tablet":"32px","mobile":"16px"},
+    "description": "Horizontal page padding of the content container. Desktop 80px · tablet 32px · mobile 16px.",
+    "tailwind": [],
+    "figma": "Container/container-padding"
+  },
+  {
+    "name": "--container-max-width",
+    "values": {"desktop":"1280px","tablet":"704px","mobile":"343px"},
+    "description": "Max content width of the page container. Desktop 1280px · tablet 704px · mobile 343px.",
+    "tailwind": [],
+    "figma": "Container/container-max-width"
+  },
+  {
+    "name": "--section-padding",
+    "values": {"desktop":"96px","tablet":"72px","mobile":"56px"},
+    "description": "Vertical padding of website sections. Desktop 96px · tablet 72px · mobile 56px.",
+    "tailwind": [],
+    "figma": "Container/section-padding"
+  }
+]
