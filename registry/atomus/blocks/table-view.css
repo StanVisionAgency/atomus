@@ -1,0 +1,8 @@
+/* Table view — filter bar and pagination. */
+.ab-filters { display: flex; flex-wrap: wrap; align-items: flex-end; gap: var(--spacing-lg); }
+.ab-filters__search { flex: 1 1 280px; max-width: 400px; }
+.ab-filters__select { width: 200px; }
+.ab-pagination { display: flex; align-items: center; justify-content: space-between; gap: var(--spacing-lg); }
+.ab-pagination__label { color: var(--color-text-tertiary); font-size: var(--font-size-small); line-height: var(--line-height-small); }
+.ab-owner { display: inline-flex; align-items: center; gap: var(--spacing-md); }
+.ab-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
