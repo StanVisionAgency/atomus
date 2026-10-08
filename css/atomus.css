@@ -624,6 +624,27 @@
   --color-border-success: var(--color-green-600);
   --color-text-on-warning: var(--color-gray-900);
   --color-fg-on-warning: var(--color-gray-900);
+  /* Components/Alert */
+  --color-alert-brand-bg: var(--color-brand-100);
+  --color-alert-brand-border: var(--color-brand-200);
+  --color-alert-brand-title: var(--color-brand-800);
+  --color-alert-brand-icon: var(--color-brand-700);
+  --color-alert-error-bg: var(--color-rose-100);
+  --color-alert-error-border: var(--color-rose-200);
+  --color-alert-error-title: var(--color-rose-800);
+  --color-alert-error-icon: var(--color-rose-700);
+  --color-alert-warning-bg: var(--color-amber-100);
+  --color-alert-warning-border: var(--color-amber-300);
+  --color-alert-warning-title: var(--color-amber-800);
+  --color-alert-warning-icon: var(--color-amber-700);
+  --color-alert-success-bg: var(--color-green-100);
+  --color-alert-success-border: var(--color-green-300);
+  --color-alert-success-title: var(--color-green-800);
+  --color-alert-success-icon: var(--color-green-700);
+  --color-alert-gray-bg: var(--color-gray-100);
+  --color-alert-gray-border: var(--color-gray-300);
+  --color-alert-gray-title: var(--color-gray-900);
+  --color-alert-gray-icon: var(--color-gray-600);
 }
 
 [data-theme="dark"], .dark, [data-theme="dark"] [data-brand], .dark [data-brand] {
@@ -750,6 +771,27 @@
   --shadow-elevation-12: 0px 40px 80px -12px #00000099;
   --shadow-elevation-16: 0px 48px 96px -12px #00000099;
   --shadow-elevation-24: 0px 56px 112px -12px #00000099;
+  /* Components/Alert */
+  --color-alert-brand-bg: color-mix(in srgb, var(--color-brand-400) 14%, transparent);
+  --color-alert-brand-border: color-mix(in srgb, var(--color-brand-400) 36%, transparent);
+  --color-alert-brand-title: var(--color-brand-300);
+  --color-alert-brand-icon: var(--color-brand-400);
+  --color-alert-error-bg: color-mix(in srgb, var(--color-rose-400) 14%, transparent);
+  --color-alert-error-border: color-mix(in srgb, var(--color-rose-400) 36%, transparent);
+  --color-alert-error-title: var(--color-rose-300);
+  --color-alert-error-icon: var(--color-rose-400);
+  --color-alert-warning-bg: color-mix(in srgb, var(--color-amber-400) 14%, transparent);
+  --color-alert-warning-border: color-mix(in srgb, var(--color-amber-400) 36%, transparent);
+  --color-alert-warning-title: var(--color-amber-300);
+  --color-alert-warning-icon: var(--color-amber-400);
+  --color-alert-success-bg: color-mix(in srgb, var(--color-green-400) 14%, transparent);
+  --color-alert-success-border: color-mix(in srgb, var(--color-green-400) 36%, transparent);
+  --color-alert-success-title: var(--color-green-300);
+  --color-alert-success-icon: var(--color-green-400);
+  --color-alert-gray-bg: color-mix(in srgb, var(--color-gray-400) 14%, transparent);
+  --color-alert-gray-border: color-mix(in srgb, var(--color-gray-400) 36%, transparent);
+  --color-alert-gray-title: var(--color-gray-50);
+  --color-alert-gray-icon: var(--color-gray-400);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -867,6 +909,27 @@
     --color-border-success: var(--color-green-400);
     --color-text-on-warning: var(--color-gray-900);
     --color-fg-on-warning: var(--color-gray-900);
+    /* Components/Alert */
+    --color-alert-brand-bg: color-mix(in srgb, var(--color-brand-400) 14%, transparent);
+    --color-alert-brand-border: color-mix(in srgb, var(--color-brand-400) 36%, transparent);
+    --color-alert-brand-title: var(--color-brand-300);
+    --color-alert-brand-icon: var(--color-brand-400);
+    --color-alert-error-bg: color-mix(in srgb, var(--color-rose-400) 14%, transparent);
+    --color-alert-error-border: color-mix(in srgb, var(--color-rose-400) 36%, transparent);
+    --color-alert-error-title: var(--color-rose-300);
+    --color-alert-error-icon: var(--color-rose-400);
+    --color-alert-warning-bg: color-mix(in srgb, var(--color-amber-400) 14%, transparent);
+    --color-alert-warning-border: color-mix(in srgb, var(--color-amber-400) 36%, transparent);
+    --color-alert-warning-title: var(--color-amber-300);
+    --color-alert-warning-icon: var(--color-amber-400);
+    --color-alert-success-bg: color-mix(in srgb, var(--color-green-400) 14%, transparent);
+    --color-alert-success-border: color-mix(in srgb, var(--color-green-400) 36%, transparent);
+    --color-alert-success-title: var(--color-green-300);
+    --color-alert-success-icon: var(--color-green-400);
+    --color-alert-gray-bg: color-mix(in srgb, var(--color-gray-400) 14%, transparent);
+    --color-alert-gray-border: color-mix(in srgb, var(--color-gray-400) 36%, transparent);
+    --color-alert-gray-title: var(--color-gray-50);
+    --color-alert-gray-icon: var(--color-gray-400);
   }
 }
 
