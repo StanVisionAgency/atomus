@@ -1,0 +1,56 @@
+---
+title: "Conversation"
+description: "A full AI conversation built from the Agent kit: welcome state, reasoning, a tool call, an approval and a cited answer."
+---
+
+{/* Source for /components/ai-conversation/ — scripts/sync.mjs writes the page to src/content/docs/components/. Imports are relative to that folder. */}
+
+import Demo from '../../../components/Demo.astro';
+import { ConversationDemo } from '../../../components/ai-demos';
+
+The Agent kit is a set of composable components for AI products: chat, copilots and agents. They use the same tokens, Brand, Color and Radius modes as the rest of Atomus, plus a small AI layer (`--color-bg-ai-subtle`, `--color-border-ai`, `--color-text-ai`, `--gradient-ai`) that marks AI content without decorating anything else. Nothing depends on an AI SDK: each component takes plain props such as a growing string and a status, so it works with the Vercel AI SDK, LangChain, your own backend or an MCP host.
+
+Pick a prompt starter below. The demo streams a simulated reply: the agent reasons, runs a tool, asks for your approval, then answers with citations. Try Deny, Edit, or the Stop button while it writes.
+
+<Demo caption="Conversation · Message + Reasoning + ToolCall + Approval + StreamingText + Sources + Suggestions + PromptInput">
+  <ConversationDemo client:visible />
+</Demo>
+
+## Finished thread
+
+<Demo caption="The same conversation after the reply — feedback, branches, sources and follow-ups">
+  <ConversationDemo client:visible initial="done" />
+</Demo>
+
+{/* @figma — sync.mjs inserts the "In Figma" section (from guidelines/components) here */}
+
+## Usage
+
+There is no `Conversation` component — compose the parts. A minimal thread with any streaming backend:
+
+```tsx
+import { Message, Reasoning, ToolCall, StreamingText, Sources, PromptInput, Suggestions } from '@stanvision/atomus-react';
+
+<div role="log" aria-label="Conversation" aria-live="off" tabIndex={0} className="thread">
+  {messages.length === 0 ? (
+    <Suggestions variant="cards" suggestions={starters} onSelect={send} />
+  ) : messages.map((m) => (
+    <Message key={m.id} role={m.role} name={m.role === 'user' ? 'You' : 'Atomus Assistant'}
+      status={m.status} copyText={m.text} onRegenerate={m.role === 'assistant' ? () => regenerate(m.id) : undefined}>
+      {m.reasoning ? <Reasoning status={m.thinking ? 'thinking' : 'done'} duration={m.thoughtFor} steps={m.steps} /> : null}
+      {m.tools.map((t) => <ToolCall key={t.id} name={t.name} status={t.status} input={t.input} output={t.output} />)}
+      <StreamingText text={m.text} streaming={m.status === 'streaming'} />
+      {m.sources ? <Sources sources={m.sources} /> : null}
+    </Message>
+  ))}
+</div>
+<PromptInput status={busy ? 'streaming' : 'ready'} onSubmit={send} onStop={stop} />
+```
+
+### Adapting an AI SDK
+
+- Map the SDK's message parts to components: text → `StreamingText`, reasoning → `Reasoning`, tool calls → `ToolCall`, tool calls that need approval → `Approval`, source parts → `Sources` and `InlineCitation`.
+- Map its status to `PromptInput status` (`submitted`, `streaming`, `ready`, `error`) and its stop function to `onStop`.
+- Adapters for popular SDKs may ship later as optional packages; the components will not change.
+
+{/* @guidance — sync.mjs appends the design Do/Don’t from the Figma guidelines here */}

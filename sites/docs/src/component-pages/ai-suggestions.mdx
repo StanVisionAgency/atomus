@@ -1,0 +1,43 @@
+---
+title: "Suggestions"
+description: "Follow-up prompts as chips and prompt starters as cards, to send or insert."
+---
+
+{/* Source for /components/ai-suggestions/ — scripts/sync.mjs writes the page to src/content/docs/components/. Imports are relative to that folder. */}
+
+import Demo from '../../../components/Demo.astro';
+import { SuggestionsDemo, SuggestionCardsDemo } from '../../../components/ai-demos';
+
+Follow-ups after an answer, in one row that scrolls sideways, or prompt starters as cards in a welcome state. A chip either sends its prompt or inserts it into the input for editing.
+
+<Demo caption="mode=&quot;send&quot; (scrolls) · mode=&quot;insert&quot; with wrap">
+  <SuggestionsDemo client:visible />
+</Demo>
+
+## Prompt starters
+
+<Demo caption="variant=&quot;cards&quot;">
+  <SuggestionCardsDemo client:visible />
+</Demo>
+
+{/* @figma — sync.mjs inserts the "In Figma" section (from guidelines/components) here */}
+
+## Usage
+
+```tsx
+import { Suggestions } from '@stanvision/atomus-react';
+
+<Suggestions suggestions={['Fix the contrast issue', 'Show the axe report']} onSelect={send} />
+<Suggestions mode="insert" suggestions={['Make it shorter']} onSelect={(p) => setDraft(p)} />
+<Suggestions variant="cards" suggestions={starters} onSelect={send} />
+```
+
+### Props at a glance
+
+Full types and defaults are in [React API](#react-api) at the end of the page.
+
+- `suggestions` — strings or `{ label, prompt, description, icon }`.
+- `mode` — `send` (arrow) or `insert` (plus); `onSelect(prompt, item)`.
+- `variant` — `chips` or `cards`; `wrap` lets chips wrap instead of scroll.
+
+{/* @guidance — sync.mjs appends the design Do/Don’t from the Figma guidelines here */}

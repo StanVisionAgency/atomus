@@ -1,0 +1,38 @@
+---
+title: "Feedback"
+description: "Thumbs up and down on an AI reply, with an optional reason form."
+---
+
+{/* Source for /components/ai-feedback/ — scripts/sync.mjs writes the page to src/content/docs/components/. Imports are relative to that folder. */}
+
+import Demo from '../../../components/Demo.astro';
+import { FeedbackDemo } from '../../../components/ai-demos';
+
+Thumbs up and down on a reply. A thumbs down opens a short form in place with reason chips and an optional comment.
+
+<Demo caption="defaultValue=&quot;down&quot; — the reason form is open">
+  <FeedbackDemo client:visible />
+</Demo>
+
+{/* @figma — sync.mjs inserts the "In Figma" section (from guidelines/components) here */}
+
+## Usage
+
+```tsx
+import { Feedback } from '@stanvision/atomus-react';
+
+<Feedback
+  onChange={(rating) => track('rating', rating)}
+  onSubmit={({ rating, reasons, comment }) => sendFeedback(messageId, rating, reasons, comment)}
+/>
+```
+
+### Props at a glance
+
+Full types and defaults are in [React API](#react-api) at the end of the page.
+
+- `value` / `defaultValue` / `onChange` — `'up'`, `'down'` or `null`.
+- `reasons` for a thumbs down (defaults provided); `positiveReasons` opens a form for a thumbs up too.
+- `onSubmit` receives `{ rating, reasons, comment }`.
+
+{/* @guidance — sync.mjs appends the design Do/Don’t from the Figma guidelines here */}

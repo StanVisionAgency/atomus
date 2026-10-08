@@ -1,0 +1,55 @@
+---
+title: "Prompt input"
+description: "The composer of an AI chat: auto-growing text, attachments, a toolbar slot, send and stop, and / or @ menus."
+---
+
+{/* Source for /components/ai-prompt-input/ — scripts/sync.mjs writes the page to src/content/docs/components/. Imports are relative to that folder. */}
+
+import Demo from '../../../components/Demo.astro';
+import { PromptInputDemo, PromptInputStatesDemo } from '../../../components/ai-demos';
+
+The composer of an AI chat or agent panel. It grows with the text, shows attachment chips, hosts the Model selector and Context meter in its slots, and turns Send into Stop while the agent works. Focus draws the AI gradient around it.
+
+<Demo caption="size=&quot;lg&quot; · attachments · ModelSelector in toolbar · ContextMeter in actions · / and @ menus">
+  <PromptInputDemo client:visible />
+</Demo>
+
+## States
+
+<Demo caption="ready · streaming (Stop) · disabled">
+  <PromptInputStatesDemo client:visible />
+</Demo>
+
+{/* @figma — sync.mjs inserts the "In Figma" section (from guidelines/components) here */}
+
+## Usage
+
+```tsx
+import { PromptInput, ModelSelector, ContextMeter } from '@stanvision/atomus-react';
+
+<PromptInput
+  status={status}                       // 'ready' | 'submitted' | 'streaming' | 'error'
+  onSubmit={(text, files) => send(text, files)}
+  onStop={stop}
+  attachments={files}
+  onAttach={openFilePicker}
+  onRemoveAttachment={removeFile}
+  toolbar={<ModelSelector models={models} value={model} onChange={setModel} />}
+  actions={<ContextMeter used={usage.tokens} limit={200000} />}
+  triggers={[{ char: '/', items: commands }, { char: '@', label: 'People', items: people }]}
+  disclaimer="AI can make mistakes. Check important information."
+/>
+```
+
+### Props at a glance
+
+Full types and defaults are in [React API](#react-api) at the end of the page.
+
+- `status` — `submitted` and `streaming` show Stop and block Enter; the text area stays editable.
+- `value` / `defaultValue` / `onChange` — controlled or uncontrolled text; `onSubmit` gets the trimmed text and the attachments.
+- `attachments`, `onAttach`, `onRemoveAttachment` — chips with an upload state; an uploading file blocks Send.
+- `toolbar` and `actions` — slots on the left and right of the bottom bar.
+- `triggers` — `/` and `@` menus with keyboard support (↑ ↓, Enter or Tab, Esc).
+- `size` — `md` for panels, `lg` for full-page chat. `minRows` / `maxRows` set the growth.
+
+{/* @guidance — sync.mjs appends the design Do/Don’t from the Figma guidelines here */}

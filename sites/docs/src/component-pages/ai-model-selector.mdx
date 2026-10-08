@@ -1,0 +1,42 @@
+---
+title: "Model selector"
+description: "A Select for AI models with provider icons, descriptions and capability badges."
+---
+
+{/* Source for /components/ai-model-selector/ — scripts/sync.mjs writes the page to src/content/docs/components/. Imports are relative to that folder. */}
+
+import Demo from '../../../components/Demo.astro';
+import { ModelSelectorDemo } from '../../../components/ai-demos';
+
+A Select for AI models. The ghost style sits in the Prompt input toolbar; the outline style suits settings. Options show the provider, when to pick the model and its capabilities.
+
+<Demo caption="variant=&quot;ghost&quot; (open) · variant=&quot;outline&quot; with showLabel">
+  <ModelSelectorDemo client:visible />
+</Demo>
+
+{/* @figma — sync.mjs inserts the "In Figma" section (from guidelines/components) here */}
+
+## Usage
+
+```tsx
+import { ModelSelector } from '@stanvision/atomus-react';
+
+<ModelSelector
+  models={[
+    { value: 'pro', label: 'Atomus Pro', provider: 'StanVision', icon: <Logo />, description: 'Best for long, careful work', capabilities: ['Reasoning', 'Tools', 'Vision'], badge: 'New' },
+    { value: 'fast', label: 'Atomus Fast', provider: 'StanVision', capabilities: ['Fast'] },
+  ]}
+  value={model}
+  onChange={setModel}
+/>
+```
+
+### Props at a glance
+
+Full types and defaults are in [React API](#react-api) at the end of the page.
+
+- `models` — `value`, `label`, `provider`, `icon`, `description`, `capabilities`, `badge`, `disabled`.
+- `variant` — `ghost` (toolbar) or `outline` (settings); `size` `sm` or `md`; `placement` `up` (default) or `down`.
+- `label` names the combobox; `showLabel` shows it above the trigger.
+
+{/* @guidance — sync.mjs appends the design Do/Don’t from the Figma guidelines here */}

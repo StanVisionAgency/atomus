@@ -1,0 +1,43 @@
+---
+title: "Tool call"
+description: "One function call by the agent: name, status, duration, input and output."
+---
+
+{/* Source for /components/ai-tool-call/ — scripts/sync.mjs writes the page to src/content/docs/components/. Imports are relative to that folder. */}
+
+import Demo from '../../../components/Demo.astro';
+import { ToolCallDemo } from '../../../components/ai-demos';
+
+One function call by the agent, from MCP tools to API calls: what it did in plain words, the function name, a status pill, the run time, and the input and output on demand.
+
+<Demo caption="status=&quot;pending&quot; · &quot;running&quot; · &quot;success&quot; (expanded) · &quot;error&quot;">
+  <ToolCallDemo client:visible />
+</Demo>
+
+{/* @figma — sync.mjs inserts the "In Figma" section (from guidelines/components) here */}
+
+## Usage
+
+```tsx
+import { ToolCall } from '@stanvision/atomus-react';
+
+<ToolCall
+  name="search_docs"
+  title="Searched the docs"
+  status="success"            // 'pending' | 'running' | 'success' | 'error'
+  duration={420}
+  input={{ query: 'card border token' }}
+  output={{ results: 3 }}
+/>
+```
+
+### Props at a glance
+
+Full types and defaults are in [React API](#react-api) at the end of the page.
+
+- `name` (monospace) and `title` (plain language); `icon` for the integration's logo.
+- `status` with an icon and a word; `duration` in ms.
+- `input` and `output` — strings or objects (formatted as JSON); `error` replaces the output.
+- `open` / `defaultOpen` / `onOpenChange` for the disclosure.
+
+{/* @guidance — sync.mjs appends the design Do/Don’t from the Figma guidelines here */}

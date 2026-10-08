@@ -1,0 +1,45 @@
+---
+title: "Reasoning"
+description: "A collapsible “Thought for 12s” disclosure with the agent’s steps."
+---
+
+{/* Source for /components/ai-reasoning/ — scripts/sync.mjs writes the page to src/content/docs/components/. Imports are relative to that folder. */}
+
+import Demo from '../../../components/Demo.astro';
+import { ReasoningDemo } from '../../../components/ai-demos';
+
+Shows the model's working apart from its answer: "Thinking…" with a shimmer while it reasons, then "Thought for 12s". It opens while thinking and collapses when done.
+
+<Demo caption="status=&quot;thinking&quot; → &quot;done&quot; · steps with pending, active and done">
+  <ReasoningDemo client:visible />
+</Demo>
+
+{/* @figma — sync.mjs inserts the "In Figma" section (from guidelines/components) here */}
+
+## Usage
+
+```tsx
+import { Reasoning } from '@stanvision/atomus-react';
+
+<Reasoning
+  status={thinking ? 'thinking' : 'done'}
+  duration={seconds}
+  steps={[
+    { label: 'Load the page', status: 'done' },
+    { label: 'Run axe-core', detail: '68 rules', status: 'active' },
+    { label: 'Draft fixes', status: 'pending' },
+  ]}
+>
+  <p>{summary}</p>
+</Reasoning>
+```
+
+### Props at a glance
+
+Full types and defaults are in [React API](#react-api) at the end of the page.
+
+- `status` — `thinking` or `done`; `duration` in seconds for "Thought for 12s".
+- `steps` — `label`, `detail` and `status` (`pending` · `active` · `done`); `children` for free text.
+- `open` / `defaultOpen` / `onOpenChange`; `autoCollapse` closes it when thinking ends.
+
+{/* @guidance — sync.mjs appends the design Do/Don’t from the Figma guidelines here */}

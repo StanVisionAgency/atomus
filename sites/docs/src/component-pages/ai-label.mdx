@@ -1,0 +1,47 @@
+---
+title: "AI label"
+description: "Marks AI-generated content and opens an explainability popover, with Revert to AI after edits."
+---
+
+{/* Source for /components/ai-label/ — scripts/sync.mjs writes the page to src/content/docs/components/. Imports are relative to that folder. */}
+
+import Demo from '../../../components/Demo.astro';
+import { AILabelDemo, AILabelRevertDemo } from '../../../components/ai-demos';
+
+Marks anything an AI wrote or changed. With an explanation it opens a popover that says why the person sees this and which model made it. Once the person edits the content, it reads "Edited" and offers "Revert to AI".
+
+<Demo caption="sizes xs · sm · md · inline · icon · with explanation popover">
+  <AILabelDemo client:visible />
+</Demo>
+
+## Edited and revert to AI
+
+<Demo caption="edited · onRevert">
+  <AILabelRevertDemo client:visible />
+</Demo>
+
+{/* @figma — sync.mjs inserts the "In Figma" section (from guidelines/components) here */}
+
+## Usage
+
+```tsx
+import { AILabel } from '@stanvision/atomus-react';
+
+<AILabel
+  label="AI generated"
+  explanation={<p>Written from the 14 comments on this pull request.</p>}
+  model="Atomus Pro"
+  edited={text !== generated}
+  onRevert={() => setText(generated)}
+/>
+```
+
+### Props at a glance
+
+Full types and defaults are in [React API](#react-api) at the end of the page.
+
+- `label`, `size` (`xs` · `sm` · `md`), `variant` (`chip` · `inline` · `icon`).
+- `explanation`, `explanationTitle` and `model` fill the popover.
+- `edited` switches to "Edited"; `onRevert` adds "Revert to AI".
+
+{/* @guidance — sync.mjs appends the design Do/Don’t from the Figma guidelines here */}
