@@ -260,11 +260,22 @@ function syncComponents() {
   rmSync(join(docs, 'figma-reference'), { recursive: true, force: true });
   mkdirSync(outDir, { recursive: true });
 
-  // Figma links from Code Connect files.
+  // Figma links from the Code Connect template files (react/src/components/*.figma.ts). Each starts with
+  // `// url=<Figma node URL>` and `// component=<React component>` header comments; when several files map the
+  // same component (Button + ButtonIcon), the first file in name order wins.
   const figmaUrls = {};
   const ccDir = join(root, 'react/src/components');
-  for (const f of readdirSync(ccDir).filter((f) => f.endsWith('.figma.tsx'))) {
-    for (const m of readFileSync(join(ccDir, f), 'utf8').matchAll(/figma\.connect\((\w+),\s*'([^']+)'/g)) figmaUrls[m[1]] ??= m[2];
+  const ccFiles = readdirSync(ccDir).filter((f) => f.endsWith('.figma.ts')).sort();
+  if (!ccFiles.length) throw new Error('sync: no Code Connect files (react/src/components/*.figma.ts) found');
+  for (const f of ccFiles) {
+    const head = readFileSync(join(ccDir, f), 'utf8').split('\n').slice(0, 10).join('\n');
+    const url = head.match(/^\/\/ url=(\S+)/m)?.[1];
+    const component = head.match(/^\/\/ component=(\w+)/m)?.[1];
+    if (!url || !component) throw new Error(`sync: react/src/components/${f} has no "// url=" or "// component=" header`);
+    figmaUrls[component] ??= url;
+  }
+  for (const page of COMPONENT_PAGES) {
+    for (const n of page.figma ?? []) if (!figmaUrls[n]) throw new Error(`sync: page ${page.slug} lists Figma component ${n}, but no react/src/components/*.figma.ts maps it`);
   }
 
   // Guideline files → sections.
