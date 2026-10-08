@@ -1,0 +1,73 @@
+{
+  "name": "@stanvision/atomus-mcp",
+  "version": "4.1.0",
+  "description": "Atomus MCP server: components, props, tokens, patterns, Figma-to-code, validation, setup files and brand ramps for AI agents (stdio via npx, or remote at mcp.atomus.io).",
+  "license": "MIT",
+  "author": "StanVision (https://stan.vision)",
+  "homepage": "https://docs.atomus.io/ai/mcp/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StanVisionAgency/atomus.git",
+    "directory": "packages/mcp"
+  },
+  "bugs": {
+    "url": "https://github.com/StanVisionAgency/atomus/issues"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "mcp-server",
+    "design-system",
+    "design-tokens",
+    "react",
+    "figma",
+    "ai-agents",
+    "atomus"
+  ],
+  "type": "module",
+  "bin": {
+    "atomus-mcp": "dist/stdio.js"
+  },
+  "main": "./dist/stdio.js",
+  "exports": {
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18.20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build:data": "node ../eslint-plugin/scripts/copy-data.mjs && node ../stylelint-config/scripts/copy-data.mjs && node scripts/build-data.mjs",
+    "build": "node scripts/build.mjs",
+    "typecheck": "npm run build:data && tsc --noEmit",
+    "test": "npm run build && node --test tests/stdio.test.mjs tests/worker.test.mjs",
+    "test:worker": "npm run build:data && node --test tests/worker.test.mjs",
+    "dev:worker": "npm run build:data && wrangler dev -c worker/wrangler.toml",
+    "deploy:worker": "npm run build:data && wrangler deploy -c worker/wrangler.toml",
+    "prepack": "node scripts/build.mjs && node -e \"for (const f of ['LICENSE', 'NOTICE']) require('fs').copyFileSync('../../' + f, f)\"",
+    "test:stdio": "npm run build && node --test tests/stdio.test.mjs"
+  },
+  "dependencies": {
+    "@cfworker/json-schema": "^4.1.1",
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "@typescript-eslint/parser": "^8.71.1",
+    "eslint": "^9.39.5",
+    "postcss": "^8.5.29",
+    "stylelint": "^17.16.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "esbuild": "^0.25.12",
+    "typescript": "~5.9.3",
+    "wrangler": "^4.148.0"
+  }
+}
