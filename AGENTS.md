@@ -12,12 +12,15 @@ Atomus 4.0 is a design system for product UI and marketing websites by StanVisio
 | `css/atomus.css` | Tokens as CSS custom properties, themes, breakpoints, text-style classes | Generated from the Figma variables |
 | `tailwind/atomus.tailwind.css` | Tailwind v4 theme | Generated from the Figma variables |
 | `shadcn/globals.css` | shadcn/ui theme mapped to Atomus tokens | Generated from the Figma variables |
-| `packages/` | npm package sources (`@stanvision/atomus-tokens` …) | See each package's README |
-| `react/` | `@stanvision/atomus-react`: components, styles, Code Connect (`*.figma.tsx`) | **Source** |
+| `packages/` | npm package sources: `tokens` (`@stanvision/atomus-tokens`), `manifest` (`@stanvision/atomus-manifest`), `eslint-plugin` (`@stanvision/eslint-plugin-atomus`), `stylelint-config` (`@stanvision/stylelint-config-atomus`), `mcp` (`@stanvision/atomus-mcp`, the Atomus MCP server) | See each package's README; `packages/manifest/src/` is generated |
+| `schemas/` | JSON Schemas (2020-12) of the component manifest | **Source** |
+| `react/` | `@stanvision/atomus-react`: components, styles, Code Connect templates (`*.figma.ts`), Storybook (`.storybook/`, `*.stories.tsx`, `tests/`); the Agent kit for AI products lives in `react/src/components/ai/` | **Source** |
+| `registry/` | shadcn registry served at docs.atomus.io/r: `scripts/items.mjs` (what ships), `atomus/blocks/` (app screens) | **Source** for `scripts/` and `atomus/blocks/`; `registry.json` is generated (committed), `atomus/*.tsx`, `atomus/sections/`, `.build/` are build output |
+| `evals/` | Agent compatibility evals: `prompts/*.yaml`, scorers, fixtures, `runs/` (generated outputs and scorecards) | **Source**; `runs/*/scorecard.*` are written by `npm run score` |
 | `guidelines/` | Markdown guidelines for agents, Figma Make and people. Entry point: `guidelines/Guidelines.md` | **Source**, except each `components/*.md` "React API" section |
 | `skills/atomus/` | Agent Skill: SKILL.md, references, validator | **Source** for SKILL.md, `patterns.md`, `figma.md` and `scripts/`; the rest is generated |
 | `templates/consumer/` | Files to copy into projects that use Atomus | **Source** |
-| `scripts/` | Generators: `gen-react-api.mjs`, `gen-token-reference.mjs`, `build-skill.mjs` | **Source** |
+| `scripts/` | Generators: `gen-react-api.mjs`, `gen-token-reference.mjs`, `build-skill.mjs`, `build-manifest.mjs` | **Source** |
 | `sites/docs/` | docs.atomus.io (Astro 7 + Starlight) | **Source**, except the folders listed below |
 | `sites/atomus-io/` | atomus.io, static files on Cloudflare Pages | **Source** |
 | `sites/web/` | Draft of the new 4.0 landing page (Astro) | **Source** |
@@ -32,9 +35,15 @@ Atomus 4.0 is a design system for product UI and marketing websites by StanVisio
 | Docs dev server | `cd sites/docs && npm run dev` (http://localhost:4321) |
 | React package | `cd react && npm install && npm run build` · `npm run typecheck` |
 | Docs-site bundle | `cd react && npm run build:docs` |
+| Storybook | `cd react && npm run storybook` (dev, MCP at `/mcp`) · `npm run build-storybook` · `npm run test-storybook` (a11y) · `npm run test:visual` |
+| shadcn registry | `cd registry && npm install && npm run build` (generate + `shadcn build` into `sites/docs/public/r/`) · `npm run validate` · `npm run test:install` |
+| Evals (agent compatibility) | `cd evals && npm install && npm run setup && npm test` (scorers vs fixtures) · `npm run generate -- --agent claude-code --variant atomus` · `npm run score -- runs/<folder>` |
 | Landing page draft | `cd sites/web && npm install && npm run build` |
 | Skill + generated guideline sections | `node scripts/build-skill.mjs` (`--check` fails when stale) |
 | Validate UI code | `node skills/atomus/scripts/validate.mjs <files or folders>` |
+| Component manifest | `cd packages/manifest && npm install && node ../../scripts/build-manifest.mjs` (`--check` fails when stale) |
+| Lint rules (ESLint, Stylelint) | `cd packages/eslint-plugin && npm install && npm test && npm run lint:repo` · same in `packages/stylelint-config` |
+| MCP server | `cd packages/mcp && npm install && npm test` (builds, calls every tool over stdio and through the Worker) · `npm run dev:worker` |
 
 Node 22 (Cloudflare Pages uses `NODE_VERSION=22`). Deploys: see `DEPLOY.md`.
 
@@ -50,9 +59,12 @@ These files are overwritten by a script. Change the source on the right and reru
 | `skills/atomus/references/components.md`, `react-api.json` | `react/src`, `guidelines/overview-components.md` | `scripts/gen-react-api.mjs` |
 | `skills/atomus/references/tokens.md`, `tokens.json` | `tokens/*.tokens.json` | `scripts/gen-token-reference.mjs` |
 | `core-rules` block in `skills/atomus/SKILL.md`, `figma-mcp-rules` block in `references/figma.md` | `guidelines/Guidelines.md`, `guidelines/figma-mcp-rules.md` | `scripts/build-skill.mjs` |
+| `packages/manifest/src/**` (assembled into `atomus.manifest.json`) | `react/src` (TypeScript, `*.figma.ts`), `guidelines/components/*.md`, `guidelines/overview-components.md`, `sites/docs/src/component-pages/*.mdx`, `tokens/` | `scripts/build-manifest.mjs` |
+| `packages/manifest/atomus.manifest.json`, `packages/*/data/`, `packages/mcp/generated/`, `packages/mcp/dist/` | The manifest, guidelines, patterns and templates | The packages' build scripts (never commit) |
 | `docs-site/components/bundle.js`, `bundle.css` | `react/src` | `cd react && npm run build:docs` |
+| `registry/registry.json` (committed item index), `registry/atomus/*.tsx`, `registry/atomus/sections/`, `registry/.build/` (git-ignored) | `react/src`, `css/atomus.css`, `shadcn/globals.css`, `sites/docs/src/components/sections/`, `registry/scripts/items.mjs` | `cd registry && npm run generate` (`npm run check` fails when `registry.json` is stale) |
 | `tokens/`, `css/`, `tailwind/`, `shadcn/` | The Figma variables | Figma export (human-run) |
-| `sites/docs/dist/`, `react/dist/`, `.astro/` | — | Build output; never commit |
+| `sites/docs/dist/`, `react/dist/`, `.astro/`, `react/storybook-static/`, `sites/docs/public/r/`, `sites/docs/public/storybook/` | — | Build output; never commit |
 
 Single sources: a token lives in Figma and `tokens/`; a component's API lives in `react/src`; its usage rules live in `guidelines/components/<name>.md`; the docs pages are built from those. Don't copy content between them by hand. Link to it or extend the generator.
 
@@ -61,7 +73,8 @@ Single sources: a token lives in Figma and `tokens/`; a component's API lives in
 - **Small, logical commits** with a message that says why. No `node_modules/`, `dist/` or lockfile churn unless the task is about dependencies.
 - **Keep names in sync with Figma.** React props mirror Figma properties (Hierarchy → `hierarchy`); CSS names match the variables' code syntax. Never rename one side only.
 - **Guidelines are plain Markdown**: no JSX or HTML except the generator markers. Write rules as imperatives; put hard rules under **Forbidden**.
-- **When you add or change a component prop**, update `react/src`, run `node scripts/build-skill.mjs`, update the Code Connect file and the docs page in `sites/docs/src/component-pages/`.
+- **When you add or change a component prop**, update `react/src`, run `node scripts/build-skill.mjs` and `node scripts/build-manifest.mjs`, update the Code Connect file, the story (`*.stories.tsx`) and the docs page in `sites/docs/src/component-pages/`, and run `npm run generate` in `registry/`.
+- **When you add a component**, add a story file, an entry in `registry/scripts/items.mjs` (the registry generator fails on unlisted components) and `<RegistryActions items="…" />` on its docs page.
 - **When you add a guideline section** (`## …` in `guidelines/components/*.md`), map it to a page in `sites/docs/scripts/component-pages.mjs`. The docs build fails on unplaced sections.
 - **Docs must build** without broken internal links: `cd sites/docs && npm run build`.
 - **Accessibility is not optional**: labels, focus rings, keyboard support, contrast, and status never shown by colour alone.
@@ -79,4 +92,4 @@ If a task seems to need one of these, stop and explain why in the PR or to the p
 
 ## Building UI in this repo
 
-The docs and sites use Atomus itself, so the Atomus rules apply here too: read `guidelines/Guidelines.md`. In short: use Atomus components, semantic tokens only (no raw hex, no primitives), one primary button per view, slots instead of copies, and run the validator on changed UI files.
+The docs and sites use Atomus itself, so the Atomus rules apply here too: read `guidelines/Guidelines.md`. In short: use Atomus components, semantic tokens only (no raw hex, no primitives), one primary button per view, slots instead of copies, and run the validator on changed UI files. With the Atomus MCP server connected, `atomus_validate` runs the same lint rules as CI.
