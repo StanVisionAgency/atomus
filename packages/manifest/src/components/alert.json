@@ -1,0 +1,139 @@
+{
+  "name": "Alert",
+  "kind": "component",
+  "status": "stable",
+  "since": "4.0.0",
+  "category": "Feedback",
+  "import": "import { Alert } from '@stanvision/atomus-react';",
+  "source": "react/src/components/Alert.tsx",
+  "purpose": "A persistent message about a page, section or form.",
+  "description": "Inline alert about a page, section or form. Tinted fill, hairline border, coloured title and icon. Colours: Brand, Gray, Error, Warning, Success.",
+  "aliases": ["callout","inline message","notice"],
+  "alternative": null,
+  "native": {"elements":["div"],"omit":["title","color"],"ref":false},
+  "props": {
+    "title": {"type":"ReactNode","default":null,"required":false,"figma":"Title","notes":"Figma: Title"},
+    "children": {
+      "type": "ReactNode",
+      "default": null,
+      "required": false,
+      "figma": "Description",
+      "notes": "Figma: Description (+ Show description)"
+    },
+    "color": {
+      "type": "'brand' | 'gray' | 'error' | 'warning' | 'success' | 'info' | 'neutral' | 'danger'",
+      "values": ["brand","gray","error","warning","success","info","neutral","danger"],
+      "default": "brand",
+      "required": false,
+      "figma": "Color",
+      "notes": "Figma: Color. Aliases: `info` = brand, `neutral` = gray, `danger` = error."
+    },
+    "variant": {
+      "type": "'subtle' | 'outline' | 'solid'",
+      "values": ["subtle","outline","solid"],
+      "default": "subtle",
+      "required": false,
+      "figma": "Style",
+      "notes": "Figma: Style. `subtle` (default) — tinted fill and hairline border. `outline` — white surface with a coloured border; use on tinted or grey surfaces. `solid` — full-colour fill; only for blocking, page-level issues."
+    },
+    "size": {
+      "type": "'sm' | 'md'",
+      "values": ["sm","md"],
+      "default": "md",
+      "required": false,
+      "figma": "Size",
+      "notes": "Figma: Size — `md` (default) or the compact `sm` for dense UI, forms and side panels."
+    },
+    "flush": {
+      "type": "boolean",
+      "default": false,
+      "required": false,
+      "figma": null,
+      "notes": "Removes the radius and side borders so the alert can span the full width of a card or page edge."
+    },
+    "actions": {
+      "type": "ReactNode",
+      "default": null,
+      "required": false,
+      "figma": "Actions",
+      "notes": "Figma: Actions — up to two small buttons"
+    },
+    "onClose": {"type":"() => void","default":null,"required":false,"figma":"Close","notes":"Figma: Close"},
+    "icon": {
+      "type": "ReactNode",
+      "default": null,
+      "required": false,
+      "figma": null,
+      "notes": "Replaces the default status icon"
+    }
+  },
+  "rules": {
+    "do": [
+      "Pick the colour by meaning: Brand = info, Gray = neutral, Error, Warning, Success.",
+      "Lead with a short title; put detail in the description.",
+      "Give a clear next step: one link or up to two small buttons."
+    ],
+    "dont": [
+      "Don't stack more than two alerts; use toasts for transient confirmations.",
+      "Don't use `solid` for routine messages."
+    ],
+    "forbidden": [
+      "Never stack several alerts.",
+      "Never use alerts for marketing.",
+      "Never use Solid for routine messages — it shouts.",
+      "Never auto-dismiss an alert — use Toast for transient messages."
+    ]
+  },
+  "examples": [
+    {
+      "title": "Usage",
+      "code": "import { Alert } from '@stanvision/atomus-react';\n\n<Alert color=\"warning\" title=\"Trial ends in 3 days\" onClose={dismiss}>\n  Add a payment method to keep your projects.\n</Alert>",
+      "language": "tsx",
+      "source": "sites/docs/src/component-pages/alert.mdx"
+    }
+  ],
+  "figma": {
+    "componentSet": ["Alert"],
+    "fileKey": "bC42e82J3PYg2LMkryodIA",
+    "nodeIds": ["25427:447"],
+    "nodes": [
+      {
+        "componentSet": "Alert",
+        "nodeId": "25427:447",
+        "codeConnectId": "Alert",
+        "mappings": [
+          {"figma":"Description","prop":"children","kind":"text","visibleWhen":"Show description"},
+          {"figma":"Title","prop":"title","kind":"text"},
+          {"figma":"Style","prop":"variant","kind":"enum","values":{"Subtle":"subtle","Outline":"outline"}},
+          {
+            "figma": "Color",
+            "prop": "color",
+            "kind": "enum",
+            "values": {"Brand":"brand","Gray":"gray","Error":"error","Warning":"warning","Success":"success"}
+          },
+          {"figma":"Close","prop":"onClose","kind":"boolean","whenTrue":"onClose={() => {}}"}
+        ]
+      }
+    ],
+    "codeConnect": true,
+    "variants": 10,
+    "properties": [
+      {"componentSet":"Alert","name":"Title","type":"text"},
+      {"componentSet":"Alert","name":"Description","type":"text"},
+      {"componentSet":"Alert","name":"Show description","type":"boolean (on)"},
+      {"componentSet":"Alert","name":"Actions","type":"boolean (on)"},
+      {"componentSet":"Alert","name":"Close","type":"boolean (on)"},
+      {"componentSet":"Alert","name":"Style","type":"variant","options":["Subtle","Outline"]},
+      {
+        "componentSet": "Alert",
+        "name": "Color",
+        "type": "variant",
+        "options": ["Brand","Gray","Error","Warning","Success"]
+      }
+    ],
+    "docs": "https://docs.atomus.io/components/alert/"
+  },
+  "docs": "https://docs.atomus.io/components/alert/",
+  "related": ["Toast","Notification item","Notifications panel"],
+  "a11y": {"element":"status / alert","requiresLabel":false,"notes":[]}
+}

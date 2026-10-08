@@ -1,0 +1,89 @@
+{
+  "name": "ProgressBar",
+  "kind": "component",
+  "status": "stable",
+  "since": "4.0.0",
+  "category": "Feedback",
+  "import": "import { ProgressBar } from '@stanvision/atomus-react';",
+  "source": "react/src/components/ProgressBar.tsx",
+  "purpose": "Progress of a task with a known percentage.",
+  "description": "Linear progress.",
+  "aliases": [],
+  "alternative": null,
+  "native": {"elements":["div"],"omit":[],"ref":false},
+  "props": {
+    "value": {"type":"number","default":null,"required":true,"figma":null,"notes":"0–100"},
+    "labelPosition": {
+      "type": "'none' | 'right' | 'bottom'",
+      "values": ["none","right","bottom"],
+      "default": "right",
+      "required": false,
+      "figma": "Label",
+      "notes": "Figma: Label — where the percentage sits"
+    },
+    "label": {
+      "type": "string",
+      "default": "Progress",
+      "required": false,
+      "figma": null,
+      "notes": "Accessible name, e.g. \"Storage used\""
+    }
+  },
+  "rules": {
+    "do": [
+      "Show the percentage when progress is known.",
+      "Use Loading indicator when it is not.",
+      "Label what is progressing."
+    ],
+    "dont": [],
+    "forbidden": [
+      "Never use a progress bar for steps — use Progress steps.",
+      "Never animate backwards.",
+      "Never show several bars for one task."
+    ]
+  },
+  "examples": [
+    {
+      "title": "Usage",
+      "code": "import { ProgressBar } from '@stanvision/atomus-react';\n\n<ProgressBar value={64} label=\"Storage used\" labelPosition=\"right\" />",
+      "language": "tsx",
+      "source": "sites/docs/src/component-pages/progress-bar.mdx"
+    }
+  ],
+  "figma": {
+    "componentSet": ["Progress bar"],
+    "fileKey": "bC42e82J3PYg2LMkryodIA",
+    "nodeIds": ["25429:686"],
+    "nodes": [
+      {
+        "componentSet": "Progress bar",
+        "nodeId": "25429:686",
+        "codeConnectId": "ProgressBar",
+        "staticProps": "value={40} label=\"Upload progress\"",
+        "mappings": [
+          {
+            "figma": "Label",
+            "prop": "labelPosition",
+            "kind": "enum",
+            "values": {"None":"none","Right":"right","Bottom":"bottom"}
+          }
+        ]
+      }
+    ],
+    "codeConnect": true,
+    "variants": 3,
+    "properties": [{"componentSet":"Progress bar","name":"Label","type":"variant","options":["None","Right","Bottom"]}],
+    "docs": "https://docs.atomus.io/components/progress-bar/"
+  },
+  "docs": "https://docs.atomus.io/components/progress-bar/",
+  "related": ["Step","Progress steps","Progress circle","Loading indicator","Skeleton"],
+  "a11y": {
+    "element": "progressbar",
+    "requiresLabel": false,
+    "notes": [
+      "`labelPosition`: Figma: Label — where the percentage sits",
+      "`label`: Accessible name, e.g. \"Storage used\"",
+      "Label what is progressing."
+    ]
+  }
+}

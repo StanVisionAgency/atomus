@@ -1,0 +1,98 @@
+{
+  "name": "Tabs",
+  "kind": "component",
+  "status": "stable",
+  "since": "4.0.0",
+  "category": "Navigation",
+  "import": "import { Tabs } from '@stanvision/atomus-react';",
+  "source": "react/src/components/Tabs.tsx",
+  "purpose": "Switching between views of the same content (underline · pill · segmented).",
+  "description": "Tab bar built from Tab.",
+  "aliases": ["segmented control","toggle group"],
+  "alternative": null,
+  "native": {"elements":[],"omit":[],"ref":false},
+  "props": {
+    "items": {"type":"TabItem[]","default":null,"required":true,"figma":null,"notes":null},
+    "variant": {
+      "type": "'underline' | 'pill' | 'segmented'",
+      "values": ["underline","pill","segmented"],
+      "default": "underline",
+      "required": false,
+      "figma": "Style",
+      "notes": "Figma: Style"
+    },
+    "value": {"type":"string","default":null,"required":false,"figma":null,"notes":null},
+    "defaultValue": {"type":"string","default":null,"required":false,"figma":null,"notes":null},
+    "onChange": {"type":"(value: string) => void","default":null,"required":false,"figma":null,"notes":null},
+    "aria-label": {"type":"string","default":null,"required":false,"figma":null,"notes":"Accessible name for the tab list"},
+    "className": {"type":"string","default":null,"required":false,"figma":null,"notes":null}
+  },
+  "rules": {
+    "do": [
+      "Tabs: Use for views of the same content.",
+      "Tabs: Keep labels short; add counts when they help.",
+      "Tabs: Use Vertical tabs for settings."
+    ],
+    "dont": [],
+    "forbidden": [
+      "Tabs: Never use tabs for sequential steps — use Progress steps.",
+      "Tabs: Never exceed seven tabs.",
+      "Tabs: Never mix tab styles on one page."
+    ]
+  },
+  "examples": [
+    {
+      "title": "Usage",
+      "code": "import { Tabs } from '@stanvision/atomus-react';\n\n<Tabs\n  aria-label=\"Project sections\"\n  variant=\"underline\"\n  items={[{ value: 'overview', label: 'Overview' }, { value: 'activity', label: 'Activity', count: 12 }]}\n/>",
+      "language": "tsx",
+      "source": "sites/docs/src/component-pages/tabs.mdx"
+    }
+  ],
+  "figma": {
+    "componentSet": ["Tabs","Tab"],
+    "fileKey": "bC42e82J3PYg2LMkryodIA",
+    "nodeIds": ["25423:513"],
+    "nodes": [
+      {
+        "componentSet": "Tabs",
+        "nodeId": "25423:513",
+        "codeConnectId": "Tabs",
+        "mappings": [
+          {
+            "figma": "Style",
+            "prop": "variant",
+            "kind": "enum",
+            "values": {"Underline":"underline","Pill":"pill","Segmented":"segmented"}
+          },
+          {"figma":"(computed)","prop":"defaultValue","kind":"expression","notes":"active"}
+        ]
+      }
+    ],
+    "codeConnect": true,
+    "variants": 33,
+    "properties": [
+      {"componentSet":"Tabs","name":"Style","type":"variant","options":["Underline","Pill","Segmented"]},
+      {"componentSet":"Tab","name":"Label","type":"text"},
+      {"componentSet":"Tab","name":"Icon","type":"boolean (off)"},
+      {"componentSet":"Tab","name":"Icon swap","type":"instance swap (icon)"},
+      {"componentSet":"Tab","name":"Count","type":"boolean (off)"},
+      {"componentSet":"Tab","name":"Count number","type":"text"},
+      {"componentSet":"Tab","name":"Style","type":"variant","options":["Underline","Pill","Segmented"]},
+      {"componentSet":"Tab","name":"Size","type":"variant","options":["sm","md"]},
+      {
+        "componentSet": "Tab",
+        "name": "State",
+        "type": "variant",
+        "options": ["Default","Hover","Active","Focused","Disabled"]
+      }
+    ],
+    "docs": "https://docs.atomus.io/components/tabs/"
+  },
+  "docs": "https://docs.atomus.io/components/tabs/",
+  "related": ["Vertical tabs"],
+  "a11y": {
+    "element": "tablist",
+    "requiresLabel": true,
+    "notes": ["`aria-label`: Accessible name for the tab list","Keep labels short; add counts when they help."]
+  }
+}
