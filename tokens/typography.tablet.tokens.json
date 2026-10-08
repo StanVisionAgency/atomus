@@ -14,7 +14,8 @@
             "WEB": "var(--font-family-title)"
           }
         }
-      }
+      },
+      "$description": "Font family for headlines (Inter Display). Use via the Headline text styles."
     },
     "font-face-body": {
       "$type": "fontFamily",
@@ -30,7 +31,8 @@
             "WEB": "var(--font-family-body)"
           }
         }
-      }
+      },
+      "$description": "Font family for body copy and UI (Inter)."
     },
     "font-face-component": {
       "$type": "fontFamily",
@@ -46,7 +48,8 @@
             "WEB": "var(--font-family-component)"
           }
         }
-      }
+      },
+      "$description": "Font family for component labels (buttons, inputs, captions)."
     }
   },
   "weight": {
@@ -61,7 +64,8 @@
             "WEB": "var(--font-weight-light)"
           }
         }
-      }
+      },
+      "$description": "Light weight (300). Large display sizes only."
     },
     "font-weight-normal": {
       "$type": "fontWeight",
@@ -74,7 +78,8 @@
             "WEB": "var(--font-weight-normal)"
           }
         }
-      }
+      },
+      "$description": "Regular weight (400): body copy."
     },
     "font-weight-medium": {
       "$type": "fontWeight",
@@ -87,7 +92,8 @@
             "WEB": "var(--font-weight-medium)"
           }
         }
-      }
+      },
+      "$description": "Medium weight (500): headlines H2–H6, tiny bold."
     },
     "font-weight-semi-bold": {
       "$type": "fontWeight",
@@ -100,7 +106,8 @@
             "WEB": "var(--font-weight-semi-bold)"
           }
         }
-      }
+      },
+      "$description": "Semi-bold weight (600): buttons, labels, badges, tabs."
     },
     "font-weight-bold": {
       "$type": "fontWeight",
@@ -113,7 +120,8 @@
             "WEB": "var(--font-weight-bold)"
           }
         }
-      }
+      },
+      "$description": "Bold weight (700): overline, card titles."
     }
   },
   "headline": {
@@ -129,7 +137,8 @@
               "WEB": "var(--font-weight-huge)"
             }
           }
-        }
+        },
+        "$description": "Headline Huge — weight; responsive per breakpoint. Hero display headlines only. Apply the matching text style rather than mixing individual values."
       },
       "font-size": {
         "$type": "dimension",
@@ -145,7 +154,8 @@
               "WEB": "var(--font-size-huge)"
             }
           }
-        }
+        },
+        "$description": "Headline Huge — font size; responsive per breakpoint. Hero display headlines only. Apply the matching text style rather than mixing individual values."
       },
       "line-height": {
         "$type": "dimension",
@@ -161,7 +171,8 @@
               "WEB": "var(--line-height-huge)"
             }
           }
-        }
+        },
+        "$description": "Headline Huge — line height; responsive per breakpoint. Hero display headlines only. Apply the matching text style rather than mixing individual values."
       },
       "letter-spacing": {
         "$type": "dimension",
@@ -177,7 +188,8 @@
               "WEB": "var(--letter-spacing-huge)"
             }
           }
-        }
+        },
+        "$description": "Headline Huge — letter spacing; responsive per breakpoint. Hero display headlines only. Apply the matching text style rather than mixing individual values."
       }
     },
     "h1": {
@@ -192,7 +204,8 @@
               "WEB": "var(--font-weight-h1)"
             }
           }
-        }
+        },
+        "$description": "Headline H1 — weight; responsive per breakpoint. Page title — one per page. Apply the matching text style rather than mixing individual values."
       },
       "font-size": {
         "$type": "dimension",
@@ -208,7 +221,8 @@
               "WEB": "var(--font-size-h1)"
             }
           }
-        }
+        },
+        "$description": "Headline H1 — font size; responsive per breakpoint. Page title — one per page. Apply the matching text style rather than mixing individual values."
       },
       "line-height": {
         "$type": "dimension",
@@ -224,7 +238,8 @@
               "WEB": "var(--line-height-h1)"
             }
           }
-        }
+        },
+        "$description": "Headline H1 — line height; responsive per breakpoint. Page title — one per page. Apply the matching text style rather than mixing individual values."
       },
       "letter-spacing": {
         "$type": "dimension",
@@ -240,7 +255,8 @@
               "WEB": "var(--letter-spacing-h1)"
             }
           }
-        }
+        },
+        "$description": "Headline H1 — letter spacing; responsive per breakpoint. Page title — one per page. Apply the matching text style rather than mixing individual values."
       }
     },
     "h2": {
@@ -255,7 +271,8 @@
               "WEB": "var(--font-weight-h2)"
             }
           }
-        }
+        },
+        "$description": "Headline H2 — weight; responsive per breakpoint. Section titles. Apply the matching text style rather than mixing individual values."
       },
       "font-size": {
         "$type": "dimension",
@@ -271,7 +288,8 @@
               "WEB": "var(--font-size-h2)"
             }
           }
-        }
+        },
+        "$description": "Headline H2 — font size; responsive per breakpoint. Section titles. Apply the matching text style rather than mixing individual values."
       },
       "line-height": {
         "$type": "dimension",
@@ -287,7 +305,8 @@
               "WEB": "var(--line-height-h2)"
             }
           }
-        }
+        },
+        "$description": "Headline H2 — line height; responsive per breakpoint. Section titles. Apply the matching text style rather than mixing individual values."
       },
       "letter-spacing": {
         "$type": "dimension",
@@ -303,7 +322,8 @@
               "WEB": "var(--letter-spacing-h2)"
             }
           }
-        }
+        },
+        "$description": "Headline H2 — letter spacing; responsive per breakpoint. Section titles. Apply the matching text style rather than mixing individual values."
       }
     },
     "h3": {
@@ -318,7 +338,8 @@
               "WEB": "var(--font-weight-h3)"
             }
           }
-        }
+        },
+        "$description": "Headline H3 — weight; responsive per breakpoint. Sub-section titles. Apply the matching text style rather than mixing individual values."
       },
       "font-size": {
         "$type": "dimension",
@@ -334,7 +355,8 @@
               "WEB": "var(--font-size-h3)"
             }
           }
-        }
+        },
+        "$description": "Headline H3 — font size; responsive per breakpoint. Sub-section titles. Apply the matching text style rather than mixing individual values."
       },
       "line-height": {
         "$type": "dimension",
@@ -350,7 +372,8 @@
               "WEB": "var(--line-height-h3)"
             }
           }
-        }
+        },
+        "$description": "Headline H3 — line height; responsive per breakpoint. Sub-section titles. Apply the matching text style rather than mixing individual values."
       },
       "letter-spacing": {
         "$type": "dimension",
@@ -366,7 +389,8 @@
               "WEB": "var(--letter-spacing-h3)"
             }
           }
-        }
+        },
+        "$description": "Headline H3 — letter spacing; responsive per breakpoint. Sub-section titles. Apply the matching text style rather than mixing individual values."
       }
     },
     "h4": {
@@ -381,7 +405,8 @@
               "WEB": "var(--font-weight-h4)"
             }
           }
-        }
+        },
+        "$description": "Headline H4 — weight; responsive per breakpoint. Card and panel titles. Apply the matching text style rather than mixing individual values."
       },
       "font-size": {
         "$type": "dimension",
@@ -397,7 +422,8 @@
               "WEB": "var(--font-size-h4)"
             }
           }
-        }
+        },
+        "$description": "Headline H4 — font size; responsive per breakpoint. Card and panel titles. Apply the matching text style rather than mixing individual values."
       },
       "line-height": {
         "$type": "dimension",
@@ -413,7 +439,8 @@
               "WEB": "var(--line-height-h4)"
             }
           }
-        }
+        },
+        "$description": "Headline H4 — line height; responsive per breakpoint. Card and panel titles. Apply the matching text style rather than mixing individual values."
       }
     },
     "h5": {
@@ -428,7 +455,8 @@
               "WEB": "var(--font-weight-h5)"
             }
           }
-        }
+        },
+        "$description": "Headline H5 — weight; responsive per breakpoint. Small headings. Apply the matching text style rather than mixing individual values."
       },
       "font-size": {
         "$type": "dimension",
@@ -444,7 +472,8 @@
               "WEB": "var(--font-size-h5)"
             }
           }
-        }
+        },
+        "$description": "Headline H5 — font size; responsive per breakpoint. Small headings. Apply the matching text style rather than mixing individual values."
       },
       "line-height": {
         "$type": "dimension",
@@ -460,7 +489,8 @@
               "WEB": "var(--line-height-h5)"
             }
           }
-        }
+        },
+        "$description": "Headline H5 — line height; responsive per breakpoint. Small headings. Apply the matching text style rather than mixing individual values."
       }
     },
     "h6": {
@@ -475,7 +505,8 @@
               "WEB": "var(--font-weight-h6)"
             }
           }
-        }
+        },
+        "$description": "Headline H6 — weight; responsive per breakpoint. Smallest heading. Apply the matching text style rather than mixing individual values."
       },
       "font-size": {
         "$type": "dimension",
@@ -491,7 +522,8 @@
               "WEB": "var(--font-size-h6)"
             }
           }
-        }
+        },
+        "$description": "Headline H6 — font size; responsive per breakpoint. Smallest heading. Apply the matching text style rather than mixing individual values."
       },
       "line-height": {
         "$type": "dimension",
@@ -507,7 +539,8 @@
               "WEB": "var(--line-height-h6)"
             }
           }
-        }
+        },
+        "$description": "Headline H6 — line height; responsive per breakpoint. Smallest heading. Apply the matching text style rather than mixing individual values."
       }
     },
     "subtitle": {
@@ -522,7 +555,8 @@
               "WEB": "var(--font-weight-subtitle)"
             }
           }
-        }
+        },
+        "$description": "Headline Subtitle — weight; responsive per breakpoint. Supporting line under a headline. Apply the matching text style rather than mixing individual values."
       },
       "font-size": {
         "$type": "dimension",
@@ -538,7 +572,8 @@
               "WEB": "var(--font-size-subtitle)"
             }
           }
-        }
+        },
+        "$description": "Headline Subtitle — font size; responsive per breakpoint. Supporting line under a headline. Apply the matching text style rather than mixing individual values."
       },
       "line-height": {
         "$type": "dimension",
@@ -554,7 +589,8 @@
               "WEB": "var(--line-height-subtitle)"
             }
           }
-        }
+        },
+        "$description": "Headline Subtitle — line height; responsive per breakpoint. Supporting line under a headline. Apply the matching text style rather than mixing individual values."
       }
     },
     "overline": {
@@ -569,7 +605,8 @@
               "WEB": "var(--font-weight-overline)"
             }
           }
-        }
+        },
+        "$description": "Headline Overline — weight; responsive per breakpoint. Uppercase eyebrow above a headline. Apply the matching text style rather than mixing individual values."
       },
       "font-size": {
         "$type": "dimension",
@@ -585,7 +622,8 @@
               "WEB": "var(--font-size-overline)"
             }
           }
-        }
+        },
+        "$description": "Headline Overline — font size; responsive per breakpoint. Uppercase eyebrow above a headline. Apply the matching text style rather than mixing individual values."
       },
       "line-height": {
         "$type": "dimension",
@@ -601,7 +639,8 @@
               "WEB": "var(--line-height-overline)"
             }
           }
-        }
+        },
+        "$description": "Headline Overline — line height; responsive per breakpoint. Uppercase eyebrow above a headline. Apply the matching text style rather than mixing individual values."
       }
     }
   },
@@ -618,7 +657,8 @@
               "WEB": "var(--font-weight-body-leading)"
             }
           }
-        }
+        },
+        "$description": "Content Body leading — weight normal; responsive per breakpoint. Lead paragraphs, card titles. Apply the matching text style rather than mixing individual values."
       },
       "weight-bold": {
         "$type": "fontWeight",
@@ -631,7 +671,8 @@
               "WEB": "var(--font-weight-bold-body-leading)"
             }
           }
-        }
+        },
+        "$description": "Content Body leading — weight bold; responsive per breakpoint. Lead paragraphs, card titles. Apply the matching text style rather than mixing individual values."
       },
       "font-size": {
         "$type": "dimension",
@@ -647,7 +688,8 @@
               "WEB": "var(--font-size-body-leading)"
             }
           }
-        }
+        },
+        "$description": "Content Body leading — font size; responsive per breakpoint. Lead paragraphs, card titles. Apply the matching text style rather than mixing individual values."
       },
       "line-height": {
         "$type": "dimension",
@@ -663,7 +705,8 @@
               "WEB": "var(--line-height-body-leading)"
             }
           }
-        }
+        },
+        "$description": "Content Body leading — line height; responsive per breakpoint. Lead paragraphs, card titles. Apply the matching text style rather than mixing individual values."
       },
       "paragraph-spacing": {
         "$type": "dimension",
@@ -679,7 +722,8 @@
               "WEB": "var(--paragraph-spacing-body-leading)"
             }
           }
-        }
+        },
+        "$description": "Content Body leading — paragraph spacing; responsive per breakpoint. Lead paragraphs, card titles. Apply the matching text style rather than mixing individual values."
       }
     },
     "body": {
@@ -694,7 +738,8 @@
               "WEB": "var(--font-weight-body)"
             }
           }
-        }
+        },
+        "$description": "Content Body — weight normal; responsive per breakpoint. Body copy, md checkboxes and tabs. Apply the matching text style rather than mixing individual values."
       },
       "weight-bold": {
         "$type": "fontWeight",
@@ -707,7 +752,8 @@
               "WEB": "var(--font-weight-bold-body)"
             }
           }
-        }
+        },
+        "$description": "Content Body — weight bold; responsive per breakpoint. Body copy, md checkboxes and tabs. Apply the matching text style rather than mixing individual values."
       },
       "font-size": {
         "$type": "dimension",
@@ -723,7 +769,8 @@
               "WEB": "var(--font-size-body)"
             }
           }
-        }
+        },
+        "$description": "Content Body — font size; responsive per breakpoint. Body copy, md checkboxes and tabs. Apply the matching text style rather than mixing individual values."
       },
       "line-height": {
         "$type": "dimension",
@@ -739,7 +786,8 @@
               "WEB": "var(--line-height-body)"
             }
           }
-        }
+        },
+        "$description": "Content Body — line height; responsive per breakpoint. Body copy, md checkboxes and tabs. Apply the matching text style rather than mixing individual values."
       },
       "paragraph-spacing": {
         "$type": "dimension",
@@ -755,7 +803,8 @@
               "WEB": "var(--paragraph-spacing-body)"
             }
           }
-        }
+        },
+        "$description": "Content Body — paragraph spacing; responsive per breakpoint. Body copy, md checkboxes and tabs. Apply the matching text style rather than mixing individual values."
       }
     },
     "small": {
@@ -770,7 +819,8 @@
               "WEB": "var(--font-weight-small)"
             }
           }
-        }
+        },
+        "$description": "Content Small — weight normal; responsive per breakpoint. Dense UI: labels, inputs, table cells, md badges. Apply the matching text style rather than mixing individual values."
       },
       "weight-bold": {
         "$type": "fontWeight",
@@ -783,7 +833,8 @@
               "WEB": "var(--font-weight-bold-small)"
             }
           }
-        }
+        },
+        "$description": "Content Small — weight bold; responsive per breakpoint. Dense UI: labels, inputs, table cells, md badges. Apply the matching text style rather than mixing individual values."
       },
       "font-size": {
         "$type": "dimension",
@@ -799,7 +850,8 @@
               "WEB": "var(--font-size-small)"
             }
           }
-        }
+        },
+        "$description": "Content Small — font size; responsive per breakpoint. Dense UI: labels, inputs, table cells, md badges. Apply the matching text style rather than mixing individual values."
       },
       "line-height": {
         "$type": "dimension",
@@ -815,7 +867,8 @@
               "WEB": "var(--line-height-small)"
             }
           }
-        }
+        },
+        "$description": "Content Small — line height; responsive per breakpoint. Dense UI: labels, inputs, table cells, md badges. Apply the matching text style rather than mixing individual values."
       },
       "paragraph-spacing": {
         "$type": "dimension",
@@ -831,7 +884,8 @@
               "WEB": "var(--paragraph-spacing-small)"
             }
           }
-        }
+        },
+        "$description": "Content Small — paragraph spacing; responsive per breakpoint. Dense UI: labels, inputs, table cells, md badges. Apply the matching text style rather than mixing individual values."
       }
     },
     "tiny": {
@@ -846,7 +900,8 @@
               "WEB": "var(--font-weight-tiny)"
             }
           }
-        }
+        },
+        "$description": "Content Tiny — weight normal; responsive per breakpoint. Captions, metadata, small badges. Apply the matching text style rather than mixing individual values."
       },
       "weight-bold": {
         "$type": "fontWeight",
@@ -859,7 +914,8 @@
               "WEB": "var(--font-weight-bold-tiny)"
             }
           }
-        }
+        },
+        "$description": "Content Tiny — weight bold; responsive per breakpoint. Captions, metadata, small badges. Apply the matching text style rather than mixing individual values."
       },
       "font-size": {
         "$type": "dimension",
@@ -875,7 +931,8 @@
               "WEB": "var(--font-size-tiny)"
             }
           }
-        }
+        },
+        "$description": "Content Tiny — font size; responsive per breakpoint. Captions, metadata, small badges. Apply the matching text style rather than mixing individual values."
       },
       "line-height": {
         "$type": "dimension",
@@ -891,7 +948,8 @@
               "WEB": "var(--line-height-tiny)"
             }
           }
-        }
+        },
+        "$description": "Content Tiny — line height; responsive per breakpoint. Captions, metadata, small badges. Apply the matching text style rather than mixing individual values."
       },
       "paragraph-spacing": {
         "$type": "dimension",
@@ -907,7 +965,8 @@
               "WEB": "var(--paragraph-spacing-tiny)"
             }
           }
-        }
+        },
+        "$description": "Content Tiny — paragraph spacing; responsive per breakpoint. Captions, metadata, small badges. Apply the matching text style rather than mixing individual values."
       }
     },
     "micro": {
@@ -922,7 +981,8 @@
               "WEB": "var(--font-weight-micro)"
             }
           }
-        }
+        },
+        "$description": "Content Micro — weight normal; responsive per breakpoint. Micro labels, xs avatars. Apply the matching text style rather than mixing individual values."
       },
       "weight-bold": {
         "$type": "fontWeight",
@@ -935,7 +995,8 @@
               "WEB": "var(--font-weight-bold-micro)"
             }
           }
-        }
+        },
+        "$description": "Content Micro — weight bold; responsive per breakpoint. Micro labels, xs avatars. Apply the matching text style rather than mixing individual values."
       },
       "font-size": {
         "$type": "dimension",
@@ -951,7 +1012,8 @@
               "WEB": "var(--font-size-micro)"
             }
           }
-        }
+        },
+        "$description": "Content Micro — font size; responsive per breakpoint. Micro labels, xs avatars. Apply the matching text style rather than mixing individual values."
       },
       "line-height": {
         "$type": "dimension",
@@ -967,7 +1029,8 @@
               "WEB": "var(--line-height-micro)"
             }
           }
-        }
+        },
+        "$description": "Content Micro — line height; responsive per breakpoint. Micro labels, xs avatars. Apply the matching text style rather than mixing individual values."
       },
       "paragraph-spacing": {
         "$type": "dimension",
@@ -983,7 +1046,8 @@
               "WEB": "var(--paragraph-spacing-micro)"
             }
           }
-        }
+        },
+        "$description": "Content Micro — paragraph spacing; responsive per breakpoint. Micro labels, xs avatars. Apply the matching text style rather than mixing individual values."
       }
     }
   },
@@ -1001,7 +1065,8 @@
                 "WEB": "var(--font-weight-button-xs)"
               }
             }
-          }
+          },
+          "$description": "Elements Button xSmall — weight; responsive per breakpoint. Button xSmall component text. Apply the matching text style rather than mixing individual values."
         },
         "font-size": {
           "$type": "dimension",
@@ -1017,7 +1082,8 @@
                 "WEB": "var(--font-size-button-xs)"
               }
             }
-          }
+          },
+          "$description": "Elements Button xSmall — font size; responsive per breakpoint. Button xSmall component text. Apply the matching text style rather than mixing individual values."
         },
         "line-height": {
           "$type": "dimension",
@@ -1033,7 +1099,8 @@
                 "WEB": "var(--line-height-button-xs)"
               }
             }
-          }
+          },
+          "$description": "Elements Button xSmall — line height; responsive per breakpoint. Button xSmall component text. Apply the matching text style rather than mixing individual values."
         }
       },
       "small": {
@@ -1048,7 +1115,8 @@
                 "WEB": "var(--font-weight-button-sm)"
               }
             }
-          }
+          },
+          "$description": "Elements Button Small — weight; responsive per breakpoint. Button Small component text. Apply the matching text style rather than mixing individual values."
         },
         "font-size": {
           "$type": "dimension",
@@ -1064,7 +1132,8 @@
                 "WEB": "var(--font-size-button-sm)"
               }
             }
-          }
+          },
+          "$description": "Elements Button Small — font size; responsive per breakpoint. Button Small component text. Apply the matching text style rather than mixing individual values."
         },
         "line-height": {
           "$type": "dimension",
@@ -1080,7 +1149,8 @@
                 "WEB": "var(--line-height-button-sm)"
               }
             }
-          }
+          },
+          "$description": "Elements Button Small — line height; responsive per breakpoint. Button Small component text. Apply the matching text style rather than mixing individual values."
         }
       },
       "medium": {
@@ -1095,7 +1165,8 @@
                 "WEB": "var(--font-weight-button-md)"
               }
             }
-          }
+          },
+          "$description": "Elements Button Medium — weight; responsive per breakpoint. Button Medium component text. Apply the matching text style rather than mixing individual values."
         },
         "font-size": {
           "$type": "dimension",
@@ -1111,7 +1182,8 @@
                 "WEB": "var(--font-size-button-md)"
               }
             }
-          }
+          },
+          "$description": "Elements Button Medium — font size; responsive per breakpoint. Button Medium component text. Apply the matching text style rather than mixing individual values."
         },
         "line-height": {
           "$type": "dimension",
@@ -1127,7 +1199,8 @@
                 "WEB": "var(--line-height-button-md)"
               }
             }
-          }
+          },
+          "$description": "Elements Button Medium — line height; responsive per breakpoint. Button Medium component text. Apply the matching text style rather than mixing individual values."
         }
       },
       "large": {
@@ -1142,7 +1215,8 @@
                 "WEB": "var(--font-weight-button-lg)"
               }
             }
-          }
+          },
+          "$description": "Elements Button Large — weight; responsive per breakpoint. Button Large component text. Apply the matching text style rather than mixing individual values."
         },
         "font-size": {
           "$type": "dimension",
@@ -1158,7 +1232,8 @@
                 "WEB": "var(--font-size-button-lg)"
               }
             }
-          }
+          },
+          "$description": "Elements Button Large — font size; responsive per breakpoint. Button Large component text. Apply the matching text style rather than mixing individual values."
         },
         "line-height": {
           "$type": "dimension",
@@ -1174,7 +1249,8 @@
                 "WEB": "var(--line-height-button-lg)"
               }
             }
-          }
+          },
+          "$description": "Elements Button Large — line height; responsive per breakpoint. Button Large component text. Apply the matching text style rather than mixing individual values."
         }
       },
       "xlarge": {
@@ -1189,7 +1265,8 @@
                 "WEB": "var(--font-weight-button-xl)"
               }
             }
-          }
+          },
+          "$description": "Elements Button xLarge — weight; responsive per breakpoint. Button xLarge component text. Apply the matching text style rather than mixing individual values."
         },
         "font-size": {
           "$type": "dimension",
@@ -1205,7 +1282,8 @@
                 "WEB": "var(--font-size-button-xl)"
               }
             }
-          }
+          },
+          "$description": "Elements Button xLarge — font size; responsive per breakpoint. Button xLarge component text. Apply the matching text style rather than mixing individual values."
         },
         "line-height": {
           "$type": "dimension",
@@ -1221,7 +1299,8 @@
                 "WEB": "var(--line-height-button-xl)"
               }
             }
-          }
+          },
+          "$description": "Elements Button xLarge — line height; responsive per breakpoint. Button xLarge component text. Apply the matching text style rather than mixing individual values."
         }
       }
     },
@@ -1238,7 +1317,8 @@
                 "WEB": "var(--font-weight-input-xs)"
               }
             }
-          }
+          },
+          "$description": "Elements Input xSmall — weight; responsive per breakpoint. Input xSmall component text. Apply the matching text style rather than mixing individual values."
         },
         "font-size": {
           "$type": "dimension",
@@ -1254,7 +1334,8 @@
                 "WEB": "var(--font-size-input-xs)"
               }
             }
-          }
+          },
+          "$description": "Elements Input xSmall — font size; responsive per breakpoint. Input xSmall component text. Apply the matching text style rather than mixing individual values."
         },
         "line-height": {
           "$type": "dimension",
@@ -1270,7 +1351,8 @@
                 "WEB": "var(--line-height-input-xs)"
               }
             }
-          }
+          },
+          "$description": "Elements Input xSmall — line height; responsive per breakpoint. Input xSmall component text. Apply the matching text style rather than mixing individual values."
         }
       },
       "small": {
@@ -1285,7 +1367,8 @@
                 "WEB": "var(--font-weight-input-sm)"
               }
             }
-          }
+          },
+          "$description": "Elements Input Small — weight; responsive per breakpoint. Input Small component text. Apply the matching text style rather than mixing individual values."
         },
         "font-size": {
           "$type": "dimension",
@@ -1301,7 +1384,8 @@
                 "WEB": "var(--font-size-input-sm)"
               }
             }
-          }
+          },
+          "$description": "Elements Input Small — font size; responsive per breakpoint. Input Small component text. Apply the matching text style rather than mixing individual values."
         },
         "line-height": {
           "$type": "dimension",
@@ -1317,7 +1401,8 @@
                 "WEB": "var(--line-height-input-sm)"
               }
             }
-          }
+          },
+          "$description": "Elements Input Small — line height; responsive per breakpoint. Input Small component text. Apply the matching text style rather than mixing individual values."
         }
       },
       "medium": {
@@ -1332,7 +1417,8 @@
                 "WEB": "var(--font-weight-input-md)"
               }
             }
-          }
+          },
+          "$description": "Elements Input Medium — weight; responsive per breakpoint. Input Medium component text. Apply the matching text style rather than mixing individual values."
         },
         "font-size": {
           "$type": "dimension",
@@ -1348,7 +1434,8 @@
                 "WEB": "var(--font-size-input-md)"
               }
             }
-          }
+          },
+          "$description": "Elements Input Medium — font size; responsive per breakpoint. Input Medium component text. Apply the matching text style rather than mixing individual values."
         },
         "line-height": {
           "$type": "dimension",
@@ -1364,7 +1451,8 @@
                 "WEB": "var(--line-height-input-md)"
               }
             }
-          }
+          },
+          "$description": "Elements Input Medium — line height; responsive per breakpoint. Input Medium component text. Apply the matching text style rather than mixing individual values."
         }
       },
       "large": {
@@ -1379,7 +1467,8 @@
                 "WEB": "var(--font-weight-input-lg)"
               }
             }
-          }
+          },
+          "$description": "Elements Input Large — weight; responsive per breakpoint. Input Large component text. Apply the matching text style rather than mixing individual values."
         },
         "font-size": {
           "$type": "dimension",
@@ -1395,7 +1484,8 @@
                 "WEB": "var(--font-size-input-lg)"
               }
             }
-          }
+          },
+          "$description": "Elements Input Large — font size; responsive per breakpoint. Input Large component text. Apply the matching text style rather than mixing individual values."
         },
         "line-height": {
           "$type": "dimension",
@@ -1411,7 +1501,8 @@
                 "WEB": "var(--line-height-input-lg)"
               }
             }
-          }
+          },
+          "$description": "Elements Input Large — line height; responsive per breakpoint. Input Large component text. Apply the matching text style rather than mixing individual values."
         }
       }
     },
@@ -1428,7 +1519,8 @@
                 "WEB": "var(--font-weight-caption-xs)"
               }
             }
-          }
+          },
+          "$description": "Elements Caption xSmall — weight; responsive per breakpoint. Caption xSmall component text. Apply the matching text style rather than mixing individual values."
         },
         "font-size": {
           "$type": "dimension",
@@ -1444,7 +1536,8 @@
                 "WEB": "var(--font-size-caption-xs)"
               }
             }
-          }
+          },
+          "$description": "Elements Caption xSmall — font size; responsive per breakpoint. Caption xSmall component text. Apply the matching text style rather than mixing individual values."
         },
         "line-height": {
           "$type": "dimension",
@@ -1460,7 +1553,8 @@
                 "WEB": "var(--line-height-caption-xs)"
               }
             }
-          }
+          },
+          "$description": "Elements Caption xSmall — line height; responsive per breakpoint. Caption xSmall component text. Apply the matching text style rather than mixing individual values."
         }
       },
       "small": {
@@ -1475,7 +1569,8 @@
                 "WEB": "var(--font-weight-caption-sm)"
               }
             }
-          }
+          },
+          "$description": "Elements Caption Small — weight; responsive per breakpoint. Caption Small component text. Apply the matching text style rather than mixing individual values."
         },
         "font-size": {
           "$type": "dimension",
@@ -1491,7 +1586,8 @@
                 "WEB": "var(--font-size-caption-sm)"
               }
             }
-          }
+          },
+          "$description": "Elements Caption Small — font size; responsive per breakpoint. Caption Small component text. Apply the matching text style rather than mixing individual values."
         },
         "line-height": {
           "$type": "dimension",
@@ -1507,7 +1603,8 @@
                 "WEB": "var(--line-height-caption-sm)"
               }
             }
-          }
+          },
+          "$description": "Elements Caption Small — line height; responsive per breakpoint. Caption Small component text. Apply the matching text style rather than mixing individual values."
         }
       },
       "medium": {
@@ -1522,7 +1619,8 @@
                 "WEB": "var(--font-weight-caption-md)"
               }
             }
-          }
+          },
+          "$description": "Elements Caption Medium — weight; responsive per breakpoint. Caption Medium component text. Apply the matching text style rather than mixing individual values."
         },
         "font-size": {
           "$type": "dimension",
@@ -1538,7 +1636,8 @@
                 "WEB": "var(--font-size-caption-md)"
               }
             }
-          }
+          },
+          "$description": "Elements Caption Medium — font size; responsive per breakpoint. Caption Medium component text. Apply the matching text style rather than mixing individual values."
         },
         "line-height": {
           "$type": "dimension",
@@ -1554,7 +1653,8 @@
                 "WEB": "var(--line-height-caption-md)"
               }
             }
-          }
+          },
+          "$description": "Elements Caption Medium — line height; responsive per breakpoint. Caption Medium component text. Apply the matching text style rather than mixing individual values."
         }
       },
       "large": {
@@ -1569,7 +1669,8 @@
                 "WEB": "var(--font-weight-caption-lg)"
               }
             }
-          }
+          },
+          "$description": "Elements Caption Large — weight; responsive per breakpoint. Caption Large component text. Apply the matching text style rather than mixing individual values."
         },
         "font-size": {
           "$type": "dimension",
@@ -1585,7 +1686,8 @@
                 "WEB": "var(--font-size-caption-lg)"
               }
             }
-          }
+          },
+          "$description": "Elements Caption Large — font size; responsive per breakpoint. Caption Large component text. Apply the matching text style rather than mixing individual values."
         },
         "line-height": {
           "$type": "dimension",
@@ -1601,7 +1703,8 @@
                 "WEB": "var(--line-height-caption-lg)"
               }
             }
-          }
+          },
+          "$description": "Elements Caption Large — line height; responsive per breakpoint. Caption Large component text. Apply the matching text style rather than mixing individual values."
         }
       }
     }
