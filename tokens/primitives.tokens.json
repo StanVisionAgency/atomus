@@ -12,7 +12,8 @@
               "WEB": "var(--color-blue-gray-900)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Blue Gray/900. Do not use directly in components — alias it from a semantic token."
       },
       "800": {
         "$type": "color",
@@ -25,7 +26,8 @@
               "WEB": "var(--color-blue-gray-800)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Blue Gray/800. Do not use directly in components — alias it from a semantic token."
       },
       "700": {
         "$type": "color",
@@ -38,7 +40,8 @@
               "WEB": "var(--color-blue-gray-700)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Blue Gray/700. Do not use directly in components — alias it from a semantic token."
       },
       "600": {
         "$type": "color",
@@ -51,7 +54,8 @@
               "WEB": "var(--color-blue-gray-600)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Blue Gray/600. Do not use directly in components — alias it from a semantic token."
       },
       "500": {
         "$type": "color",
@@ -64,7 +68,8 @@
               "WEB": "var(--color-blue-gray-500)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Blue Gray/500. Do not use directly in components — alias it from a semantic token."
       },
       "400": {
         "$type": "color",
@@ -77,7 +82,8 @@
               "WEB": "var(--color-blue-gray-400)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Blue Gray/400. Do not use directly in components — alias it from a semantic token."
       },
       "300": {
         "$type": "color",
@@ -90,7 +96,8 @@
               "WEB": "var(--color-blue-gray-300)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Blue Gray/300. Do not use directly in components — alias it from a semantic token."
       },
       "200": {
         "$type": "color",
@@ -103,7 +110,8 @@
               "WEB": "var(--color-blue-gray-200)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Blue Gray/200. Do not use directly in components — alias it from a semantic token."
       },
       "100": {
         "$type": "color",
@@ -116,7 +124,8 @@
               "WEB": "var(--color-blue-gray-100)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Blue Gray/100. Do not use directly in components — alias it from a semantic token."
       },
       "50": {
         "$type": "color",
@@ -129,7 +138,8 @@
               "WEB": "var(--color-blue-gray-50)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Blue Gray/50. Do not use directly in components — alias it from a semantic token."
       },
       "25": {
         "$type": "color",
@@ -142,7 +152,8 @@
               "WEB": "var(--color-blue-gray-25)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Blue Gray/25. Do not use directly in components — alias it from a semantic token."
       },
       "950": {
         "$type": "color",
@@ -155,7 +166,8 @@
               "WEB": "var(--color-blue-gray-950)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Blue Gray/950. Do not use directly in components — alias it from a semantic token."
       }
     },
     "cool-gray": {
@@ -170,7 +182,8 @@
               "WEB": "var(--color-cool-gray-900)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Cool Gray/900. Do not use directly in components — alias it from a semantic token."
       },
       "800": {
         "$type": "color",
@@ -183,7 +196,8 @@
               "WEB": "var(--color-cool-gray-800)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Cool Gray/800. Do not use directly in components — alias it from a semantic token."
       },
       "700": {
         "$type": "color",
@@ -196,7 +210,8 @@
               "WEB": "var(--color-cool-gray-700)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Cool Gray/700. Do not use directly in components — alias it from a semantic token."
       },
       "600": {
         "$type": "color",
@@ -209,7 +224,8 @@
               "WEB": "var(--color-cool-gray-600)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Cool Gray/600. Do not use directly in components — alias it from a semantic token."
       },
       "500": {
         "$type": "color",
@@ -222,7 +238,8 @@
               "WEB": "var(--color-cool-gray-500)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Cool Gray/500. Do not use directly in components — alias it from a semantic token."
       },
       "400": {
         "$type": "color",
@@ -235,7 +252,8 @@
               "WEB": "var(--color-cool-gray-400)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Cool Gray/400. Do not use directly in components — alias it from a semantic token."
       },
       "300": {
         "$type": "color",
@@ -248,7 +266,8 @@
               "WEB": "var(--color-cool-gray-300)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Cool Gray/300. Do not use directly in components — alias it from a semantic token."
       },
       "200": {
         "$type": "color",
@@ -261,7 +280,8 @@
               "WEB": "var(--color-cool-gray-200)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Cool Gray/200. Do not use directly in components — alias it from a semantic token."
       },
       "100": {
         "$type": "color",
@@ -274,7 +294,8 @@
               "WEB": "var(--color-cool-gray-100)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Cool Gray/100. Do not use directly in components — alias it from a semantic token."
       },
       "50": {
         "$type": "color",
@@ -287,7 +308,8 @@
               "WEB": "var(--color-cool-gray-50)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Cool Gray/50. Do not use directly in components — alias it from a semantic token."
       },
       "25": {
         "$type": "color",
@@ -300,7 +322,8 @@
               "WEB": "var(--color-cool-gray-25)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Cool Gray/25. Do not use directly in components — alias it from a semantic token."
       },
       "950": {
         "$type": "color",
@@ -313,7 +336,8 @@
               "WEB": "var(--color-cool-gray-950)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Cool Gray/950. Do not use directly in components — alias it from a semantic token."
       }
     },
     "gray": {
@@ -328,7 +352,8 @@
               "WEB": "var(--color-gray-900)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Gray/900. Do not use directly in components — alias it from a semantic token."
       },
       "800": {
         "$type": "color",
@@ -341,7 +366,8 @@
               "WEB": "var(--color-gray-800)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Gray/800. Do not use directly in components — alias it from a semantic token."
       },
       "700": {
         "$type": "color",
@@ -354,7 +380,8 @@
               "WEB": "var(--color-gray-700)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Gray/700. Do not use directly in components — alias it from a semantic token."
       },
       "600": {
         "$type": "color",
@@ -367,7 +394,8 @@
               "WEB": "var(--color-gray-600)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Gray/600. Do not use directly in components — alias it from a semantic token."
       },
       "500": {
         "$type": "color",
@@ -380,7 +408,8 @@
               "WEB": "var(--color-gray-500)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Gray/500. Do not use directly in components — alias it from a semantic token."
       },
       "400": {
         "$type": "color",
@@ -393,7 +422,8 @@
               "WEB": "var(--color-gray-400)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Gray/400. Do not use directly in components — alias it from a semantic token."
       },
       "300": {
         "$type": "color",
@@ -406,7 +436,8 @@
               "WEB": "var(--color-gray-300)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Gray/300. Do not use directly in components — alias it from a semantic token."
       },
       "200": {
         "$type": "color",
@@ -419,7 +450,8 @@
               "WEB": "var(--color-gray-200)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Gray/200. Do not use directly in components — alias it from a semantic token."
       },
       "100": {
         "$type": "color",
@@ -432,7 +464,8 @@
               "WEB": "var(--color-gray-100)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Gray/100. Do not use directly in components — alias it from a semantic token."
       },
       "50": {
         "$type": "color",
@@ -445,7 +478,8 @@
               "WEB": "var(--color-gray-50)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Gray/50. Do not use directly in components — alias it from a semantic token."
       },
       "25": {
         "$type": "color",
@@ -458,7 +492,8 @@
               "WEB": "var(--color-gray-25)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Gray/25. Do not use directly in components — alias it from a semantic token."
       },
       "950": {
         "$type": "color",
@@ -471,7 +506,8 @@
               "WEB": "var(--color-gray-950)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Gray/950. Do not use directly in components — alias it from a semantic token."
       }
     },
     "true-gray": {
@@ -486,7 +522,8 @@
               "WEB": "var(--color-true-gray-900)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour True Gray/900. Do not use directly in components — alias it from a semantic token."
       },
       "800": {
         "$type": "color",
@@ -499,7 +536,8 @@
               "WEB": "var(--color-true-gray-800)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour True Gray/800. Do not use directly in components — alias it from a semantic token."
       },
       "700": {
         "$type": "color",
@@ -512,7 +550,8 @@
               "WEB": "var(--color-true-gray-700)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour True Gray/700. Do not use directly in components — alias it from a semantic token."
       },
       "600": {
         "$type": "color",
@@ -525,7 +564,8 @@
               "WEB": "var(--color-true-gray-600)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour True Gray/600. Do not use directly in components — alias it from a semantic token."
       },
       "500": {
         "$type": "color",
@@ -538,7 +578,8 @@
               "WEB": "var(--color-true-gray-500)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour True Gray/500. Do not use directly in components — alias it from a semantic token."
       },
       "400": {
         "$type": "color",
@@ -551,7 +592,8 @@
               "WEB": "var(--color-true-gray-400)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour True Gray/400. Do not use directly in components — alias it from a semantic token."
       },
       "300": {
         "$type": "color",
@@ -564,7 +606,8 @@
               "WEB": "var(--color-true-gray-300)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour True Gray/300. Do not use directly in components — alias it from a semantic token."
       },
       "200": {
         "$type": "color",
@@ -577,7 +620,8 @@
               "WEB": "var(--color-true-gray-200)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour True Gray/200. Do not use directly in components — alias it from a semantic token."
       },
       "100": {
         "$type": "color",
@@ -590,7 +634,8 @@
               "WEB": "var(--color-true-gray-100)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour True Gray/100. Do not use directly in components — alias it from a semantic token."
       },
       "50": {
         "$type": "color",
@@ -603,7 +648,8 @@
               "WEB": "var(--color-true-gray-50)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour True Gray/50. Do not use directly in components — alias it from a semantic token."
       },
       "25": {
         "$type": "color",
@@ -616,7 +662,8 @@
               "WEB": "var(--color-true-gray-25)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour True Gray/25. Do not use directly in components — alias it from a semantic token."
       },
       "950": {
         "$type": "color",
@@ -629,7 +676,8 @@
               "WEB": "var(--color-true-gray-950)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour True Gray/950. Do not use directly in components — alias it from a semantic token."
       }
     },
     "warm-gray": {
@@ -644,7 +692,8 @@
               "WEB": "var(--color-warm-gray-900)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Warm Gray/900. Do not use directly in components — alias it from a semantic token."
       },
       "800": {
         "$type": "color",
@@ -657,7 +706,8 @@
               "WEB": "var(--color-warm-gray-800)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Warm Gray/800. Do not use directly in components — alias it from a semantic token."
       },
       "700": {
         "$type": "color",
@@ -670,7 +720,8 @@
               "WEB": "var(--color-warm-gray-700)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Warm Gray/700. Do not use directly in components — alias it from a semantic token."
       },
       "600": {
         "$type": "color",
@@ -683,7 +734,8 @@
               "WEB": "var(--color-warm-gray-600)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Warm Gray/600. Do not use directly in components — alias it from a semantic token."
       },
       "500": {
         "$type": "color",
@@ -696,7 +748,8 @@
               "WEB": "var(--color-warm-gray-500)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Warm Gray/500. Do not use directly in components — alias it from a semantic token."
       },
       "400": {
         "$type": "color",
@@ -709,7 +762,8 @@
               "WEB": "var(--color-warm-gray-400)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Warm Gray/400. Do not use directly in components — alias it from a semantic token."
       },
       "300": {
         "$type": "color",
@@ -722,7 +776,8 @@
               "WEB": "var(--color-warm-gray-300)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Warm Gray/300. Do not use directly in components — alias it from a semantic token."
       },
       "200": {
         "$type": "color",
@@ -735,7 +790,8 @@
               "WEB": "var(--color-warm-gray-200)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Warm Gray/200. Do not use directly in components — alias it from a semantic token."
       },
       "100": {
         "$type": "color",
@@ -748,7 +804,8 @@
               "WEB": "var(--color-warm-gray-100)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Warm Gray/100. Do not use directly in components — alias it from a semantic token."
       },
       "50": {
         "$type": "color",
@@ -761,7 +818,8 @@
               "WEB": "var(--color-warm-gray-50)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Warm Gray/50. Do not use directly in components — alias it from a semantic token."
       },
       "25": {
         "$type": "color",
@@ -774,7 +832,8 @@
               "WEB": "var(--color-warm-gray-25)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Warm Gray/25. Do not use directly in components — alias it from a semantic token."
       },
       "950": {
         "$type": "color",
@@ -787,7 +846,8 @@
               "WEB": "var(--color-warm-gray-950)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Warm Gray/950. Do not use directly in components — alias it from a semantic token."
       }
     },
     "red": {
@@ -802,7 +862,8 @@
               "WEB": "var(--color-red-900)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Red/900. Do not use directly in components — alias it from a semantic token."
       },
       "800": {
         "$type": "color",
@@ -815,7 +876,8 @@
               "WEB": "var(--color-red-800)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Red/800. Do not use directly in components — alias it from a semantic token."
       },
       "700": {
         "$type": "color",
@@ -828,7 +890,8 @@
               "WEB": "var(--color-red-700)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Red/700. Do not use directly in components — alias it from a semantic token."
       },
       "600": {
         "$type": "color",
@@ -841,7 +904,8 @@
               "WEB": "var(--color-red-600)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Red/600. Do not use directly in components — alias it from a semantic token."
       },
       "500": {
         "$type": "color",
@@ -854,7 +918,8 @@
               "WEB": "var(--color-red-500)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Red/500. Do not use directly in components — alias it from a semantic token."
       },
       "400": {
         "$type": "color",
@@ -867,7 +932,8 @@
               "WEB": "var(--color-red-400)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Red/400. Do not use directly in components — alias it from a semantic token."
       },
       "300": {
         "$type": "color",
@@ -880,7 +946,8 @@
               "WEB": "var(--color-red-300)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Red/300. Do not use directly in components — alias it from a semantic token."
       },
       "200": {
         "$type": "color",
@@ -893,7 +960,8 @@
               "WEB": "var(--color-red-200)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Red/200. Do not use directly in components — alias it from a semantic token."
       },
       "100": {
         "$type": "color",
@@ -906,7 +974,8 @@
               "WEB": "var(--color-red-100)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Red/100. Do not use directly in components — alias it from a semantic token."
       },
       "50": {
         "$type": "color",
@@ -919,7 +988,8 @@
               "WEB": "var(--color-red-50)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Red/50. Do not use directly in components — alias it from a semantic token."
       },
       "25": {
         "$type": "color",
@@ -932,7 +1002,8 @@
               "WEB": "var(--color-red-25)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Red/25. Do not use directly in components — alias it from a semantic token."
       },
       "950": {
         "$type": "color",
@@ -945,7 +1016,8 @@
               "WEB": "var(--color-red-950)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Red/950. Do not use directly in components — alias it from a semantic token."
       }
     },
     "orange": {
@@ -960,7 +1032,8 @@
               "WEB": "var(--color-orange-900)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Orange/900. Do not use directly in components — alias it from a semantic token."
       },
       "800": {
         "$type": "color",
@@ -973,7 +1046,8 @@
               "WEB": "var(--color-orange-800)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Orange/800. Do not use directly in components — alias it from a semantic token."
       },
       "700": {
         "$type": "color",
@@ -986,7 +1060,8 @@
               "WEB": "var(--color-orange-700)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Orange/700. Do not use directly in components — alias it from a semantic token."
       },
       "600": {
         "$type": "color",
@@ -999,7 +1074,8 @@
               "WEB": "var(--color-orange-600)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Orange/600. Do not use directly in components — alias it from a semantic token."
       },
       "500": {
         "$type": "color",
@@ -1012,7 +1088,8 @@
               "WEB": "var(--color-orange-500)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Orange/500. Do not use directly in components — alias it from a semantic token."
       },
       "400": {
         "$type": "color",
@@ -1025,7 +1102,8 @@
               "WEB": "var(--color-orange-400)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Orange/400. Do not use directly in components — alias it from a semantic token."
       },
       "300": {
         "$type": "color",
@@ -1038,7 +1116,8 @@
               "WEB": "var(--color-orange-300)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Orange/300. Do not use directly in components — alias it from a semantic token."
       },
       "200": {
         "$type": "color",
@@ -1051,7 +1130,8 @@
               "WEB": "var(--color-orange-200)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Orange/200. Do not use directly in components — alias it from a semantic token."
       },
       "100": {
         "$type": "color",
@@ -1064,7 +1144,8 @@
               "WEB": "var(--color-orange-100)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Orange/100. Do not use directly in components — alias it from a semantic token."
       },
       "50": {
         "$type": "color",
@@ -1077,7 +1158,8 @@
               "WEB": "var(--color-orange-50)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Orange/50. Do not use directly in components — alias it from a semantic token."
       },
       "25": {
         "$type": "color",
@@ -1090,7 +1172,8 @@
               "WEB": "var(--color-orange-25)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Orange/25. Do not use directly in components — alias it from a semantic token."
       },
       "950": {
         "$type": "color",
@@ -1103,7 +1186,8 @@
               "WEB": "var(--color-orange-950)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Orange/950. Do not use directly in components — alias it from a semantic token."
       }
     },
     "amber": {
@@ -1118,7 +1202,8 @@
               "WEB": "var(--color-amber-900)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Amber/900. Do not use directly in components — alias it from a semantic token."
       },
       "800": {
         "$type": "color",
@@ -1131,7 +1216,8 @@
               "WEB": "var(--color-amber-800)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Amber/800. Do not use directly in components — alias it from a semantic token."
       },
       "700": {
         "$type": "color",
@@ -1144,7 +1230,8 @@
               "WEB": "var(--color-amber-700)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Amber/700. Do not use directly in components — alias it from a semantic token."
       },
       "600": {
         "$type": "color",
@@ -1157,7 +1244,8 @@
               "WEB": "var(--color-amber-600)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Amber/600. Do not use directly in components — alias it from a semantic token."
       },
       "500": {
         "$type": "color",
@@ -1170,7 +1258,8 @@
               "WEB": "var(--color-amber-500)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Amber/500. Do not use directly in components — alias it from a semantic token."
       },
       "400": {
         "$type": "color",
@@ -1183,7 +1272,8 @@
               "WEB": "var(--color-amber-400)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Amber/400. Do not use directly in components — alias it from a semantic token."
       },
       "300": {
         "$type": "color",
@@ -1196,7 +1286,8 @@
               "WEB": "var(--color-amber-300)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Amber/300. Do not use directly in components — alias it from a semantic token."
       },
       "200": {
         "$type": "color",
@@ -1209,7 +1300,8 @@
               "WEB": "var(--color-amber-200)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Amber/200. Do not use directly in components — alias it from a semantic token."
       },
       "100": {
         "$type": "color",
@@ -1222,7 +1314,8 @@
               "WEB": "var(--color-amber-100)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Amber/100. Do not use directly in components — alias it from a semantic token."
       },
       "50": {
         "$type": "color",
@@ -1235,7 +1328,8 @@
               "WEB": "var(--color-amber-50)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Amber/50. Do not use directly in components — alias it from a semantic token."
       },
       "25": {
         "$type": "color",
@@ -1248,7 +1342,8 @@
               "WEB": "var(--color-amber-25)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Amber/25. Do not use directly in components — alias it from a semantic token."
       },
       "950": {
         "$type": "color",
@@ -1261,7 +1356,8 @@
               "WEB": "var(--color-amber-950)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Amber/950. Do not use directly in components — alias it from a semantic token."
       }
     },
     "yellow": {
@@ -1276,7 +1372,8 @@
               "WEB": "var(--color-yellow-900)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Yellow/900. Do not use directly in components — alias it from a semantic token."
       },
       "800": {
         "$type": "color",
@@ -1289,7 +1386,8 @@
               "WEB": "var(--color-yellow-800)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Yellow/800. Do not use directly in components — alias it from a semantic token."
       },
       "700": {
         "$type": "color",
@@ -1302,7 +1400,8 @@
               "WEB": "var(--color-yellow-700)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Yellow/700. Do not use directly in components — alias it from a semantic token."
       },
       "600": {
         "$type": "color",
@@ -1315,7 +1414,8 @@
               "WEB": "var(--color-yellow-600)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Yellow/600. Do not use directly in components — alias it from a semantic token."
       },
       "500": {
         "$type": "color",
@@ -1328,7 +1428,8 @@
               "WEB": "var(--color-yellow-500)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Yellow/500. Do not use directly in components — alias it from a semantic token."
       },
       "400": {
         "$type": "color",
@@ -1341,7 +1442,8 @@
               "WEB": "var(--color-yellow-400)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Yellow/400. Do not use directly in components — alias it from a semantic token."
       },
       "300": {
         "$type": "color",
@@ -1354,7 +1456,8 @@
               "WEB": "var(--color-yellow-300)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Yellow/300. Do not use directly in components — alias it from a semantic token."
       },
       "200": {
         "$type": "color",
@@ -1367,7 +1470,8 @@
               "WEB": "var(--color-yellow-200)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Yellow/200. Do not use directly in components — alias it from a semantic token."
       },
       "100": {
         "$type": "color",
@@ -1380,7 +1484,8 @@
               "WEB": "var(--color-yellow-100)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Yellow/100. Do not use directly in components — alias it from a semantic token."
       },
       "50": {
         "$type": "color",
@@ -1393,7 +1498,8 @@
               "WEB": "var(--color-yellow-50)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Yellow/50. Do not use directly in components — alias it from a semantic token."
       },
       "25": {
         "$type": "color",
@@ -1406,7 +1512,8 @@
               "WEB": "var(--color-yellow-25)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Yellow/25. Do not use directly in components — alias it from a semantic token."
       },
       "950": {
         "$type": "color",
@@ -1419,7 +1526,8 @@
               "WEB": "var(--color-yellow-950)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Yellow/950. Do not use directly in components — alias it from a semantic token."
       }
     },
     "lime": {
@@ -1434,7 +1542,8 @@
               "WEB": "var(--color-lime-900)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Lime/900. Do not use directly in components — alias it from a semantic token."
       },
       "800": {
         "$type": "color",
@@ -1447,7 +1556,8 @@
               "WEB": "var(--color-lime-800)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Lime/800. Do not use directly in components — alias it from a semantic token."
       },
       "700": {
         "$type": "color",
@@ -1460,7 +1570,8 @@
               "WEB": "var(--color-lime-700)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Lime/700. Do not use directly in components — alias it from a semantic token."
       },
       "600": {
         "$type": "color",
@@ -1473,7 +1584,8 @@
               "WEB": "var(--color-lime-600)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Lime/600. Do not use directly in components — alias it from a semantic token."
       },
       "500": {
         "$type": "color",
@@ -1486,7 +1598,8 @@
               "WEB": "var(--color-lime-500)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Lime/500. Do not use directly in components — alias it from a semantic token."
       },
       "400": {
         "$type": "color",
@@ -1499,7 +1612,8 @@
               "WEB": "var(--color-lime-400)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Lime/400. Do not use directly in components — alias it from a semantic token."
       },
       "300": {
         "$type": "color",
@@ -1512,7 +1626,8 @@
               "WEB": "var(--color-lime-300)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Lime/300. Do not use directly in components — alias it from a semantic token."
       },
       "200": {
         "$type": "color",
@@ -1525,7 +1640,8 @@
               "WEB": "var(--color-lime-200)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Lime/200. Do not use directly in components — alias it from a semantic token."
       },
       "100": {
         "$type": "color",
@@ -1538,7 +1654,8 @@
               "WEB": "var(--color-lime-100)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Lime/100. Do not use directly in components — alias it from a semantic token."
       },
       "50": {
         "$type": "color",
@@ -1551,7 +1668,8 @@
               "WEB": "var(--color-lime-50)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Lime/50. Do not use directly in components — alias it from a semantic token."
       },
       "25": {
         "$type": "color",
@@ -1564,7 +1682,8 @@
               "WEB": "var(--color-lime-25)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Lime/25. Do not use directly in components — alias it from a semantic token."
       },
       "950": {
         "$type": "color",
@@ -1577,7 +1696,8 @@
               "WEB": "var(--color-lime-950)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Lime/950. Do not use directly in components — alias it from a semantic token."
       }
     },
     "green": {
@@ -1592,7 +1712,8 @@
               "WEB": "var(--color-green-900)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Green/900. Do not use directly in components — alias it from a semantic token."
       },
       "800": {
         "$type": "color",
@@ -1605,7 +1726,8 @@
               "WEB": "var(--color-green-800)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Green/800. Do not use directly in components — alias it from a semantic token."
       },
       "700": {
         "$type": "color",
@@ -1618,7 +1740,8 @@
               "WEB": "var(--color-green-700)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Green/700. Do not use directly in components — alias it from a semantic token."
       },
       "600": {
         "$type": "color",
@@ -1631,7 +1754,8 @@
               "WEB": "var(--color-green-600)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Green/600. Do not use directly in components — alias it from a semantic token."
       },
       "500": {
         "$type": "color",
@@ -1644,7 +1768,8 @@
               "WEB": "var(--color-green-500)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Green/500. Do not use directly in components — alias it from a semantic token."
       },
       "400": {
         "$type": "color",
@@ -1657,7 +1782,8 @@
               "WEB": "var(--color-green-400)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Green/400. Do not use directly in components — alias it from a semantic token."
       },
       "300": {
         "$type": "color",
@@ -1670,7 +1796,8 @@
               "WEB": "var(--color-green-300)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Green/300. Do not use directly in components — alias it from a semantic token."
       },
       "200": {
         "$type": "color",
@@ -1683,7 +1810,8 @@
               "WEB": "var(--color-green-200)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Green/200. Do not use directly in components — alias it from a semantic token."
       },
       "100": {
         "$type": "color",
@@ -1696,7 +1824,8 @@
               "WEB": "var(--color-green-100)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Green/100. Do not use directly in components — alias it from a semantic token."
       },
       "50": {
         "$type": "color",
@@ -1709,7 +1838,8 @@
               "WEB": "var(--color-green-50)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Green/50. Do not use directly in components — alias it from a semantic token."
       },
       "25": {
         "$type": "color",
@@ -1722,7 +1852,8 @@
               "WEB": "var(--color-green-25)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Green/25. Do not use directly in components — alias it from a semantic token."
       },
       "950": {
         "$type": "color",
@@ -1735,7 +1866,8 @@
               "WEB": "var(--color-green-950)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Green/950. Do not use directly in components — alias it from a semantic token."
       }
     },
     "emerald": {
@@ -1750,7 +1882,8 @@
               "WEB": "var(--color-emerald-900)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Emerald/900. Do not use directly in components — alias it from a semantic token."
       },
       "800": {
         "$type": "color",
@@ -1763,7 +1896,8 @@
               "WEB": "var(--color-emerald-800)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Emerald/800. Do not use directly in components — alias it from a semantic token."
       },
       "700": {
         "$type": "color",
@@ -1776,7 +1910,8 @@
               "WEB": "var(--color-emerald-700)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Emerald/700. Do not use directly in components — alias it from a semantic token."
       },
       "600": {
         "$type": "color",
@@ -1789,7 +1924,8 @@
               "WEB": "var(--color-emerald-600)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Emerald/600. Do not use directly in components — alias it from a semantic token."
       },
       "500": {
         "$type": "color",
@@ -1802,7 +1938,8 @@
               "WEB": "var(--color-emerald-500)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Emerald/500. Do not use directly in components — alias it from a semantic token."
       },
       "400": {
         "$type": "color",
@@ -1815,7 +1952,8 @@
               "WEB": "var(--color-emerald-400)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Emerald/400. Do not use directly in components — alias it from a semantic token."
       },
       "300": {
         "$type": "color",
@@ -1828,7 +1966,8 @@
               "WEB": "var(--color-emerald-300)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Emerald/300. Do not use directly in components — alias it from a semantic token."
       },
       "200": {
         "$type": "color",
@@ -1841,7 +1980,8 @@
               "WEB": "var(--color-emerald-200)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Emerald/200. Do not use directly in components — alias it from a semantic token."
       },
       "100": {
         "$type": "color",
@@ -1854,7 +1994,8 @@
               "WEB": "var(--color-emerald-100)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Emerald/100. Do not use directly in components — alias it from a semantic token."
       },
       "50": {
         "$type": "color",
@@ -1867,7 +2008,8 @@
               "WEB": "var(--color-emerald-50)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Emerald/50. Do not use directly in components — alias it from a semantic token."
       },
       "25": {
         "$type": "color",
@@ -1880,7 +2022,8 @@
               "WEB": "var(--color-emerald-25)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Emerald/25. Do not use directly in components — alias it from a semantic token."
       },
       "950": {
         "$type": "color",
@@ -1893,7 +2036,8 @@
               "WEB": "var(--color-emerald-950)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Emerald/950. Do not use directly in components — alias it from a semantic token."
       }
     },
     "teal": {
@@ -1908,7 +2052,8 @@
               "WEB": "var(--color-teal-900)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Teal/900. Do not use directly in components — alias it from a semantic token."
       },
       "800": {
         "$type": "color",
@@ -1921,7 +2066,8 @@
               "WEB": "var(--color-teal-800)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Teal/800. Do not use directly in components — alias it from a semantic token."
       },
       "700": {
         "$type": "color",
@@ -1934,7 +2080,8 @@
               "WEB": "var(--color-teal-700)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Teal/700. Do not use directly in components — alias it from a semantic token."
       },
       "600": {
         "$type": "color",
@@ -1947,7 +2094,8 @@
               "WEB": "var(--color-teal-600)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Teal/600. Do not use directly in components — alias it from a semantic token."
       },
       "500": {
         "$type": "color",
@@ -1960,7 +2108,8 @@
               "WEB": "var(--color-teal-500)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Teal/500. Do not use directly in components — alias it from a semantic token."
       },
       "400": {
         "$type": "color",
@@ -1973,7 +2122,8 @@
               "WEB": "var(--color-teal-400)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Teal/400. Do not use directly in components — alias it from a semantic token."
       },
       "300": {
         "$type": "color",
@@ -1986,7 +2136,8 @@
               "WEB": "var(--color-teal-300)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Teal/300. Do not use directly in components — alias it from a semantic token."
       },
       "200": {
         "$type": "color",
@@ -1999,7 +2150,8 @@
               "WEB": "var(--color-teal-200)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Teal/200. Do not use directly in components — alias it from a semantic token."
       },
       "100": {
         "$type": "color",
@@ -2012,7 +2164,8 @@
               "WEB": "var(--color-teal-100)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Teal/100. Do not use directly in components — alias it from a semantic token."
       },
       "50": {
         "$type": "color",
@@ -2025,7 +2178,8 @@
               "WEB": "var(--color-teal-50)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Teal/50. Do not use directly in components — alias it from a semantic token."
       },
       "25": {
         "$type": "color",
@@ -2038,7 +2192,8 @@
               "WEB": "var(--color-teal-25)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Teal/25. Do not use directly in components — alias it from a semantic token."
       },
       "950": {
         "$type": "color",
@@ -2051,7 +2206,8 @@
               "WEB": "var(--color-teal-950)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Teal/950. Do not use directly in components — alias it from a semantic token."
       }
     },
     "cyan": {
@@ -2066,7 +2222,8 @@
               "WEB": "var(--color-cyan-900)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Cyan/900. Do not use directly in components — alias it from a semantic token."
       },
       "800": {
         "$type": "color",
@@ -2079,7 +2236,8 @@
               "WEB": "var(--color-cyan-800)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Cyan/800. Do not use directly in components — alias it from a semantic token."
       },
       "700": {
         "$type": "color",
@@ -2092,7 +2250,8 @@
               "WEB": "var(--color-cyan-700)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Cyan/700. Do not use directly in components — alias it from a semantic token."
       },
       "600": {
         "$type": "color",
@@ -2105,7 +2264,8 @@
               "WEB": "var(--color-cyan-600)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Cyan/600. Do not use directly in components — alias it from a semantic token."
       },
       "500": {
         "$type": "color",
@@ -2118,7 +2278,8 @@
               "WEB": "var(--color-cyan-500)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Cyan/500. Do not use directly in components — alias it from a semantic token."
       },
       "400": {
         "$type": "color",
@@ -2131,7 +2292,8 @@
               "WEB": "var(--color-cyan-400)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Cyan/400. Do not use directly in components — alias it from a semantic token."
       },
       "300": {
         "$type": "color",
@@ -2144,7 +2306,8 @@
               "WEB": "var(--color-cyan-300)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Cyan/300. Do not use directly in components — alias it from a semantic token."
       },
       "200": {
         "$type": "color",
@@ -2157,7 +2320,8 @@
               "WEB": "var(--color-cyan-200)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Cyan/200. Do not use directly in components — alias it from a semantic token."
       },
       "100": {
         "$type": "color",
@@ -2170,7 +2334,8 @@
               "WEB": "var(--color-cyan-100)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Cyan/100. Do not use directly in components — alias it from a semantic token."
       },
       "50": {
         "$type": "color",
@@ -2183,7 +2348,8 @@
               "WEB": "var(--color-cyan-50)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Cyan/50. Do not use directly in components — alias it from a semantic token."
       },
       "25": {
         "$type": "color",
@@ -2196,7 +2362,8 @@
               "WEB": "var(--color-cyan-25)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Cyan/25. Do not use directly in components — alias it from a semantic token."
       },
       "950": {
         "$type": "color",
@@ -2209,7 +2376,8 @@
               "WEB": "var(--color-cyan-950)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Cyan/950. Do not use directly in components — alias it from a semantic token."
       }
     },
     "light-blue": {
@@ -2224,7 +2392,8 @@
               "WEB": "var(--color-light-blue-900)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Light Blue/900. Do not use directly in components — alias it from a semantic token."
       },
       "800": {
         "$type": "color",
@@ -2237,7 +2406,8 @@
               "WEB": "var(--color-light-blue-800)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Light Blue/800. Do not use directly in components — alias it from a semantic token."
       },
       "700": {
         "$type": "color",
@@ -2250,7 +2420,8 @@
               "WEB": "var(--color-light-blue-700)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Light Blue/700. Do not use directly in components — alias it from a semantic token."
       },
       "600": {
         "$type": "color",
@@ -2263,7 +2434,8 @@
               "WEB": "var(--color-light-blue-600)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Light Blue/600. Do not use directly in components — alias it from a semantic token."
       },
       "500": {
         "$type": "color",
@@ -2276,7 +2448,8 @@
               "WEB": "var(--color-light-blue-500)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Light Blue/500. Do not use directly in components — alias it from a semantic token."
       },
       "400": {
         "$type": "color",
@@ -2289,7 +2462,8 @@
               "WEB": "var(--color-light-blue-400)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Light Blue/400. Do not use directly in components — alias it from a semantic token."
       },
       "300": {
         "$type": "color",
@@ -2302,7 +2476,8 @@
               "WEB": "var(--color-light-blue-300)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Light Blue/300. Do not use directly in components — alias it from a semantic token."
       },
       "200": {
         "$type": "color",
@@ -2315,7 +2490,8 @@
               "WEB": "var(--color-light-blue-200)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Light Blue/200. Do not use directly in components — alias it from a semantic token."
       },
       "100": {
         "$type": "color",
@@ -2328,7 +2504,8 @@
               "WEB": "var(--color-light-blue-100)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Light Blue/100. Do not use directly in components — alias it from a semantic token."
       },
       "50": {
         "$type": "color",
@@ -2341,7 +2518,8 @@
               "WEB": "var(--color-light-blue-50)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Light Blue/50. Do not use directly in components — alias it from a semantic token."
       },
       "25": {
         "$type": "color",
@@ -2354,7 +2532,8 @@
               "WEB": "var(--color-light-blue-25)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Light Blue/25. Do not use directly in components — alias it from a semantic token."
       },
       "950": {
         "$type": "color",
@@ -2367,7 +2546,8 @@
               "WEB": "var(--color-light-blue-950)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Light Blue/950. Do not use directly in components — alias it from a semantic token."
       }
     },
     "blue": {
@@ -2382,7 +2562,8 @@
               "WEB": "var(--color-blue-900)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Blue/900. Do not use directly in components — alias it from a semantic token."
       },
       "800": {
         "$type": "color",
@@ -2395,7 +2576,8 @@
               "WEB": "var(--color-blue-800)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Blue/800. Do not use directly in components — alias it from a semantic token."
       },
       "700": {
         "$type": "color",
@@ -2408,7 +2590,8 @@
               "WEB": "var(--color-blue-700)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Blue/700. Do not use directly in components — alias it from a semantic token."
       },
       "600": {
         "$type": "color",
@@ -2421,7 +2604,8 @@
               "WEB": "var(--color-blue-600)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Blue/600. Do not use directly in components — alias it from a semantic token."
       },
       "500": {
         "$type": "color",
@@ -2434,7 +2618,8 @@
               "WEB": "var(--color-blue-500)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Blue/500. Do not use directly in components — alias it from a semantic token."
       },
       "400": {
         "$type": "color",
@@ -2447,7 +2632,8 @@
               "WEB": "var(--color-blue-400)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Blue/400. Do not use directly in components — alias it from a semantic token."
       },
       "300": {
         "$type": "color",
@@ -2460,7 +2646,8 @@
               "WEB": "var(--color-blue-300)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Blue/300. Do not use directly in components — alias it from a semantic token."
       },
       "200": {
         "$type": "color",
@@ -2473,7 +2660,8 @@
               "WEB": "var(--color-blue-200)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Blue/200. Do not use directly in components — alias it from a semantic token."
       },
       "100": {
         "$type": "color",
@@ -2486,7 +2674,8 @@
               "WEB": "var(--color-blue-100)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Blue/100. Do not use directly in components — alias it from a semantic token."
       },
       "50": {
         "$type": "color",
@@ -2499,7 +2688,8 @@
               "WEB": "var(--color-blue-50)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Blue/50. Do not use directly in components — alias it from a semantic token."
       },
       "25": {
         "$type": "color",
@@ -2512,7 +2702,8 @@
               "WEB": "var(--color-blue-25)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Blue/25. Do not use directly in components — alias it from a semantic token."
       },
       "950": {
         "$type": "color",
@@ -2525,7 +2716,8 @@
               "WEB": "var(--color-blue-950)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Blue/950. Do not use directly in components — alias it from a semantic token."
       }
     },
     "indigo": {
@@ -2540,7 +2732,8 @@
               "WEB": "var(--color-indigo-900)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Indigo/900. Do not use directly in components — alias it from a semantic token."
       },
       "800": {
         "$type": "color",
@@ -2553,7 +2746,8 @@
               "WEB": "var(--color-indigo-800)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Indigo/800. Do not use directly in components — alias it from a semantic token."
       },
       "700": {
         "$type": "color",
@@ -2566,7 +2760,8 @@
               "WEB": "var(--color-indigo-700)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Indigo/700. Do not use directly in components — alias it from a semantic token."
       },
       "600": {
         "$type": "color",
@@ -2579,7 +2774,8 @@
               "WEB": "var(--color-indigo-600)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Indigo/600. Do not use directly in components — alias it from a semantic token."
       },
       "500": {
         "$type": "color",
@@ -2592,7 +2788,8 @@
               "WEB": "var(--color-indigo-500)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Indigo/500. Do not use directly in components — alias it from a semantic token."
       },
       "400": {
         "$type": "color",
@@ -2605,7 +2802,8 @@
               "WEB": "var(--color-indigo-400)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Indigo/400. Do not use directly in components — alias it from a semantic token."
       },
       "300": {
         "$type": "color",
@@ -2618,7 +2816,8 @@
               "WEB": "var(--color-indigo-300)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Indigo/300. Do not use directly in components — alias it from a semantic token."
       },
       "200": {
         "$type": "color",
@@ -2631,7 +2830,8 @@
               "WEB": "var(--color-indigo-200)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Indigo/200. Do not use directly in components — alias it from a semantic token."
       },
       "100": {
         "$type": "color",
@@ -2644,7 +2844,8 @@
               "WEB": "var(--color-indigo-100)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Indigo/100. Do not use directly in components — alias it from a semantic token."
       },
       "50": {
         "$type": "color",
@@ -2657,7 +2858,8 @@
               "WEB": "var(--color-indigo-50)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Indigo/50. Do not use directly in components — alias it from a semantic token."
       },
       "25": {
         "$type": "color",
@@ -2670,7 +2872,8 @@
               "WEB": "var(--color-indigo-25)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Indigo/25. Do not use directly in components — alias it from a semantic token."
       },
       "950": {
         "$type": "color",
@@ -2683,7 +2886,8 @@
               "WEB": "var(--color-indigo-950)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Indigo/950. Do not use directly in components — alias it from a semantic token."
       }
     },
     "violet": {
@@ -2698,7 +2902,8 @@
               "WEB": "var(--color-violet-900)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Violet/900. Do not use directly in components — alias it from a semantic token."
       },
       "800": {
         "$type": "color",
@@ -2711,7 +2916,8 @@
               "WEB": "var(--color-violet-800)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Violet/800. Do not use directly in components — alias it from a semantic token."
       },
       "700": {
         "$type": "color",
@@ -2724,7 +2930,8 @@
               "WEB": "var(--color-violet-700)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Violet/700. Do not use directly in components — alias it from a semantic token."
       },
       "600": {
         "$type": "color",
@@ -2737,7 +2944,8 @@
               "WEB": "var(--color-violet-600)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Violet/600. Do not use directly in components — alias it from a semantic token."
       },
       "500": {
         "$type": "color",
@@ -2750,7 +2958,8 @@
               "WEB": "var(--color-violet-500)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Violet/500. Do not use directly in components — alias it from a semantic token."
       },
       "400": {
         "$type": "color",
@@ -2763,7 +2972,8 @@
               "WEB": "var(--color-violet-400)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Violet/400. Do not use directly in components — alias it from a semantic token."
       },
       "300": {
         "$type": "color",
@@ -2776,7 +2986,8 @@
               "WEB": "var(--color-violet-300)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Violet/300. Do not use directly in components — alias it from a semantic token."
       },
       "200": {
         "$type": "color",
@@ -2789,7 +3000,8 @@
               "WEB": "var(--color-violet-200)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Violet/200. Do not use directly in components — alias it from a semantic token."
       },
       "100": {
         "$type": "color",
@@ -2802,7 +3014,8 @@
               "WEB": "var(--color-violet-100)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Violet/100. Do not use directly in components — alias it from a semantic token."
       },
       "50": {
         "$type": "color",
@@ -2815,7 +3028,8 @@
               "WEB": "var(--color-violet-50)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Violet/50. Do not use directly in components — alias it from a semantic token."
       },
       "25": {
         "$type": "color",
@@ -2828,7 +3042,8 @@
               "WEB": "var(--color-violet-25)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Violet/25. Do not use directly in components — alias it from a semantic token."
       },
       "950": {
         "$type": "color",
@@ -2841,7 +3056,8 @@
               "WEB": "var(--color-violet-950)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Violet/950. Do not use directly in components — alias it from a semantic token."
       }
     },
     "purple": {
@@ -2856,7 +3072,8 @@
               "WEB": "var(--color-purple-900)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Purple/900. Do not use directly in components — alias it from a semantic token."
       },
       "800": {
         "$type": "color",
@@ -2869,7 +3086,8 @@
               "WEB": "var(--color-purple-800)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Purple/800. Do not use directly in components — alias it from a semantic token."
       },
       "700": {
         "$type": "color",
@@ -2882,7 +3100,8 @@
               "WEB": "var(--color-purple-700)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Purple/700. Do not use directly in components — alias it from a semantic token."
       },
       "600": {
         "$type": "color",
@@ -2895,7 +3114,8 @@
               "WEB": "var(--color-purple-600)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Purple/600. Do not use directly in components — alias it from a semantic token."
       },
       "500": {
         "$type": "color",
@@ -2908,7 +3128,8 @@
               "WEB": "var(--color-purple-500)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Purple/500. Do not use directly in components — alias it from a semantic token."
       },
       "400": {
         "$type": "color",
@@ -2921,7 +3142,8 @@
               "WEB": "var(--color-purple-400)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Purple/400. Do not use directly in components — alias it from a semantic token."
       },
       "300": {
         "$type": "color",
@@ -2934,7 +3156,8 @@
               "WEB": "var(--color-purple-300)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Purple/300. Do not use directly in components — alias it from a semantic token."
       },
       "200": {
         "$type": "color",
@@ -2947,7 +3170,8 @@
               "WEB": "var(--color-purple-200)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Purple/200. Do not use directly in components — alias it from a semantic token."
       },
       "100": {
         "$type": "color",
@@ -2960,7 +3184,8 @@
               "WEB": "var(--color-purple-100)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Purple/100. Do not use directly in components — alias it from a semantic token."
       },
       "50": {
         "$type": "color",
@@ -2973,7 +3198,8 @@
               "WEB": "var(--color-purple-50)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Purple/50. Do not use directly in components — alias it from a semantic token."
       },
       "25": {
         "$type": "color",
@@ -2986,7 +3212,8 @@
               "WEB": "var(--color-purple-25)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Purple/25. Do not use directly in components — alias it from a semantic token."
       },
       "950": {
         "$type": "color",
@@ -2999,7 +3226,8 @@
               "WEB": "var(--color-purple-950)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Purple/950. Do not use directly in components — alias it from a semantic token."
       }
     },
     "fuschia": {
@@ -3014,7 +3242,8 @@
               "WEB": "var(--color-fuschia-900)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Fuschia/900. Do not use directly in components — alias it from a semantic token."
       },
       "800": {
         "$type": "color",
@@ -3027,7 +3256,8 @@
               "WEB": "var(--color-fuschia-800)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Fuschia/800. Do not use directly in components — alias it from a semantic token."
       },
       "700": {
         "$type": "color",
@@ -3040,7 +3270,8 @@
               "WEB": "var(--color-fuschia-700)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Fuschia/700. Do not use directly in components — alias it from a semantic token."
       },
       "600": {
         "$type": "color",
@@ -3053,7 +3284,8 @@
               "WEB": "var(--color-fuschia-600)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Fuschia/600. Do not use directly in components — alias it from a semantic token."
       },
       "500": {
         "$type": "color",
@@ -3066,7 +3298,8 @@
               "WEB": "var(--color-fuschia-500)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Fuschia/500. Do not use directly in components — alias it from a semantic token."
       },
       "400": {
         "$type": "color",
@@ -3079,7 +3312,8 @@
               "WEB": "var(--color-fuschia-400)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Fuschia/400. Do not use directly in components — alias it from a semantic token."
       },
       "300": {
         "$type": "color",
@@ -3092,7 +3326,8 @@
               "WEB": "var(--color-fuschia-300)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Fuschia/300. Do not use directly in components — alias it from a semantic token."
       },
       "200": {
         "$type": "color",
@@ -3105,7 +3340,8 @@
               "WEB": "var(--color-fuschia-200)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Fuschia/200. Do not use directly in components — alias it from a semantic token."
       },
       "100": {
         "$type": "color",
@@ -3118,7 +3354,8 @@
               "WEB": "var(--color-fuschia-100)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Fuschia/100. Do not use directly in components — alias it from a semantic token."
       },
       "50": {
         "$type": "color",
@@ -3131,7 +3368,8 @@
               "WEB": "var(--color-fuschia-50)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Fuschia/50. Do not use directly in components — alias it from a semantic token."
       },
       "25": {
         "$type": "color",
@@ -3144,7 +3382,8 @@
               "WEB": "var(--color-fuschia-25)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Fuschia/25. Do not use directly in components — alias it from a semantic token."
       },
       "950": {
         "$type": "color",
@@ -3157,7 +3396,8 @@
               "WEB": "var(--color-fuschia-950)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Fuschia/950. Do not use directly in components — alias it from a semantic token."
       }
     },
     "pink": {
@@ -3172,7 +3412,8 @@
               "WEB": "var(--color-pink-900)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Pink/900. Do not use directly in components — alias it from a semantic token."
       },
       "800": {
         "$type": "color",
@@ -3185,7 +3426,8 @@
               "WEB": "var(--color-pink-800)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Pink/800. Do not use directly in components — alias it from a semantic token."
       },
       "700": {
         "$type": "color",
@@ -3198,7 +3440,8 @@
               "WEB": "var(--color-pink-700)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Pink/700. Do not use directly in components — alias it from a semantic token."
       },
       "600": {
         "$type": "color",
@@ -3211,7 +3454,8 @@
               "WEB": "var(--color-pink-600)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Pink/600. Do not use directly in components — alias it from a semantic token."
       },
       "500": {
         "$type": "color",
@@ -3224,7 +3468,8 @@
               "WEB": "var(--color-pink-500)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Pink/500. Do not use directly in components — alias it from a semantic token."
       },
       "400": {
         "$type": "color",
@@ -3237,7 +3482,8 @@
               "WEB": "var(--color-pink-400)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Pink/400. Do not use directly in components — alias it from a semantic token."
       },
       "300": {
         "$type": "color",
@@ -3250,7 +3496,8 @@
               "WEB": "var(--color-pink-300)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Pink/300. Do not use directly in components — alias it from a semantic token."
       },
       "200": {
         "$type": "color",
@@ -3263,7 +3510,8 @@
               "WEB": "var(--color-pink-200)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Pink/200. Do not use directly in components — alias it from a semantic token."
       },
       "100": {
         "$type": "color",
@@ -3276,7 +3524,8 @@
               "WEB": "var(--color-pink-100)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Pink/100. Do not use directly in components — alias it from a semantic token."
       },
       "50": {
         "$type": "color",
@@ -3289,7 +3538,8 @@
               "WEB": "var(--color-pink-50)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Pink/50. Do not use directly in components — alias it from a semantic token."
       },
       "25": {
         "$type": "color",
@@ -3302,7 +3552,8 @@
               "WEB": "var(--color-pink-25)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Pink/25. Do not use directly in components — alias it from a semantic token."
       },
       "950": {
         "$type": "color",
@@ -3315,7 +3566,8 @@
               "WEB": "var(--color-pink-950)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Pink/950. Do not use directly in components — alias it from a semantic token."
       }
     },
     "rose": {
@@ -3330,7 +3582,8 @@
               "WEB": "var(--color-rose-900)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Rose/900. Do not use directly in components — alias it from a semantic token."
       },
       "800": {
         "$type": "color",
@@ -3343,7 +3596,8 @@
               "WEB": "var(--color-rose-800)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Rose/800. Do not use directly in components — alias it from a semantic token."
       },
       "700": {
         "$type": "color",
@@ -3356,7 +3610,8 @@
               "WEB": "var(--color-rose-700)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Rose/700. Do not use directly in components — alias it from a semantic token."
       },
       "600": {
         "$type": "color",
@@ -3369,7 +3624,8 @@
               "WEB": "var(--color-rose-600)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Rose/600. Do not use directly in components — alias it from a semantic token."
       },
       "500": {
         "$type": "color",
@@ -3382,7 +3638,8 @@
               "WEB": "var(--color-rose-500)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Rose/500. Do not use directly in components — alias it from a semantic token."
       },
       "400": {
         "$type": "color",
@@ -3395,7 +3652,8 @@
               "WEB": "var(--color-rose-400)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Rose/400. Do not use directly in components — alias it from a semantic token."
       },
       "300": {
         "$type": "color",
@@ -3408,7 +3666,8 @@
               "WEB": "var(--color-rose-300)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Rose/300. Do not use directly in components — alias it from a semantic token."
       },
       "200": {
         "$type": "color",
@@ -3421,7 +3680,8 @@
               "WEB": "var(--color-rose-200)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Rose/200. Do not use directly in components — alias it from a semantic token."
       },
       "100": {
         "$type": "color",
@@ -3434,7 +3694,8 @@
               "WEB": "var(--color-rose-100)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Rose/100. Do not use directly in components — alias it from a semantic token."
       },
       "50": {
         "$type": "color",
@@ -3447,7 +3708,8 @@
               "WEB": "var(--color-rose-50)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Rose/50. Do not use directly in components — alias it from a semantic token."
       },
       "25": {
         "$type": "color",
@@ -3460,7 +3722,8 @@
               "WEB": "var(--color-rose-25)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Rose/25. Do not use directly in components — alias it from a semantic token."
       },
       "950": {
         "$type": "color",
@@ -3473,7 +3736,8 @@
               "WEB": "var(--color-rose-950)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Rose/950. Do not use directly in components — alias it from a semantic token."
       }
     },
     "brand": {
@@ -3488,7 +3752,8 @@
               "WEB": "var(--color-atomus-blue-900)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Brand/900. Do not use directly in components — alias it from a semantic token."
       },
       "800": {
         "$type": "color",
@@ -3501,7 +3766,8 @@
               "WEB": "var(--color-atomus-blue-800)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Brand/800. Do not use directly in components — alias it from a semantic token."
       },
       "700": {
         "$type": "color",
@@ -3514,7 +3780,8 @@
               "WEB": "var(--color-atomus-blue-700)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Brand/700. Do not use directly in components — alias it from a semantic token."
       },
       "600": {
         "$type": "color",
@@ -3527,7 +3794,8 @@
               "WEB": "var(--color-atomus-blue-600)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Brand/600. Do not use directly in components — alias it from a semantic token."
       },
       "500": {
         "$type": "color",
@@ -3540,7 +3808,8 @@
               "WEB": "var(--color-atomus-blue-500)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Brand/500. Do not use directly in components — alias it from a semantic token."
       },
       "400": {
         "$type": "color",
@@ -3553,7 +3822,8 @@
               "WEB": "var(--color-atomus-blue-400)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Brand/400. Do not use directly in components — alias it from a semantic token."
       },
       "300": {
         "$type": "color",
@@ -3566,7 +3836,8 @@
               "WEB": "var(--color-atomus-blue-300)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Brand/300. Do not use directly in components — alias it from a semantic token."
       },
       "200": {
         "$type": "color",
@@ -3579,7 +3850,8 @@
               "WEB": "var(--color-atomus-blue-200)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Brand/200. Do not use directly in components — alias it from a semantic token."
       },
       "100": {
         "$type": "color",
@@ -3592,7 +3864,8 @@
               "WEB": "var(--color-atomus-blue-100)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Brand/100. Do not use directly in components — alias it from a semantic token."
       },
       "50": {
         "$type": "color",
@@ -3605,7 +3878,8 @@
               "WEB": "var(--color-atomus-blue-50)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Brand/50. Do not use directly in components — alias it from a semantic token."
       },
       "25": {
         "$type": "color",
@@ -3618,7 +3892,8 @@
               "WEB": "var(--color-atomus-blue-25)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Brand/25. Do not use directly in components — alias it from a semantic token."
       },
       "950": {
         "$type": "color",
@@ -3631,7 +3906,8 @@
               "WEB": "var(--color-atomus-blue-950)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Brand/950. Do not use directly in components — alias it from a semantic token."
       }
     },
     "main": {
@@ -3646,7 +3922,8 @@
               "WEB": "var(--color-black)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Main/black. Do not use directly in components — alias it from a semantic token."
       },
       "white": {
         "$type": "color",
@@ -3659,7 +3936,8 @@
               "WEB": "var(--color-white)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Main/white. Do not use directly in components — alias it from a semantic token."
       },
       "transparent": {
         "$type": "color",
@@ -3672,7 +3950,8 @@
               "WEB": "var(--color-transparent)"
             }
           }
-        }
+        },
+        "$description": "Primitive colour Main/transparent. Do not use directly in components — alias it from a semantic token."
       }
     },
     "alpha": {
@@ -3687,7 +3966,8 @@
               "WEB": "var(--color-alpha-black-5)"
             }
           }
-        }
+        },
+        "$description": "Black at 5% opacity — overlays, scrims, subtle borders on images. Alias from a semantic token where one exists."
       },
       "white-5": {
         "$type": "color",
@@ -3700,7 +3980,8 @@
               "WEB": "var(--color-alpha-white-5)"
             }
           }
-        }
+        },
+        "$description": "White at 5% opacity — overlays, scrims, subtle borders on images. Alias from a semantic token where one exists."
       },
       "black-10": {
         "$type": "color",
@@ -3713,7 +3994,8 @@
               "WEB": "var(--color-alpha-black-10)"
             }
           }
-        }
+        },
+        "$description": "Black at 10% opacity — overlays, scrims, subtle borders on images. Alias from a semantic token where one exists."
       },
       "white-10": {
         "$type": "color",
@@ -3726,7 +4008,8 @@
               "WEB": "var(--color-alpha-white-10)"
             }
           }
-        }
+        },
+        "$description": "White at 10% opacity — overlays, scrims, subtle borders on images. Alias from a semantic token where one exists."
       },
       "black-20": {
         "$type": "color",
@@ -3739,7 +4022,8 @@
               "WEB": "var(--color-alpha-black-20)"
             }
           }
-        }
+        },
+        "$description": "Black at 20% opacity — overlays, scrims, subtle borders on images. Alias from a semantic token where one exists."
       },
       "white-20": {
         "$type": "color",
@@ -3752,7 +4036,8 @@
               "WEB": "var(--color-alpha-white-20)"
             }
           }
-        }
+        },
+        "$description": "White at 20% opacity — overlays, scrims, subtle borders on images. Alias from a semantic token where one exists."
       },
       "black-30": {
         "$type": "color",
@@ -3765,7 +4050,8 @@
               "WEB": "var(--color-alpha-black-30)"
             }
           }
-        }
+        },
+        "$description": "Black at 30% opacity — overlays, scrims, subtle borders on images. Alias from a semantic token where one exists."
       },
       "white-30": {
         "$type": "color",
@@ -3778,7 +4064,8 @@
               "WEB": "var(--color-alpha-white-30)"
             }
           }
-        }
+        },
+        "$description": "White at 30% opacity — overlays, scrims, subtle borders on images. Alias from a semantic token where one exists."
       },
       "black-40": {
         "$type": "color",
@@ -3791,7 +4078,8 @@
               "WEB": "var(--color-alpha-black-40)"
             }
           }
-        }
+        },
+        "$description": "Black at 40% opacity — overlays, scrims, subtle borders on images. Alias from a semantic token where one exists."
       },
       "white-40": {
         "$type": "color",
@@ -3804,7 +4092,8 @@
               "WEB": "var(--color-alpha-white-40)"
             }
           }
-        }
+        },
+        "$description": "White at 40% opacity — overlays, scrims, subtle borders on images. Alias from a semantic token where one exists."
       },
       "black-50": {
         "$type": "color",
@@ -3817,7 +4106,8 @@
               "WEB": "var(--color-alpha-black-50)"
             }
           }
-        }
+        },
+        "$description": "Black at 50% opacity — overlays, scrims, subtle borders on images. Alias from a semantic token where one exists."
       },
       "white-50": {
         "$type": "color",
@@ -3830,7 +4120,8 @@
               "WEB": "var(--color-alpha-white-50)"
             }
           }
-        }
+        },
+        "$description": "White at 50% opacity — overlays, scrims, subtle borders on images. Alias from a semantic token where one exists."
       },
       "black-60": {
         "$type": "color",
@@ -3843,7 +4134,8 @@
               "WEB": "var(--color-alpha-black-60)"
             }
           }
-        }
+        },
+        "$description": "Black at 60% opacity — overlays, scrims, subtle borders on images. Alias from a semantic token where one exists."
       },
       "white-60": {
         "$type": "color",
@@ -3856,7 +4148,8 @@
               "WEB": "var(--color-alpha-white-60)"
             }
           }
-        }
+        },
+        "$description": "White at 60% opacity — overlays, scrims, subtle borders on images. Alias from a semantic token where one exists."
       },
       "black-70": {
         "$type": "color",
@@ -3869,7 +4162,8 @@
               "WEB": "var(--color-alpha-black-70)"
             }
           }
-        }
+        },
+        "$description": "Black at 70% opacity — overlays, scrims, subtle borders on images. Alias from a semantic token where one exists."
       },
       "white-70": {
         "$type": "color",
@@ -3882,7 +4176,8 @@
               "WEB": "var(--color-alpha-white-70)"
             }
           }
-        }
+        },
+        "$description": "White at 70% opacity — overlays, scrims, subtle borders on images. Alias from a semantic token where one exists."
       },
       "black-80": {
         "$type": "color",
@@ -3895,7 +4190,8 @@
               "WEB": "var(--color-alpha-black-80)"
             }
           }
-        }
+        },
+        "$description": "Black at 80% opacity — overlays, scrims, subtle borders on images. Alias from a semantic token where one exists."
       },
       "white-80": {
         "$type": "color",
@@ -3908,7 +4204,8 @@
               "WEB": "var(--color-alpha-white-80)"
             }
           }
-        }
+        },
+        "$description": "White at 80% opacity — overlays, scrims, subtle borders on images. Alias from a semantic token where one exists."
       },
       "black-90": {
         "$type": "color",
@@ -3921,7 +4218,8 @@
               "WEB": "var(--color-alpha-black-90)"
             }
           }
-        }
+        },
+        "$description": "Black at 90% opacity — overlays, scrims, subtle borders on images. Alias from a semantic token where one exists."
       },
       "white-90": {
         "$type": "color",
@@ -3934,7 +4232,8 @@
               "WEB": "var(--color-alpha-white-90)"
             }
           }
-        }
+        },
+        "$description": "White at 90% opacity — overlays, scrims, subtle borders on images. Alias from a semantic token where one exists."
       }
     }
   },
@@ -3953,7 +4252,8 @@
             "WEB": "var(--size-0)"
           }
         }
-      }
+      },
+      "$description": "Primitive size 0px. Used by radius, spacing and size tokens; don't use directly."
     },
     "size-2": {
       "$type": "dimension",
@@ -3969,7 +4269,8 @@
             "WEB": "var(--size-2)"
           }
         }
-      }
+      },
+      "$description": "Primitive size 2px. Used by radius, spacing and size tokens; don't use directly."
     },
     "size-4": {
       "$type": "dimension",
@@ -3985,7 +4286,8 @@
             "WEB": "var(--size-4)"
           }
         }
-      }
+      },
+      "$description": "Primitive size 4px. Used by radius, spacing and size tokens; don't use directly."
     },
     "size-6": {
       "$type": "dimension",
@@ -4001,7 +4303,8 @@
             "WEB": "var(--size-6)"
           }
         }
-      }
+      },
+      "$description": "Primitive size 6px. Used by radius, spacing and size tokens; don't use directly."
     },
     "size-8": {
       "$type": "dimension",
@@ -4017,7 +4320,8 @@
             "WEB": "var(--size-8)"
           }
         }
-      }
+      },
+      "$description": "Primitive size 8px. Used by radius, spacing and size tokens; don't use directly."
     },
     "size-10": {
       "$type": "dimension",
@@ -4033,7 +4337,8 @@
             "WEB": "var(--size-10)"
           }
         }
-      }
+      },
+      "$description": "Primitive size 10px. Used by radius, spacing and size tokens; don't use directly."
     },
     "size-12": {
       "$type": "dimension",
@@ -4049,7 +4354,8 @@
             "WEB": "var(--size-12)"
           }
         }
-      }
+      },
+      "$description": "Primitive size 12px. Used by radius, spacing and size tokens; don't use directly."
     },
     "size-16": {
       "$type": "dimension",
@@ -4065,7 +4371,8 @@
             "WEB": "var(--size-16)"
           }
         }
-      }
+      },
+      "$description": "Primitive size 16px. Used by radius, spacing and size tokens; don't use directly."
     },
     "size-20": {
       "$type": "dimension",
@@ -4081,7 +4388,8 @@
             "WEB": "var(--size-20)"
           }
         }
-      }
+      },
+      "$description": "Primitive size 20px. Used by radius, spacing and size tokens; don't use directly."
     },
     "size-24": {
       "$type": "dimension",
@@ -4097,7 +4405,8 @@
             "WEB": "var(--size-24)"
           }
         }
-      }
+      },
+      "$description": "Primitive size 24px. Used by radius, spacing and size tokens; don't use directly."
     },
     "size-32": {
       "$type": "dimension",
@@ -4113,7 +4422,8 @@
             "WEB": "var(--size-32)"
           }
         }
-      }
+      },
+      "$description": "Primitive size 32px. Used by radius, spacing and size tokens; don't use directly."
     },
     "size-40": {
       "$type": "dimension",
@@ -4129,7 +4439,8 @@
             "WEB": "var(--size-40)"
           }
         }
-      }
+      },
+      "$description": "Primitive size 40px. Used by radius, spacing and size tokens; don't use directly."
     },
     "size-48": {
       "$type": "dimension",
@@ -4145,7 +4456,8 @@
             "WEB": "var(--size-48)"
           }
         }
-      }
+      },
+      "$description": "Primitive size 48px. Used by radius, spacing and size tokens; don't use directly."
     },
     "size-56": {
       "$type": "dimension",
@@ -4161,7 +4473,8 @@
             "WEB": "var(--size-56)"
           }
         }
-      }
+      },
+      "$description": "Primitive size 56px. Used by radius, spacing and size tokens; don't use directly."
     },
     "size-64": {
       "$type": "dimension",
@@ -4177,7 +4490,8 @@
             "WEB": "var(--size-64)"
           }
         }
-      }
+      },
+      "$description": "Primitive size 64px. Used by radius, spacing and size tokens; don't use directly."
     },
     "size-72": {
       "$type": "dimension",
@@ -4193,7 +4507,8 @@
             "WEB": "var(--size-72)"
           }
         }
-      }
+      },
+      "$description": "Primitive size 72px. Used by radius, spacing and size tokens; don't use directly."
     },
     "size-80": {
       "$type": "dimension",
@@ -4209,7 +4524,8 @@
             "WEB": "var(--size-80)"
           }
         }
-      }
+      },
+      "$description": "Primitive size 80px. Used by radius, spacing and size tokens; don't use directly."
     },
     "size-88": {
       "$type": "dimension",
@@ -4225,7 +4541,8 @@
             "WEB": "var(--size-88)"
           }
         }
-      }
+      },
+      "$description": "Primitive size 88px. Used by radius, spacing and size tokens; don't use directly."
     },
     "size-96": {
       "$type": "dimension",
@@ -4241,7 +4558,8 @@
             "WEB": "var(--size-96)"
           }
         }
-      }
+      },
+      "$description": "Primitive size 96px. Used by radius, spacing and size tokens; don't use directly."
     },
     "size-104": {
       "$type": "dimension",
@@ -4257,7 +4575,8 @@
             "WEB": "var(--size-104)"
           }
         }
-      }
+      },
+      "$description": "Primitive size 104px. Used by radius, spacing and size tokens; don't use directly."
     },
     "size-112": {
       "$type": "dimension",
@@ -4273,7 +4592,8 @@
             "WEB": "var(--size-112)"
           }
         }
-      }
+      },
+      "$description": "Primitive size 112px. Used by radius, spacing and size tokens; don't use directly."
     },
     "size-120": {
       "$type": "dimension",
@@ -4289,7 +4609,8 @@
             "WEB": "var(--size-120)"
           }
         }
-      }
+      },
+      "$description": "Primitive size 120px. Used by radius, spacing and size tokens; don't use directly."
     },
     "size-160": {
       "$type": "dimension",
@@ -4305,7 +4626,8 @@
             "WEB": "var(--size-160)"
           }
         }
-      }
+      },
+      "$description": "Primitive size 160px. Used by radius, spacing and size tokens; don't use directly."
     },
     "size-200": {
       "$type": "dimension",
@@ -4321,7 +4643,8 @@
             "WEB": "var(--size-200)"
           }
         }
-      }
+      },
+      "$description": "Primitive size 200px. Used by radius, spacing and size tokens; don't use directly."
     },
     "size-240": {
       "$type": "dimension",
@@ -4337,7 +4660,8 @@
             "WEB": "var(--size-240)"
           }
         }
-      }
+      },
+      "$description": "Primitive size 240px. Used by radius, spacing and size tokens; don't use directly."
     },
     "size-320": {
       "$type": "dimension",
@@ -4353,7 +4677,8 @@
             "WEB": "var(--size-320)"
           }
         }
-      }
+      },
+      "$description": "Primitive size 320px. Used by radius, spacing and size tokens; don't use directly."
     },
     "size-400": {
       "$type": "dimension",
@@ -4369,7 +4694,8 @@
             "WEB": "var(--size-400)"
           }
         }
-      }
+      },
+      "$description": "Primitive size 400px. Used by radius, spacing and size tokens; don't use directly."
     },
     "size-9999": {
       "$type": "dimension",
@@ -4385,7 +4711,8 @@
             "WEB": "var(--size-9999)"
           }
         }
-      }
+      },
+      "$description": "Primitive size 9999px. Used by radius, spacing and size tokens; don't use directly."
     }
   }
 }
