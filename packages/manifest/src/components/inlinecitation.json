@@ -1,0 +1,66 @@
+{
+  "name": "InlineCitation",
+  "kind": "component",
+  "status": "stable",
+  "since": "4.0.0",
+  "category": "AI (Agent kit)",
+  "import": "import { InlineCitation } from '@stanvision/atomus-react';",
+  "source": "react/src/components/ai/Sources.tsx",
+  "purpose": "Numbered citations with preview cards and the list of sources behind an answer.",
+  "description": "A small numbered chip right after a claim. Hover or focus shows a preview card (site, title, passage); the chip links to the source. The chip tints with `bg-ai-subtle` and `border-ai` on hover and focus.",
+  "aliases": [],
+  "alternative": null,
+  "native": {"elements":[],"omit":[],"ref":false},
+  "props": {
+    "index": {
+      "type": "number",
+      "default": null,
+      "required": true,
+      "figma": "Number",
+      "notes": "Figma: Number — the citation number, matching the source's position in Sources"
+    },
+    "source": {
+      "type": "SourceItem",
+      "default": null,
+      "required": true,
+      "figma": null,
+      "notes": "The cited source; its title, site and snippet fill the preview card"
+    },
+    "className": {"type":"string","default":null,"required":false,"figma":null,"notes":null}
+  },
+  "rules": {
+    "do": [
+      "Place the chip right after the sentence or clause it supports, before the full stop of the next one.",
+      "Use one chip per source; repeat the number when a source supports several claims."
+    ],
+    "dont": [],
+    "forbidden": [
+      "Never put interactive content in the preview card.",
+      "Never cite with colour or superscript alone — always show the number."
+    ]
+  },
+  "examples": [
+    {
+      "title": "Usage",
+      "code": "import { Sources, InlineCitation } from '@stanvision/atomus-react';\n\n<p>Body text needs a contrast of at least 4.5:1 <InlineCitation index={1} source={sources[0]} />.</p>\n<Sources sources={sources} />",
+      "language": "tsx",
+      "source": "sites/docs/src/component-pages/ai-sources.mdx"
+    }
+  ],
+  "figma": {
+    "componentSet": ["Inline citation"],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": null,
+    "properties": [
+      {"componentSet":"Inline citation","name":"Number","type":"number"},
+      {"componentSet":"Inline citation","name":"Source","type":"Source item"}
+    ],
+    "docs": "https://docs.atomus.io/components/ai-sources/"
+  },
+  "docs": "https://docs.atomus.io/components/ai-sources/",
+  "related": ["Sources"],
+  "a11y": {"element":null,"requiresLabel":false,"notes":[]}
+}

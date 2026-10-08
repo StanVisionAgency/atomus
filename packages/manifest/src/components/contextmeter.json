@@ -1,0 +1,125 @@
+{
+  "name": "ContextMeter",
+  "kind": "component",
+  "status": "stable",
+  "since": "4.0.0",
+  "category": "AI (Agent kit)",
+  "import": "import { ContextMeter } from '@stanvision/atomus-react';",
+  "source": "react/src/components/ai/ContextMeter.tsx",
+  "purpose": "Context-window usage and cost of a conversation.",
+  "description": "How much of the model's context window a conversation uses, and what it has cost. The compact style is a ring and percentage for the Prompt input; it opens a card with the bar, a breakdown (input, output, tools) and the cost. The bar style shows the same details inline. Part of the Agent kit.",
+  "aliases": ["token counter","usage meter","context window"],
+  "alternative": null,
+  "native": {"elements":[],"omit":[],"ref":false},
+  "props": {
+    "used": {
+      "type": "number",
+      "default": null,
+      "required": true,
+      "figma": "Used",
+      "notes": "Figma: Used — tokens in the context window now"
+    },
+    "limit": {
+      "type": "number",
+      "default": null,
+      "required": true,
+      "figma": "Limit",
+      "notes": "Figma: Limit — the model's context window in tokens"
+    },
+    "cost": {
+      "type": "number",
+      "default": null,
+      "required": false,
+      "figma": "Cost",
+      "notes": "Figma: Cost — spend for this conversation, in `currency`"
+    },
+    "currency": {"type":"string","default":"USD","required":false,"figma":null,"notes":"ISO 4217 currency of `cost`"},
+    "breakdown": {
+      "type": "ContextUsagePart[]",
+      "default": null,
+      "required": false,
+      "figma": null,
+      "notes": "Optional split of `used` (input, output, cached …) shown in the details"
+    },
+    "label": {"type":"string","default":"Context window","required":false,"figma":null,"notes":"Name of the meter"},
+    "variant": {
+      "type": "'compact' | 'bar'",
+      "values": ["compact","bar"],
+      "default": "compact",
+      "required": false,
+      "figma": "Style",
+      "notes": "Figma: Style. `compact` (default) — a ring and percentage for a prompt toolbar; details open on click. `bar` — label, bar and numbers inline, for side panels and settings."
+    },
+    "warnAt": {
+      "type": "number",
+      "default": 80,
+      "required": false,
+      "figma": null,
+      "notes": "Percentage at which the meter turns warning; error from 95%"
+    },
+    "locale": {"type":"string","default":null,"required":false,"figma":null,"notes":"BCP 47 locale for numbers"},
+    "placement": {
+      "type": "'up' | 'down'",
+      "values": ["up","down"],
+      "default": "up",
+      "required": false,
+      "figma": null,
+      "notes": "Which way the compact details open; `up` suits a prompt input at the bottom of the screen"
+    },
+    "defaultOpen": {
+      "type": "boolean",
+      "default": null,
+      "required": false,
+      "figma": null,
+      "notes": "Start with the compact details open (docs and tests)"
+    },
+    "className": {"type":"string","default":null,"required":false,"figma":null,"notes":null}
+  },
+  "rules": {
+    "do": [
+      "Format large numbers compactly (48.2K) and show cost in the person's currency.",
+      "Explain what happens when the window is full."
+    ],
+    "dont": [],
+    "forbidden": ["Never block sending when the meter is full without saying why and what to do."]
+  },
+  "examples": [
+    {
+      "title": "Usage",
+      "code": "import { ContextMeter } from '@stanvision/atomus-react';\n\n<ContextMeter\n  used={usage.totalTokens}\n  limit={200000}\n  cost={usage.costUsd}\n  breakdown={[{ label: 'Input', tokens: usage.input }, { label: 'Output', tokens: usage.output }]}\n/>",
+      "language": "tsx",
+      "source": "sites/docs/src/component-pages/ai-context-meter.mdx"
+    }
+  ],
+  "figma": {
+    "componentSet": ["Context meter"],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": null,
+    "properties": [
+      {"componentSet":"Context meter","name":"Used","type":"number (tokens)"},
+      {"componentSet":"Context meter","name":"Limit","type":"number (tokens)"},
+      {"componentSet":"Context meter","name":"Cost","type":"number + currency"},
+      {"componentSet":"Context meter","name":"Breakdown","type":"list (label, tokens)"},
+      {"componentSet":"Context meter","name":"Style","type":"variant","options":["Compact","Bar"]},
+      {
+        "componentSet": "Context meter",
+        "name": "State",
+        "type": "variant",
+        "options": ["Default","Warning (80%)","Error (95%)"]
+      }
+    ],
+    "docs": "https://docs.atomus.io/components/ai-context-meter/"
+  },
+  "docs": "https://docs.atomus.io/components/ai-context-meter/",
+  "related": [],
+  "a11y": {
+    "element": null,
+    "requiresLabel": false,
+    "notes": [
+      "`variant`: Figma: Style. `compact` (default) — a ring and percentage for a prompt toolbar; details open on click. `bar` — label, bar and numbers inline, for side panels and settings."
+    ]
+  }
+}

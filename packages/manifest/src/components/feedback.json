@@ -1,0 +1,106 @@
+{
+  "name": "Feedback",
+  "kind": "component",
+  "status": "stable",
+  "since": "4.0.0",
+  "category": "AI (Agent kit)",
+  "import": "import { Feedback } from '@stanvision/atomus-react';",
+  "source": "react/src/components/ai/Feedback.tsx",
+  "purpose": "Thumbs up / down on a reply, with a reason form.",
+  "description": "Thumbs up / down on an AI reply. A thumbs down (and, optionally, a thumbs up) opens a short form in place: reason chips, an optional comment and Send feedback. After sending, a quiet \"Thanks for your feedback\" replaces the form. Part of the Agent kit.",
+  "aliases": ["thumbs up / down","rate response"],
+  "alternative": null,
+  "native": {"elements":[],"omit":[],"ref":false},
+  "props": {
+    "value": {
+      "type": "'up' | 'down'",
+      "values": ["up","down"],
+      "default": null,
+      "required": false,
+      "figma": "Rating",
+      "notes": "Figma: Rating (controlled); null clears it"
+    },
+    "defaultValue": {
+      "type": "'up' | 'down'",
+      "values": ["up","down"],
+      "default": "null",
+      "required": false,
+      "figma": null,
+      "notes": "Initial rating when uncontrolled"
+    },
+    "onChange": {
+      "type": "(rating: FeedbackRating | null) => void",
+      "default": null,
+      "required": false,
+      "figma": null,
+      "notes": "Called on every thumb press"
+    },
+    "onSubmit": {
+      "type": "(feedback: FeedbackSubmission) => void",
+      "default": null,
+      "required": false,
+      "figma": null,
+      "notes": "Called when the reason form is sent"
+    },
+    "reasons": {
+      "type": "string[]",
+      "default": "DEFAULT_REASONS",
+      "required": false,
+      "figma": "Reasons",
+      "notes": "Figma: Reasons — chips offered after a thumbs down"
+    },
+    "positiveReasons": {
+      "type": "string[]",
+      "default": "[]",
+      "required": false,
+      "figma": null,
+      "notes": "Reasons offered after a thumbs up; no form opens for a thumbs up when empty"
+    },
+    "size": {
+      "type": "'xs' | 'sm'",
+      "values": ["xs","sm"],
+      "default": "xs",
+      "required": false,
+      "figma": "Size",
+      "notes": "Figma: Size — xs 24 · sm 32"
+    },
+    "className": {"type":"string","default":null,"required":false,"figma":null,"notes":null}
+  },
+  "rules": {
+    "do": [
+      "Keep reasons short and specific: \"Not accurate\", \"Too long\", \"Didn't follow instructions\".",
+      "Make the comment optional and send the rating even when the form is closed."
+    ],
+    "dont": [],
+    "forbidden": [
+      "Never require a reason or a comment.",
+      "Never open the form for a thumbs up unless you offer positive reasons."
+    ]
+  },
+  "examples": [
+    {
+      "title": "Usage",
+      "code": "import { Feedback } from '@stanvision/atomus-react';\n\n<Feedback\n  onChange={(rating) => track('rating', rating)}\n  onSubmit={({ rating, reasons, comment }) => sendFeedback(messageId, rating, reasons, comment)}\n/>",
+      "language": "tsx",
+      "source": "sites/docs/src/component-pages/ai-feedback.mdx"
+    }
+  ],
+  "figma": {
+    "componentSet": ["Feedback"],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": null,
+    "properties": [
+      {"componentSet":"Feedback","name":"Rating","type":"variant","options":["None","Up","Down"]},
+      {"componentSet":"Feedback","name":"Reasons","type":"list (text)"},
+      {"componentSet":"Feedback","name":"Size","type":"variant","options":["xs","sm"]},
+      {"componentSet":"Feedback","name":"Form","type":"boolean (opens after a rating)"}
+    ],
+    "docs": "https://docs.atomus.io/components/ai-feedback/"
+  },
+  "docs": "https://docs.atomus.io/components/ai-feedback/",
+  "related": [],
+  "a11y": {"element":null,"requiresLabel":false,"notes":[]}
+}

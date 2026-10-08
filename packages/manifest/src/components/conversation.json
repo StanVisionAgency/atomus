@@ -1,0 +1,40 @@
+{
+  "name": "Conversation",
+  "kind": "component",
+  "status": "figma-only",
+  "since": "4.0.0",
+  "category": "AI (Agent kit)",
+  "import": null,
+  "source": "guidelines/components/ai-message.md",
+  "purpose": "The pattern: header, role=\"log\" thread of Messages, welcome state with starters, docked Prompt input.",
+  "description": "The pattern that puts the Agent kit together: a header with the assistant's name, AI label and Context meter; a scrolling thread of Messages; and a Prompt input docked at the bottom. An empty thread shows a welcome state with prompt starters (Suggestions, `variant=\"cards\"`). There is no Conversation component: compose it from the parts.",
+  "aliases": ["chatbot","assistant panel","copilot","chat UI","AI chat"],
+  "alternative": "Conversation is a pattern, not a component: compose a `role=\"log\"` thread of `Message`s, a welcome state with `Suggestions variant=\"cards\"` and a docked `PromptInput`.",
+  "props": {},
+  "rules": {
+    "do": [
+      "Say what the assistant can and can't do in the welcome state.",
+      "Ask before acting: route every write or send through an Approval.",
+      "Keep one primary button per view: Send, or Approve while an approval is pending."
+    ],
+    "dont": [],
+    "forbidden": [
+      "Never start a conversation with a wall of starters — four at most.",
+      "Never auto-scroll while the person is reading earlier messages.",
+      "Never stream into a region that also announces every token."
+    ]
+  },
+  "examples": [],
+  "figma": {
+    "componentSet": ["Conversation"],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": null,
+    "docs": "https://docs.atomus.io/components/ai-conversation/"
+  },
+  "docs": "https://docs.atomus.io/components/ai-conversation/",
+  "related": ["Message"],
+  "a11y": {"element":null,"requiresLabel":false,"notes":[]}
+}
