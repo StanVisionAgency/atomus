@@ -1,0 +1,44 @@
+---
+title: "Toast"
+description: "Short floating confirmations with auto-dismiss."
+---
+
+{/* Source for /components/toast/ — scripts/sync.mjs writes the page to src/content/docs/components/. Imports are relative to that folder. */}
+
+import Demo from '../../../components/Demo.astro';
+import { ToastDemo } from '../../../components/demos';
+
+Short floating confirmations with auto-dismiss.
+
+<Demo caption="Toast">
+  <ToastDemo client:visible />
+</Demo>
+
+{/* @figma — sync.mjs inserts the "In Figma" section (from guidelines/components) here */}
+
+## Usage
+
+```tsx
+import { Toast, ToastProvider, useToast } from '@stanvision/atomus-react';
+
+// once, at the app root
+<ToastProvider>{app}</ToastProvider>
+
+// anywhere inside
+const toast = useToast();
+toast.show({ color: 'success', title: 'Changes saved' });
+```
+
+A short, floating confirmation. Wrap the app in `ToastProvider` and call `useToast().show({...})`.
+
+### Props
+
+- `title`, `description`, `color` (`brand` · `gray` · `error` · `warning` · `success`), an optional `action`.
+- `duration` in ms (default 5000; errors stay until closed). Hover or focus pauses the timer.
+- `ToastProvider position` — `bottom-right` (default), `top-right`, `bottom-center`; at most 4 at once.
+
+**Don’t**
+
+- Don't put the only copy of important information in a toast — it disappears.
+
+{/* @guidance — sync.mjs appends the design Do/Don’t from the Figma guidelines here */}

@@ -1,0 +1,88 @@
+---
+// Primitive colour ramps (25 → 950) from tokens/primitives.tokens.json, drawn as horizontal ramps.
+// The Brand ramp uses var(--color-brand-*) so it follows the brand switch above it.
+import { ramp, alphaRamp, NEUTRAL_RAMPS, HUE_RAMPS } from '../../lib/tokens';
+const brand = ramp('brand');
+const violet = ramp('violet');
+const groups = [
+  { title: 'Neutrals', ramps: NEUTRAL_RAMPS.map(ramp) },
+  { title: 'Hues', ramps: HUE_RAMPS.map(ramp) },
+];
+const light = (hex: string) => {
+  const n = parseInt(hex.slice(1, 7), 16);
+  const [r, g, b] = [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+  return 0.299 * r + 0.587 * g + 0.114 * b > 150;
+};
+---
+<div class="fd-ramps not-content">
+  <section class="fd-ramp-group" data-brand="atomus" id="brand-ramp">
+    <div class="fd-ramp-group__head">
+      <h3>Brand</h3>
+      <div class="fd-seg" role="group" aria-label="Brand mode">
+        <button type="button" aria-pressed="true" data-set-brand="atomus">Atomus</button>
+        <button type="button" aria-pressed="false" data-set-brand="violet">Violet</button>
+      </div>
+    </div>
+    <div class="fd-ramp">
+      <div class="fd-ramp__name"><code>brand</code></div>
+      <ol class="fd-ramp__steps">
+        {brand.steps.map((s, i) => (
+          <li class="fd-step">
+            <span class={`fd-step__chip ${light(s.hex) ? 'is-light' : 'is-dark'}`} style={`background:var(--color-brand-${s.step})`}></span>
+            <span class="fd-step__label">{s.step}</span>
+            <code class="fd-step__hex" data-hex-atomus={s.hex} data-hex-violet={violet.steps[i]?.hex}>{s.hex}</code>
+          </li>
+        ))}
+      </ol>
+    </div>
+    <p class="fd-note"><code>--color-brand-25 … 950</code> point at <code>atomus-blue</code> by default and at <code>violet</code> under <code>data-brand="violet"</code>.</p>
+  </section>
+  {groups.map((g) => (
+    <section class="fd-ramp-group">
+      <div class="fd-ramp-group__head"><h3>{g.title}</h3></div>
+      {g.ramps.map((r) => (
+        <div class="fd-ramp">
+          <div class="fd-ramp__name"><code>{r.cssName}</code></div>
+          <ol class="fd-ramp__steps">
+            {r.steps.map((s) => (
+              <li class="fd-step" title={`${s.cssVar} ${s.hex}`}>
+                <span class="fd-step__chip" style={`background:${s.hex}`}></span>
+                <span class="fd-step__label">{s.step}</span>
+                <code class="fd-step__hex">{s.hex}</code>
+              </li>
+            ))}
+          </ol>
+        </div>
+      ))}
+    </section>
+  ))}
+  <section class="fd-ramp-group">
+    <div class="fd-ramp-group__head"><h3>Alpha</h3></div>
+    {(['black', 'white'] as const).map((k) => (
+      <div class="fd-ramp">
+        <div class="fd-ramp__name"><code>alpha-{k}</code></div>
+        <ol class="fd-ramp__steps fd-ramp__steps--alpha">
+          {alphaRamp(k).map((s) => (
+            <li class="fd-step" title={`${s.cssVar} ${s.hex}`}>
+              <span class={`fd-step__chip fd-checker fd-checker--${k}`}><span style={`background:${s.hex}`}></span></span>
+              <span class="fd-step__label">{s.step}</span>
+              <code class="fd-step__hex">{s.hex}</code>
+            </li>
+          ))}
+        </ol>
+      </div>
+    ))}
+  </section>
+</div>
+<script>
+  for (const group of document.querySelectorAll<HTMLElement>('#brand-ramp')) {
+    group.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('[data-set-brand]');
+      if (!btn) return;
+      const brand = btn.dataset.setBrand!;
+      group.dataset.brand = brand;
+      group.querySelectorAll('[data-set-brand]').forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+      group.querySelectorAll<HTMLElement>('[data-hex-atomus]').forEach((el) => { el.textContent = (brand === 'violet' ? el.dataset.hexViolet : el.dataset.hexAtomus) ?? ''; });
+    });
+  }
+</script>

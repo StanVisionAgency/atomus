@@ -1,0 +1,47 @@
+---
+title: "Card"
+description: "Groups related content and actions. Outlined, elevated or filled."
+---
+
+{/* Source for /components/card/ — scripts/sync.mjs writes the page to src/content/docs/components/. Imports are relative to that folder. */}
+
+import Demo from '../../../components/Demo.astro';
+import { CardDemo } from '../../../components/demos';
+
+Groups related content and actions. Outlined, elevated or filled.
+
+<Demo caption="Card">
+  <CardDemo client:visible />
+</Demo>
+
+{/* @figma — sync.mjs inserts the "In Figma" section (from guidelines/components) here */}
+
+## Usage
+
+```tsx
+import { Card } from '@stanvision/atomus-react';
+
+<Card
+  title="Team members"
+  supportingText="Invite people and manage roles."
+  headerAction={<Button hierarchy="outline" size="sm">Invite</Button>}
+  footer={<Button hierarchy="primary" size="sm">Save</Button>}
+>
+  …content
+</Card>
+```
+
+A container that groups related content and actions.
+
+### Props
+
+- `title`, `supportingText`, `headerAction` (Figma: Title, Supporting text, Header action).
+- `children` — the Content slot; `footer` — buttons aligned right.
+- `variant` — `outlined` · `elevated` · `filled`; `padding` — `md` 16 · `lg` 24.
+
+**Don’t**
+
+- Don't nest cards; use dividers or a filled card instead.
+- Don't add a coloured left border to signal status — use Alert or Badge.
+
+{/* @guidance — sync.mjs appends the design Do/Don’t from the Figma guidelines here */}

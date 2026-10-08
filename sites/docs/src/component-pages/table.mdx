@@ -1,0 +1,48 @@
+---
+title: "Table"
+description: "Rows of records with sorting and selection."
+---
+
+{/* Source for /components/table/ — scripts/sync.mjs writes the page to src/content/docs/components/. Imports are relative to that folder. */}
+
+import Demo from '../../../components/Demo.astro';
+import { TableDemo } from '../../../components/demos';
+
+Rows of records with sorting and selection.
+
+<Demo caption="Table">
+  <TableDemo client:visible />
+</Demo>
+
+{/* @figma — sync.mjs inserts the "In Figma" section (from guidelines/components) here */}
+
+## Usage
+
+```tsx
+import { Table } from '@stanvision/atomus-react';
+
+<Table
+  caption="Team members"
+  selectable
+  rowKey={(r) => r.id}
+  rows={members}
+  columns={[
+    { key: 'name', header: 'Name', sortable: true },
+    { key: 'projects', header: 'Projects', sortable: true, align: 'end' },
+  ]}
+/>
+```
+
+Rows of records with sortable columns and optional row selection. Pair with Filter bar above and Pagination below.
+
+### Props
+
+- `columns` — `{ key, header, sortable?, render?, supporting?, align?, width? }`; `rows`; `rowKey`.
+- `size` `sm` (52px rows) · `md` (72px rows); `selectable` + `selected` / `onSelectedChange`; `caption`; `empty` (e.g. an EmptyState).
+- Use Avatar, Badge and tertiary Buttons inside `render` for the Figma cell types.
+
+**Don’t**
+
+- Don't put more than one primary action per row; group the rest in a DropdownMenu.
+
+{/* @guidance — sync.mjs appends the design Do/Don’t from the Figma guidelines here */}

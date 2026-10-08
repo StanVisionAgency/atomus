@@ -1,0 +1,14 @@
+---
+// Icon size tokens and the glyphs bundled with the React package.
+import CopyToken from './CopyToken.astro';
+const sizes = [['--icon-xs', 12], ['--icon-sm', 16], ['--icon-md', 20], ['--icon-lg', 24], ['--icon-xl', 32]] as const;
+const glyph = 'M10 9v5M10 6.5v.01M10 18a8 8 0 100-16 8 8 0 000 16z';
+---
+<div class="fd-icon-sizes not-content">
+  {sizes.map(([t, px]) => (
+    <figure>
+      <span class="fd-icon-sizes__box"><svg viewBox="0 0 20 20" style={`width:var(${t});height:var(${t})`} fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d={glyph} /></svg></span>
+      <figcaption><CopyToken token={t} /><span>{px}px</span></figcaption>
+    </figure>
+  ))}
+</div>

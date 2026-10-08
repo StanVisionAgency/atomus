@@ -1,0 +1,66 @@
+---
+title: "Alert"
+description: "Inline messages about a page, section or form."
+---
+
+{/* Source for /components/alert/ — scripts/sync.mjs writes the page to src/content/docs/components/. Imports are relative to that folder. */}
+
+import Demo from '../../../components/Demo.astro';
+import { AlertDemo, AlertSizeDemo, AlertFlushDemo } from '../../../components/demos';
+
+Inline messages about a page, section or form: a tinted fill, a hairline border and a coloured title and icon, so the tone reads at a glance.
+
+### Subtle (default)
+
+<Demo caption="variant=&quot;subtle&quot; · brand · gray · error · warning · success">
+  <AlertDemo client:visible />
+</Demo>
+
+### Outline — on tinted or grey surfaces
+
+<Demo caption="variant=&quot;outline&quot; on bg-tertiary">
+  <AlertDemo client:visible variant="outline" surface="secondary" />
+</Demo>
+
+### Solid — blocking issues only
+
+<Demo caption="variant=&quot;solid&quot;">
+  <AlertDemo client:visible variant="solid" />
+</Demo>
+
+### Small and flush
+
+<Demo caption="size=&quot;sm&quot;">
+  <AlertSizeDemo client:visible />
+</Demo>
+
+<Demo caption="flush — full-bleed inside a card">
+  <AlertFlushDemo client:visible />
+</Demo>
+
+{/* @figma — sync.mjs inserts the "In Figma" section (from guidelines/components) here */}
+
+## Usage
+
+```tsx
+import { Alert } from '@stanvision/atomus-react';
+
+<Alert color="warning" title="Trial ends in 3 days" onClose={dismiss}>
+  Add a payment method to keep your projects.
+</Alert>
+```
+
+### Props
+
+- `color` — `brand` · `gray` · `error` · `warning` · `success` (aliases: `info` → brand, `neutral` → gray, `danger` → error).
+- `variant` — `subtle` (default, tinted) · `outline` (white, for tinted or grey surfaces) · `solid` (blocking issues only). Figma: Style.
+- `size` — `md` (default) or `sm` for dense UI; `flush` removes the radius and side borders for full-bleed placement.
+- `title` and `children` (Figma: Title, Description); `actions` — up to two small buttons; `onClose` (Figma: Close).
+- Each colour has its own icon, so meaning never depends on colour alone. Colours come from the `--color-alert-*` component tokens.
+
+**Don’t**
+
+- Don't stack more than two alerts; use toasts for transient confirmations.
+- Don't use `solid` for routine messages.
+
+{/* @guidance — sync.mjs appends the design Do/Don’t from the Figma guidelines here */}

@@ -3,6 +3,9 @@ dist/
 .astro/
 src/styles/atomus.css
 src/styles/components.css
+src/styles/sections-responsive.css
 src/content/docs/foundations/
 src/content/docs/figma-reference/
+src/content/docs/components/
 src/content/docs/website-sections.md
+src/content/docs/website-sections.mdx
