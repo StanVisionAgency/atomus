@@ -1,0 +1,101 @@
+{
+  "name": "Sources",
+  "kind": "component",
+  "status": "stable",
+  "since": "4.0.0",
+  "category": "AI (Agent kit)",
+  "import": "import { Sources } from '@stanvision/atomus-react';",
+  "source": "react/src/components/ai/Sources.tsx",
+  "purpose": "Numbered citations with preview cards and the list of sources behind an answer.",
+  "description": "The numbered list of sources behind an AI answer: a \"3 sources\" disclosure with stacked site icons, opening to cards with the number, title, site and the passage the answer used. Numbers match the Inline citations in the text. Part of the Agent kit.",
+  "aliases": [],
+  "alternative": null,
+  "native": {"elements":[],"omit":[],"ref":false},
+  "props": {
+    "sources": {
+      "type": "SourceItem[]",
+      "default": null,
+      "required": true,
+      "figma": "Sources",
+      "notes": "Figma: Sources — in citation order; item 1 is citation [1]."
+    },
+    "label": {
+      "type": "string",
+      "default": null,
+      "required": false,
+      "figma": "Label",
+      "notes": "Figma: Label — the disclosure text; defaults to \"N sources\"."
+    },
+    "variant": {
+      "type": "'collapsible' | 'list'",
+      "values": ["collapsible","list"],
+      "default": "collapsible",
+      "required": false,
+      "figma": "Style",
+      "notes": "Figma: Style. `collapsible` (default) — a \"N sources\" disclosure under the answer. `list` — always expanded, for side panels."
+    },
+    "open": {
+      "type": "boolean",
+      "default": null,
+      "required": false,
+      "figma": null,
+      "notes": "Expanded (controlled, `collapsible` only)"
+    },
+    "defaultOpen": {
+      "type": "boolean",
+      "default": false,
+      "required": false,
+      "figma": null,
+      "notes": "Initial expanded state when uncontrolled"
+    },
+    "onOpenChange": {
+      "type": "(open: boolean) => void",
+      "default": null,
+      "required": false,
+      "figma": null,
+      "notes": "Called when the person expands or collapses it"
+    },
+    "className": {"type":"string","default":null,"required":false,"figma":null,"notes":null}
+  },
+  "rules": {
+    "do": [
+      "Keep the order of first citation: source 1 is [1] in the text.",
+      "Show the passage the answer used, not the page's meta description."
+    ],
+    "dont": [],
+    "forbidden": [
+      "Never list sources the answer didn't use.",
+      "Never invent or guess a URL — leave `url` empty when there is no link."
+    ]
+  },
+  "examples": [
+    {
+      "title": "Usage",
+      "code": "import { Sources, InlineCitation } from '@stanvision/atomus-react';\n\n<p>Body text needs a contrast of at least 4.5:1 <InlineCitation index={1} source={sources[0]} />.</p>\n<Sources sources={sources} />",
+      "language": "tsx",
+      "source": "sites/docs/src/component-pages/ai-sources.mdx"
+    }
+  ],
+  "figma": {
+    "componentSet": ["Sources"],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": null,
+    "properties": [
+      {"componentSet":"Sources","name":"Sources","type":"list (title, url, domain, snippet, icon)"},
+      {"componentSet":"Sources","name":"Label","type":"text (\"N sources\")"},
+      {"componentSet":"Sources","name":"Style","type":"variant","options":["Collapsible","List"]},
+      {"componentSet":"Sources","name":"Expanded","type":"boolean"}
+    ],
+    "docs": "https://docs.atomus.io/components/ai-sources/"
+  },
+  "docs": "https://docs.atomus.io/components/ai-sources/",
+  "related": ["InlineCitation"],
+  "a11y": {
+    "element": null,
+    "requiresLabel": false,
+    "notes": ["`label`: Figma: Label — the disclosure text; defaults to \"N sources\"."]
+  }
+}

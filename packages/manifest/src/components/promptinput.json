@@ -1,0 +1,210 @@
+{
+  "name": "PromptInput",
+  "kind": "component",
+  "status": "stable",
+  "since": "4.0.0",
+  "category": "AI (Agent kit)",
+  "import": "import { PromptInput } from '@stanvision/atomus-react';",
+  "source": "react/src/components/ai/PromptInput.tsx",
+  "purpose": "The chat composer: auto-growing text, attachments, toolbar slot, Send ↔ Stop, / and @ menus.",
+  "description": "The composer of an AI chat or agent panel: an auto-growing text area, attachment chips, a toolbar slot for the Model selector and tool toggles, and one button that switches between Send and Stop. Typing `/` or `@` opens a command or mention menu. Part of the Agent kit.",
+  "aliases": ["composer","chat input","prompt box","prompt bar"],
+  "alternative": null,
+  "native": {"elements":[],"omit":[],"ref":false},
+  "props": {
+    "value": {"type":"string","default":null,"required":false,"figma":"Text","notes":"Figma: Text (controlled)"},
+    "defaultValue": {"type":"string","default":"","required":false,"figma":null,"notes":"Initial text when uncontrolled"},
+    "onChange": {"type":"(value: string) => void","default":null,"required":false,"figma":null,"notes":null},
+    "onSubmit": {
+      "type": "(text: string, attachments: PromptAttachment[]) => void",
+      "default": null,
+      "required": false,
+      "figma": null,
+      "notes": "Called with the trimmed text and the attachments on Enter or the send button"
+    },
+    "onStop": {
+      "type": "() => void",
+      "default": null,
+      "required": false,
+      "figma": null,
+      "notes": "Called by the stop button while `status` is `submitted` or `streaming`"
+    },
+    "status": {
+      "type": "'ready' | 'submitted' | 'streaming' | 'error'",
+      "values": ["ready","submitted","streaming","error"],
+      "default": "ready",
+      "required": false,
+      "figma": "State",
+      "notes": "Figma: State — `submitted` and `streaming` turn Send into Stop and block new submits."
+    },
+    "placeholder": {
+      "type": "string",
+      "default": "Ask anything…",
+      "required": false,
+      "figma": "Placeholder",
+      "notes": "Figma: Placeholder — a hint, never the label"
+    },
+    "label": {
+      "type": "string",
+      "default": "Message",
+      "required": false,
+      "figma": null,
+      "notes": "Accessible name of the text area (visually hidden)"
+    },
+    "attachments": {
+      "type": "PromptAttachment[]",
+      "default": "[]",
+      "required": false,
+      "figma": "Attachments",
+      "notes": "Figma: Attachments — chips above the text"
+    },
+    "onAttach": {
+      "type": "() => void",
+      "default": null,
+      "required": false,
+      "figma": "Attach button",
+      "notes": "Figma: Attach button — shows the paperclip button; open your file picker here"
+    },
+    "onRemoveAttachment": {
+      "type": "(id: string) => void",
+      "default": null,
+      "required": false,
+      "figma": null,
+      "notes": "Called by a chip's remove button"
+    },
+    "toolbar": {
+      "type": "ReactNode",
+      "default": null,
+      "required": false,
+      "figma": "Toolbar slot",
+      "notes": "Figma: Toolbar slot — left of the bottom bar (ModelSelector, tool toggles)"
+    },
+    "actions": {
+      "type": "ReactNode",
+      "default": null,
+      "required": false,
+      "figma": "Actions slot",
+      "notes": "Figma: Actions slot — right of the bottom bar, before Send (ContextMeter, voice)"
+    },
+    "triggers": {
+      "type": "PromptTrigger[]",
+      "default": "[]",
+      "required": false,
+      "figma": "Command menu",
+      "notes": "Figma: Command menu — \"/\" and \"@\" menus that open while typing"
+    },
+    "disclaimer": {
+      "type": "ReactNode",
+      "default": null,
+      "required": false,
+      "figma": "Disclaimer",
+      "notes": "Figma: Disclaimer — one line under the input (\"AI can make mistakes. Check important info.\")"
+    },
+    "minRows": {"type":"number","default":1,"required":false,"figma":null,"notes":"Rows shown when empty"},
+    "maxRows": {"type":"number","default":8,"required":false,"figma":null,"notes":"Rows before the text area scrolls"},
+    "size": {
+      "type": "'md' | 'lg'",
+      "values": ["md","lg"],
+      "default": "md",
+      "required": false,
+      "figma": "Size",
+      "notes": "Figma: Size — md for side panels, lg for a full-page chat"
+    },
+    "disabled": {"type":"boolean","default":null,"required":false,"figma":null,"notes":null},
+    "autoFocus": {
+      "type": "boolean",
+      "default": null,
+      "required": false,
+      "figma": null,
+      "notes": "Focuses the text area on mount — only on pages whose main task is the chat"
+    },
+    "submitLabel": {
+      "type": "string",
+      "default": "Send message",
+      "required": false,
+      "figma": null,
+      "notes": "Accessible name of the send button"
+    },
+    "stopLabel": {
+      "type": "string",
+      "default": "Stop generating",
+      "required": false,
+      "figma": null,
+      "notes": "Accessible name of the stop button"
+    },
+    "clearOnSubmit": {
+      "type": "boolean",
+      "default": true,
+      "required": false,
+      "figma": null,
+      "notes": "Clears the text after submit (uncontrolled only)"
+    },
+    "className": {"type":"string","default":null,"required":false,"figma":null,"notes":null}
+  },
+  "rules": {
+    "do": [
+      "Keep one Prompt input per conversation, docked at the bottom of the thread.",
+      "Put the Model selector in the Toolbar slot and the Context meter in the Actions slot.",
+      "Show Stop while the agent works and keep the text area editable, so people can draft the next message.",
+      "Block Send while a file is still uploading; show the upload state on its chip.",
+      "Add a one-line disclaimer when answers can be wrong."
+    ],
+    "dont": [],
+    "forbidden": [
+      "Never disable the text area while streaming — only Send is blocked.",
+      "Never use the placeholder as the only label.",
+      "Never put more than one primary action in the bar: Send is the primary action.",
+      "Never move focus out of the text area when the reply arrives.",
+      "Never send on Enter while a command menu is open — Enter inserts the highlighted item."
+    ]
+  },
+  "examples": [
+    {
+      "title": "Usage",
+      "code": "import { PromptInput, ModelSelector, ContextMeter } from '@stanvision/atomus-react';\n\n<PromptInput\n  status={status}                       // 'ready' | 'submitted' | 'streaming' | 'error'\n  onSubmit={(text, files) => send(text, files)}\n  onStop={stop}\n  attachments={files}\n  onAttach={openFilePicker}\n  onRemoveAttachment={removeFile}\n  toolbar={<ModelSelector models={models} value={model} onChange={setModel} />}\n  actions={<ContextMeter used={usage.tokens} limit={200000} />}\n  triggers={[{ char: '/', items: commands }, { char: '@', label: 'People', items: people }]}\n  disclaimer=\"AI can make mistakes. Check important information.\"\n/>",
+      "language": "tsx",
+      "source": "sites/docs/src/component-pages/ai-prompt-input.mdx"
+    }
+  ],
+  "figma": {
+    "componentSet": ["Prompt input"],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": null,
+    "properties": [
+      {"componentSet":"Prompt input","name":"Text","type":"text"},
+      {"componentSet":"Prompt input","name":"Placeholder","type":"text"},
+      {"componentSet":"Prompt input","name":"Size","type":"variant","options":["md","lg"]},
+      {
+        "componentSet": "Prompt input",
+        "name": "State",
+        "type": "variant",
+        "options": ["Ready","Submitted","Streaming","Error","Disabled"]
+      },
+      {"componentSet":"Prompt input","name":"Attachments","type":"slot (attachment chips)"},
+      {"componentSet":"Prompt input","name":"Attach button","type":"boolean (on)"},
+      {"componentSet":"Prompt input","name":"Toolbar slot","type":"slot (Model selector, toggles)"},
+      {"componentSet":"Prompt input","name":"Actions slot","type":"slot (Context meter, voice)"},
+      {"componentSet":"Prompt input","name":"Command menu","type":"boolean (off)"},
+      {"componentSet":"Prompt input","name":"Disclaimer","type":"text"}
+    ],
+    "docs": "https://docs.atomus.io/components/ai-prompt-input/"
+  },
+  "docs": "https://docs.atomus.io/components/ai-prompt-input/",
+  "related": [],
+  "a11y": {
+    "element": null,
+    "requiresLabel": false,
+    "notes": [
+      "`placeholder`: Figma: Placeholder — a hint, never the label",
+      "`label`: Accessible name of the text area (visually hidden)",
+      "`autoFocus`: Focuses the text area on mount — only on pages whose main task is the chat",
+      "`submitLabel`: Accessible name of the send button",
+      "`stopLabel`: Accessible name of the stop button",
+      "Never use the placeholder as the only label.",
+      "Never move focus out of the text area when the reply arrives."
+    ]
+  }
+}

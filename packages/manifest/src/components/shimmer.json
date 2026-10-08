@@ -1,0 +1,72 @@
+{
+  "name": "Shimmer",
+  "kind": "component",
+  "status": "stable",
+  "since": "4.0.0",
+  "category": "AI (Agent kit)",
+  "import": "import { Shimmer } from '@stanvision/atomus-react';",
+  "source": "react/src/components/ai/StreamingText.tsx",
+  "purpose": "A reply that renders as it streams, with a caret and batched announcements; a shimmer for status lines.",
+  "description": "A light sweep across short status text while the agent works (\"Thinking…\", \"Searching 12 sources…\"). The sweep runs through `text-ai` over `text-tertiary` every `--motion-stream-shimmer-duration` (1.8s); reduced motion shows static `text-tertiary` text.",
+  "aliases": ["typing indicator","thinking indicator","\"Thinking…\""],
+  "alternative": null,
+  "native": {"elements":["span"],"omit":[],"ref":false},
+  "props": {
+    "children": {
+      "type": "ReactNode",
+      "default": null,
+      "required": true,
+      "figma": "Label",
+      "notes": "Figma: Label — short status text such as \"Thinking…\" or \"Searching the web…\""
+    },
+    "active": {
+      "type": "boolean",
+      "default": true,
+      "required": false,
+      "figma": "Animated",
+      "notes": "Figma: Animated — when false the text renders static (as under reduced motion)."
+    }
+  },
+  "rules": {
+    "do": [
+      "Keep the label short, in sentence case, ending with an ellipsis.",
+      "Swap the shimmer for a static result as soon as the step ends (\"Thought for 12s\")."
+    ],
+    "dont": [],
+    "forbidden": [
+      "Never shimmer body text, buttons or links.",
+      "Never use Shimmer as the only signal of progress for a long task — show steps or a Progress bar."
+    ]
+  },
+  "examples": [
+    {
+      "title": "Usage",
+      "code": "import { StreamingText, Shimmer } from '@stanvision/atomus-react';\n\n// Pass the whole string received so far on every chunk.\n<StreamingText text={text} streaming={!done} render={(t) => <Markdown>{t}</Markdown>} />\n\n// Long code or tables: only say when it's done.\n<StreamingText text={code} streaming={!done} announce=\"end\" doneMessage=\"Code ready\" />\n\n<Shimmer>Searching 12 sources…</Shimmer>",
+      "language": "tsx",
+      "source": "sites/docs/src/component-pages/ai-streaming-text.mdx"
+    }
+  ],
+  "figma": {
+    "componentSet": ["Shimmer"],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": null,
+    "properties": [
+      {"componentSet":"Shimmer","name":"Label","type":"text"},
+      {"componentSet":"Shimmer","name":"Animated","type":"boolean (on)"}
+    ],
+    "docs": "https://docs.atomus.io/components/ai-streaming-text/"
+  },
+  "docs": "https://docs.atomus.io/components/ai-streaming-text/",
+  "related": ["StreamingText"],
+  "a11y": {
+    "element": "span",
+    "requiresLabel": false,
+    "notes": [
+      "`children`: Figma: Label — short status text such as \"Thinking…\" or \"Searching the web…\"",
+      "Keep the label short, in sentence case, ending with an ellipsis."
+    ]
+  }
+}
