@@ -1,0 +1,192 @@
+{
+  "name": "Message",
+  "kind": "component",
+  "status": "stable",
+  "since": "4.0.0",
+  "category": "AI (Agent kit)",
+  "import": "import { Message } from '@stanvision/atomus-react';",
+  "source": "react/src/components/ai/Message.tsx",
+  "purpose": "One turn: user, assistant, system or tool; streaming, error and stopped states; copy, regenerate, edit, branches.",
+  "description": "One turn in a conversation. The role sets the layout: user messages are right-aligned bubbles on `bg-tertiary`; assistant and tool messages flow full-width next to an avatar; system messages are a centred line between hairlines. Every message is an `<article>` named by its speaker, so it is always clear who said what. Part of the Agent kit.",
+  "aliases": ["chat bubble","AI response","turn"],
+  "alternative": null,
+  "native": {"elements":["element"],"omit":["role"],"ref":false},
+  "props": {
+    "role": {
+      "type": "'user' | 'assistant' | 'system' | 'tool'",
+      "values": ["user","assistant","system","tool"],
+      "default": "assistant",
+      "required": false,
+      "figma": "Role",
+      "notes": "Figma: Role — who is speaking. Sets layout, label and default name."
+    },
+    "status": {
+      "type": "'streaming' | 'done' | 'error' | 'stopped'",
+      "values": ["streaming","done","error","stopped"],
+      "default": "done",
+      "required": false,
+      "figma": "Status",
+      "notes": "Figma: Status — `streaming` keeps the message busy; `error` and `stopped` show an inline notice."
+    },
+    "name": {
+      "type": "string",
+      "default": null,
+      "required": false,
+      "figma": "Name",
+      "notes": "Figma: Name — the speaker (\"You\", \"Atomus AI\", \"Research agent\"). Always announced to screen readers."
+    },
+    "avatar": {
+      "type": "ReactNode",
+      "default": null,
+      "required": false,
+      "figma": "Avatar",
+      "notes": "Figma: Avatar — an Avatar or logo; assistants default to the AI mark."
+    },
+    "showName": {
+      "type": "boolean",
+      "default": null,
+      "required": false,
+      "figma": "Show name",
+      "notes": "Figma: Show name — show the speaker name visually (screen readers always get it). Defaults to true except for user messages."
+    },
+    "aiLabel": {
+      "type": "boolean",
+      "default": true,
+      "required": false,
+      "figma": "AI label",
+      "notes": "Figma: AI label — shows the AI label next to an assistant's name."
+    },
+    "time": {
+      "type": "string",
+      "default": null,
+      "required": false,
+      "figma": "Timestamp",
+      "notes": "Figma: Timestamp — display text (\"2:41 PM\")"
+    },
+    "dateTime": {
+      "type": "string",
+      "default": null,
+      "required": false,
+      "figma": null,
+      "notes": "Machine-readable time (ISO 8601) for the `<time>` element"
+    },
+    "children": {"type":"ReactNode","default":null,"required":false,"figma":"Content","notes":"Figma: Content"},
+    "copyText": {
+      "type": "string",
+      "default": null,
+      "required": false,
+      "figma": null,
+      "notes": "Plain text of the message for the Copy action; Copy is hidden without it."
+    },
+    "onRegenerate": {
+      "type": "() => void",
+      "default": null,
+      "required": false,
+      "figma": "Regenerate",
+      "notes": "Figma: Regenerate — assistant messages; also the retry action for `status=\"error\"`."
+    },
+    "onEdit": {"type":"() => void","default":null,"required":false,"figma":"Edit","notes":"Figma: Edit — user messages"},
+    "branch": {
+      "type": "MessageBranch",
+      "default": null,
+      "required": false,
+      "figma": "Branch",
+      "notes": "Figma: Branch — ‹ 1/3 › switcher between regenerated or edited versions"
+    },
+    "actions": {
+      "type": "ReactNode",
+      "default": null,
+      "required": false,
+      "figma": null,
+      "notes": "Extra actions after the built-in ones (e.g. Feedback)"
+    },
+    "actionsVisibility": {
+      "type": "'always' | 'hover'",
+      "values": ["always","hover"],
+      "default": "always",
+      "required": false,
+      "figma": "Actions visibility",
+      "notes": "Figma: Actions visibility — `always`, or on `hover` and keyboard focus (always shown on touch screens)"
+    },
+    "errorMessage": {
+      "type": "ReactNode",
+      "default": "Something went wrong while generating this response.",
+      "required": false,
+      "figma": null,
+      "notes": "Error text for `status=\"error\"`"
+    }
+  },
+  "rules": {
+    "do": [
+      "Name every speaker; use the product's assistant name rather than \"AI\".",
+      "Keep the order of what happened: reasoning, then tools, then approvals, then the answer.",
+      "Show actions on hover only in dense threads; they stay visible on touch screens and on focus.",
+      "Keep the latest assistant message's actions visible."
+    ],
+    "dont": [],
+    "forbidden": [
+      "Never style assistant text as a bubble that looks like a person's message.",
+      "Never remove the speaker name from the accessible name.",
+      "Never show Regenerate on a user message or Edit on an assistant message.",
+      "Never hide an error behind a toast — keep it in the message with a Retry."
+    ]
+  },
+  "examples": [
+    {
+      "title": "Usage",
+      "code": "import { Message, StreamingText, Feedback } from '@stanvision/atomus-react';\n\n<Message role=\"user\" name=\"Kristina\" copyText={prompt} onEdit={edit}>\n  <p>{prompt}</p>\n</Message>\n<Message\n  role=\"assistant\"\n  name=\"Atomus Assistant\"\n  status={status}                        // 'streaming' | 'done' | 'error' | 'stopped'\n  copyText={answer}\n  onRegenerate={regenerate}\n  branch={{ index: 2, count: 3, onPrevious, onNext }}\n  actions={<Feedback onSubmit={sendFeedback} />}\n>\n  <StreamingText text={answer} streaming={status === 'streaming'} />\n</Message>",
+      "language": "tsx",
+      "source": "sites/docs/src/component-pages/ai-message.mdx"
+    }
+  ],
+  "figma": {
+    "componentSet": ["Message"],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": null,
+    "properties": [
+      {"componentSet":"Message","name":"Role","type":"variant","options":["User","Assistant","System","Tool"]},
+      {
+        "componentSet": "Message",
+        "name": "Status",
+        "type": "variant",
+        "options": ["Streaming","Done","Error","Stopped"]
+      },
+      {"componentSet":"Message","name":"Name","type":"text"},
+      {"componentSet":"Message","name":"Show name","type":"boolean (on, off for User)"},
+      {"componentSet":"Message","name":"AI label","type":"boolean (on)"},
+      {"componentSet":"Message","name":"Avatar","type":"instance swap (Avatar)"},
+      {"componentSet":"Message","name":"Timestamp","type":"text"},
+      {
+        "componentSet": "Message",
+        "name": "Content",
+        "type": "slot (text, Reasoning, Tool call, Approval, Sources)"
+      },
+      {
+        "componentSet": "Message",
+        "name": "Actions",
+        "type": "variant",
+        "options": ["Copy","Regenerate","Edit","Branch","slot (Feedback)"]
+      },
+      {"componentSet":"Message","name":"Actions visibility","type":"variant","options":["Always","Hover"]}
+    ],
+    "docs": "https://docs.atomus.io/components/ai-message/"
+  },
+  "docs": "https://docs.atomus.io/components/ai-message/",
+  "related": ["Conversation"],
+  "a11y": {
+    "element": "element",
+    "requiresLabel": false,
+    "notes": [
+      "`role`: Figma: Role — who is speaking. Sets layout, label and default name.",
+      "`name`: Figma: Name — the speaker (\"You\", \"Atomus AI\", \"Research agent\"). Always announced to screen readers.",
+      "`showName`: Figma: Show name — show the speaker name visually (screen readers always get it). Defaults to true except for user messages.",
+      "`aiLabel`: Figma: AI label — shows the AI label next to an assistant's name.",
+      "`actionsVisibility`: Figma: Actions visibility — `always`, or on `hover` and keyboard focus (always shown on touch screens)",
+      "Show actions on hover only in dense threads; they stay visible on touch screens and on focus.",
+      "Never remove the speaker name from the accessible name."
+    ]
+  }
+}
