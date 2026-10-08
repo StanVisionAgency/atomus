@@ -7,7 +7,7 @@ The Figma MCP output is a **reference, not final code**. It describes layers in 
 ## Files
 
 - The Atomus library file key is `bC42e82J3PYg2LMkryodIA` (Atomus 4.0). The file is sold separately; teams work in a duplicate per client project, so the key in a link you are given is usually that duplicate. Parse it from the URL: `figma.com/design/<fileKey>/<name>?node-id=<a-b>` → node id `a:b`.
-- Code Connect mappings live in `react/src/components/*.figma.tsx`. When they are published, `get_design_context` returns the real `@stanvision/atomus-react` snippet for each mapped instance.
+- Code Connect mappings live in `react/src/components/*.figma.ts`. When they are published, `get_design_context` returns the real `@stanvision/atomus-react` snippet for each mapped instance.
 
 ## Workflow: Figma to code
 

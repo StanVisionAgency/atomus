@@ -13,10 +13,10 @@ Variants: 10
 | Show description | boolean (on) |
 | Actions | boolean (on) |
 | Close | boolean (on) |
-| Style | Subtle · Outline |
+| Style | Subtle · Outline · Solid |
 | Color | Brand · Gray · Error · Warning · Success |
 
-Code adds two options that are not Figma variants yet: Style **Solid** (`variant="solid"`) and Size **sm · md** (`size="sm"`, default md). Colours come from the `--color-alert-<color>-bg · border · title · icon` component tokens.
+Code adds one option that is not a Figma variant yet: Size **sm · md** (`size="sm"`, default md). Colours come from the `--color-alert-<color>-bg · border · title · icon` component tokens.
 
 **Style**
 
