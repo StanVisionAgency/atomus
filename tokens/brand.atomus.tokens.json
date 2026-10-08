@@ -11,7 +11,8 @@
             "WEB": "var(--color-brand-25)"
           }
         }
-      }
+      },
+      "$description": "Brand colour, step 25. Switch the Brand mode to re-theme every component. Prefer semantic tokens; use steps directly only for charts and illustrations."
     },
     "brand-50": {
       "$type": "color",
@@ -24,7 +25,8 @@
             "WEB": "var(--color-brand-50)"
           }
         }
-      }
+      },
+      "$description": "Brand colour, step 50. Switch the Brand mode to re-theme every component. Backs bg-brand-subtle. Prefer semantic tokens; use steps directly only for charts and illustrations."
     },
     "brand-100": {
       "$type": "color",
@@ -37,7 +39,8 @@
             "WEB": "var(--color-brand-100)"
           }
         }
-      }
+      },
+      "$description": "Brand colour, step 100. Switch the Brand mode to re-theme every component. Prefer semantic tokens; use steps directly only for charts and illustrations."
     },
     "brand-200": {
       "$type": "color",
@@ -50,7 +53,8 @@
             "WEB": "var(--color-brand-200)"
           }
         }
-      }
+      },
+      "$description": "Brand colour, step 200. Switch the Brand mode to re-theme every component. Prefer semantic tokens; use steps directly only for charts and illustrations."
     },
     "brand-300": {
       "$type": "color",
@@ -63,7 +67,8 @@
             "WEB": "var(--color-brand-300)"
           }
         }
-      }
+      },
+      "$description": "Brand colour, step 300. Switch the Brand mode to re-theme every component. Prefer semantic tokens; use steps directly only for charts and illustrations."
     },
     "brand-400": {
       "$type": "color",
@@ -76,7 +81,8 @@
             "WEB": "var(--color-brand-400)"
           }
         }
-      }
+      },
+      "$description": "Brand colour, step 400. Switch the Brand mode to re-theme every component. Prefer semantic tokens; use steps directly only for charts and illustrations."
     },
     "brand-500": {
       "$type": "color",
@@ -89,7 +95,8 @@
             "WEB": "var(--color-brand-500)"
           }
         }
-      }
+      },
+      "$description": "Brand colour, step 500. Switch the Brand mode to re-theme every component. Backs border-focus. Prefer semantic tokens; use steps directly only for charts and illustrations."
     },
     "brand-600": {
       "$type": "color",
@@ -102,7 +109,8 @@
             "WEB": "var(--color-brand-600)"
           }
         }
-      }
+      },
+      "$description": "Brand colour, step 600. Switch the Brand mode to re-theme every component. Primary brand fill (buttons, links, active states) — reach it via bg-brand-solid / text-brand, not directly. Prefer semantic tokens; use steps directly only for charts and illustrations."
     },
     "brand-700": {
       "$type": "color",
@@ -115,7 +123,8 @@
             "WEB": "var(--color-brand-700)"
           }
         }
-      }
+      },
+      "$description": "Brand colour, step 700. Switch the Brand mode to re-theme every component. Backs bg-brand-solid-hover. Prefer semantic tokens; use steps directly only for charts and illustrations."
     },
     "brand-800": {
       "$type": "color",
@@ -128,7 +137,8 @@
             "WEB": "var(--color-brand-800)"
           }
         }
-      }
+      },
+      "$description": "Brand colour, step 800. Switch the Brand mode to re-theme every component. Prefer semantic tokens; use steps directly only for charts and illustrations."
     },
     "brand-900": {
       "$type": "color",
@@ -141,7 +151,8 @@
             "WEB": "var(--color-brand-900)"
           }
         }
-      }
+      },
+      "$description": "Brand colour, step 900. Switch the Brand mode to re-theme every component. Prefer semantic tokens; use steps directly only for charts and illustrations."
     },
     "brand-950": {
       "$type": "color",
@@ -154,7 +165,8 @@
             "WEB": "var(--color-brand-950)"
           }
         }
-      }
+      },
+      "$description": "Brand colour, step 950. Switch the Brand mode to re-theme every component. Prefer semantic tokens; use steps directly only for charts and illustrations."
     }
   }
 }

@@ -22,7 +22,8 @@
             "unit": "px"
           }
         }
-      ]
+      ],
+      "$description": "Elevation 1 shadow (var(--shadow-elevation-1)). Inputs and flat buttons. Higher elevation = closer to the user; don't stack shadows or invent new ones."
     },
     "elevation-2": {
       "$type": "shadow",
@@ -65,7 +66,8 @@
             "unit": "px"
           }
         }
-      ]
+      ],
+      "$description": "Elevation 2 shadow (var(--shadow-elevation-2)). Cards at rest. Higher elevation = closer to the user; don't stack shadows or invent new ones."
     },
     "elevation-3": {
       "$type": "shadow",
@@ -108,7 +110,8 @@
             "unit": "px"
           }
         }
-      ]
+      ],
+      "$description": "Elevation 3 shadow (var(--shadow-elevation-3)). Raised cards, dropdown triggers. Higher elevation = closer to the user; don't stack shadows or invent new ones."
     },
     "elevation-4": {
       "$type": "shadow",
@@ -151,7 +154,8 @@
             "unit": "px"
           }
         }
-      ]
+      ],
+      "$description": "Elevation 4 shadow (var(--shadow-elevation-4)). Dropdowns and popovers. Higher elevation = closer to the user; don't stack shadows or invent new ones."
     },
     "elevation-6": {
       "$type": "shadow",
@@ -194,7 +198,8 @@
             "unit": "px"
           }
         }
-      ]
+      ],
+      "$description": "Elevation 6 shadow (var(--shadow-elevation-6)). Floating panels. Higher elevation = closer to the user; don't stack shadows or invent new ones."
     },
     "elevation-8": {
       "$type": "shadow",
@@ -218,7 +223,8 @@
             "unit": "px"
           }
         }
-      ]
+      ],
+      "$description": "Elevation 8 shadow (var(--shadow-elevation-8)). Modals. Higher elevation = closer to the user; don't stack shadows or invent new ones."
     },
     "elevation-9": {
       "$type": "shadow",
@@ -242,7 +248,8 @@
             "unit": "px"
           }
         }
-      ]
+      ],
+      "$description": "Elevation 9 shadow (var(--shadow-elevation-9)). Large overlays and drawers. Higher elevation = closer to the user; don't stack shadows or invent new ones."
     },
     "elevation-12": {
       "$type": "shadow",
@@ -266,7 +273,8 @@
             "unit": "px"
           }
         }
-      ]
+      ],
+      "$description": "Elevation 12 shadow (var(--shadow-elevation-12)). Large overlays and drawers. Higher elevation = closer to the user; don't stack shadows or invent new ones."
     },
     "elevation-16": {
       "$type": "shadow",
@@ -290,7 +298,8 @@
             "unit": "px"
           }
         }
-      ]
+      ],
+      "$description": "Elevation 16 shadow (var(--shadow-elevation-16)). Large overlays and drawers. Higher elevation = closer to the user; don't stack shadows or invent new ones."
     },
     "elevation-24": {
       "$type": "shadow",
@@ -314,7 +323,8 @@
             "unit": "px"
           }
         }
-      ]
+      ],
+      "$description": "Elevation 24 shadow (var(--shadow-elevation-24)). Large overlays and drawers. Higher elevation = closer to the user; don't stack shadows or invent new ones."
     }
   }
 }
