@@ -1,0 +1,35 @@
+---
+title: Figma Make kit
+description: Using Atomus in Figma Make — the guidelines are ready; the kit with the npm packages comes once they are published.
+---
+
+[Figma Make](https://www.figma.com/make/) builds working prototypes from prompts. A **Make kit** gives it a design system: an npm package with the components and styles, plus guidelines that tell Make how to use them.
+
+:::note[Coming once the npm packages are published]
+A Make kit installs the design system from npm. The Atomus kit will ship when `@stanvision/atomus-react` and `@stanvision/atomus-tokens` are on npm, which is coming soon.
+:::
+
+## What's ready
+
+The guidelines already follow Figma's [guidance for design-system guidelines](https://developers.figma.com/docs/code/write-design-system-guidelines/):
+
+- **`Guidelines.md` is the entry point.** It covers what Atomus is, the reading order, the core rules and the forbidden list.
+- **`setup.md`** covers install, CSS imports, theme attributes and fonts, and what Make must not configure.
+- **`overview-components.md`** is the catalogue with other names and decision trees, so Make picks the right component.
+- **One file per component** with imperative **Do / Forbidden** rules and the generated **React API**, so Make uses only real props.
+- Plain Markdown with no JSX, split into small files Make can read on demand.
+
+## Use it today
+
+Until the kit ships, you can attach the guidelines yourself:
+
+1. Download the [`guidelines/`](https://github.com/StanVisionAgency/atomus/tree/main/guidelines) folder.
+2. In your Make file, add the files to the guidelines, with `Guidelines.md` at the top.
+3. Add the token CSS (`css/atomus.css` from the repo) to the project's styles, and set `data-theme`, `data-brand` and `data-radius` on the root.
+
+Make then styles with Atomus tokens and follows the rules. It can't import the React components until they are on npm, so expect it to rebuild simple components from tokens.
+
+## When the kit ships
+
+- The kit will install `@stanvision/atomus-react` and `@stanvision/atomus-tokens` and bundle the guidelines.
+- This page will link the kit, and the [Overview](/ai/) will mark it as available.

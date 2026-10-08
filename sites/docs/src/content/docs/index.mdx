@@ -1,10 +1,10 @@
 ---
 title: Atomus 4.0
-description: One design system for product UI and marketing websites — Figma file, design tokens, React components and AI guidelines.
+description: One design system for product UI and marketing websites, built for humans and agents — Figma file, design tokens, React components, guidelines and an agent skill.
 template: splash
 hero:
   title: One design system for product <em>and</em> web
-  tagline: Atomus 4.0 is a Figma design system with matching design tokens, React components and guidelines for AI tools. Docs and code are free and open source; the Figma file is on Gumroad.
+  tagline: Atomus 4.0 is a design system for humans and agents — a Figma file with matching design tokens, React components, guidelines and an agent skill. Docs and code are free and MIT-licensed; the Figma file is on Gumroad.
   actions:
     - text: Get started
       link: /getting-started/
@@ -31,8 +31,8 @@ import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
   <Card title="React components" icon="seti:react">
     `@stanvision/atomus-react`: 21 accessible components whose props match the Figma properties one to one.
   </Card>
-  <Card title="AI guidelines" icon="open-book">
-    Markdown rules that teach Figma Make, the Figma MCP, Claude, Cursor and v0 to build with Atomus.
+  <Card title="Built for agents" icon="open-book">
+    Guidelines, an agent skill, `AGENTS.md` rules and `llms.txt` teach Claude Code, Cursor, Copilot, Figma Make and the Figma MCP to build with Atomus. See [AI & agents](/ai/).
   </Card>
 </CardGrid>
 
@@ -43,4 +43,5 @@ import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
   <LinkCard title="Foundations" href="/foundations/color/" description="Colour, type, spacing, radius, icons and theming." />
   <LinkCard title="Components" href="/components/" description="Live React examples, Figma properties and usage rules on one page per component." />
   <LinkCard title="Tokens for code" href="/code/tokens/" description="DTCG, CSS, Tailwind and shadcn/ui." />
+  <LinkCard title="AI & agents" href="/ai/" description="Use Atomus with Claude Code, Cursor, Copilot, Figma MCP and llms.txt." />
 </CardGrid>
