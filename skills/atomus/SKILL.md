@@ -10,9 +10,11 @@ metadata:
 
 # Atomus
 
-Atomus 4.0 is one design system for product UI and marketing websites. It ships a Figma file, design tokens (`@stanvision/atomus-tokens`: CSS, Tailwind v4, shadcn/ui, DTCG JSON) and React components (`@stanvision/atomus-react`) whose props mirror the Figma properties. Everything here is generated from or checked against that source, so follow it literally.
+Atomus 4.0 is one design system for product UI and marketing websites. It ships a Figma file, design tokens (`@stanvision/atomus-tokens`: CSS, Tailwind v4, shadcn/ui, DTCG JSON) and React components (`@stanvision/atomus-react`) whose props mirror the Figma properties, including the Agent kit for AI products (Prompt input, Message, Reasoning, Tool call, Approval, Sources …; see "Which AI component?" in `references/components.md`). Everything here is generated from or checked against that source, so follow it literally.
 
 ## Workflow
+
+If the **Atomus MCP server** is connected (tools named `atomus_*`), use it: call `atomus_get_started` first, `atomus_get_component` before writing a component, `atomus_find_token` for every colour, spacing and radius, and `atomus_validate` on every changed file as the final step. Otherwise follow the steps below with the reference files.
 
 1. **Search before you write.** Before building any UI, find the component:
    - Pick it with the catalogue and decision trees in [references/components.md](references/components.md) (exports, props, enums, defaults).
@@ -26,7 +28,7 @@ Atomus 4.0 is one design system for product UI and marketing websites. It ships 
    ```bash
    node <skill-dir>/scripts/validate.mjs src/components/Settings.tsx src/styles/app.css
    ```
-   It flags raw hex/rgb colours, primitive tokens (`--color-gray-500`, `bg-gray-500`), unknown Atomus exports, unknown props, invalid enum values and more than one primary button per file.
+   It flags raw hex/rgb colours, primitive tokens (`--color-gray-500`, `bg-gray-500`), unknown Atomus exports, unknown props, invalid enum values and more than one primary button per file. If the project has `@stanvision/eslint-plugin-atomus` or `@stanvision/stylelint-config-atomus`, run its lint script too.
 
 ## Setup (once per project)
 

@@ -30,7 +30,7 @@ Open areas of components are **slots**: Card Content, Modal Content, Dropdown me
 
 ## Code Connect
 
-`react/src/components/*.figma.tsx` in the repo maps all 21 React components to their Figma component sets, including variant, boolean, text and instance-swap properties. Once published (this needs a Figma Organization or Enterprise plan), Dev Mode and `get_design_context` return the real `@stanvision/atomus-react` snippet for each instance. Prefer that snippet over anything you would write. Without it, map the instance by its component name using `references/components.md`.
+`react/src/components/*.figma.ts` (Code Connect template files) in the repo map all 21 React components to their Figma component sets, including variant, boolean, text and instance-swap properties. Once published (this needs a Figma Organization or Enterprise plan), Dev Mode and `get_design_context` return the real `@stanvision/atomus-react` snippet for each instance. Prefer that snippet over anything you would write. Without it, map the instance by its component name using `references/components.md`.
 
 <!-- figma-mcp-rules:start — copied from guidelines/figma-mcp-rules.md by scripts/build-skill.mjs -->
 ## Rules for the Figma MCP server
@@ -40,7 +40,7 @@ The Figma MCP output is a **reference, not final code**. It describes layers in 
 ### Files
 
 - The Atomus library file key is `bC42e82J3PYg2LMkryodIA` (Atomus 4.0). The file is sold separately; teams work in a duplicate per client project, so the key in a link you are given is usually that duplicate. Parse it from the URL: `figma.com/design/<fileKey>/<name>?node-id=<a-b>` → node id `a:b`.
-- Code Connect mappings live in `react/src/components/*.figma.tsx`. When they are published, `get_design_context` returns the real `@stanvision/atomus-react` snippet for each mapped instance.
+- Code Connect mappings live in `react/src/components/*.figma.ts`. When they are published, `get_design_context` returns the real `@stanvision/atomus-react` snippet for each mapped instance.
 
 ### Workflow: Figma to code
 
