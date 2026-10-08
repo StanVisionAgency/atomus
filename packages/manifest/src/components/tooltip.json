@@ -1,0 +1,66 @@
+{
+  "name": "Tooltip",
+  "kind": "component",
+  "status": "figma-only",
+  "since": "4.0.0",
+  "category": "Overlays",
+  "import": null,
+  "source": "guidelines/components/tooltip-popover.md",
+  "purpose": "A one-sentence hint on hover or focus.",
+  "description": "Dark tooltip; arrow None, Top, Bottom, Left, Right.",
+  "aliases": ["hint","info bubble"],
+  "alternative": "Use the `title` attribute or a headless tooltip (Radix, Floating UI) styled with `--color-bg-inverse` and `--color-text-inverse`.",
+  "props": {
+    "Text": {"type":"text","default":null,"required":false,"figma":"Text","notes":null},
+    "Supporting text": {
+      "type": "variant",
+      "values": ["False","True"],
+      "default": null,
+      "required": false,
+      "figma": "Supporting text",
+      "notes": null
+    },
+    "Arrow": {
+      "type": "variant",
+      "values": ["None","Top","Bottom","Left","Right"],
+      "default": null,
+      "required": false,
+      "figma": "Arrow",
+      "notes": null
+    }
+  },
+  "rules": {
+    "do": [
+      "Use for short hints on icon buttons and truncated text.",
+      "Keep it to one sentence.",
+      "Point the arrow at the trigger."
+    ],
+    "dont": [],
+    "forbidden": [
+      "Never put links or actions in a tooltip.",
+      "Never explain a disabled button only with a tooltip.",
+      "Never repeat the visible label."
+    ]
+  },
+  "examples": [],
+  "figma": {
+    "componentSet": ["Tooltip"],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": 10,
+    "docs": "https://docs.atomus.io/components/tooltip-popover/"
+  },
+  "docs": "https://docs.atomus.io/components/tooltip-popover/",
+  "related": [],
+  "a11y": {
+    "element": null,
+    "requiresLabel": false,
+    "notes": [
+      "Never put links or actions in a tooltip.",
+      "Never explain a disabled button only with a tooltip.",
+      "Never repeat the visible label."
+    ]
+  }
+}

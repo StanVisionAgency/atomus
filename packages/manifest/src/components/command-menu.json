@@ -1,0 +1,32 @@
+{
+  "name": "Command menu",
+  "kind": "component",
+  "status": "figma-only",
+  "since": "4.0.0",
+  "category": "Overlays",
+  "import": null,
+  "source": "guidelines/components/slideout-command-menu.md",
+  "purpose": "⌘K search and actions.",
+  "description": "⌘K command palette; results are a slot.",
+  "aliases": ["command palette","⌘K","spotlight"],
+  "alternative": "Drawer, Slideout menu and Command menu are Figma-only. For a focused task use `Modal`; for a short action list use `DropdownMenu`.",
+  "props": {"Results":{"type":"slot (any content)","default":null,"required":false,"figma":"Results","notes":null}},
+  "rules": {
+    "do": ["Open it with ⌘K / Ctrl K; group results and show shortcuts."],
+    "dont": [],
+    "forbidden": ["Never make the command menu the only way to reach a feature."]
+  },
+  "examples": [],
+  "figma": {
+    "componentSet": ["Command menu"],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": 1,
+    "docs": "https://docs.atomus.io/components/command-menu/"
+  },
+  "docs": "https://docs.atomus.io/components/command-menu/",
+  "related": ["Slideout menu","Drawer"],
+  "a11y": {"element":null,"requiresLabel":false,"notes":[]}
+}

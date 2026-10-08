@@ -1,0 +1,46 @@
+{
+  "name": "Spec line",
+  "kind": "component",
+  "status": "figma-only",
+  "since": "4.0.0",
+  "category": "Media and assets",
+  "import": null,
+  "source": "guidelines/components/shared-assets.md",
+  "purpose": "Red-line measurement.",
+  "description": "Red-line measurement.",
+  "aliases": [],
+  "alternative": "These are design-only mockups and annotations; they have no code counterpart.",
+  "props": {
+    "Value": {"type":"text","default":null,"required":false,"figma":"Value","notes":null},
+    "Direction": {
+      "type": "variant",
+      "values": ["Horizontal","Vertical"],
+      "default": null,
+      "required": false,
+      "figma": "Direction",
+      "notes": null
+    }
+  },
+  "rules": {"do":[],"dont":[],"forbidden":[]},
+  "examples": [],
+  "figma": {
+    "componentSet": ["Spec line"],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": 2,
+    "docs": "https://docs.atomus.io/components/shared-assets/"
+  },
+  "docs": "https://docs.atomus.io/components/shared-assets/",
+  "related": [
+    "Credit card",
+    "Video player",
+    "Email template",
+    "Annotation marker",
+    "Annotation note",
+    "Status tag",
+    "A11y annotation"
+  ],
+  "a11y": {"element":null,"requiresLabel":false,"notes":[]}
+}
