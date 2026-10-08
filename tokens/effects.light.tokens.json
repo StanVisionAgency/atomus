@@ -326,5 +326,45 @@
       ],
       "$description": "Elevation 24 shadow (var(--shadow-elevation-24)). Large overlays and drawers. Higher elevation = closer to the user; don't stack shadows or invent new ones."
     }
+  },
+  "motion": {
+    "stream-shimmer-duration": {
+      "$type": "duration",
+      "$value": {
+        "value": 1.8,
+        "unit": "s"
+      },
+      "$description": "One sweep of the shimmer on streaming placeholders and \"Thinking…\" labels (var(--motion-stream-shimmer-duration)). 0s under prefers-reduced-motion: reduce — the text stays static.",
+      "$extensions": {
+        "com.atomus": {
+          "codeSyntax": {
+            "WEB": "var(--motion-stream-shimmer-duration)"
+          },
+          "reducedMotion": {
+            "value": 0,
+            "unit": "s"
+          }
+        }
+      }
+    },
+    "stream-caret-blink": {
+      "$type": "duration",
+      "$value": {
+        "value": 1,
+        "unit": "s"
+      },
+      "$description": "Blink period of the streaming caret (var(--motion-stream-caret-blink)). 0s under prefers-reduced-motion: reduce — the caret shows solid.",
+      "$extensions": {
+        "com.atomus": {
+          "codeSyntax": {
+            "WEB": "var(--motion-stream-caret-blink)"
+          },
+          "reducedMotion": {
+            "value": 0,
+            "unit": "s"
+          }
+        }
+      }
+    }
   }
 }

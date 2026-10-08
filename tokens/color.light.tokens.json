@@ -223,6 +223,20 @@
         }
       },
       "$description": "Text on bg-warning-solid (solid warning badges). Always Gray 900 — white on amber is only 2.2:1."
+    },
+    "text-ai": {
+      "$type": "color",
+      "$value": "#4c2cd2",
+      "$description": "AI label text and AI accents (\"AI generated\", \"Thought for 12s\"). Meets 4.5:1 on bg-primary and bg-ai-subtle. Not for body copy. Value shown for the Atomus brand; code follows the active brand: color-mix(in srgb, var(--color-brand-700) 55%, var(--color-purple-700))",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Color",
+          "variable": "Text/text-ai",
+          "codeSyntax": {
+            "WEB": "var(--color-text-ai)"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -1357,6 +1371,33 @@
         }
       },
       "$description": "End stop of the tertiary (neutral) gradient. Decorative only."
+    },
+    "ai": {
+      "$type": "gradient",
+      "$value": [
+        {
+          "color": "#4c70ff",
+          "position": 0
+        },
+        {
+          "color": "#885efa",
+          "position": 0.55
+        },
+        {
+          "color": "#f472b6",
+          "position": 1
+        }
+      ],
+      "$description": "AI gradient (var(--gradient-ai)): the sparkle mark, the AI glow ring of a focused prompt input and the shimmer of streaming text. Reserve it to identify AI; never decorate non-AI UI with it or put body text on it. Code: linear-gradient(135deg, brand-500 → brand-500/purple-500 35/65 → pink-400) at 135deg, following the active brand.",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Color",
+          "variable": "Gradient/AI",
+          "codeSyntax": {
+            "WEB": "var(--gradient-ai)"
+          }
+        }
+      }
     }
   },
   "background": {
@@ -1625,6 +1666,20 @@
         }
       },
       "$description": "Hover on bg-quaternary fills. Only for the hover state."
+    },
+    "bg-ai-subtle": {
+      "$type": "color",
+      "$value": "#f2f5ff",
+      "$description": "AI surface tint: AI messages, reasoning, AI label chips and approval cards. Brand blended with purple so AI reads as related to, but distinct from, the brand. Pair with text-ai or text-primary. Value shown for the Atomus brand; code follows the active brand: color-mix(in srgb, var(--color-brand-50) 55%, var(--color-purple-50))",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Color",
+          "variable": "Background/bg-ai-subtle",
+          "codeSyntax": {
+            "WEB": "var(--color-bg-ai-subtle)"
+          }
+        }
+      }
     }
   },
   "border": {
@@ -1739,6 +1794,20 @@
         }
       },
       "$description": "Inputs, alerts and cards in a success state."
+    },
+    "border-ai": {
+      "$type": "color",
+      "$value": "#b4b9ff",
+      "$description": "Hairline border of AI surfaces (bg-ai-subtle) and AI label chips. Decorative: never the only signal that content is AI-generated — pair with the AI label. Value shown for the Atomus brand; code follows the active brand: color-mix(in srgb, var(--color-brand-300) 55%, var(--color-purple-300))",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Color",
+          "variable": "Border/border-ai",
+          "codeSyntax": {
+            "WEB": "var(--color-border-ai)"
+          }
+        }
+      }
     }
   },
   "foreground": {
@@ -1895,6 +1964,34 @@
         }
       },
       "$description": "Icons and dots on bg-warning-solid. Always Gray 900."
+    },
+    "fg-contrast": {
+      "$type": "color",
+      "$value": "{colors.main.black}",
+      "$description": "Maximum-contrast foreground: pure black in Light, pure white in Dark. For marks that must read on any surface (focus outlines on imagery, AI sparkle on gradients, overlays). Prefer fg-primary for ordinary icons.",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Color",
+          "variable": "Foreground/fg-contrast",
+          "codeSyntax": {
+            "WEB": "var(--color-fg-contrast)"
+          }
+        }
+      }
+    },
+    "fg-contrast-inverse": {
+      "$type": "color",
+      "$value": "{colors.main.white}",
+      "$description": "Opposite of fg-contrast: pure white in Light, pure black in Dark. Use on fg-contrast / bg-inverse fills.",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Color",
+          "variable": "Foreground/fg-contrast-inverse",
+          "codeSyntax": {
+            "WEB": "var(--color-fg-contrast-inverse)"
+          }
+        }
+      }
     }
   }
 }

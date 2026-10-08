@@ -1,0 +1,40 @@
+---
+title: "Context meter"
+description: "How much of the model’s context window a conversation uses, and what it cost."
+---
+
+{/* Source for /components/ai-context-meter/ — scripts/sync.mjs writes the page to src/content/docs/components/. Imports are relative to that folder. */}
+
+import Demo from '../../../components/Demo.astro';
+import { ContextMeterDemo } from '../../../components/ai-demos';
+
+Shows how full the model's context window is and what the conversation cost. The compact ring sits in the Prompt input; click it for the breakdown. It turns warning at 80% and error at 95%, with a sentence that says what happens next.
+
+<Demo caption="variant=&quot;compact&quot; at 84% (open), 24% and 97% · variant=&quot;bar&quot; with breakdown and cost">
+  <ContextMeterDemo client:visible />
+</Demo>
+
+{/* @figma — sync.mjs inserts the "In Figma" section (from guidelines/components) here */}
+
+## Usage
+
+```tsx
+import { ContextMeter } from '@stanvision/atomus-react';
+
+<ContextMeter
+  used={usage.totalTokens}
+  limit={200000}
+  cost={usage.costUsd}
+  breakdown={[{ label: 'Input', tokens: usage.input }, { label: 'Output', tokens: usage.output }]}
+/>
+```
+
+### Props at a glance
+
+Full types and defaults are in [React API](#react-api) at the end of the page.
+
+- `used`, `limit` (tokens), `cost` and `currency`, `breakdown`.
+- `variant` — `compact` (ring + %, details on click) or `bar`.
+- `warnAt` (80) sets the warning threshold; error is fixed at 95%. `locale` formats numbers.
+
+{/* @guidance — sync.mjs appends the design Do/Don’t from the Figma guidelines here */}

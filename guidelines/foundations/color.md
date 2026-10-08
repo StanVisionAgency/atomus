@@ -83,6 +83,22 @@ Icons and graphics. Same roles as Text.
 | `--color-fg-success` (Foreground/fg-success) | #16a34a | #49de80 |
 | `--color-fg-inverse` (Foreground/fg-inverse) | #ffffff | #18181b |
 | `--color-fg-on-warning` (Foreground/fg-on-warning) | #18181b | #18181b |
+| `--color-fg-contrast` (Foreground/fg-contrast) | #000000 | #ffffff |
+| `--color-fg-contrast-inverse` (Foreground/fg-contrast-inverse) | #ffffff | #000000 |
+
+`fg-contrast` is the maximum-contrast foreground (pure black in Light, pure white in Dark) for marks that must read on any surface, such as the Stop button of the Prompt input; put `fg-contrast-inverse` on top of it.
+
+## AI
+
+The Agent kit's layer for AI content (see `components/ai-label.md`). Each value is the brand ramp blended with purple, so AI reads as related to the brand but distinct from it, and follows the Brand mode. Hex values below are for the Atomus brand. `bg-ai-subtle` tints AI surfaces (AI label, assistant avatar, reasoning, active citations), `border-ai` is their hairline, `text-ai` their label and accent text. `--gradient-ai` (brand-500 → purple → pink-400 at 135°; 400/300 stops in Dark) fills the AI mark, the streaming caret and the focused Prompt input border.
+
+| Token | Light | Dark |
+|---|---|---|
+| `--color-bg-ai-subtle` (Background/bg-ai-subtle) | #f2f5ff | #938efe1f |
+| `--color-border-ai` (Border/border-ai) | #b4b9ff | #938efe66 |
+| `--color-text-ai` (Text/text-ai) | #4c2cd2 | #b4b9ff |
+
+Use the AI layer only to identify AI content. Never decorate other UI with it, and never let it be the only signal: pair it with the AI label.
 
 ## Primitives
 Raw ramps (`--color-gray-25 … 950`, `--color-red-*`, … `--color-alpha-black-5 … 90`) exist only to be aliased. The brand ramp is `--color-brand-25 … 950` and changes with the Brand mode.

@@ -1,0 +1,53 @@
+---
+title: "Approval"
+description: "Human-in-the-loop confirmation before an agent acts: approve, deny, or edit then approve."
+---
+
+{/* Source for /components/ai-approval/ — scripts/sync.mjs writes the page to src/content/docs/components/. Imports are relative to that folder. */}
+
+import Demo from '../../../components/Demo.astro';
+import { ApprovalDemo, ApprovalRiskDemo } from '../../../components/ai-demos';
+
+Asks before the agent acts. It names the action as a question, shows the risk with a word and an icon, previews what will be sent, and lets the person edit it first. The outcome stays in the thread.
+
+<Demo caption="risk=&quot;medium&quot; · editableText · alwaysAllowLabel — try Edit, then approve">
+  <ApprovalDemo client:visible />
+</Demo>
+
+## Risk levels
+
+<Demo caption="risk=&quot;low&quot; · risk=&quot;high&quot; with a named action">
+  <ApprovalRiskDemo client:visible />
+</Demo>
+
+{/* @figma — sync.mjs inserts the "In Figma" section (from guidelines/components) here */}
+
+## Usage
+
+```tsx
+import { Approval } from '@stanvision/atomus-react';
+
+<Approval
+  title="Send this summary to #design-system?"
+  risk="medium"
+  toolName="slack.post_message"
+  editableText={draft}
+  alwaysAllowLabel="Always allow posting to #design-system"
+  status={decision}                               // 'pending' | 'approved' | 'denied'
+  onApprove={({ alwaysAllow, editedText }) => run(editedText ?? draft, alwaysAllow)}
+  onDeny={cancel}
+>
+  The assistant will post one message as you.
+</Approval>
+```
+
+### Props at a glance
+
+Full types and defaults are in [React API](#react-api) at the end of the page.
+
+- `title` (the question), `children` (summary), `risk` (`low` · `medium` · `high`), `toolName`.
+- `details` for a read-only preview, or `editableText` for edit-then-approve; `onApprove` receives `{ alwaysAllow, editedText }`.
+- `alwaysAllowLabel` shows the checkbox — never for high risk.
+- `status` keeps the outcome visible after the decision; `approveLabel` names the action ("Delete variables").
+
+{/* @guidance — sync.mjs appends the design Do/Don’t from the Figma guidelines here */}

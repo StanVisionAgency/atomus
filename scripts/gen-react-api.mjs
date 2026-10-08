@@ -51,6 +51,19 @@ const FILES = {
   'tooltip-popover': { closest: 'Use the `title` attribute or a headless tooltip (Radix, Floating UI) styled with `--color-bg-inverse` and `--color-text-inverse`.' },
   'tree-editor-color-picker': { closest: 'Tree view, Text editor and Color picker are Figma-only.' },
   'shared-assets': { closest: 'These are design-only mockups and annotations; they have no code counterpart.' },
+  // Agent kit — components for AI products (react/src/components/ai).
+  'ai-prompt-input': { exports: ['PromptInput'] },
+  'ai-message': { exports: ['Message'], closest: 'Conversation is a pattern, not a component: compose a `role="log"` thread of `Message`s, a welcome state with `Suggestions variant="cards"` and a docked `PromptInput`.' },
+  'ai-streaming-text': { exports: ['StreamingText', 'Shimmer'] },
+  'ai-reasoning': { exports: ['Reasoning'] },
+  'ai-tool-call': { exports: ['ToolCall'] },
+  'ai-approval': { exports: ['Approval'] },
+  'ai-sources': { exports: ['Sources', 'InlineCitation'] },
+  'ai-suggestions': { exports: ['Suggestions'] },
+  'ai-model-selector': { exports: ['ModelSelector'] },
+  'ai-feedback': { exports: ['Feedback'] },
+  'ai-label': { exports: ['AILabel'] },
+  'ai-context-meter': { exports: ['ContextMeter'] },
 };
 
 // ---------------------------------------------------------------- parsing
@@ -59,7 +72,8 @@ const FILES = {
 function parseIndex() {
   const index = readFileSync(join(root, 'react/src/index.ts'), 'utf8');
   const out = {};
-  for (const m of index.matchAll(/export\s*\{([^}]+)\}\s*from\s*'\.\/components\/(\w+)'/g)) {
+  // Components live in react/src/components/<Name>.tsx or one folder deeper (components/ai/<Name>.tsx).
+  for (const m of index.matchAll(/export\s*\{([^}]+)\}\s*from\s*'\.\/components\/((?:\w+\/)?\w+)'/g)) {
     for (const raw of m[1].split(',')) {
       const name = raw.trim();
       if (!name) continue;

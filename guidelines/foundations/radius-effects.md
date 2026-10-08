@@ -29,3 +29,7 @@ Focused controls get a 4px ring in `bg-brand-subtle` (`--shadow-focus-ring`) and
 
 ## Blur
 Effect styles `Blur/Backdrop sm 8 · md 16 · lg 24 · xl 40` for glass overlays.
+
+## Motion
+
+Streaming motion for the Agent kit: `--motion-stream-caret-blink` (1s) is the blink period of the Streaming text caret, and `--motion-stream-shimmer-duration` (1.8s) is one sweep of the Shimmer on status text. Under `prefers-reduced-motion: reduce` both become `0s` and the components switch the animation off: the caret stays solid and the shimmer shows static text.

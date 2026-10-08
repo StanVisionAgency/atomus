@@ -1,0 +1,42 @@
+---
+title: "Sources & citations"
+description: "Numbered inline citations with preview cards, and the list of sources behind an answer."
+---
+
+{/* Source for /components/ai-sources/ — scripts/sync.mjs writes the page to src/content/docs/components/. Imports are relative to that folder. */}
+
+import Demo from '../../../components/Demo.astro';
+import { SourcesDemo, SourcesListDemo } from '../../../components/ai-demos';
+
+Inline citations are numbered chips after a claim; hover or focus shows a preview card. Sources lists the same numbers under the answer, with the passage each source contributed.
+
+<Demo caption="InlineCitation in text · Sources (collapsible, open)">
+  <SourcesDemo client:visible />
+</Demo>
+
+## List style
+
+<Demo caption="variant=&quot;list&quot; — for side panels">
+  <SourcesListDemo client:visible />
+</Demo>
+
+{/* @figma — sync.mjs inserts the "In Figma" section (from guidelines/components) here */}
+
+## Usage
+
+```tsx
+import { Sources, InlineCitation } from '@stanvision/atomus-react';
+
+<p>Body text needs a contrast of at least 4.5:1 <InlineCitation index={1} source={sources[0]} />.</p>
+<Sources sources={sources} />
+```
+
+### Props at a glance
+
+Full types and defaults are in [React API](#react-api) at the end of the page.
+
+- `SourceItem` — `id`, `title`, `url`, `domain` (derived from `url`), `snippet`, `icon`.
+- `Sources` — `variant` `collapsible` (default) or `list`; `label` overrides "N sources".
+- `InlineCitation` — `index` matches the position in `sources`.
+
+{/* @guidance — sync.mjs appends the design Do/Don’t from the Figma guidelines here */}

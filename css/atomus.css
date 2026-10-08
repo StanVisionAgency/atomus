@@ -645,6 +645,12 @@
   --color-alert-gray-border: var(--color-gray-300);
   --color-alert-gray-title: var(--color-gray-900);
   --color-alert-gray-icon: var(--color-gray-600);
+  --color-fg-contrast: var(--color-black);
+  --color-fg-contrast-inverse: var(--color-white);
+  --color-bg-ai-subtle: color-mix(in srgb, var(--color-brand-50) 55%, var(--color-purple-50));
+  --color-border-ai: color-mix(in srgb, var(--color-brand-300) 55%, var(--color-purple-300));
+  --color-text-ai: color-mix(in srgb, var(--color-brand-700) 55%, var(--color-purple-700));
+  --gradient-ai: linear-gradient(135deg, var(--color-brand-500) 0%, color-mix(in srgb, var(--color-brand-500) 35%, var(--color-purple-500)) 55%, var(--color-pink-400) 100%);
 }
 
 [data-theme="dark"], .dark, [data-theme="dark"] [data-brand], .dark [data-brand] {
@@ -792,6 +798,12 @@
   --color-alert-gray-border: color-mix(in srgb, var(--color-gray-400) 36%, transparent);
   --color-alert-gray-title: var(--color-gray-50);
   --color-alert-gray-icon: var(--color-gray-400);
+  --color-fg-contrast: var(--color-white);
+  --color-fg-contrast-inverse: var(--color-black);
+  --color-bg-ai-subtle: color-mix(in srgb, color-mix(in srgb, var(--color-brand-400) 55%, var(--color-purple-400)) 12%, transparent);
+  --color-border-ai: color-mix(in srgb, color-mix(in srgb, var(--color-brand-400) 55%, var(--color-purple-400)) 40%, transparent);
+  --color-text-ai: color-mix(in srgb, var(--color-brand-300) 55%, var(--color-purple-300));
+  --gradient-ai: linear-gradient(135deg, var(--color-brand-400) 0%, color-mix(in srgb, var(--color-brand-400) 35%, var(--color-purple-400)) 55%, var(--color-pink-300) 100%);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -930,6 +942,25 @@
     --color-alert-gray-border: color-mix(in srgb, var(--color-gray-400) 36%, transparent);
     --color-alert-gray-title: var(--color-gray-50);
     --color-alert-gray-icon: var(--color-gray-400);
+    --color-fg-contrast: var(--color-white);
+    --color-fg-contrast-inverse: var(--color-black);
+    --color-bg-ai-subtle: color-mix(in srgb, color-mix(in srgb, var(--color-brand-400) 55%, var(--color-purple-400)) 12%, transparent);
+    --color-border-ai: color-mix(in srgb, color-mix(in srgb, var(--color-brand-400) 55%, var(--color-purple-400)) 40%, transparent);
+    --color-text-ai: color-mix(in srgb, var(--color-brand-300) 55%, var(--color-purple-300));
+    --gradient-ai: linear-gradient(135deg, var(--color-brand-400) 0%, color-mix(in srgb, var(--color-brand-400) 35%, var(--color-purple-400)) 55%, var(--color-pink-300) 100%);
+  }
+}
+
+/* Motion for AI streaming (Agent kit). Reduced motion stops the shimmer and the caret blink. */
+:root {
+  --motion-stream-shimmer-duration: 1.8s;
+  --motion-stream-caret-blink: 1s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-stream-shimmer-duration: 0s;
+    --motion-stream-caret-blink: 0s;
   }
 }
 
