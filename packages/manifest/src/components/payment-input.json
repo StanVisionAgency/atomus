@@ -1,0 +1,50 @@
+{
+  "name": "Payment input",
+  "kind": "component",
+  "status": "figma-only",
+  "since": "4.0.0",
+  "category": "Forms and inputs",
+  "import": null,
+  "source": "guidelines/components/input-select.md",
+  "purpose": "Formatted text entry.",
+  "description": "Card number, expiry and CVC in one field with the card brand mark.",
+  "aliases": [],
+  "alternative": "Textarea, Number input, Slider, Tags input, Phone input, Payment input, Verification code input and Multi-select are Figma-only: use a native element styled with Atomus tokens, or `Input`/`Select` where they fit.",
+  "props": {
+    "Show label": {"type":"boolean (on)","default":true,"required":false,"figma":"Show label","notes":null},
+    "Show hint": {"type":"boolean (on)","default":true,"required":false,"figma":"Show hint","notes":null},
+    "Size": {"type":"variant","values":["sm","md","lg"],"default":null,"required":false,"figma":"Size","notes":null},
+    "State": {
+      "type": "variant",
+      "values": ["Default","Focused","Error"],
+      "default": null,
+      "required": false,
+      "figma": "State",
+      "notes": null
+    }
+  },
+  "rules": {"do":[],"dont":["Don't rely on the red border alone — the error text is required."],"forbidden":[]},
+  "examples": [],
+  "figma": {
+    "componentSet": ["Payment input"],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": 9,
+    "docs": "https://docs.atomus.io/components/input/"
+  },
+  "docs": "https://docs.atomus.io/components/input/",
+  "related": [
+    "Input",
+    "Select",
+    "Textarea",
+    "Slider",
+    "Verification code input",
+    "Number input",
+    "Tags input",
+    "Phone input",
+    "Multi-select"
+  ],
+  "a11y": {"element":null,"requiresLabel":false,"notes":[]}
+}

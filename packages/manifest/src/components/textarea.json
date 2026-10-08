@@ -1,0 +1,54 @@
+{
+  "name": "Textarea",
+  "kind": "component",
+  "status": "figma-only",
+  "since": "4.0.0",
+  "category": "Forms and inputs",
+  "import": null,
+  "source": "guidelines/components/input-select.md",
+  "purpose": "Multi-line text.",
+  "description": "Multi-line text input.",
+  "aliases": [],
+  "alternative": "Textarea, Number input, Slider, Tags input, Phone input, Payment input, Verification code input and Multi-select are Figma-only: use a native element styled with Atomus tokens, or `Input`/`Select` where they fit.",
+  "props": {
+    "Label": {"type":"text","default":null,"required":false,"figma":"Label","notes":null},
+    "Value": {"type":"text","default":null,"required":false,"figma":"Value","notes":null},
+    "Show hint": {"type":"boolean (on)","default":true,"required":false,"figma":"Show hint","notes":null},
+    "State": {
+      "type": "variant",
+      "values": ["Default","Focused","Filled","Disabled","Error"],
+      "default": null,
+      "required": false,
+      "figma": "State",
+      "notes": null
+    }
+  },
+  "rules": {
+    "do": ["Use for multi-line text; show a character count when there is a limit."],
+    "dont": ["Don't rely on the red border alone — the error text is required."],
+    "forbidden": ["Never use Textarea for single-line values — use Input."]
+  },
+  "examples": [],
+  "figma": {
+    "componentSet": ["Textarea"],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": 5,
+    "docs": "https://docs.atomus.io/components/input/"
+  },
+  "docs": "https://docs.atomus.io/components/input/",
+  "related": [
+    "Input",
+    "Select",
+    "Slider",
+    "Verification code input",
+    "Number input",
+    "Tags input",
+    "Phone input",
+    "Payment input",
+    "Multi-select"
+  ],
+  "a11y": {"element":null,"requiresLabel":false,"notes":[]}
+}
