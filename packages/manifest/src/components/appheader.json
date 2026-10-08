@@ -1,0 +1,58 @@
+{
+  "name": "AppHeader",
+  "kind": "component",
+  "status": "stable",
+  "since": "4.0.0",
+  "category": "Navigation",
+  "import": "import { AppHeader } from '@stanvision/atomus-react';",
+  "source": "react/src/components/Navigation.tsx",
+  "purpose": "Top bar of an app: brand, links, search, notifications, account.",
+  "description": "Top navigation bar for apps.",
+  "aliases": ["navbar","top nav (app)"],
+  "alternative": null,
+  "native": {"elements":["element"],"omit":[],"ref":false},
+  "props": {
+    "brand": {"type":"ReactNode","default":null,"required":false,"figma":null,"notes":"Logo or product name"},
+    "nav": {
+      "type": "ReactNode",
+      "default": null,
+      "required": false,
+      "figma": null,
+      "notes": "Primary links (NavItem or anchors)"
+    },
+    "actions": {
+      "type": "ReactNode",
+      "default": null,
+      "required": false,
+      "figma": null,
+      "notes": "Right side: search, notifications, avatar"
+    }
+  },
+  "rules": {
+    "do": ["Use for apps without a sidebar, or for global search, notifications and the account menu."],
+    "dont": ["Don't mix a sidebar and a header nav with the same links."],
+    "forbidden": ["Never put page-level actions in the app header — use Page header."]
+  },
+  "examples": [],
+  "figma": {
+    "componentSet": ["App header"],
+    "fileKey": "bC42e82J3PYg2LMkryodIA",
+    "nodeIds": ["25431:196"],
+    "nodes": [
+      {
+        "componentSet": "App header",
+        "nodeId": "25431:196",
+        "codeConnectId": "AppHeader",
+        "staticProps": "brand=\"Atomus\" nav={<NavItem label=\"Dashboard\" href=\"/\" active />}",
+        "mappings": []
+      }
+    ],
+    "codeConnect": true,
+    "variants": 1,
+    "properties": [],
+    "docs": "https://docs.atomus.io/components/navigation/"
+  },
+  "docs": "https://docs.atomus.io/components/navigation/",
+  "related": ["NavItem","SidebarNavigation"],
+  "a11y": {"element":"header","requiresLabel":false,"notes":[]}
+}

@@ -1,0 +1,86 @@
+{
+  "name": "SidebarNavigation",
+  "kind": "component",
+  "status": "stable",
+  "since": "4.0.0",
+  "category": "Navigation",
+  "import": "import { SidebarNavigation } from '@stanvision/atomus-react';",
+  "source": "react/src/components/Navigation.tsx",
+  "purpose": "The main app navigation (280px, or a 72px rail).",
+  "description": "App sidebar 280px or 72px rail.",
+  "aliases": ["side nav","rail"],
+  "alternative": null,
+  "native": {"elements":["element"],"omit":[],"ref":false},
+  "props": {
+    "header": {
+      "type": "ReactNode",
+      "default": null,
+      "required": false,
+      "figma": null,
+      "notes": "Logo or workspace switcher at the top"
+    },
+    "children": {"type":"ReactNode","default":null,"required":true,"figma":null,"notes":"NavItems"},
+    "footer": {
+      "type": "ReactNode",
+      "default": null,
+      "required": false,
+      "figma": null,
+      "notes": "Pinned at the bottom: secondary links, user card"
+    },
+    "collapsed": {
+      "type": "boolean",
+      "default": null,
+      "required": false,
+      "figma": "Collapsed",
+      "notes": "Figma: Collapsed — 280px or a 72px rail"
+    },
+    "aria-label": {
+      "type": "string",
+      "default": null,
+      "required": false,
+      "figma": null,
+      "notes": "Defines a string value that labels the current element."
+    }
+  },
+  "rules": {
+    "do": ["Keep 5–8 top-level items.","Highlight the current page.","Use Collapsed on small screens."],
+    "dont": ["Don't mix a sidebar and a header nav with the same links."],
+    "forbidden": [
+      "Never nest navigation more than two levels.",
+      "Never mix icon styles.",
+      "Never put primary actions in the navigation."
+    ]
+  },
+  "examples": [
+    {
+      "title": "Usage",
+      "code": "import { AppHeader, SidebarNavigation, NavItem } from '@stanvision/atomus-react';\n\n<SidebarNavigation header={<Logo />} footer={<NavItem label=\"Settings\" href=\"/settings\" />}>\n  <NavItem label=\"Home\" href=\"/\" icon={<HomeIcon />} active />\n  <NavItem label=\"Projects\" href=\"/projects\" badge={12} />\n</SidebarNavigation>",
+      "language": "tsx",
+      "source": "sites/docs/src/component-pages/navigation.mdx"
+    }
+  ],
+  "figma": {
+    "componentSet": ["Sidebar navigation"],
+    "fileKey": "bC42e82J3PYg2LMkryodIA",
+    "nodeIds": ["25431:195"],
+    "nodes": [
+      {
+        "componentSet": "Sidebar navigation",
+        "nodeId": "25431:195",
+        "codeConnectId": "SidebarNavigation",
+        "mappings": [{"figma":"Collapsed","prop":"collapsed","kind":"enum","values":{"True":true,"False":false}}]
+      }
+    ],
+    "codeConnect": true,
+    "variants": 2,
+    "properties": [{"componentSet":"Sidebar navigation","name":"Collapsed","type":"variant","options":["False","True"]}],
+    "docs": "https://docs.atomus.io/components/navigation/"
+  },
+  "docs": "https://docs.atomus.io/components/navigation/",
+  "related": ["NavItem","AppHeader"],
+  "a11y": {
+    "element": "navigation",
+    "requiresLabel": true,
+    "notes": ["`aria-label`: Defines a string value that labels the current element."]
+  }
+}
