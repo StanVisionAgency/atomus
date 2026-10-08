@@ -1,0 +1,8 @@
+id: web-pricing
+category: website
+prompt: >-
+  A pricing page with three plans (Starter, Pro, Enterprise), a monthly/yearly switch, a "Most popular" badge on Pro, and an FAQ below.
+expect:
+  components: ["Button", "Badge", "Tabs"]
+  text: ["Most popular", "Starter", "Enterprise"]
+  patterns: ["<h1"]
