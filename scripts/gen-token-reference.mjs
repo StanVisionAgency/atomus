@@ -91,14 +91,16 @@ const INTENTS = [
   ['Error / warning / success background', '--color-bg-error-subtle · --color-bg-warning-subtle · --color-bg-success-subtle'],
 ];
 
+/** Dimension objects ({ value, unit }) print as "4px". */
+const fmt = (v) => (v && typeof v === 'object' && 'value' in v ? `${v.value}${v.unit ?? ''}` : String(v));
 const semantic = light.filter((t) => t.cssVar).map((t) => {
   const d = darkByVar.get(t.cssVar);
   return {
     group: t.path.split('.')[0],
     cssVar: t.cssVar,
     figma: t.figma,
-    light: String(resolveLight(t.value)),
-    dark: d ? String(resolveDark(d.value)) : null,
+    light: fmt(resolveLight(t.value)),
+    dark: d ? fmt(resolveDark(d.value)) : null,
     tailwind: tw.get(t.cssVar) ?? [],
   };
 });
@@ -121,7 +123,8 @@ function modeTable(files, modes) {
 }
 const spacing = modeTable(['spacing-layout.desktop.tokens.json', 'spacing-layout.tablet.tokens.json', 'spacing-layout.mobile.tokens.json'], ['Desktop', 'Tablet', 'Mobile']);
 const radius = modeTable(['radius.default.tokens.json', 'radius.sharp.tokens.json', 'radius.round.tokens.json'], ['Default', 'Sharp', 'Round']);
-const effects = flatten(load('effects.light.tokens.json')).filter((t) => t.cssVar).map((t) => t.cssVar);
+// Shadows carry no code syntax in the export; their CSS names are --shadow-<name>.
+const effects = flatten(load('effects.light.tokens.json')).map((t) => t.cssVar ?? `--${t.path.replace(/\./g, '-')}`);
 const textStyles = existsSync(join(root, 'css/atomus.css')) ? [...new Set([...readFileSync(join(root, 'css/atomus.css'), 'utf8').matchAll(/^\.(text-[\w-]+)\s*\{/gm)].map((m) => m[1]))] : [];
 
 const px = (v) => (/^\d+(\.\d+)?$/.test(v) ? `${v}` : v);
@@ -195,8 +198,11 @@ const json = {
   other: [...spacing.map((t) => t.cssVar), ...radius.map((t) => t.cssVar), ...effects],
 };
 
+// One token per line: readable diffs, small file.
+const compact = (o) => `{\n${Object.entries(o).map(([k, v]) => `  ${JSON.stringify(k)}: ${v && typeof v === 'object' && !Array.isArray(v) ? `{\n${Object.entries(v).map(([n, t]) => `    ${JSON.stringify(n)}: ${JSON.stringify(t)}`).join(',\n')}\n  }` : JSON.stringify(v)}`).join(',\n')}\n}\n`;
+
 const changed = [];
-for (const [file, content] of [['tokens.md', md], ['tokens.json', JSON.stringify(json, null, 2) + '\n']]) {
+for (const [file, content] of [['tokens.md', md], ['tokens.json', compact(json)]]) {
   const path = join(out, file);
   if (existsSync(path) && readFileSync(path, 'utf8') === content) continue;
   changed.push(`skills/atomus/references/${file}`);
