@@ -144,6 +144,15 @@
     "figma": "Text/text-on-warning"
   },
   {
+    "name": "--color-text-ai",
+    "group": "text",
+    "light": "#4c2cd2",
+    "dark": "#b4b9ff",
+    "description": "AI label text and AI accents (\"AI generated\", \"Thought for 12s\"). Meets 4.5:1 on bg-primary and bg-ai-subtle. Not for body copy. Value shown for the Atomus brand; code follows the active brand: color-mix(in srgb, var(--color-brand-700) 55%, var(--color-purple-700))",
+    "tailwind": [],
+    "figma": "Text/text-ai"
+  },
+  {
     "name": "--color-button-primary-color",
     "group": "components",
     "light": "#4057ff",
@@ -1008,6 +1017,15 @@
     "figma": "Background/bg-quaternary_hover"
   },
   {
+    "name": "--color-bg-ai-subtle",
+    "group": "background",
+    "light": "#f2f5ff",
+    "dark": "#938efe1f",
+    "description": "AI surface tint: AI messages, reasoning, AI label chips and approval cards. Brand blended with purple so AI reads as related to, but distinct from, the brand. Pair with text-ai or text-primary. Value shown for the Atomus brand; code follows the active brand: color-mix(in srgb, var(--color-brand-50) 55%, var(--color-purple-50))",
+    "tailwind": [],
+    "figma": "Background/bg-ai-subtle"
+  },
+  {
     "name": "--color-border-primary",
     "group": "border",
     "light": "#d4d4d8",
@@ -1078,6 +1096,15 @@
     "description": "Inputs, alerts and cards in a success state.",
     "tailwind": ["border-success"],
     "figma": "Border/border-success"
+  },
+  {
+    "name": "--color-border-ai",
+    "group": "border",
+    "light": "#b4b9ff",
+    "dark": "#938efe66",
+    "description": "Hairline border of AI surfaces (bg-ai-subtle) and AI label chips. Decorative: never the only signal that content is AI-generated — pair with the AI label. Value shown for the Atomus brand; code follows the active brand: color-mix(in srgb, var(--color-brand-300) 55%, var(--color-purple-300))",
+    "tailwind": [],
+    "figma": "Border/border-ai"
   },
   {
     "name": "--color-fg-primary",
@@ -1177,5 +1204,23 @@
     "description": "Icons and dots on bg-warning-solid. Always Gray 900.",
     "tailwind": ["fg-on-warning","fill-fg-on-warning"],
     "figma": "Foreground/fg-on-warning"
+  },
+  {
+    "name": "--color-fg-contrast",
+    "group": "foreground",
+    "light": "#000000",
+    "dark": "#ffffff",
+    "description": "Maximum-contrast foreground: pure black in Light, pure white in Dark. For marks that must read on any surface (focus outlines on imagery, AI sparkle on gradients, overlays). Prefer fg-primary for ordinary icons.",
+    "tailwind": ["fg-contrast","fill-fg-contrast"],
+    "figma": "Foreground/fg-contrast"
+  },
+  {
+    "name": "--color-fg-contrast-inverse",
+    "group": "foreground",
+    "light": "#ffffff",
+    "dark": "#000000",
+    "description": "Opposite of fg-contrast: pure white in Light, pure black in Dark. Use on fg-contrast / bg-inverse fills.",
+    "tailwind": ["fg-contrast-inverse","fill-fg-contrast-inverse"],
+    "figma": "Foreground/fg-contrast-inverse"
   }
 ]
