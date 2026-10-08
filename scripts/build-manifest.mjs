@@ -106,7 +106,7 @@ const catalogue = [];
     if (cells.length < 4) continue;
     const [component, purpose, reactCell, guideline] = cells;
     const names = component.replace(/\(([^)]*)\)/g, ', $1').split(',').map((s) => s.trim()).filter(Boolean);
-    const react = [...reactCell.matchAll(/`([A-Z]\w*)/g)].map((m) => m[1]);
+    const react = [...reactCell.matchAll(/`([A-Za-z]\w*)/g)].map((m) => m[1]);
     catalogue.push({ category: category.replace(/ and /g, ' and '), component, names, purpose: stripMd(purpose), react, guideline: guideline.replace(/`/g, '') });
   }
 }
@@ -302,7 +302,9 @@ for (const sym of exportSymbols) {
   const file = decl.getSourceFile();
   const name = sym.name;
   const isHook = /^use[A-Z]/.test(name);
-  const doc = docOf(target) || (file.getFullText().match(/\/\*\*([\s\S]*?)\*\//)?.[1] ?? '').split('\n').map((l) => l.replace(/^\s*\*\s?/, '')).join(' ').replace(/\s+/g, ' ').trim();
+  // No JSDoc on the export: fall back to a module header comment (the first JSDoc, before any export).
+  const header = file.getFullText().match(/^(?:(?!\bexport\b)[\s\S])*?\/\*\*([\s\S]*?)\*\//)?.[1] ?? '';
+  const doc = docOf(target) || header.split('\n').map((l) => l.replace(/^\s*\*\s?/, '')).join(' ').replace(/\s+/g, ' ').trim();
   const entry = { name, kind: isHook ? 'hook' : 'component', file: rel(file.fileName), doc, props: {}, native: { elements: [], omit: [], ref: false } };
   if (!isHook) {
     const { defaults, fn } = defaultsOf(decl, file);
