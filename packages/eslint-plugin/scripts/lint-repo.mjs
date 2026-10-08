@@ -23,7 +23,10 @@ const targets = args.length ? args : ['react/src'];
 const eslint = new ESLint({
   cwd: root,
   overrideConfigFile: true,
+  errorOnUnmatchedPattern: false,
   overrideConfig: [
+    // sites/atomus-io is the static legacy atomus.io site (plain HTML/JS, not built with Atomus components).
+    { ignores: ['sites/atomus-io/**', '**/node_modules/**', '**/dist/**', '**/storybook-static/**', 'sites/docs/public/**'] },
     {
       ...atomus.configs.strict,
       languageOptions: { parser: tsParser, parserOptions: { ecmaFeatures: { jsx: true } } },

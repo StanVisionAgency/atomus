@@ -5,6 +5,7 @@ import {
 
 const STYLE_ATTRS = new Set(['style', 'sx', 'css']);
 const SVG_COLOR_ATTRS = new Set(['fill', 'stroke', 'color', 'stopColor', 'floodColor', 'lightingColor']);
+const STORY_ARGS = new Set(['args', 'initialArgs']);
 const CSS_TAGS = new Set(['css', 'styled', 'keyframes', 'createGlobalStyle', 'injectGlobal', 'global', 'styledComponents']);
 
 /** Where a string sits: 'class' | 'style' | 'color-prop' | 'css-in-js' | 'svg-attr' | null. */
@@ -12,10 +13,14 @@ function contextOf(node) {
   if (isClassContext(node)) return 'class';
   let n = node;
   let colorProp = false;
+  let props = 0; // object properties passed on the way up
   for (let depth = 0; n.parent && depth < 12; depth++) {
     const p = n.parent;
     if (p.type === 'Property' && p.value === n && p.parent.type === 'ObjectExpression') {
       const key = p.key.type === 'Identifier' ? p.key.name : p.key.value;
+      // Storybook `args: { color: 'gray' }` are component props, like <Alert color="gray">: prop enums, checked by valid-props.
+      if (STORY_ARGS.has(key) && n.type === 'ObjectExpression' && props === 1) return null;
+      props++;
       if (typeof key === 'string' && COLOR_PROPS.has(key)) colorProp = true;
     }
     if (p.type === 'TaggedTemplateExpression' && CSS_TAGS.has(calleeName(p.tag))) return 'css-in-js';
