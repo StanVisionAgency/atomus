@@ -1,0 +1,7 @@
+id: ai-chat-cited-answer
+category: ai-chat
+prompt: >-
+  An assistant answer with inline citations [1] [2], a sources list, feedback thumbs and an AI label, plus follow-up suggestions.
+expect:
+  components: ["Message", "Sources", "Feedback", "Suggestions"]
+  patterns: ["InlineCitation"]

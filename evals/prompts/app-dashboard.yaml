@@ -1,0 +1,9 @@
+id: app-dashboard
+category: app-screen
+prompt: >-
+  A SaaS analytics dashboard: sidebar navigation, a header with search and the user avatar, four KPI cards, a recent activity table and an "Export" action.
+expect:
+  components: ["SidebarNavigation", "MetricCard", "Table", "Button"]
+  max_primary: 1
+  forbid_elements: ["table", "button", "input"]
+  text: ["Export"]

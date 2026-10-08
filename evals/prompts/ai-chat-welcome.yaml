@@ -1,0 +1,9 @@
+id: ai-chat-welcome
+category: ai-chat
+prompt: >-
+  The empty state of an AI chat: a welcome headline, four prompt starters as cards and the prompt input with a model selector.
+expect:
+  components: ["Suggestions", "PromptInput", "ModelSelector"]
+  props:
+    - { component: "Suggestions", prop: "variant", value: "cards" }
+  forbid_elements: ["textarea"]

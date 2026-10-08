@@ -1,0 +1,10 @@
+id: button-icon-only
+category: component
+prompt: >-
+  A toolbar with three icon-only buttons: edit, copy and delete. Each must be usable with a screen reader.
+expect:
+  components: ["Button", "Icon"]
+  props:
+    - { component: "Button", prop: "iconOnly" }
+  forbid_elements: ["button"]
+  patterns: ["aria-label"]

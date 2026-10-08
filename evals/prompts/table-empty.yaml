@@ -1,0 +1,10 @@
+id: table-empty
+category: component
+prompt: >-
+  An orders table that has no rows yet and shows an empty state with a "Create order" action.
+expect:
+  components: ["Table", "EmptyState", "Button"]
+  props:
+    - { component: "Table", prop: "empty" }
+  forbid_elements: ["table"]
+  text: ["Create order"]

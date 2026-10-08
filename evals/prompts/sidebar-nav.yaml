@@ -1,0 +1,10 @@
+id: sidebar-nav
+category: component
+prompt: >-
+  A product sidebar with Dashboard (active), Projects, Team, Reports and Settings items and the user at the bottom.
+expect:
+  components: ["SidebarNavigation", "NavItem"]
+  props:
+    - { component: "NavItem", prop: "active" }
+  forbid_elements: ["nav", "ul"]
+  text: ["Dashboard", "Settings"]

@@ -1,0 +1,9 @@
+id: alert-info-dismiss
+category: component
+prompt: >-
+  A dismissible info alert announcing scheduled maintenance on Sunday.
+expect:
+  components: ["Alert"]
+  props:
+    - { component: "Alert", prop: "onClose" }
+  text: ["maintenance"]

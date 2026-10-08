@@ -1,0 +1,25 @@
+{
+  "name": "atomus-evals",
+  "private": true,
+  "type": "module",
+  "description": "Agent compatibility evals for Atomus: prompts with expectations, deterministic scorers and a scorecard.",
+  "license": "MIT",
+  "scripts": {
+    "setup": "node scripts/setup.mjs",
+    "score": "node scripts/score.mjs",
+    "generate": "node scripts/generate.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check:prompts": "node scripts/check-prompts.mjs"
+  },
+  "devDependencies": {
+    "axe-core": "4.10.3",
+    "esbuild": "0.25.12",
+    "playwright": "1.56.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "yaml": "2.8.1"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

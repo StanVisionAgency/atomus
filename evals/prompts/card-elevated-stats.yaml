@@ -1,0 +1,9 @@
+id: card-elevated-stats
+category: component
+prompt: >-
+  An elevated card titled "Storage" with a progress bar at 72% used.
+expect:
+  components: ["Card", "ProgressBar"]
+  props:
+    - { component: "Card", prop: "variant", value: "elevated" }
+  text: ["Storage"]

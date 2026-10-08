@@ -1,0 +1,9 @@
+id: alert-payment-failed
+category: component
+prompt: >-
+  A page-level alert that the last payment failed, with an "Update card" action. It is blocking.
+expect:
+  components: ["Alert"]
+  props:
+    - { component: "Alert", prop: "color", value: "error" }
+  text: ["Update card"]

@@ -1,0 +1,10 @@
+id: modal-trigger
+category: component
+prompt: >-
+  A "Release notes" button that opens a medium dialog with the latest release notes and a Close action.
+expect:
+  components: ["Modal", "Button"]
+  props:
+    - { component: "Modal", prop: "size", value: "md" }
+  forbid_elements: ["dialog", "button"]
+  text: ["Release notes"]

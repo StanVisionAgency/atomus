@@ -1,0 +1,9 @@
+id: badge-tags-filter
+category: component
+prompt: >-
+  A filter bar with removable tags "Design", "Engineering" and "Q3".
+expect:
+  components: ["Tag"]
+  props:
+    - { component: "Tag", prop: "onRemove" }
+  text: ["Design", "Q3"]

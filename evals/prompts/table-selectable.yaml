@@ -1,0 +1,11 @@
+id: table-selectable
+category: component
+prompt: >-
+  An invoices table with row selection, columns number, customer, amount and due date, and a caption.
+expect:
+  components: ["Table"]
+  props:
+    - { component: "Table", prop: "selectable" }
+    - { component: "Table", prop: "caption" }
+  forbid_elements: ["table"]
+  text: ["Customer", "Amount"]

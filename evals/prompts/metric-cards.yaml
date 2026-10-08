@@ -1,0 +1,9 @@
+id: metric-cards
+category: component
+prompt: >-
+  Four KPI cards: revenue, active users, churn and NPS, with change versus last month.
+expect:
+  components: ["MetricCard"]
+  props:
+    - { component: "MetricCard", prop: "change" }
+  text: ["Revenue", "Churn"]

@@ -1,0 +1,11 @@
+id: input-signup-fields
+category: component
+prompt: >-
+  Sign-up fields: full name, work email and password, each with a visible label; the password field has the hint "At least 12 characters".
+expect:
+  components: ["Input"]
+  props:
+    - { component: "Input", prop: "label" }
+    - { component: "Input", prop: "hint" }
+  forbid_elements: ["input", "label"]
+  text: ["At least 12 characters"]

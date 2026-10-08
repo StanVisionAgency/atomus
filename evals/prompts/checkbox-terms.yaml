@@ -1,0 +1,10 @@
+id: checkbox-terms
+category: component
+prompt: >-
+  A checkbox to accept the terms of service, with a short description underneath.
+expect:
+  components: ["Checkbox"]
+  props:
+    - { component: "Checkbox", prop: "description" }
+  forbid_elements: ["input"]
+  text: ["terms"]

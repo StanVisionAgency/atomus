@@ -1,0 +1,11 @@
+id: select-country
+category: component
+prompt: >-
+  A country picker with a label "Country" and five countries, defaulting to Slovenia.
+expect:
+  components: ["Select"]
+  props:
+    - { component: "Select", prop: "label" }
+    - { component: "Select", prop: "options" }
+  forbid_elements: ["select", "option"]
+  text: ["Country", "Slovenia"]

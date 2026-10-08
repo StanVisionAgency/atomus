@@ -1,0 +1,9 @@
+id: web-contact
+category: website
+prompt: >-
+  A contact page with a short intro, a contact form (name, email, company, message, topic select) and office details.
+expect:
+  components: ["Input", "Select", "Button"]
+  max_primary: 1
+  forbid_elements: ["input", "select", "button"]
+  patterns: ["<h1", "<textarea|Input"]

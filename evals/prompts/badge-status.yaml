@@ -1,0 +1,9 @@
+id: badge-status
+category: component
+prompt: >-
+  Status badges for a deployment list: Live, Building, Failed and Queued, each in a fitting colour with a dot.
+expect:
+  components: ["Badge"]
+  props:
+    - { component: "Badge", prop: "dot" }
+  text: ["Live", "Failed"]
