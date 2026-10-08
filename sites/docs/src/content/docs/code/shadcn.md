@@ -20,3 +20,11 @@ Replace the `:root` / `.dark` blocks in your `globals.css` with [`shadcn/globals
 | `--radius` | `radius-lg` |
 
 Brand, theme and radius modes keep working: shadcn components follow `data-brand`, `data-theme` and `data-radius`.
+
+## Install with the shadcn CLI
+
+The same mapping ships as the `atomus-theme` item of the [Atomus shadcn registry](/ai/registry/). It writes the tokens and the variables above into your CSS file:
+
+```bash
+npx shadcn@latest add https://docs.atomus.io/r/atomus-theme.json
+```

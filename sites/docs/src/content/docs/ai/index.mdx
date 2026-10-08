@@ -1,6 +1,6 @@
 ---
 title: Atomus is built for humans and agents
-description: What Atomus gives AI agents today (guidelines, skill, AGENTS.md rules, llms.txt, Figma MCP rules) and what is coming next.
+description: What Atomus gives AI agents today (guidelines, skill, MCP server, lint rules, shadcn registry, Storybook, Agent kit, llms.txt, Figma MCP rules), how it is measured, and what is coming next.
 sidebar:
   label: Overview
 ---
@@ -32,7 +32,19 @@ The result: Claude Code, Cursor, Copilot, Figma Make and the Figma MCP server pi
   <Card title="Code Connect mappings" icon="seti:react">
     All 21 React components are mapped to their Figma component sets, ready to publish to Dev Mode.
   </Card>
-  <Card title="Agent kit" icon="rocket">
+  <Card title="Atomus MCP server" icon="rocket">
+    Components, props, tokens by intent, page patterns, Figma to code, validation, setup files and brand ramps as MCP tools. [Set it up](/ai/mcp/).
+  </Card>
+  <Card title="ESLint and Stylelint rules" icon="approve-check">
+    The Atomus rules as lint rules for editors, CI and agent loops, with SARIF output. [Lint rules](/ai/lint/).
+  </Card>
+  <Card title="shadcn registry" icon="puzzle">
+    Every component, four app screens, an AI chat block and 30 website sections as source, for the shadcn CLI, the shadcn MCP server and v0. [Registry](/ai/registry/).
+  </Card>
+  <Card title="Storybook" icon="open-book">
+    Stories for every React component with theme, brand and radius switches, a component manifest and an MCP server for agents.
+  </Card>
+  <Card title="Agent kit" icon="star">
     12 components for AI products — prompt input, messages, streaming text, reasoning, tool calls, approvals, citations, suggestions, model selector, feedback, AI label and context meter — on the same tokens and modes. See the [Conversation](/components/ai-conversation/) demo.
   </Card>
 </CardGrid>
@@ -43,15 +55,16 @@ The result: Claude Code, Cursor, Copilot, Figma Make and the Figma MCP server pi
 | --- | --- |
 | **npm packages** `@stanvision/atomus-react` and `@stanvision/atomus-tokens` | Publishing soon. Until then, install from the [repo](https://github.com/StanVisionAgency/atomus). |
 | **Figma Make kit** | After the npm packages publish. See [Figma Make kit](/ai/figma-make/). |
-| **Atomus MCP server** | Planned: search components, props and tokens as tools instead of reading files. |
-| **Component registry** | Planned: install components into a project with the shadcn registry format. |
-| **Evals** | Planned: a test set of UI tasks scored against the rules (one primary per view, tokens only, real props), run on every release of the guidelines and skill. |
+| **Evals results** | The [evals harness](/ai/evals/) scores agent output against the rules (real imports and props, lint, axe, no raw hex). The first scorecard per agent is coming with the first run. |
 
 ## Start here
 
 <CardGrid>
   <LinkCard title="Claude Code, Cursor and Copilot" href="/ai/coding-agents/" description="Install the skill, add the AGENTS.md template, validate the output." />
+  <LinkCard title="Atomus MCP server" href="/ai/mcp/" description="Components, tokens, patterns and validation as tools, local or remote." />
   <LinkCard title="Figma MCP and Code Connect" href="/ai/figma-mcp/" description="Turn Atomus designs into Atomus code, not div soup." />
   <LinkCard title="llms.txt" href="/ai/llms-txt/" description="Give any LLM the whole documentation as Markdown." />
+  <LinkCard title="shadcn registry, MCP and v0" href="/ai/registry/" description="Install Atomus components, screens and sections as source with shadcn add." />
+  <LinkCard title="Agent compatibility (evals)" href="/ai/evals/" description="50 prompts and six deterministic scorers, with and without the skill and MCP server." />
   <LinkCard title="Rules for agents" href="/ai/rules/" description="The core rules and the forbidden list every Atomus agent follows." />
 </CardGrid>
