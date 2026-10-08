@@ -1,0 +1,7 @@
+# Copied from packages/manifest by scripts/copy-data.mjs — edit the generator (scripts/build-manifest.mjs) instead.
+data/
+LICENSE
+NOTICE
+node_modules/
+package-lock.json
+*.sarif

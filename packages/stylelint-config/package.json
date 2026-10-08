@@ -1,0 +1,63 @@
+{
+  "name": "@stanvision/stylelint-config-atomus",
+  "version": "4.1.0",
+  "description": "Stylelint config and rules for the Atomus design system: no raw colours outside token definitions, no primitive tokens in component CSS, and colour, radius and spacing values from var(--…) tokens.",
+  "license": "MIT",
+  "author": "StanVision (https://stan.vision)",
+  "homepage": "https://docs.atomus.io/ai/lint/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StanVisionAgency/atomus.git",
+    "directory": "packages/stylelint-config"
+  },
+  "bugs": {
+    "url": "https://github.com/StanVisionAgency/atomus/issues"
+  },
+  "keywords": [
+    "stylelint",
+    "stylelint-config",
+    "stylelint-plugin",
+    "design-system",
+    "design-tokens",
+    "css",
+    "ai-agents",
+    "atomus"
+  ],
+  "type": "module",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./plugin": "./src/plugin.js",
+    "./core": "./src/core.js",
+    "./sarif-formatter": "./sarif-formatter.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "sarif-formatter.js",
+    "src",
+    "data",
+    "LICENSE",
+    "NOTICE"
+  ],
+  "engines": {
+    "node": ">=18.20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "stylelint": ">=16.8.0"
+  },
+  "scripts": {
+    "pretest": "node scripts/copy-data.mjs",
+    "test": "node --test tests/*.test.js",
+    "lint:repo": "node scripts/copy-data.mjs && stylelint --config index.js \"../../react/src/**/*.css\"",
+    "lint:repo:sarif": "node scripts/copy-data.mjs && stylelint --config index.js --custom-formatter ./sarif-formatter.js --output-file atomus-stylelint.sarif \"../../react/src/**/*.css\"",
+    "prepack": "node scripts/copy-data.mjs --with-licence"
+  },
+  "devDependencies": {
+    "postcss": "^8.5.6",
+    "stylelint": "^17.0.0"
+  }
+}
