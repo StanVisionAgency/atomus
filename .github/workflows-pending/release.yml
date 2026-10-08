@@ -1,0 +1,73 @@
+# Publishes @stanvision/atomus-react and @stanvision/atomus-tokens to npm.
+#
+# One-time setup by the repo owner:
+#   1. Create the npm organisation "stanvision" (https://www.npmjs.com/org/create) so the @stanvision scope exists.
+#   2. Create an npm granular access token with read/write access to the @stanvision scope
+#      and add it as the repository secret NPM_TOKEN (Settings > Secrets and variables > Actions).
+#   3. npm provenance (--provenance) needs a public GitHub repository; it uses the id-token permission below.
+#
+# Release: push a tag such as v4.1.0 (git tag v4.1.0 && git push origin v4.1.0). The tag sets the version of both
+# packages. "Run workflow" (workflow_dispatch) publishes the versions in package.json, or does a dry run.
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (npm publish --dry-run)'
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      PUBLISH_FLAGS: --provenance --access public${{ inputs.dry_run && ' --dry-run' || '' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org
+
+      - name: Check NPM_TOKEN
+        if: ${{ !inputs.dry_run }}
+        run: |
+          if [ -z "$NODE_AUTH_TOKEN" ]; then
+            echo "::error::The NPM_TOKEN repository secret is missing. See the setup notes at the top of release.yml."
+            exit 1
+          fi
+
+      - name: Set version from tag
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          for dir in react packages/tokens; do
+            (cd "$dir" && npm version "$VERSION" --no-git-tag-version --allow-same-version)
+          done
+
+      - name: Build and test @stanvision/atomus-react
+        working-directory: react
+        run: |
+          npm install --no-audit --no-fund
+          npm run typecheck
+          npm run build
+
+      - name: Publish @stanvision/atomus-tokens
+        working-directory: packages/tokens
+        run: npm publish $PUBLISH_FLAGS
+
+      - name: Publish @stanvision/atomus-react
+        working-directory: react
+        run: npm publish $PUBLISH_FLAGS

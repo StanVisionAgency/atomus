@@ -1,0 +1,57 @@
+{
+  "name": "@stanvision/atomus-tokens",
+  "version": "4.1.0",
+  "description": "Atomus design tokens — DTCG JSON (with a 2025.10 resolver), CSS custom properties, and Tailwind v4 and shadcn/ui presets.",
+  "license": "MIT",
+  "author": "StanVision (https://stan.vision)",
+  "homepage": "https://docs.atomus.io",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StanVisionAgency/atomus.git",
+    "directory": "packages/tokens"
+  },
+  "bugs": {
+    "url": "https://github.com/StanVisionAgency/atomus/issues"
+  },
+  "keywords": [
+    "design-system",
+    "design-tokens",
+    "tokens",
+    "dtcg",
+    "figma",
+    "tailwind",
+    "shadcn",
+    "css-variables",
+    "ai-agents",
+    "atomus"
+  ],
+  "style": "./css/atomus.css",
+  "exports": {
+    ".": "./css/atomus.css",
+    "./css": "./css/atomus.css",
+    "./atomus.css": "./css/atomus.css",
+    "./tailwind": "./tailwind/atomus.tailwind.css",
+    "./shadcn": "./shadcn/globals.css",
+    "./resolver": "./tokens/atomus.resolver.json",
+    "./tokens/*": "./tokens/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "css",
+    "tailwind",
+    "shadcn",
+    "tokens",
+    "LICENSE",
+    "NOTICE"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "prepack": "node scripts/build.mjs"
+  }
+}

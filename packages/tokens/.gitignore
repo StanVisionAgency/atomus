@@ -1,0 +1,7 @@
+# Copied from the repo root by scripts/build.mjs — edit the originals in /tokens, /css, /tailwind, /shadcn.
+css/
+tailwind/
+shadcn/
+tokens/
+LICENSE
+NOTICE
