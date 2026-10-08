@@ -1,0 +1,141 @@
+{
+  "name": "Avatar",
+  "kind": "component",
+  "status": "stable",
+  "since": "4.0.0",
+  "category": "Data display",
+  "import": "import { Avatar } from '@stanvision/atomus-react';",
+  "source": "react/src/components/Avatar.tsx",
+  "purpose": "A person or workspace.",
+  "description": "Avatar 24–64px. Shape: Circle or Rounded. Type: Image (pick a face via the Photo property), Initials, Icon. Optional status dot.",
+  "aliases": ["user picture","profile image"],
+  "alternative": null,
+  "native": {"elements":["span"],"omit":[],"ref":false},
+  "props": {
+    "name": {
+      "type": "string",
+      "default": null,
+      "required": false,
+      "figma": null,
+      "notes": "Person or workspace name — used for initials, tooltip and accessible name"
+    },
+    "src": {"type":"string","default":null,"required":false,"figma":"Type=Image","notes":"Figma: Type=Image"},
+    "initials": {
+      "type": "string",
+      "default": null,
+      "required": false,
+      "figma": "Initials",
+      "notes": "Figma: Initials — overrides the initials derived from name"
+    },
+    "icon": {
+      "type": "ReactNode",
+      "default": null,
+      "required": false,
+      "figma": "Type=Icon + Icon swap",
+      "notes": "Figma: Type=Icon + Icon swap"
+    },
+    "size": {
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'",
+      "values": ["xs","sm","md","lg","xl","2xl"],
+      "default": "md",
+      "required": false,
+      "figma": "Size",
+      "notes": "Figma: Size — xs 24 · sm 32 · md 40 · lg 48 · xl 56 · 2xl 64"
+    },
+    "shape": {
+      "type": "'circle' | 'rounded'",
+      "values": ["circle","rounded"],
+      "default": "circle",
+      "required": false,
+      "figma": "Shape",
+      "notes": "Figma: Shape"
+    },
+    "status": {
+      "type": "'online' | 'away' | 'offline'",
+      "values": ["online","away","offline"],
+      "default": null,
+      "required": false,
+      "figma": "Status",
+      "notes": "Figma: Status"
+    }
+  },
+  "rules": {
+    "do": [
+      "Use a photo when you have one; fall back to initials, then an icon.",
+      "Always pass the person's name so the avatar has an accessible name and tooltip.",
+      "Show the status dot only for live presence (online, away, offline)."
+    ],
+    "dont": ["Don't use stock faces as placeholders — use initials."],
+    "forbidden": [
+      "Never stretch or crop photos by hand — size comes from the Size variant.",
+      "Never mix Circle and Rounded shapes in one list.",
+      "Never use an avatar as decoration without a name nearby."
+    ]
+  },
+  "examples": [
+    {
+      "title": "Usage",
+      "code": "import { Avatar } from '@stanvision/atomus-react';\n\n<Avatar name=\"Kristina Stan\" src={photo} size=\"md\" status=\"online\" />",
+      "language": "tsx",
+      "source": "sites/docs/src/component-pages/avatar.mdx"
+    }
+  ],
+  "figma": {
+    "componentSet": ["Avatar"],
+    "fileKey": "bC42e82J3PYg2LMkryodIA",
+    "nodeIds": ["25422:267"],
+    "nodes": [
+      {
+        "componentSet": "Avatar",
+        "nodeId": "25422:267",
+        "codeConnectId": "Avatar",
+        "staticProps": "name=\"Olivia Rhye\"",
+        "mappings": [
+          {
+            "figma": "Size",
+            "prop": "size",
+            "kind": "enum",
+            "values": {"xs":"xs","sm":"sm","md":"md","lg":"lg","xl":"xl","2xl":"2xl"}
+          },
+          {"figma":"Shape","prop":"shape","kind":"enum","values":{"Circle":"circle","Rounded":"rounded"}},
+          {
+            "figma": "Initials",
+            "prop": "initials",
+            "kind": "expression",
+            "notes": "type === 'initials' ? instance.getString('Initials') : undefined"
+          },
+          {
+            "figma": "(computed)",
+            "prop": "src",
+            "kind": "expression",
+            "notes": "type === 'image' ? '/avatar.jpg' : undefined"
+          },
+          {"figma":"(computed)","prop":"icon","kind":"expression","notes":"icon"},
+          {"figma":"Status","prop":"status","kind":"boolean","notes":"Rendered when the Figma boolean is on."},
+          {"figma":"Status","prop":"online","kind":"boolean","whenTrue":"online"}
+        ]
+      }
+    ],
+    "codeConnect": true,
+    "variants": 36,
+    "properties": [
+      {"componentSet":"Avatar","name":"Status","type":"boolean (off)"},
+      {"componentSet":"Avatar","name":"Initials","type":"text"},
+      {"componentSet":"Avatar","name":"Icon swap","type":"instance swap (icon)"},
+      {"componentSet":"Avatar","name":"Size","type":"variant","options":["xs","sm","md","lg","xl","2xl"]},
+      {"componentSet":"Avatar","name":"Type","type":"variant","options":["Image","Initials","Icon"]},
+      {"componentSet":"Avatar","name":"Shape","type":"variant","options":["Circle","Rounded"]}
+    ],
+    "docs": "https://docs.atomus.io/components/avatar/"
+  },
+  "docs": "https://docs.atomus.io/components/avatar/",
+  "related": ["Avatar photo","Avatar group","Avatar label group"],
+  "a11y": {
+    "element": "span",
+    "requiresLabel": false,
+    "notes": [
+      "`name`: Person or workspace name — used for initials, tooltip and accessible name",
+      "Always pass the person's name so the avatar has an accessible name and tooltip."
+    ]
+  }
+}

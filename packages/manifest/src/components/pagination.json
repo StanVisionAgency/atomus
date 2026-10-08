@@ -1,0 +1,49 @@
+{
+  "name": "Pagination",
+  "kind": "component",
+  "status": "figma-only",
+  "since": "4.0.0",
+  "category": "Navigation",
+  "import": null,
+  "source": "guidelines/components/pagination.md",
+  "purpose": "Paging tables and lists; stepping through galleries.",
+  "description": "Pagination bar for tables and lists.",
+  "aliases": [],
+  "alternative": "Compose Pagination from `Button hierarchy=\"tertiary\" size=\"sm\"` items.",
+  "props": {
+    "Type": {
+      "type": "variant",
+      "values": ["Page numbers","Minimal"],
+      "default": null,
+      "required": false,
+      "figma": "Type",
+      "notes": null
+    }
+  },
+  "rules": {
+    "do": [
+      "Show the current page and the total.",
+      "Keep Previous and Next visible.",
+      "Use for tables over about 25 rows."
+    ],
+    "dont": [],
+    "forbidden": [
+      "Never paginate feeds — load more instead.",
+      "Never show more than seven page numbers.",
+      "Never reset the page when sorting."
+    ]
+  },
+  "examples": [],
+  "figma": {
+    "componentSet": ["Pagination"],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": 2,
+    "docs": "https://docs.atomus.io/components/pagination/"
+  },
+  "docs": "https://docs.atomus.io/components/pagination/",
+  "related": ["Pagination number","Carousel dots","Carousel"],
+  "a11y": {"element":null,"requiresLabel":false,"notes":[]}
+}

@@ -1,0 +1,119 @@
+{
+  "name": "Select",
+  "kind": "component",
+  "status": "stable",
+  "since": "4.0.0",
+  "category": "Forms and inputs",
+  "import": "import { Select } from '@stanvision/atomus-react';",
+  "source": "react/src/components/Select.tsx",
+  "purpose": "One value from a list (6+ options, or when space is tight).",
+  "description": "Select trigger; pair with Dropdown menu for the open list.",
+  "aliases": ["dropdown (picks a value)","picker","combobox","autocomplete","typeahead"],
+  "alternative": null,
+  "native": {"elements":[],"omit":[],"ref":false},
+  "props": {
+    "options": {"type":"SelectOption[]","default":null,"required":true,"figma":null,"notes":null},
+    "value": {"type":"string","default":null,"required":false,"figma":null,"notes":null},
+    "defaultValue": {"type":"string","default":null,"required":false,"figma":null,"notes":null},
+    "onChange": {"type":"(value: string) => void","default":null,"required":false,"figma":null,"notes":null},
+    "label": {"type":"string","default":null,"required":false,"figma":"Label","notes":"Figma: Label (+ Show label)"},
+    "hint": {"type":"string","default":null,"required":false,"figma":"Show hint","notes":"Figma: Show hint"},
+    "error": {"type":"string","default":null,"required":false,"figma":"State=Error","notes":"Figma: State=Error"},
+    "placeholder": {"type":"string","default":"Select an option","required":false,"figma":null,"notes":null},
+    "size": {
+      "type": "'sm' | 'md' | 'lg'",
+      "values": ["sm","md","lg"],
+      "default": "md",
+      "required": false,
+      "figma": "Size",
+      "notes": "Figma: Size — sm 32 · md 40 · lg 48"
+    },
+    "disabled": {"type":"boolean","default":null,"required":false,"figma":null,"notes":null},
+    "name": {
+      "type": "string",
+      "default": null,
+      "required": false,
+      "figma": null,
+      "notes": "Form field name; a hidden input carries the value"
+    },
+    "id": {"type":"string","default":null,"required":false,"figma":null,"notes":null},
+    "defaultOpen": {"type":"boolean","default":null,"required":false,"figma":null,"notes":"Start open (docs and tests)"},
+    "className": {"type":"string","default":null,"required":false,"figma":null,"notes":null}
+  },
+  "rules": {
+    "do": [
+      "Use for one choice from six or more options, or when space is tight.",
+      "Write a placeholder that says what to pick (“Select a country”)."
+    ],
+    "dont": ["Don't use for more than ~15 options — add search (Combobox, coming next)."],
+    "forbidden": [
+      "Never use Select for two to four options — use Radio or a segmented Tabs.",
+      "Never put actions in the option list — use Dropdown menu."
+    ]
+  },
+  "examples": [
+    {
+      "title": "Usage",
+      "code": "import { Select } from '@stanvision/atomus-react';\n\nconst [team, setTeam] = useState('design');\n\n<Select\n  label=\"Team\"\n  value={team}\n  onChange={setTeam}\n  options={[\n    { value: 'design', label: 'Design' },\n    { value: 'product', label: 'Product' },\n  ]}\n/>",
+      "language": "tsx",
+      "source": "sites/docs/src/component-pages/select.mdx"
+    }
+  ],
+  "figma": {
+    "componentSet": ["Select"],
+    "fileKey": "bC42e82J3PYg2LMkryodIA",
+    "nodeIds": ["25419:14452"],
+    "nodes": [
+      {
+        "componentSet": "Select",
+        "nodeId": "25419:14452",
+        "codeConnectId": "Select",
+        "mappings": [
+          {"figma":"Label","prop":"label","kind":"text","visibleWhen":"Show label"},
+          {
+            "figma": "Show hint",
+            "prop": "hint",
+            "kind": "boolean",
+            "notes": "Rendered when the Figma boolean is on."
+          },
+          {"figma":"Size","prop":"size","kind":"enum","values":{"sm":"sm","md":"md","lg":"lg"}},
+          {"figma":"State","prop":"disabled","kind":"flag","when":"Disabled"},
+          {
+            "figma": "(computed)",
+            "prop": "error",
+            "kind": "expression",
+            "notes": "state === 'error' ? 'Choose an option' : undefined"
+          }
+        ]
+      }
+    ],
+    "codeConnect": true,
+    "variants": 15,
+    "properties": [
+      {"componentSet":"Select","name":"Label","type":"text"},
+      {"componentSet":"Select","name":"Show label","type":"boolean (on)"},
+      {"componentSet":"Select","name":"Show hint","type":"boolean (on)"},
+      {"componentSet":"Select","name":"Size","type":"variant","options":["sm","md","lg"]},
+      {
+        "componentSet": "Select",
+        "name": "State",
+        "type": "variant",
+        "options": ["Default","Focused","Filled","Disabled","Error"]
+      }
+    ],
+    "docs": "https://docs.atomus.io/components/select/"
+  },
+  "docs": "https://docs.atomus.io/components/select/",
+  "related": [
+    "Input",
+    "Textarea",
+    "Slider",
+    "Verification code input",
+    "Number input",
+    "Tags input",
+    "Phone input",
+    "Payment input",
+    "Multi-select"
+  ],
+  "a11y": {"element":"listbox","requiresLabel":true,"notes":["`label`: Figma: Label (+ Show label)"]}
+}

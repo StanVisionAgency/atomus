@@ -1,0 +1,114 @@
+{
+  "name": "DatePicker",
+  "kind": "component",
+  "status": "stable",
+  "since": "4.0.0",
+  "category": "Forms and inputs",
+  "import": "import { DatePicker } from '@stanvision/atomus-react';",
+  "source": "react/src/components/DatePicker.tsx",
+  "purpose": "Picking a date or a range.",
+  "description": "Calendar dropdown: single date or range.",
+  "aliases": [],
+  "alternative": null,
+  "native": {"elements":[],"omit":[],"ref":false},
+  "props": {
+    "label": {"type":"string","default":null,"required":false,"figma":"Date input","notes":"Figma: Date input — Label"},
+    "hint": {"type":"string","default":null,"required":false,"figma":null,"notes":null},
+    "error": {"type":"string","default":null,"required":false,"figma":null,"notes":null},
+    "placeholder": {"type":"string","default":null,"required":false,"figma":null,"notes":null},
+    "size": {
+      "type": "'sm' | 'md' | 'lg'",
+      "values": ["sm","md","lg"],
+      "default": "md",
+      "required": false,
+      "figma": null,
+      "notes": null
+    },
+    "disabled": {"type":"boolean","default":null,"required":false,"figma":null,"notes":null},
+    "id": {"type":"string","default":null,"required":false,"figma":null,"notes":null},
+    "defaultOpen": {"type":"boolean","default":null,"required":false,"figma":null,"notes":"Start open (docs and tests)"},
+    "className": {"type":"string","default":null,"required":false,"figma":null,"notes":null},
+    "max": {"type":"ISODate","default":null,"required":false,"figma":null,"notes":null},
+    "min": {"type":"ISODate","default":null,"required":false,"figma":null,"notes":null},
+    "type": {
+      "type": "'single' | 'range'",
+      "values": ["single","range"],
+      "default": "single",
+      "required": false,
+      "figma": "Date picker Type",
+      "notes": "Figma: Date picker Type"
+    },
+    "value": {"type":"ISODate | null","default":null,"required":false,"figma":null,"notes":null},
+    "onChange": {"type":"(value: ISODate) => void","default":null,"required":false,"figma":null,"notes":null},
+    "range": {"type":"DateRange","default":null,"required":false,"figma":null,"notes":null},
+    "onRangeChange": {"type":"(range: DateRange) => void","default":null,"required":false,"figma":null,"notes":null},
+    "weekStartsOn": {
+      "type": "0 | 1",
+      "values": [0,1],
+      "default": 1,
+      "required": false,
+      "figma": null,
+      "notes": "Monday-first by default"
+    },
+    "locale": {"type":"string","default":null,"required":false,"figma":null,"notes":null}
+  },
+  "rules": {
+    "do": [
+      "Date picker: Show today and the selected range clearly.",
+      "Date picker: Let people type the date in Date input.",
+      "Date picker: Offer presets for common ranges."
+    ],
+    "dont": [],
+    "forbidden": [
+      "Date picker: Never hide the year when a range crosses years.",
+      "Date picker: Never disable past dates unless the task requires it.",
+      "Date picker: Never make people click through a calendar for birth dates — use Date input."
+    ]
+  },
+  "examples": [
+    {
+      "title": "Usage",
+      "code": "import { DatePicker, Calendar } from '@stanvision/atomus-react';\n\n<DatePicker label=\"Due date\" value={date} onChange={setDate} />\n<Calendar type=\"range\" range={range} onRangeChange={setRange} />",
+      "language": "tsx",
+      "source": "sites/docs/src/component-pages/date-picker.mdx"
+    }
+  ],
+  "figma": {
+    "componentSet": ["Date picker","Date input"],
+    "fileKey": "bC42e82J3PYg2LMkryodIA",
+    "nodeIds": ["25430:2256"],
+    "nodes": [
+      {
+        "componentSet": "Date picker",
+        "nodeId": "25430:2256",
+        "codeConnectId": "DatePicker",
+        "mappings": [
+          {"figma":"Label","prop":"label","kind":"text"},
+          {"figma":"State","prop":"disabled","kind":"flag","when":"Disabled"},
+          {
+            "figma": "(computed)",
+            "prop": "error",
+            "kind": "expression",
+            "notes": "state === 'error' ? 'Pick a date after today' : undefined"
+          }
+        ]
+      }
+    ],
+    "codeConnect": true,
+    "variants": 7,
+    "properties": [
+      {"componentSet":"Date picker","name":"Type","type":"variant","options":["Single","Range"]},
+      {"componentSet":"Date input","name":"Label","type":"text"},
+      {
+        "componentSet": "Date input",
+        "name": "State",
+        "type": "variant",
+        "options": ["Default","Focused","Filled","Disabled","Error"]
+      }
+    ],
+    "docs": "https://docs.atomus.io/components/date-picker/"
+  },
+  "docs": "https://docs.atomus.io/components/date-picker/",
+  "related": ["Calendar"],
+  "a11y": {"element":"dialog","requiresLabel":true,"notes":["`label`: Figma: Date input — Label"]}
+}

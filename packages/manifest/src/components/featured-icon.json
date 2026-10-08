@@ -1,0 +1,43 @@
+{
+  "name": "Featured icon",
+  "kind": "component",
+  "status": "figma-only",
+  "since": "4.0.0",
+  "category": "Media and assets",
+  "import": null,
+  "source": "guidelines/components/atomus-icons.md",
+  "purpose": "An icon in a tinted circle or square for empty states, modals and feature lists.",
+  "description": "Icon in a tinted circle — for modals, alerts, empty states and feature lists.",
+  "aliases": [],
+  "alternative": "Use your icon library (Font Awesome names match the Figma icons) and pass icons as React nodes to `icon`, `iconLeading` and `iconTrailing` props. `Icon` from the package only ships the few glyphs the components use internally.",
+  "props": {
+    "Icon swap": {"type":"instance swap (icon)","default":null,"required":false,"figma":"Icon swap","notes":null},
+    "Size": {"type":"variant","values":["sm","md","lg"],"default":null,"required":false,"figma":"Size","notes":null},
+    "Color": {
+      "type": "variant",
+      "values": ["Brand","Gray","Error","Warning","Success"],
+      "default": null,
+      "required": false,
+      "figma": "Color",
+      "notes": null
+    }
+  },
+  "rules": {
+    "do": ["Use in empty states, modals and feature lists; pick the colour by meaning."],
+    "dont": [],
+    "forbidden": ["Never use a featured icon as a button."]
+  },
+  "examples": [],
+  "figma": {
+    "componentSet": ["Featured icon"],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": 15,
+    "docs": "https://docs.atomus.io/components/atomus-icons/"
+  },
+  "docs": "https://docs.atomus.io/components/atomus-icons/",
+  "related": ["Icon brand","Icon payment","Icon flag","Star rating","Icon file type","Icon folder","Icon integration"],
+  "a11y": {"element":null,"requiresLabel":false,"notes":[]}
+}

@@ -1,0 +1,113 @@
+{
+  "name": "Table",
+  "kind": "component",
+  "status": "stable",
+  "since": "4.0.0",
+  "category": "Data display",
+  "import": "import { Table } from '@stanvision/atomus-react';",
+  "source": "react/src/components/Table.tsx",
+  "purpose": "Rows of records you compare, sort and select.",
+  "description": "Body cell: Text, Text + supporting, Avatar, Badge, Checkbox, Actions. Sizes sm (52) / md (72).",
+  "aliases": ["data grid","data table","list view"],
+  "alternative": null,
+  "native": {"elements":[],"omit":[],"ref":false},
+  "props": {
+    "columns": {"type":"TableColumn<Row>[]","default":null,"required":true,"figma":null,"notes":null},
+    "rows": {"type":"Row[]","default":null,"required":true,"figma":null,"notes":null},
+    "rowKey": {"type":"(row: Row) => string","default":null,"required":true,"figma":null,"notes":null},
+    "size": {
+      "type": "'sm' | 'md'",
+      "values": ["sm","md"],
+      "default": "sm",
+      "required": false,
+      "figma": "Table cell Size",
+      "notes": "Figma: Table cell Size — sm 52 · md 72"
+    },
+    "selectable": {
+      "type": "boolean",
+      "default": null,
+      "required": false,
+      "figma": "Table header cell",
+      "notes": "Figma: Table header cell — Checkbox; adds a select-all column"
+    },
+    "selected": {"type":"string[]","default":null,"required":false,"figma":null,"notes":null},
+    "onSelectedChange": {"type":"(keys: string[]) => void","default":null,"required":false,"figma":null,"notes":null},
+    "caption": {"type":"string","default":null,"required":false,"figma":null,"notes":"Accessible table caption"},
+    "empty": {
+      "type": "ReactNode",
+      "default": null,
+      "required": false,
+      "figma": null,
+      "notes": "Rendered when rows is empty, e.g. an EmptyState"
+    },
+    "className": {"type":"string","default":null,"required":false,"figma":null,"notes":null}
+  },
+  "rules": {
+    "do": [
+      "Table cell: Build rows from Table cell types.",
+      "Table cell: Right-align numbers.",
+      "Table cell: Put Filter bar above the table and Pagination below."
+    ],
+    "dont": ["Don't put more than one primary action per row; group the rest in a DropdownMenu."],
+    "forbidden": [
+      "Table cell: Never exceed 7–8 columns on desktop.",
+      "Table cell: Never wrap long text — truncate it and show the full text in a tooltip.",
+      "Table cell: Never combine zebra stripes and row borders."
+    ]
+  },
+  "examples": [
+    {
+      "title": "Usage",
+      "code": "import { Table } from '@stanvision/atomus-react';\n\n<Table\n  caption=\"Team members\"\n  selectable\n  rowKey={(r) => r.id}\n  rows={members}\n  columns={[\n    { key: 'name', header: 'Name', sortable: true },\n    { key: 'projects', header: 'Projects', sortable: true, align: 'end' },\n  ]}\n/>",
+      "language": "tsx",
+      "source": "sites/docs/src/component-pages/table.mdx"
+    }
+  ],
+  "figma": {
+    "componentSet": ["Table cell","Table header cell"],
+    "fileKey": "bC42e82J3PYg2LMkryodIA",
+    "nodeIds": ["25426:503","25426:419"],
+    "nodes": [
+      {
+        "componentSet": "Table cell",
+        "nodeId": "25426:503",
+        "codeConnectId": "TableCell",
+        "staticProps": "caption=\"Team members\" rowKey={(r) => String(r.id)} rows={[{ id: '1', name:",
+        "mappings": []
+      },
+      {
+        "componentSet": "Table header cell",
+        "nodeId": "25426:419",
+        "codeConnectId": "TableHeaderCell",
+        "staticProps": "caption=\"Team members\"",
+        "mappings": [{"figma":"Checkbox","prop":"selectable","kind":"boolean","whenTrue":"selectable"}]
+      }
+    ],
+    "codeConnect": true,
+    "variants": 13,
+    "properties": [
+      {"componentSet":"Table cell","name":"Text","type":"text"},
+      {"componentSet":"Table cell","name":"Size","type":"variant","options":["sm","md"]},
+      {
+        "componentSet": "Table cell",
+        "name": "Type",
+        "type": "variant",
+        "options": ["Text","Text + supporting","Avatar","Badge","Checkbox","Actions"]
+      },
+      {"componentSet":"Table header cell","name":"Label","type":"text"},
+      {"componentSet":"Table header cell","name":"Checkbox","type":"boolean (off)"},
+      {"componentSet":"Table header cell","name":"Sortable","type":"boolean (off)"}
+    ],
+    "docs": "https://docs.atomus.io/components/table/"
+  },
+  "docs": "https://docs.atomus.io/components/table/",
+  "related": ["Filter bar"],
+  "a11y": {
+    "element": "table",
+    "requiresLabel": true,
+    "notes": [
+      "`caption`: Accessible table caption",
+      "Never wrap long text — truncate it and show the full text in a tooltip."
+    ]
+  }
+}

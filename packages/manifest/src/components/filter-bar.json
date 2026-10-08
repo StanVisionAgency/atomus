@@ -1,0 +1,41 @@
+{
+  "name": "Filter bar",
+  "kind": "component",
+  "status": "figma-only",
+  "since": "4.0.0",
+  "category": "Data display",
+  "import": null,
+  "source": "guidelines/components/table.md",
+  "purpose": "Search, filters and actions above a table.",
+  "description": "Search, filters, sort and active-filter tags.",
+  "aliases": [],
+  "alternative": "Filter bar is Figma-only: compose it from `Input` (search), `Select` and `Button` above the `Table`.",
+  "props": {
+    "Breakpoint": {
+      "type": "variant",
+      "values": ["Desktop","Mobile"],
+      "default": null,
+      "required": false,
+      "figma": "Breakpoint",
+      "notes": null
+    }
+  },
+  "rules": {
+    "do": [],
+    "dont": ["Don't put more than one primary action per row; group the rest in a DropdownMenu."],
+    "forbidden": []
+  },
+  "examples": [],
+  "figma": {
+    "componentSet": ["Filter bar"],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": 2,
+    "docs": "https://docs.atomus.io/components/table/"
+  },
+  "docs": "https://docs.atomus.io/components/table/",
+  "related": ["Table"],
+  "a11y": {"element":null,"requiresLabel":false,"notes":[]}
+}

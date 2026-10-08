@@ -1,0 +1,80 @@
+{
+  "name": "EmptyState",
+  "kind": "component",
+  "status": "stable",
+  "since": "4.0.0",
+  "category": "Feedback",
+  "import": "import { EmptyState } from '@stanvision/atomus-react';",
+  "source": "react/src/components/EmptyState.tsx",
+  "purpose": "An empty page, table or panel, with an icon, explanation and action.",
+  "description": "Empty / no-results state for tables, lists and pages.",
+  "aliases": ["zero state","blank slate","no results"],
+  "alternative": null,
+  "native": {"elements":["div"],"omit":["title"],"ref":false},
+  "props": {
+    "title": {"type":"ReactNode","default":null,"required":true,"figma":"Title","notes":"Figma: Title"},
+    "description": {"type":"ReactNode","default":null,"required":false,"figma":"Description","notes":"Figma: Description"},
+    "icon": {"type":"ReactNode","default":null,"required":false,"figma":null,"notes":"Featured icon glyph"},
+    "actions": {
+      "type": "ReactNode",
+      "default": null,
+      "required": false,
+      "figma": "Actions",
+      "notes": "Figma: Actions — usually Outline + Primary buttons"
+    },
+    "size": {
+      "type": "'sm' | 'md'",
+      "values": ["sm","md"],
+      "default": "md",
+      "required": false,
+      "figma": "Size",
+      "notes": "Figma: Size — sm (panels) · md (pages)"
+    }
+  },
+  "rules": {
+    "do": [
+      "Explain what will appear here and how to start.",
+      "Offer one primary action.",
+      "Use md in pages and cards, sm in narrow panels."
+    ],
+    "dont": [],
+    "forbidden": ["Never leave a screen blank.","Never blame the user.","Never show more than two actions."]
+  },
+  "examples": [
+    {
+      "title": "Usage",
+      "code": "import { EmptyState } from '@stanvision/atomus-react';\n\n<EmptyState\n  title=\"No projects yet\"\n  description=\"Create your first project to start designing with Atomus.\"\n  actions={<Button hierarchy=\"primary\">New project</Button>}\n/>",
+      "language": "tsx",
+      "source": "sites/docs/src/component-pages/empty-state.mdx"
+    }
+  ],
+  "figma": {
+    "componentSet": ["Empty state"],
+    "fileKey": "bC42e82J3PYg2LMkryodIA",
+    "nodeIds": ["25433:71"],
+    "nodes": [
+      {
+        "componentSet": "Empty state",
+        "nodeId": "25433:71",
+        "codeConnectId": "EmptyState",
+        "mappings": [
+          {"figma":"Title","prop":"title","kind":"text"},
+          {"figma":"Description","prop":"description","kind":"text"},
+          {"figma":"Size","prop":"size","kind":"enum","values":{"sm":"sm","md":"md"}}
+        ]
+      }
+    ],
+    "codeConnect": true,
+    "variants": 2,
+    "properties": [
+      {"componentSet":"Empty state","name":"Title","type":"text"},
+      {"componentSet":"Empty state","name":"Description","type":"text"},
+      {"componentSet":"Empty state","name":"Actions","type":"boolean (on)"},
+      {"componentSet":"Empty state","name":"Size","type":"variant","options":["sm","md"]}
+    ],
+    "docs": "https://docs.atomus.io/components/empty-state/"
+  },
+  "docs": "https://docs.atomus.io/components/empty-state/",
+  "related": ["File upload","File upload item"],
+  "a11y": {"element":"div","requiresLabel":false,"notes":[]}
+}

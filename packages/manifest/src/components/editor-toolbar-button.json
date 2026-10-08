@@ -1,0 +1,38 @@
+{
+  "name": "Editor toolbar button",
+  "kind": "component",
+  "status": "figma-only",
+  "since": "4.0.0",
+  "category": "Forms and inputs",
+  "import": null,
+  "source": "guidelines/components/tree-editor-color-picker.md",
+  "purpose": "Rich-text editing.",
+  "description": "Formatting button for the text editor.",
+  "aliases": [],
+  "alternative": "Tree view, Text editor and Color picker are Figma-only.",
+  "props": {
+    "Icon swap": {"type":"instance swap (icon)","default":null,"required":false,"figma":"Icon swap","notes":null},
+    "State": {
+      "type": "variant",
+      "values": ["Default","Hover","Active"],
+      "default": null,
+      "required": false,
+      "figma": "State",
+      "notes": null
+    }
+  },
+  "rules": {"do":[],"dont":[],"forbidden":[]},
+  "examples": [],
+  "figma": {
+    "componentSet": ["Editor toolbar button"],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": 3,
+    "docs": "https://docs.atomus.io/components/text-editor/"
+  },
+  "docs": "https://docs.atomus.io/components/text-editor/",
+  "related": ["Tree item","Tree view","Text editor","Color swatch","Color picker"],
+  "a11y": {"element":null,"requiresLabel":false,"notes":[]}
+}

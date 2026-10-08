@@ -1,0 +1,122 @@
+{
+  "name": "MetricCard",
+  "kind": "component",
+  "status": "stable",
+  "since": "4.0.0",
+  "category": "Data display",
+  "import": "import { MetricCard } from '@stanvision/atomus-react';",
+  "source": "react/src/components/MetricCard.tsx",
+  "purpose": "A KPI: number, change and period.",
+  "description": "KPI / stat card for dashboards and marketing.",
+  "aliases": ["KPI","stat","scorecard"],
+  "alternative": null,
+  "native": {"elements":["div"],"omit":[],"ref":false},
+  "props": {
+    "label": {"type":"ReactNode","default":null,"required":true,"figma":"Label","notes":"Figma: Label"},
+    "value": {
+      "type": "ReactNode",
+      "default": null,
+      "required": true,
+      "figma": "Value",
+      "notes": "Figma: Value — pre-formatted (\"$48.2k\")"
+    },
+    "type": {
+      "type": "'simple' | 'trend' | 'chart'",
+      "values": ["simple","trend","chart"],
+      "default": "trend",
+      "required": false,
+      "figma": "Type",
+      "notes": "Figma: Type — simple · trend · chart"
+    },
+    "change": {
+      "type": "string",
+      "default": null,
+      "required": false,
+      "figma": null,
+      "notes": "Change vs the comparison period, e.g. \"12%\" or \"-0.4%\""
+    },
+    "trend": {
+      "type": "'up' | 'down'",
+      "values": ["up","down"],
+      "default": null,
+      "required": false,
+      "figma": null,
+      "notes": "Inferred from a leading \"-\" in change when omitted"
+    },
+    "caption": {
+      "type": "ReactNode",
+      "default": null,
+      "required": false,
+      "figma": null,
+      "notes": "Comparison period, e.g. \"vs last month\""
+    },
+    "data": {
+      "type": "number[]",
+      "default": null,
+      "required": false,
+      "figma": null,
+      "notes": "Sparkline values for type=\"chart\""
+    },
+    "action": {
+      "type": "ReactNode",
+      "default": null,
+      "required": false,
+      "figma": null,
+      "notes": "Header action, e.g. a tertiary icon button"
+    }
+  },
+  "rules": {
+    "do": [
+      "Lead with the number.",
+      "Use Trend to show change against a stated period.",
+      "Keep units in the value (“$48.2k”, “12%”)."
+    ],
+    "dont": [],
+    "forbidden": [
+      "Never show more than four metric cards in a row.",
+      "Never mix time periods in one row.",
+      "Never colour-code a change without the arrow."
+    ]
+  },
+  "examples": [
+    {
+      "title": "Usage",
+      "code": "import { MetricCard } from '@stanvision/atomus-react';\n\n<MetricCard label=\"Monthly revenue\" value=\"$48.2k\" change=\"12%\" caption=\"vs last month\" />",
+      "language": "tsx",
+      "source": "sites/docs/src/component-pages/metric-card.mdx"
+    }
+  ],
+  "figma": {
+    "componentSet": ["Metric card"],
+    "fileKey": "bC42e82J3PYg2LMkryodIA",
+    "nodeIds": ["25435:72"],
+    "nodes": [
+      {
+        "componentSet": "Metric card",
+        "nodeId": "25435:72",
+        "codeConnectId": "MetricCard",
+        "mappings": [
+          {"figma":"Label","prop":"label","kind":"text"},
+          {"figma":"Value","prop":"value","kind":"text"},
+          {
+            "figma": "Type",
+            "prop": "type",
+            "kind": "enum",
+            "values": {"Simple":"simple","Trend":"trend","Chart":"chart"}
+          }
+        ]
+      }
+    ],
+    "codeConnect": true,
+    "variants": 3,
+    "properties": [
+      {"componentSet":"Metric card","name":"Label","type":"text"},
+      {"componentSet":"Metric card","name":"Value","type":"text"},
+      {"componentSet":"Metric card","name":"Type","type":"variant","options":["Simple","Trend","Chart"]}
+    ],
+    "docs": "https://docs.atomus.io/components/metric-card/"
+  },
+  "docs": "https://docs.atomus.io/components/metric-card/",
+  "related": ["Activity item","Banner","Code snippet"],
+  "a11y": {"element":"div","requiresLabel":false,"notes":["`label`: Figma: Label"]}
+}

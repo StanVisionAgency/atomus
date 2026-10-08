@@ -1,0 +1,89 @@
+{
+  "name": "Toast",
+  "kind": "component",
+  "status": "stable",
+  "since": "4.0.0",
+  "category": "Feedback",
+  "import": "import { Toast } from '@stanvision/atomus-react';",
+  "source": "react/src/components/Toast.tsx",
+  "purpose": "A short, temporary confirmation of something the user just did.",
+  "description": "Floating notification; auto-dismiss in code.",
+  "aliases": ["snackbar","notification (temporary)","flash message"],
+  "alternative": null,
+  "native": {"elements":[],"omit":[],"ref":false},
+  "props": {
+    "title": {"type":"ReactNode","default":null,"required":true,"figma":"Title","notes":"Figma: Title"},
+    "description": {"type":"ReactNode","default":null,"required":false,"figma":"Description","notes":"Figma: Description"},
+    "color": {
+      "type": "'brand' | 'gray' | 'error' | 'warning' | 'success'",
+      "values": ["brand","gray","error","warning","success"],
+      "default": "gray",
+      "required": false,
+      "figma": "Color",
+      "notes": "Figma: Color"
+    },
+    "onClose": {"type":"() => void","default":null,"required":false,"figma":"Close","notes":"Figma: Close"},
+    "action": {"type":"ReactNode","default":null,"required":false,"figma":null,"notes":null},
+    "className": {"type":"string","default":null,"required":false,"figma":null,"notes":null}
+  },
+  "rules": {
+    "do": [
+      "Use for short confirmations of something the user just did (“Changes saved”).",
+      "Keep it to a title, an optional one-line description and at most one action.",
+      "Keep error toasts open until the user closes them."
+    ],
+    "dont": [],
+    "forbidden": [
+      "Never put critical information or a required decision in a toast — use Alert or Modal.",
+      "Never show more than one toast for one event."
+    ]
+  },
+  "examples": [
+    {
+      "title": "Usage",
+      "code": "import { Toast, ToastProvider, useToast } from '@stanvision/atomus-react';\n\n// once, at the app root\n<ToastProvider>{app}</ToastProvider>\n\n// anywhere inside\nconst toast = useToast();\ntoast.show({ color: 'success', title: 'Changes saved' });",
+      "language": "tsx",
+      "source": "sites/docs/src/component-pages/toast.mdx"
+    }
+  ],
+  "figma": {
+    "componentSet": ["Toast"],
+    "fileKey": "bC42e82J3PYg2LMkryodIA",
+    "nodeIds": ["25427:513"],
+    "nodes": [
+      {
+        "componentSet": "Toast",
+        "nodeId": "25427:513",
+        "codeConnectId": "Toast",
+        "mappings": [
+          {"figma":"Title","prop":"title","kind":"text"},
+          {"figma":"Description","prop":"description","kind":"text"},
+          {
+            "figma": "Color",
+            "prop": "color",
+            "kind": "enum",
+            "values": {"Brand":"brand","Gray":"gray","Error":"error","Warning":"warning","Success":"success"}
+          },
+          {"figma":"Close","prop":"onClose","kind":"boolean","whenTrue":"onClose={() => {}}"}
+        ]
+      }
+    ],
+    "codeConnect": true,
+    "variants": 5,
+    "properties": [
+      {"componentSet":"Toast","name":"Title","type":"text"},
+      {"componentSet":"Toast","name":"Description","type":"text"},
+      {"componentSet":"Toast","name":"Close","type":"boolean (on)"},
+      {
+        "componentSet": "Toast",
+        "name": "Color",
+        "type": "variant",
+        "options": ["Brand","Gray","Error","Warning","Success"]
+      }
+    ],
+    "docs": "https://docs.atomus.io/components/toast/"
+  },
+  "docs": "https://docs.atomus.io/components/toast/",
+  "related": ["Alert","Notification item","Notifications panel"],
+  "a11y": {"element":"status / alert","requiresLabel":false,"notes":[]}
+}

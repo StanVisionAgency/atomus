@@ -1,0 +1,30 @@
+{
+  "name": "useToast",
+  "kind": "hook",
+  "status": "stable",
+  "since": "4.0.0",
+  "category": "Feedback",
+  "import": "import { useToast } from '@stanvision/atomus-react';",
+  "source": "react/src/components/Toast.tsx",
+  "purpose": "A short, temporary confirmation of something the user just did.",
+  "description": null,
+  "aliases": [],
+  "alternative": null,
+  "native": {"elements":[],"omit":[],"ref":false},
+  "props": {},
+  "rules": {"do":[],"dont":[],"forbidden":[]},
+  "examples": [],
+  "figma": {
+    "componentSet": [],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": null,
+    "properties": [],
+    "docs": null
+  },
+  "docs": null,
+  "related": [],
+  "a11y": {"element":null,"requiresLabel":false,"notes":[]}
+}

@@ -1,0 +1,41 @@
+{
+  "name": "Progress steps",
+  "kind": "component",
+  "status": "figma-only",
+  "since": "4.0.0",
+  "category": "Navigation",
+  "import": null,
+  "source": "guidelines/components/progress-loading.md",
+  "purpose": "A multi-step flow (onboarding, checkout, setup).",
+  "description": "Multi-step flow indicator.",
+  "aliases": ["stepper","wizard"],
+  "alternative": "Progress circle, Progress steps, Loading indicator and Skeleton are Figma-only. For a spinner inside a button use `<Button loading>`.",
+  "props": {
+    "Orientation": {
+      "type": "variant",
+      "values": ["Horizontal","Vertical"],
+      "default": null,
+      "required": false,
+      "figma": "Orientation",
+      "notes": null
+    }
+  },
+  "rules": {
+    "do": ["Use for flows of 3–7 steps and show completed, current and upcoming states."],
+    "dont": [],
+    "forbidden": ["Never use steps to move between unrelated pages — use Tabs."]
+  },
+  "examples": [],
+  "figma": {
+    "componentSet": ["Progress steps"],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": 2,
+    "docs": "https://docs.atomus.io/components/progress-steps/"
+  },
+  "docs": "https://docs.atomus.io/components/progress-steps/",
+  "related": ["ProgressBar","Step","Progress circle","Loading indicator","Skeleton"],
+  "a11y": {"element":null,"requiresLabel":false,"notes":[]}
+}

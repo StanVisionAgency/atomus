@@ -1,0 +1,8 @@
+# Built from src/ by scripts/assemble.mjs (npm run assemble / prepack) — edit the generator, not this file.
+atomus.manifest.json
+# Copied from the repo root by scripts/prepack.mjs — edit the originals in /schemas.
+schemas/
+LICENSE
+NOTICE
+node_modules/
+package-lock.json

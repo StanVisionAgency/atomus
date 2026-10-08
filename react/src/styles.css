@@ -85,7 +85,7 @@
 .at-choice--sm .at-choice__label, .at-choice--sm .at-choice__desc { font-size: var(--font-size-small); line-height: var(--line-height-small); }
 .at-choice--md .at-choice__label, .at-choice--md .at-choice__desc { font-size: var(--font-size-body); line-height: var(--line-height-body); }
 .at-choice--disabled .at-choice__label, .at-choice--disabled .at-choice__desc { color: var(--color-text-disabled); }
-.at-checkbox, .at-radio { appearance: none; flex: none; margin: 2px 0 0; border: 1px solid var(--color-border-primary); background: var(--color-bg-primary) no-repeat center / 75%; cursor: inherit; transition: background-color .15s, border-color .15s; }
+.at-checkbox, .at-radio { appearance: none; flex: none; margin: var(--spacing-xxs) 0 0; border: 1px solid var(--color-border-primary); background: var(--color-bg-primary) no-repeat center / 75%; cursor: inherit; transition: background-color .15s, border-color .15s; }
 .at-choice--sm .at-checkbox, .at-choice--sm .at-radio { width: 16px; height: 16px; }
 .at-choice--md .at-checkbox, .at-choice--md .at-radio { width: 20px; height: 20px; }
 .at-checkbox { border-radius: var(--radius-xs); }
@@ -353,7 +353,7 @@
 .at-day:hover { background: var(--color-bg-primary-hover); color: var(--color-text-primary); }
 .at-day:focus-visible { outline: none; box-shadow: var(--shadow-focus-ring); }
 .at-day.is-outside { color: var(--color-text-placeholder); }
-.at-day.is-today::after { content: ''; position: absolute; left: 50%; bottom: 6px; width: 5px; height: 5px; margin-left: -2.5px; border-radius: var(--radius-full); background: var(--color-fg-brand); }
+.at-day.is-today::after { content: ''; position: absolute; left: 50%; bottom: 6px; width: 5px; height: 5px; transform: translateX(-50%); border-radius: var(--radius-full); background: var(--color-fg-brand); }
 .at-day.is-in-range { border-radius: 0; background: var(--color-bg-tertiary); color: var(--color-text-primary); }
 .at-day.is-selected { background: var(--color-bg-brand-solid); color: var(--color-text-on-brand); }
 .at-day.is-selected.is-today::after { background: var(--color-fg-on-brand); }

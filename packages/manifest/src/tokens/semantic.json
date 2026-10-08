@@ -1,0 +1,1181 @@
+[
+  {
+    "name": "--color-text-primary",
+    "group": "text",
+    "light": "#18181b",
+    "dark": "#fafafa",
+    "description": "Headings and body text on bg-primary, bg-secondary and bg-tertiary. Don't use on brand or inverse fills — use text-on-brand / text-inverse.",
+    "tailwind": ["text-primary"],
+    "figma": "Text/text-primary"
+  },
+  {
+    "name": "--color-text-secondary",
+    "group": "text",
+    "light": "#3f3f46",
+    "dark": "#d4d4d8",
+    "description": "Supporting copy, labels, descriptions and table cells on bg-primary and bg-secondary. Don't use for disabled text — use text-disabled.",
+    "tailwind": ["text-secondary"],
+    "figma": "Text/text-secondary"
+  },
+  {
+    "name": "--color-text-white",
+    "group": "text",
+    "light": "#ffffff",
+    "dark": "#ffffff",
+    "description": "Always white in both themes — text on photos and fixed dark fills. Don't use on theme-aware surfaces — use text-primary or text-inverse.",
+    "tailwind": ["text-white"],
+    "figma": "Text/text-white"
+  },
+  {
+    "name": "--color-text-opacity",
+    "group": "text",
+    "light": "#00000099",
+    "dark": "#ffffff99",
+    "description": "Text at 60% opacity over imagery or any background. Don't use for hint text on surfaces — use text-tertiary.",
+    "tailwind": ["text-opacity"],
+    "figma": "Text/text-opacity"
+  },
+  {
+    "name": "--color-text-link",
+    "group": "text",
+    "light": "#4057ff",
+    "dark": "#6e96ff",
+    "description": "Inline links on bg-primary and bg-secondary. Pair with an underline or hover change; don't use for non-interactive emphasis — use text-brand.",
+    "tailwind": ["text-link"],
+    "figma": "Text/text-link"
+  },
+  {
+    "name": "--color-text-tertiary",
+    "group": "text",
+    "light": "#71717a",
+    "dark": "#a1a1aa",
+    "description": "Hints, timestamps, metadata and helper text on bg-primary and bg-secondary. Don't use for body copy or placeholders.",
+    "tailwind": ["text-tertiary"],
+    "figma": "Text/text-tertiary"
+  },
+  {
+    "name": "--color-text-placeholder",
+    "group": "text",
+    "light": "#71717a",
+    "dark": "#a1a1aa",
+    "description": "Placeholder text inside inputs only, on bg-primary. Never use for labels or entered values.",
+    "tailwind": ["text-placeholder"],
+    "figma": "Text/text-placeholder"
+  },
+  {
+    "name": "--color-text-disabled",
+    "group": "text",
+    "light": "#d4d4d8",
+    "dark": "#52525b",
+    "description": "Labels of disabled controls; exempt from contrast rules. Don't use to de-emphasise active content — use text-tertiary.",
+    "tailwind": ["text-disabled"],
+    "figma": "Text/text-disabled"
+  },
+  {
+    "name": "--color-text-brand",
+    "group": "text",
+    "light": "#4057ff",
+    "dark": "#6e96ff",
+    "description": "Brand-coloured text: highlighted words and active nav labels on bg-primary and bg-brand-subtle. Don't use on bg-brand-solid — use text-on-brand.",
+    "tailwind": ["text-brand"],
+    "figma": "Text/text-brand"
+  },
+  {
+    "name": "--color-text-on-brand",
+    "group": "text",
+    "light": "#ffffff",
+    "dark": "#ffffff",
+    "description": "Labels on bg-brand-solid (the primary button). Only on brand-solid fills.",
+    "tailwind": ["text-on-brand"],
+    "figma": "Text/text-on-brand"
+  },
+  {
+    "name": "--color-text-error",
+    "group": "text",
+    "light": "#be123c",
+    "dark": "#fda4af",
+    "description": "Error messages and destructive labels on bg-primary and bg-error-subtle. Don't use on bg-error-solid — use text-white.",
+    "tailwind": ["text-error"],
+    "figma": "Text/text-error"
+  },
+  {
+    "name": "--color-text-warning",
+    "group": "text",
+    "light": "#b45309",
+    "dark": "#fbbf24",
+    "description": "Warning text on bg-primary and bg-warning-subtle. Don't use on bg-warning-solid — use text-on-warning.",
+    "tailwind": ["text-warning"],
+    "figma": "Text/text-warning"
+  },
+  {
+    "name": "--color-text-success",
+    "group": "text",
+    "light": "#15803d",
+    "dark": "#49de80",
+    "description": "Success text on bg-primary and bg-success-subtle.",
+    "tailwind": ["text-success"],
+    "figma": "Text/text-success"
+  },
+  {
+    "name": "--color-text-brand-hover",
+    "group": "text",
+    "light": "#2335d6",
+    "dark": "#97bdff",
+    "description": "Hover state of text-brand and text-link. Only for the hover state.",
+    "tailwind": ["text-brand-hover"],
+    "figma": "Text/text-brand_hover"
+  },
+  {
+    "name": "--color-text-inverse",
+    "group": "text",
+    "light": "#ffffff",
+    "dark": "#18181b",
+    "description": "Text on bg-inverse (tooltips, dark banners). Only on bg-inverse.",
+    "tailwind": ["text-inverse"],
+    "figma": "Text/text-inverse"
+  },
+  {
+    "name": "--color-text-on-warning",
+    "group": "text",
+    "light": "#18181b",
+    "dark": "#18181b",
+    "description": "Text on bg-warning-solid (solid warning badges). Always Gray 900 — white on amber is only 2.2:1.",
+    "tailwind": ["text-on-warning"],
+    "figma": "Text/text-on-warning"
+  },
+  {
+    "name": "--color-button-primary-color",
+    "group": "components",
+    "light": "#4057ff",
+    "dark": "#4057ff",
+    "description": "Component token: primary button fill. Use only inside Button; in custom UI use the semantic Background / Text / Border roles.",
+    "tailwind": [],
+    "figma": "Components/Button/Primary/button-primary-color"
+  },
+  {
+    "name": "--color-button-primary-text",
+    "group": "components",
+    "light": "#ffffff",
+    "dark": "#ffffff",
+    "description": "Component token: primary button label. Use only inside Button; in custom UI use the semantic Background / Text / Border roles.",
+    "tailwind": [],
+    "figma": "Components/Button/Primary/button-primary-text"
+  },
+  {
+    "name": "--color-button-primary-text-hover",
+    "group": "components",
+    "light": "#ffffff",
+    "dark": "#ffffff",
+    "description": "Component token: primary button label — hover state. Use only inside Button; in custom UI use the semantic Background / Text / Border roles.",
+    "tailwind": [],
+    "figma": "Components/Button/Primary/button-primary-text_hover"
+  },
+  {
+    "name": "--color-button-primary-color-hover",
+    "group": "components",
+    "light": "#4c70ff",
+    "dark": "#4c70ff",
+    "description": "Component token: primary button fill — hover state. Use only inside Button; in custom UI use the semantic Background / Text / Border roles.",
+    "tailwind": [],
+    "figma": "Components/Button/Primary/button-primary-color_hover"
+  },
+  {
+    "name": "--color-button-primary-border",
+    "group": "components",
+    "light": "#4057ff",
+    "dark": "#4057ff",
+    "description": "Component token: primary button border. Use only inside Button; in custom UI use the semantic Background / Text / Border roles.",
+    "tailwind": [],
+    "figma": "Components/Button/Primary/button-primary-border"
+  },
+  {
+    "name": "--color-button-primary-border-focus",
+    "group": "components",
+    "light": "#ffffff",
+    "dark": "#ffffff",
+    "description": "Component token: primary button border — focus state. Use only inside Button; in custom UI use the semantic Background / Text / Border roles.",
+    "tailwind": [],
+    "figma": "Components/Button/Primary/button-primary-border_focus"
+  },
+  {
+    "name": "--color-button-secondary-text",
+    "group": "components",
+    "light": "#18181b",
+    "dark": "#fafafa",
+    "description": "Component token: secondary button label. Use only inside Button; in custom UI use the semantic Background / Text / Border roles.",
+    "tailwind": [],
+    "figma": "Components/Button/Secondary/button-secondary-text"
+  },
+  {
+    "name": "--color-button-secondary-text-hover",
+    "group": "components",
+    "light": "#18181b",
+    "dark": "#fafafa",
+    "description": "Component token: secondary button label — hover state. Use only inside Button; in custom UI use the semantic Background / Text / Border roles.",
+    "tailwind": [],
+    "figma": "Components/Button/Secondary/button-secondary-text_hover"
+  },
+  {
+    "name": "--color-button-secondary-color",
+    "group": "components",
+    "light": "#f4f4f5",
+    "dark": "#27272a",
+    "description": "Component token: secondary button fill. Use only inside Button; in custom UI use the semantic Background / Text / Border roles.",
+    "tailwind": [],
+    "figma": "Components/Button/Secondary/button-secondary-color"
+  },
+  {
+    "name": "--color-button-secondary-color-hover",
+    "group": "components",
+    "light": "#e4e4e7",
+    "dark": "#3f3f46",
+    "description": "Component token: secondary button fill — hover state. Use only inside Button; in custom UI use the semantic Background / Text / Border roles.",
+    "tailwind": [],
+    "figma": "Components/Button/Secondary/button-secondary-color_hover"
+  },
+  {
+    "name": "--color-button-secondary-border",
+    "group": "components",
+    "light": "#f4f4f5",
+    "dark": "#27272a",
+    "description": "Component token: secondary button border. Use only inside Button; in custom UI use the semantic Background / Text / Border roles.",
+    "tailwind": [],
+    "figma": "Components/Button/Secondary/button-secondary-border"
+  },
+  {
+    "name": "--color-button-secondary-border-focus",
+    "group": "components",
+    "light": "#ffffff",
+    "dark": "#ffffff",
+    "description": "Component token: secondary button border — focus state. Use only inside Button; in custom UI use the semantic Background / Text / Border roles.",
+    "tailwind": [],
+    "figma": "Components/Button/Secondary/button-secondary-border_focus"
+  },
+  {
+    "name": "--color-button-outline-color",
+    "group": "components",
+    "light": "#d4d4d8",
+    "dark": "#52525b",
+    "description": "Component token: outline button outline stroke. Use only inside Button; in custom UI use the semantic Background / Text / Border roles.",
+    "tailwind": [],
+    "figma": "Components/Button/Outline/button-outline-color"
+  },
+  {
+    "name": "--color-button-outline-text-hover",
+    "group": "components",
+    "light": "#27272a",
+    "dark": "#d4d4d8",
+    "description": "Component token: outline button label — hover state. Use only inside Button; in custom UI use the semantic Background / Text / Border roles.",
+    "tailwind": [],
+    "figma": "Components/Button/Outline/button-outline-text_hover"
+  },
+  {
+    "name": "--color-button-outline-color-hover",
+    "group": "components",
+    "light": "#a1a1aa",
+    "dark": "#3f3f46",
+    "description": "Component token: outline button outline stroke — hover state. Use only inside Button; in custom UI use the semantic Background / Text / Border roles.",
+    "tailwind": [],
+    "figma": "Components/Button/Outline/button-outline-color_hover"
+  },
+  {
+    "name": "--color-button-outline-text",
+    "group": "components",
+    "light": "#27272a",
+    "dark": "#e4e4e7",
+    "description": "Component token: outline button label. Use only inside Button; in custom UI use the semantic Background / Text / Border roles.",
+    "tailwind": [],
+    "figma": "Components/Button/Outline/button-outline-text"
+  },
+  {
+    "name": "--color-button-outline-border-focus",
+    "group": "components",
+    "light": "#ffffff",
+    "dark": "#ffffff",
+    "description": "Component token: outline button border — focus state. Use only inside Button; in custom UI use the semantic Background / Text / Border roles.",
+    "tailwind": [],
+    "figma": "Components/Button/Outline/button-outline-border_focus"
+  },
+  {
+    "name": "--color-button-inv-text",
+    "group": "components",
+    "light": "#18181b",
+    "dark": "#fafafa",
+    "description": "Component token: invisible (tertiary) button label. Use only inside Button; in custom UI use the semantic Background / Text / Border roles.",
+    "tailwind": [],
+    "figma": "Components/Button/Invisible/button-inv-text"
+  },
+  {
+    "name": "--color-button-inv-color",
+    "group": "components",
+    "light": "#ffffff03",
+    "dark": "#ffffff03",
+    "description": "Component token: invisible (tertiary) button fill. Use only inside Button; in custom UI use the semantic Background / Text / Border roles.",
+    "tailwind": [],
+    "figma": "Components/Button/Invisible/button-inv-color"
+  },
+  {
+    "name": "--color-button-inv-text-hover",
+    "group": "components",
+    "light": "#18181b",
+    "dark": "#fafafa",
+    "description": "Component token: invisible (tertiary) button label — hover state. Use only inside Button; in custom UI use the semantic Background / Text / Border roles.",
+    "tailwind": [],
+    "figma": "Components/Button/Invisible/button-inv-text_hover"
+  },
+  {
+    "name": "--color-button-inv-color-hover",
+    "group": "components",
+    "light": "#f4f4f5",
+    "dark": "#27272a",
+    "description": "Component token: invisible (tertiary) button fill — hover state. Use only inside Button; in custom UI use the semantic Background / Text / Border roles.",
+    "tailwind": [],
+    "figma": "Components/Button/Invisible/button-inv-color_hover"
+  },
+  {
+    "name": "--color-button-inv-border-active",
+    "group": "components",
+    "light": "#ffffff",
+    "dark": "#000000",
+    "description": "Component token: invisible (tertiary) button border — active state. Use only inside Button; in custom UI use the semantic Background / Text / Border roles.",
+    "tailwind": [],
+    "figma": "Components/Button/Invisible/button-inv-border_active"
+  },
+  {
+    "name": "--color-button-link-text",
+    "group": "components",
+    "light": "#4057ff",
+    "dark": "#4057ff",
+    "description": "Component token: link button label. Use only inside Button; in custom UI use the semantic Background / Text / Border roles.",
+    "tailwind": [],
+    "figma": "Components/Button/Link/button-link-text"
+  },
+  {
+    "name": "--color-button-link-text-hover",
+    "group": "components",
+    "light": "#4c70ff",
+    "dark": "#bed9ff",
+    "description": "Component token: link button label — hover state. Use only inside Button; in custom UI use the semantic Background / Text / Border roles.",
+    "tailwind": [],
+    "figma": "Components/Button/Link/button-link-text_hover"
+  },
+  {
+    "name": "--color-button-link-border-active",
+    "group": "components",
+    "light": "#ffffff",
+    "dark": "#ffffff",
+    "description": "Component token: link button border — active state. Use only inside Button; in custom UI use the semantic Background / Text / Border roles.",
+    "tailwind": [],
+    "figma": "Components/Button/Link/button-link-border_active"
+  },
+  {
+    "name": "--color-button-link-border-hover",
+    "group": "components",
+    "light": "#4c70ff",
+    "dark": "#4c70ff",
+    "description": "Component token: link button border — hover state. Use only inside Button; in custom UI use the semantic Background / Text / Border roles.",
+    "tailwind": [],
+    "figma": "Components/Button/Link/button-link-border_hover"
+  },
+  {
+    "name": "--color-button-disabled-color",
+    "group": "components",
+    "light": "#f4f4f5",
+    "dark": "#27272a",
+    "description": "Component token: fill of disabled buttons. Aliases the disabled ramp; prefer bg-disabled in new code.",
+    "tailwind": [],
+    "figma": "Components/Utility/button-disabled-color"
+  },
+  {
+    "name": "--color-button-disabled-text",
+    "group": "components",
+    "light": "#d4d4d8",
+    "dark": "#52525b",
+    "description": "Component token: label of disabled buttons. Prefer text-disabled in new code.",
+    "tailwind": [],
+    "figma": "Components/Utility/button-disabled-text"
+  },
+  {
+    "name": "--color-focus-m-color",
+    "group": "components",
+    "light": "#2563eb52",
+    "dark": "#2563eb52",
+    "description": "Component token: colour of the medium (3px) focus ring.",
+    "tailwind": [],
+    "figma": "Components/Utility/focus-m-color"
+  },
+  {
+    "name": "--color-focus-s-color",
+    "group": "components",
+    "light": "#2563eb3d",
+    "dark": "#2563eb3d",
+    "description": "Component token: colour of the small (2px) focus ring.",
+    "tailwind": [],
+    "figma": "Components/Utility/focus-s-color"
+  },
+  {
+    "name": "--color-badge-primary-text",
+    "group": "components",
+    "light": "#2335d6",
+    "dark": "#4c70ff",
+    "description": "Component token: primary badge label. Use only inside Badge; in custom UI use the semantic roles.",
+    "tailwind": [],
+    "figma": "Components/Badge/badge-primary-text"
+  },
+  {
+    "name": "--color-badge-primary-border",
+    "group": "components",
+    "light": "#bed9ff",
+    "dark": "#27272a",
+    "description": "Component token: primary badge border. Use only inside Badge; in custom UI use the semantic roles.",
+    "tailwind": [],
+    "figma": "Components/Badge/badge-primary-border"
+  },
+  {
+    "name": "--color-badge-primary-color",
+    "group": "components",
+    "light": "#ebf5ff",
+    "dark": "#18181b",
+    "description": "Component token: primary badge fill. Use only inside Badge; in custom UI use the semantic roles.",
+    "tailwind": [],
+    "figma": "Components/Badge/badge-primary-color"
+  },
+  {
+    "name": "--color-badge-light-color",
+    "group": "components",
+    "light": "#e4e4e7",
+    "dark": "#18181b",
+    "description": "Component token: light badge fill. Use only inside Badge; in custom UI use the semantic roles.",
+    "tailwind": [],
+    "figma": "Components/Badge/badge-light-color"
+  },
+  {
+    "name": "--color-badge-light-text",
+    "group": "components",
+    "light": "#27272a",
+    "dark": "#f4f4f5",
+    "description": "Component token: light badge label. Use only inside Badge; in custom UI use the semantic roles.",
+    "tailwind": [],
+    "figma": "Components/Badge/badge-light-text"
+  },
+  {
+    "name": "--color-badge-light-border",
+    "group": "components",
+    "light": "#d4d4d8",
+    "dark": "#27272a",
+    "description": "Component token: light badge border. Use only inside Badge; in custom UI use the semantic roles.",
+    "tailwind": [],
+    "figma": "Components/Badge/badge-light-border"
+  },
+  {
+    "name": "--color-badge-success-color",
+    "group": "components",
+    "light": "#dcfce7",
+    "dark": "#18181b",
+    "description": "Component token: success badge fill. Use only inside Badge; in custom UI use the semantic roles.",
+    "tailwind": [],
+    "figma": "Components/Badge/badge-success-color"
+  },
+  {
+    "name": "--color-badge-success-border",
+    "group": "components",
+    "light": "#85efab",
+    "dark": "#27272a",
+    "description": "Component token: success badge border. Use only inside Badge; in custom UI use the semantic roles.",
+    "tailwind": [],
+    "figma": "Components/Badge/badge-success-border"
+  },
+  {
+    "name": "--color-badge-success-text",
+    "group": "components",
+    "light": "#15803d",
+    "dark": "#22c55d",
+    "description": "Component token: success badge label. Use only inside Badge; in custom UI use the semantic roles.",
+    "tailwind": [],
+    "figma": "Components/Badge/badge-success-text"
+  },
+  {
+    "name": "--color-badge-danger-color",
+    "group": "components",
+    "light": "#ffe4e6",
+    "dark": "#18181b",
+    "description": "Component token: danger badge fill. Use only inside Badge; in custom UI use the semantic roles.",
+    "tailwind": [],
+    "figma": "Components/Badge/badge-danger-color"
+  },
+  {
+    "name": "--color-badge-danger-border",
+    "group": "components",
+    "light": "#fda4af",
+    "dark": "#27272a",
+    "description": "Component token: danger badge border. Use only inside Badge; in custom UI use the semantic roles.",
+    "tailwind": [],
+    "figma": "Components/Badge/badge-danger-border"
+  },
+  {
+    "name": "--color-badge-danger-text",
+    "group": "components",
+    "light": "#be123c",
+    "dark": "#f43f5e",
+    "description": "Component token: danger badge label. Use only inside Badge; in custom UI use the semantic roles.",
+    "tailwind": [],
+    "figma": "Components/Badge/badge-danger-text"
+  },
+  {
+    "name": "--color-badge-info-color",
+    "group": "components",
+    "light": "#cffafe",
+    "dark": "#18181b",
+    "description": "Component token: info badge fill. Use only inside Badge; in custom UI use the semantic roles.",
+    "tailwind": [],
+    "figma": "Components/Badge/badge-info-color"
+  },
+  {
+    "name": "--color-badge-info-border",
+    "group": "components",
+    "light": "#67e8f9",
+    "dark": "#27272a",
+    "description": "Component token: info badge border. Use only inside Badge; in custom UI use the semantic roles.",
+    "tailwind": [],
+    "figma": "Components/Badge/badge-info-border"
+  },
+  {
+    "name": "--color-badge-info-text",
+    "group": "components",
+    "light": "#0e7490",
+    "dark": "#06b6d4",
+    "description": "Component token: info badge label. Use only inside Badge; in custom UI use the semantic roles.",
+    "tailwind": [],
+    "figma": "Components/Badge/badge-info-text"
+  },
+  {
+    "name": "--color-badge-warning-color",
+    "group": "components",
+    "light": "#fef3c7",
+    "dark": "#18181b",
+    "description": "Component token: warning badge fill. Use only inside Badge; in custom UI use the semantic roles.",
+    "tailwind": [],
+    "figma": "Components/Badge/badge-warning-color"
+  },
+  {
+    "name": "--color-badge-warning-border",
+    "group": "components",
+    "light": "#fcd34d",
+    "dark": "#27272a",
+    "description": "Component token: warning badge border. Use only inside Badge; in custom UI use the semantic roles.",
+    "tailwind": [],
+    "figma": "Components/Badge/badge-warning-border"
+  },
+  {
+    "name": "--color-badge-warning-text",
+    "group": "components",
+    "light": "#b45309",
+    "dark": "#f59e0b",
+    "description": "Component token: warning badge label. Use only inside Badge; in custom UI use the semantic roles.",
+    "tailwind": [],
+    "figma": "Components/Badge/badge-warning-text"
+  },
+  {
+    "name": "--color-badge-dark-text",
+    "group": "components",
+    "light": "#f4f4f5",
+    "dark": "#a1a1aa",
+    "description": "Component token: dark badge label. Use only inside Badge; in custom UI use the semantic roles.",
+    "tailwind": [],
+    "figma": "Components/Badge/badge-dark-text"
+  },
+  {
+    "name": "--color-badge-dark-border",
+    "group": "components",
+    "light": "#3f3f46",
+    "dark": "#27272a",
+    "description": "Component token: dark badge border. Use only inside Badge; in custom UI use the semantic roles.",
+    "tailwind": [],
+    "figma": "Components/Badge/badge-dark-border"
+  },
+  {
+    "name": "--color-badge-dark-color",
+    "group": "components",
+    "light": "#3f3f46",
+    "dark": "#18181b",
+    "description": "Component token: dark badge fill. Use only inside Badge; in custom UI use the semantic roles.",
+    "tailwind": [],
+    "figma": "Components/Badge/badge-dark-color"
+  },
+  {
+    "name": "--color-alert-brand-bg",
+    "group": "components",
+    "light": "#dbeaff",
+    "dark": "#6e96ff24",
+    "description": "Alert background (Subtle style).",
+    "tailwind": [],
+    "figma": "Components/Alert/alert-brand-bg"
+  },
+  {
+    "name": "--color-alert-brand-border",
+    "group": "components",
+    "light": "#bed9ff",
+    "dark": "#6e96ff5c",
+    "description": "Alert hairline border.",
+    "tailwind": [],
+    "figma": "Components/Alert/alert-brand-border"
+  },
+  {
+    "name": "--color-alert-brand-title",
+    "group": "components",
+    "light": "#1d2fb6",
+    "dark": "#97bdff",
+    "description": "Alert title, link and action text.",
+    "tailwind": [],
+    "figma": "Components/Alert/alert-brand-title"
+  },
+  {
+    "name": "--color-alert-brand-icon",
+    "group": "components",
+    "light": "#2335d6",
+    "dark": "#6e96ff",
+    "description": "Alert status icon and close button.",
+    "tailwind": [],
+    "figma": "Components/Alert/alert-brand-icon"
+  },
+  {
+    "name": "--color-alert-error-bg",
+    "group": "components",
+    "light": "#ffe4e6",
+    "dark": "#fb718524",
+    "description": "Alert background (Subtle style).",
+    "tailwind": [],
+    "figma": "Components/Alert/alert-error-bg"
+  },
+  {
+    "name": "--color-alert-error-border",
+    "group": "components",
+    "light": "#fecdd3",
+    "dark": "#fb71855c",
+    "description": "Alert hairline border.",
+    "tailwind": [],
+    "figma": "Components/Alert/alert-error-border"
+  },
+  {
+    "name": "--color-alert-error-title",
+    "group": "components",
+    "light": "#9f1239",
+    "dark": "#fda4af",
+    "description": "Alert title, link and action text.",
+    "tailwind": [],
+    "figma": "Components/Alert/alert-error-title"
+  },
+  {
+    "name": "--color-alert-error-icon",
+    "group": "components",
+    "light": "#be123c",
+    "dark": "#fb7185",
+    "description": "Alert status icon and close button.",
+    "tailwind": [],
+    "figma": "Components/Alert/alert-error-icon"
+  },
+  {
+    "name": "--color-alert-warning-bg",
+    "group": "components",
+    "light": "#fef3c7",
+    "dark": "#fbbf2424",
+    "description": "Alert background (Subtle style).",
+    "tailwind": [],
+    "figma": "Components/Alert/alert-warning-bg"
+  },
+  {
+    "name": "--color-alert-warning-border",
+    "group": "components",
+    "light": "#fcd34d",
+    "dark": "#fbbf245c",
+    "description": "Alert hairline border.",
+    "tailwind": [],
+    "figma": "Components/Alert/alert-warning-border"
+  },
+  {
+    "name": "--color-alert-warning-title",
+    "group": "components",
+    "light": "#92400e",
+    "dark": "#fcd34d",
+    "description": "Alert title, link and action text.",
+    "tailwind": [],
+    "figma": "Components/Alert/alert-warning-title"
+  },
+  {
+    "name": "--color-alert-warning-icon",
+    "group": "components",
+    "light": "#b45309",
+    "dark": "#fbbf24",
+    "description": "Alert status icon and close button.",
+    "tailwind": [],
+    "figma": "Components/Alert/alert-warning-icon"
+  },
+  {
+    "name": "--color-alert-success-bg",
+    "group": "components",
+    "light": "#dcfce7",
+    "dark": "#49de8024",
+    "description": "Alert background (Subtle style).",
+    "tailwind": [],
+    "figma": "Components/Alert/alert-success-bg"
+  },
+  {
+    "name": "--color-alert-success-border",
+    "group": "components",
+    "light": "#85efab",
+    "dark": "#49de805c",
+    "description": "Alert hairline border.",
+    "tailwind": [],
+    "figma": "Components/Alert/alert-success-border"
+  },
+  {
+    "name": "--color-alert-success-title",
+    "group": "components",
+    "light": "#166534",
+    "dark": "#85efab",
+    "description": "Alert title, link and action text.",
+    "tailwind": [],
+    "figma": "Components/Alert/alert-success-title"
+  },
+  {
+    "name": "--color-alert-success-icon",
+    "group": "components",
+    "light": "#15803d",
+    "dark": "#49de80",
+    "description": "Alert status icon and close button.",
+    "tailwind": [],
+    "figma": "Components/Alert/alert-success-icon"
+  },
+  {
+    "name": "--color-alert-gray-bg",
+    "group": "components",
+    "light": "#f4f4f5",
+    "dark": "#a1a1aa24",
+    "description": "Alert background (Subtle style).",
+    "tailwind": [],
+    "figma": "Components/Alert/alert-gray-bg"
+  },
+  {
+    "name": "--color-alert-gray-border",
+    "group": "components",
+    "light": "#d4d4d8",
+    "dark": "#a1a1aa5c",
+    "description": "Alert hairline border.",
+    "tailwind": [],
+    "figma": "Components/Alert/alert-gray-border"
+  },
+  {
+    "name": "--color-alert-gray-title",
+    "group": "components",
+    "light": "#18181b",
+    "dark": "#fafafa",
+    "description": "Alert title, link and action text.",
+    "tailwind": [],
+    "figma": "Components/Alert/alert-gray-title"
+  },
+  {
+    "name": "--color-alert-gray-icon",
+    "group": "components",
+    "light": "#52525b",
+    "dark": "#a1a1aa",
+    "description": "Alert status icon and close button.",
+    "tailwind": [],
+    "figma": "Components/Alert/alert-gray-icon"
+  },
+  {
+    "name": "--color-gradient-primary-start",
+    "group": "gradient",
+    "light": "#2563eb",
+    "dark": "#2563eb",
+    "description": "Start stop of the primary gradient (hero and promo backgrounds). Decorative only — never behind body text without a scrim.",
+    "tailwind": [],
+    "figma": "Gradient/Primary Start"
+  },
+  {
+    "name": "--color-gradient-primary-end",
+    "group": "gradient",
+    "light": "#60a5fa",
+    "dark": "#60a5fa",
+    "description": "End stop of the primary gradient (hero and promo backgrounds). Decorative only.",
+    "tailwind": [],
+    "figma": "Gradient/Primary End"
+  },
+  {
+    "name": "--color-gradient-secondary-start",
+    "group": "gradient",
+    "light": "#2563eb",
+    "dark": "#2563eb",
+    "description": "Start stop of the secondary gradient (hero and promo backgrounds). Decorative only.",
+    "tailwind": [],
+    "figma": "Gradient/Secondary Start"
+  },
+  {
+    "name": "--color-gradient-secondary-end",
+    "group": "gradient",
+    "light": "#a78bfa",
+    "dark": "#a78bfa",
+    "description": "End stop of the secondary gradient (hero and promo backgrounds). Decorative only.",
+    "tailwind": [],
+    "figma": "Gradient/Secondary End"
+  },
+  {
+    "name": "--color-gradient-tertiary-start",
+    "group": "gradient",
+    "light": "#94a3b8",
+    "dark": "#94a3b8",
+    "description": "Start stop of the tertiary (neutral) gradient. Decorative only.",
+    "tailwind": [],
+    "figma": "Gradient/Tertiary Start"
+  },
+  {
+    "name": "--color-gradient-tertiary-end",
+    "group": "gradient",
+    "light": "#f1f5f9",
+    "dark": "#f1f5f9",
+    "description": "End stop of the tertiary (neutral) gradient. Decorative only.",
+    "tailwind": [],
+    "figma": "Gradient/Tertiary End"
+  },
+  {
+    "name": "--color-bg-primary",
+    "group": "background",
+    "light": "#ffffff",
+    "dark": "#18181b",
+    "description": "Default page and card surface. Pair with text-primary and border-secondary.",
+    "tailwind": ["bg-primary"],
+    "figma": "Background/bg-primary"
+  },
+  {
+    "name": "--color-bg-primary-hover",
+    "group": "background",
+    "light": "#fafafa",
+    "dark": "#27272a",
+    "description": "Hover on rows, menu items and list items that sit on bg-primary. Only for hover, never as a resting fill.",
+    "tailwind": ["bg-primary-hover"],
+    "figma": "Background/bg-primary_hover"
+  },
+  {
+    "name": "--color-bg-secondary",
+    "group": "background",
+    "light": "#fafafa",
+    "dark": "#27272a",
+    "description": "Sidebars, section bands, table headers and subtle panels. Don't nest bg-secondary inside bg-secondary — step to bg-tertiary.",
+    "tailwind": ["bg-secondary"],
+    "figma": "Background/bg-secondary"
+  },
+  {
+    "name": "--color-bg-tertiary",
+    "group": "background",
+    "light": "#f4f4f5",
+    "dark": "#3f3f46",
+    "description": "Stronger neutral fill: chips, wells, tracks, image placeholders and secondary buttons.",
+    "tailwind": ["bg-tertiary"],
+    "figma": "Background/bg-tertiary"
+  },
+  {
+    "name": "--color-bg-inverse",
+    "group": "background",
+    "light": "#18181b",
+    "dark": "#ffffff",
+    "description": "Inverted surfaces: tooltips and dark banners. Always pair with text-inverse and fg-inverse.",
+    "tailwind": ["bg-inverse"],
+    "figma": "Background/bg-inverse"
+  },
+  {
+    "name": "--color-bg-disabled",
+    "group": "background",
+    "light": "#f4f4f5",
+    "dark": "#27272a",
+    "description": "Fill of disabled controls. Pair with text-disabled and border-disabled.",
+    "tailwind": ["bg-disabled"],
+    "figma": "Background/bg-disabled"
+  },
+  {
+    "name": "--color-bg-brand-solid",
+    "group": "background",
+    "light": "#4057ff",
+    "dark": "#4057ff",
+    "description": "Primary brand fill: primary buttons, checked controls, progress fills, active states. Use text-on-brand / fg-on-brand on top; one primary action per view.",
+    "tailwind": ["bg-brand-solid"],
+    "figma": "Background/bg-brand-solid"
+  },
+  {
+    "name": "--color-bg-brand-solid-hover",
+    "group": "background",
+    "light": "#2335d6",
+    "dark": "#2335d6",
+    "description": "Hover of bg-brand-solid. Only for the hover state.",
+    "tailwind": ["bg-brand-solid-hover"],
+    "figma": "Background/bg-brand-solid_hover"
+  },
+  {
+    "name": "--color-bg-brand-subtle",
+    "group": "background",
+    "light": "#ebf5ff",
+    "dark": "#121f8c",
+    "description": "Light brand tint: selected rows, info areas, brand badges. Use text-brand or text-primary on top.",
+    "tailwind": ["bg-brand-subtle"],
+    "figma": "Background/bg-brand-subtle"
+  },
+  {
+    "name": "--color-bg-error-solid",
+    "group": "background",
+    "light": "#e11d48",
+    "dark": "#e11d48",
+    "description": "Destructive buttons and error dots. Use text-white on top; reserve for destructive actions.",
+    "tailwind": ["bg-error-solid"],
+    "figma": "Background/bg-error-solid"
+  },
+  {
+    "name": "--color-bg-error-subtle",
+    "group": "background",
+    "light": "#fff1f2",
+    "dark": "#881337",
+    "description": "Error alert, field and badge background. Use text-error on top.",
+    "tailwind": ["bg-error-subtle"],
+    "figma": "Background/bg-error-subtle"
+  },
+  {
+    "name": "--color-bg-warning-subtle",
+    "group": "background",
+    "light": "#fffbeb",
+    "dark": "#78350f",
+    "description": "Warning alert and badge background. Use text-warning on top.",
+    "tailwind": ["bg-warning-subtle"],
+    "figma": "Background/bg-warning-subtle"
+  },
+  {
+    "name": "--color-bg-success-subtle",
+    "group": "background",
+    "light": "#f0fdf4",
+    "dark": "#14532d",
+    "description": "Success alert and badge background. Use text-success on top.",
+    "tailwind": ["bg-success-subtle"],
+    "figma": "Background/bg-success-subtle"
+  },
+  {
+    "name": "--color-bg-tertiary-hover",
+    "group": "background",
+    "light": "#e4e4e7",
+    "dark": "#52525b",
+    "description": "Hover on bg-tertiary fills (secondary buttons, chips). Only for the hover state.",
+    "tailwind": ["bg-tertiary-hover"],
+    "figma": "Background/bg-tertiary_hover"
+  },
+  {
+    "name": "--color-bg-warning-solid",
+    "group": "background",
+    "light": "#f59e0b",
+    "dark": "#f59e0b",
+    "description": "Solid warning fill: badges, dots. Use text-on-warning / fg-on-warning on top — never white.",
+    "tailwind": ["bg-warning-solid"],
+    "figma": "Background/bg-warning-solid"
+  },
+  {
+    "name": "--color-bg-success-solid",
+    "group": "background",
+    "light": "#15803d",
+    "dark": "#15803d",
+    "description": "Solid success fill: badges, dots. Use text-white on top.",
+    "tailwind": ["bg-success-solid"],
+    "figma": "Background/bg-success-solid"
+  },
+  {
+    "name": "--color-bg-overlay",
+    "group": "background",
+    "light": "#18181bb2",
+    "dark": "#000000b2",
+    "description": "Scrim behind modals and drawers. Only for overlays, never as a surface.",
+    "tailwind": ["bg-overlay"],
+    "figma": "Background/bg-overlay"
+  },
+  {
+    "name": "--color-bg-quaternary",
+    "group": "background",
+    "light": "#e4e4e7",
+    "dark": "#3f3f46",
+    "description": "Strongest neutral fill: toggle tracks (off), slider and progress tracks.",
+    "tailwind": ["bg-quaternary"],
+    "figma": "Background/bg-quaternary"
+  },
+  {
+    "name": "--color-bg-quaternary-hover",
+    "group": "background",
+    "light": "#d4d4d8",
+    "dark": "#52525b",
+    "description": "Hover on bg-quaternary fills. Only for the hover state.",
+    "tailwind": ["bg-quaternary-hover"],
+    "figma": "Background/bg-quaternary_hover"
+  },
+  {
+    "name": "--color-border-primary",
+    "group": "border",
+    "light": "#d4d4d8",
+    "dark": "#3f3f46",
+    "description": "Borders of inputs and outlined controls. Decorative strength (≈1.5:1) — always pair a control border with a visible label; use border-focus for focus.",
+    "tailwind": ["border-primary"],
+    "figma": "Border/border-primary"
+  },
+  {
+    "name": "--color-border-secondary",
+    "group": "border",
+    "light": "#e4e4e7",
+    "dark": "#27272a",
+    "description": "Card outlines, dividers and table rules. Don't use for input borders — use border-primary.",
+    "tailwind": ["border-secondary"],
+    "figma": "Border/border-secondary"
+  },
+  {
+    "name": "--color-border-disabled",
+    "group": "border",
+    "light": "#e4e4e7",
+    "dark": "#3f3f46",
+    "description": "Borders of disabled controls.",
+    "tailwind": ["border-disabled"],
+    "figma": "Border/border-disabled"
+  },
+  {
+    "name": "--color-border-brand",
+    "group": "border",
+    "light": "#4057ff",
+    "dark": "#6e96ff",
+    "description": "Selected / active border: selected cards, active tabs. Don't use for focus — use border-focus.",
+    "tailwind": ["border-brand"],
+    "figma": "Border/border-brand"
+  },
+  {
+    "name": "--color-border-focus",
+    "group": "border",
+    "light": "#4c70ff",
+    "dark": "#6e96ff",
+    "description": "Focus outline colour of every interactive control; pair with the focus ring shadow. Only for :focus-visible.",
+    "tailwind": ["border-focus"],
+    "figma": "Border/border-focus"
+  },
+  {
+    "name": "--color-border-error",
+    "group": "border",
+    "light": "#e11d48",
+    "dark": "#fb7185",
+    "description": "Inputs and cards in an error state. Pair with a text-error message.",
+    "tailwind": ["border-error"],
+    "figma": "Border/border-error"
+  },
+  {
+    "name": "--color-border-warning",
+    "group": "border",
+    "light": "#f59e0b",
+    "dark": "#fbbf24",
+    "description": "Inputs, alerts and cards in a warning state.",
+    "tailwind": ["border-warning"],
+    "figma": "Border/border-warning"
+  },
+  {
+    "name": "--color-border-success",
+    "group": "border",
+    "light": "#16a34a",
+    "dark": "#49de80",
+    "description": "Inputs, alerts and cards in a success state.",
+    "tailwind": ["border-success"],
+    "figma": "Border/border-success"
+  },
+  {
+    "name": "--color-fg-primary",
+    "group": "foreground",
+    "light": "#18181b",
+    "dark": "#ffffff",
+    "description": "Primary icons and non-text graphics next to text-primary.",
+    "tailwind": ["fg-primary","fill-fg-primary"],
+    "figma": "Foreground/fg-primary"
+  },
+  {
+    "name": "--color-fg-secondary",
+    "group": "foreground",
+    "light": "#52525b",
+    "dark": "#d4d4d8",
+    "description": "Secondary icons: inputs, nav items, buttons.",
+    "tailwind": ["fg-secondary","fill-fg-secondary"],
+    "figma": "Foreground/fg-secondary"
+  },
+  {
+    "name": "--color-fg-tertiary",
+    "group": "foreground",
+    "light": "#71717a",
+    "dark": "#a1a1aa",
+    "description": "Muted and decorative icons. Don't use for icons that are the only label of an action.",
+    "tailwind": ["fg-tertiary","fill-fg-tertiary"],
+    "figma": "Foreground/fg-tertiary"
+  },
+  {
+    "name": "--color-fg-disabled",
+    "group": "foreground",
+    "light": "#d4d4d8",
+    "dark": "#52525b",
+    "description": "Icons in disabled controls.",
+    "tailwind": ["fg-disabled","fill-fg-disabled"],
+    "figma": "Foreground/fg-disabled"
+  },
+  {
+    "name": "--color-fg-brand",
+    "group": "foreground",
+    "light": "#4057ff",
+    "dark": "#6e96ff",
+    "description": "Brand icons, featured-icon glyphs and active indicators. Don't use on bg-brand-solid — use fg-on-brand.",
+    "tailwind": ["fg-brand","fill-fg-brand"],
+    "figma": "Foreground/fg-brand"
+  },
+  {
+    "name": "--color-fg-on-brand",
+    "group": "foreground",
+    "light": "#ffffff",
+    "dark": "#ffffff",
+    "description": "Icons on bg-brand-solid fills. Only on brand-solid fills.",
+    "tailwind": ["fg-on-brand","fill-fg-on-brand"],
+    "figma": "Foreground/fg-on-brand"
+  },
+  {
+    "name": "--color-fg-error",
+    "group": "foreground",
+    "light": "#e11d48",
+    "dark": "#fb7185",
+    "description": "Error icons.",
+    "tailwind": ["fg-error","fill-fg-error"],
+    "figma": "Foreground/fg-error"
+  },
+  {
+    "name": "--color-fg-warning",
+    "group": "foreground",
+    "light": "#d97706",
+    "dark": "#fbbf24",
+    "description": "Warning icons.",
+    "tailwind": ["fg-warning","fill-fg-warning"],
+    "figma": "Foreground/fg-warning"
+  },
+  {
+    "name": "--color-fg-success",
+    "group": "foreground",
+    "light": "#16a34a",
+    "dark": "#49de80",
+    "description": "Success icons.",
+    "tailwind": ["fg-success","fill-fg-success"],
+    "figma": "Foreground/fg-success"
+  },
+  {
+    "name": "--color-fg-inverse",
+    "group": "foreground",
+    "light": "#ffffff",
+    "dark": "#18181b",
+    "description": "Icons on bg-inverse.",
+    "tailwind": ["fg-inverse","fill-fg-inverse"],
+    "figma": "Foreground/fg-inverse"
+  },
+  {
+    "name": "--color-fg-on-warning",
+    "group": "foreground",
+    "light": "#18181b",
+    "dark": "#18181b",
+    "description": "Icons and dots on bg-warning-solid. Always Gray 900.",
+    "tailwind": ["fg-on-warning","fill-fg-on-warning"],
+    "figma": "Foreground/fg-on-warning"
+  }
+]

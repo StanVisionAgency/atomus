@@ -1,0 +1,118 @@
+{
+  "name": "Modal",
+  "kind": "component",
+  "status": "stable",
+  "since": "4.0.0",
+  "category": "Overlays",
+  "import": "import { Modal } from '@stanvision/atomus-react';",
+  "source": "react/src/components/Modal.tsx",
+  "purpose": "A focused task or decision that blocks the page. Sizes 400 · 544 · 720px.",
+  "description": "Dialog with header, Content slot and actions. Sizes 400 / 544 / 720px.",
+  "aliases": ["dialog","popup","lightbox","confirm dialog"],
+  "alternative": null,
+  "native": {"elements":[],"omit":[],"ref":false},
+  "props": {
+    "open": {"type":"boolean","default":null,"required":true,"figma":null,"notes":null},
+    "onClose": {"type":"() => void","default":null,"required":true,"figma":null,"notes":null},
+    "title": {"type":"ReactNode","default":null,"required":true,"figma":"Title","notes":"Figma: Title"},
+    "description": {"type":"ReactNode","default":null,"required":false,"figma":"Description","notes":"Figma: Description"},
+    "children": {"type":"ReactNode","default":null,"required":false,"figma":"Content slot","notes":"Figma: Content slot"},
+    "actions": {
+      "type": "ReactNode",
+      "default": null,
+      "required": false,
+      "figma": "Actions",
+      "notes": "Figma: Actions — buttons, primary last"
+    },
+    "featuredIcon": {
+      "type": "boolean | ReactNode",
+      "default": null,
+      "required": false,
+      "figma": "Featured icon",
+      "notes": "Figma: Featured icon — true for the default glyph, or pass an icon"
+    },
+    "closeButton": {"type":"boolean","default":true,"required":false,"figma":"Close button","notes":"Figma: Close button"},
+    "size": {
+      "type": "'sm' | 'md' | 'lg'",
+      "values": ["sm","md","lg"],
+      "default": "md",
+      "required": false,
+      "figma": "Size",
+      "notes": "Figma: Size — sm 400 · md 544 · lg 720"
+    },
+    "type": {
+      "type": "'default' | 'destructive'",
+      "values": ["default","destructive"],
+      "default": "default",
+      "required": false,
+      "figma": "Type",
+      "notes": "Figma: Type — destructive tints the featured icon red"
+    },
+    "className": {"type":"string","default":null,"required":false,"figma":null,"notes":null}
+  },
+  "rules": {
+    "do": [
+      "Use for focused tasks that need a decision.",
+      "Put content into the Content slot.",
+      "Put the primary action on the right, after Cancel.",
+      "Use Type = Destructive for irreversible actions."
+    ],
+    "dont": [],
+    "forbidden": [
+      "Never open a modal on top of a modal.",
+      "Never use a modal for long forms — use a page or Drawer.",
+      "Never hide the close button.",
+      "Never open a modal the user did not ask for."
+    ]
+  },
+  "examples": [
+    {
+      "title": "Usage",
+      "code": "import { Modal } from '@stanvision/atomus-react';\n\n<Modal\n  open={open}\n  onClose={() => setOpen(false)}\n  type=\"destructive\"\n  featuredIcon\n  title=\"Delete project?\"\n  description=\"You can’t undo this.\"\n  actions={<><Button hierarchy=\"outline\">Cancel</Button><Button hierarchy=\"primary\">Delete</Button></>}\n/>",
+      "language": "tsx",
+      "source": "sites/docs/src/component-pages/modal.mdx"
+    }
+  ],
+  "figma": {
+    "componentSet": ["Modal"],
+    "fileKey": "bC42e82J3PYg2LMkryodIA",
+    "nodeIds": ["25424:453"],
+    "nodes": [
+      {
+        "componentSet": "Modal",
+        "nodeId": "25424:453",
+        "codeConnectId": "Modal",
+        "staticProps": "open onClose={() => {}}",
+        "mappings": [
+          {"figma":"Title","prop":"title","kind":"text"},
+          {"figma":"Description","prop":"description","kind":"text"},
+          {"figma":"Featured icon","prop":"featuredIcon","kind":"boolean"},
+          {"figma":"Close button","prop":"closeButton","kind":"boolean","whenFalse":"closeButton={false}"},
+          {"figma":"Size","prop":"size","kind":"enum","values":{"sm":"sm","md":"md","lg":"lg"}},
+          {
+            "figma": "Type",
+            "prop": "type",
+            "kind": "enum",
+            "values": {"Default":"default","Destructive":"destructive"}
+          }
+        ]
+      }
+    ],
+    "codeConnect": true,
+    "variants": 6,
+    "properties": [
+      {"componentSet":"Modal","name":"Content","type":"slot (any content)"},
+      {"componentSet":"Modal","name":"Title","type":"text"},
+      {"componentSet":"Modal","name":"Description","type":"text"},
+      {"componentSet":"Modal","name":"Featured icon","type":"boolean (on)"},
+      {"componentSet":"Modal","name":"Close button","type":"boolean (on)"},
+      {"componentSet":"Modal","name":"Actions","type":"boolean (on)"},
+      {"componentSet":"Modal","name":"Size","type":"variant","options":["sm","md","lg"]},
+      {"componentSet":"Modal","name":"Type","type":"variant","options":["Default","Destructive"]}
+    ],
+    "docs": "https://docs.atomus.io/components/modal/"
+  },
+  "docs": "https://docs.atomus.io/components/modal/",
+  "related": [],
+  "a11y": {"element":"dialog","requiresLabel":false,"notes":["Use for focused tasks that need a decision."]}
+}

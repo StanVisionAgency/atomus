@@ -1,0 +1,48 @@
+{
+  "name": "A11y annotation",
+  "kind": "component",
+  "status": "figma-only",
+  "since": "4.0.0",
+  "category": "Media and assets",
+  "import": null,
+  "source": "guidelines/components/shared-assets.md",
+  "purpose": "Focus order, heading level, alt text, landmark, 48px touch target.",
+  "description": "Focus order, heading level, alt text, landmark, 48px touch target.",
+  "aliases": [],
+  "alternative": "These are design-only mockups and annotations; they have no code counterpart.",
+  "props": {
+    "Order": {"type":"text","default":null,"required":false,"figma":"Order","notes":null},
+    "Label": {"type":"text","default":null,"required":false,"figma":"Label","notes":null},
+    "Role": {"type":"text","default":null,"required":false,"figma":"Role","notes":null},
+    "Type": {
+      "type": "variant",
+      "values": ["Focus order","Heading","Alt text","Landmark","Touch target"],
+      "default": null,
+      "required": false,
+      "figma": "Type",
+      "notes": null
+    }
+  },
+  "rules": {"do":[],"dont":[],"forbidden":[]},
+  "examples": [],
+  "figma": {
+    "componentSet": ["A11y annotation"],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": 5,
+    "docs": "https://docs.atomus.io/components/shared-assets/"
+  },
+  "docs": "https://docs.atomus.io/components/shared-assets/",
+  "related": [
+    "Credit card",
+    "Video player",
+    "Email template",
+    "Annotation marker",
+    "Annotation note",
+    "Spec line",
+    "Status tag"
+  ],
+  "a11y": {"element":null,"requiresLabel":false,"notes":[]}
+}

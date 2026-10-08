@@ -1,0 +1,45 @@
+{
+  "name": "File upload",
+  "kind": "component",
+  "status": "figma-only",
+  "since": "4.0.0",
+  "category": "Forms and inputs",
+  "import": null,
+  "source": "guidelines/components/empty-state-file-upload.md",
+  "purpose": "Drop zone and per-file progress.",
+  "description": "Drop zone. Hover = dragging a file over it.",
+  "aliases": ["dropzone","uploader"],
+  "alternative": "File upload and File upload item are Figma-only: use a native `<input type=\"file\">` inside a dashed drop zone styled with tokens.",
+  "props": {
+    "Hint": {"type":"text","default":null,"required":false,"figma":"Hint","notes":null},
+    "State": {
+      "type": "variant",
+      "values": ["Default","Hover","Disabled"],
+      "default": null,
+      "required": false,
+      "figma": "State",
+      "notes": null
+    }
+  },
+  "rules": {
+    "do": [
+      "State the accepted file types and the size limit.",
+      "Show progress and a clear error per file (File upload item)."
+    ],
+    "dont": [],
+    "forbidden": ["Never upload silently without showing the file list."]
+  },
+  "examples": [],
+  "figma": {
+    "componentSet": ["File upload"],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": 3,
+    "docs": "https://docs.atomus.io/components/file-upload/"
+  },
+  "docs": "https://docs.atomus.io/components/file-upload/",
+  "related": ["EmptyState","File upload item"],
+  "a11y": {"element":null,"requiresLabel":false,"notes":[]}
+}

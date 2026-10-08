@@ -1,0 +1,37 @@
+{
+  "name": "Star rating",
+  "kind": "component",
+  "status": "figma-only",
+  "since": "4.0.0",
+  "category": "Media and assets",
+  "import": null,
+  "source": "guidelines/components/atomus-icons.md",
+  "purpose": "Star with partial fill for ratings in reviews and testimonials.",
+  "description": "Star with partial fill for ratings in reviews and testimonials.",
+  "aliases": ["rating"],
+  "alternative": "Use your icon library (Font Awesome names match the Figma icons) and pass icons as React nodes to `icon`, `iconLeading` and `iconTrailing` props. `Icon` from the package only ships the few glyphs the components use internally.",
+  "props": {
+    "Value": {
+      "type": "variant",
+      "values": ["Empty","¼","Half","¾","Full"],
+      "default": null,
+      "required": false,
+      "figma": "Value",
+      "notes": null
+    }
+  },
+  "rules": {"do":[],"dont":[],"forbidden":[]},
+  "examples": [],
+  "figma": {
+    "componentSet": ["Star rating"],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": 5,
+    "docs": "https://docs.atomus.io/components/atomus-icons/"
+  },
+  "docs": "https://docs.atomus.io/components/atomus-icons/",
+  "related": ["Featured icon","Icon brand","Icon payment","Icon flag","Icon file type","Icon folder","Icon integration"],
+  "a11y": {"element":null,"requiresLabel":false,"notes":[]}
+}

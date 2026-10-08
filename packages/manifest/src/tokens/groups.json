@@ -1,0 +1,20 @@
+{
+  "text": {
+    "title": "Text",
+    "intent": "Text colour. `primary` for headings and body, `secondary` for supporting copy, `tertiary` for hints and meta, `placeholder` in inputs, `brand` / `link` for links and highlights, `on-brand` on brand fills, `error` · `warning` · `success` for status text."
+  },
+  "background": {
+    "title": "Background",
+    "intent": "Surface fills. `primary` for the page and cards, `secondary` for sections and table headers, `tertiary` / `quaternary` for subtle fills and placeholders, `brand-solid` for primary buttons, `brand-subtle` for selected and tinted areas, `*-subtle` / `*-solid` for status, `overlay` behind modals, `inverse` for tooltips."
+  },
+  "border": {
+    "title": "Border",
+    "intent": "Strokes. `secondary` for cards and dividers, `primary` for inputs and outlined controls, `brand` for selected, `focus` for focus rings, `error` · `warning` · `success` for status."
+  },
+  "foreground": {"title":"Foreground","intent":"Icons and graphics. Same roles as Text."},
+  "gradient": {"title":"Gradient","intent":"Gradient stops for marketing surfaces."},
+  "components": {
+    "title": "Component tokens",
+    "intent": "Used inside Atomus components (buttons, badges, alerts). Use them only when you build the matching component yourself — otherwise use the component."
+  }
+}

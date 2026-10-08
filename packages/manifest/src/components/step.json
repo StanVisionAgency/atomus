@@ -1,0 +1,48 @@
+{
+  "name": "Step",
+  "kind": "component",
+  "status": "figma-only",
+  "since": "4.0.0",
+  "category": "Navigation",
+  "import": null,
+  "source": "guidelines/components/progress-loading.md",
+  "purpose": "A multi-step flow (onboarding, checkout, setup).",
+  "description": "Single step for Progress steps.",
+  "aliases": [],
+  "alternative": "Progress circle, Progress steps, Loading indicator and Skeleton are Figma-only. For a spinner inside a button use `<Button loading>`.",
+  "props": {
+    "Title": {"type":"text","default":null,"required":false,"figma":"Title","notes":null},
+    "Supporting text": {"type":"text","default":null,"required":false,"figma":"Supporting text","notes":null},
+    "Show supporting": {"type":"boolean (on)","default":true,"required":false,"figma":"Show supporting","notes":null},
+    "Orientation": {
+      "type": "variant",
+      "values": ["Horizontal","Vertical"],
+      "default": null,
+      "required": false,
+      "figma": "Orientation",
+      "notes": null
+    },
+    "Status": {
+      "type": "variant",
+      "values": ["Complete","Current","Upcoming"],
+      "default": null,
+      "required": false,
+      "figma": "Status",
+      "notes": null
+    }
+  },
+  "rules": {"do":[],"dont":[],"forbidden":[]},
+  "examples": [],
+  "figma": {
+    "componentSet": ["Step"],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": 6,
+    "docs": "https://docs.atomus.io/components/progress-steps/"
+  },
+  "docs": "https://docs.atomus.io/components/progress-steps/",
+  "related": ["ProgressBar","Progress steps","Progress circle","Loading indicator","Skeleton"],
+  "a11y": {"element":null,"requiresLabel":false,"notes":[]}
+}

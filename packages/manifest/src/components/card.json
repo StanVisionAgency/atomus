@@ -1,0 +1,138 @@
+{
+  "name": "Card",
+  "kind": "component",
+  "status": "stable",
+  "since": "4.0.0",
+  "category": "Layout and content",
+  "import": "import { Card } from '@stanvision/atomus-react';",
+  "source": "react/src/components/Card.tsx",
+  "purpose": "A bounded group of related content with optional header and footer.",
+  "description": "Container for product and marketing layouts. Content is a slot. Styles: Outlined, Elevated, Filled. Padding md (16) / lg (24).",
+  "aliases": ["panel","tile","box","container"],
+  "alternative": null,
+  "native": {"elements":["element"],"omit":["title"],"ref":false},
+  "props": {
+    "title": {"type":"ReactNode","default":null,"required":false,"figma":"Title","notes":"Figma: Title (Header on)"},
+    "supportingText": {
+      "type": "ReactNode",
+      "default": null,
+      "required": false,
+      "figma": "Supporting text",
+      "notes": "Figma: Supporting text"
+    },
+    "headerAction": {
+      "type": "ReactNode",
+      "default": null,
+      "required": false,
+      "figma": "Header action",
+      "notes": "Figma: Header action — e.g. a Button or icon button, top right"
+    },
+    "children": {"type":"ReactNode","default":null,"required":false,"figma":"Content slot","notes":"Figma: Content slot"},
+    "footer": {
+      "type": "ReactNode",
+      "default": null,
+      "required": false,
+      "figma": "Footer",
+      "notes": "Figma: Footer — buttons aligned right"
+    },
+    "variant": {
+      "type": "'outlined' | 'elevated' | 'filled'",
+      "values": ["outlined","elevated","filled"],
+      "default": "outlined",
+      "required": false,
+      "figma": "Style",
+      "notes": "Figma: Style"
+    },
+    "padding": {
+      "type": "'md' | 'lg'",
+      "values": ["md","lg"],
+      "default": "md",
+      "required": false,
+      "figma": "Padding",
+      "notes": "Figma: Padding — md 16 · lg 24"
+    }
+  },
+  "rules": {
+    "do": [
+      "Card: Put any content into the Content slot.",
+      "Card: Use the Header and Footer booleans instead of building your own.",
+      "Card: Use Outlined on white backgrounds and Filled on grey ones."
+    ],
+    "dont": [
+      "Don't nest cards; use dividers or a filled card instead.",
+      "Don't add a coloured left border to signal status — use Alert or Badge."
+    ],
+    "forbidden": [
+      "Card: Never nest cards inside cards.",
+      "Card: Never add shadows by hand — pick the Elevated style.",
+      "Card: Never detach to change padding — use the Padding variant."
+    ]
+  },
+  "examples": [
+    {
+      "title": "Usage",
+      "code": "import { Card } from '@stanvision/atomus-react';\n\n<Card\n  title=\"Team members\"\n  supportingText=\"Invite people and manage roles.\"\n  headerAction={<Button hierarchy=\"outline\" size=\"sm\">Invite</Button>}\n  footer={<Button hierarchy=\"primary\" size=\"sm\">Save</Button>}\n>\n  …content\n</Card>",
+      "language": "tsx",
+      "source": "sites/docs/src/component-pages/card.mdx"
+    }
+  ],
+  "figma": {
+    "componentSet": ["Card","Card header","Section footer"],
+    "fileKey": "bC42e82J3PYg2LMkryodIA",
+    "nodeIds": ["25425:172"],
+    "nodes": [
+      {
+        "componentSet": "Card",
+        "nodeId": "25425:172",
+        "codeConnectId": "Card",
+        "mappings": [
+          {
+            "figma": "Title",
+            "prop": "title",
+            "kind": "expression",
+            "notes": "header ? instance.getString('Title') : undefined"
+          },
+          {
+            "figma": "Supporting text",
+            "prop": "supportingText",
+            "kind": "expression",
+            "notes": "header ? instance.getString('Supporting text') : undefined"
+          },
+          {
+            "figma": "Style",
+            "prop": "variant",
+            "kind": "enum",
+            "values": {"Outlined":"outlined","Elevated":"elevated","Filled":"filled"}
+          },
+          {"figma":"Padding","prop":"padding","kind":"enum","values":{"md":"md","lg":"lg"}}
+        ]
+      }
+    ],
+    "codeConnect": true,
+    "variants": 12,
+    "properties": [
+      {"componentSet":"Card","name":"Content","type":"slot (any content)"},
+      {"componentSet":"Card","name":"Title","type":"text"},
+      {"componentSet":"Card","name":"Supporting text","type":"text"},
+      {"componentSet":"Card","name":"Header","type":"boolean (on)"},
+      {"componentSet":"Card","name":"Header action","type":"boolean (on)"},
+      {"componentSet":"Card","name":"Footer","type":"boolean (off)"},
+      {"componentSet":"Card","name":"Style","type":"variant","options":["Outlined","Elevated","Filled"]},
+      {"componentSet":"Card","name":"Padding","type":"variant","options":["md","lg"]},
+      {"componentSet":"Card header","name":"Title","type":"text"},
+      {"componentSet":"Card header","name":"Badge","type":"boolean (on)"},
+      {"componentSet":"Card header","name":"Actions","type":"boolean (on)"},
+      {"componentSet":"Card header","name":"Type","type":"variant","options":["Default","Avatar","Icon"]},
+      {
+        "componentSet": "Section footer",
+        "name": "Type",
+        "type": "variant",
+        "options": ["Actions","Pagination","Link"]
+      }
+    ],
+    "docs": "https://docs.atomus.io/components/card/"
+  },
+  "docs": "https://docs.atomus.io/components/card/",
+  "related": ["Inline CTA"],
+  "a11y": {"element":"section","requiresLabel":false,"notes":[]}
+}

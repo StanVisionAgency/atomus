@@ -1,0 +1,38 @@
+{
+  "name": "Pagination number",
+  "kind": "component",
+  "status": "figma-only",
+  "since": "4.0.0",
+  "category": "Navigation",
+  "import": null,
+  "source": "guidelines/components/pagination.md",
+  "purpose": "Page number cell.",
+  "description": "Page number cell.",
+  "aliases": [],
+  "alternative": "Compose Pagination from `Button hierarchy=\"tertiary\" size=\"sm\"` items.",
+  "props": {
+    "Number": {"type":"text","default":null,"required":false,"figma":"Number","notes":null},
+    "State": {
+      "type": "variant",
+      "values": ["Default","Hover","Active"],
+      "default": null,
+      "required": false,
+      "figma": "State",
+      "notes": null
+    }
+  },
+  "rules": {"do":[],"dont":[],"forbidden":[]},
+  "examples": [],
+  "figma": {
+    "componentSet": ["Pagination number"],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": 3,
+    "docs": "https://docs.atomus.io/components/pagination/"
+  },
+  "docs": "https://docs.atomus.io/components/pagination/",
+  "related": ["Pagination","Carousel dots","Carousel"],
+  "a11y": {"element":null,"requiresLabel":false,"notes":[]}
+}

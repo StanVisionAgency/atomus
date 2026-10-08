@@ -1,0 +1,33 @@
+{
+  "name": "Slideout menu",
+  "kind": "component",
+  "status": "figma-only",
+  "since": "4.0.0",
+  "category": "Overlays",
+  "import": null,
+  "source": "guidelines/components/slideout-command-menu.md",
+  "purpose": "A side panel for details or secondary forms.",
+  "description": "Side drawer (400px); content is a slot.",
+  "aliases": [],
+  "alternative": "Drawer, Slideout menu and Command menu are Figma-only. For a focused task use `Modal`; for a short action list use `DropdownMenu`.",
+  "props": {
+    "Content": {"type":"slot (any content)","default":null,"required":false,"figma":"Content","notes":null},
+    "Title": {"type":"text","default":null,"required":false,"figma":"Title","notes":null},
+    "Supporting text": {"type":"text","default":null,"required":false,"figma":"Supporting text","notes":null},
+    "Actions": {"type":"boolean (on)","default":true,"required":false,"figma":"Actions","notes":null}
+  },
+  "rules": {"do":[],"dont":[],"forbidden":[]},
+  "examples": [],
+  "figma": {
+    "componentSet": ["Slideout menu"],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": 1,
+    "docs": "https://docs.atomus.io/components/drawer/"
+  },
+  "docs": "https://docs.atomus.io/components/drawer/",
+  "related": ["Command menu","Drawer"],
+  "a11y": {"element":null,"requiresLabel":false,"notes":[]}
+}

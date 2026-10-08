@@ -1,0 +1,38 @@
+{
+  "name": "Icon folder",
+  "kind": "component",
+  "status": "figma-only",
+  "since": "4.0.0",
+  "category": "Media and assets",
+  "import": null,
+  "source": "guidelines/components/atomus-icons.md",
+  "purpose": "Folder icons, 48×40, closed and open, six colours. Brand follows the Brand collection.",
+  "description": "Folder icons, 48×40, closed and open, six colours. Brand follows the Brand collection.",
+  "aliases": [],
+  "alternative": "Use your icon library (Font Awesome names match the Figma icons) and pass icons as React nodes to `icon`, `iconLeading` and `iconTrailing` props. `Icon` from the package only ships the few glyphs the components use internally.",
+  "props": {
+    "Color": {
+      "type": "variant",
+      "values": ["Brand","Gray","Blue","Green","Orange","Purple"],
+      "default": null,
+      "required": false,
+      "figma": "Color",
+      "notes": null
+    },
+    "State": {"type":"variant","values":["Closed","Open"],"default":null,"required":false,"figma":"State","notes":null}
+  },
+  "rules": {"do":[],"dont":[],"forbidden":[]},
+  "examples": [],
+  "figma": {
+    "componentSet": ["Icon folder"],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": 12,
+    "docs": "https://docs.atomus.io/components/atomus-icons/"
+  },
+  "docs": "https://docs.atomus.io/components/atomus-icons/",
+  "related": ["Featured icon","Icon brand","Icon payment","Icon flag","Star rating","Icon file type","Icon integration"],
+  "a11y": {"element":null,"requiresLabel":false,"notes":[]}
+}

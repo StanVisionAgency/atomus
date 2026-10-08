@@ -1,0 +1,40 @@
+{
+  "name": "Button group",
+  "kind": "component",
+  "status": "figma-only",
+  "since": "4.0.0",
+  "category": "Actions",
+  "import": null,
+  "source": "guidelines/components/button-group.md",
+  "purpose": "2–5 joined, mutually exclusive options (view or filter switch).",
+  "description": "Connected buttons for switching views or filters.",
+  "aliases": ["segmented control","toggle group"],
+  "alternative": "To switch views use `<Tabs variant=\"segmented\">`. For a row of actions use several `Button`s.",
+  "props": {"Size":{"type":"variant","values":["sm","md"],"default":null,"required":false,"figma":"Size","notes":null}},
+  "rules": {
+    "do": [
+      "Use for 2–5 related, mutually exclusive options.",
+      "Keep labels short and parallel.",
+      "Show the current option with the Selected state."
+    ],
+    "dont": [],
+    "forbidden": [
+      "Never group unrelated actions.",
+      "Never mix icon-only and text items.",
+      "Never wrap a button group to a second row."
+    ]
+  },
+  "examples": [],
+  "figma": {
+    "componentSet": ["Button group"],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": 2,
+    "docs": "https://docs.atomus.io/components/button-group/"
+  },
+  "docs": "https://docs.atomus.io/components/button-group/",
+  "related": ["Button group item"],
+  "a11y": {"element":null,"requiresLabel":false,"notes":["Keep labels short and parallel."]}
+}

@@ -1,0 +1,50 @@
+{
+  "name": "Multi-select",
+  "kind": "component",
+  "status": "figma-only",
+  "since": "4.0.0",
+  "category": "Forms and inputs",
+  "import": null,
+  "source": "guidelines/components/input-select.md",
+  "purpose": "Several values from a list, shown as tags.",
+  "description": "Select with several values as tags; open state shows a searchable checkbox list.",
+  "aliases": [],
+  "alternative": "Textarea, Number input, Slider, Tags input, Phone input, Payment input, Verification code input and Multi-select are Figma-only: use a native element styled with Atomus tokens, or `Input`/`Select` where they fit.",
+  "props": {
+    "Show label": {"type":"boolean (on)","default":true,"required":false,"figma":"Show label","notes":null},
+    "Show hint": {"type":"boolean (on)","default":true,"required":false,"figma":"Show hint","notes":null},
+    "Size": {"type":"variant","values":["sm","md","lg"],"default":null,"required":false,"figma":"Size","notes":null},
+    "State": {"type":"variant","values":["Closed","Open"],"default":null,"required":false,"figma":"State","notes":null}
+  },
+  "rules": {
+    "do": [
+      "Show the selected values as tags in the field.",
+      "Add search when there are more than about ten options."
+    ],
+    "dont": ["Don't use for more than ~15 options — add search (Combobox, coming next)."],
+    "forbidden": ["Never use Multi-select when only one value is allowed — use Select."]
+  },
+  "examples": [],
+  "figma": {
+    "componentSet": ["Multi-select"],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": 6,
+    "docs": "https://docs.atomus.io/components/select/"
+  },
+  "docs": "https://docs.atomus.io/components/select/",
+  "related": [
+    "Input",
+    "Select",
+    "Textarea",
+    "Slider",
+    "Verification code input",
+    "Number input",
+    "Tags input",
+    "Phone input",
+    "Payment input"
+  ],
+  "a11y": {"element":null,"requiresLabel":false,"notes":[]}
+}

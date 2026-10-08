@@ -1,0 +1,66 @@
+{
+  "name": "@stanvision/eslint-plugin-atomus",
+  "version": "4.1.0",
+  "description": "ESLint rules for the Atomus design system: semantic tokens instead of raw colours and primitives, real Atomus props and enum values, Atomus components instead of raw controls, labels on icon-only buttons and one primary button per view.",
+  "license": "MIT",
+  "author": "StanVision (https://stan.vision)",
+  "homepage": "https://docs.atomus.io/ai/lint/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StanVisionAgency/atomus.git",
+    "directory": "packages/eslint-plugin"
+  },
+  "bugs": {
+    "url": "https://github.com/StanVisionAgency/atomus/issues"
+  },
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin",
+    "design-system",
+    "design-tokens",
+    "react",
+    "tailwind",
+    "ai-agents",
+    "atomus"
+  ],
+  "type": "module",
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "default": "./src/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "data",
+    "LICENSE",
+    "NOTICE"
+  ],
+  "engines": {
+    "node": ">=18.20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "eslint": ">=9.0.0"
+  },
+  "scripts": {
+    "data": "node scripts/copy-data.mjs",
+    "pretest": "node scripts/copy-data.mjs",
+    "test": "node --test tests/*.test.js",
+    "prepack": "node scripts/copy-data.mjs --with-licence",
+    "lint:repo": "node scripts/copy-data.mjs && node scripts/lint-repo.mjs",
+    "lint:repo:sarif": "node scripts/copy-data.mjs && node scripts/lint-repo.mjs --format sarif --output atomus-eslint.sarif"
+  },
+  "devDependencies": {
+    "@microsoft/eslint-formatter-sarif": "^3.1.0",
+    "@typescript-eslint/parser": "^8.46.0",
+    "eslint": "^9.39.0",
+    "typescript": "~5.9.3"
+  }
+}

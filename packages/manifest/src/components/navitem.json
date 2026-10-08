@@ -1,0 +1,102 @@
+{
+  "name": "NavItem",
+  "kind": "component",
+  "status": "stable",
+  "since": "4.0.0",
+  "category": "Navigation",
+  "import": "import { NavItem } from '@stanvision/atomus-react';",
+  "source": "react/src/components/Navigation.tsx",
+  "purpose": "The main app navigation (280px, or a 72px rail).",
+  "description": "Sidebar navigation row; collapsed = icon only.",
+  "aliases": [],
+  "alternative": null,
+  "native": {"elements":["a"],"omit":[],"ref":false},
+  "props": {
+    "label": {"type":"string","default":null,"required":true,"figma":"Label","notes":"Figma: Label"},
+    "icon": {"type":"ReactNode","default":null,"required":false,"figma":"Icon swap","notes":"Figma: Icon swap"},
+    "badge": {
+      "type": "ReactNode",
+      "default": null,
+      "required": false,
+      "figma": "Badge",
+      "notes": "Figma: Badge — a count or short label after the text"
+    },
+    "chevron": {
+      "type": "boolean",
+      "default": null,
+      "required": false,
+      "figma": "Chevron",
+      "notes": "Figma: Chevron — marks an item with children"
+    },
+    "active": {"type":"boolean","default":null,"required":false,"figma":"State=Active","notes":"Figma: State=Active"},
+    "collapsed": {
+      "type": "boolean",
+      "default": null,
+      "required": false,
+      "figma": "Collapsed",
+      "notes": "Figma: Collapsed — icon only, label becomes the tooltip and accessible name"
+    }
+  },
+  "rules": {"do":[],"dont":["Don't mix a sidebar and a header nav with the same links."],"forbidden":[]},
+  "examples": [
+    {
+      "title": "Usage",
+      "code": "import { AppHeader, SidebarNavigation, NavItem } from '@stanvision/atomus-react';\n\n<SidebarNavigation header={<Logo />} footer={<NavItem label=\"Settings\" href=\"/settings\" />}>\n  <NavItem label=\"Home\" href=\"/\" icon={<HomeIcon />} active />\n  <NavItem label=\"Projects\" href=\"/projects\" badge={12} />\n</SidebarNavigation>",
+      "language": "tsx",
+      "source": "sites/docs/src/component-pages/navigation.mdx"
+    }
+  ],
+  "figma": {
+    "componentSet": ["Nav item"],
+    "fileKey": "bC42e82J3PYg2LMkryodIA",
+    "nodeIds": ["25431:67"],
+    "nodes": [
+      {
+        "componentSet": "Nav item",
+        "nodeId": "25431:67",
+        "codeConnectId": "NavItem",
+        "staticProps": "href=\"/\"",
+        "mappings": [
+          {"figma":"Label","prop":"label","kind":"text"},
+          {
+            "figma": "Icon swap",
+            "prop": "icon",
+            "kind": "instance",
+            "notes": "instance.getInstanceSwap('Icon swap')?.executeTemplate().example"
+          },
+          {"figma":"Badge","prop":"badge","kind":"boolean","notes":"Rendered when the Figma boolean is on."},
+          {"figma":"Chevron","prop":"chevron","kind":"boolean"},
+          {"figma":"Collapsed","prop":"collapsed","kind":"enum","values":{"True":true,"False":false}},
+          {
+            "figma": "State",
+            "prop": "active",
+            "kind": "expression",
+            "notes": "instance.getEnum('State', { Active: true }) === true"
+          }
+        ]
+      }
+    ],
+    "codeConnect": true,
+    "variants": 6,
+    "properties": [
+      {"componentSet":"Nav item","name":"Label","type":"text"},
+      {"componentSet":"Nav item","name":"Icon swap","type":"instance swap (icon)"},
+      {"componentSet":"Nav item","name":"Badge","type":"boolean (off)"},
+      {"componentSet":"Nav item","name":"Chevron","type":"boolean (off)"},
+      {"componentSet":"Nav item","name":"Collapsed","type":"variant","options":["False","True"]},
+      {"componentSet":"Nav item","name":"State","type":"variant","options":["Default","Hover","Active"]}
+    ],
+    "docs": "https://docs.atomus.io/components/navigation/"
+  },
+  "docs": "https://docs.atomus.io/components/navigation/",
+  "related": ["SidebarNavigation","AppHeader"],
+  "a11y": {
+    "element": "a",
+    "requiresLabel": false,
+    "notes": [
+      "`label`: Figma: Label",
+      "`badge`: Figma: Badge — a count or short label after the text",
+      "`collapsed`: Figma: Collapsed — icon only, label becomes the tooltip and accessible name"
+    ]
+  }
+}

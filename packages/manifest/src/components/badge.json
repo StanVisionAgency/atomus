@@ -1,0 +1,141 @@
+{
+  "name": "Badge",
+  "kind": "component",
+  "status": "stable",
+  "since": "4.0.0",
+  "category": "Data display",
+  "import": "import { Badge } from '@stanvision/atomus-react';",
+  "source": "react/src/components/Badge.tsx",
+  "purpose": "A short status or count label.",
+  "description": "Status label. Light for tables and lists, Solid for emphasis. Optional dot, icon or close.",
+  "aliases": ["pill","label","status","lozenge (read-only)"],
+  "alternative": null,
+  "native": {"elements":["span"],"omit":[],"ref":false},
+  "props": {
+    "children": {"type":"ReactNode","default":null,"required":true,"figma":"Label","notes":"Figma: Label"},
+    "color": {
+      "type": "'gray' | 'brand' | 'error' | 'warning' | 'success'",
+      "values": ["gray","brand","error","warning","success"],
+      "default": "gray",
+      "required": false,
+      "figma": "Color",
+      "notes": "Figma: Color"
+    },
+    "variant": {
+      "type": "'light' | 'solid'",
+      "values": ["light","solid"],
+      "default": "light",
+      "required": false,
+      "figma": "Style",
+      "notes": "Figma: Style — light (tinted) or solid"
+    },
+    "size": {
+      "type": "'sm' | 'md' | 'lg'",
+      "values": ["sm","md","lg"],
+      "default": "md",
+      "required": false,
+      "figma": "Size",
+      "notes": "Figma: Size — sm 20 · md 24 · lg 28"
+    },
+    "dot": {"type":"boolean","default":null,"required":false,"figma":"Dot","notes":"Figma: Dot"},
+    "icon": {
+      "type": "ReactNode",
+      "default": null,
+      "required": false,
+      "figma": "Leading icon + Leading icon swap",
+      "notes": "Figma: Leading icon + Leading icon swap"
+    },
+    "onClose": {
+      "type": "() => void",
+      "default": null,
+      "required": false,
+      "figma": "Close",
+      "notes": "Figma: Close — shows a remove button"
+    }
+  },
+  "rules": {
+    "do": [
+      "Pick the colour by meaning: Success, Warning, Error, Brand (info), Gray (neutral).",
+      "Keep labels to one or two words.",
+      "Use Tag, not Badge, for values the user can remove."
+    ],
+    "dont": [
+      "Don't use solid **warning** with small text — white on amber is 2.2:1. Prefer the light warning badge.",
+      "Don't use badges as buttons; for removable values use Tag."
+    ],
+    "forbidden": [
+      "Never use a badge as a button or link.",
+      "Never rely on colour alone — the word carries the meaning.",
+      "Never place more than three badges together."
+    ]
+  },
+  "examples": [
+    {
+      "title": "Usage",
+      "code": "import { Badge, Tag } from '@stanvision/atomus-react';\n\n<Badge color=\"success\" dot>Active</Badge>\n<Badge color=\"brand\" variant=\"solid\">New</Badge>\n<Tag onRemove={() => remove(id)}>Figma</Tag>",
+      "language": "tsx",
+      "source": "sites/docs/src/component-pages/badge-tag.mdx"
+    }
+  ],
+  "figma": {
+    "componentSet": ["Badge"],
+    "fileKey": "bC42e82J3PYg2LMkryodIA",
+    "nodeIds": ["25421:1073"],
+    "nodes": [
+      {
+        "componentSet": "Badge",
+        "nodeId": "25421:1073",
+        "codeConnectId": "Badge",
+        "mappings": [
+          {"figma":"Label","prop":"children","kind":"text"},
+          {"figma":"Size","prop":"size","kind":"enum","values":{"sm":"sm","md":"md","lg":"lg"}},
+          {"figma":"Style","prop":"variant","kind":"enum","values":{"Light":"light","Solid":"solid"}},
+          {
+            "figma": "Color",
+            "prop": "color",
+            "kind": "enum",
+            "values": {"Gray":"gray","Brand":"brand","Error":"error","Warning":"warning","Success":"success"}
+          },
+          {"figma":"Dot","prop":"dot","kind":"boolean"},
+          {
+            "figma": "Leading icon swap",
+            "prop": "icon",
+            "kind": "instance",
+            "notes": "instance.getInstanceSwap('Leading icon swap')?.executeTemplate().example",
+            "visibleWhen": "Leading icon"
+          },
+          {"figma":"Close","prop":"onClose","kind":"boolean","whenTrue":"onClose={() => {}}"}
+        ]
+      }
+    ],
+    "codeConnect": true,
+    "variants": 30,
+    "properties": [
+      {"componentSet":"Badge","name":"Label","type":"text"},
+      {"componentSet":"Badge","name":"Dot","type":"boolean (off)"},
+      {"componentSet":"Badge","name":"Leading icon","type":"boolean (off)"},
+      {"componentSet":"Badge","name":"Leading icon swap","type":"instance swap (icon)"},
+      {"componentSet":"Badge","name":"Close","type":"boolean (off)"},
+      {"componentSet":"Badge","name":"Size","type":"variant","options":["sm","md","lg"]},
+      {"componentSet":"Badge","name":"Style","type":"variant","options":["Light","Solid"]},
+      {
+        "componentSet": "Badge",
+        "name": "Color",
+        "type": "variant",
+        "options": ["Gray","Brand","Error","Warning","Success"]
+      }
+    ],
+    "docs": "https://docs.atomus.io/components/badge-tag/"
+  },
+  "docs": "https://docs.atomus.io/components/badge-tag/",
+  "related": ["Tag"],
+  "a11y": {
+    "element": "span",
+    "requiresLabel": false,
+    "notes": [
+      "`children`: Figma: Label",
+      "Keep labels to one or two words.",
+      "Never rely on colour alone — the word carries the meaning."
+    ]
+  }
+}

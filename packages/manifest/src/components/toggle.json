@@ -1,0 +1,116 @@
+{
+  "name": "Toggle",
+  "kind": "component",
+  "status": "stable",
+  "since": "4.0.0",
+  "category": "Forms and inputs",
+  "import": "import { Toggle } from '@stanvision/atomus-react';",
+  "source": "react/src/components/Choice.tsx",
+  "purpose": "A setting that applies immediately.",
+  "description": "On/off switch for settings that apply immediately.",
+  "aliases": ["switch"],
+  "alternative": null,
+  "native": {"elements":["input"],"omit":["size","type"],"ref":true},
+  "props": {
+    "shape": {
+      "type": "'pill' | 'square'",
+      "values": ["pill","square"],
+      "default": "pill",
+      "required": false,
+      "figma": "Shape",
+      "notes": "Figma: Shape"
+    },
+    "label": {"type":"string","default":null,"required":false,"figma":"Label","notes":"Figma: Label (+ Show label)"},
+    "description": {
+      "type": "string",
+      "default": null,
+      "required": false,
+      "figma": "Description",
+      "notes": "Figma: Description (+ Show description)"
+    },
+    "size": {
+      "type": "'sm' | 'md'",
+      "values": ["sm","md"],
+      "default": "sm",
+      "required": false,
+      "figma": "Size",
+      "notes": "Figma: Size — sm (16 control, 14px label) · md (20 control, 16px label)"
+    }
+  },
+  "rules": {
+    "do": [
+      "Use for settings that apply immediately.",
+      "Write the label as the setting (“Email notifications”).",
+      "Use one shape across the product."
+    ],
+    "dont": [],
+    "forbidden": [
+      "Never use a toggle in a form that needs Save — use Checkbox.",
+      "Never use a toggle for more than two states.",
+      "Never hide the label."
+    ]
+  },
+  "examples": [
+    {
+      "title": "Usage",
+      "code": "import { Checkbox, Radio, Toggle } from '@stanvision/atomus-react';\n\n<Checkbox label=\"Email me updates\" defaultChecked />\n<Radio name=\"plan\" label=\"Pro\" description=\"Unlimited projects\" />\n<Toggle label=\"Dark mode\" size=\"md\" />",
+      "language": "tsx",
+      "source": "sites/docs/src/component-pages/checkbox-radio-toggle.mdx"
+    }
+  ],
+  "figma": {
+    "componentSet": ["Toggle"],
+    "fileKey": "bC42e82J3PYg2LMkryodIA",
+    "nodeIds": ["25420:988"],
+    "nodes": [
+      {
+        "componentSet": "Toggle",
+        "nodeId": "25420:988",
+        "codeConnectId": "Toggle",
+        "mappings": [
+          {"figma":"Label","prop":"label","kind":"text","visibleWhen":"Show label"},
+          {"figma":"Description","prop":"description","kind":"text","visibleWhen":"Show description"},
+          {"figma":"Size","prop":"size","kind":"enum","values":{"sm":"sm","md":"md"}},
+          {"figma":"Shape","prop":"shape","kind":"enum","values":{"Pill":"pill","Square":"square"}},
+          {"figma":"Checked","prop":"defaultChecked","kind":"flag","when":"True"},
+          {
+            "figma": "State",
+            "prop": "disabled",
+            "kind": "expression",
+            "notes": "instance.getEnum('State', { Disabled: true }) === true"
+          }
+        ]
+      }
+    ],
+    "codeConnect": true,
+    "variants": 32,
+    "properties": [
+      {"componentSet":"Toggle","name":"Label","type":"text"},
+      {"componentSet":"Toggle","name":"Show label","type":"boolean (on)"},
+      {"componentSet":"Toggle","name":"Description","type":"text"},
+      {"componentSet":"Toggle","name":"Show description","type":"boolean (off)"},
+      {"componentSet":"Toggle","name":"Shape","type":"variant","options":["Pill","Square"]},
+      {"componentSet":"Toggle","name":"Size","type":"variant","options":["sm","md"]},
+      {"componentSet":"Toggle","name":"Checked","type":"variant","options":["False","True"]},
+      {
+        "componentSet": "Toggle",
+        "name": "State",
+        "type": "variant",
+        "options": ["Default","Hover","Focused","Disabled"]
+      }
+    ],
+    "docs": "https://docs.atomus.io/components/checkbox-radio-toggle/"
+  },
+  "docs": "https://docs.atomus.io/components/checkbox-radio-toggle/",
+  "related": ["Checkbox","Radio"],
+  "a11y": {
+    "element": "input",
+    "requiresLabel": true,
+    "notes": [
+      "`label`: Figma: Label (+ Show label)",
+      "`size`: Figma: Size — sm (16 control, 14px label) · md (20 control, 16px label)",
+      "Write the label as the setting (“Email notifications”).",
+      "Never hide the label."
+    ]
+  }
+}
