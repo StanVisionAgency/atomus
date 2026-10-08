@@ -116,7 +116,7 @@ export interface InlineCitationProps {
 export function InlineCitation({ index, source, className }: InlineCitationProps) {
   const id = useFieldId();
   const [open, setOpen] = useState(false);
-  const hideTimer = useRef<number>();
+  const hideTimer = useRef<number | undefined>(undefined);
   const show = useCallback(() => { window.clearTimeout(hideTimer.current); setOpen(true); }, []);
   const hide = useCallback(() => { hideTimer.current = window.setTimeout(() => setOpen(false), 120); }, []);
   const domain = domainOf(source);
