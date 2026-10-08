@@ -1,0 +1,74 @@
+---
+// Live preview of one website section: rendered at build time with Atomus CSS and React components inside a
+// 1280px canvas that is scaled to fit. Desktop / Tablet / Mobile switch the canvas width; container queries
+// and sections-responsive.css (generated from css/atomus.css) switch layout, type and spacing like the breakpoints.
+import { SECTIONS } from './sections';
+interface Props { name: string; variants: string }
+const { name, variants } = Astro.props;
+const entry = SECTIONS[name];
+if (!entry) console.warn(`[website-sections] no preview component for "${name}" — add one in src/components/sections/`);
+const Section = entry?.default;
+const id = name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+---
+<div class="ws-example not-content" data-ws-example>
+  <p class="ws-meta"><span>Figma variants:</span>{variants.split(' · ').map((v) => <code>{v}</code>)}</p>
+  {Section ? (
+    <div class="ws-frame">
+      <div class="ws-bar">
+        <span class="ws-dots" aria-hidden="true"><span></span><span></span><span></span></span>
+        <div class="ws-toggle" role="group" aria-label={`Preview width for ${name}`}>
+          <button type="button" aria-pressed="true" data-w="1280">Desktop</button>
+          <button type="button" aria-pressed="false" data-w="768">Tablet</button>
+          <button type="button" aria-pressed="false" data-w="375">Mobile</button>
+        </div>
+        <span class="ws-size" data-ws-size>1280 px</span>
+      </div>
+      <div class="ws-viewport" data-width="1280">
+        <div class="ws-canvas" id={`ws-${id}`}>
+          <div class="ws-root"><Section /></div>
+        </div>
+      </div>
+    </div>
+  ) : <p>Preview coming soon.</p>}
+  {entry ? (
+    <details class="ws-anatomy" open>
+      <summary>Anatomy</summary>
+      <ol>{entry.anatomy.map((a) => <li>{a}</li>)}</ol>
+    </details>
+  ) : null}
+</div>
+<script>
+  function fit(ex: HTMLElement) {
+    const vp = ex.querySelector<HTMLElement>('.ws-viewport');
+    const canvas = ex.querySelector<HTMLElement>('.ws-canvas');
+    if (!vp || !canvas) return;
+    const w = Number(vp.dataset.width);
+    const pad = w < 1280 ? 48 : 0;
+    const avail = vp.clientWidth - (w < 1280 ? 32 : 0);
+    const scale = Math.min(1, avail / w);
+    canvas.style.width = `${w}px`;
+    canvas.style.transform = scale < 1 ? `scale(${scale})` : '';
+    vp.style.height = `${canvas.offsetHeight * scale + pad}px`;
+  }
+  const examples = [...document.querySelectorAll<HTMLElement>('[data-ws-example]')];
+  const ro = new ResizeObserver((entries) => entries.forEach((e) => fit(e.target.closest('[data-ws-example]') as HTMLElement)));
+  for (const ex of examples) {
+    const vp = ex.querySelector<HTMLElement>('.ws-viewport');
+    const canvas = ex.querySelector<HTMLElement>('.ws-canvas');
+    if (!vp || !canvas) continue;
+    ro.observe(vp);
+    ro.observe(canvas);
+    ex.querySelector('.ws-toggle')?.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('button[data-w]');
+      if (!btn) return;
+      vp.dataset.width = btn.dataset.w;
+      ex.querySelectorAll('.ws-toggle button').forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+      const size = ex.querySelector('[data-ws-size]');
+      if (size) size.textContent = `${btn.dataset.w} px`;
+      fit(ex);
+    });
+    // Phones start on the mobile canvas; the 1280px canvas would be scaled to a quarter.
+    if (vp.clientWidth < 560) (ex.querySelector('button[data-w="375"]') as HTMLButtonElement | null)?.click();
+    fit(ex);
+  }
+</script>
