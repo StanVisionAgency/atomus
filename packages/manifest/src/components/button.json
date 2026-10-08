@@ -1,0 +1,209 @@
+{
+  "name": "Button",
+  "kind": "component",
+  "status": "stable",
+  "since": "4.0.0",
+  "category": "Actions",
+  "import": "import { Button } from '@stanvision/atomus-react';",
+  "source": "react/src/components/Button.tsx",
+  "purpose": "Triggering an action. Hierarchies primary · secondary · outline · tertiary · link; sizes xs–xl (24–56px).",
+  "description": "Hierarchy: Primary (main action, one per view), Secondary, Outline, Tertiary (low emphasis), Link. Sizes xs–xl (24–56px). Icons via instance swap. Loading shows a spinner.",
+  "aliases": [],
+  "alternative": null,
+  "native": {"elements":["button"],"omit":[],"ref":true},
+  "props": {
+    "hierarchy": {
+      "type": "'primary' | 'secondary' | 'outline' | 'tertiary' | 'link'",
+      "values": ["primary","secondary","outline","tertiary","link"],
+      "default": "secondary",
+      "required": false,
+      "figma": "Hierarchy",
+      "notes": "Figma: Hierarchy"
+    },
+    "size": {
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      "values": ["xs","sm","md","lg","xl"],
+      "default": "md",
+      "required": false,
+      "figma": "Size",
+      "notes": "Figma: Size — xs 24 · sm 32 · md 40 · lg 48 · xl 56"
+    },
+    "iconLeading": {
+      "type": "ReactNode",
+      "default": null,
+      "required": false,
+      "figma": "Leading icon + Leading icon swap",
+      "notes": "Figma: Leading icon + Leading icon swap"
+    },
+    "iconTrailing": {
+      "type": "ReactNode",
+      "default": null,
+      "required": false,
+      "figma": "Trailing icon + Trailing icon swap",
+      "notes": "Figma: Trailing icon + Trailing icon swap"
+    },
+    "loading": {"type":"boolean","default":null,"required":false,"figma":"State=Loading","notes":"Figma: State=Loading"},
+    "iconOnly": {
+      "type": "boolean",
+      "default": null,
+      "required": false,
+      "figma": "Button icon",
+      "notes": "Square icon-only button (Figma: Button icon). Requires aria-label."
+    },
+    "fullWidth": {"type":"boolean","default":null,"required":false,"figma":null,"notes":null}
+  },
+  "rules": {
+    "do": [
+      "Button: Use one primary button per view, for the main action.",
+      "Button: Label with a verb in sentence case: “Save changes”, not “OK”.",
+      "Button: Match sizes in a row — buttons and inputs share the 32 / 40 / 48 heights.",
+      "Button: Put the primary action last in a group, after Cancel.",
+      "Button icon: Always give it an accessible name (`aria-label`) and a tooltip.",
+      "Button icon: Use Tertiary in toolbars, cards and table rows.",
+      "Use `lg`/`xl` on marketing pages, `md` in product UI, `sm`/`xs` in tables and toolbars."
+    ],
+    "dont": [],
+    "forbidden": [
+      "Button: Never put two primary buttons in one view.",
+      "Button: Never use the Link style for destructive actions.",
+      "Button: Never detach to change an icon — use Leading / Trailing icon swap.",
+      "Button: Never use a button to navigate to another page — use a link.",
+      "Button icon: Never use an icon-only button for the main action of a view.",
+      "Button icon: Never use an icon whose meaning is not widely understood without a label."
+    ]
+  },
+  "examples": [
+    {
+      "title": "Usage",
+      "code": "import { Button } from '@stanvision/atomus-react';\n\n<Button hierarchy=\"primary\" size=\"md\" iconLeading={<PlusIcon />}>\n  New project\n</Button>",
+      "language": "tsx",
+      "source": "sites/docs/src/component-pages/button.mdx"
+    }
+  ],
+  "figma": {
+    "componentSet": ["Button","Button icon"],
+    "fileKey": "bC42e82J3PYg2LMkryodIA",
+    "nodeIds": ["25416:2898","25416:17407"],
+    "nodes": [
+      {
+        "componentSet": "Button",
+        "nodeId": "25416:2898",
+        "codeConnectId": "Button",
+        "mappings": [
+          {"figma":"Label","kind":"text","prop":"children"},
+          {
+            "figma": "Hierarchy",
+            "prop": "hierarchy",
+            "kind": "enum",
+            "values": {
+              "Primary": "primary",
+              "Secondary": "secondary",
+              "Outline": "outline",
+              "Tertiary": "tertiary",
+              "Link": "link"
+            }
+          },
+          {
+            "figma": "Size",
+            "prop": "size",
+            "kind": "enum",
+            "values": {"xs":"xs","sm":"sm","md":"md","lg":"lg","xl":"xl"}
+          },
+          {"figma":"State","prop":"disabled","kind":"flag","when":"Disabled"},
+          {"figma":"State","prop":"loading","kind":"flag","when":"Loading"},
+          {
+            "figma": "Leading icon swap",
+            "prop": "iconLeading",
+            "kind": "instance",
+            "notes": "instance.getInstanceSwap('Leading icon swap')?.executeTemplate().example",
+            "visibleWhen": "Leading icon"
+          },
+          {
+            "figma": "Trailing icon swap",
+            "prop": "iconTrailing",
+            "kind": "instance",
+            "notes": "instance.getInstanceSwap('Trailing icon swap')?.executeTemplate().example",
+            "visibleWhen": "Trailing icon"
+          }
+        ]
+      },
+      {
+        "componentSet": "Button icon",
+        "nodeId": "25416:17407",
+        "codeConnectId": "ButtonIcon",
+        "staticProps": "iconOnly",
+        "mappings": [
+          {
+            "figma": "Hierarchy",
+            "prop": "hierarchy",
+            "kind": "enum",
+            "values": {"Primary":"primary","Secondary":"secondary","Outline":"outline","Tertiary":"tertiary"}
+          },
+          {
+            "figma": "Size",
+            "prop": "size",
+            "kind": "enum",
+            "values": {"xs":"xs","sm":"sm","md":"md","lg":"lg","xl":"xl"}
+          },
+          {"figma":"State","prop":"disabled","kind":"flag","when":"Disabled"},
+          {"figma":"State","prop":"loading","kind":"flag","when":"Loading"},
+          {
+            "figma": "Icon",
+            "prop": "iconLeading",
+            "kind": "instance",
+            "notes": "icon && icon.type === 'INSTANCE' ? icon.executeTemplate().example : undefined"
+          }
+        ]
+      }
+    ],
+    "codeConnect": true,
+    "variants": 225,
+    "properties": [
+      {"componentSet":"Button","name":"Label","type":"text"},
+      {"componentSet":"Button","name":"Leading icon","type":"boolean (off)"},
+      {"componentSet":"Button","name":"Leading icon swap","type":"instance swap (icon)"},
+      {"componentSet":"Button","name":"Trailing icon","type":"boolean (off)"},
+      {"componentSet":"Button","name":"Trailing icon swap","type":"instance swap (icon)"},
+      {
+        "componentSet": "Button",
+        "name": "Hierarchy",
+        "type": "variant",
+        "options": ["Primary","Secondary","Outline","Tertiary","Link"]
+      },
+      {"componentSet":"Button","name":"Size","type":"variant","options":["xs","sm","md","lg","xl"]},
+      {
+        "componentSet": "Button",
+        "name": "State",
+        "type": "variant",
+        "options": ["Default","Hover","Focused","Disabled","Loading"]
+      },
+      {"componentSet":"Button icon","name":"Icon","type":"instance swap (icon)"},
+      {
+        "componentSet": "Button icon",
+        "name": "Hierarchy",
+        "type": "variant",
+        "options": ["Primary","Secondary","Outline","Tertiary"]
+      },
+      {"componentSet":"Button icon","name":"Size","type":"variant","options":["xs","sm","md","lg","xl"]},
+      {
+        "componentSet": "Button icon",
+        "name": "State",
+        "type": "variant",
+        "options": ["Default","Hover","Focused","Disabled","Loading"]
+      }
+    ],
+    "docs": "https://docs.atomus.io/components/button/"
+  },
+  "docs": "https://docs.atomus.io/components/button/",
+  "related": [],
+  "a11y": {
+    "element": "button",
+    "requiresLabel": true,
+    "notes": [
+      "`iconOnly`: Square icon-only button (Figma: Button icon). Requires aria-label.",
+      "Label with a verb in sentence case: “Save changes”, not “OK”.",
+      "Always give it an accessible name (`aria-label`) and a tooltip.",
+      "Never use an icon whose meaning is not widely understood without a label."
+    ]
+  }
+}

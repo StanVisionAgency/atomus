@@ -1,0 +1,95 @@
+{
+  "name": "Tag",
+  "kind": "component",
+  "status": "stable",
+  "since": "4.0.0",
+  "category": "Data display",
+  "import": "import { Tag } from '@stanvision/atomus-react';",
+  "source": "react/src/components/Tag.tsx",
+  "purpose": "A removable value: filter, skill, recipient.",
+  "description": "Removable filter / selection chip.",
+  "aliases": ["chip","pill","token (removable)"],
+  "alternative": null,
+  "native": {"elements":["span"],"omit":[],"ref":false},
+  "props": {
+    "children": {"type":"ReactNode","default":null,"required":true,"figma":"Label","notes":"Figma: Label"},
+    "size": {
+      "type": "'sm' | 'md' | 'lg'",
+      "values": ["sm","md","lg"],
+      "default": "md",
+      "required": false,
+      "figma": "Size",
+      "notes": "Figma: Size — sm 24 · md 28 · lg 32"
+    },
+    "icon": {
+      "type": "ReactNode",
+      "default": null,
+      "required": false,
+      "figma": "Leading icon + Leading icon swap",
+      "notes": "Figma: Leading icon + Leading icon swap"
+    },
+    "onRemove": {
+      "type": "() => void",
+      "default": null,
+      "required": false,
+      "figma": "Close",
+      "notes": "Figma: Close — shows the × button"
+    }
+  },
+  "rules": {
+    "do": [
+      "Use for user-entered or filterable values: filters, skills, recipients.",
+      "Give removable tags a close button (`onRemove` in code)."
+    ],
+    "dont": [
+      "Don't use solid **warning** with small text — white on amber is 2.2:1. Prefer the light warning badge.",
+      "Don't use badges as buttons; for removable values use Tag."
+    ],
+    "forbidden": ["Never use Tag for status — use Badge.","Never colour tags by status."]
+  },
+  "examples": [
+    {
+      "title": "Usage",
+      "code": "import { Badge, Tag } from '@stanvision/atomus-react';\n\n<Badge color=\"success\" dot>Active</Badge>\n<Badge color=\"brand\" variant=\"solid\">New</Badge>\n<Tag onRemove={() => remove(id)}>Figma</Tag>",
+      "language": "tsx",
+      "source": "sites/docs/src/component-pages/badge-tag.mdx"
+    }
+  ],
+  "figma": {
+    "componentSet": ["Tag"],
+    "fileKey": "bC42e82J3PYg2LMkryodIA",
+    "nodeIds": ["25421:1092"],
+    "nodes": [
+      {
+        "componentSet": "Tag",
+        "nodeId": "25421:1092",
+        "codeConnectId": "Tag",
+        "mappings": [
+          {"figma":"Label","prop":"children","kind":"text"},
+          {"figma":"Size","prop":"size","kind":"enum","values":{"sm":"sm","md":"md","lg":"lg"}},
+          {
+            "figma": "Leading icon swap",
+            "prop": "icon",
+            "kind": "instance",
+            "notes": "instance.getInstanceSwap('Leading icon swap')?.executeTemplate().example",
+            "visibleWhen": "Leading icon"
+          },
+          {"figma":"Close","prop":"onRemove","kind":"boolean","whenTrue":"onRemove={() => {}}"}
+        ]
+      }
+    ],
+    "codeConnect": true,
+    "variants": 3,
+    "properties": [
+      {"componentSet":"Tag","name":"Label","type":"text"},
+      {"componentSet":"Tag","name":"Leading icon","type":"boolean (off)"},
+      {"componentSet":"Tag","name":"Leading icon swap","type":"instance swap (icon)"},
+      {"componentSet":"Tag","name":"Close","type":"boolean (on)"},
+      {"componentSet":"Tag","name":"Size","type":"variant","options":["sm","md","lg"]}
+    ],
+    "docs": "https://docs.atomus.io/components/badge-tag/"
+  },
+  "docs": "https://docs.atomus.io/components/badge-tag/",
+  "related": ["Badge"],
+  "a11y": {"element":"span","requiresLabel":false,"notes":["`children`: Figma: Label"]}
+}

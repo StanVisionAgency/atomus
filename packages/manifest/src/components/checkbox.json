@@ -1,0 +1,114 @@
+{
+  "name": "Checkbox",
+  "kind": "component",
+  "status": "stable",
+  "since": "4.0.0",
+  "category": "Forms and inputs",
+  "import": "import { Checkbox } from '@stanvision/atomus-react';",
+  "source": "react/src/components/Choice.tsx",
+  "purpose": "Independent yes/no choices; several can be on.",
+  "description": "Checkbox with optional label and description.",
+  "aliases": [],
+  "alternative": null,
+  "native": {"elements":["input"],"omit":["size","type"],"ref":true},
+  "props": {
+    "indeterminate": {
+      "type": "boolean",
+      "default": null,
+      "required": false,
+      "figma": "Checked=Indeterminate",
+      "notes": "Figma: Checked=Indeterminate"
+    },
+    "label": {"type":"string","default":null,"required":false,"figma":"Label","notes":"Figma: Label (+ Show label)"},
+    "description": {
+      "type": "string",
+      "default": null,
+      "required": false,
+      "figma": "Description",
+      "notes": "Figma: Description (+ Show description)"
+    },
+    "size": {
+      "type": "'sm' | 'md'",
+      "values": ["sm","md"],
+      "default": "sm",
+      "required": false,
+      "figma": "Size",
+      "notes": "Figma: Size — sm (16 control, 14px label) · md (20 control, 16px label)"
+    }
+  },
+  "rules": {
+    "do": [
+      "Use for multiple independent choices.",
+      "Use Indeterminate for a partially selected group.",
+      "Turn on Description only when the label needs explaining."
+    ],
+    "dont": [],
+    "forbidden": [
+      "Never use a checkbox for a setting that applies instantly — use Toggle.",
+      "Never write negative labels (“Don’t send emails”).",
+      "Never nest checkboxes more than one level."
+    ]
+  },
+  "examples": [
+    {
+      "title": "Usage",
+      "code": "import { Checkbox, Radio, Toggle } from '@stanvision/atomus-react';\n\n<Checkbox label=\"Email me updates\" defaultChecked />\n<Radio name=\"plan\" label=\"Pro\" description=\"Unlimited projects\" />\n<Toggle label=\"Dark mode\" size=\"md\" />",
+      "language": "tsx",
+      "source": "sites/docs/src/component-pages/checkbox-radio-toggle.mdx"
+    }
+  ],
+  "figma": {
+    "componentSet": ["Checkbox"],
+    "fileKey": "bC42e82J3PYg2LMkryodIA",
+    "nodeIds": ["25419:14605"],
+    "nodes": [
+      {
+        "componentSet": "Checkbox",
+        "nodeId": "25419:14605",
+        "codeConnectId": "Checkbox",
+        "mappings": [
+          {"figma":"Label","prop":"label","kind":"text","visibleWhen":"Show label"},
+          {"figma":"Description","prop":"description","kind":"text","visibleWhen":"Show description"},
+          {"figma":"Size","prop":"size","kind":"enum","values":{"sm":"sm","md":"md"}},
+          {"figma":"Checked","prop":"indeterminate","kind":"flag","when":"Indeterminate"},
+          {"figma":"Checked","prop":"defaultChecked","kind":"flag","when":"True"},
+          {
+            "figma": "State",
+            "prop": "disabled",
+            "kind": "expression",
+            "notes": "instance.getEnum('State', { Disabled: true }) === true"
+          }
+        ]
+      }
+    ],
+    "codeConnect": true,
+    "variants": 24,
+    "properties": [
+      {"componentSet":"Checkbox","name":"Label","type":"text"},
+      {"componentSet":"Checkbox","name":"Show label","type":"boolean (on)"},
+      {"componentSet":"Checkbox","name":"Description","type":"text"},
+      {"componentSet":"Checkbox","name":"Show description","type":"boolean (off)"},
+      {"componentSet":"Checkbox","name":"Size","type":"variant","options":["sm","md"]},
+      {"componentSet":"Checkbox","name":"Checked","type":"variant","options":["False","True","Indeterminate"]},
+      {
+        "componentSet": "Checkbox",
+        "name": "State",
+        "type": "variant",
+        "options": ["Default","Hover","Focused","Disabled"]
+      }
+    ],
+    "docs": "https://docs.atomus.io/components/checkbox-radio-toggle/"
+  },
+  "docs": "https://docs.atomus.io/components/checkbox-radio-toggle/",
+  "related": ["Radio","Toggle"],
+  "a11y": {
+    "element": "input",
+    "requiresLabel": true,
+    "notes": [
+      "`label`: Figma: Label (+ Show label)",
+      "`size`: Figma: Size — sm (16 control, 14px label) · md (20 control, 16px label)",
+      "Turn on Description only when the label needs explaining.",
+      "Never write negative labels (“Don’t send emails”)."
+    ]
+  }
+}

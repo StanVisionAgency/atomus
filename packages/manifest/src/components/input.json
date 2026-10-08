@@ -1,0 +1,131 @@
+{
+  "name": "Input",
+  "kind": "component",
+  "status": "stable",
+  "since": "4.0.0",
+  "category": "Forms and inputs",
+  "import": "import { Input } from '@stanvision/atomus-react';",
+  "source": "react/src/components/Input.tsx",
+  "purpose": "Single-line text, email, number, search. Sizes sm · md · lg (32 · 40 · 48).",
+  "description": "Text input. Label position Outside, Inside (floating) or Notched. Sizes 32/40/48 match Buttons.",
+  "aliases": [],
+  "alternative": null,
+  "native": {"elements":["input"],"omit":["size"],"ref":true},
+  "props": {
+    "label": {
+      "type": "string",
+      "default": null,
+      "required": false,
+      "figma": "Label",
+      "notes": "Figma: Label (+ Show label). Always give one; use aria-label when it is hidden."
+    },
+    "hint": {"type":"string","default":null,"required":false,"figma":"Hint","notes":"Figma: Hint (+ Show hint)"},
+    "error": {
+      "type": "string",
+      "default": null,
+      "required": false,
+      "figma": "State=Error",
+      "notes": "Figma: State=Error — replaces the hint and turns the border red"
+    },
+    "size": {
+      "type": "'sm' | 'md' | 'lg'",
+      "values": ["sm","md","lg"],
+      "default": "md",
+      "required": false,
+      "figma": "Size",
+      "notes": "Figma: Size — sm 32 · md 40 · lg 48, matching Button"
+    },
+    "iconLeading": {"type":"ReactNode","default":null,"required":false,"figma":null,"notes":null},
+    "iconTrailing": {"type":"ReactNode","default":null,"required":false,"figma":null,"notes":null}
+  },
+  "rules": {
+    "do": [
+      "Always show a label; use Inside or Notched when space is tight.",
+      "Use the hint for format help and Error for validation.",
+      "Match the size to the buttons in the same form.",
+      "Write errors that say how to fix it: \"Enter a date after today\"."
+    ],
+    "dont": ["Don't rely on the red border alone — the error text is required."],
+    "forbidden": [
+      "Never use placeholder text as the label.",
+      "Never show an error before the user has typed.",
+      "Never clear the user's value after an error."
+    ]
+  },
+  "examples": [
+    {
+      "title": "Usage",
+      "code": "import { Input } from '@stanvision/atomus-react';\n\n<Input label=\"Email\" placeholder=\"you@company.com\" hint=\"We never share it.\" />\n<Input label=\"URL\" error=\"This URL is taken.\" />",
+      "language": "tsx",
+      "source": "sites/docs/src/component-pages/input.mdx"
+    }
+  ],
+  "figma": {
+    "componentSet": ["Input"],
+    "fileKey": "bC42e82J3PYg2LMkryodIA",
+    "nodeIds": ["25418:1714"],
+    "nodes": [
+      {
+        "componentSet": "Input",
+        "nodeId": "25418:1714",
+        "codeConnectId": "Input",
+        "staticProps": "placeholder=\"Placeholder\"",
+        "mappings": [
+          {"figma":"Label","prop":"label","kind":"text","visibleWhen":"Show label"},
+          {"figma":"Hint","prop":"hint","kind":"text","visibleWhen":"Show hint"},
+          {"figma":"Size","prop":"size","kind":"enum","values":{"sm":"sm","md":"md","lg":"lg"}},
+          {"figma":"State","prop":"disabled","kind":"flag","when":"Disabled"},
+          {
+            "figma": "(computed)",
+            "prop": "error",
+            "kind": "expression",
+            "notes": "state === 'error' ? 'Describe how to fix the error' : undefined"
+          }
+        ]
+      }
+    ],
+    "codeConnect": true,
+    "variants": 42,
+    "properties": [
+      {"componentSet":"Input","name":"Label","type":"text"},
+      {"componentSet":"Input","name":"Show label","type":"boolean (on)"},
+      {"componentSet":"Input","name":"Hint","type":"text"},
+      {"componentSet":"Input","name":"Show hint","type":"boolean (on)"},
+      {
+        "componentSet": "Input",
+        "name": "Label position",
+        "type": "variant",
+        "options": ["Outside","Inside","Notched"]
+      },
+      {"componentSet":"Input","name":"Size","type":"variant","options":["sm","md","lg"]},
+      {
+        "componentSet": "Input",
+        "name": "State",
+        "type": "variant",
+        "options": ["Default","Hover","Focused","Filled","Disabled","Error"]
+      }
+    ],
+    "docs": "https://docs.atomus.io/components/input/"
+  },
+  "docs": "https://docs.atomus.io/components/input/",
+  "related": [
+    "Select",
+    "Textarea",
+    "Slider",
+    "Verification code input",
+    "Number input",
+    "Tags input",
+    "Phone input",
+    "Payment input",
+    "Multi-select"
+  ],
+  "a11y": {
+    "element": "input",
+    "requiresLabel": true,
+    "notes": [
+      "`label`: Figma: Label (+ Show label). Always give one; use aria-label when it is hidden.",
+      "Always show a label; use Inside or Notched when space is tight.",
+      "Never use placeholder text as the label."
+    ]
+  }
+}
