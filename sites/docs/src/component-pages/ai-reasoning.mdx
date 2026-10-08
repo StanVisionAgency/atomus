@@ -6,6 +6,7 @@ description: "A collapsible “Thought for 12s” disclosure with the agent’s 
 {/* Source for /components/ai-reasoning/ — scripts/sync.mjs writes the page to src/content/docs/components/. Imports are relative to that folder. */}
 
 import Demo from '../../../components/Demo.astro';
+import RegistryActions from '../../../components/RegistryActions.astro';
 import { ReasoningDemo } from '../../../components/ai-demos';
 
 Shows the model's working apart from its answer: "Thinking…" with a shimmer while it reasons, then "Thought for 12s". It opens while thinking and collapses when done.
@@ -13,6 +14,8 @@ Shows the model's working apart from its answer: "Thinking…" with a shimmer wh
 <Demo caption="status=&quot;thinking&quot; → &quot;done&quot; · steps with pending, active and done">
   <ReasoningDemo client:visible />
 </Demo>
+
+<RegistryActions items="ai-reasoning" />
 
 {/* @figma — sync.mjs inserts the "In Figma" section (from guidelines/components) here */}
 

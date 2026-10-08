@@ -6,6 +6,7 @@ description: "Follow-up prompts as chips and prompt starters as cards, to send o
 {/* Source for /components/ai-suggestions/ — scripts/sync.mjs writes the page to src/content/docs/components/. Imports are relative to that folder. */}
 
 import Demo from '../../../components/Demo.astro';
+import RegistryActions from '../../../components/RegistryActions.astro';
 import { SuggestionsDemo, SuggestionCardsDemo } from '../../../components/ai-demos';
 
 Follow-ups after an answer, in one row that scrolls sideways, or prompt starters as cards in a welcome state. A chip either sends its prompt or inserts it into the input for editing.
@@ -13,6 +14,8 @@ Follow-ups after an answer, in one row that scrolls sideways, or prompt starters
 <Demo caption="mode=&quot;send&quot; (scrolls) · mode=&quot;insert&quot; with wrap">
   <SuggestionsDemo client:visible />
 </Demo>
+
+<RegistryActions items="ai-suggestions" />
 
 ## Prompt starters
 

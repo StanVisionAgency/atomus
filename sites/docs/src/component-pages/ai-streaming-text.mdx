@@ -6,6 +6,7 @@ description: "Text that renders as it streams, with a caret and calm screen-read
 {/* Source for /components/ai-streaming-text/ — scripts/sync.mjs writes the page to src/content/docs/components/. Imports are relative to that folder. */}
 
 import Demo from '../../../components/Demo.astro';
+import RegistryActions from '../../../components/RegistryActions.astro';
 import { StreamingTextDemo, ShimmerDemo } from '../../../components/ai-demos';
 
 `StreamingText` renders a reply as it arrives, with a gradient caret, and tells screen readers about finished sentences in batches instead of every token. `Shimmer` sweeps a soft light across short status lines. Both stop moving when the person prefers reduced motion.
@@ -13,6 +14,8 @@ import { StreamingTextDemo, ShimmerDemo } from '../../../components/ai-demos';
 <Demo caption="StreamingText with InlineCitation chips rendered from [n] markers">
   <StreamingTextDemo client:visible />
 </Demo>
+
+<RegistryActions items="ai-streaming-text" />
 
 ## Shimmer
 

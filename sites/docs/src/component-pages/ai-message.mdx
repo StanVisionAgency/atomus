@@ -6,6 +6,7 @@ description: "One turn in a conversation, with the speaker, status, actions and 
 {/* Source for /components/ai-message/ — scripts/sync.mjs writes the page to src/content/docs/components/. Imports are relative to that folder. */}
 
 import Demo from '../../../components/Demo.astro';
+import RegistryActions from '../../../components/RegistryActions.astro';
 import { MessageDemo, MessageStatusDemo } from '../../../components/ai-demos';
 
 One turn in a conversation. User messages are bubbles; assistant and tool messages flow full-width next to their avatar, with the AI label beside the name. Every message is an article named by its speaker.
@@ -13,6 +14,8 @@ One turn in a conversation. User messages are bubbles; assistant and tool messag
 <Demo caption="system · user · assistant with branch ‹ 1/3 ›, copy, regenerate and Feedback">
   <MessageDemo client:visible />
 </Demo>
+
+<RegistryActions items="ai-message" />
 
 ## Status
 

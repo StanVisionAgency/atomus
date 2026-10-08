@@ -6,6 +6,7 @@ description: "Status labels and removable chips."
 {/* Source for /components/badge-tag/ — scripts/sync.mjs writes the page to src/content/docs/components/. Imports are relative to that folder. */}
 
 import Demo from '../../../components/Demo.astro';
+import RegistryActions from '../../../components/RegistryActions.astro';
 import { BadgeDemo } from '../../../components/demos';
 
 Status labels and removable chips.
@@ -13,6 +14,8 @@ Status labels and removable chips.
 <Demo caption="Badge & Tag">
   <BadgeDemo client:visible />
 </Demo>
+
+<RegistryActions items={['badge', 'tag']} />
 
 {/* @figma — sync.mjs inserts the "In Figma" section (from guidelines/components) here */}
 

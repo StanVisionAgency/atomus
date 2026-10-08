@@ -6,6 +6,7 @@ description: "The composer of an AI chat: auto-growing text, attachments, a tool
 {/* Source for /components/ai-prompt-input/ — scripts/sync.mjs writes the page to src/content/docs/components/. Imports are relative to that folder. */}
 
 import Demo from '../../../components/Demo.astro';
+import RegistryActions from '../../../components/RegistryActions.astro';
 import { PromptInputDemo, PromptInputStatesDemo } from '../../../components/ai-demos';
 
 The composer of an AI chat or agent panel. It grows with the text, shows attachment chips, hosts the Model selector and Context meter in its slots, and turns Send into Stop while the agent works. Focus draws the AI gradient around it.
@@ -13,6 +14,8 @@ The composer of an AI chat or agent panel. It grows with the text, shows attachm
 <Demo caption="size=&quot;lg&quot; · attachments · ModelSelector in toolbar · ContextMeter in actions · / and @ menus">
   <PromptInputDemo client:visible />
 </Demo>
+
+<RegistryActions items="ai-prompt-input" />
 
 ## States
 

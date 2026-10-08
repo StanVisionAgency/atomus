@@ -6,6 +6,7 @@ description: "Inline messages about a page, section or form."
 {/* Source for /components/alert/ — scripts/sync.mjs writes the page to src/content/docs/components/. Imports are relative to that folder. */}
 
 import Demo from '../../../components/Demo.astro';
+import RegistryActions from '../../../components/RegistryActions.astro';
 import { AlertDemo, AlertSizeDemo, AlertFlushDemo } from '../../../components/demos';
 
 Inline messages about a page, section or form: a tinted fill, a hairline border and a coloured title and icon, so the tone reads at a glance.
@@ -15,6 +16,8 @@ Inline messages about a page, section or form: a tinted fill, a hairline border 
 <Demo caption="variant=&quot;subtle&quot; · brand · gray · error · warning · success">
   <AlertDemo client:visible />
 </Demo>
+
+<RegistryActions items="alert" />
 
 ### Outline — on tinted or grey surfaces
 
