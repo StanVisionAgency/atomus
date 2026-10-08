@@ -1,0 +1,38 @@
+---
+title: "Metric card"
+description: "A single KPI for dashboards."
+---
+
+{/* Source for /components/metric-card/ — scripts/sync.mjs writes the page to src/content/docs/components/. Imports are relative to that folder. */}
+
+import Demo from '../../../components/Demo.astro';
+import { MetricDemo } from '../../../components/demos';
+
+A single KPI for dashboards.
+
+<Demo caption="Metric card">
+  <MetricDemo client:visible />
+</Demo>
+
+{/* @figma — sync.mjs inserts the "In Figma" section (from guidelines/components) here */}
+
+## Usage
+
+```tsx
+import { MetricCard } from '@stanvision/atomus-react';
+
+<MetricCard label="Monthly revenue" value="$48.2k" change="12%" caption="vs last month" />
+```
+
+A single KPI for dashboards.
+
+### Props
+
+- `label`, `value` (pre-formatted), `type` `simple` · `trend` · `chart` (Figma: Type).
+- `change`, `caption` ("vs last month"), `trend` (inferred from a leading "-"), `data` for the chart sparkline, `action`.
+
+**Do**
+
+- Keep four cards or fewer in a row; state the comparison period.
+
+{/* @guidance — sync.mjs appends the design Do/Don’t from the Figma guidelines here */}

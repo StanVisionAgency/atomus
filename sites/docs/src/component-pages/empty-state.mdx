@@ -1,0 +1,41 @@
+---
+title: "Empty state"
+description: "Fills empty pages and tables, and says what to do next."
+---
+
+{/* Source for /components/empty-state/ — scripts/sync.mjs writes the page to src/content/docs/components/. Imports are relative to that folder. */}
+
+import Demo from '../../../components/Demo.astro';
+import { EmptyDemo } from '../../../components/demos';
+
+Fills empty pages and tables, and says what to do next.
+
+<Demo caption="Empty state">
+  <EmptyDemo client:visible />
+</Demo>
+
+{/* @figma — sync.mjs inserts the "In Figma" section (from guidelines/components) here */}
+
+## Usage
+
+```tsx
+import { EmptyState } from '@stanvision/atomus-react';
+
+<EmptyState
+  title="No projects yet"
+  description="Create your first project to start designing with Atomus."
+  actions={<Button hierarchy="primary">New project</Button>}
+/>
+```
+
+Fills an empty page, table or panel and says what to do next.
+
+### Props
+
+- `title` (what's missing), `description` (one sentence), `actions`, `icon`, `size` `sm` (panels) · `md` (pages).
+
+**Don’t**
+
+- Don't blame the user ("You haven't…"); describe the state.
+
+{/* @guidance — sync.mjs appends the design Do/Don’t from the Figma guidelines here */}
