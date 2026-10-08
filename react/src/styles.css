@@ -138,30 +138,33 @@
 .at-avatar__status--offline { background: var(--color-bg-quaternary); }
 
 /* Alert — Figma: Alert (Style × Color) */
-.at-alert { display: flex; align-items: flex-start; gap: var(--spacing-lg); padding: var(--spacing-xl); border: 1px solid transparent; border-radius: var(--radius-lg); }
-.at-alert__icon { display: inline-flex; flex: none; padding-top: 0; }
-.at-alert__body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: var(--spacing-md); }
-.at-alert__title { margin: 0; color: var(--color-text-primary); font-size: var(--font-size-small); line-height: var(--line-height-small); font-weight: var(--font-weight-semi-bold); }
-.at-alert__text { margin-top: calc(var(--spacing-xs) * -1); color: var(--color-text-secondary); font-size: var(--font-size-small); line-height: var(--line-height-small); }
-.at-alert__actions { display: flex; flex-wrap: wrap; gap: var(--spacing-lg); }
-.at-alert__close { display: inline-flex; align-items: center; justify-content: center; width: var(--size-sm); height: var(--size-sm); margin: calc(var(--spacing-sm) * -1) calc(var(--spacing-sm) * -1) 0 0; padding: 0; border: 0; border-radius: var(--radius-sm); background: none; color: var(--color-fg-tertiary); cursor: pointer; }
-.at-alert__close:hover { background: var(--color-bg-primary-hover); color: var(--color-fg-secondary); }
-.at-alert--subtle.at-alert--brand { background: var(--color-bg-brand-subtle); }
-.at-alert--subtle.at-alert--gray { background: var(--color-bg-secondary); }
-.at-alert--subtle.at-alert--error { background: var(--color-bg-error-subtle); }
-.at-alert--subtle.at-alert--warning { background: var(--color-bg-warning-subtle); }
-.at-alert--subtle.at-alert--success { background: var(--color-bg-success-subtle); }
-.at-alert--outline { background: var(--color-bg-primary); }
-.at-alert--outline.at-alert--brand { border-color: var(--color-border-brand); }
-.at-alert--outline.at-alert--gray { border-color: var(--color-border-primary); }
-.at-alert--outline.at-alert--error { border-color: var(--color-border-error); }
-.at-alert--outline.at-alert--warning { border-color: var(--color-border-warning); }
-.at-alert--outline.at-alert--success { border-color: var(--color-border-success); }
-.at-alert--brand .at-alert__icon { color: var(--color-fg-brand); }
-.at-alert--gray .at-alert__icon { color: var(--color-fg-secondary); }
-.at-alert--error .at-alert__icon { color: var(--color-fg-error); }
-.at-alert--warning .at-alert__icon { color: var(--color-fg-warning); }
-.at-alert--success .at-alert__icon { color: var(--color-fg-success); }
+.at-alert{--at-alert-bg:var(--color-alert-brand-bg);--at-alert-border:var(--color-alert-brand-border);--at-alert-title:var(--color-alert-brand-title);--at-alert-icon:var(--color-alert-brand-icon);--at-alert-solid:var(--color-bg-brand-solid);--at-alert-on-solid:var(--color-text-on-brand);position:relative;display:flex;align-items:flex-start;gap:var(--spacing-lg);padding:var(--spacing-lg) var(--spacing-xl);border:1px solid var(--at-alert-border);border-radius:var(--radius-lg);background:var(--at-alert-bg);color:var(--color-text-secondary);font-size:var(--font-size-small);line-height:var(--line-height-small)}
+.at-alert--gray{--at-alert-bg:var(--color-alert-gray-bg);--at-alert-border:var(--color-alert-gray-border);--at-alert-title:var(--color-alert-gray-title);--at-alert-icon:var(--color-alert-gray-icon);--at-alert-solid:var(--color-bg-inverse);--at-alert-on-solid:var(--color-text-inverse)}
+.at-alert--error{--at-alert-bg:var(--color-alert-error-bg);--at-alert-border:var(--color-alert-error-border);--at-alert-title:var(--color-alert-error-title);--at-alert-icon:var(--color-alert-error-icon);--at-alert-solid:var(--color-bg-error-solid);--at-alert-on-solid:var(--color-text-white)}
+.at-alert--warning{--at-alert-bg:var(--color-alert-warning-bg);--at-alert-border:var(--color-alert-warning-border);--at-alert-title:var(--color-alert-warning-title);--at-alert-icon:var(--color-alert-warning-icon);--at-alert-solid:var(--color-bg-warning-solid);--at-alert-on-solid:var(--color-text-on-warning)}
+.at-alert--success{--at-alert-bg:var(--color-alert-success-bg);--at-alert-border:var(--color-alert-success-border);--at-alert-title:var(--color-alert-success-title);--at-alert-icon:var(--color-alert-success-icon);--at-alert-solid:var(--color-bg-success-solid);--at-alert-on-solid:var(--color-text-white)}
+.at-alert__icon{display:inline-flex;flex:none;color:var(--at-alert-icon)}
+.at-alert__icon svg{stroke-width:1.9}
+.at-alert__body{flex:1;min-width:0;display:flex;flex-direction:column;gap:var(--spacing-xxs)}
+.at-alert__title{margin:0;color:var(--at-alert-title);font-weight:var(--font-weight-semi-bold)}
+.at-alert__text{color:inherit}
+.at-alert__text a{color:var(--at-alert-title);font-weight:var(--font-weight-medium);text-decoration:underline;text-underline-offset:2px}
+.at-alert__actions{display:flex;flex-wrap:wrap;align-items:center;gap:var(--spacing-lg);margin-top:var(--spacing-md)}
+.at-alert__close{display:inline-flex;flex:none;align-items:center;justify-content:center;width:var(--size-sm);height:var(--size-sm);margin:calc(var(--spacing-sm)*-1) calc(var(--spacing-sm)*-1) calc(var(--spacing-sm)*-1) 0;padding:0;border:0;border-radius:var(--radius-sm);background:none;color:var(--at-alert-icon);cursor:pointer;transition:background-color .15s}
+.at-alert__close:hover{background:color-mix(in srgb,currentColor 12%,transparent)}
+.at-alert .at-btn--link,.at-alert .at-btn--link:hover{color:var(--at-alert-title)}
+.at-alert .at-btn--tertiary{color:var(--at-alert-title)}
+.at-alert .at-btn--tertiary:hover{color:var(--at-alert-title);background:color-mix(in srgb,currentColor 10%,transparent)}
+.at-alert--outline{background:var(--color-bg-primary);box-shadow:var(--shadow-elevation-1)}
+.at-alert--solid{--at-alert-title:var(--at-alert-on-solid);--at-alert-icon:var(--at-alert-on-solid);background:var(--at-alert-solid);border-color:transparent;color:var(--at-alert-on-solid)}
+.at-alert--solid .at-btn--link,.at-alert--solid .at-btn--tertiary{color:inherit}
+.at-alert--solid .at-alert__close:focus-visible,.at-alert--solid .at-btn:focus-visible{outline-color:currentColor}
+.at-alert--sm{gap:var(--spacing-md);padding:var(--spacing-md) var(--spacing-lg);border-radius:var(--radius-md)}
+.at-alert--sm .at-alert__icon svg,.at-alert--sm .at-alert__close svg{width:16px;height:16px}
+.at-alert--sm .at-alert__close{width:var(--size-xs);height:var(--size-xs)}
+.at-alert--sm .at-alert__actions{margin-top:var(--spacing-xs)}
+.at-alert--flush{border-radius:0;border-inline:0}
+@media (forced-colors:active){.at-alert{border-color:CanvasText}.at-alert__icon{color:CanvasText}}
 
 /* Card — Figma: Card (Style × Padding) */
 .at-card { display: flex; flex-direction: column; border-radius: var(--radius-xl); background: var(--color-bg-primary); color: var(--color-text-secondary); }
@@ -210,17 +213,20 @@
 .at-metric { display: flex; flex-direction: column; gap: var(--spacing-xl); padding: var(--spacing-3xl); border: 1px solid var(--color-border-secondary); border-radius: var(--radius-xl); background: var(--color-bg-primary); }
 .at-metric__header { display: flex; align-items: center; justify-content: space-between; gap: var(--spacing-md); }
 .at-metric__label { margin: 0; color: var(--color-text-tertiary); font-size: var(--font-size-small); line-height: var(--line-height-small); font-weight: var(--font-weight-semi-bold); }
-.at-metric__row { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--spacing-xl); }
-.at-metric__main { display: flex; flex-direction: column; gap: var(--spacing-md); }
-.at-metric__value { margin: 0; color: var(--color-text-primary); font-size: 36px; line-height: 44px; font-weight: var(--font-weight-semi-bold); letter-spacing: -0.72px; font-variant-numeric: tabular-nums; }
-.at-metric__trend { display: flex; white-space: nowrap; align-items: center; gap: var(--spacing-sm); margin: 0; font-size: var(--font-size-small); line-height: var(--line-height-small); }
-.at-metric__change { display: inline-flex; align-items: center; gap: var(--spacing-xxs); font-weight: var(--font-weight-semi-bold); }
+.at-metric__row { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--spacing-xl); min-width: 0; }
+.at-metric__main { display: flex; flex-direction: column; gap: var(--spacing-md); flex: 1 1 auto; min-width: min-content; }
+.at-metric__value { margin: 0; color: var(--color-text-primary); font-size: 36px; line-height: 44px; font-weight: var(--font-weight-semi-bold); letter-spacing: -0.72px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.at-metric__trend { display: flex; flex-wrap: wrap; align-items: center; column-gap: var(--spacing-sm); row-gap: var(--spacing-xxs); margin: 0; font-size: var(--font-size-small); line-height: var(--line-height-small); }
+.at-metric__change { display: inline-flex; white-space: nowrap; align-items: center; gap: var(--spacing-xxs); font-weight: var(--font-weight-semi-bold); }
 .at-metric__change--up { color: var(--color-text-success); }
 .at-metric__change--down { color: var(--color-text-error); }
 .at-metric__caption { color: var(--color-text-tertiary); }
-.at-metric__chart { flex: none; }
-.at-metric__chart--up polyline { stroke: var(--color-fg-success); }
-.at-metric__chart--down polyline { stroke: var(--color-fg-error); }
+/* Sparkline: stretches between 64 and 112px with the space the card has instead of overflowing it. */
+.at-metric__chart { display: block; flex: 0 1 112px; min-width: 64px; margin-left: auto; height: 56px; overflow: visible; }
+.at-metric__chart--up { color: var(--color-fg-success); }
+.at-metric__chart--down { color: var(--color-fg-error); }
+.at-metric__chart polyline { stroke: currentColor; }
+.at-metric__chart-area { fill: currentColor; opacity: .12; }
 
 /* Empty state — Figma: Empty state (Size) */
 .at-empty { display: flex; flex-direction: column; align-items: center; text-align: center; margin: 0 auto; }
