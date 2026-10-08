@@ -13,7 +13,8 @@ This project's UI uses the **Atomus** design system: `@stanvision/atomus-react` 
    - Pick the component with the catalogue and decision trees: https://docs.atomus.io/components/choosing/
    - Read the component's page for props and rules: https://docs.atomus.io/components/
    - Agent-readable index of all docs: https://docs.atomus.io/llms.txt (full text: https://docs.atomus.io/llms-full.txt)
-2. **If the Atomus skill is installed, use it** (`npx skills add StanVisionAgency/atomus`). Its `references/components.md` has every prop and `scripts/validate.mjs` checks your code.
+2. **If the Atomus MCP server is connected, use it** (`claude mcp add atomus -- npx -y @stanvision/atomus-mcp`, docs: https://docs.atomus.io/ai/mcp/): call `atomus_get_started` first, `atomus_get_component` before using a component, `atomus_find_token` instead of any raw value, and `atomus_validate` on every changed file.
+3. **If the Atomus skill is installed, use it** (`npx skills add StanVisionAgency/atomus`). Its `references/components.md` has every prop and `scripts/validate.mjs` checks your code.
 
 ## Imports
 
@@ -43,6 +44,6 @@ Theme with attributes, never with overrides: `data-theme="light | dark | system"
 
 ## Before you finish
 
-- Validate changed files: `node ~/.claude/skills/atomus/scripts/validate.mjs <files>` (or the skill's path in your setup).
+- Validate changed files: `atomus_validate` (MCP server), the project's lint script if it uses `@stanvision/eslint-plugin-atomus` / `@stanvision/stylelint-config-atomus`, or `node ~/.claude/skills/atomus/scripts/validate.mjs <files>` (the skill's path in your setup).
 - Check the screen in light and dark, and at mobile width.
 - Don't add tokens, override token values, or disable lint/type rules to make something pass. Ask a person.
