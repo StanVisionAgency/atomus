@@ -53,6 +53,7 @@ Text colour. `primary` for headings and body, `secondary` for supporting copy, `
 | `--color-text-brand-hover` | #2335d6 | #97bdff | `text-brand-hover` | Text/text-brand_hover |
 | `--color-text-inverse` | #ffffff | #18181b | `text-inverse` | Text/text-inverse |
 | `--color-text-on-warning` | #18181b | #18181b | `text-on-warning` | Text/text-on-warning |
+| `--color-text-ai` | #4c2cd2 | #b4b9ff | — | Text/text-ai |
 
 ## Background
 
@@ -79,6 +80,7 @@ Surface fills. `primary` for the page and cards, `secondary` for sections and ta
 | `--color-bg-overlay` | #18181bb2 | #000000b2 | `bg-overlay` | Background/bg-overlay |
 | `--color-bg-quaternary` | #e4e4e7 | #3f3f46 | `bg-quaternary` | Background/bg-quaternary |
 | `--color-bg-quaternary-hover` | #d4d4d8 | #52525b | `bg-quaternary-hover` | Background/bg-quaternary_hover |
+| `--color-bg-ai-subtle` | #f2f5ff | #938efe1f | — | Background/bg-ai-subtle |
 
 ## Border
 
@@ -94,6 +96,7 @@ Strokes. `secondary` for cards and dividers, `primary` for inputs and outlined c
 | `--color-border-error` | #e11d48 | #fb7185 | `border-error` | Border/border-error |
 | `--color-border-warning` | #f59e0b | #fbbf24 | `border-warning` | Border/border-warning |
 | `--color-border-success` | #16a34a | #49de80 | `border-success` | Border/border-success |
+| `--color-border-ai` | #b4b9ff | #938efe66 | — | Border/border-ai |
 
 ## Foreground
 
@@ -112,6 +115,8 @@ Icons and graphics. Same roles as Text.
 | `--color-fg-success` | #16a34a | #49de80 | `fg-success` `fill-fg-success` | Foreground/fg-success |
 | `--color-fg-inverse` | #ffffff | #18181b | `fg-inverse` `fill-fg-inverse` | Foreground/fg-inverse |
 | `--color-fg-on-warning` | #18181b | #18181b | `fg-on-warning` `fill-fg-on-warning` | Foreground/fg-on-warning |
+| `--color-fg-contrast` | #000000 | #ffffff | `fg-contrast` `fill-fg-contrast` | Foreground/fg-contrast |
+| `--color-fg-contrast-inverse` | #ffffff | #000000 | `fg-contrast-inverse` `fill-fg-contrast-inverse` | Foreground/fg-contrast-inverse |
 
 ## Gradient
 
@@ -125,6 +130,7 @@ Gradient stops for marketing surfaces.
 | `--color-gradient-secondary-end` | #a78bfa | #a78bfa | — | Gradient/Secondary End |
 | `--color-gradient-tertiary-start` | #94a3b8 | #94a3b8 | — | Gradient/Tertiary Start |
 | `--color-gradient-tertiary-end` | #f1f5f9 | #f1f5f9 | — | Gradient/Tertiary End |
+| `--gradient-ai` | linear-gradient(135deg, #4c70ff 0%, #885efa 55%, #f472b6 100%) | linear-gradient(135deg, #6e96ff 0%, #a38afd 55%, #f9a8d4 100%) | — | Gradient/AI |
 
 ## Component tokens
 
@@ -271,6 +277,15 @@ Switch with `data-radius="default | sharp | round"` on any element.
 ## Shadows
 
 `--shadow-elevation-1` · `--shadow-elevation-2` · `--shadow-elevation-3` · `--shadow-elevation-4` · `--shadow-elevation-6` · `--shadow-elevation-8` · `--shadow-elevation-9` · `--shadow-elevation-12` · `--shadow-elevation-16` · `--shadow-elevation-24`
+
+## Motion
+
+Every motion token becomes `0s` under `prefers-reduced-motion: reduce`.
+
+| Token | Value | Use |
+| --- | --- | --- |
+| `--motion-stream-shimmer-duration` | 1.8s | One sweep of the shimmer on streaming placeholders and "Thinking…" labels (var(--motion-stream-shimmer-duration)). 0s under prefers-reduced-motion: reduce — the text stays static. |
+| `--motion-stream-caret-blink` | 1s | Blink period of the streaming caret (var(--motion-stream-caret-blink)). 0s under prefers-reduced-motion: reduce — the caret shows solid. |
 
 ## Text styles
 
