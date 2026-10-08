@@ -6,6 +6,7 @@ description: "Human-in-the-loop confirmation before an agent acts: approve, deny
 {/* Source for /components/ai-approval/ — scripts/sync.mjs writes the page to src/content/docs/components/. Imports are relative to that folder. */}
 
 import Demo from '../../../components/Demo.astro';
+import RegistryActions from '../../../components/RegistryActions.astro';
 import { ApprovalDemo, ApprovalRiskDemo } from '../../../components/ai-demos';
 
 Asks before the agent acts. It names the action as a question, shows the risk with a word and an icon, previews what will be sent, and lets the person edit it first. The outcome stays in the thread.
@@ -13,6 +14,8 @@ Asks before the agent acts. It names the action as a question, shows the risk wi
 <Demo caption="risk=&quot;medium&quot; · editableText · alwaysAllowLabel — try Edit, then approve">
   <ApprovalDemo client:visible />
 </Demo>
+
+<RegistryActions items="ai-approval" />
 
 ## Risk levels
 

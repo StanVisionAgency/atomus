@@ -6,6 +6,7 @@ description: "How much of the model’s context window a conversation uses, and 
 {/* Source for /components/ai-context-meter/ — scripts/sync.mjs writes the page to src/content/docs/components/. Imports are relative to that folder. */}
 
 import Demo from '../../../components/Demo.astro';
+import RegistryActions from '../../../components/RegistryActions.astro';
 import { ContextMeterDemo } from '../../../components/ai-demos';
 
 Shows how full the model's context window is and what the conversation cost. The compact ring sits in the Prompt input; click it for the breakdown. It turns warning at 80% and error at 95%, with a sentence that says what happens next.
@@ -13,6 +14,8 @@ Shows how full the model's context window is and what the conversation cost. The
 <Demo caption="variant=&quot;compact&quot; at 84% (open), 24% and 97% · variant=&quot;bar&quot; with breakdown and cost">
   <ContextMeterDemo client:visible />
 </Demo>
+
+<RegistryActions items="ai-context-meter" />
 
 {/* @figma — sync.mjs inserts the "In Figma" section (from guidelines/components) here */}
 

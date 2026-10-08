@@ -38,7 +38,7 @@ Every page is also available as Markdown at its URL plus \`index.md\` (for examp
 const SETS = [
   { slug: 'components', label: 'Components', description: 'every component page: Figma properties, usage rules and React API', match: (p) => p.startsWith('/components/') },
   { slug: 'foundations-and-tokens', label: 'Foundations and tokens', description: 'colour, type, spacing, radius, icons, theming and the code token formats', match: (p) => p.startsWith('/foundations/') || p.startsWith('/code/') },
-  { slug: 'ai-and-agents', label: 'AI and agents', description: 'rules for agents, the skill, Figma MCP and llms.txt', match: (p) => p.startsWith('/ai/') },
+  { slug: 'ai-and-agents', label: 'AI and agents', description: 'rules for agents, the skill, the Atomus MCP server, lint rules, the shadcn registry, evals, Figma MCP and llms.txt', match: (p) => p.startsWith('/ai/') },
 ];
 
 // ---------------------------------------------------------------- read pages
