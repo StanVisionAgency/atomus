@@ -3,6 +3,7 @@
 // 1280px canvas that is scaled to fit. Desktop / Tablet / Mobile switch the canvas width; container queries
 // and sections-responsive.css (generated from css/atomus.css) switch layout, type and spacing like the breakpoints.
 import { SECTIONS } from './sections';
+import RegistryActions from './RegistryActions.astro';
 interface Props { name: string; variants: string }
 const { name, variants } = Astro.props;
 const entry = SECTIONS[name];
@@ -30,6 +31,7 @@ const id = name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
       </div>
     </div>
   ) : <p>Preview coming soon.</p>}
+  {Section ? <RegistryActions section={name} label="Add this section to a shadcn project" /> : null}
   {entry ? (
     <details class="ws-anatomy" open>
       <summary>Anatomy</summary>

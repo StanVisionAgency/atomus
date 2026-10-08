@@ -6,6 +6,7 @@ description: "Short floating confirmations with auto-dismiss."
 {/* Source for /components/toast/ — scripts/sync.mjs writes the page to src/content/docs/components/. Imports are relative to that folder. */}
 
 import Demo from '../../../components/Demo.astro';
+import RegistryActions from '../../../components/RegistryActions.astro';
 import { ToastDemo } from '../../../components/demos';
 
 Short floating confirmations with auto-dismiss.
@@ -13,6 +14,8 @@ Short floating confirmations with auto-dismiss.
 <Demo caption="Toast">
   <ToastDemo client:visible />
 </Demo>
+
+<RegistryActions items="toast" />
 
 {/* @figma — sync.mjs inserts the "In Figma" section (from guidelines/components) here */}
 
