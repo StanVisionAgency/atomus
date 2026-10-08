@@ -1,0 +1,9 @@
+id: ai-chat-agent-tools
+category: ai-chat
+prompt: >-
+  An agent reply that shows its reasoning steps, a running tool call ("search_docs") and a finished one, then the answer.
+expect:
+  components: ["Message", "Reasoning", "ToolCall", "StreamingText"]
+  props:
+    - { component: "ToolCall", prop: "status", value: "running" }
+  text: ["search_docs"]

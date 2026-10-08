@@ -1,0 +1,10 @@
+id: toggle-notifications
+category: component
+prompt: >-
+  Notification settings: three switches for email, push and SMS notifications, each with a label and description.
+expect:
+  components: ["Toggle"]
+  props:
+    - { component: "Toggle", prop: "description" }
+  forbid_elements: ["input"]
+  text: ["Email", "Push", "SMS"]

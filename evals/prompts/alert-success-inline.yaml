@@ -1,0 +1,10 @@
+id: alert-success-inline
+category: component
+prompt: >-
+  A small success alert inside a form: "Your changes were saved."
+expect:
+  components: ["Alert"]
+  props:
+    - { component: "Alert", prop: "color", value: "success" }
+    - { component: "Alert", prop: "size", value: "sm" }
+  text: ["Your changes were saved"]

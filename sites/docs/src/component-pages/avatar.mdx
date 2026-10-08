@@ -6,6 +6,7 @@ description: "People and workspaces, 24 to 64px, with initials fallback and stat
 {/* Source for /components/avatar/ — scripts/sync.mjs writes the page to src/content/docs/components/. Imports are relative to that folder. */}
 
 import Demo from '../../../components/Demo.astro';
+import RegistryActions from '../../../components/RegistryActions.astro';
 import { AvatarDemo } from '../../../components/demos';
 
 People and workspaces, 24 to 64px, with initials fallback and status.
@@ -13,6 +14,8 @@ People and workspaces, 24 to 64px, with initials fallback and status.
 <Demo caption="Avatar">
   <AvatarDemo client:visible />
 </Demo>
+
+<RegistryActions items="avatar" />
 
 {/* @figma — sync.mjs inserts the "In Figma" section (from guidelines/components) here */}
 

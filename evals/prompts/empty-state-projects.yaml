@@ -1,0 +1,8 @@
+id: empty-state-projects
+category: component
+prompt: >-
+  An empty state for a projects page with a "New project" primary action and an "Import" secondary action.
+expect:
+  components: ["EmptyState", "Button"]
+  max_primary: 1
+  text: ["New project", "Import"]

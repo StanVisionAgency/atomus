@@ -1,0 +1,11 @@
+id: modal-delete-confirm
+category: component
+prompt: >-
+  A destructive confirmation dialog: "Delete project?" with a description, Cancel and Delete actions. Show it open.
+expect:
+  components: ["Modal", "Button"]
+  props:
+    - { component: "Modal", prop: "type", value: "destructive" }
+  max_primary: 1
+  forbid_elements: ["dialog"]
+  text: ["Delete project?"]

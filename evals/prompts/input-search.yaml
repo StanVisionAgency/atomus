@@ -1,0 +1,10 @@
+id: input-search
+category: component
+prompt: >-
+  A search field with a leading search icon and the placeholder "Search projects".
+expect:
+  components: ["Input", "Icon"]
+  props:
+    - { component: "Input", prop: "iconLeading" }
+  forbid_elements: ["input"]
+  text: ["Search projects"]

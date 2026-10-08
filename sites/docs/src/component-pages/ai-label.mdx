@@ -6,6 +6,7 @@ description: "Marks AI-generated content and opens an explainability popover, wi
 {/* Source for /components/ai-label/ — scripts/sync.mjs writes the page to src/content/docs/components/. Imports are relative to that folder. */}
 
 import Demo from '../../../components/Demo.astro';
+import RegistryActions from '../../../components/RegistryActions.astro';
 import { AILabelDemo, AILabelRevertDemo } from '../../../components/ai-demos';
 
 Marks anything an AI wrote or changed. With an explanation it opens a popover that says why the person sees this and which model made it. Once the person edits the content, it reads "Edited" and offers "Revert to AI".
@@ -13,6 +14,8 @@ Marks anything an AI wrote or changed. With an explanation it opens a popover th
 <Demo caption="sizes xs · sm · md · inline · icon · with explanation popover">
   <AILabelDemo client:visible />
 </Demo>
+
+<RegistryActions items="ai-label" />
 
 ## Edited and revert to AI
 

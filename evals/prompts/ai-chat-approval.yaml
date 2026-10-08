@@ -1,0 +1,9 @@
+id: ai-chat-approval
+category: ai-chat
+prompt: >-
+  An agent that asks for approval before sending an email on the user's behalf: high-risk approval card with approve and deny, inside an assistant message.
+expect:
+  components: ["Message", "Approval"]
+  props:
+    - { component: "Approval", prop: "risk", value: "high" }
+  text: ["email"]

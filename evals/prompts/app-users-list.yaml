@@ -1,0 +1,8 @@
+id: app-users-list
+category: app-screen
+prompt: >-
+  A users list screen: page title, search, a role filter, a selectable table with avatar, name, email, role badge and status, and pagination.
+expect:
+  components: ["Table", "Input", "Select", "Badge", "Avatar"]
+  forbid_elements: ["table", "input", "select"]
+  text: ["Users"]

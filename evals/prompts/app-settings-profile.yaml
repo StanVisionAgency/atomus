@@ -1,0 +1,9 @@
+id: app-settings-profile
+category: app-screen
+prompt: >-
+  An account settings screen with tabs (Profile, Password, Notifications), a profile form (name, email, role select, bio) and Save / Cancel actions.
+expect:
+  components: ["Tabs", "Input", "Select", "Button"]
+  max_primary: 1
+  forbid_elements: ["input", "select", "button"]
+  text: ["Profile", "Save"]

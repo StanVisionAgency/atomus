@@ -1,0 +1,10 @@
+id: tabs-segmented
+category: component
+prompt: >-
+  A segmented control to switch a chart between Day, Week and Month.
+expect:
+  components: ["Tabs"]
+  props:
+    - { component: "Tabs", prop: "variant", value: "segmented" }
+  forbid_elements: ["button"]
+  text: ["Week"]

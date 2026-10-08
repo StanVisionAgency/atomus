@@ -1,0 +1,10 @@
+id: select-sort-small
+category: component
+prompt: >-
+  A small "Sort by" select for a table toolbar with Newest, Oldest and Name options.
+expect:
+  components: ["Select"]
+  props:
+    - { component: "Select", prop: "size", value: "sm" }
+  forbid_elements: ["select"]
+  text: ["Sort by"]

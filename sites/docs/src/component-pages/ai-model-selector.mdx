@@ -6,6 +6,7 @@ description: "A Select for AI models with provider icons, descriptions and capab
 {/* Source for /components/ai-model-selector/ — scripts/sync.mjs writes the page to src/content/docs/components/. Imports are relative to that folder. */}
 
 import Demo from '../../../components/Demo.astro';
+import RegistryActions from '../../../components/RegistryActions.astro';
 import { ModelSelectorDemo } from '../../../components/ai-demos';
 
 A Select for AI models. The ghost style sits in the Prompt input toolbar; the outline style suits settings. Options show the provider, when to pick the model and its capabilities.
@@ -13,6 +14,8 @@ A Select for AI models. The ghost style sits in the Prompt input toolbar; the ou
 <Demo caption="variant=&quot;ghost&quot; (open) · variant=&quot;outline&quot; with showLabel">
   <ModelSelectorDemo client:visible />
 </Demo>
+
+<RegistryActions items="ai-model-selector" />
 
 {/* @figma — sync.mjs inserts the "In Figma" section (from guidelines/components) here */}
 

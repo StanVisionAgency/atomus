@@ -1,0 +1,8 @@
+id: card-grid
+category: component
+prompt: >-
+  Three project cards in a responsive grid, each with a title, a short description and a header action menu.
+expect:
+  components: ["Card"]
+  props:
+    - { component: "Card", prop: "headerAction" }

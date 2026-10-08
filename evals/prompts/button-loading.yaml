@@ -1,0 +1,11 @@
+id: button-loading
+category: component
+prompt: >-
+  A "Publish" button that shows a loading state while the request runs, plus a secondary "Preview" button.
+expect:
+  components: ["Button"]
+  props:
+    - { component: "Button", prop: "loading" }
+  max_primary: 1
+  forbid_elements: ["button"]
+  text: ["Publish", "Preview"]

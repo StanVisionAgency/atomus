@@ -1,0 +1,9 @@
+id: web-landing-hero
+category: website
+prompt: >-
+  A landing page for a project-management SaaS: header with navigation and a "Get started" button, a hero with headline and two calls to action, a logo row, three feature blocks and a footer.
+expect:
+  components: ["Button"]
+  max_primary: 1
+  patterns: ["<h1"]
+  text: ["Get started"]

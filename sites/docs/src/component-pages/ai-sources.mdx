@@ -6,6 +6,7 @@ description: "Numbered inline citations with preview cards, and the list of sour
 {/* Source for /components/ai-sources/ — scripts/sync.mjs writes the page to src/content/docs/components/. Imports are relative to that folder. */}
 
 import Demo from '../../../components/Demo.astro';
+import RegistryActions from '../../../components/RegistryActions.astro';
 import { SourcesDemo, SourcesListDemo } from '../../../components/ai-demos';
 
 Inline citations are numbered chips after a claim; hover or focus shows a preview card. Sources lists the same numbers under the answer, with the passage each source contributed.
@@ -13,6 +14,8 @@ Inline citations are numbered chips after a claim; hover or focus shows a previe
 <Demo caption="InlineCitation in text · Sources (collapsible, open)">
   <SourcesDemo client:visible />
 </Demo>
+
+<RegistryActions items="ai-sources" />
 
 ## List style
 

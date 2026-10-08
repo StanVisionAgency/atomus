@@ -1,0 +1,9 @@
+id: radio-billing-period
+category: component
+prompt: >-
+  A billing period choice: Monthly or Yearly (save 20%), as radio buttons in a group with a visible legend.
+expect:
+  components: ["Radio"]
+  forbid_elements: ["input"]
+  text: ["Monthly", "Yearly"]
+  patterns: ["fieldset|role=\"radiogroup\""]

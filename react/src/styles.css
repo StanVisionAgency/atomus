@@ -46,7 +46,7 @@
 .at-badge--solid-gray { background: var(--color-bg-inverse); color: var(--color-text-inverse); }
 .at-badge--solid-brand { background: var(--color-bg-brand-solid); color: var(--color-text-on-brand); }
 .at-badge--solid-error { background: var(--color-bg-error-solid); color: var(--color-text-on-brand); }
-.at-badge--solid-warning { background: var(--color-bg-warning-solid); color: var(--color-text-on-brand); }
+.at-badge--solid-warning { background: var(--color-bg-warning-solid); color: var(--color-text-on-warning); }
 .at-badge--solid-success { background: var(--color-bg-success-solid); color: var(--color-text-on-brand); }
 
 /* Tag — Figma: Tag (Size) */
@@ -196,7 +196,9 @@
 .at-tabs--pill .at-tab { padding: 0 var(--spacing-lg); border-radius: var(--radius-sm); }
 .at-tabs--pill .at-tab.is-active { background: var(--color-bg-brand-subtle); color: var(--color-text-brand); }
 .at-tabs--segmented { display: inline-flex; align-self: flex-start; gap: var(--spacing-xxs); padding: var(--spacing-xs); border-radius: var(--radius-md); background: var(--color-bg-tertiary); }
-.at-tabs--segmented .at-tab { height: var(--size-sm); padding: 0 var(--spacing-lg); border-radius: var(--radius-sm); }
+.at-tabs--segmented .at-tab { height: var(--size-sm); padding: 0 var(--spacing-lg); border-radius: var(--radius-sm); color: var(--color-text-secondary); }
+.at-tabs--segmented .at-tab:hover { color: var(--color-text-primary); }
+.at-tabs--segmented .at-tab:disabled { color: var(--color-text-disabled); }
 .at-tabs--segmented .at-tab.is-active { background: var(--color-bg-primary); color: var(--color-text-primary); box-shadow: var(--shadow-elevation-1); }
 .at-tabs--segmented .at-tab.is-active .at-tab__count { background: var(--color-bg-tertiary); color: var(--color-text-secondary); }
 
@@ -388,7 +390,7 @@
    AI surfaces use --color-bg-ai-subtle, --color-border-ai, --color-text-ai and --gradient-ai;
    streaming motion uses --motion-stream-*. Everything follows the Brand, Color and Radius modes.
    ========================================================================== */
-.at-vh { position: absolute !important; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
+.at-vh { position: absolute !important; width: 1px; height: 1px; margin: 0; padding: 0; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
 .at-prompt-wrap, .at-msg, .at-reasoning, .at-tool, .at-approval, .at-sources, .at-cite, .at-suggestions, .at-model, .at-feedback, .at-ai-label, .at-ai-pop, .at-context, .at-stream, .at-shimmer { font-family: var(--font-family-body); }
 .at-code, .at-tool__name, .at-approval__tool { font-family: ui-monospace, "Roboto Mono", SFMono-Regular, Menlo, Consolas, monospace; }
 
@@ -425,7 +427,7 @@ button.at-ai-label:focus-visible { outline: none; box-shadow: var(--shadow-focus
 .at-shimmer.is-active { background: linear-gradient(90deg, var(--color-text-tertiary) 0%, var(--color-text-tertiary) 35%, var(--color-text-ai) 50%, var(--color-text-tertiary) 65%, var(--color-text-tertiary) 100%) 0 0 / 250% 100%; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; animation: at-shimmer var(--motion-stream-shimmer-duration) linear infinite; }
 @keyframes at-shimmer { from { background-position: 100% 0; } to { background-position: -150% 0; } }
 .at-stream__text { white-space: pre-wrap; overflow-wrap: anywhere; }
-.at-stream__caret { display: inline-block; width: .5em; height: 1.1em; margin-left: 2px; vertical-align: -.2em; border-radius: var(--radius-xxs); background: var(--gradient-ai); animation: at-caret var(--motion-stream-caret-blink) steps(1, end) infinite; }
+.at-stream__caret { display: inline-block; width: .5em; height: 1.1em; margin-left: var(--spacing-xxs); vertical-align: -.2em; border-radius: var(--radius-xxs); background: var(--gradient-ai); animation: at-caret var(--motion-stream-caret-blink) steps(1, end) infinite; }
 @keyframes at-caret { 50% { opacity: 0; } }
 @media (prefers-reduced-motion: reduce) {
   .at-shimmer.is-active { animation: none; background: none; -webkit-text-fill-color: currentColor; color: var(--color-text-tertiary); }
@@ -480,7 +482,7 @@ button.at-ai-label:focus-visible { outline: none; box-shadow: var(--shadow-focus
 .at-reasoning__body { display: flex; flex-direction: column; gap: var(--spacing-lg); margin-left: var(--spacing-xs); padding: var(--spacing-xs) 0 var(--spacing-xs) var(--spacing-xl); border-left: 2px solid var(--color-border-ai); color: var(--color-text-tertiary); font-size: var(--font-size-small); line-height: var(--line-height-small); }
 .at-reasoning__steps { display: flex; flex-direction: column; gap: var(--spacing-md); margin: 0; padding: 0; list-style: none; }
 .at-reasoning__step { display: flex; gap: var(--spacing-md); }
-.at-reasoning__dot { flex: none; width: 8px; height: 8px; margin-top: 6px; border-radius: var(--radius-full); background: var(--color-fg-tertiary); }
+.at-reasoning__dot { flex: none; width: 8px; height: 8px; margin-top: var(--spacing-sm); border-radius: var(--radius-full); background: var(--color-fg-tertiary); }
 .at-reasoning__step.is-done .at-reasoning__dot { background: var(--color-text-ai); }
 .at-reasoning__step.is-active .at-reasoning__dot { background: var(--gradient-ai); box-shadow: 0 0 0 3px var(--color-bg-ai-subtle); }
 .at-reasoning__step.is-pending .at-reasoning__dot { background: transparent; box-shadow: inset 0 0 0 1.5px var(--color-fg-disabled); }
@@ -523,7 +525,7 @@ button.at-ai-label:focus-visible { outline: none; box-shadow: var(--shadow-focus
 .at-tool__section { display: flex; flex-direction: column; gap: var(--spacing-sm); min-width: 0; }
 .at-tool__section-label { color: var(--color-text-tertiary); font-size: var(--font-size-micro); line-height: var(--line-height-micro); font-weight: var(--font-weight-semi-bold); letter-spacing: .06em; text-transform: uppercase; }
 .at-tool__error { display: flex; gap: var(--spacing-md); padding: var(--spacing-md) var(--spacing-lg); border-radius: var(--radius-md); background: var(--color-alert-error-bg); color: var(--color-alert-error-title); font-size: var(--font-size-small); line-height: var(--line-height-small); }
-.at-tool__error .at-icon { flex: none; margin-top: 2px; color: var(--color-alert-error-icon); }
+.at-tool__error .at-icon { flex: none; margin-top: var(--spacing-xxs); color: var(--color-alert-error-icon); }
 @media (max-width: 767px) { .at-tool__name, .at-tool__duration { display: none; } }
 
 /* Approval — Figma: Approval (Risk × State) */
@@ -563,7 +565,7 @@ button.at-ai-label:focus-visible { outline: none; box-shadow: var(--shadow-focus
 .at-sources__trigger:focus-visible { outline: none; box-shadow: var(--shadow-focus-ring); border-color: var(--color-border-focus); }
 .at-sources__stack { display: inline-flex; }
 .at-sources__favicon { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: var(--radius-full); background: var(--color-bg-tertiary); color: var(--color-fg-tertiary); box-shadow: 0 0 0 2px var(--color-bg-primary); overflow: hidden; }
-.at-sources__favicon + .at-sources__favicon { margin-left: -4px; }
+.at-sources__favicon + .at-sources__favicon { margin-left: calc(var(--spacing-xs) * -1); }
 .at-sources__favicon svg, .at-sources__favicon img { width: 12px; height: 12px; }
 .at-sources__chev { color: var(--color-fg-tertiary); transition: transform .15s; }
 .at-sources.is-open .at-sources__chev { transform: rotate(180deg); }
@@ -575,13 +577,13 @@ a.at-sources__link:hover { border-color: var(--color-border-primary); background
 a.at-sources__link:focus-visible { outline: none; box-shadow: var(--shadow-focus-ring); border-color: var(--color-border-focus); }
 .at-sources__item:target .at-sources__link { border-color: var(--color-border-ai); background: var(--color-bg-ai-subtle); }
 .at-sources__num, .at-cite__chip { display: inline-flex; align-items: center; justify-content: center; flex: none; min-width: 18px; height: 18px; padding: 0 var(--spacing-xs); border-radius: var(--radius-xs); background: var(--color-bg-ai-subtle); color: var(--color-text-ai); box-shadow: inset 0 0 0 1px var(--color-border-ai); font-size: var(--font-size-micro); line-height: 1; font-weight: var(--font-weight-semi-bold); font-variant-numeric: tabular-nums; }
-.at-sources__num { margin-top: 1px; }
+.at-sources__num { margin-top: calc(var(--spacing-xxs) / 2); }
 .at-sources__main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: var(--spacing-xxs); }
 .at-sources__title { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; color: var(--color-text-primary); font-size: var(--font-size-small); line-height: var(--line-height-small); font-weight: var(--font-weight-semi-bold); }
 .at-sources__domain { display: inline-flex; align-items: center; gap: var(--spacing-xs); color: var(--color-text-tertiary); font-size: var(--font-size-tiny); line-height: var(--line-height-tiny); }
 .at-sources__snippet { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; color: var(--color-text-tertiary); font-size: var(--font-size-tiny); line-height: var(--line-height-tiny); }
-.at-sources__ext { flex: none; margin-top: 2px; color: var(--color-fg-tertiary); }
-.at-cite { position: relative; display: inline-block; margin: 0 1px; vertical-align: 2px; line-height: 1; }
+.at-sources__ext { flex: none; margin-top: var(--spacing-xxs); color: var(--color-fg-tertiary); }
+.at-cite { position: relative; display: inline-block; margin: 0 calc(var(--spacing-xxs) / 2); vertical-align: 2px; line-height: 1; }
 .at-cite__chip { text-decoration: none; cursor: pointer; transition: background-color .15s, color .15s; }
 .at-cite__chip:hover, .at-cite__chip:focus-visible { background: var(--color-text-ai); color: var(--color-bg-primary); box-shadow: none; }
 .at-cite__chip:focus-visible { outline: 2px solid var(--color-border-focus); outline-offset: 1px; }
@@ -642,7 +644,7 @@ a.at-sources__link:focus-visible { outline: none; box-shadow: var(--shadow-focus
 .at-model__option-desc { color: var(--color-text-tertiary); font-size: var(--font-size-tiny); line-height: var(--line-height-tiny); }
 .at-model__caps { display: flex; flex-wrap: wrap; gap: var(--spacing-xs); margin-top: var(--spacing-xxs); }
 .at-model__cap { padding: 0 var(--spacing-sm); border: 1px solid var(--color-border-secondary); border-radius: var(--radius-xs); color: var(--color-text-tertiary); font-size: var(--font-size-micro); line-height: 16px; font-weight: var(--font-weight-medium); }
-.at-model__check { flex: none; margin-top: 2px; color: var(--color-fg-brand); }
+.at-model__check { flex: none; margin-top: var(--spacing-xxs); color: var(--color-fg-brand); }
 
 /* Feedback — Figma: Feedback (Rating) */
 .at-feedback { display: inline-flex; flex-direction: column; gap: var(--spacing-md); align-items: flex-start; }

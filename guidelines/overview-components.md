@@ -104,6 +104,26 @@ Use this file to pick the right component before you write code or design. For p
 | Icon sets | Brand, payment, flag, file-type, folder and integration icons; star rating. | — | `components/atomus-icons.md` |
 | Shared assets | Mockups and annotation kit (design files only). | — | `components/shared-assets.md` |
 
+### AI (Agent kit)
+
+Components for AI products: chat, copilots and agents. They mark AI content with the AI layer (`--color-bg-ai-subtle`, `--color-border-ai`, `--color-text-ai`, `--gradient-ai`) and take plain props, so they work with any AI SDK.
+
+| Component | Use it for | React | Guideline |
+|---|---|---|---|
+| Conversation | The pattern: header, `role="log"` thread of Messages, welcome state with starters, docked Prompt input. | — (compose the parts) | `components/ai-message.md` |
+| Prompt input | The chat composer: auto-growing text, attachments, toolbar slot, Send ↔ Stop, `/` and `@` menus. | `PromptInput` | `components/ai-prompt-input.md` |
+| Message | One turn: user, assistant, system or tool; streaming, error and stopped states; copy, regenerate, edit, branches. | `Message` | `components/ai-message.md` |
+| Streaming text, Shimmer | A reply that renders as it streams, with a caret and batched announcements; a shimmer for status lines. | `StreamingText`, `Shimmer` | `components/ai-streaming-text.md` |
+| Reasoning | A collapsible "Thought for 12s" disclosure with the agent's steps. | `Reasoning` | `components/ai-reasoning.md` |
+| Tool call | One function call: name, status, duration, input and output. | `ToolCall` | `components/ai-tool-call.md` |
+| Approval | Human-in-the-loop confirmation before an agent acts; risk level, edit then approve, always allow. | `Approval` | `components/ai-approval.md` |
+| Sources, Inline citation | Numbered citations with preview cards and the list of sources behind an answer. | `Sources`, `InlineCitation` | `components/ai-sources.md` |
+| Suggestions | Follow-up chips and prompt-starter cards that send or insert a prompt. | `Suggestions` | `components/ai-suggestions.md` |
+| Model selector | Choosing the AI model, with provider icons and capability badges. | `ModelSelector` | `components/ai-model-selector.md` |
+| Feedback | Thumbs up / down on a reply, with a reason form. | `Feedback` | `components/ai-feedback.md` |
+| AI label | Marks AI-generated content; explainability popover; "Revert to AI" after edits. | `AILabel` | `components/ai-label.md` |
+| Context meter | Context-window usage and cost of a conversation. | `ContextMeter` | `components/ai-context-meter.md` |
+
 ## Also called
 
 If a request uses one of these names, use the Atomus component on the right.
@@ -144,6 +164,19 @@ If a request uses one of these names, use the Atomus component on the right.
 | user picture, profile image | Avatar |
 | rating | Star rating |
 | rich text editor, WYSIWYG | Text editor |
+| chatbot, assistant panel, copilot, chat UI, AI chat | Conversation (Message + Prompt input) |
+| composer, chat input, prompt box, prompt bar | Prompt input |
+| chat bubble, AI response, turn | Message |
+| typing indicator, thinking indicator, "Thinking…" | Shimmer (or Reasoning with `status="thinking"`) |
+| chain of thought, thoughts, plan | Reasoning |
+| function call, tool use, tool invocation, MCP tool | Tool call |
+| confirmation (agent), human-in-the-loop, permission prompt | Approval |
+| citations, references, footnotes (AI) | Sources, Inline citation |
+| quick replies, follow-ups, prompt starters, conversation starters | Suggestions |
+| model picker, model switcher, LLM dropdown | Model selector |
+| thumbs up / down, rate response | Feedback |
+| AI badge, sparkle badge, "AI generated" tag | AI label |
+| token counter, usage meter, context window | Context meter |
 
 ## Decision trees
 
@@ -185,6 +218,21 @@ Sizes: `md` in product UI, `sm`/`xs` in tables and toolbars, `lg`/`xl` on market
 5. Is it **product- or account-wide** and shown across the top of every page ("Scheduled maintenance Sunday")? → **Banner** (one at a time).
 6. Is there **no content yet** (first use, no results, cleared inbox)? → **Empty state** in place of the content.
 7. Is it a history of events the user checks later? → **Notifications panel**.
+
+### Which AI component?
+
+1. Does the person **type to the AI**? → **Prompt input**, docked at the bottom of the thread. Put the model choice in its `toolbar` (**Model selector**) and usage in its `actions` (**Context meter**).
+2. Is it **one turn** of the conversation? → **Message** with `role` user, assistant, system or tool. Inside an assistant Message, in the order things happened:
+   - The model is **thinking or planning** → **Reasoning** (`status="thinking"`, then `done` with a duration). For a one-line status ("Searching…") → **Shimmer**.
+   - The agent **called a function** (search, API, MCP tool) → **Tool call**.
+   - The agent wants to **write, send, spend, delete or share** → **Approval** first; run the tool only after Approve. Read-only actions the person asked for need no Approval.
+   - The **answer text** → **Streaming text** while it arrives, plain text afterwards.
+   - The answer **relies on documents or pages** → **Inline citation** after each claim and **Sources** under the answer.
+3. Should the person **rate** the answer? → **Feedback** in the Message `actions` slot.
+4. Should the person **continue** with one tap? → **Suggestions** under the latest answer (`mode="insert"` when they must add details); on an empty thread → `variant="cards"` prompt starters.
+5. Is AI-generated content shown **outside a chat** (a summary, a prefilled field, a table cell)? → **AI label** next to it, with an `explanation`; after the person edits it, `edited` and `onRevert`.
+6. Is it a **person-to-person** chat without AI? → the Messaging guidelines, not the Agent kit.
+7. Never use the AI layer (`--gradient-ai`, `bg-ai-subtle`, `border-ai`, `text-ai`) on content that is not AI.
 
 ### Card or Section?
 

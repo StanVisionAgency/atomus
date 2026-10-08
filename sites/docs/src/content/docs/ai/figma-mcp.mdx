@@ -45,7 +45,7 @@ import { Button } from '@stanvision/atomus-react';
 <Button hierarchy="primary" size="md" iconLeading={<PlusIcon />}>New project</Button>
 ```
 
-- The mappings for all 21 React components are in [`react/src/components/*.figma.tsx`](https://github.com/StanVisionAgency/atomus/tree/main/react/src/components), covering variant, boolean, text and instance-swap properties.
+- The mappings for all 21 React components are in [`react/src/components/*.figma.ts`](https://github.com/StanVisionAgency/atomus/tree/main/react/src/components), covering variant, boolean, text and instance-swap properties.
 - Publishing them needs a Dev or Full seat on a **Figma Organization or Enterprise** plan: `FIGMA_ACCESS_TOKEN=… npm run figma:publish` in `react/`.
 - Until they are published, the agent maps instances by name using [Choosing a component](/components/choosing/) and each page's React API. That is slower but gives the same result.
 

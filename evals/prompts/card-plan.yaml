@@ -1,0 +1,10 @@
+id: card-plan
+category: component
+prompt: >-
+  A card for the current plan: title, supporting text, the plan details and an "Upgrade" action in the footer.
+expect:
+  components: ["Card", "Button"]
+  props:
+    - { component: "Card", prop: "footer" }
+  max_primary: 1
+  text: ["Upgrade"]

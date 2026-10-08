@@ -1,0 +1,9 @@
+id: badge-count
+category: component
+prompt: >-
+  A "New" solid brand badge next to a feature name in a list.
+expect:
+  components: ["Badge"]
+  props:
+    - { component: "Badge", prop: "variant", value: "solid" }
+  text: ["New"]

@@ -1,0 +1,9 @@
+id: modal-invite
+category: component
+prompt: >-
+  An "Invite team members" dialog with an email field and a role select. Show it open.
+expect:
+  components: ["Modal", "Input", "Select", "Button"]
+  forbid_elements: ["dialog", "input", "select"]
+  max_primary: 1
+  text: ["Invite team members"]

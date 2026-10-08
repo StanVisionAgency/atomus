@@ -1,0 +1,9 @@
+id: toast-saved
+category: component
+prompt: >-
+  Show a success toast "Settings saved" when the user clicks Save.
+expect:
+  components: ["ToastProvider", "Button"]
+  patterns: ["useToast"]
+  forbid_elements: ["button"]
+  text: ["Settings saved"]

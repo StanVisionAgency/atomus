@@ -1,0 +1,8 @@
+id: dropdown-row-actions
+category: component
+prompt: >-
+  A "more" icon button that opens a menu with Rename, Duplicate and a destructive Delete.
+expect:
+  components: ["DropdownMenu", "Button", "Icon"]
+  forbid_elements: ["button", "ul"]
+  text: ["Rename", "Delete"]

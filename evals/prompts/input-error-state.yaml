@@ -1,0 +1,10 @@
+id: input-error-state
+category: component
+prompt: >-
+  An email field that shows the validation error "Enter a valid email address" under it.
+expect:
+  components: ["Input"]
+  props:
+    - { component: "Input", prop: "error" }
+  forbid_elements: ["input"]
+  text: ["Enter a valid email address"]

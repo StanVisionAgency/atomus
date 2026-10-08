@@ -1,0 +1,9 @@
+id: web-newsletter-cta
+category: website
+prompt: >-
+  A marketing section that invites visitors to subscribe to the newsletter: headline, supporting text, email field, Subscribe button and a privacy note.
+expect:
+  components: ["Input", "Button"]
+  max_primary: 1
+  forbid_elements: ["input", "button"]
+  text: ["Subscribe"]

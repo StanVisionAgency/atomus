@@ -22,6 +22,8 @@ tester.run('no-raw-color', rules['no-raw-color'], {
     `const id = '#main';`,
     `const s = css\`--color-brand-600: #4057ff;\`;`,
     `const a = <div style={{ color: 'currentColor', background: 'transparent' }} />;`,
+    // Storybook args are component props (Alert color="gray"), not styles.
+    `export const Flush = { args: { flush: true, color: 'gray', title: 'Heads up' } };`,
     `const a = <div className="bg-[var(--color-bg-secondary)]" />;`,
     `const shade = 'color-mix(in srgb, var(--color-fg-brand) 20%, transparent)';`,
   ],
@@ -38,6 +40,7 @@ tester.run('no-raw-color', rules['no-raw-color'], {
     { code: `const a = <div style={{ backgroundColor: 'hsl(210 40% 98%)' }} />;`, errors: [{ messageId: 'raw' }] },
     { code: `const a = <div style={{ color: 'red' }} />;`, errors: [{ messageId: 'raw' }] },
     { code: `const styles = { color: '#123' };`, errors: [{ messageId: 'raw' }] },
+    { code: `export const S = { args: { style: { color: 'red' } } };`, errors: [{ messageId: 'raw' }] },
     { code: `const a = <path fill="#123456" />;`, errors: [{ messageId: 'raw' }] },
     {
       code: `const a = <path fill="#18181b" />;`,

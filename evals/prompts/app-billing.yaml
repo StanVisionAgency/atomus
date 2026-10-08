@@ -1,0 +1,9 @@
+id: app-billing
+category: app-screen
+prompt: >-
+  A billing screen: current plan card with usage progress bars, a payment method card, and an invoices table with download actions.
+expect:
+  components: ["Card", "ProgressBar", "Table", "Button"]
+  max_primary: 1
+  forbid_elements: ["table"]
+  text: ["Invoices"]

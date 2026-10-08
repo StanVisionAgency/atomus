@@ -13,7 +13,7 @@
   "native": {"elements":["svg"],"omit":["name"],"ref":false},
   "props": {
     "name": {
-      "type": "'check' | 'minus' | 'x' | 'info' | 'alert' | 'success' | 'plus' | 'search' | 'folder' | 'user' | 'arrowUp' | 'arrowDown' | 'chevronDown' | 'chevronUp' | 'chevronLeft' | 'chevronRight' | 'calendar' | 'sort' | 'menu' | 'home' | 'settings' | 'bell' | 'more'",
+      "type": "'check' | 'minus' | 'x' | 'info' | 'alert' | 'success' | 'plus' | 'search' | 'folder' | 'user' | 'arrowUp' | 'arrowDown' | 'chevronDown' | 'chevronUp' | 'chevronLeft' | 'chevronRight' | 'calendar' | 'sort' | 'menu' | 'home' | 'settings' | 'bell' | 'more' | 'sparkle' | 'copy' | 'refresh' | 'edit' | 'thumbUp' | 'thumbDown' | 'stop' | 'paperclip' | 'tool' | 'shield' | 'clock' | 'globe' | 'file' | 'external' | 'undo' | 'lightbulb' | 'code'",
       "values": [
         "check",
         "minus",
@@ -37,7 +37,24 @@
         "home",
         "settings",
         "bell",
-        "more"
+        "more",
+        "sparkle",
+        "copy",
+        "refresh",
+        "edit",
+        "thumbUp",
+        "thumbDown",
+        "stop",
+        "paperclip",
+        "tool",
+        "shield",
+        "clock",
+        "globe",
+        "file",
+        "external",
+        "undo",
+        "lightbulb",
+        "code"
       ],
       "default": null,
       "required": true,

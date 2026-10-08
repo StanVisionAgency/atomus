@@ -1,0 +1,144 @@
+{
+  "name": "AILabel",
+  "kind": "component",
+  "status": "stable",
+  "since": "4.0.0",
+  "category": "AI (Agent kit)",
+  "import": "import { AILabel } from '@stanvision/atomus-react';",
+  "source": "react/src/components/ai/AILabel.tsx",
+  "purpose": "Marks AI-generated content; explainability popover; \"Revert to AI\" after edits.",
+  "description": "Marks AI-generated content and is the entry point to explainability: a pill with the gradient AI mark and a short word (\"AI\", \"AI generated\"). With an explanation it becomes a button that opens a popover: why the person sees this, which model made it, and — once they edited the content — \"Revert to AI\". Part of the Agent kit.",
+  "aliases": ["AI badge","sparkle badge","\"AI generated\" tag"],
+  "alternative": null,
+  "native": {"elements":[],"omit":[],"ref":false},
+  "props": {
+    "label": {
+      "type": "string",
+      "default": "AI",
+      "required": false,
+      "figma": "Label",
+      "notes": "Figma: Label — the visible word. Keep it short: \"AI\", \"AI generated\", \"Draft by AI\"."
+    },
+    "size": {
+      "type": "'xs' | 'sm' | 'md'",
+      "values": ["xs","sm","md"],
+      "default": "sm",
+      "required": false,
+      "figma": "Size",
+      "notes": "Figma: Size — xs 20 · sm 24 · md 28"
+    },
+    "variant": {
+      "type": "'chip' | 'inline' | 'icon'",
+      "values": ["chip","inline","icon"],
+      "default": "chip",
+      "required": false,
+      "figma": "Style",
+      "notes": "Figma: Style. `chip` (default) — tinted pill with the gradient mark. `inline` — mark and text, no fill; for message headers and table cells. `icon` — the mark only; the label stays available to screen readers."
+    },
+    "explanation": {
+      "type": "ReactNode",
+      "default": null,
+      "required": false,
+      "figma": "Explainability popover",
+      "notes": "Figma: Explainability popover. Short, plain-language answer to \"why am I seeing this?\". When set, the label becomes a button that opens the popover."
+    },
+    "explanationTitle": {
+      "type": "string",
+      "default": "About this AI content",
+      "required": false,
+      "figma": "Popover title",
+      "notes": "Figma: Popover title — defaults to \"About this AI content\"."
+    },
+    "model": {
+      "type": "string",
+      "default": null,
+      "required": false,
+      "figma": null,
+      "notes": "Model or agent that produced the content, shown in the popover footer."
+    },
+    "edited": {
+      "type": "boolean",
+      "default": false,
+      "required": false,
+      "figma": "Edited",
+      "notes": "Figma: Edited — the person changed the AI content; the label reads \"Edited\" and loses the AI fill."
+    },
+    "onRevert": {
+      "type": "() => void",
+      "default": null,
+      "required": false,
+      "figma": "Revert to AI",
+      "notes": "Figma: Revert to AI — shows a \"Revert to AI\" action in the popover (only while `edited`)."
+    },
+    "align": {
+      "type": "'start' | 'end'",
+      "values": ["start","end"],
+      "default": "start",
+      "required": false,
+      "figma": null,
+      "notes": "Which edge of the label the popover lines up with; use `end` near the right edge of a layout"
+    },
+    "defaultOpen": {
+      "type": "boolean",
+      "default": null,
+      "required": false,
+      "figma": null,
+      "notes": "Start with the popover open (docs and tests)"
+    },
+    "className": {"type":"string","default":null,"required":false,"figma":null,"notes":null}
+  },
+  "rules": {
+    "do": [
+      "Label every piece of AI-generated content in the same way across the product.",
+      "Say in the explanation where the content came from and what to check.",
+      "Offer \"Revert to AI\" whenever people can edit generated content."
+    ],
+    "dont": [],
+    "forbidden": [
+      "Never use `--gradient-ai`, `bg-ai-subtle` or `border-ai` on content that is not AI.",
+      "Never hide the label once the person has edited the content — switch it to Edited.",
+      "Never put actions other than Revert to AI and links to settings in the popover."
+    ]
+  },
+  "examples": [
+    {
+      "title": "Usage",
+      "code": "import { AILabel } from '@stanvision/atomus-react';\n\n<AILabel\n  label=\"AI generated\"\n  explanation={<p>Written from the 14 comments on this pull request.</p>}\n  model=\"Atomus Pro\"\n  edited={text !== generated}\n  onRevert={() => setText(generated)}\n/>",
+      "language": "tsx",
+      "source": "sites/docs/src/component-pages/ai-label.mdx"
+    }
+  ],
+  "figma": {
+    "componentSet": ["AI label"],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": null,
+    "properties": [
+      {"componentSet":"AI label","name":"Label","type":"text (\"AI\")"},
+      {"componentSet":"AI label","name":"Size","type":"variant","options":["xs 20","sm 24","md 28"]},
+      {"componentSet":"AI label","name":"Style","type":"variant","options":["Chip","Inline","Icon"]},
+      {"componentSet":"AI label","name":"Explainability popover","type":"boolean + content"},
+      {"componentSet":"AI label","name":"Model","type":"text"},
+      {"componentSet":"AI label","name":"Edited","type":"boolean (off)"},
+      {"componentSet":"AI label","name":"Revert to AI","type":"boolean (on when Edited)"}
+    ],
+    "docs": "https://docs.atomus.io/components/ai-label/"
+  },
+  "docs": "https://docs.atomus.io/components/ai-label/",
+  "related": [],
+  "a11y": {
+    "element": null,
+    "requiresLabel": false,
+    "notes": [
+      "`label`: Figma: Label — the visible word. Keep it short: \"AI\", \"AI generated\", \"Draft by AI\".",
+      "`variant`: Figma: Style. `chip` (default) — tinted pill with the gradient mark. `inline` — mark and text, no fill; for message headers and table cells. `icon` — the mark only; the label stays available to screen readers.",
+      "`explanation`: Figma: Explainability popover. Short, plain-language answer to \"why am I seeing this?\". When set, the label becomes a button that opens the popover.",
+      "`edited`: Figma: Edited — the person changed the AI content; the label reads \"Edited\" and loses the AI fill.",
+      "`align`: Which edge of the label the popover lines up with; use `end` near the right edge of a layout",
+      "Label every piece of AI-generated content in the same way across the product.",
+      "Never hide the label once the person has edited the content — switch it to Edited."
+    ]
+  }
+}

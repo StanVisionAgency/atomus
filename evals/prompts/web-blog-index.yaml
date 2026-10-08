@@ -1,0 +1,7 @@
+id: web-blog-index
+category: website
+prompt: >-
+  A blog index page: page header, category tabs, a featured post and a grid of six post cards with author avatars.
+expect:
+  components: ["Tabs", "Card", "Avatar"]
+  patterns: ["<h1"]

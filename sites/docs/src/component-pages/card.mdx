@@ -6,6 +6,7 @@ description: "Groups related content and actions. Outlined, elevated or filled."
 {/* Source for /components/card/ — scripts/sync.mjs writes the page to src/content/docs/components/. Imports are relative to that folder. */}
 
 import Demo from '../../../components/Demo.astro';
+import RegistryActions from '../../../components/RegistryActions.astro';
 import { CardDemo } from '../../../components/demos';
 
 Groups related content and actions. Outlined, elevated or filled.
@@ -13,6 +14,8 @@ Groups related content and actions. Outlined, elevated or filled.
 <Demo caption="Card">
   <CardDemo client:visible />
 </Demo>
+
+<RegistryActions items="card" />
 
 {/* @figma — sync.mjs inserts the "In Figma" section (from guidelines/components) here */}
 

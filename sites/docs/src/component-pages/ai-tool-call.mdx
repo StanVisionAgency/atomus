@@ -6,6 +6,7 @@ description: "One function call by the agent: name, status, duration, input and 
 {/* Source for /components/ai-tool-call/ — scripts/sync.mjs writes the page to src/content/docs/components/. Imports are relative to that folder. */}
 
 import Demo from '../../../components/Demo.astro';
+import RegistryActions from '../../../components/RegistryActions.astro';
 import { ToolCallDemo } from '../../../components/ai-demos';
 
 One function call by the agent, from MCP tools to API calls: what it did in plain words, the function name, a status pill, the run time, and the input and output on demand.
@@ -13,6 +14,8 @@ One function call by the agent, from MCP tools to API calls: what it did in plai
 <Demo caption="status=&quot;pending&quot; · &quot;running&quot; · &quot;success&quot; (expanded) · &quot;error&quot;">
   <ToolCallDemo client:visible />
 </Demo>
+
+<RegistryActions items="ai-tool-call" />
 
 {/* @figma — sync.mjs inserts the "In Figma" section (from guidelines/components) here */}
 

@@ -80,5 +80,19 @@
     "description": "Elevation 24 shadow (var(--shadow-elevation-24)). Large overlays and drawers. Higher elevation = closer to the user; don't stack shadows or invent new ones.",
     "tailwind": ["shadow-e24"],
     "figma": null
+  },
+  {
+    "name": "--motion-stream-shimmer-duration",
+    "values": {"light":"1.8s","dark":"1.8s"},
+    "description": "One sweep of the shimmer on streaming placeholders and \"Thinking…\" labels (var(--motion-stream-shimmer-duration)). 0s under prefers-reduced-motion: reduce — the text stays static.",
+    "tailwind": [],
+    "figma": null
+  },
+  {
+    "name": "--motion-stream-caret-blink",
+    "values": {"light":"1s","dark":"1s"},
+    "description": "Blink period of the streaming caret (var(--motion-stream-caret-blink)). 0s under prefers-reduced-motion: reduce — the caret shows solid.",
+    "tailwind": [],
+    "figma": null
   }
 ]

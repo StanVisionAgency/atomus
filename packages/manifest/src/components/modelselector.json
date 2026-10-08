@@ -1,0 +1,111 @@
+{
+  "name": "ModelSelector",
+  "kind": "component",
+  "status": "stable",
+  "since": "4.0.0",
+  "category": "AI (Agent kit)",
+  "import": "import { ModelSelector } from '@stanvision/atomus-react';",
+  "source": "react/src/components/ai/ModelSelector.tsx",
+  "purpose": "Choosing the AI model, with provider icons and capability badges.",
+  "description": "Select for AI models: the trigger shows the provider icon and model name; each option shows the name, a \"New\" badge, provider and one line on when to pick it, and capability badges (Reasoning, Tools, Vision, Fast). It uses the same select-only combobox pattern as Select. Part of the Agent kit.",
+  "aliases": ["model picker","model switcher","LLM dropdown"],
+  "alternative": null,
+  "native": {"elements":[],"omit":[],"ref":false},
+  "props": {
+    "models": {"type":"ModelOption[]","default":null,"required":true,"figma":"Models","notes":"Figma: Models"},
+    "value": {"type":"string","default":null,"required":false,"figma":null,"notes":null},
+    "defaultValue": {"type":"string","default":null,"required":false,"figma":null,"notes":null},
+    "onChange": {"type":"(value: string) => void","default":null,"required":false,"figma":null,"notes":null},
+    "label": {
+      "type": "string",
+      "default": "Model",
+      "required": false,
+      "figma": null,
+      "notes": "Accessible name; shown only when `showLabel` is set"
+    },
+    "showLabel": {
+      "type": "boolean",
+      "default": false,
+      "required": false,
+      "figma": null,
+      "notes": "Shows `label` above the trigger (forms and settings)"
+    },
+    "variant": {
+      "type": "'ghost' | 'outline'",
+      "values": ["ghost","outline"],
+      "default": "ghost",
+      "required": false,
+      "figma": "Style",
+      "notes": "Figma: Style. `ghost` (default) — borderless trigger for a prompt toolbar. `outline` — bordered like Select, for settings pages."
+    },
+    "size": {
+      "type": "'sm' | 'md'",
+      "values": ["sm","md"],
+      "default": "sm",
+      "required": false,
+      "figma": "Size",
+      "notes": "Figma: Size — sm 32 · md 40"
+    },
+    "placement": {
+      "type": "'down' | 'up'",
+      "values": ["down","up"],
+      "default": "up",
+      "required": false,
+      "figma": null,
+      "notes": "Which way the list opens; `up` suits a prompt input at the bottom of the screen"
+    },
+    "disabled": {"type":"boolean","default":null,"required":false,"figma":null,"notes":null},
+    "defaultOpen": {"type":"boolean","default":null,"required":false,"figma":null,"notes":"Start open (docs and tests)"},
+    "className": {"type":"string","default":null,"required":false,"figma":null,"notes":null}
+  },
+  "rules": {
+    "do": [
+      "Describe models by what they are good at, not by version numbers alone.",
+      "Keep the list short (up to about six) and put the recommended model first.",
+      "Disable models the plan or region doesn't allow, and say why elsewhere."
+    ],
+    "dont": [],
+    "forbidden": [
+      "Never switch the model silently in the middle of a conversation.",
+      "Never show capability badges the model doesn't support."
+    ]
+  },
+  "examples": [
+    {
+      "title": "Usage",
+      "code": "import { ModelSelector } from '@stanvision/atomus-react';\n\n<ModelSelector\n  models={[\n    { value: 'pro', label: 'Atomus Pro', provider: 'StanVision', icon: <Logo />, description: 'Best for long, careful work', capabilities: ['Reasoning', 'Tools', 'Vision'], badge: 'New' },\n    { value: 'fast', label: 'Atomus Fast', provider: 'StanVision', capabilities: ['Fast'] },\n  ]}\n  value={model}\n  onChange={setModel}\n/>",
+      "language": "tsx",
+      "source": "sites/docs/src/component-pages/ai-model-selector.mdx"
+    }
+  ],
+  "figma": {
+    "componentSet": ["Model selector"],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": null,
+    "properties": [
+      {
+        "componentSet": "Model selector",
+        "name": "Models",
+        "type": "list (label, provider, provider icon, description, capabilities, badge, disabled)"
+      },
+      {"componentSet":"Model selector","name":"Style","type":"variant","options":["Ghost","Outline"]},
+      {"componentSet":"Model selector","name":"Size","type":"variant","options":["sm","md"]},
+      {"componentSet":"Model selector","name":"Placement","type":"variant","options":["Up","Down"]},
+      {"componentSet":"Model selector","name":"Show label","type":"boolean (off)"}
+    ],
+    "docs": "https://docs.atomus.io/components/ai-model-selector/"
+  },
+  "docs": "https://docs.atomus.io/components/ai-model-selector/",
+  "related": [],
+  "a11y": {
+    "element": null,
+    "requiresLabel": false,
+    "notes": [
+      "`label`: Accessible name; shown only when `showLabel` is set",
+      "`showLabel`: Shows `label` above the trigger (forms and settings)"
+    ]
+  }
+}

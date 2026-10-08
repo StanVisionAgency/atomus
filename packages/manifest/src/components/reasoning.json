@@ -1,0 +1,123 @@
+{
+  "name": "Reasoning",
+  "kind": "component",
+  "status": "stable",
+  "since": "4.0.0",
+  "category": "AI (Agent kit)",
+  "import": "import { Reasoning } from '@stanvision/atomus-react';",
+  "source": "react/src/components/ai/Reasoning.tsx",
+  "purpose": "A collapsible \"Thought for 12s\" disclosure with the agent's steps.",
+  "description": "A collapsible disclosure for the model's working: \"Thinking…\" with a shimmer while it reasons, then \"Thought for 12s\". Inside, a short step list and optional free text, on a left rule in `border-ai`. It keeps the model's working apart from its answer. Part of the Agent kit.",
+  "aliases": ["chain of thought","thoughts","plan"],
+  "alternative": null,
+  "native": {"elements":[],"omit":[],"ref":false},
+  "props": {
+    "status": {
+      "type": "'thinking' | 'done'",
+      "values": ["thinking","done"],
+      "default": "done",
+      "required": false,
+      "figma": "State",
+      "notes": "Figma: State — `thinking` while the model reasons, `done` afterwards."
+    },
+    "duration": {
+      "type": "number",
+      "default": null,
+      "required": false,
+      "figma": "Duration",
+      "notes": "Figma: Duration — seconds spent thinking; the trigger reads \"Thought for 12s\"."
+    },
+    "steps": {
+      "type": "ReasoningStep[]",
+      "default": null,
+      "required": false,
+      "figma": "Steps",
+      "notes": "Figma: Steps — a short list of what the agent did."
+    },
+    "children": {
+      "type": "ReactNode",
+      "default": null,
+      "required": false,
+      "figma": null,
+      "notes": "Free-form reasoning text (summary or raw thoughts) under the steps."
+    },
+    "label": {
+      "type": "string",
+      "default": null,
+      "required": false,
+      "figma": "Label",
+      "notes": "Figma: Label — overrides \"Thinking…\" / \"Thought for 12s\"."
+    },
+    "open": {"type":"boolean","default":null,"required":false,"figma":null,"notes":"Expanded (controlled)"},
+    "defaultOpen": {
+      "type": "boolean",
+      "default": null,
+      "required": false,
+      "figma": null,
+      "notes": "Initial expanded state when uncontrolled. Defaults to open while thinking."
+    },
+    "onOpenChange": {
+      "type": "(open: boolean) => void",
+      "default": null,
+      "required": false,
+      "figma": null,
+      "notes": "Called when the person expands or collapses it"
+    },
+    "autoCollapse": {
+      "type": "boolean",
+      "default": true,
+      "required": false,
+      "figma": null,
+      "notes": "Collapse automatically when `status` turns `done` (uncontrolled only)."
+    },
+    "className": {"type":"string","default":null,"required":false,"figma":null,"notes":null}
+  },
+  "rules": {
+    "do": [
+      "Open it while thinking and collapse it when done (`autoCollapse`, the default).",
+      "Write steps as short past-tense or present-tense lines a person can scan.",
+      "Summarise long raw thoughts; show the full text only on request."
+    ],
+    "dont": [],
+    "forbidden": [
+      "Never put the answer or required decisions inside Reasoning — people may never open it.",
+      "Never show a duration for a step that is still running."
+    ]
+  },
+  "examples": [
+    {
+      "title": "Usage",
+      "code": "import { Reasoning } from '@stanvision/atomus-react';\n\n<Reasoning\n  status={thinking ? 'thinking' : 'done'}\n  duration={seconds}\n  steps={[\n    { label: 'Load the page', status: 'done' },\n    { label: 'Run axe-core', detail: '68 rules', status: 'active' },\n    { label: 'Draft fixes', status: 'pending' },\n  ]}\n>\n  <p>{summary}</p>\n</Reasoning>",
+      "language": "tsx",
+      "source": "sites/docs/src/component-pages/ai-reasoning.mdx"
+    }
+  ],
+  "figma": {
+    "componentSet": ["Reasoning"],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": null,
+    "properties": [
+      {"componentSet":"Reasoning","name":"State","type":"variant","options":["Thinking","Done"]},
+      {"componentSet":"Reasoning","name":"Duration","type":"number (seconds)"},
+      {
+        "componentSet": "Reasoning",
+        "name": "Steps",
+        "type": "variant",
+        "options": ["list (label, detail, status: Pending","Active","Done)"]
+      },
+      {"componentSet":"Reasoning","name":"Expanded","type":"boolean"},
+      {"componentSet":"Reasoning","name":"Label","type":"text"}
+    ],
+    "docs": "https://docs.atomus.io/components/ai-reasoning/"
+  },
+  "docs": "https://docs.atomus.io/components/ai-reasoning/",
+  "related": [],
+  "a11y": {
+    "element": null,
+    "requiresLabel": false,
+    "notes": ["`label`: Figma: Label — overrides \"Thinking…\" / \"Thought for 12s\"."]
+  }
+}

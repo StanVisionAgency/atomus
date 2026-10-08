@@ -1,0 +1,11 @@
+id: button-save-cancel
+category: component
+prompt: >-
+  A form footer with two actions: "Save changes" as the main action and "Cancel" next to it.
+expect:
+  components: ["Button"]
+  props:
+    - { component: "Button", prop: "hierarchy", value: "primary" }
+  max_primary: 1
+  forbid_elements: ["button"]
+  text: ["Save changes", "Cancel"]

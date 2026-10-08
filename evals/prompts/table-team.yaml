@@ -1,0 +1,11 @@
+id: table-team
+category: component
+prompt: >-
+  A table of team members with name, email, role and status columns, sortable by name.
+expect:
+  components: ["Table"]
+  props:
+    - { component: "Table", prop: "columns" }
+    - { component: "Table", prop: "rowKey" }
+  forbid_elements: ["table"]
+  text: ["Email", "Role", "Status"]

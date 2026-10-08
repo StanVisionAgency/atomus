@@ -1,0 +1,27 @@
+/* App shell — sidebar + header + main. Every value is an Atomus token. */
+.ab-shell { display: grid; grid-template-columns: auto minmax(0, 1fr); min-height: 100vh; background: var(--color-bg-secondary); color: var(--color-text-secondary); font-family: var(--font-family-body); }
+.ab-shell__sidebar { position: sticky; top: 0; height: 100vh; }
+.ab-shell__body { display: flex; flex-direction: column; min-width: 0; }
+.ab-shell__menu { display: none; }
+.ab-shell__search { width: 240px; }
+.ab-brand { display: inline-flex; align-items: center; gap: var(--spacing-md); color: var(--color-text-primary); font-weight: var(--font-weight-bold); font-size: var(--font-size-body-leading); line-height: var(--line-height-body-leading); }
+.ab-brand__mark { width: var(--size-xs); height: var(--size-xs); border-radius: var(--radius-sm); background: var(--color-bg-brand-solid); }
+.ab-user { display: flex; align-items: center; gap: var(--spacing-lg); min-width: 0; }
+.ab-user__text { display: flex; flex-direction: column; min-width: 0; font-size: var(--font-size-small); line-height: var(--line-height-small); }
+.ab-user__name { color: var(--color-text-primary); font-weight: var(--font-weight-semi-bold); }
+.ab-user__mail { color: var(--color-text-tertiary); overflow: hidden; text-overflow: ellipsis; }
+.ab-main { display: flex; flex-direction: column; gap: var(--spacing-3xl); width: 100%; max-width: var(--container-max-width); margin: 0 auto; padding: var(--layout-xs) var(--layout-xs) var(--layout-md); box-sizing: border-box; }
+.ab-page-header { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: var(--spacing-xl); }
+.ab-page-header__text { display: flex; flex-direction: column; gap: var(--spacing-xs); min-width: 0; }
+.ab-page-header__title { margin: 0; color: var(--color-text-primary); }
+.ab-page-header__desc { margin: 0; color: var(--color-text-tertiary); }
+.ab-page-header__actions { display: flex; flex-wrap: wrap; gap: var(--spacing-lg); }
+@media (max-width: 1023px) {
+  .ab-shell { grid-template-columns: minmax(0, 1fr); }
+  .ab-shell__sidebar { display: none; }
+  .ab-shell__menu { display: inline-flex; }
+}
+@media (max-width: 767px) {
+  .ab-shell__search { display: none; }
+  .ab-main { padding: var(--spacing-3xl) var(--spacing-xl) var(--layout-xs); }
+}

@@ -30,7 +30,7 @@ export default {
   imports: ["import { Alert } from '@stanvision/atomus-react'"],
   example: figma.tsx`<Alert${figma.helpers.react.renderProp('title', instance.getString('Title'))}${figma.helpers.react.renderProp(
     'variant',
-    instance.getEnum('Style', { Subtle: 'subtle', Outline: 'outline' }),
+    instance.getEnum('Style', { Subtle: 'subtle', Outline: 'outline', Solid: 'solid' }),
   )}${figma.helpers.react.renderProp(
     'color',
     instance.getEnum('Color', { Brand: 'brand', Gray: 'gray', Error: 'error', Warning: 'warning', Success: 'success' }),

@@ -1420,6 +1420,968 @@
           "default": null
         }
       }
+    },
+    "PromptInput": {
+      "kind": "component",
+      "file": "react/src/components/ai/PromptInput.tsx",
+      "native": [],
+      "nativeOmit": [],
+      "ref": false,
+      "props": {
+        "value": {
+          "type": "string",
+          "required": false,
+          "default": null
+        },
+        "defaultValue": {
+          "type": "string",
+          "required": false,
+          "default": "''"
+        },
+        "onChange": {
+          "type": "(value: string) => void",
+          "required": false,
+          "default": null
+        },
+        "onSubmit": {
+          "type": "(text: string, attachments: PromptAttachment[]) => void",
+          "required": false,
+          "default": null
+        },
+        "onStop": {
+          "type": "() => void",
+          "required": false,
+          "default": null
+        },
+        "status": {
+          "type": "'ready' | 'submitted' | 'streaming' | 'error'",
+          "required": false,
+          "default": "'ready'",
+          "values": [
+            "ready",
+            "submitted",
+            "streaming",
+            "error"
+          ]
+        },
+        "placeholder": {
+          "type": "string",
+          "required": false,
+          "default": "'Ask anything…'"
+        },
+        "label": {
+          "type": "string",
+          "required": false,
+          "default": "'Message'"
+        },
+        "attachments": {
+          "type": "PromptAttachment[]",
+          "required": false,
+          "default": "[]"
+        },
+        "onAttach": {
+          "type": "() => void",
+          "required": false,
+          "default": null
+        },
+        "onRemoveAttachment": {
+          "type": "(id: string) => void",
+          "required": false,
+          "default": null
+        },
+        "toolbar": {
+          "type": "ReactNode",
+          "required": false,
+          "default": null
+        },
+        "actions": {
+          "type": "ReactNode",
+          "required": false,
+          "default": null
+        },
+        "triggers": {
+          "type": "PromptTrigger[]",
+          "required": false,
+          "default": "[]"
+        },
+        "disclaimer": {
+          "type": "ReactNode",
+          "required": false,
+          "default": null
+        },
+        "minRows": {
+          "type": "number",
+          "required": false,
+          "default": "1"
+        },
+        "maxRows": {
+          "type": "number",
+          "required": false,
+          "default": "8"
+        },
+        "size": {
+          "type": "'md' | 'lg'",
+          "required": false,
+          "default": "'md'",
+          "values": [
+            "md",
+            "lg"
+          ]
+        },
+        "disabled": {
+          "type": "boolean",
+          "required": false,
+          "default": null
+        },
+        "autoFocus": {
+          "type": "boolean",
+          "required": false,
+          "default": null
+        },
+        "submitLabel": {
+          "type": "string",
+          "required": false,
+          "default": "'Send message'"
+        },
+        "stopLabel": {
+          "type": "string",
+          "required": false,
+          "default": "'Stop generating'"
+        },
+        "clearOnSubmit": {
+          "type": "boolean",
+          "required": false,
+          "default": "true"
+        },
+        "className": {
+          "type": "string",
+          "required": false,
+          "default": null
+        }
+      }
+    },
+    "Message": {
+      "kind": "component",
+      "file": "react/src/components/ai/Message.tsx",
+      "native": [
+        "element"
+      ],
+      "nativeOmit": [
+        "role"
+      ],
+      "ref": false,
+      "props": {
+        "role": {
+          "type": "'user' | 'assistant' | 'system' | 'tool'",
+          "required": false,
+          "default": "'assistant'",
+          "values": [
+            "user",
+            "assistant",
+            "system",
+            "tool"
+          ]
+        },
+        "status": {
+          "type": "'streaming' | 'done' | 'error' | 'stopped'",
+          "required": false,
+          "default": "'done'",
+          "values": [
+            "streaming",
+            "done",
+            "error",
+            "stopped"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "required": false,
+          "default": null
+        },
+        "avatar": {
+          "type": "ReactNode",
+          "required": false,
+          "default": null
+        },
+        "showName": {
+          "type": "boolean",
+          "required": false,
+          "default": null
+        },
+        "aiLabel": {
+          "type": "boolean",
+          "required": false,
+          "default": "true"
+        },
+        "time": {
+          "type": "string",
+          "required": false,
+          "default": null
+        },
+        "dateTime": {
+          "type": "string",
+          "required": false,
+          "default": null
+        },
+        "children": {
+          "type": "ReactNode",
+          "required": false,
+          "default": null
+        },
+        "copyText": {
+          "type": "string",
+          "required": false,
+          "default": null
+        },
+        "onRegenerate": {
+          "type": "() => void",
+          "required": false,
+          "default": null
+        },
+        "onEdit": {
+          "type": "() => void",
+          "required": false,
+          "default": null
+        },
+        "branch": {
+          "type": "MessageBranch",
+          "required": false,
+          "default": null
+        },
+        "actions": {
+          "type": "ReactNode",
+          "required": false,
+          "default": null
+        },
+        "actionsVisibility": {
+          "type": "'always' | 'hover'",
+          "required": false,
+          "default": "'always'",
+          "values": [
+            "always",
+            "hover"
+          ]
+        },
+        "errorMessage": {
+          "type": "ReactNode",
+          "required": false,
+          "default": "'Something went wrong while generating this response.'"
+        }
+      }
+    },
+    "StreamingText": {
+      "kind": "component",
+      "file": "react/src/components/ai/StreamingText.tsx",
+      "native": [
+        "div"
+      ],
+      "nativeOmit": [
+        "children"
+      ],
+      "ref": false,
+      "props": {
+        "text": {
+          "type": "string",
+          "required": true,
+          "default": null
+        },
+        "streaming": {
+          "type": "boolean",
+          "required": false,
+          "default": "false"
+        },
+        "caret": {
+          "type": "boolean",
+          "required": false,
+          "default": "true"
+        },
+        "announce": {
+          "type": "'polite' | 'end' | 'off'",
+          "required": false,
+          "default": "'polite'",
+          "values": [
+            "polite",
+            "end",
+            "off"
+          ]
+        },
+        "announceInterval": {
+          "type": "number",
+          "required": false,
+          "default": "1500"
+        },
+        "doneMessage": {
+          "type": "string",
+          "required": false,
+          "default": "'Response complete'"
+        },
+        "render": {
+          "type": "(text: string) => ReactNode",
+          "required": false,
+          "default": null
+        }
+      }
+    },
+    "Shimmer": {
+      "kind": "component",
+      "file": "react/src/components/ai/StreamingText.tsx",
+      "native": [
+        "span"
+      ],
+      "nativeOmit": [],
+      "ref": false,
+      "props": {
+        "children": {
+          "type": "ReactNode",
+          "required": true,
+          "default": null
+        },
+        "active": {
+          "type": "boolean",
+          "required": false,
+          "default": "true"
+        }
+      }
+    },
+    "Reasoning": {
+      "kind": "component",
+      "file": "react/src/components/ai/Reasoning.tsx",
+      "native": [],
+      "nativeOmit": [],
+      "ref": false,
+      "props": {
+        "status": {
+          "type": "'thinking' | 'done'",
+          "required": false,
+          "default": "'done'",
+          "values": [
+            "thinking",
+            "done"
+          ]
+        },
+        "duration": {
+          "type": "number",
+          "required": false,
+          "default": null
+        },
+        "steps": {
+          "type": "ReasoningStep[]",
+          "required": false,
+          "default": null
+        },
+        "children": {
+          "type": "ReactNode",
+          "required": false,
+          "default": null
+        },
+        "label": {
+          "type": "string",
+          "required": false,
+          "default": null
+        },
+        "open": {
+          "type": "boolean",
+          "required": false,
+          "default": null
+        },
+        "defaultOpen": {
+          "type": "boolean",
+          "required": false,
+          "default": null
+        },
+        "onOpenChange": {
+          "type": "(open: boolean) => void",
+          "required": false,
+          "default": null
+        },
+        "autoCollapse": {
+          "type": "boolean",
+          "required": false,
+          "default": "true"
+        },
+        "className": {
+          "type": "string",
+          "required": false,
+          "default": null
+        }
+      }
+    },
+    "ToolCall": {
+      "kind": "component",
+      "file": "react/src/components/ai/ToolCall.tsx",
+      "native": [],
+      "nativeOmit": [],
+      "ref": false,
+      "props": {
+        "name": {
+          "type": "string",
+          "required": true,
+          "default": null
+        },
+        "title": {
+          "type": "ReactNode",
+          "required": false,
+          "default": null
+        },
+        "status": {
+          "type": "'pending' | 'running' | 'success' | 'error'",
+          "required": false,
+          "default": "'success'",
+          "values": [
+            "pending",
+            "running",
+            "success",
+            "error"
+          ]
+        },
+        "input": {
+          "type": "unknown",
+          "required": false,
+          "default": null
+        },
+        "output": {
+          "type": "unknown",
+          "required": false,
+          "default": null
+        },
+        "error": {
+          "type": "ReactNode",
+          "required": false,
+          "default": null
+        },
+        "duration": {
+          "type": "number",
+          "required": false,
+          "default": null
+        },
+        "icon": {
+          "type": "ReactNode",
+          "required": false,
+          "default": null
+        },
+        "open": {
+          "type": "boolean",
+          "required": false,
+          "default": null
+        },
+        "defaultOpen": {
+          "type": "boolean",
+          "required": false,
+          "default": "false"
+        },
+        "onOpenChange": {
+          "type": "(open: boolean) => void",
+          "required": false,
+          "default": null
+        },
+        "className": {
+          "type": "string",
+          "required": false,
+          "default": null
+        }
+      }
+    },
+    "Approval": {
+      "kind": "component",
+      "file": "react/src/components/ai/Approval.tsx",
+      "native": [],
+      "nativeOmit": [],
+      "ref": false,
+      "props": {
+        "title": {
+          "type": "ReactNode",
+          "required": true,
+          "default": null
+        },
+        "children": {
+          "type": "ReactNode",
+          "required": false,
+          "default": null
+        },
+        "risk": {
+          "type": "'low' | 'medium' | 'high'",
+          "required": false,
+          "default": "'medium'",
+          "values": [
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "toolName": {
+          "type": "string",
+          "required": false,
+          "default": null
+        },
+        "details": {
+          "type": "ReactNode",
+          "required": false,
+          "default": null
+        },
+        "editableText": {
+          "type": "string",
+          "required": false,
+          "default": null
+        },
+        "editLabel": {
+          "type": "string",
+          "required": false,
+          "default": "'Edit before approving'"
+        },
+        "alwaysAllowLabel": {
+          "type": "string",
+          "required": false,
+          "default": null
+        },
+        "status": {
+          "type": "'pending' | 'approved' | 'denied'",
+          "required": false,
+          "default": "'pending'",
+          "values": [
+            "pending",
+            "approved",
+            "denied"
+          ]
+        },
+        "approveLabel": {
+          "type": "string",
+          "required": false,
+          "default": "'Approve'"
+        },
+        "denyLabel": {
+          "type": "string",
+          "required": false,
+          "default": "'Deny'"
+        },
+        "onApprove": {
+          "type": "(decision: ApprovalDecision) => void",
+          "required": false,
+          "default": null
+        },
+        "onDeny": {
+          "type": "() => void",
+          "required": false,
+          "default": null
+        },
+        "className": {
+          "type": "string",
+          "required": false,
+          "default": null
+        }
+      }
+    },
+    "Sources": {
+      "kind": "component",
+      "file": "react/src/components/ai/Sources.tsx",
+      "native": [],
+      "nativeOmit": [],
+      "ref": false,
+      "props": {
+        "sources": {
+          "type": "SourceItem[]",
+          "required": true,
+          "default": null
+        },
+        "label": {
+          "type": "string",
+          "required": false,
+          "default": null
+        },
+        "variant": {
+          "type": "'collapsible' | 'list'",
+          "required": false,
+          "default": "'collapsible'",
+          "values": [
+            "collapsible",
+            "list"
+          ]
+        },
+        "open": {
+          "type": "boolean",
+          "required": false,
+          "default": null
+        },
+        "defaultOpen": {
+          "type": "boolean",
+          "required": false,
+          "default": "false"
+        },
+        "onOpenChange": {
+          "type": "(open: boolean) => void",
+          "required": false,
+          "default": null
+        },
+        "className": {
+          "type": "string",
+          "required": false,
+          "default": null
+        }
+      }
+    },
+    "InlineCitation": {
+      "kind": "component",
+      "file": "react/src/components/ai/Sources.tsx",
+      "native": [],
+      "nativeOmit": [],
+      "ref": false,
+      "props": {
+        "index": {
+          "type": "number",
+          "required": true,
+          "default": null
+        },
+        "source": {
+          "type": "SourceItem",
+          "required": true,
+          "default": null
+        },
+        "className": {
+          "type": "string",
+          "required": false,
+          "default": null
+        }
+      }
+    },
+    "Suggestions": {
+      "kind": "component",
+      "file": "react/src/components/ai/Suggestions.tsx",
+      "native": [],
+      "nativeOmit": [],
+      "ref": false,
+      "props": {
+        "suggestions": {
+          "type": "Array<string | SuggestionItem>",
+          "required": true,
+          "default": null
+        },
+        "onSelect": {
+          "type": "(prompt: string, item: SuggestionItem) => void",
+          "required": false,
+          "default": null
+        },
+        "mode": {
+          "type": "'send' | 'insert'",
+          "required": false,
+          "default": "'send'",
+          "values": [
+            "send",
+            "insert"
+          ]
+        },
+        "variant": {
+          "type": "'chips' | 'cards'",
+          "required": false,
+          "default": "'chips'",
+          "values": [
+            "chips",
+            "cards"
+          ]
+        },
+        "wrap": {
+          "type": "boolean",
+          "required": false,
+          "default": "false"
+        },
+        "label": {
+          "type": "string",
+          "required": false,
+          "default": "'Suggested prompts'"
+        },
+        "className": {
+          "type": "string",
+          "required": false,
+          "default": null
+        }
+      }
+    },
+    "ModelSelector": {
+      "kind": "component",
+      "file": "react/src/components/ai/ModelSelector.tsx",
+      "native": [],
+      "nativeOmit": [],
+      "ref": false,
+      "props": {
+        "models": {
+          "type": "ModelOption[]",
+          "required": true,
+          "default": null
+        },
+        "value": {
+          "type": "string",
+          "required": false,
+          "default": null
+        },
+        "defaultValue": {
+          "type": "string",
+          "required": false,
+          "default": null
+        },
+        "onChange": {
+          "type": "(value: string) => void",
+          "required": false,
+          "default": null
+        },
+        "label": {
+          "type": "string",
+          "required": false,
+          "default": "'Model'"
+        },
+        "showLabel": {
+          "type": "boolean",
+          "required": false,
+          "default": "false"
+        },
+        "variant": {
+          "type": "'ghost' | 'outline'",
+          "required": false,
+          "default": "'ghost'",
+          "values": [
+            "ghost",
+            "outline"
+          ]
+        },
+        "size": {
+          "type": "'sm' | 'md'",
+          "required": false,
+          "default": "'sm'",
+          "values": [
+            "sm",
+            "md"
+          ]
+        },
+        "placement": {
+          "type": "'down' | 'up'",
+          "required": false,
+          "default": "'up'",
+          "values": [
+            "down",
+            "up"
+          ]
+        },
+        "disabled": {
+          "type": "boolean",
+          "required": false,
+          "default": null
+        },
+        "defaultOpen": {
+          "type": "boolean",
+          "required": false,
+          "default": null
+        },
+        "className": {
+          "type": "string",
+          "required": false,
+          "default": null
+        }
+      }
+    },
+    "Feedback": {
+      "kind": "component",
+      "file": "react/src/components/ai/Feedback.tsx",
+      "native": [],
+      "nativeOmit": [],
+      "ref": false,
+      "props": {
+        "value": {
+          "type": "'up' | 'down' | null",
+          "required": false,
+          "default": null
+        },
+        "defaultValue": {
+          "type": "'up' | 'down' | null",
+          "required": false,
+          "default": "null"
+        },
+        "onChange": {
+          "type": "(rating: 'up' | 'down' | null) => void",
+          "required": false,
+          "default": null
+        },
+        "onSubmit": {
+          "type": "(feedback: FeedbackSubmission) => void",
+          "required": false,
+          "default": null
+        },
+        "reasons": {
+          "type": "string[]",
+          "required": false,
+          "default": "DEFAULT_REASONS"
+        },
+        "positiveReasons": {
+          "type": "string[]",
+          "required": false,
+          "default": "[]"
+        },
+        "size": {
+          "type": "'xs' | 'sm'",
+          "required": false,
+          "default": "'xs'",
+          "values": [
+            "xs",
+            "sm"
+          ]
+        },
+        "className": {
+          "type": "string",
+          "required": false,
+          "default": null
+        }
+      }
+    },
+    "AILabel": {
+      "kind": "component",
+      "file": "react/src/components/ai/AILabel.tsx",
+      "native": [],
+      "nativeOmit": [],
+      "ref": false,
+      "props": {
+        "label": {
+          "type": "string",
+          "required": false,
+          "default": "'AI'"
+        },
+        "size": {
+          "type": "'xs' | 'sm' | 'md'",
+          "required": false,
+          "default": "'sm'",
+          "values": [
+            "xs",
+            "sm",
+            "md"
+          ]
+        },
+        "variant": {
+          "type": "'chip' | 'inline' | 'icon'",
+          "required": false,
+          "default": "'chip'",
+          "values": [
+            "chip",
+            "inline",
+            "icon"
+          ]
+        },
+        "explanation": {
+          "type": "ReactNode",
+          "required": false,
+          "default": null
+        },
+        "explanationTitle": {
+          "type": "string",
+          "required": false,
+          "default": "'About this AI content'"
+        },
+        "model": {
+          "type": "string",
+          "required": false,
+          "default": null
+        },
+        "edited": {
+          "type": "boolean",
+          "required": false,
+          "default": "false"
+        },
+        "onRevert": {
+          "type": "() => void",
+          "required": false,
+          "default": null
+        },
+        "align": {
+          "type": "'start' | 'end'",
+          "required": false,
+          "default": "'start'",
+          "values": [
+            "start",
+            "end"
+          ]
+        },
+        "defaultOpen": {
+          "type": "boolean",
+          "required": false,
+          "default": null
+        },
+        "className": {
+          "type": "string",
+          "required": false,
+          "default": null
+        }
+      }
+    },
+    "ContextMeter": {
+      "kind": "component",
+      "file": "react/src/components/ai/ContextMeter.tsx",
+      "native": [],
+      "nativeOmit": [],
+      "ref": false,
+      "props": {
+        "used": {
+          "type": "number",
+          "required": true,
+          "default": null
+        },
+        "limit": {
+          "type": "number",
+          "required": true,
+          "default": null
+        },
+        "cost": {
+          "type": "number",
+          "required": false,
+          "default": null
+        },
+        "currency": {
+          "type": "string",
+          "required": false,
+          "default": "'USD'"
+        },
+        "breakdown": {
+          "type": "ContextUsagePart[]",
+          "required": false,
+          "default": null
+        },
+        "label": {
+          "type": "string",
+          "required": false,
+          "default": "'Context window'"
+        },
+        "variant": {
+          "type": "'compact' | 'bar'",
+          "required": false,
+          "default": "'compact'",
+          "values": [
+            "compact",
+            "bar"
+          ]
+        },
+        "warnAt": {
+          "type": "number",
+          "required": false,
+          "default": "80"
+        },
+        "locale": {
+          "type": "string",
+          "required": false,
+          "default": null
+        },
+        "placement": {
+          "type": "'up' | 'down'",
+          "required": false,
+          "default": "'up'",
+          "values": [
+            "up",
+            "down"
+          ]
+        },
+        "defaultOpen": {
+          "type": "boolean",
+          "required": false,
+          "default": null
+        },
+        "className": {
+          "type": "string",
+          "required": false,
+          "default": null
+        }
+      }
     }
   }
 }

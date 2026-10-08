@@ -1,0 +1,10 @@
+id: select-with-error
+category: component
+prompt: >-
+  A required "Plan" select (Free, Pro, Enterprise) that shows the error "Choose a plan".
+expect:
+  components: ["Select"]
+  props:
+    - { component: "Select", prop: "error" }
+  forbid_elements: ["select"]
+  text: ["Choose a plan"]

@@ -1,0 +1,106 @@
+{
+  "name": "Suggestions",
+  "kind": "component",
+  "status": "stable",
+  "since": "4.0.0",
+  "category": "AI (Agent kit)",
+  "import": "import { Suggestions } from '@stanvision/atomus-react';",
+  "source": "react/src/components/ai/Suggestions.tsx",
+  "purpose": "Follow-up chips and prompt-starter cards that send or insert a prompt.",
+  "description": "Follow-up prompts and prompt starters. Chips sit in one row that scrolls sideways with soft faded edges; cards make a grid of starters for an empty conversation. Each chip either sends its prompt or inserts it into the Prompt input for editing. Part of the Agent kit.",
+  "aliases": ["quick replies","follow-ups","prompt starters","conversation starters"],
+  "alternative": null,
+  "native": {"elements":[],"omit":[],"ref":false},
+  "props": {
+    "suggestions": {
+      "type": "Array<string | SuggestionItem>",
+      "default": null,
+      "required": true,
+      "figma": "Items",
+      "notes": "Figma: Items — strings or items with a separate prompt, description and icon."
+    },
+    "onSelect": {
+      "type": "(prompt: string, item: SuggestionItem) => void",
+      "default": null,
+      "required": false,
+      "figma": null,
+      "notes": "Called with the chosen prompt and the item."
+    },
+    "mode": {
+      "type": "'send' | 'insert'",
+      "values": ["send","insert"],
+      "default": "send",
+      "required": false,
+      "figma": "Action",
+      "notes": "Figma: Action. `send` (default) — choosing a chip sends the prompt right away. `insert` — puts the prompt into the input so the person can edit it first."
+    },
+    "variant": {
+      "type": "'chips' | 'cards'",
+      "values": ["chips","cards"],
+      "default": "chips",
+      "required": false,
+      "figma": "Style",
+      "notes": "Figma: Style. `chips` (default) — one row of pills that scrolls sideways (wraps with `wrap`). `cards` — a grid of prompt starters for a welcome state."
+    },
+    "wrap": {
+      "type": "boolean",
+      "default": false,
+      "required": false,
+      "figma": null,
+      "notes": "Chips wrap onto several lines instead of scrolling"
+    },
+    "label": {
+      "type": "string",
+      "default": "Suggested prompts",
+      "required": false,
+      "figma": null,
+      "notes": "Accessible name of the group"
+    },
+    "className": {"type":"string","default":null,"required":false,"figma":null,"notes":null}
+  },
+  "rules": {
+    "do": [
+      "Write chips as the person would type them, in their voice: \"Fix the contrast issue\".",
+      "Use Insert when the prompt needs a detail the person must add.",
+      "Replace follow-ups after every answer; remove them when the person starts typing."
+    ],
+    "dont": [],
+    "forbidden": [
+      "Never show more than five chips or four cards at once.",
+      "Never use Suggestions for actions that change data without a message — use Button."
+    ]
+  },
+  "examples": [
+    {
+      "title": "Usage",
+      "code": "import { Suggestions } from '@stanvision/atomus-react';\n\n<Suggestions suggestions={['Fix the contrast issue', 'Show the axe report']} onSelect={send} />\n<Suggestions mode=\"insert\" suggestions={['Make it shorter']} onSelect={(p) => setDraft(p)} />\n<Suggestions variant=\"cards\" suggestions={starters} onSelect={send} />",
+      "language": "tsx",
+      "source": "sites/docs/src/component-pages/ai-suggestions.mdx"
+    }
+  ],
+  "figma": {
+    "componentSet": ["Suggestions"],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": null,
+    "properties": [
+      {"componentSet":"Suggestions","name":"Items","type":"list (label, prompt, description, icon)"},
+      {"componentSet":"Suggestions","name":"Action","type":"variant","options":["Send","Insert"]},
+      {"componentSet":"Suggestions","name":"Style","type":"variant","options":["Chips","Cards"]},
+      {"componentSet":"Suggestions","name":"Wrap","type":"boolean (off)"}
+    ],
+    "docs": "https://docs.atomus.io/components/ai-suggestions/"
+  },
+  "docs": "https://docs.atomus.io/components/ai-suggestions/",
+  "related": [],
+  "a11y": {
+    "element": null,
+    "requiresLabel": false,
+    "notes": [
+      "`label`: Accessible name of the group",
+      "Write chips as the person would type them, in their voice: \"Fix the contrast issue\"."
+    ]
+  }
+}

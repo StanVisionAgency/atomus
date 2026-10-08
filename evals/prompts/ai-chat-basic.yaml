@@ -1,0 +1,10 @@
+id: ai-chat-basic
+category: ai-chat
+prompt: >-
+  An AI assistant chat: a header, a conversation thread with a user message and an assistant reply, and a prompt input with a send button that turns into stop while the reply streams.
+expect:
+  components: ["Message", "PromptInput", "StreamingText"]
+  props:
+    - { component: "Message", prop: "role", value: "assistant" }
+  patterns: ["role=\"log\""]
+  forbid_elements: ["textarea"]

@@ -1,0 +1,114 @@
+{
+  "name": "StreamingText",
+  "kind": "component",
+  "status": "stable",
+  "since": "4.0.0",
+  "category": "AI (Agent kit)",
+  "import": "import { StreamingText } from '@stanvision/atomus-react';",
+  "source": "react/src/components/ai/StreamingText.tsx",
+  "purpose": "A reply that renders as it streams, with a caret and batched announcements; a shimmer for status lines.",
+  "description": "Renders an AI reply as it arrives: the text grows, a caret filled with `--gradient-ai` blinks at the end, and screen readers hear finished sentences in calm batches instead of every token. It takes any growing string, so it works with every AI SDK or backend. Part of the Agent kit.",
+  "aliases": [],
+  "alternative": null,
+  "native": {"elements":["div"],"omit":["children"],"ref":false},
+  "props": {
+    "text": {
+      "type": "string",
+      "default": null,
+      "required": true,
+      "figma": null,
+      "notes": "The text received so far. Pass the growing string on every chunk; the component only appends."
+    },
+    "streaming": {
+      "type": "boolean",
+      "default": false,
+      "required": false,
+      "figma": "State=Streaming",
+      "notes": "Figma: State=Streaming — shows the caret and keeps the region busy for screen readers."
+    },
+    "caret": {
+      "type": "boolean",
+      "default": true,
+      "required": false,
+      "figma": "Caret",
+      "notes": "Figma: Caret — blinking caret at the end while streaming (static under reduced motion)."
+    },
+    "announce": {
+      "type": "'polite' | 'end' | 'off'",
+      "values": ["polite","end","off"],
+      "default": "polite",
+      "required": false,
+      "figma": null,
+      "notes": "How screen readers hear the stream (Primer: announce progress, not every token). `polite` (default) — finished sentences in batches, at most every `announceInterval` ms. `end` — only `doneMessage` once the stream ends. `off` — nothing; use when an outer live region already announces the reply."
+    },
+    "announceInterval": {
+      "type": "number",
+      "default": 1500,
+      "required": false,
+      "figma": null,
+      "notes": "Minimum time between announcements in ms"
+    },
+    "doneMessage": {
+      "type": "string",
+      "default": "Response complete",
+      "required": false,
+      "figma": null,
+      "notes": "Announced when the stream ends with `announce=\"end\"`"
+    },
+    "render": {
+      "type": "(text: string) => ReactNode",
+      "default": null,
+      "required": false,
+      "figma": null,
+      "notes": "Renders the text (e.g. Markdown). Defaults to plain text with preserved line breaks."
+    }
+  },
+  "rules": {
+    "do": [
+      "Pass the whole string received so far on every chunk.",
+      "Use `render` for Markdown or to turn citation markers into InlineCitation.",
+      "Use `announce=\"end\"` for code, tables and very long answers."
+    ],
+    "dont": [],
+    "forbidden": [
+      "Never announce every token or chunk to screen readers.",
+      "Never animate the caret when the person prefers reduced motion.",
+      "Never move focus to the streaming text."
+    ]
+  },
+  "examples": [
+    {
+      "title": "Usage",
+      "code": "import { StreamingText, Shimmer } from '@stanvision/atomus-react';\n\n// Pass the whole string received so far on every chunk.\n<StreamingText text={text} streaming={!done} render={(t) => <Markdown>{t}</Markdown>} />\n\n// Long code or tables: only say when it's done.\n<StreamingText text={code} streaming={!done} announce=\"end\" doneMessage=\"Code ready\" />\n\n<Shimmer>Searching 12 sources…</Shimmer>",
+      "language": "tsx",
+      "source": "sites/docs/src/component-pages/ai-streaming-text.mdx"
+    }
+  ],
+  "figma": {
+    "componentSet": ["Streaming text"],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": null,
+    "properties": [
+      {"componentSet":"Streaming text","name":"Text","type":"text"},
+      {"componentSet":"Streaming text","name":"State","type":"variant","options":["Streaming","Done"]},
+      {"componentSet":"Streaming text","name":"Caret","type":"boolean (on)"},
+      {"componentSet":"Streaming text","name":"Announce","type":"variant","options":["Polite","End","Off"]}
+    ],
+    "docs": "https://docs.atomus.io/components/ai-streaming-text/"
+  },
+  "docs": "https://docs.atomus.io/components/ai-streaming-text/",
+  "related": ["Shimmer"],
+  "a11y": {
+    "element": "div",
+    "requiresLabel": false,
+    "notes": [
+      "`streaming`: Figma: State=Streaming — shows the caret and keeps the region busy for screen readers.",
+      "`announce`: How screen readers hear the stream (Primer: announce progress, not every token). `polite` (default) — finished sentences in batches, at most every `announceInterval` ms. `end` — only `doneMessage` once the stream ends. `off` — nothing; use when an outer live region already announces the reply.",
+      "Never announce every token or chunk to screen readers.",
+      "Never move focus to the streaming text."
+    ]
+  }
+}

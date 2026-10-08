@@ -1,0 +1,87 @@
+name: Evals
+
+# Agent compatibility evals (evals/, roadmap X7). Manual only: generating outputs calls a paid agent API.
+#   - "fixtures": proves the scorers against the hand-written good and bad outputs (no agent, no secrets).
+#   - "score": scores a committed run folder (evals/runs/<folder>) and uploads the scorecard.
+#   - "generate": runs Claude Code on every prompt (variant atomus and/or baseline), then scores it.
+#     Needs the ANTHROPIC_API_KEY repository secret.
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: fixtures | score | generate
+        required: true
+        default: fixtures
+        type: choice
+        options: [fixtures, score, generate]
+      run:
+        description: 'score: run folder under evals/runs (e.g. claude-code-atomus-2026-10-08)'
+        required: false
+      variants:
+        description: 'generate: comma-separated variants'
+        required: false
+        default: atomus,baseline
+      model:
+        description: 'generate: model for claude -p (empty = CLI default)'
+        required: false
+      ids:
+        description: 'optional: comma-separated prompt ids (default: all 50)'
+        required: false
+
+permissions:
+  contents: read
+
+jobs:
+  evals:
+    name: Evals (${{ inputs.mode }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    defaults:
+      run:
+        working-directory: evals
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install evals and the Atomus lint packages
+        run: |
+          npm install --no-audit --no-fund
+          npm run setup
+          npx playwright install --with-deps chromium
+      - name: Prompts are valid
+        run: npm run check:prompts
+      - name: Scorers against the fixtures
+        run: npm test
+
+      - name: Score a committed run
+        if: inputs.mode == 'score'
+        run: npm run score -- "runs/${{ inputs.run }}" ${{ inputs.ids && format('--ids {0}', inputs.ids) || '' }}
+
+      - name: Build the Atomus MCP server (local stdio, used by the atomus variant)
+        if: inputs.mode == 'generate'
+        working-directory: packages/mcp
+        run: |
+          npm install --no-audit --no-fund
+          npm run build
+      - name: Generate with Claude Code and score
+        if: inputs.mode == 'generate'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          npm install -g @anthropic-ai/claude-code
+          for v in $(echo "${{ inputs.variants }}" | tr ',' ' '); do
+            out="runs/claude-code-$v-$(date +%F)"
+            node scripts/generate.mjs --agent claude-code --variant "$v" --out "$out" --concurrency 3 \
+              ${{ inputs.model && format('--model {0}', inputs.model) || '' }} ${{ inputs.ids && format('--ids {0}', inputs.ids) || '' }}
+            npm run score -- "$out"
+            cat "$out/scorecard.md" >> "$GITHUB_STEP_SUMMARY"
+          done
+
+      - name: Upload run folders and scorecards
+        if: always() && inputs.mode != 'fixtures'
+        uses: actions/upload-artifact@v4
+        with:
+          name: atomus-evals-${{ github.run_id }}
+          path: evals/runs/
+          retention-days: 30

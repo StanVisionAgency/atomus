@@ -6,6 +6,7 @@ description: "Pick one value from a list. Keyboard and screen-reader ready."
 {/* Source for /components/select/ — scripts/sync.mjs writes the page to src/content/docs/components/. Imports are relative to that folder. */}
 
 import Demo from '../../../components/Demo.astro';
+import RegistryActions from '../../../components/RegistryActions.astro';
 import { SelectDemo } from '../../../components/demos';
 
 Pick one value from a list. Keyboard and screen-reader ready.
@@ -13,6 +14,8 @@ Pick one value from a list. Keyboard and screen-reader ready.
 <Demo caption="Select">
   <SelectDemo client:visible />
 </Demo>
+
+<RegistryActions items="select" />
 
 {/* @figma — sync.mjs inserts the "In Figma" section (from guidelines/components) here */}
 

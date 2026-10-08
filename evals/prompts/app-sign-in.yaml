@@ -1,0 +1,9 @@
+id: app-sign-in
+category: app-screen
+prompt: >-
+  A centred sign-in screen: email, password, "Remember me" checkbox, "Forgot password?" link, Sign in button and a Google SSO button.
+expect:
+  components: ["Card", "Input", "Checkbox", "Button"]
+  max_primary: 1
+  forbid_elements: ["input", "button"]
+  text: ["Sign in", "Forgot password"]

@@ -6,6 +6,7 @@ description: "A date field with a calendar; single dates or ranges."
 {/* Source for /components/date-picker/ — scripts/sync.mjs writes the page to src/content/docs/components/. Imports are relative to that folder. */}
 
 import Demo from '../../../components/Demo.astro';
+import RegistryActions from '../../../components/RegistryActions.astro';
 import { DateDemo } from '../../../components/demos';
 
 A date field with a calendar; single dates or ranges.
@@ -13,6 +14,8 @@ A date field with a calendar; single dates or ranges.
 <Demo caption="Date picker">
   <DateDemo client:visible />
 </Demo>
+
+<RegistryActions items="date-picker" />
 
 {/* @figma — sync.mjs inserts the "In Figma" section (from guidelines/components) here */}
 

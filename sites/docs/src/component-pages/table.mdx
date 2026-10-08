@@ -6,6 +6,7 @@ description: "Rows of records with sorting and selection."
 {/* Source for /components/table/ — scripts/sync.mjs writes the page to src/content/docs/components/. Imports are relative to that folder. */}
 
 import Demo from '../../../components/Demo.astro';
+import RegistryActions from '../../../components/RegistryActions.astro';
 import { TableDemo } from '../../../components/demos';
 
 Rows of records with sorting and selection.
@@ -13,6 +14,8 @@ Rows of records with sorting and selection.
 <Demo caption="Table">
   <TableDemo client:visible />
 </Demo>
+
+<RegistryActions items="table" />
 
 {/* @figma — sync.mjs inserts the "In Figma" section (from guidelines/components) here */}
 
