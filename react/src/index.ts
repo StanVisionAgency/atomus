@@ -4,7 +4,7 @@ export { Tag, type TagProps } from './components/Tag';
 export { Input, type InputProps } from './components/Input';
 export { Checkbox, Radio, Toggle, type CheckboxProps, type RadioProps, type ToggleProps } from './components/Choice';
 export { Avatar, type AvatarProps, type AvatarSize } from './components/Avatar';
-export { Alert, type AlertProps, type AlertColor } from './components/Alert';
+export { Alert, type AlertProps, type AlertColor, type AlertColorAlias } from './components/Alert';
 export { Card, type CardProps } from './components/Card';
 export { Tabs, type TabsProps, type TabItem } from './components/Tabs';
 export { ProgressBar, type ProgressBarProps } from './components/ProgressBar';
