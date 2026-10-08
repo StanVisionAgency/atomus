@@ -1,24 +1,19 @@
-# Atomus 4.0 — guidelines for AI tools
+# Atomus 4.0 guidelines
 
-Markdown guidelines that teach AI tools (Figma Make, the Figma MCP server, Claude, Cursor, v0) how to build with Atomus.
-Point your tool at this folder, or attach the files to a Figma Make kit.
+Markdown guidelines that teach AI agents and people how to build with Atomus: Claude Code, Cursor, Copilot, Figma Make, the Figma MCP server and v0.
+
+**Start with [`Guidelines.md`](Guidelines.md).** It explains what Atomus is, the order to read the other files in, the core rules and the forbidden list. To use the folder in Figma Make, attach it to a Make kit with `Guidelines.md` as the entry point. For coding agents, see `AGENTS.md` at the repo root and the Atomus skill in `skills/atomus/`.
 
 | File | What it covers |
 |---|---|
-| `overview.md` | Principles, file structure, how screens are composed |
-| `foundations/color.md` | Every semantic colour token with Light/Dark values and when to use it |
-| `foundations/typography.md` | Text styles and responsive type |
-| `foundations/spacing-layout.md` | Spacing, layout, sizes, containers and breakpoints |
-| `foundations/radius-effects.md` | Radius modes, shadows, focus rings, blur |
-| `foundations/icons.md` | Icon sets and naming |
-| `foundations/theming.md` | Brand, Color, Radius modes and how to add a client brand |
-| `components/*.md` | One file per component page: purpose, properties, usage rules |
+| `Guidelines.md` | Entry point: what Atomus is, reading order, core rules, forbidden list |
+| `setup.md` | Install, CSS imports, `data-theme` / `data-brand` / `data-radius`, fonts, what not to configure |
+| `overview-components.md` | Every component with its purpose, React export and other names; decision trees |
+| `overview.md` | Principles and how app screens and web pages are composed |
+| `foundations/*.md` | Colour (Light/Dark values), typography, spacing and layout, radius and effects, icons, theming |
+| `components/*.md` | One file per Figma component page: properties, Do / Forbidden rules and the generated React API |
+| `components.md` | Index of the component files and the Figma components in each |
 | `website-sections.md` | Marketing sections and how to assemble pages |
+| `figma-mcp-rules.md` | Rules for reading Atomus designs through the Figma MCP server and writing back to Figma |
 
-**Rules for agents (short version)**
-1. Always use library components; never draw a button, input or card from scratch.
-2. Never use raw hex or primitives — use semantic tokens (`text-primary`, `bg-secondary`, `border-primary`, `fg-brand`).
-3. Spacing comes from the 8-point scale (`spacing-*` inside components, `layout-*` between blocks).
-4. Controls share heights: sm 32, md 40, lg 48 (buttons, inputs, selects).
-5. Put custom content into slots (Card, Modal, Drawer, Dropdown menu, Chat, Command menu) instead of detaching.
-6. Set Brand / Color / Radius / Breakpoint modes on the top frame, not on individual layers.
+The **React API** section at the end of each `components/*.md` file is generated from `react/src/components` by `node scripts/gen-react-api.mjs`. Don't edit it by hand. Everything else is written by hand; the docs site at https://docs.atomus.io is built from these files.

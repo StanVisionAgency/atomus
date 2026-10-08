@@ -1,5 +1,7 @@
 # Components
 
+Index of the component guideline files. To choose a component (with other names and decision trees), read [`overview-components.md`](overview-components.md). Each file ends with a generated **React API** section.
+
 - [Atomus Icons](components/atomus-icons.md) — Featured icon, Icon brand, Icon payment, Icon flag, Star rating, Icon file type, Icon folder, Icon integration
 - [Button](components/button.md) — Button, Button icon
 - [Avatar](components/avatar.md) — Avatar, Avatar photo, Avatar group, Avatar label group
