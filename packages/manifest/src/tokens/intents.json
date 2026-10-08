@@ -1,0 +1,25 @@
+[
+  {"intent":"Page background","tokens":["--color-bg-primary"]},
+  {"intent":"Section / table header / sidebar background","tokens":["--color-bg-secondary"]},
+  {"intent":"Subtle fill, image placeholder, hover row","tokens":["--color-bg-tertiary"]},
+  {"intent":"Selected / highlighted area","tokens":["--color-bg-brand-subtle"]},
+  {"intent":"Primary action fill","tokens":["--color-bg-brand-solid"]},
+  {"intent":"Scrim behind a modal","tokens":["--color-bg-overlay"]},
+  {"intent":"Heading and body text","tokens":["--color-text-primary"]},
+  {"intent":"Supporting text","tokens":["--color-text-secondary"]},
+  {"intent":"Hint, meta, caption","tokens":["--color-text-tertiary"]},
+  {"intent":"Link","tokens":["--color-text-link"]},
+  {"intent":"Text on a brand fill","tokens":["--color-text-on-brand"]},
+  {"intent":"Error text","tokens":["--color-text-error"]},
+  {"intent":"Success text","tokens":["--color-text-success"]},
+  {"intent":"Warning text","tokens":["--color-text-warning"]},
+  {"intent":"Card and divider stroke","tokens":["--color-border-secondary"]},
+  {"intent":"Input and outlined-control stroke","tokens":["--color-border-primary"]},
+  {"intent":"Focus ring colour","tokens":["--color-border-focus"]},
+  {"intent":"Default icon","tokens":["--color-fg-secondary"]},
+  {"intent":"Brand icon / key chart series","tokens":["--color-fg-brand"]},
+  {
+    "intent": "Error / warning / success background",
+    "tokens": ["--color-bg-error-subtle","--color-bg-warning-subtle","--color-bg-success-subtle"]
+  }
+]

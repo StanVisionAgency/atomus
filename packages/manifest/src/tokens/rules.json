@@ -1,0 +1,8 @@
+[
+  "Use semantic tokens only (`var(--color-text-primary)`, Tailwind `text-primary`).",
+  "Never write raw hex, `rgb()` or primitives such as `--color-gray-500` / `bg-gray-500` — primitives exist only to be aliased.",
+  "Never add a token; ask a human (see AGENTS.md).",
+  "Spacing: `--spacing-*` (2–24px) inside components, `--layout-*` (24–240px, responsive) between blocks and sections.",
+  "Radius: `--radius-*` follows the Radius mode.",
+  "Shadows: `--shadow-elevation-*`, focus `--shadow-focus-ring`."
+]

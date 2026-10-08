@@ -1,0 +1,84 @@
+[
+  {
+    "name": "--shadow-elevation-1",
+    "values": {"light":"0px 1px 2px 0px #1111140f","dark":"0px 1px 2px 0px #00000026"},
+    "description": "Elevation 1 shadow (var(--shadow-elevation-1)). Inputs and flat buttons. Higher elevation = closer to the user; don't stack shadows or invent new ones.",
+    "tailwind": ["shadow-e1"],
+    "figma": null
+  },
+  {
+    "name": "--shadow-elevation-2",
+    "values": {
+      "light": "0px 1px 3px 0px #11111414, 0px 1px 2px 0px #1111140f",
+      "dark": "0px 1px 3px 0px #00000033, 0px 1px 2px 0px #00000026"
+    },
+    "description": "Elevation 2 shadow (var(--shadow-elevation-2)). Cards at rest. Higher elevation = closer to the user; don't stack shadows or invent new ones.",
+    "tailwind": ["shadow-e2"],
+    "figma": null
+  },
+  {
+    "name": "--shadow-elevation-3",
+    "values": {
+      "light": "0px 4px 8px -2px #1111141a, 0px 1px 2px 0px #1111140a",
+      "dark": "0px 4px 8px -2px #00000040, 0px 1px 2px 0px #00000019"
+    },
+    "description": "Elevation 3 shadow (var(--shadow-elevation-3)). Raised cards, dropdown triggers. Higher elevation = closer to the user; don't stack shadows or invent new ones.",
+    "tailwind": ["shadow-e3"],
+    "figma": null
+  },
+  {
+    "name": "--shadow-elevation-4",
+    "values": {
+      "light": "0px 12px 16px -4px #11111414, 0px 4px 6px -2px #1111140a",
+      "dark": "0px 12px 16px -4px #00000033, 0px 4px 6px -2px #00000019"
+    },
+    "description": "Elevation 4 shadow (var(--shadow-elevation-4)). Dropdowns and popovers. Higher elevation = closer to the user; don't stack shadows or invent new ones.",
+    "tailwind": ["shadow-e4"],
+    "figma": null
+  },
+  {
+    "name": "--shadow-elevation-6",
+    "values": {
+      "light": "0px 20px 24px -4px #11111414, 0px 8px 8px -4px #11111408",
+      "dark": "0px 20px 24px -4px #00000033, 0px 8px 8px -4px #00000013"
+    },
+    "description": "Elevation 6 shadow (var(--shadow-elevation-6)). Floating panels. Higher elevation = closer to the user; don't stack shadows or invent new ones.",
+    "tailwind": ["shadow-e6"],
+    "figma": null
+  },
+  {
+    "name": "--shadow-elevation-8",
+    "values": {"light":"0px 24px 48px -12px #1111142e","dark":"0px 24px 48px -12px #00000073"},
+    "description": "Elevation 8 shadow (var(--shadow-elevation-8)). Modals. Higher elevation = closer to the user; don't stack shadows or invent new ones.",
+    "tailwind": ["shadow-e8"],
+    "figma": null
+  },
+  {
+    "name": "--shadow-elevation-9",
+    "values": {"light":"0px 32px 64px -12px #1111143d","dark":"0px 32px 64px -12px #00000099"},
+    "description": "Elevation 9 shadow (var(--shadow-elevation-9)). Large overlays and drawers. Higher elevation = closer to the user; don't stack shadows or invent new ones.",
+    "tailwind": ["shadow-e9"],
+    "figma": null
+  },
+  {
+    "name": "--shadow-elevation-12",
+    "values": {"light":"0px 40px 80px -12px #11111452","dark":"0px 40px 80px -12px #00000099"},
+    "description": "Elevation 12 shadow (var(--shadow-elevation-12)). Large overlays and drawers. Higher elevation = closer to the user; don't stack shadows or invent new ones.",
+    "tailwind": ["shadow-e12"],
+    "figma": null
+  },
+  {
+    "name": "--shadow-elevation-16",
+    "values": {"light":"0px 48px 96px -12px #11111466","dark":"0px 48px 96px -12px #00000099"},
+    "description": "Elevation 16 shadow (var(--shadow-elevation-16)). Large overlays and drawers. Higher elevation = closer to the user; don't stack shadows or invent new ones.",
+    "tailwind": ["shadow-e16"],
+    "figma": null
+  },
+  {
+    "name": "--shadow-elevation-24",
+    "values": {"light":"0px 56px 112px -12px #1111147a","dark":"0px 56px 112px -12px #00000099"},
+    "description": "Elevation 24 shadow (var(--shadow-elevation-24)). Large overlays and drawers. Higher elevation = closer to the user; don't stack shadows or invent new ones.",
+    "tailwind": ["shadow-e24"],
+    "figma": null
+  }
+]

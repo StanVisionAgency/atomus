@@ -1,0 +1,93 @@
+[
+  {
+    "name": "--radius-none",
+    "values": {"default":"0px","sharp":"0px","round":"0px"},
+    "description": "Square corners: tables, full-bleed media. Switch the Radius mode (default / sharp / round) to reshape every component; don't hard-code px radii.",
+    "tailwind": ["rounded-none"],
+    "figma": "radius-none"
+  },
+  {
+    "name": "--radius-xxs",
+    "values": {"default":"2px","sharp":"0px","round":"4px"},
+    "description": "Checkbox ticks, tiny chips. Switch the Radius mode (default / sharp / round) to reshape every component; don't hard-code px radii.",
+    "tailwind": ["rounded-xxs"],
+    "figma": "radius-xxs"
+  },
+  {
+    "name": "--radius-xs",
+    "values": {"default":"4px","sharp":"2px","round":"6px"},
+    "description": "Checkboxes, small tags. Switch the Radius mode (default / sharp / round) to reshape every component; don't hard-code px radii.",
+    "tailwind": ["rounded-xs"],
+    "figma": "radius-xs"
+  },
+  {
+    "name": "--radius-sm",
+    "values": {"default":"6px","sharp":"2px","round":"8px"},
+    "description": "Small buttons and badges. Switch the Radius mode (default / sharp / round) to reshape every component; don't hard-code px radii.",
+    "tailwind": ["rounded-sm"],
+    "figma": "radius-sm"
+  },
+  {
+    "name": "--radius-md",
+    "values": {"default":"8px","sharp":"4px","round":"12px"},
+    "description": "Buttons and inputs. Switch the Radius mode (default / sharp / round) to reshape every component; don't hard-code px radii.",
+    "tailwind": ["rounded-md"],
+    "figma": "radius-md"
+  },
+  {
+    "name": "--radius-lg",
+    "values": {"default":"10px","sharp":"4px","round":"16px"},
+    "description": "Cards, menus, popovers. Switch the Radius mode (default / sharp / round) to reshape every component; don't hard-code px radii.",
+    "tailwind": ["rounded-lg"],
+    "figma": "radius-lg"
+  },
+  {
+    "name": "--radius-xl",
+    "values": {"default":"12px","sharp":"6px","round":"20px"},
+    "description": "Large cards and modals. Switch the Radius mode (default / sharp / round) to reshape every component; don't hard-code px radii.",
+    "tailwind": ["rounded-xl"],
+    "figma": "radius-xl"
+  },
+  {
+    "name": "--radius-2xl",
+    "values": {"default":"16px","sharp":"8px","round":"24px"},
+    "description": "Feature cards. Switch the Radius mode (default / sharp / round) to reshape every component; don't hard-code px radii.",
+    "tailwind": ["rounded-2xl"],
+    "figma": "radius-2xl"
+  },
+  {
+    "name": "--radius-3xl",
+    "values": {"default":"20px","sharp":"10px","round":"32px"},
+    "description": "Hero media. Switch the Radius mode (default / sharp / round) to reshape every component; don't hard-code px radii.",
+    "tailwind": ["rounded-3xl"],
+    "figma": "radius-3xl"
+  },
+  {
+    "name": "--radius-4xl",
+    "values": {"default":"24px","sharp":"12px","round":"40px"},
+    "description": "Large decorative surfaces. Switch the Radius mode (default / sharp / round) to reshape every component; don't hard-code px radii.",
+    "tailwind": ["rounded-4xl"],
+    "figma": "radius-4xl"
+  },
+  {
+    "name": "--radius-full",
+    "values": {"default":"9999px","sharp":"9999px","round":"9999px"},
+    "description": "Pills, avatars, toggles. Switch the Radius mode (default / sharp / round) to reshape every component; don't hard-code px radii.",
+    "tailwind": ["rounded-full"],
+    "figma": "radius-full"
+  },
+  {
+    "name": "--radius-5xl",
+    "values": {"default":"32px","sharp":"16px","round":"48px"},
+    "description": "Large decorative surfaces. Switch the Radius mode (default / sharp / round) to reshape every component; don't hard-code px radii.",
+    "tailwind": ["rounded-5xl"],
+    "figma": "radius-5xl"
+  },
+  {
+    "name": "--radius-6xl",
+    "values": {"default":"40px","sharp":"20px","round":"64px"},
+    "description": "Large decorative surfaces. Switch the Radius mode (default / sharp / round) to reshape every component; don't hard-code px radii.",
+    "tailwind": ["rounded-6xl"],
+    "figma": "radius-6xl"
+  }
+]
