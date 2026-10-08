@@ -45,3 +45,33 @@
 .swatch__chip { height: 56px; }
 .swatch__meta { padding: var(--spacing-md); display: flex; flex-direction: column; gap: 2px; }
 .swatch__meta code { font-size: 11px; background: none; padding: 0; }
+
+/* Docs only: Inter Display is not on Google Fonts; fall back to Inter (its opsz axis gives the display cut at large sizes). */
+:root { --font-family-title: "Inter Display", "Inter", ui-sans-serif, system-ui, sans-serif; }
+
+/* Component pages: Do / Don't cards */
+.dd-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--spacing-xl); margin: 1rem 0 1.5rem; }
+.dd { padding: var(--spacing-xl) var(--spacing-2xl); border: 1px solid var(--color-border-secondary); border-top: 3px solid var(--dd-accent); border-radius: var(--radius-lg); background: var(--color-bg-primary); color: var(--color-text-secondary); font-size: var(--font-size-small); line-height: var(--line-height-small); }
+.dd--do { --dd-accent: var(--color-border-success); }
+.dd--dont { --dd-accent: var(--color-border-error); }
+.dd > p:first-child { margin: 0 0 var(--spacing-md); }
+.dd > p:first-child strong { display: inline-flex; align-items: center; gap: var(--spacing-sm); color: var(--color-text-primary); font-weight: var(--font-weight-semi-bold); }
+.dd--do > p:first-child strong::before, .dd--dont > p:first-child strong::before { display: inline-grid; place-items: center; width: 18px; height: 18px; border-radius: 50%; color: #fff; font-size: 11px; line-height: 1; }
+.dd--do > p:first-child strong::before { content: '✓'; background: var(--color-bg-success-solid); }
+.dd--dont > p:first-child strong::before { content: '✕'; background: var(--color-bg-error-solid); }
+.dd ul { margin: 0; padding-left: 1.1rem; }
+.dd li { margin: 0 0 var(--spacing-xs); }
+.dd li:last-child { margin-bottom: 0; }
+
+/* Component pages: source line under "In Figma" */
+.cmp-source { margin: .5rem 0 1rem !important; color: var(--color-text-tertiary); font-size: var(--font-size-tiny); line-height: var(--line-height-tiny); }
+.cmp-source code { font-size: 11px; }
+
+/* Components overview */
+.cmp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: var(--spacing-lg); margin: 1rem 0 2rem; }
+.cmp-card { display: flex; flex-direction: column; gap: var(--spacing-xs); padding: var(--spacing-xl); border: 1px solid var(--color-border-secondary); border-radius: var(--radius-lg); background: var(--color-bg-primary); color: var(--color-text-secondary); text-decoration: none; transition: border-color .15s, box-shadow .15s; }
+.cmp-card:hover { border-color: var(--color-border-brand); box-shadow: var(--shadow-elevation-2); }
+.cmp-card__title { color: var(--color-text-primary); font-size: var(--font-size-body); line-height: var(--line-height-body); font-weight: var(--font-weight-semi-bold); }
+.cmp-card__desc { flex: 1; font-size: var(--font-size-small); line-height: var(--line-height-small); }
+.cmp-card__tag { align-self: flex-start; margin-top: var(--spacing-md); padding: 0 var(--spacing-sm); border-radius: var(--radius-full); background: var(--color-bg-tertiary); color: var(--color-text-tertiary); font-size: 11px; line-height: 20px; font-weight: var(--font-weight-medium); }
+.cmp-card__tag--react { background: var(--color-bg-brand-subtle); color: var(--color-text-brand); }
