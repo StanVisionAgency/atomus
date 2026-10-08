@@ -1,0 +1,32 @@
+---
+title: llms.txt
+description: The whole Atomus documentation as plain Markdown for LLMs — llms.txt, llms-full.txt, llms-small.txt, topic subsets and a Markdown twin of every page.
+---
+
+These docs follow the [llms.txt](https://llmstxt.org/) convention. Every file below is plain Markdown served as text, built from the same sources as the pages, so it is always current.
+
+| URL | What it is | Use it when |
+| --- | --- | --- |
+| [`/llms.txt`](/llms.txt) | The index: what Atomus is, the core rules for agents, and links to the files below | Giving an agent a starting point |
+| [`/llms-full.txt`](/llms-full.txt) | Every page in full, as one Markdown file | The agent has a large context window, or you add the docs to Cursor **Docs** |
+| [`/llms-small.txt`](/llms-small.txt) | Every page, minus notes, tips and collapsed details | The context window is tight |
+| [`/_llms-txt/components.txt`](/_llms-txt/components.txt) | Only the component pages: Figma properties, rules and React API | Building UI |
+| [`/_llms-txt/foundations-and-tokens.txt`](/_llms-txt/foundations-and-tokens.txt) | Foundations and the code token formats | Styling and theming |
+| [`/_llms-txt/ai-and-agents.txt`](/_llms-txt/ai-and-agents.txt) | This section: rules, skill, Figma MCP | Setting up an agent |
+
+## A Markdown twin of every page
+
+Every page is also available as Markdown at its URL plus `index.md`:
+
+- `https://docs.atomus.io/components/button/` → [`https://docs.atomus.io/components/button/index.md`](/components/button/index.md)
+- `https://docs.atomus.io/foundations/color/` → [`https://docs.atomus.io/foundations/color/index.md`](/foundations/color/index.md)
+
+Fetch a twin when the agent needs one page, such as a component's React API, without the rest of the site.
+
+## Using them
+
+- **Claude Code, Codex, Copilot:** say *"read https://docs.atomus.io/llms.txt"*, or put the link in `AGENTS.md`. The [AGENTS.md template](/ai/coding-agents/) already includes it.
+- **Cursor:** add `https://docs.atomus.io/llms-full.txt` under **Settings → Indexing & Docs**, then mention it with `@Docs`.
+- **Chat assistants:** paste the URL of `llms-small.txt` or a page's `index.md`.
+
+For agents that write code in your repo, the [Atomus skill](/ai/coding-agents/) is better than llms.txt. It loads only what the task needs and ships a validator.

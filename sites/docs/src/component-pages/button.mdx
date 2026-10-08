@@ -28,7 +28,9 @@ import { Button } from '@stanvision/atomus-react';
 
 Triggers an action. One **primary** per view for the main action; **secondary** or **outline** for the rest; **tertiary** in toolbars and dense rows; **link** for inline, low-emphasis actions.
 
-### Props
+### Props at a glance
+
+Full types and defaults are in [React API](#react-api) at the end of the page.
 
 - `children` — the label: a verb in sentence case ("Save changes").
 - `hierarchy` — `primary` · `secondary` · `outline` · `tertiary` · `link` (Figma: Hierarchy; default `secondary`).
@@ -38,12 +40,6 @@ Triggers an action. One **primary** per view for the main action; **secondary** 
 
 **Do**
 
-- Put the primary action last in a button group, after Cancel.
 - Use `lg`/`xl` on marketing pages, `md` in product UI, `sm`/`xs` in tables and toolbars.
-
-**Don’t**
-
-- Don't place two primary buttons side by side.
-- Don't use a button to navigate — use a link.
 
 {/* @guidance — sync.mjs appends the design Do/Don’t from the Figma guidelines here */}

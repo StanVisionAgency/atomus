@@ -35,9 +35,6 @@ Pick any number of options, or confirm one setting that applies on submit.
 - `label`, `description` (Figma: Label, Description), `size` `sm` (16 box) · `md` (20 box).
 - `checked`/`defaultChecked`, `onChange`; `indeterminate` for a partial "select all".
 
-**Don’t**
-
-- Don't use a checkbox for a setting that applies instantly — use Toggle.
 ### Radio
 
 Pick exactly one of 2–5 options. Wrap the group in `role="radiogroup"` with a label.
@@ -46,9 +43,6 @@ Pick exactly one of 2–5 options. Wrap the group in `role="radiogroup"` with a 
 
 - The same `name` on each radio, a `label`, optional `description`, `size` `sm` · `md`.
 
-**Don’t**
-
-- Don't use radios for more than five options — use a Select.
 ### Toggle
 
 A switch for a setting that takes effect immediately.
@@ -57,9 +51,5 @@ A switch for a setting that takes effect immediately.
 
 - `label`, `description`, `checked`/`onChange`.
 - `size` `sm` (36×20) · `md` (44×24); `shape` `pill` · `square` (Figma: Shape).
-
-**Don’t**
-
-- Don't use inside a form that needs a Save button — use Checkbox.
 
 {/* @guidance — sync.mjs appends the design Do/Don’t from the Figma guidelines here */}

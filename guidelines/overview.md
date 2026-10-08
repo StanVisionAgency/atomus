@@ -1,5 +1,7 @@
 # Atomus 4.0 — overview
 
+New here? Read [`Guidelines.md`](Guidelines.md) first. It has the reading order and the rules. To pick a component, use [`overview-components.md`](overview-components.md).
+
 Atomus is one design system for **product UI** and **marketing websites**. Both share the same tokens, so an app and its website stay on-brand automatically.
 
 ## Structure

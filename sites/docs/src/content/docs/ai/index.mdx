@@ -1,0 +1,54 @@
+---
+title: Atomus is built for humans and agents
+description: What Atomus gives AI agents today (guidelines, skill, AGENTS.md rules, llms.txt, Figma MCP rules) and what is coming next.
+sidebar:
+  label: Overview
+---
+
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Most design systems are written for people and then scraped by AI tools. Atomus is written for both. Every rule a designer or developer reads on this site is also published in a form agents can follow literally. The props, tokens and rules agents use are **generated from the same sources** as the Figma file and the React package, so they can't drift.
+
+The result: Claude Code, Cursor, Copilot, Figma Make and the Figma MCP server pick the right component, use only real props, style with semantic tokens and keep one primary action per view. You review the result instead of fixing it.
+
+## Available now
+
+<CardGrid>
+  <Card title="Guidelines for agents" icon="open-book">
+    Plain-Markdown guidelines with an entry point (`Guidelines.md`), a component catalogue with decision trees, imperative **Do / Forbidden** rules, and a **React API** section on every component generated from the TypeScript source.
+  </Card>
+  <Card title="Atomus skill" icon="puzzle">
+    An [Agent Skill](https://agentskills.io/) with the workflow, references (components, tokens by intent, page patterns, Figma) and a validator that flags raw colours, primitive tokens and invented props. `npx skills add StanVisionAgency/atomus`.
+  </Card>
+  <Card title="AGENTS.md template" icon="document">
+    Paste-in rules for product repos that use Atomus, read by Claude Code, Cursor, Copilot and Codex.
+  </Card>
+  <Card title="llms.txt and Markdown pages" icon="seti:markdown">
+    `/llms.txt`, `/llms-full.txt`, `/llms-small.txt`, topic subsets, and every page as Markdown at `…/index.md`.
+  </Card>
+  <Card title="Figma MCP rules" icon="figma">
+    How an agent reads Atomus designs through the Figma MCP server: modes on the top frame, Code Connect first, variables to tokens, never paste hex.
+  </Card>
+  <Card title="Code Connect mappings" icon="seti:react">
+    All 21 React components are mapped to their Figma component sets, ready to publish to Dev Mode.
+  </Card>
+</CardGrid>
+
+## Coming next
+
+| What | Status |
+| --- | --- |
+| **npm packages** `@stanvision/atomus-react` and `@stanvision/atomus-tokens` | Publishing soon. Until then, install from the [repo](https://github.com/StanVisionAgency/atomus). |
+| **Figma Make kit** | After the npm packages publish. See [Figma Make kit](/ai/figma-make/). |
+| **Atomus MCP server** | Planned: search components, props and tokens as tools instead of reading files. |
+| **Component registry** | Planned: install components into a project with the shadcn registry format. |
+| **Evals** | Planned: a test set of UI tasks scored against the rules (one primary per view, tokens only, real props), run on every release of the guidelines and skill. |
+
+## Start here
+
+<CardGrid>
+  <LinkCard title="Claude Code, Cursor and Copilot" href="/ai/coding-agents/" description="Install the skill, add the AGENTS.md template, validate the output." />
+  <LinkCard title="Figma MCP and Code Connect" href="/ai/figma-mcp/" description="Turn Atomus designs into Atomus code, not div soup." />
+  <LinkCard title="llms.txt" href="/ai/llms-txt/" description="Give any LLM the whole documentation as Markdown." />
+  <LinkCard title="Rules for agents" href="/ai/rules/" description="The core rules and the forbidden list every Atomus agent follows." />
+</CardGrid>

@@ -1,0 +1,54 @@
+---
+title: Figma MCP and Code Connect
+description: Connect an agent to the Atomus Figma file through the Figma MCP server, and get real Atomus code out of designs with Code Connect.
+---
+
+import { Steps } from '@astrojs/starlight/components';
+
+The [Figma MCP server](https://help.figma.com/hc/en-us/articles/32132100833559) lets an agent read a Figma frame (layers, variables, screenshots) and write back to the canvas. On its own it returns generic React and Tailwind with raw values. With Atomus, the agent maps that output onto Atomus components and tokens instead.
+
+## Set it up
+
+<Steps>
+
+1. **Connect the Figma MCP server** to your agent. In Claude Code, for the remote server:
+
+   ```bash
+   claude mcp add --transport http figma https://mcp.figma.com/mcp
+   ```
+
+   Cursor, VS Code and other clients take the same URL in their MCP settings. Figma's guide covers the desktop server too.
+
+2. **Give the agent the Atomus rules.** Install the [Atomus skill](/ai/coding-agents/). Its `references/figma.md` contains the [Figma MCP rules](/ai/figma-mcp-rules/). Without the skill, add [`guidelines/figma-mcp-rules.md`](https://github.com/StanVisionAgency/atomus/blob/main/guidelines/figma-mcp-rules.md) to your agent's rules.
+
+3. **Share a frame link** from your project's copy of the Atomus file and ask: *"Build this screen with Atomus."*
+
+</Steps>
+
+## How the agent should read an Atomus design
+
+- **Modes are on the top frame.** Light/Dark, Brand, Radius and Desktop/Tablet/Mobile are set once on the top frame. In code they become `data-theme`, `data-brand` and `data-radius` on the root; breakpoints are automatic.
+- **Instances map to components.** A Button instance with Hierarchy=Primary and Size=md is `<Button hierarchy="primary" size="md">`. State (Hover, Focused) is never a prop.
+- **Slots map to children.** Card Content, Modal Content and Dropdown menu Items become `children`, `items`, `actions` or `footer`. Atomus files don't detach instances, so the structure is reliable.
+- **Variables map to tokens.** Every Atomus variable has code syntax, so `get_variable_defs` returns the CSS name (`var(--color-text-secondary)`). The agent never copies hex values.
+- **Text styles map to classes.** `Headline/H2` → `.text-headline-h2`.
+
+The full list, including what to flag to a human, is on [Figma MCP rules](/ai/figma-mcp-rules/).
+
+## Code Connect
+
+Code Connect links each Figma component to its React component. When it is published, Dev Mode and the MCP server's `get_design_context` return the real snippet for the selected instance:
+
+```tsx
+import { Button } from '@stanvision/atomus-react';
+
+<Button hierarchy="primary" size="md" iconLeading={<PlusIcon />}>New project</Button>
+```
+
+- The mappings for all 21 React components are in [`react/src/components/*.figma.tsx`](https://github.com/StanVisionAgency/atomus/tree/main/react/src/components), covering variant, boolean, text and instance-swap properties.
+- Publishing them needs a Dev or Full seat on a **Figma Organization or Enterprise** plan: `FIGMA_ACCESS_TOKEN=… npm run figma:publish` in `react/`.
+- Until they are published, the agent maps instances by name using [Choosing a component](/components/choosing/) and each page's React API. That is slower but gives the same result.
+
+## Writing to Figma
+
+With `use_figma`, agents can also build screens in your Atomus file. The same rules apply in reverse: search the library first, insert Atomus components, set modes on the top frame, fill slots, and bind everything to variables. The [Figma MCP rules](/ai/figma-mcp-rules/#writing-to-figma-use_figma) list them.

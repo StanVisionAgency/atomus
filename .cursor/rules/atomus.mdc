@@ -1,0 +1,19 @@
+---
+description: Atomus repo rules — repo map, generated files, AI policy and the Atomus UI rules
+alwaysApply: true
+---
+
+Read `AGENTS.md` at the repo root before changing anything. It is the single source of instructions for agents in this repo.
+
+Key points:
+
+- Edit sources, not generated copies. `sites/docs/src/content/docs/{foundations,components,ai}` and `sites/docs/src/styles/{atomus,components,sections-responsive}.css` come from `sites/docs/scripts/sync.mjs`. The "React API" sections in `guidelines/components/*.md` and most of `skills/atomus/references/` come from `node scripts/build-skill.mjs`.
+- Tokens (`tokens/`, `css/`, `tailwind/`, `shadcn/`) come from the Figma variables. Never add or change a token, disable lint rules or type checks, or change thresholds without human review.
+- After changing `react/src`, `tokens/` or `guidelines/`, run `node scripts/build-skill.mjs` and `cd sites/docs && npm run build`.
+
+When writing UI (docs components, sites, React components), follow `guidelines/Guidelines.md`:
+
+- Use Atomus components; look them up in `guidelines/overview-components.md` first. Never invent props: use only those in the component's "React API" section.
+- Semantic tokens only: `var(--color-text-secondary)`, `var(--spacing-xl)`, Tailwind `text-secondary`. No raw hex, `rgb()` or primitives like `--color-gray-500`.
+- One primary button per view. Slots instead of copying component markup.
+- Run `node skills/atomus/scripts/validate.mjs <changed files>` before you finish.

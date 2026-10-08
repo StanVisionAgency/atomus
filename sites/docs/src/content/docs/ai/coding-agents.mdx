@@ -1,0 +1,97 @@
+---
+title: Claude Code, Cursor and Copilot
+description: Set up coding agents to build UI with Atomus — the Atomus skill, the AGENTS.md template, docs for agents and the validator.
+---
+
+import { Steps, Tabs, TabItem } from '@astrojs/starlight/components';
+
+Three pieces make a coding agent reliable with Atomus. The **skill** gives it the knowledge, the **AGENTS.md rules** make it follow it in your repo, and the **validator** catches what slips through.
+
+<Steps>
+
+1. **Install the Atomus skill**
+
+   The skill follows the open [Agent Skills](https://agentskills.io/) format, so it works in Claude Code, Cursor, Copilot, Codex and other compatible agents.
+
+   ```bash
+   npx skills add StanVisionAgency/atomus
+   ```
+
+   Or copy it by hand (Claude Code, all projects):
+
+   ```bash
+   git clone --depth 1 https://github.com/StanVisionAgency/atomus.git /tmp/atomus
+   mkdir -p ~/.claude/skills && cp -R /tmp/atomus/skills/atomus ~/.claude/skills/
+   ```
+
+   For one project, copy it to `.claude/skills/atomus` in the repo and commit it, so the whole team gets it.
+
+2. **Add the Atomus rules to your repo**
+
+   Copy [`templates/consumer/AGENTS.atomus.md`](https://github.com/StanVisionAgency/atomus/blob/main/templates/consumer/AGENTS.atomus.md) into your product repo. Append it to `AGENTS.md`, or save it next to it and link it. Each tool reads it from a different place:
+
+   <Tabs>
+   <TabItem label="Claude Code">
+   Claude Code reads `CLAUDE.md`. Point it at the shared file:
+
+   ```md
+   See @AGENTS.md and @AGENTS.atomus.md.
+   ```
+   </TabItem>
+   <TabItem label="Cursor">
+   Cursor reads `AGENTS.md` and `.cursor/rules/*.mdc`. To scope the rules to UI code, add a rule:
+
+   ```md
+   ---
+   description: Atomus UI rules
+   globs: src/**/*.{tsx,jsx,css}
+   ---
+   Follow AGENTS.atomus.md for every component, style and screen.
+   ```
+   </TabItem>
+   <TabItem label="GitHub Copilot">
+   Copilot reads `.github/copilot-instructions.md` and `AGENTS.md`. Add a line to the instructions:
+
+   ```md
+   Build UI with Atomus and follow AGENTS.atomus.md.
+   ```
+   </TabItem>
+   </Tabs>
+
+3. **Give the agent the docs**
+
+   Point the agent at [`https://docs.atomus.io/llms.txt`](/ai/llms-txt/). Every page is also available as Markdown at `…/index.md`, for example `https://docs.atomus.io/components/button/index.md`. In Cursor, add `https://docs.atomus.io/llms-full.txt` under **Docs** and mention it with `@Docs`.
+
+4. **Validate before you merge**
+
+   The skill ships a dependency-free validator. Ask the agent to run it, or add it to CI:
+
+   ```bash
+   node ~/.claude/skills/atomus/scripts/validate.mjs src/
+   ```
+
+   ```text
+   src/Settings.tsx:12:7   error   invalid-value    <Button hierarchy="danger"> — allowed: "primary" | "secondary" | "outline" | "tertiary" | "link"
+   src/Settings.tsx:18:22  error   raw-color        raw colour #18181b — same value as var(--color-text-primary) … (pick by intent)
+   src/app.css:4:15        error   primitive-token  primitive --color-gray-200 — same value as var(--color-border-secondary) … (pick by intent)
+   ```
+
+</Steps>
+
+## What to ask for
+
+Agents do best with the page type and the components named. For example:
+
+> Build a settings page with Atomus: a Page header, a Profile card with name, email and time zone fields and a Save button, and a Notifications card with toggles. Use only props from the Atomus skill and run the validator when you're done.
+
+The skill's [page patterns](https://github.com/StanVisionAgency/atomus/blob/main/skills/atomus/references/patterns.md) cover the app shell, dashboard, settings, auth, table view and website sections.
+
+## What the agent follows
+
+- [Rules for agents](/ai/rules/): the core rules and the forbidden list.
+- [Choosing a component](/components/choosing/): the catalogue, other names (dialog → Modal) and decision trees.
+- The **React API** section at the end of every component page. The skill has the same tables.
+
+## Working on Atomus itself
+
+The Atomus repo has its own [`AGENTS.md`](https://github.com/StanVisionAgency/atomus/blob/main/AGENTS.md), with the repo map, build commands, which files are generated, and the AI policy: agents may not add tokens, disable lint rules or change thresholds without human review.

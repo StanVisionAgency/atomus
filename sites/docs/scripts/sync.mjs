@@ -5,8 +5,8 @@
 // .mdx pages and swaps their token tables for visual preview components (swatches, type specimens,
 // spacing bars …). The components still print every token name and value as text.
 import { cpSync, mkdirSync, readdirSync, readFileSync, writeFileSync, rmSync, existsSync } from 'node:fs';
-import { join } from 'node:path';
-import { COMPONENT_PAGES, CATEGORIES } from './component-pages.mjs';
+import { join, dirname } from 'node:path';
+import { COMPONENT_PAGES, CATEGORIES, figmaReferenceRedirects } from './component-pages.mjs';
 
 const root = new URL('../../../', import.meta.url).pathname;
 const site = new URL('../', import.meta.url).pathname;
@@ -85,7 +85,9 @@ function appendToSection(md, headingStartsWith, snippet) {
 
 const props = (v) => `{${JSON.stringify(v)}}`;
 const DO_RE = /\*\*Do\*\*\n\n((?:- .*(?:\n|$))+)/;
-const DONT_RE = /\*\*Don[’']t\*\*\n\n((?:- .*(?:\n|$))+)/;
+const DONT_RE = /\*\*(Don[’']t|Forbidden)\*\*\n\n((?:- .*(?:\n|$))+)/;
+/** Drops HTML comments (generator markers) — MDX would print them as text. */
+const stripComments = (md) => md.replace(/<!--[\s\S]*?-->\n?/g, '');
 
 // ---------- Foundations: Markdown tables → visual previews ----------
 
@@ -205,6 +207,50 @@ syncComponents();
   );
 }
 
+// ---------- Agent-facing guidelines as docs pages ----------
+// Guidelines.md, figma-mcp-rules.md and overview-components.md are written for agents first; the docs show
+// them as pages too, so people and agents read the same rules. File references become links.
+{
+  const pageForFile = Object.fromEntries(
+    Object.entries(figmaReferenceRedirects())
+      .filter(([from]) => from.startsWith('/figma-reference/'))
+      .map(([from, to]) => [from.replace('/figma-reference/', ''), to]),
+  );
+  const gh = (path) => `https://github.com/StanVisionAgency/atomus/blob/main/${path}`;
+  const DOC_LINKS = {
+    'Guidelines.md': '/ai/rules/',
+    'overview-components.md': '/components/choosing/',
+    'figma-mcp-rules.md': '/ai/figma-mcp-rules/',
+    'website-sections.md': '/website-sections/',
+    'foundations/color.md': '/foundations/color/',
+    'foundations/typography.md': '/foundations/typography/',
+    'foundations/spacing-layout.md': '/foundations/spacing-layout/',
+    'foundations/radius-effects.md': '/foundations/radius-effects/',
+    'foundations/icons.md': '/foundations/icons/',
+    'foundations/theming.md': '/foundations/theming/',
+  };
+  /** `components/button.md` → [`components/button.md`](/components/button/); other guideline files → GitHub. */
+  const linkFiles = (md) =>
+    md.replace(/`((?:components|foundations)\/[\w-]+\.md|[\w-]+\.md|AGENTS\.md)`/g, (m, file) => {
+      const comp = file.match(/^components\/([\w-]+)\.md$/);
+      const href = comp ? pageForFile[comp[1]] : DOC_LINKS[file] ?? (existsSync(join(root, 'guidelines', file)) ? gh(`guidelines/${file}`) : file === 'AGENTS.md' ? gh('AGENTS.md') : null);
+      return href ? `[\`${file}\`](${href})` : m;
+    });
+  const pages = [
+    { src: 'guidelines/Guidelines.md', out: 'ai/rules.mdx', title: 'Rules for agents', description: 'The entry point agents read: what Atomus is, the reading order, the core rules and the forbidden list.', intro: 'This page is [`guidelines/Guidelines.md`](https://github.com/StanVisionAgency/atomus/blob/main/guidelines/Guidelines.md), the entry point for AI agents and Figma Make. The Atomus skill, `AGENTS.md` and the Cursor and Copilot rules all use these rules.' },
+    { src: 'guidelines/figma-mcp-rules.md', out: 'ai/figma-mcp-rules.mdx', title: 'Figma MCP rules', description: 'Rules for agents that read Atomus designs through the Figma MCP server and turn them into code.', intro: 'Generated from [`guidelines/figma-mcp-rules.md`](https://github.com/StanVisionAgency/atomus/blob/main/guidelines/figma-mcp-rules.md). Add the file to your agent\'s rules, or install the [Atomus skill](/ai/coding-agents/), which includes it.' },
+    { src: 'guidelines/overview-components.md', out: 'components/choosing.mdx', title: 'Choosing a component', description: 'Every Atomus component with its purpose and React export, other names, and decision trees.', order: 0.5, intro: 'Generated from [`guidelines/overview-components.md`](https://github.com/StanVisionAgency/atomus/blob/main/guidelines/overview-components.md). Agents read the same file before they pick a component.' },
+  ];
+  for (const p of pages) {
+    const { body } = splitTitle(stripComments(readFileSync(join(root, p.src), 'utf8')));
+    mkdirSync(join(docs, dirname(p.out)), { recursive: true });
+    writeFileSync(
+      join(docs, p.out),
+      `${frontmatter({ title: p.title, description: p.description, src: p.src, order: p.order })}\n${banner(p.src)}\n\n${p.intro}\n\n${linkFiles(mdxSafe(body.trim()))}\n`,
+    );
+  }
+}
+
 console.log('synced tokens, component CSS and guidelines from', root);
 
 function syncComponents() {
@@ -225,13 +271,27 @@ function syncComponents() {
   const guidelines = {};
   for (const f of readdirSync(join(root, 'guidelines/components'))) {
     const name = f.replace(/\.md$/, '');
-    const { title, body } = splitTitle(readFileSync(join(root, 'guidelines/components', f), 'utf8'));
+    const { title, body } = splitTitle(stripComments(readFileSync(join(root, 'guidelines/components', f), 'utf8')));
     const sections = new Map();
     for (const chunk of body.split(/^## /m).slice(1)) {
       const nl = chunk.indexOf('\n');
       sections.set(chunk.slice(0, nl).trim(), chunk.slice(nl + 1).trim());
     }
-    guidelines[name] = { title, sections, used: new Set() };
+    // "## React API" (generated by scripts/gen-react-api.mjs) is not a Figma section: split it into one
+    // entry per export ("### `Button`") so each page shows the exports it covers.
+    const api = { intro: '', exports: new Map(), used: new Set() };
+    const apiMd = sections.get('React API');
+    sections.delete('React API');
+    if (apiMd) {
+      const [intro, ...subs] = apiMd.split(/^### /m);
+      api.intro = intro.trim();
+      for (const sub of subs) {
+        const nl = sub.indexOf('\n');
+        const name = sub.slice(0, nl).replace(/`/g, '').trim();
+        api.exports.set(name, sub.slice(nl + 1).replace(/\n\*\*Not in React yet:\*\*[^\n]*\n?/, '\n').trim());
+      }
+    }
+    guidelines[name] = { title, sections, used: new Set(), api };
   }
 
   const pages = [];
@@ -267,6 +327,21 @@ function syncComponents() {
       ? withGuidance.map((p) => (withGuidance.length > 1 || !page.react ? `#### ${p.name}\n\n${p.guidance}` : p.guidance)).join('\n\n')
       : '';
 
+    // "React API": generated tables for the exports this page covers.
+    const apiParts = [];
+    for (const file of new Set(page.sections.map(([f]) => f))) {
+      const { api } = guidelines[file];
+      for (const name of page.api ?? page.figma ?? []) {
+        if (!api.exports.has(name)) continue;
+        api.used.add(name);
+        apiParts.push(`### \`${name}\`\n\n${mdxSafe(api.exports.get(name))}`);
+      }
+    }
+    if (page.react && !apiParts.length) throw new Error(`sync: page ${page.slug} has no React API section — run node scripts/gen-react-api.mjs`);
+    const apiSection = apiParts.length
+      ? `## React API\n\n<p class="cmp-source">Generated from <code>react/src/components</code> by <code>scripts/gen-react-api.mjs</code> — the same tables agents read in <code>${sourceFiles.join('</code>, <code>')}</code>.</p>\n\nUse only these props; anything else is not part of the API.\n\n<div class="react-api">\n\n${apiParts.join('\n\n')}\n\n</div>\n`
+      : '';
+
     let title, description, mdx;
     if (page.react) {
       const src = readFileSync(join(srcDir, `${page.slug}.mdx`), 'utf8');
@@ -282,7 +357,7 @@ function syncComponents() {
       body = body.replace(/^- (.*)\n/gm, (line, item) => (seen.has(norm(item)) ? '' : line));
       body = body.replace(/\*\*(Do|Don[’']t)\*\*\n\n(?!- )/g, '');
       body = body.replace(/\{\/\* @guidance[^\n]*\*\/\}/, guidance ? `### Design guidance\n\nFrom the Figma guidelines.\n\n${guidance}` : '');
-      mdx = `${frontmatter({ title, description, order: index + 1, src: `sites/docs/src/component-pages/${page.slug}.mdx` })}\n${banner(`sites/docs/src/component-pages/${page.slug}.mdx + ${sourceFiles.join(', ')}`)}\n${styleDoDont(body.trim())}\n`;
+      mdx = `${frontmatter({ title, description, order: index + 1, src: `sites/docs/src/component-pages/${page.slug}.mdx` })}\n${banner(`sites/docs/src/component-pages/${page.slug}.mdx + ${sourceFiles.join(', ')}`)}\n${styleDoDont(body.trim())}\n\n${apiSection}`;
     } else {
       title = page.title;
       description = intro;
@@ -308,9 +383,10 @@ function syncComponents() {
     pages.push({ ...page, title, description });
   });
 
-  // Every guideline section must appear on some page.
+  // Every guideline section and every React API entry must appear on some page.
   for (const [file, g] of Object.entries(guidelines)) {
     for (const name of g.sections.keys()) if (!g.used.has(name)) throw new Error(`sync: "## ${name}" in guidelines/components/${file}.md is not on any page — add it to scripts/component-pages.mjs`);
+    for (const name of g.api.exports.keys()) if (!g.api.used.has(name)) throw new Error(`sync: React API "${name}" in guidelines/components/${file}.md is not on any page — add it to a page's figma/api list in scripts/component-pages.mjs`);
   }
 
   // Components overview.
@@ -322,7 +398,7 @@ function syncComponents() {
   }).join('\n\n');
   writeFileSync(
     join(outDir, 'index.mdx'),
-    `${frontmatter({ title: 'Components', description: 'Every Atomus component: live React demos, the Figma properties and variants, and usage guidance on one page.', order: 0 })}\n${banner('scripts/component-pages.mjs')}\n\nEach page shows the component live, then its Figma properties and variants, then how to use it in code. ${pages.filter((p) => p.react).length} components ship in React; the rest are Figma-only for now.\n\n${overview}\n`,
+    `${frontmatter({ title: 'Components', description: 'Every Atomus component: live React demos, the Figma properties and variants, and usage guidance on one page.', order: 0 })}\n${banner('scripts/component-pages.mjs')}\n\nEach page shows the component live, then its Figma properties and variants, then how to use it in code, with the full React API at the end. ${pages.filter((p) => p.react).length} components ship in React; the rest are Figma-only for now. Not sure which one you need? See [Choosing a component](/components/choosing/).\n\n${overview}\n`,
   );
 }
 
@@ -341,7 +417,8 @@ function extractGuidance(md) {
   let content = md;
   if (d) content = content.replace(d[0], '');
   if (n) content = content.replace(n[0], '');
-  const guidance = d || n ? `${d ? `**Do**\n\n${d[1].trim()}\n\n` : ''}${n ? `**Don’t**\n\n${n[1].trim()}\n` : ''}` : '';
+  const label = n?.[1] === 'Forbidden' ? 'Forbidden' : 'Don’t';
+  const guidance = d || n ? `${d ? `**Do**\n\n${d[1].trim()}\n\n` : ''}${n ? `**${label}**\n\n${n[2].trim()}\n` : ''}` : '';
   return { content: content.replace(/\n{3,}/g, '\n\n').trim(), guidance: guidance.trim() };
 }
 
@@ -349,8 +426,8 @@ function extractGuidance(md) {
 function styleDoDont(md) {
   const card = (kind, label, list) => `<div class="dd dd--${kind}">\n\n**${label}**\n\n${list.trim()}\n\n</div>`;
   return md.replace(
-    /\*\*Do\*\*\n\n((?:- .*(?:\n|$))+)\s*(?:\*\*Don[’']t\*\*\n\n((?:- .*(?:\n|$))+))?|\*\*Don[’']t\*\*\n\n((?:- .*(?:\n|$))+)/g,
-    (_, doList, dontList, onlyDont) =>
-      `<div class="dd-grid not-content">\n${doList ? card('do', 'Do', doList) : ''}${dontList || onlyDont ? `\n${card('dont', 'Don’t', dontList || onlyDont)}` : ''}\n</div>\n\n`,
+    /\*\*Do\*\*\n\n((?:- .*(?:\n|$))+)\s*(?:\*\*(Don[’']t|Forbidden)\*\*\n\n((?:- .*(?:\n|$))+))?|\*\*(Don[’']t|Forbidden)\*\*\n\n((?:- .*(?:\n|$))+)/g,
+    (_, doList, dontLabel, dontList, onlyLabel, onlyDont) =>
+      `<div class="dd-grid not-content">\n${doList ? card('do', 'Do', doList) : ''}${dontList || onlyDont ? `\n${card('dont', (dontLabel || onlyLabel) === 'Forbidden' ? 'Forbidden' : 'Don’t', dontList || onlyDont)}` : ''}\n</div>\n\n`,
   );
 }
