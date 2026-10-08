@@ -99,14 +99,47 @@ export function AvatarDemo() {
   );
 }
 
-export function AlertDemo() {
+const ALERT_COPY = {
+  brand: { title: 'New tokens available', text: <>Atomus 4.0 adds brand and radius modes. <a href="#">Read the changelog</a>.</> },
+  gray: { title: 'Scheduled maintenance', text: 'The editor is read-only on Sunday 02:00–03:00 UTC.' },
+  error: { title: 'Payment failed', text: 'We couldn’t charge the card ending 4242. Update it to keep your projects.' },
+  warning: { title: 'Trial ends in 3 days', text: 'Add a payment method to keep access to your workspace.' },
+  success: { title: 'Changes saved', text: 'Your workspace settings are up to date.' },
+} as const;
+const ALERT_TONES = ['brand', 'gray', 'error', 'warning', 'success'] as const;
+
+/** All tones for one style, with title, description, actions and dismiss. */
+export function AlertDemo({ variant = 'subtle', surface }: { variant?: 'subtle' | 'outline' | 'solid'; surface?: 'secondary' }) {
+  return (
+    <div className="at-stack" style={surface ? { background: 'var(--color-bg-tertiary)', margin: 'calc(var(--spacing-3xl) * -1)', padding: 'var(--spacing-3xl)', borderRadius: 'inherit' } : undefined}>
+      {ALERT_TONES.map((tone, i) => (
+        <Alert key={tone} color={tone} variant={variant} title={ALERT_COPY[tone].title} onClose={() => {}}
+          actions={i < 2 ? <><Button hierarchy="tertiary" size="sm">Dismiss</Button><Button hierarchy="link" size="sm">View details</Button></> : undefined}>
+          {ALERT_COPY[tone].text}
+        </Alert>
+      ))}
+    </div>
+  );
+}
+
+export function AlertSizeDemo() {
   return (
     <div className="at-stack">
-      <Alert color="brand" title="New tokens available" onClose={() => {}} actions={<><Button hierarchy="tertiary" size="sm">Dismiss</Button><Button hierarchy="link" size="sm">View changes</Button></>}>Atomus 4.0 adds brand and radius modes.</Alert>
-      <Alert color="success" title="Changes saved">Your workspace settings are up to date.</Alert>
-      <Alert color="warning" variant="outline" title="Trial ends in 3 days">Add a payment method to keep your projects.</Alert>
-      <Alert color="error" title="Payment failed">Check the card details and try again.</Alert>
+      <Alert size="sm" color="brand" title="Two-factor authentication is off" onClose={() => {}} />
+      <Alert size="sm" color="warning" title="Unsaved changes">Leave this page and your edits are lost.</Alert>
+      <Alert size="sm" color="error" variant="outline" title="Email is already in use" />
+      <Alert size="sm" color="success" variant="solid" title="Published to production" onClose={() => {}} />
     </div>
+  );
+}
+
+export function AlertFlushDemo() {
+  return (
+    <Card title="Billing" supportingText="Plan, invoices and payment method.">
+      <div style={{ margin: '0 calc(var(--spacing-xl) * -1)' }}>
+        <Alert flush color="warning" title="Your card expires next month">Update it before 1 November to avoid interruptions.</Alert>
+      </div>
+    </Card>
   );
 }
 
@@ -164,9 +197,10 @@ export function ProgressDemo() {
 
 export function MetricDemo() {
   return (
-    <div className="at-grid">
+    <div className="at-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))' }}>
       <MetricCard type="simple" label="Active projects" value="128" />
       <MetricCard label="Monthly revenue" value="$48.2k" change="12%" caption="vs last month" />
+      <MetricCard type="chart" label="New signups" value="2,431" change="18%" caption="vs last week" data={[12, 14, 13, 17, 16, 21, 24]} />
       <MetricCard type="chart" label="Churn" value="1.8%" change="-0.4%" caption="vs last month" data={[5, 6, 5.5, 4.8, 4.2, 3.9, 3.4]} />
     </div>
   );
