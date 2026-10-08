@@ -64,7 +64,14 @@
     "figma:check": "node scripts/code-connect-smoke.cjs",
     "figma:publish": "figma connect publish --exit-on-unreadable-files",
     "figma:connect-client": "node scripts/figma-connect-client.mjs",
-    "figma:publish:client": "figma connect publish --config figma.client.config.json --exit-on-unreadable-files"
+    "figma:publish:client": "figma connect publish --config figma.client.config.json --exit-on-unreadable-files",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "build-storybook:docs": "storybook build -o ../sites/docs/public/storybook",
+    "test-storybook": "node scripts/test-storybook.mjs",
+    "test:visual": "playwright test -c tests/playwright.config.ts",
+    "test:visual:update": "playwright test -c tests/playwright.config.ts --update-snapshots",
+    "typecheck:storybook": "tsc -p tsconfig.storybook.json"
   },
   "peerDependencies": {
     "react": ">=18",
@@ -72,11 +79,23 @@
   },
   "devDependencies": {
     "@figma/code-connect": "^2.0.1",
+    "@fontsource/inter": "^5.3.0",
+    "@fontsource/roboto-mono": "^5.3.0",
+    "@playwright/test": "1.56.1",
+    "@storybook/addon-a11y": "^10.6.1",
+    "@storybook/addon-docs": "^10.6.1",
+    "@storybook/addon-mcp": "^10.6.1",
+    "@storybook/react-vite": "^10.6.1",
+    "@storybook/test-runner": "^0.26.0",
+    "@types/node": "^22.20.5",
     "@types/react": "^18.3.3",
     "esbuild": "^0.23.0",
+    "playwright": "1.56.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "storybook": "^10.6.1",
     "tsup": "^8.2.0",
-    "typescript": "^5.5.0"
+    "typescript": "^5.5.0",
+    "vite": "^7.1.12"
   }
 }
