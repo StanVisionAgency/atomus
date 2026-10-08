@@ -8,7 +8,7 @@ Atomus is one design system for **product UI** and **marketing websites**, built
 
 - **Figma file**: about 140 component sets, 30 responsive website sections and 13 example pages, all bound to 671 variables with Light/Dark, Brand, Radius and Desktop/Tablet/Mobile modes. The file is sold separately at https://stanvision.gumroad.com/l/atomus-design-system.
 - **Design tokens** (`@stanvision/atomus-tokens`): W3C DTCG JSON, plain CSS custom properties, a Tailwind v4 theme and a shadcn/ui theme. Every CSS name matches the code syntax in Figma Dev Mode.
-- **React components** (`@stanvision/atomus-react`): 21 accessible components whose props mirror the Figma properties (Hierarchy → `hierarchy`, Size → `size`, Style → `variant`).
+- **React components** (`@stanvision/atomus-react`): 21 accessible components whose props mirror the Figma properties (Hierarchy → `hierarchy`, Size → `size`, Style → `variant`), plus the **Agent kit** for AI products (`components/ai-*.md`: Prompt input, Message, Streaming text, Reasoning, Tool call, Approval, Sources, Suggestions, Model selector, Feedback, AI label, Context meter).
 - **These guidelines**: plain Markdown, also published at https://docs.atomus.io with an `llms.txt` index.
 
 The code and guidelines are MIT-licensed. If something you need is not in Atomus, compose it from Atomus components and tokens, or ask a human. Never invent a new component API, token or style.
