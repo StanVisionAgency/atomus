@@ -110,6 +110,26 @@ import { Button, Card, Input } from '@stanvision/atomus-react';
 | Icon sets | Brand, payment, flag, file-type, folder and integration icons; star rating. | — | `guidelines/components/atomus-icons.md` |
 | Shared assets | Mockups and annotation kit (design files only). | — | `guidelines/components/shared-assets.md` |
 
+### AI (Agent kit)
+
+Components for AI products: chat, copilots and agents. They mark AI content with the AI layer (`--color-bg-ai-subtle`, `--color-border-ai`, `--color-text-ai`, `--gradient-ai`) and take plain props, so they work with any AI SDK.
+
+| Component | Use it for | React | Guideline |
+|---|---|---|---|
+| Conversation | The pattern: header, `role="log"` thread of Messages, welcome state with starters, docked Prompt input. | — (compose the parts) | `guidelines/components/ai-message.md` |
+| Prompt input | The chat composer: auto-growing text, attachments, toolbar slot, Send ↔ Stop, `/` and `@` menus. | `PromptInput` | `guidelines/components/ai-prompt-input.md` |
+| Message | One turn: user, assistant, system or tool; streaming, error and stopped states; copy, regenerate, edit, branches. | `Message` | `guidelines/components/ai-message.md` |
+| Streaming text, Shimmer | A reply that renders as it streams, with a caret and batched announcements; a shimmer for status lines. | `StreamingText`, `Shimmer` | `guidelines/components/ai-streaming-text.md` |
+| Reasoning | A collapsible "Thought for 12s" disclosure with the agent's steps. | `Reasoning` | `guidelines/components/ai-reasoning.md` |
+| Tool call | One function call: name, status, duration, input and output. | `ToolCall` | `guidelines/components/ai-tool-call.md` |
+| Approval | Human-in-the-loop confirmation before an agent acts; risk level, edit then approve, always allow. | `Approval` | `guidelines/components/ai-approval.md` |
+| Sources, Inline citation | Numbered citations with preview cards and the list of sources behind an answer. | `Sources`, `InlineCitation` | `guidelines/components/ai-sources.md` |
+| Suggestions | Follow-up chips and prompt-starter cards that send or insert a prompt. | `Suggestions` | `guidelines/components/ai-suggestions.md` |
+| Model selector | Choosing the AI model, with provider icons and capability badges. | `ModelSelector` | `guidelines/components/ai-model-selector.md` |
+| Feedback | Thumbs up / down on a reply, with a reason form. | `Feedback` | `guidelines/components/ai-feedback.md` |
+| AI label | Marks AI-generated content; explainability popover; "Revert to AI" after edits. | `AILabel` | `guidelines/components/ai-label.md` |
+| Context meter | Context-window usage and cost of a conversation. | `ContextMeter` | `guidelines/components/ai-context-meter.md` |
+
 ## Also called
 
 If a request uses one of these names, use the Atomus component on the right.
@@ -150,6 +170,19 @@ If a request uses one of these names, use the Atomus component on the right.
 | user picture, profile image | Avatar |
 | rating | Star rating |
 | rich text editor, WYSIWYG | Text editor |
+| chatbot, assistant panel, copilot, chat UI, AI chat | Conversation (Message + Prompt input) |
+| composer, chat input, prompt box, prompt bar | Prompt input |
+| chat bubble, AI response, turn | Message |
+| typing indicator, thinking indicator, "Thinking…" | Shimmer (or Reasoning with `status="thinking"`) |
+| chain of thought, thoughts, plan | Reasoning |
+| function call, tool use, tool invocation, MCP tool | Tool call |
+| confirmation (agent), human-in-the-loop, permission prompt | Approval |
+| citations, references, footnotes (AI) | Sources, Inline citation |
+| quick replies, follow-ups, prompt starters, conversation starters | Suggestions |
+| model picker, model switcher, LLM dropdown | Model selector |
+| thumbs up / down, rate response | Feedback |
+| AI badge, sparkle badge, "AI generated" tag | AI label |
+| token counter, usage meter, context window | Context meter |
 
 ## Decision trees
 
@@ -191,6 +224,21 @@ Sizes: `md` in product UI, `sm`/`xs` in tables and toolbars, `lg`/`xl` on market
 5. Is it **product- or account-wide** and shown across the top of every page ("Scheduled maintenance Sunday")? → **Banner** (one at a time).
 6. Is there **no content yet** (first use, no results, cleared inbox)? → **Empty state** in place of the content.
 7. Is it a history of events the user checks later? → **Notifications panel**.
+
+### Which AI component?
+
+1. Does the person **type to the AI**? → **Prompt input**, docked at the bottom of the thread. Put the model choice in its `toolbar` (**Model selector**) and usage in its `actions` (**Context meter**).
+2. Is it **one turn** of the conversation? → **Message** with `role` user, assistant, system or tool. Inside an assistant Message, in the order things happened:
+   - The model is **thinking or planning** → **Reasoning** (`status="thinking"`, then `done` with a duration). For a one-line status ("Searching…") → **Shimmer**.
+   - The agent **called a function** (search, API, MCP tool) → **Tool call**.
+   - The agent wants to **write, send, spend, delete or share** → **Approval** first; run the tool only after Approve. Read-only actions the person asked for need no Approval.
+   - The **answer text** → **Streaming text** while it arrives, plain text afterwards.
+   - The answer **relies on documents or pages** → **Inline citation** after each claim and **Sources** under the answer.
+3. Should the person **rate** the answer? → **Feedback** in the Message `actions` slot.
+4. Should the person **continue** with one tap? → **Suggestions** under the latest answer (`mode="insert"` when they must add details); on an empty thread → `variant="cards"` prompt starters.
+5. Is AI-generated content shown **outside a chat** (a summary, a prefilled field, a table cell)? → **AI label** next to it, with an `explanation`; after the person edits it, `edited` and `onRevert`.
+6. Is it a **person-to-person** chat without AI? → the Messaging guidelines, not the Agent kit.
+7. Never use the AI layer (`--gradient-ai`, `bg-ai-subtle`, `border-ai`, `text-ai`) on content that is not AI.
 
 ### Card or Section?
 
@@ -261,6 +309,18 @@ Card style: `outlined` on white backgrounds, `filled` on grey, `elevated` only w
 | `Table` | `guidelines/components/table.md` | Filter bar is Figma-only: compose it from `Input` (search), `Select` and `Button` above the `Table`. |
 | `DatePicker`, `Calendar` | `guidelines/components/date-time-pickers.md` | — |
 | `AppHeader`, `SidebarNavigation`, `NavItem` | `guidelines/components/navigation.md` | — |
+| `PromptInput` | `guidelines/components/ai-prompt-input.md` | — |
+| `Message` | `guidelines/components/ai-message.md` | Conversation is a pattern, not a component: compose a `role="log"` thread of `Message`s, a welcome state with `Suggestions variant="cards"` and a docked `PromptInput`. |
+| `StreamingText`, `Shimmer` | `guidelines/components/ai-streaming-text.md` | — |
+| `Reasoning` | `guidelines/components/ai-reasoning.md` | — |
+| `ToolCall` | `guidelines/components/ai-tool-call.md` | — |
+| `Approval` | `guidelines/components/ai-approval.md` | — |
+| `Sources`, `InlineCitation` | `guidelines/components/ai-sources.md` | — |
+| `Suggestions` | `guidelines/components/ai-suggestions.md` | — |
+| `ModelSelector` | `guidelines/components/ai-model-selector.md` | — |
+| `Feedback` | `guidelines/components/ai-feedback.md` | — |
+| `AILabel` | `guidelines/components/ai-label.md` | — |
+| `ContextMeter` | `guidelines/components/ai-context-meter.md` | — |
 
 Figma-only guideline files (no React export — never import these components): `atomus-icons`, `breadcrumb`, `button-group`, `charts`, `headers-dividers`, `messaging`, `pagination`, `slideout-command-menu`, `tooltip-popover`, `tree-editor-color-picker`, `shared-assets`.
 
@@ -811,3 +871,441 @@ Figma: Nav item. Renders a link; pass href (or onClick).
 | `collapsed` | `boolean` | — | Figma: Collapsed — icon only, label becomes the tooltip and accessible name |
 
 Also accepts every native `<a>` attribute (`href`, `target`, `onClick` …).
+
+### PromptInput
+
+#### `PromptInput`
+
+Figma: Prompt input — the composer of an AI chat: auto-growing text, attachments, a toolbar slot, send ↔ stop, and "/" or "@" menus. Enter sends, Shift+Enter adds a line, Esc closes a menu.
+
+`import { PromptInput } from '@stanvision/atomus-react';` — source: `react/src/components/ai/PromptInput.tsx`
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| `value` | `string` | — | Figma: Text (controlled) |
+| `defaultValue` | `string` | `''` | Initial text when uncontrolled |
+| `onChange` | `(value: string) => void` | — | Called with the new value. |
+| `onSubmit` | `(text: string, attachments: PromptAttachment[]) => void` | — | Called with the trimmed text and the attachments on Enter or the send button |
+| `onStop` | `() => void` | — | Called by the stop button while `status` is `submitted` or `streaming` |
+| `status` | `'ready' \| 'submitted' \| 'streaming' \| 'error'` | `'ready'` | Figma: State — `submitted` and `streaming` turn Send into Stop and block new submits. |
+| `placeholder` | `string` | `'Ask anything…'` | Figma: Placeholder — a hint, never the label |
+| `label` | `string` | `'Message'` | Accessible name of the text area (visually hidden) |
+| `attachments` | `PromptAttachment[]` | `[]` | Figma: Attachments — chips above the text |
+| `onAttach` | `() => void` | — | Figma: Attach button — shows the paperclip button; open your file picker here |
+| `onRemoveAttachment` | `(id: string) => void` | — | Called by a chip's remove button |
+| `toolbar` | `ReactNode` | — | Figma: Toolbar slot — left of the bottom bar (ModelSelector, tool toggles) |
+| `actions` | `ReactNode` | — | Figma: Actions slot — right of the bottom bar, before Send (ContextMeter, voice) |
+| `triggers` | `PromptTrigger[]` | `[]` | Figma: Command menu — "/" and "@" menus that open while typing |
+| `disclaimer` | `ReactNode` | — | Figma: Disclaimer — one line under the input ("AI can make mistakes. Check important info.") |
+| `minRows` | `number` | `1` | Rows shown when empty |
+| `maxRows` | `number` | `8` | Rows before the text area scrolls |
+| `size` | `'md' \| 'lg'` | `'md'` | Figma: Size — md for side panels, lg for a full-page chat |
+| `disabled` | `boolean` | — | Disables the control. |
+| `autoFocus` | `boolean` | — | Focuses the text area on mount — only on pages whose main task is the chat |
+| `submitLabel` | `string` | `'Send message'` | Accessible name of the send button |
+| `stopLabel` | `string` | `'Stop generating'` | Accessible name of the stop button |
+| `clearOnSubmit` | `boolean` | `true` | Clears the text after submit (uncontrolled only) |
+| `className` | `string` | — | Extra class on the root element (layout only — never restyle colours or sizes). |
+
+Accepts only the props above.
+
+`PromptAttachment`:
+
+| Field | Type | Description |
+|---|---|---|
+| `id` | `string` | Stable key |
+| `name` | `string` | File name shown on the chip |
+| `kind?` | `'file' \| 'image'` | `image` shows `previewUrl` as a thumbnail |
+| `size?` | `string` | Human-readable size ("2.4 MB") |
+| `previewUrl?` | `string` | Thumbnail for images |
+| `status?` | `'uploading' \| 'ready' \| 'error'` | `uploading` shows a spinner; `error` marks the chip |
+
+`PromptTrigger`:
+
+| Field | Type | Description |
+|---|---|---|
+| `char` | `string` | The character that opens the menu: "/" for commands, "@" for mentions |
+| `label?` | `string` | Accessible name of the menu ("Commands", "People") |
+| `items` | `PromptCommand[]` | The menu items, filtered by what is typed after the character |
+| `onSelect?` | `(item: PromptCommand) => void` | Called when an item is chosen (after its text is inserted) |
+
+`PromptCommand`:
+
+| Field | Type | Description |
+|---|---|---|
+| `value` | `string` | Inserted after the trigger character ("summarize" → "/summarize ") |
+| `label` | `string` | Text in the menu |
+| `description?` | `string` | One line under the label |
+| `icon?` | `ReactNode` | Leading icon (16px) |
+| `insert?` | `string` | Exact text to insert instead of trigger + value |
+
+### Message
+
+#### `Message`
+
+Figma: Message — one turn in a conversation. Every message is an `<article>` named by its speaker, so screen-reader users always know who said what (Primer: speaker clarity).
+
+`import { Message } from '@stanvision/atomus-react';` — source: `react/src/components/ai/Message.tsx`
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| `role` | `'user' \| 'assistant' \| 'system' \| 'tool'` | `'assistant'` | Figma: Role — who is speaking. Sets layout, label and default name. |
+| `status` | `'streaming' \| 'done' \| 'error' \| 'stopped'` | `'done'` | Figma: Status — `streaming` keeps the message busy; `error` and `stopped` show an inline notice. |
+| `name` | `string` | — | Figma: Name — the speaker ("You", "Atomus AI", "Research agent"). Always announced to screen readers. |
+| `avatar` | `ReactNode` | — | Figma: Avatar — an Avatar or logo; assistants default to the AI mark. |
+| `showName` | `boolean` | — | Figma: Show name — show the speaker name visually (screen readers always get it). Defaults to true except for user messages. |
+| `aiLabel` | `boolean` | `true` | Figma: AI label — shows the AI label next to an assistant's name. |
+| `time` | `string` | — | Figma: Timestamp — display text ("2:41 PM") |
+| `dateTime` | `string` | — | Machine-readable time (ISO 8601) for the `<time>` element |
+| `children` | `ReactNode` | — | Figma: Content |
+| `copyText` | `string` | — | Plain text of the message for the Copy action; Copy is hidden without it. |
+| `onRegenerate` | `() => void` | — | Figma: Regenerate — assistant messages; also the retry action for `status="error"`. |
+| `onEdit` | `() => void` | — | Figma: Edit — user messages |
+| `branch` | `MessageBranch` | — | Figma: Branch — ‹ 1/3 › switcher between regenerated or edited versions |
+| `actions` | `ReactNode` | — | Extra actions after the built-in ones (e.g. Feedback) |
+| `actionsVisibility` | `'always' \| 'hover'` | `'always'` | Figma: Actions visibility — `always`, or on `hover` and keyboard focus (always shown on touch screens) |
+| `errorMessage` | `ReactNode` | `'Something went wrong while generating this response.'` | Error text for `status="error"` |
+
+Also accepts every native HTML attribute (`id`, `role` …), except `role`, which is replaced above.
+
+`MessageBranch`:
+
+| Field | Type | Description |
+|---|---|---|
+| `index` | `number` | 1-based number of the version shown |
+| `count` | `number` | How many versions exist |
+| `onPrevious?` | `() => void` | Shows the previous version |
+| `onNext?` | `() => void` | Shows the next version |
+
+### StreamingText, Shimmer
+
+#### `StreamingText`
+
+Figma: Streaming text — renders an AI reply as it arrives, with a caret and batched, polite screen-reader announcements. Framework-agnostic: feed it any growing string.
+
+`import { StreamingText } from '@stanvision/atomus-react';` — source: `react/src/components/ai/StreamingText.tsx`
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| `text` | `string` | **required** | The text received so far. Pass the growing string on every chunk; the component only appends. |
+| `streaming` | `boolean` | `false` | Figma: State=Streaming — shows the caret and keeps the region busy for screen readers. |
+| `caret` | `boolean` | `true` | Figma: Caret — blinking caret at the end while streaming (static under reduced motion). |
+| `announce` | `'polite' \| 'end' \| 'off'` | `'polite'` | How screen readers hear the stream (Primer: announce progress, not every token). `polite` (default) — finished sentences in batches, at most every `announceInterval` ms. `end` — only `doneMessage` once the stream ends. `off` — nothing; use when an outer live region already announces the reply. |
+| `announceInterval` | `number` | `1500` | Minimum time between announcements in ms |
+| `doneMessage` | `string` | `'Response complete'` | Announced when the stream ends with `announce="end"` |
+| `render` | `(text: string) => ReactNode` | — | Renders the text (e.g. Markdown). Defaults to plain text with preserved line breaks. |
+
+Also accepts every native `<div>` attribute (`id`, `role`, `onClick` …), except `children`, which is replaced above.
+
+#### `Shimmer`
+
+Figma: Shimmer — a light sweep across status text while the agent works. The sweep uses --gradient-ai and --motion-stream-shimmer-duration; reduced motion shows static text.
+
+`import { Shimmer } from '@stanvision/atomus-react';` — source: `react/src/components/ai/StreamingText.tsx`
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| `children` | `ReactNode` | **required** | Figma: Label — short status text such as "Thinking…" or "Searching the web…" |
+| `active` | `boolean` | `true` | Figma: Animated — when false the text renders static (as under reduced motion). |
+
+Also accepts every native `<span>` attribute (`id`, `title` …).
+
+### Reasoning
+
+#### `Reasoning`
+
+Figma: Reasoning — a collapsible "Thought for 12s" disclosure with the agent's steps. Separates the model's working from its answer (Primer: speaker clarity).
+
+`import { Reasoning } from '@stanvision/atomus-react';` — source: `react/src/components/ai/Reasoning.tsx`
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| `status` | `'thinking' \| 'done'` | `'done'` | Figma: State — `thinking` while the model reasons, `done` afterwards. |
+| `duration` | `number` | — | Figma: Duration — seconds spent thinking; the trigger reads "Thought for 12s". |
+| `steps` | `ReasoningStep[]` | — | Figma: Steps — a short list of what the agent did. |
+| `children` | `ReactNode` | — | Free-form reasoning text (summary or raw thoughts) under the steps. |
+| `label` | `string` | — | Figma: Label — overrides "Thinking…" / "Thought for 12s". |
+| `open` | `boolean` | — | Expanded (controlled) |
+| `defaultOpen` | `boolean` | — | Initial expanded state when uncontrolled. Defaults to open while thinking. |
+| `onOpenChange` | `(open: boolean) => void` | — | Called when the person expands or collapses it |
+| `autoCollapse` | `boolean` | `true` | Collapse automatically when `status` turns `done` (uncontrolled only). |
+| `className` | `string` | — | Extra class on the root element (layout only — never restyle colours or sizes). |
+
+Accepts only the props above.
+
+`ReasoningStep`:
+
+| Field | Type | Description |
+|---|---|---|
+| `id?` | `string` | Stable key; defaults to the index |
+| `label` | `ReactNode` | What the agent did or concluded, in one line |
+| `detail?` | `ReactNode` | Optional supporting detail under the label |
+| `status?` | `'pending' \| 'active' \| 'done'` | `done` (default) · `active` (in progress) · `pending` (planned) |
+
+### ToolCall
+
+#### `ToolCall`
+
+Figma: Tool call — one function call by the agent: name, status, duration, and a disclosure with the input and output. Status changes are announced politely.
+
+`import { ToolCall } from '@stanvision/atomus-react';` — source: `react/src/components/ai/ToolCall.tsx`
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| `name` | `string` | **required** | Figma: Tool name — the function the agent called, shown in monospace (`search_docs`). |
+| `title` | `ReactNode` | — | Figma: Title — what the call does in plain language ("Searched the docs"). Defaults to `name`. |
+| `status` | `'pending' \| 'running' \| 'success' \| 'error'` | `'success'` | Figma: Status |
+| `input` | `unknown` | — | Figma: Input — the arguments. Objects are shown as formatted JSON. |
+| `output` | `unknown` | — | Figma: Output — the result. Objects are shown as formatted JSON. |
+| `error` | `ReactNode` | — | Error message for `status="error"`; shown in place of the output. |
+| `duration` | `number` | — | Figma: Duration — run time in milliseconds |
+| `icon` | `ReactNode` | — | Replaces the wrench icon (e.g. the integration's logo) |
+| `open` | `boolean` | — | Expanded (controlled) |
+| `defaultOpen` | `boolean` | `false` | Initial expanded state when uncontrolled |
+| `onOpenChange` | `(open: boolean) => void` | — | Called when the person expands or collapses it |
+| `className` | `string` | — | Extra class on the root element (layout only — never restyle colours or sizes). |
+
+Accepts only the props above.
+
+### Approval
+
+#### `Approval`
+
+Figma: Approval — human-in-the-loop confirmation before an agent acts. Approve, deny, or edit then approve. The person stays the decision-maker; the outcome stays visible after they decide.
+
+`import { Approval } from '@stanvision/atomus-react';` — source: `react/src/components/ai/Approval.tsx`
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| `title` | `ReactNode` | **required** | Figma: Title — the action as a question: "Send this email to 12 people?" |
+| `children` | `ReactNode` | — | Figma: Summary — what will happen and what it affects, in one or two sentences. |
+| `risk` | `'low' \| 'medium' \| 'high'` | `'medium'` | Figma: Risk — low · medium · high; shown with an icon and a word, never colour alone. |
+| `toolName` | `string` | — | Figma: Tool name — the function that will run (`send_email`). |
+| `details` | `ReactNode` | — | Figma: Details — a preview of what will be sent or changed (read-only). |
+| `editableText` | `string` | — | Figma: Editable — plain text the person may edit before approving ("edit then approve"). |
+| `editLabel` | `string` | `'Edit before approving'` | Label of the editable field |
+| `alwaysAllowLabel` | `string` | — | Figma: Always allow — shows the checkbox with this label ("Always allow send_email in this chat"). |
+| `status` | `'pending' \| 'approved' \| 'denied'` | `'pending'` | Figma: State — `pending` asks; `approved` and `denied` show the outcome in place of the buttons. |
+| `approveLabel` | `string` | `'Approve'` | Figma: Approve label — name the action for high risk ("Delete variables") |
+| `denyLabel` | `string` | `'Deny'` | Figma: Deny label |
+| `onApprove` | `(decision: ApprovalDecision) => void` | — | Called with the decision when the person approves (after any edits) |
+| `onDeny` | `() => void` | — | Called when the person denies; keep the card and set `status="denied"` |
+| `className` | `string` | — | Extra class on the root element (layout only — never restyle colours or sizes). |
+
+Accepts only the props above.
+
+`ApprovalDecision`:
+
+| Field | Type | Description |
+|---|---|---|
+| `alwaysAllow` | `boolean` | The "always allow" checkbox was ticked |
+| `editedText?` | `string` | The edited text, when the person used Edit before approving |
+
+### Sources, InlineCitation
+
+#### `Sources`
+
+Figma: Sources — the numbered list of sources behind an AI answer. Numbers match InlineCitation.
+
+`import { Sources } from '@stanvision/atomus-react';` — source: `react/src/components/ai/Sources.tsx`
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| `sources` | `SourceItem[]` | **required** | Figma: Sources — in citation order; item 1 is citation [1]. |
+| `label` | `string` | — | Figma: Label — the disclosure text; defaults to "N sources". |
+| `variant` | `'collapsible' \| 'list'` | `'collapsible'` | Figma: Style. `collapsible` (default) — a "N sources" disclosure under the answer. `list` — always expanded, for side panels. |
+| `open` | `boolean` | — | Expanded (controlled, `collapsible` only) |
+| `defaultOpen` | `boolean` | `false` | Initial expanded state when uncontrolled |
+| `onOpenChange` | `(open: boolean) => void` | — | Called when the person expands or collapses it |
+| `className` | `string` | — | Extra class on the root element (layout only — never restyle colours or sizes). |
+
+Accepts only the props above.
+
+`SourceItem`:
+
+| Field | Type | Description |
+|---|---|---|
+| `id` | `string` | Stable key |
+| `title` | `string` | Page or document title |
+| `url?` | `string` | Link to the source |
+| `domain?` | `string` | Site shown under the title; derived from `url` when omitted |
+| `snippet?` | `string` | The passage the answer relied on |
+| `icon?` | `ReactNode` | Site icon or file-type icon (16px) |
+
+#### `InlineCitation`
+
+Figma: Inline citation — a numbered chip after a claim. Hover or focus shows a preview card; the chip links to the source. Esc hides the preview.
+
+`import { InlineCitation } from '@stanvision/atomus-react';` — source: `react/src/components/ai/Sources.tsx`
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| `index` | `number` | **required** | Figma: Number — the citation number, matching the source's position in Sources |
+| `source` | `SourceItem` | **required** | The cited source; its title, site and snippet fill the preview card |
+| `className` | `string` | — | Extra class on the root element (layout only — never restyle colours or sizes). |
+
+Accepts only the props above.
+
+`SourceItem`:
+
+| Field | Type | Description |
+|---|---|---|
+| `id` | `string` | Stable key |
+| `title` | `string` | Page or document title |
+| `url?` | `string` | Link to the source |
+| `domain?` | `string` | Site shown under the title; derived from `url` when omitted |
+| `snippet?` | `string` | The passage the answer relied on |
+| `icon?` | `ReactNode` | Site icon or file-type icon (16px) |
+
+### Suggestions
+
+#### `Suggestions`
+
+Figma: Suggestions — follow-up prompts and prompt starters as chips or cards.
+
+`import { Suggestions } from '@stanvision/atomus-react';` — source: `react/src/components/ai/Suggestions.tsx`
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| `suggestions` | `Array<string \| SuggestionItem>` | **required** | Figma: Items — strings or items with a separate prompt, description and icon. |
+| `onSelect` | `(prompt: string, item: SuggestionItem) => void` | — | Called with the chosen prompt and the item. |
+| `mode` | `'send' \| 'insert'` | `'send'` | Figma: Action. `send` (default) — choosing a chip sends the prompt right away. `insert` — puts the prompt into the input so the person can edit it first. |
+| `variant` | `'chips' \| 'cards'` | `'chips'` | Figma: Style. `chips` (default) — one row of pills that scrolls sideways (wraps with `wrap`). `cards` — a grid of prompt starters for a welcome state. |
+| `wrap` | `boolean` | `false` | Chips wrap onto several lines instead of scrolling |
+| `label` | `string` | `'Suggested prompts'` | Accessible name of the group |
+| `className` | `string` | — | Extra class on the root element (layout only — never restyle colours or sizes). |
+
+Accepts only the props above.
+
+`SuggestionItem`:
+
+| Field | Type | Description |
+|---|---|---|
+| `id?` | `string` | Stable key; defaults to the label |
+| `label` | `string` | Text on the chip |
+| `prompt?` | `string` | Prompt to send or insert; defaults to `label` |
+| `description?` | `string` | One line under the label (`cards` variant) |
+| `icon?` | `ReactNode` | Leading icon |
+
+### ModelSelector
+
+#### `ModelSelector`
+
+Figma: Model selector — Select for AI models with provider icon, description and capability badges. The same select-only combobox pattern as Select: ↑ ↓ Home End Enter Esc and type-ahead.
+
+`import { ModelSelector } from '@stanvision/atomus-react';` — source: `react/src/components/ai/ModelSelector.tsx`
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| `models` | `ModelOption[]` | **required** | Figma: Models |
+| `value` | `string` | — | Controlled value. |
+| `defaultValue` | `string` | — | Initial value when uncontrolled. |
+| `onChange` | `(value: string) => void` | — | Called with the new value. |
+| `label` | `string` | `'Model'` | Accessible name; shown only when `showLabel` is set |
+| `showLabel` | `boolean` | `false` | Shows `label` above the trigger (forms and settings) |
+| `variant` | `'ghost' \| 'outline'` | `'ghost'` | Figma: Style. `ghost` (default) — borderless trigger for a prompt toolbar. `outline` — bordered like Select, for settings pages. |
+| `size` | `'sm' \| 'md'` | `'sm'` | Figma: Size — sm 32 · md 40 |
+| `placement` | `'down' \| 'up'` | `'up'` | Which way the list opens; `up` suits a prompt input at the bottom of the screen |
+| `disabled` | `boolean` | — | Disables the control. |
+| `defaultOpen` | `boolean` | — | Start open (docs and tests) |
+| `className` | `string` | — | Extra class on the root element (layout only — never restyle colours or sizes). |
+
+Accepts only the props above.
+
+`ModelOption`:
+
+| Field | Type | Description |
+|---|---|---|
+| `value` | `string` | Model id sent to your backend |
+| `label` | `string` | Display name ("Claude Sonnet 4.5") |
+| `provider?` | `string` | Provider name ("Anthropic"), shown under the label |
+| `icon?` | `ReactNode` | Figma: Provider icon — the provider's logo (16–20px) |
+| `description?` | `string` | One line about when to pick it |
+| `capabilities?` | `string[]` | Figma: Capabilities — short badges such as "Vision", "Tools", "Reasoning", "Fast" |
+| `badge?` | `string` | Badge after the name ("New", "Beta") |
+| `disabled?` | `boolean` | Not selectable (plan, region or availability) |
+
+### Feedback
+
+#### `Feedback`
+
+Figma: Feedback — thumbs up / down on an AI reply, with an optional reason form. Thumbs are toggle buttons (aria-pressed); the form opens in place and takes focus.
+
+`import { Feedback } from '@stanvision/atomus-react';` — source: `react/src/components/ai/Feedback.tsx`
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| `value` | `'up' \| 'down' \| null` | — | Figma: Rating (controlled); null clears it |
+| `defaultValue` | `'up' \| 'down' \| null` | `null` | Initial rating when uncontrolled |
+| `onChange` | `(rating: 'up' \| 'down' \| null) => void` | — | Called on every thumb press |
+| `onSubmit` | `(feedback: FeedbackSubmission) => void` | — | Called when the reason form is sent |
+| `reasons` | `string[]` | `DEFAULT_REASONS` | Figma: Reasons — chips offered after a thumbs down |
+| `positiveReasons` | `string[]` | `[]` | Reasons offered after a thumbs up; no form opens for a thumbs up when empty |
+| `size` | `'xs' \| 'sm'` | `'xs'` | Figma: Size — xs 24 · sm 32 |
+| `className` | `string` | — | Extra class on the root element (layout only — never restyle colours or sizes). |
+
+Accepts only the props above.
+
+`FeedbackSubmission`:
+
+| Field | Type | Description |
+|---|---|---|
+| `rating` | `'up' \| 'down'` | The thumb that was pressed |
+| `reasons` | `string[]` | The reason chips the person picked |
+| `comment` | `string` | Free text, may be empty |
+
+### AILabel
+
+#### `AILabel`
+
+Figma: AI label — marks AI-generated content and is the entry point to explainability. With `explanation` it is a button with a non-modal popover (Esc and outside click close it).
+
+`import { AILabel } from '@stanvision/atomus-react';` — source: `react/src/components/ai/AILabel.tsx`
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| `label` | `string` | `'AI'` | Figma: Label — the visible word. Keep it short: "AI", "AI generated", "Draft by AI". |
+| `size` | `'xs' \| 'sm' \| 'md'` | `'sm'` | Figma: Size — xs 20 · sm 24 · md 28 |
+| `variant` | `'chip' \| 'inline' \| 'icon'` | `'chip'` | Figma: Style. `chip` (default) — tinted pill with the gradient mark. `inline` — mark and text, no fill; for message headers and table cells. `icon` — the mark only; the label stays available to screen readers. |
+| `explanation` | `ReactNode` | — | Figma: Explainability popover. Short, plain-language answer to "why am I seeing this?". When set, the label becomes a button that opens the popover. |
+| `explanationTitle` | `string` | `'About this AI content'` | Figma: Popover title — defaults to "About this AI content". |
+| `model` | `string` | — | Model or agent that produced the content, shown in the popover footer. |
+| `edited` | `boolean` | `false` | Figma: Edited — the person changed the AI content; the label reads "Edited" and loses the AI fill. |
+| `onRevert` | `() => void` | — | Figma: Revert to AI — shows a "Revert to AI" action in the popover (only while `edited`). |
+| `align` | `'start' \| 'end'` | `'start'` | Which edge of the label the popover lines up with; use `end` near the right edge of a layout |
+| `defaultOpen` | `boolean` | — | Start with the popover open (docs and tests) |
+| `className` | `string` | — | Extra class on the root element (layout only — never restyle colours or sizes). |
+
+Accepts only the props above.
+
+### ContextMeter
+
+#### `ContextMeter`
+
+Figma: Context meter — how much of the model's context window a conversation uses, and what it cost. A WAI-ARIA meter; the compact variant is a button that opens the details.
+
+`import { ContextMeter } from '@stanvision/atomus-react';` — source: `react/src/components/ai/ContextMeter.tsx`
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| `used` | `number` | **required** | Figma: Used — tokens in the context window now |
+| `limit` | `number` | **required** | Figma: Limit — the model's context window in tokens |
+| `cost` | `number` | — | Figma: Cost — spend for this conversation, in `currency` |
+| `currency` | `string` | `'USD'` | ISO 4217 currency of `cost` |
+| `breakdown` | `ContextUsagePart[]` | — | Optional split of `used` (input, output, cached …) shown in the details |
+| `label` | `string` | `'Context window'` | Name of the meter |
+| `variant` | `'compact' \| 'bar'` | `'compact'` | Figma: Style. `compact` (default) — a ring and percentage for a prompt toolbar; details open on click. `bar` — label, bar and numbers inline, for side panels and settings. |
+| `warnAt` | `number` | `80` | Percentage at which the meter turns warning; error from 95% |
+| `locale` | `string` | — | BCP 47 locale for numbers |
+| `placement` | `'up' \| 'down'` | `'up'` | Which way the compact details open; `up` suits a prompt input at the bottom of the screen |
+| `defaultOpen` | `boolean` | — | Start with the compact details open (docs and tests) |
+| `className` | `string` | — | Extra class on the root element (layout only — never restyle colours or sizes). |
+
+Accepts only the props above.
+
+`ContextUsagePart`:
+
+| Field | Type | Description |
+|---|---|---|
+| `label` | `string` | "Input", "Output", "Cached", "Tools" … |
+| `tokens` | `number` | Tokens in this part |
