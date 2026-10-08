@@ -1,0 +1,50 @@
+---
+// Type-scale specimen: every text style rendered with its real CSS class from atomus.css,
+// so size, weight and line height are the shipped values (and shrink at the tablet/mobile breakpoints).
+import CopyToken from './CopyToken.astro';
+interface Row { style: string; cls: string; desktop: string; tablet: string; mobile: string; weight: string; use?: string }
+interface Props { rows: Row[] }
+const { rows } = Astro.props;
+const groups: { name: string; rows: Row[] }[] = [];
+for (const r of rows) {
+  const g = r.style.split('/')[0];
+  const last = groups[groups.length - 1];
+  if (last && last.name === g) last.rows.push(r); else groups.push({ name: g, rows: [r] });
+}
+const sample = (r: Row) => {
+  const n = r.style.toLowerCase();
+  if (n.includes('code')) return 'const theme = "dark";';
+  if (n.includes('metric')) return '$48.2k';
+  if (n.includes('overline') || n.includes('eyebrow') || n.includes('subtitle')) return 'Design system';
+  if (n.includes('button')) return 'Save changes';
+  if (n.includes('input')) return 'you@company.com';
+  if (n.includes('caption')) return 'Caption text';
+  if (/huge|h1|display/.test(n)) return 'Build faster';
+  if (/h2|heading xl|title/.test(n)) return 'One system';
+  if (/h3|h4|heading lg|heading md/.test(n)) return 'Design that scales';
+  if (/body|small|tiny|micro|quote/.test(n)) return 'Atomus keeps product UI and marketing websites in one design language.';
+  return 'The quick brown fox jumps over the lazy dog';
+};
+---
+<div class="fd-type not-content">
+  {groups.map((g) => (
+    <section class="fd-type__group">
+      <h3 class="fd-type__group-title">{g.name}</h3>
+      {g.rows.map((r) => (
+        <div class="fd-type__row">
+          <div class="fd-type__meta">
+            <strong>{r.style}</strong>
+            <CopyToken token={r.cls} />
+            <dl>
+              <div><dt>Desktop</dt><dd>{r.desktop}</dd></div>
+              {r.tablet !== r.desktop || r.mobile !== r.desktop ? <><div><dt>Tablet</dt><dd>{r.tablet}</dd></div><div><dt>Mobile</dt><dd>{r.mobile}</dd></div></> : null}
+              <div><dt>Weight</dt><dd>{r.weight}</dd></div>
+            </dl>
+            {r.use ? <span class="fd-type__use">{r.use}</span> : null}
+          </div>
+          <div class="fd-type__sample"><p class={r.cls.replace(/^\./, '')}>{sample(r)}</p></div>
+        </div>
+      ))}
+    </section>
+  ))}
+</div>

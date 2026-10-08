@@ -1,0 +1,25 @@
+---
+// Font family specimens with the weights Atomus uses.
+const families = [
+  { name: 'Inter Display', token: '--font-family-title', role: 'Headlines', css: 'var(--font-family-title)', weights: [[500, 'Medium'], [600, 'Semi Bold'], [700, 'Bold']] },
+  { name: 'Inter', token: '--font-family-body', role: 'Body and UI', css: 'var(--font-family-body)', weights: [[300, 'Light'], [400, 'Regular'], [500, 'Medium'], [600, 'Semi Bold'], [700, 'Bold']] },
+  { name: 'Roboto Mono', token: '.text-components-code', role: 'Code and tokens', css: '"Roboto Mono", ui-monospace, monospace', weights: [[400, 'Regular'], [500, 'Medium']] },
+] as const;
+---
+<div class="fd-fonts not-content">
+  {families.map((f) => (
+    <article class="fd-font" style={`font-family:${f.css}`}>
+      <div class="fd-font__head">
+        <span class="fd-font__aa" aria-hidden="true">Aa</span>
+        <div>
+          <h3 class="fd-font__name">{f.name}</h3>
+          <p class="fd-font__role">{f.role} · <code>{f.token}</code></p>
+        </div>
+      </div>
+      <p class="fd-font__glyphs">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br />abcdefghijklmnopqrstuvwxyz<br />0123456789 &amp;@$%?!</p>
+      <ul class="fd-font__weights">
+        {f.weights.map(([w, label]) => <li style={`font-weight:${w}`}><span>{label}</span><code>{w}</code></li>)}
+      </ul>
+    </article>
+  ))}
+</div>

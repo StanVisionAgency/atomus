@@ -1,0 +1,39 @@
+---
+// Spacing, layout and size tokens as bars. Bars use the live CSS variable, so they show the value
+// of the current breakpoint; the table text keeps all three values.
+import CopyToken from './CopyToken.astro';
+interface Row { token: string; desktop: string; tablet: string; mobile: string; use: string }
+interface Props { rows: Row[] }
+const { rows } = Astro.props;
+const groups: { use: string; rows: Row[] }[] = [];
+for (const r of rows) {
+  const last = groups[groups.length - 1];
+  if (last && last.use === r.use) last.rows.push(r); else groups.push({ use: r.use, rows: [r] });
+}
+const shape = (t: string) => (/^--(icon|size)-/.test(t) ? 'square' : 'bar');
+---
+<div class="fd-space not-content">
+  {groups.map((g) => (
+    <section class="fd-space__group">
+      <h3 class="fd-space__title">{g.use.charAt(0).toUpperCase() + g.use.slice(1)}</h3>
+      <div class="fd-table-wrap">
+        <table class="fd-space__table">
+          <thead><tr><th scope="col">Token</th><th scope="col">Desktop</th><th scope="col">Tablet</th><th scope="col">Mobile</th><th scope="col" class="fd-space__vis-h">Preview</th></tr></thead>
+          <tbody>
+            {g.rows.map((r) => (
+              <tr>
+                <th scope="row"><CopyToken token={r.token} /></th>
+                <td>{r.desktop}</td><td>{r.tablet}</td><td>{r.mobile}</td>
+                <td class="fd-space__vis">
+                  {shape(r.token) === 'square'
+                    ? <span class="fd-space__square" style={`width:var(${r.token});height:var(${r.token})`}></span>
+                    : <span class="fd-space__bar" style={`width:var(${r.token})`}></span>}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  ))}
+</div>

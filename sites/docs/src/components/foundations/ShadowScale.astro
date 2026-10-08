@@ -1,0 +1,21 @@
+---
+// Elevation shadows as cards. The card uses the live variable (Light or Dark value follows the theme);
+// the literal Light/Dark values from css/atomus.css stay in the HTML.
+import CopyToken from './CopyToken.astro';
+import { shadows } from '../../lib/tokens';
+const use = (l: number) => (l <= 2 ? 'Cards' : l <= 4 ? 'Dropdowns, popovers' : l <= 8 ? 'Drawers, modals' : 'Marketing visuals');
+---
+<div class="fd-shadows not-content">
+  {shadows().map((s) => (
+    <figure class="fd-shadow">
+      <div class="fd-shadow__card" style={`box-shadow:var(${s.token})`}>
+        <span class="fd-shadow__level">{s.level}</span>
+        <span class="fd-shadow__use">{use(s.level)}</span>
+      </div>
+      <figcaption>
+        <CopyToken token={s.token} />
+        <details><summary>Values</summary><p><b>Light</b> <code>{s.light}</code></p><p><b>Dark</b> <code>{s.dark}</code></p></details>
+      </figcaption>
+    </figure>
+  ))}
+</div>

@@ -1,0 +1,21 @@
+---
+// Focus rings and backdrop blur, drawn with the live tokens.
+import CopyToken from './CopyToken.astro';
+interface Props { kind: 'focus' | 'blur' }
+const { kind } = Astro.props;
+---
+{kind === 'focus' ? (
+  <div class="fd-effects not-content">
+    <figure class="fd-effect"><div class="fd-effect__stage"><span class="fd-focus">Focused input</span></div><figcaption><CopyToken token="--shadow-focus-ring" /><span>+ <code>--color-border-brand</code></span></figcaption></figure>
+    <figure class="fd-effect"><div class="fd-effect__stage"><span class="fd-focus fd-focus--error">Invalid input</span></div><figcaption><CopyToken token="--shadow-focus-ring-error" /><span>+ <code>--color-border-error</code></span></figcaption></figure>
+  </div>
+) : (
+  <div class="fd-effects not-content">
+    {[['sm', 8], ['md', 16], ['lg', 24], ['xl', 40]].map(([n, px]) => (
+      <figure class="fd-effect">
+        <div class="fd-effect__stage fd-effect__stage--blur"><span class="fd-blob"></span><span class="fd-blob fd-blob--2"></span><span class="fd-glass" style={`backdrop-filter:blur(${px}px);-webkit-backdrop-filter:blur(${px}px)`}>{px}px</span></div>
+        <figcaption><span>Effect style <code>Blur/Backdrop {n}</code></span><code>backdrop-filter: blur({px}px)</code></figcaption>
+      </figure>
+    ))}
+  </div>
+)}

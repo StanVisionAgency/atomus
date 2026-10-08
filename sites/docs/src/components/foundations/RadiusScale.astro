@@ -1,0 +1,23 @@
+---
+// Radius tokens as rounded tiles, one per radius mode.
+import CopyToken from './CopyToken.astro';
+interface Row { token: string; default: string; sharp: string; round: string }
+interface Props { rows: Row[] }
+const { rows } = Astro.props;
+const px = (v: string) => (+v >= 999 ? 9999 : +v);
+---
+<div class="fd-radius not-content">
+  {rows.map((r) => (
+    <div class="fd-radius__item">
+      <div class="fd-radius__tiles">
+        {(['default', 'sharp', 'round'] as const).map((m) => (
+          <figure class="fd-radius__tile">
+            <span style={`border-top-left-radius:${Math.min(px(r[m]), 64)}px`}></span>
+            <figcaption>{m === 'default' ? 'Default' : m === 'sharp' ? 'Sharp' : 'Round'} <b>{+r[m] >= 999 ? 'full' : r[m]}</b></figcaption>
+          </figure>
+        ))}
+      </div>
+      <CopyToken token={r.token} />
+    </div>
+  ))}
+</div>
