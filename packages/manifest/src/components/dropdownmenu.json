@@ -1,0 +1,88 @@
+{
+  "name": "DropdownMenu",
+  "kind": "component",
+  "status": "stable",
+  "since": "4.0.0",
+  "category": "Overlays",
+  "import": "import { DropdownMenu } from '@stanvision/atomus-react';",
+  "source": "react/src/components/Menu.tsx",
+  "purpose": "A short list of actions from a trigger.",
+  "description": "Floating menu; items live in a slot.",
+  "aliases": ["dropdown (runs actions)","kebab menu","overflow menu","action menu","right-click menu"],
+  "alternative": null,
+  "native": {"elements":[],"omit":[],"ref":false},
+  "props": {
+    "trigger": {
+      "type": "ReactElement",
+      "default": null,
+      "required": true,
+      "figma": null,
+      "notes": "The element that opens the menu, usually a Button"
+    },
+    "items": {"type":"DropdownItem[]","default":null,"required":true,"figma":"Items slot","notes":"Figma: Items slot"},
+    "align": {
+      "type": "'start' | 'end'",
+      "values": ["start","end"],
+      "default": "start",
+      "required": false,
+      "figma": null,
+      "notes": null
+    },
+    "size": {"type":"'sm' | 'md'","values":["sm","md"],"default":"sm","required":false,"figma":null,"notes":null},
+    "label": {"type":"string","default":null,"required":false,"figma":null,"notes":"Accessible name for the menu"},
+    "defaultOpen": {"type":"boolean","default":null,"required":false,"figma":null,"notes":"Start open (docs and tests)"},
+    "className": {"type":"string","default":null,"required":false,"figma":null,"notes":null}
+  },
+  "rules": {
+    "do": [
+      "Dropdown menu: Drop Menu items into the Items slot.",
+      "Dropdown menu: Group related items with separators and headings.",
+      "Dropdown menu: Show keyboard shortcuts for power users.",
+      "Context menu: Mirror actions that also exist elsewhere in the UI; put destructive items last, in red.",
+      "Put destructive actions last, after a separator."
+    ],
+    "dont": ["Don't use it to pick a value — that's Select."],
+    "forbidden": [
+      "Dropdown menu: Never exceed about ten items — use Command menu.",
+      "Dropdown menu: Never put forms inside menus.",
+      "Dropdown menu: Never run a destructive item without a confirmation.",
+      "Context menu: Never hide an action only in a context menu."
+    ]
+  },
+  "examples": [
+    {
+      "title": "Usage",
+      "code": "import { DropdownMenu, MenuItem } from '@stanvision/atomus-react';\n\n<DropdownMenu\n  label=\"Project actions\"\n  trigger={<Button hierarchy=\"outline\">Actions</Button>}\n  items={[\n    { label: 'Rename', shortcut: '⌘R', onSelect: rename },\n    { type: 'separator' },\n    { label: 'Delete', destructive: true, onSelect: remove },\n  ]}\n/>",
+      "language": "tsx",
+      "source": "sites/docs/src/component-pages/dropdown-menu.mdx"
+    }
+  ],
+  "figma": {
+    "componentSet": ["Dropdown menu","Context menu"],
+    "fileKey": "bC42e82J3PYg2LMkryodIA",
+    "nodeIds": ["25419:934"],
+    "nodes": [
+      {
+        "componentSet": "Dropdown menu",
+        "nodeId": "25419:934",
+        "codeConnectId": "DropdownMenu",
+        "staticProps": "label=\"Actions\" trigger={<Button hierarchy=\"outline\">Actions</Button>}",
+        "mappings": []
+      }
+    ],
+    "codeConnect": true,
+    "variants": 3,
+    "properties": [
+      {"componentSet":"Dropdown menu","name":"Items","type":"slot (any content)"},
+      {"componentSet":"Context menu","name":"Type","type":"variant","options":["Default","Submenu open"]}
+    ],
+    "docs": "https://docs.atomus.io/components/dropdown-menu/"
+  },
+  "docs": "https://docs.atomus.io/components/dropdown-menu/",
+  "related": ["MenuItem"],
+  "a11y": {
+    "element": "menu",
+    "requiresLabel": false,
+    "notes": ["`label`: Accessible name for the menu","Show keyboard shortcuts for power users."]
+  }
+}

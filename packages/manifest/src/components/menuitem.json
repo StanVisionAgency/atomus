@@ -1,0 +1,121 @@
+{
+  "name": "MenuItem",
+  "kind": "component",
+  "status": "stable",
+  "since": "4.0.0",
+  "category": "Overlays",
+  "import": "import { MenuItem } from '@stanvision/atomus-react';",
+  "source": "react/src/components/Menu.tsx",
+  "purpose": "A short list of actions from a trigger.",
+  "description": "Row for dropdowns, selects, context and command menus.",
+  "aliases": [],
+  "alternative": null,
+  "native": {"elements":[],"omit":[],"ref":false},
+  "props": {
+    "label": {"type":"ReactNode","default":null,"required":true,"figma":"Label","notes":"Figma: Label"},
+    "icon": {
+      "type": "ReactNode",
+      "default": null,
+      "required": false,
+      "figma": "Leading icon + Leading icon swap",
+      "notes": "Figma: Leading icon + Leading icon swap"
+    },
+    "shortcut": {
+      "type": "string",
+      "default": null,
+      "required": false,
+      "figma": "Shortcut + Shortcut text",
+      "notes": "Figma: Shortcut + Shortcut text"
+    },
+    "size": {
+      "type": "'sm' | 'md'",
+      "values": ["sm","md"],
+      "default": "sm",
+      "required": false,
+      "figma": "Size",
+      "notes": "Figma: Size — sm 32 · md 40"
+    },
+    "selected": {
+      "type": "boolean",
+      "default": null,
+      "required": false,
+      "figma": "State=Selected",
+      "notes": "Figma: State=Selected — shows a check"
+    },
+    "disabled": {"type":"boolean","default":null,"required":false,"figma":null,"notes":null},
+    "destructive": {
+      "type": "boolean",
+      "default": null,
+      "required": false,
+      "figma": null,
+      "notes": "Red label for destructive actions (Context menu)"
+    },
+    "onSelect": {"type":"() => void","default":null,"required":false,"figma":null,"notes":null},
+    "role": {
+      "type": "'menuitem' | 'option' | 'menuitemcheckbox'",
+      "values": ["menuitem","option","menuitemcheckbox"],
+      "default": "menuitem",
+      "required": false,
+      "figma": null,
+      "notes": null
+    },
+    "id": {"type":"string","default":null,"required":false,"figma":null,"notes":null},
+    "active": {"type":"boolean","default":null,"required":false,"figma":null,"notes":null}
+  },
+  "rules": {
+    "do": ["Put destructive actions last, after a separator."],
+    "dont": ["Don't use it to pick a value — that's Select."],
+    "forbidden": []
+  },
+  "examples": [],
+  "figma": {
+    "componentSet": ["Menu item"],
+    "fileKey": "bC42e82J3PYg2LMkryodIA",
+    "nodeIds": ["25419:933"],
+    "nodes": [
+      {
+        "componentSet": "Menu item",
+        "nodeId": "25419:933",
+        "codeConnectId": "MenuItem",
+        "mappings": [
+          {"figma":"Label","kind":"text","prop":"label"},
+          {
+            "figma": "Leading icon swap",
+            "prop": "icon",
+            "kind": "instance",
+            "notes": "instance.getInstanceSwap('Leading icon swap')?.executeTemplate().example",
+            "visibleWhen": "Leading icon"
+          },
+          {"figma":"Shortcut text","prop":"shortcut","kind":"text","visibleWhen":"Shortcut"},
+          {"figma":"Size","prop":"size","kind":"enum","values":{"sm":"sm","md":"md"}},
+          {"figma":"State","prop":"selected","kind":"flag","when":"Selected"},
+          {"figma":"State","prop":"disabled","kind":"flag","when":"Disabled"}
+        ]
+      }
+    ],
+    "codeConnect": true,
+    "variants": 8,
+    "properties": [
+      {"componentSet":"Menu item","name":"Label","type":"text"},
+      {"componentSet":"Menu item","name":"Leading icon","type":"boolean (on)"},
+      {"componentSet":"Menu item","name":"Leading icon swap","type":"instance swap (icon)"},
+      {"componentSet":"Menu item","name":"Shortcut","type":"boolean (off)"},
+      {"componentSet":"Menu item","name":"Shortcut text","type":"text"},
+      {"componentSet":"Menu item","name":"Size","type":"variant","options":["sm","md"]},
+      {
+        "componentSet": "Menu item",
+        "name": "State",
+        "type": "variant",
+        "options": ["Default","Hover","Selected","Disabled"]
+      }
+    ],
+    "docs": "https://docs.atomus.io/components/dropdown-menu/"
+  },
+  "docs": "https://docs.atomus.io/components/dropdown-menu/",
+  "related": ["DropdownMenu"],
+  "a11y": {
+    "element": "menuitem",
+    "requiresLabel": false,
+    "notes": ["`label`: Figma: Label","`destructive`: Red label for destructive actions (Context menu)"]
+  }
+}
