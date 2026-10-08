@@ -1,0 +1,142 @@
+{
+  "name": "ToolCall",
+  "kind": "component",
+  "status": "stable",
+  "since": "4.0.0",
+  "category": "AI (Agent kit)",
+  "import": "import { ToolCall } from '@stanvision/atomus-react';",
+  "source": "react/src/components/ai/ToolCall.tsx",
+  "purpose": "One function call: name, status, duration, input and output.",
+  "description": "One function call by the agent: a plain-language title, the function name in monospace, a status pill, the run time, and a disclosure with the input and output as formatted code. Part of the Agent kit.",
+  "aliases": ["function call","tool use","tool invocation","MCP tool"],
+  "alternative": null,
+  "native": {"elements":[],"omit":[],"ref":false},
+  "props": {
+    "name": {
+      "type": "string",
+      "default": null,
+      "required": true,
+      "figma": "Tool name",
+      "notes": "Figma: Tool name — the function the agent called, shown in monospace (`search_docs`)."
+    },
+    "title": {
+      "type": "ReactNode",
+      "default": null,
+      "required": false,
+      "figma": "Title",
+      "notes": "Figma: Title — what the call does in plain language (\"Searched the docs\"). Defaults to `name`."
+    },
+    "status": {
+      "type": "'pending' | 'running' | 'success' | 'error'",
+      "values": ["pending","running","success","error"],
+      "default": "success",
+      "required": false,
+      "figma": "Status",
+      "notes": "Figma: Status"
+    },
+    "input": {
+      "type": "unknown",
+      "default": null,
+      "required": false,
+      "figma": "Input",
+      "notes": "Figma: Input — the arguments. Objects are shown as formatted JSON."
+    },
+    "output": {
+      "type": "unknown",
+      "default": null,
+      "required": false,
+      "figma": "Output",
+      "notes": "Figma: Output — the result. Objects are shown as formatted JSON."
+    },
+    "error": {
+      "type": "ReactNode",
+      "default": null,
+      "required": false,
+      "figma": null,
+      "notes": "Error message for `status=\"error\"`; shown in place of the output."
+    },
+    "duration": {
+      "type": "number",
+      "default": null,
+      "required": false,
+      "figma": "Duration",
+      "notes": "Figma: Duration — run time in milliseconds"
+    },
+    "icon": {
+      "type": "ReactNode",
+      "default": null,
+      "required": false,
+      "figma": null,
+      "notes": "Replaces the wrench icon (e.g. the integration's logo)"
+    },
+    "open": {"type":"boolean","default":null,"required":false,"figma":null,"notes":"Expanded (controlled)"},
+    "defaultOpen": {
+      "type": "boolean",
+      "default": false,
+      "required": false,
+      "figma": null,
+      "notes": "Initial expanded state when uncontrolled"
+    },
+    "onOpenChange": {
+      "type": "(open: boolean) => void",
+      "default": null,
+      "required": false,
+      "figma": null,
+      "notes": "Called when the person expands or collapses it"
+    },
+    "className": {"type":"string","default":null,"required":false,"figma":null,"notes":null}
+  },
+  "rules": {
+    "do": [
+      "Write the title as what happened (\"Searched the docs\"), and keep the function name as a secondary label.",
+      "Collapse calls by default; open the one that failed.",
+      "Give an error a cause and a next step (\"Reconnect Linear and try again\")."
+    ],
+    "dont": [],
+    "forbidden": [
+      "Never show secrets, tokens or personal data in the input or output — redact them first.",
+      "Never hide a failed tool call; keep it in the thread."
+    ]
+  },
+  "examples": [
+    {
+      "title": "Usage",
+      "code": "import { ToolCall } from '@stanvision/atomus-react';\n\n<ToolCall\n  name=\"search_docs\"\n  title=\"Searched the docs\"\n  status=\"success\"            // 'pending' | 'running' | 'success' | 'error'\n  duration={420}\n  input={{ query: 'card border token' }}\n  output={{ results: 3 }}\n/>",
+      "language": "tsx",
+      "source": "sites/docs/src/component-pages/ai-tool-call.mdx"
+    }
+  ],
+  "figma": {
+    "componentSet": ["Tool call"],
+    "fileKey": null,
+    "nodeIds": [],
+    "nodes": [],
+    "codeConnect": false,
+    "variants": null,
+    "properties": [
+      {"componentSet":"Tool call","name":"Title","type":"text"},
+      {"componentSet":"Tool call","name":"Tool name","type":"text"},
+      {
+        "componentSet": "Tool call",
+        "name": "Status",
+        "type": "variant",
+        "options": ["Pending","Running","Success","Error"]
+      },
+      {"componentSet":"Tool call","name":"Duration","type":"number (ms)"},
+      {"componentSet":"Tool call","name":"Input","type":"code"},
+      {"componentSet":"Tool call","name":"Output","type":"code"},
+      {"componentSet":"Tool call","name":"Expanded","type":"boolean"},
+      {"componentSet":"Tool call","name":"Icon","type":"instance swap (integration logo)"}
+    ],
+    "docs": "https://docs.atomus.io/components/ai-tool-call/"
+  },
+  "docs": "https://docs.atomus.io/components/ai-tool-call/",
+  "related": [],
+  "a11y": {
+    "element": null,
+    "requiresLabel": false,
+    "notes": [
+      "Write the title as what happened (\"Searched the docs\"), and keep the function name as a secondary label."
+    ]
+  }
+}
