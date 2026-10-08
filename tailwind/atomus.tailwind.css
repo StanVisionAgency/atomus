@@ -458,5 +458,9 @@
 @utility text-on-warning { color: var(--color-text-on-warning); }
 @utility fg-on-warning { color: var(--color-fg-on-warning); }
 @utility fill-fg-on-warning { fill: var(--color-fg-on-warning); }
+@utility fg-contrast { color: var(--color-fg-contrast); }
+@utility fill-fg-contrast { fill: var(--color-fg-contrast); }
+@utility fg-contrast-inverse { color: var(--color-fg-contrast-inverse); }
+@utility fill-fg-contrast-inverse { fill: var(--color-fg-contrast-inverse); }
 @utility ring-focus { box-shadow: var(--shadow-focus-ring); }
 @utility ring-focus-error { box-shadow: var(--shadow-focus-ring-error); }
