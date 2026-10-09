@@ -1,6 +1,6 @@
 {
   "codeConnect": {
-    "include": ["src/components/*.figma.ts"],
+    "include": ["src/components/*.figma.ts", "src/components/ai/*.figma.ts"],
     "label": "React",
     "language": "jsx",
     "documentUrlSubstitutions": {
