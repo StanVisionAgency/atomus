@@ -98,6 +98,48 @@ const cases = [
   ['25430-2200', 'Calendar range', { name: 'Calendar', props: { Type: 'Range' } }],
   ['25419-14605', 'Checkbox indeterminate', { name: 'Checkbox', props: { 'Show label': true, Label: 'Accept', 'Show description': false, Description: 'd', Size: 'md', Checked: 'Indeterminate', State: 'Default' } }],
 ];
+
+// Agent kit (react/src/components/ai)
+const suggestion = (label, extra = {}) => ({ name: 'Suggestion', cc: 'Suggestion', node: '25545-252', props: { Label: label, Description: 'One line', 'Show icon': false, Icon: icon('icon/shield'), Style: 'Chip', Action: 'Send', ...extra } });
+const sourceItem = (n, title) => ({ name: 'Source item', cc: 'SourceItem', node: '25547-794', props: { Number: String(n), Title: title, Domain: 'w3.org', Snippet: 'A placeholder is not a label.', 'Show snippet': true, Link: true, 'Site icon': icon('icon/globe') } });
+const step = (label, status, detail) => ({ name: 'Reasoning step', cc: 'ReasoningStep', node: '25548-901', props: { Label: label, Detail: detail || 'd', 'Show detail': !!detail, Status: status } });
+const modelOption = (name, state, desc, badge) => ({ name: 'Model option', cc: 'ModelOption', node: '25546-397', props: { Name: name, Description: desc, Badge: !!badge, 'Badge label': badge || 'New', Capabilities: true, State: state, 'Provider icon': icon('AI mark') } });
+const attachment = (name, status) => ({ name: 'Attachment', cc: 'PromptAttachment', node: '25553-1183', props: { Name: name, Status: status, Removable: true, Thumb: icon('icon/file'), ...(status === 'Ready' ? { Size: '2.4 MB' } : {}) } });
+const slotChild = (name) => ({ name, props: {} });
+cases.push(
+  ['25553-1955', 'PromptInput (streaming, attachments, commands)', { name: 'Prompt input', props: { Size: 'md', State: 'Streaming', Placeholder: 'Ask anything…', 'Show placeholder': false, Text: 'Audit our checkout page', 'Show text': true, 'Show attachments': true, 'Command menu': true, 'Attach button': true, Disclaimer: 'AI can make mistakes. Check important info.', 'Show disclaimer': true },
+    children: [{ ...menuItem('Audit a page', { Shortcut: true, 'Shortcut text': '/audit' }), parentFrames: ['Command menu'] }],
+    slots: { Attachments: [attachment('checkout-audit.pdf', 'Ready'), attachment('contrast.png', 'Uploading')], Toolbar: [slotChild('Model selector')], Actions: [slotChild('Context meter')] } }],
+  ['25552-1473', 'Message (assistant, done)', { name: 'Message', props: { Role: 'Assistant', Status: 'Done', 'Actions visibility': 'Always', Name: 'Atomus Assistant', 'Show name': true, 'AI label': true, Timestamp: '2:41 PM', 'Show timestamp': true, Copy: true, Regenerate: true, Feedback: true, Branch: true, 'Branch count': '2/3', Avatar: icon('Message avatar') }, slots: { Content: [slotChild('Text')] } }],
+  ['25552-1473', 'Message (user, hover)', { name: 'Message', props: { Role: 'User', Status: 'Done', 'Actions visibility': 'Hover', Name: 'Kristina', 'Show name': false, Timestamp: '2:41 PM', 'Show timestamp': true, Copy: true, Edit: true, Branch: false, 'Branch count': '1/1' }, slots: { Content: [slotChild('Text')] } }],
+  ['25552-1473', 'Message (assistant, error)', { name: 'Message', props: { Role: 'Assistant', Status: 'Error', 'Actions visibility': 'Always', Name: 'Atomus Assistant', 'Show name': true, 'AI label': true, Timestamp: '2:41 PM', 'Show timestamp': false, Copy: false, Branch: false, 'Branch count': '1/1', 'Error message': 'The model is overloaded.' }, slots: { Content: [] } }],
+  ['25552-1473', 'Message (system)', { name: 'Message', props: { Role: 'System', Status: 'Done', 'Actions visibility': 'Always', 'System text': 'Model switched to Atomus Fast' } }],
+  ['25544-55', 'StreamingText', { name: 'Streaming text', props: { Text: 'Checking the token files', State: 'Streaming', Announce: 'Off', Caret: true } }],
+  ['25544-34', 'Shimmer', { name: 'Shimmer', props: { Label: 'Thinking…', Animated: true } }],
+  ['25548-978', 'Reasoning (done, open)', { name: 'Reasoning', props: { State: 'Done', Expanded: 'True', Label: 'Thought for 12s', Steps: true, Summary: 'Three issues found.', 'Show summary': true },
+    children: [step('Load the page', 'Done'), step('Run axe-core', 'Done', '68 rules · 3 violations')] }],
+  ['25548-978', 'Reasoning (thinking, collapsed)', { name: 'Reasoning', props: { State: 'Thinking', Expanded: 'False' } }],
+  ['25548-1134', 'ToolCall (success, open)', { name: 'Tool call', props: { Status: 'Success', Expanded: 'True', Title: 'Audited checkout.atomus.io', 'Tool name': 'run_axe_audit', 'Show tool name': true, Duration: '1.5s', 'Show duration': true, Input: '{\n  "url": "https://checkout.atomus.io"\n}', Output: '{\n  "violations": 3\n}', Icon: icon('icon/wrench') } }],
+  ['25548-1134', 'ToolCall (error, collapsed)', { name: 'Tool call', props: { Status: 'Error', Expanded: 'False', Title: 'Filing issues', 'Tool name': 'linear.create_issues', 'Show tool name': true, Duration: '320ms', 'Show duration': true, Icon: icon('icon/wrench') } }],
+  ['25550-1196', 'Approval (high, pending)', { name: 'Approval', props: { Risk: 'High', State: 'Pending', Title: 'Delete 214 unused variables?', 'Tool name': 'figma.delete_variables', 'Show tool name': true, Summary: 'This cannot be undone.', 'Show summary': true, 'Show details': true, 'Always allow': true, Editable: false },
+    children: [{ name: 'Always allow', props: { Label: 'Always allow in this chat' } }, button('Keep', 'Tertiary'), { ...button('Delete variables', 'Primary'), name: 'Approve' }, { ...button('Deny', 'Tertiary'), name: 'Deny' }], slots: { Details: [slotChild('Preview')] } }],
+  ['25550-1196', 'Approval (low, approved)', { name: 'Approval', props: { Risk: 'Low', State: 'Approved', Title: 'Read 3 files?', 'Tool name': 'fs.read', 'Show tool name': true, Summary: 's', 'Show summary': false, 'Show details': false, 'Always allow': false, Editable: false }, slots: { Details: [] } }],
+  ['25547-925', 'Sources (collapsible, open)', { name: 'Sources', props: { Style: 'Collapsible', Expanded: 'True', Label: '3 sources' }, children: [sourceItem(1, 'Contrast (Minimum)'), sourceItem(2, 'Labels or Instructions')] }],
+  ['25547-925', 'Sources (list, no items)', { name: 'Sources', props: { Style: 'List', Expanded: 'True' } }],
+  ['25547-946', 'InlineCitation', { name: 'Inline citation', props: { Number: '2', Title: 'Labels or Instructions', Domain: 'w3.org', Snippet: 'A placeholder is not a label.', Preview: true, State: 'Hover' } }],
+  ['25545-453', 'Suggestions (chips, insert, wrap)', { name: 'Suggestions', props: { Style: 'Chips', Action: 'Insert', Wrap: 'True' }, children: [suggestion('Fix the contrast issue', { Action: 'Insert' }), suggestion('Show the axe report', { Action: 'Insert' })] }],
+  ['25545-453', 'Suggestions (cards)', { name: 'Suggestions', props: { Style: 'Cards', Action: 'Send', Wrap: 'False' }, children: [suggestion('Audit our checkout page', { Style: 'Card', Description: 'Find WCAG 2.2 issues' })] }],
+  ['25546-1208', 'ModelSelector (open, outline)', { name: 'Model selector', props: { Style: 'Outline', Size: 'md', State: 'Open', Placement: 'Down', Model: 'Atomus Pro', Label: 'Default model', 'Show label': true, 'Show provider icon': true, 'Provider icon': icon('AI mark') },
+    children: [modelOption('Atomus Pro', 'Selected', 'StanVision · Best for long, careful work', 'New'), modelOption('Local 8B', 'Disabled', 'On device · Private, works offline')] }],
+  ['25546-1208', 'ModelSelector (ghost, closed)', { name: 'Model selector', props: { Style: 'Ghost', Size: 'sm', State: 'Default', Placement: 'Up', Model: 'Atomus Fast', Label: 'Model', 'Show label': false, 'Show provider icon': true, 'Provider icon': icon('AI mark') } }],
+  ['25545-219', 'Feedback (down, form)', { name: 'Feedback', props: { Rating: 'Down', Size: 'sm', Form: true } }],
+  ['25545-219', 'Feedback (none)', { name: 'Feedback', props: { Rating: 'None', Size: 'xs' } }],
+  ['25543-123', 'AILabel (chip, popover)', { name: 'AI label', props: { Size: 'xs', Style: 'Chip', Edited: 'False', Label: 'Beta', 'Explainability popover': true } }],
+  ['25543-123', 'AILabel (edited, inline)', { name: 'AI label', props: { Size: 'sm', Style: 'Inline', Edited: 'True', 'Explainability popover': true } }],
+  ['25543-124', 'AILabel popover', { name: 'AI label popover', props: { Title: 'About this AI content', Explanation: 'Written from merged pull requests.', Model: 'Atomus Fast', 'Show model': true, 'Revert to AI': true } }],
+  ['25546-320', 'ContextMeter (bar, warning)', { name: 'Context meter', props: { Style: 'Bar', State: 'Warning', Label: 'Context window', Used: '168K', Limit: '200K', Cost: '$1.12', 'Show cost': true, Breakdown: true } }],
+  ['25546-320', 'ContextMeter (compact)', { name: 'Context meter', props: { Style: 'Compact', State: 'Default', Percentage: '24%' } }],
+);
 let fail = 0;
 for (const [node, title, spec] of cases) {
   try {
