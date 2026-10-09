@@ -4,7 +4,7 @@
 
 How much of the model's context window a conversation uses, and what it has cost. The compact style is a ring and percentage for the Prompt input; it opens a card with the bar, a breakdown (input, output, tools) and the cost. The bar style shows the same details inline. Part of the Agent kit.
 
-Figma: planned component. The properties below are the Figma properties to come; React props already use the same names.
+Figma: component set `Context meter` on the 🤖 Agent kit page of Atomus 4.0 (node `25546:320`), connected to React with Code Connect. React props use the same names as the Figma properties below.
 
 | Property | Type / options |
 |---|---|
