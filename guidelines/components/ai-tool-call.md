@@ -4,7 +4,7 @@
 
 One function call by the agent: a plain-language title, the function name in monospace, a status pill, the run time, and a disclosure with the input and output as formatted code. Part of the Agent kit.
 
-Figma: planned component. The properties below are the Figma properties to come; React props already use the same names.
+Figma: component set `Tool call` on the 🤖 Agent kit page of Atomus 4.0 (node `25548:1134`), connected to React with Code Connect. React props use the same names as the Figma properties below.
 
 | Property | Type / options |
 |---|---|

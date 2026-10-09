@@ -4,7 +4,7 @@
 
 The numbered list of sources behind an AI answer: a "3 sources" disclosure with stacked site icons, opening to cards with the number, title, site and the passage the answer used. Numbers match the Inline citations in the text. Part of the Agent kit.
 
-Figma: planned component. The properties below are the Figma properties to come; React props already use the same names.
+Figma: component set `Sources` on the 🤖 Agent kit page of Atomus 4.0 (node `25547:925`), connected to React with Code Connect. Rows: `Source item` (node `25547:794`); citation chip: `Inline citation` (node `25547:946`). React props use the same names as the Figma properties below.
 
 | Property | Type / options |
 |---|---|

@@ -4,7 +4,7 @@
 
 A collapsible disclosure for the model's working: "Thinking…" with a shimmer while it reasons, then "Thought for 12s". Inside, a short step list and optional free text, on a left rule in `border-ai`. It keeps the model's working apart from its answer. Part of the Agent kit.
 
-Figma: planned component. The properties below are the Figma properties to come; React props already use the same names.
+Figma: component set `Reasoning` on the 🤖 Agent kit page of Atomus 4.0 (node `25548:978`), connected to React with Code Connect. Steps: `Reasoning step` (node `25548:901`). React props use the same names as the Figma properties below.
 
 | Property | Type / options |
 |---|---|

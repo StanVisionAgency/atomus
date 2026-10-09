@@ -4,7 +4,7 @@
 
 Thumbs up / down on an AI reply. A thumbs down (and, optionally, a thumbs up) opens a short form in place: reason chips, an optional comment and Send feedback. After sending, a quiet "Thanks for your feedback" replaces the form. Part of the Agent kit.
 
-Figma: planned component. The properties below are the Figma properties to come; React props already use the same names.
+Figma: component set `Feedback` on the 🤖 Agent kit page of Atomus 4.0 (node `25545:219`), connected to React with Code Connect. React props use the same names as the Figma properties below.
 
 | Property | Type / options |
 |---|---|

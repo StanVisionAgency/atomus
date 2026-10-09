@@ -4,7 +4,7 @@
 
 Human-in-the-loop confirmation before an agent acts: the action as a question, a short summary, the risk level, a preview of what will be sent or changed, and Approve / Deny. People can edit the content before approving and can allow the action for the rest of the chat. After they decide, the card stays in the thread with the outcome. Part of the Agent kit.
 
-Figma: planned component. The properties below are the Figma properties to come; React props already use the same names.
+Figma: component set `Approval` on the 🤖 Agent kit page of Atomus 4.0 (node `25550:1196`), connected to React with Code Connect. React props use the same names as the Figma properties below.
 
 | Property | Type / options |
 |---|---|

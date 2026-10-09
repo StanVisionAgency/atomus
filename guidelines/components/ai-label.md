@@ -4,7 +4,7 @@
 
 Marks AI-generated content and is the entry point to explainability: a pill with the gradient AI mark and a short word ("AI", "AI generated"). With an explanation it becomes a button that opens a popover: why the person sees this, which model made it, and — once they edited the content — "Revert to AI". Part of the Agent kit.
 
-Figma: planned component. The properties below are the Figma properties to come; React props already use the same names.
+Figma: component set `AI label` on the 🤖 Agent kit page of Atomus 4.0 (node `25543:123`), connected to React with Code Connect. The explainability popover is the separate component `AI label popover` (node `25543:124`). React props use the same names as the Figma properties below.
 
 | Property | Type / options |
 |---|---|

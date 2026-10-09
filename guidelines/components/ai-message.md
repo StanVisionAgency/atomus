@@ -4,7 +4,7 @@
 
 One turn in a conversation. The role sets the layout: user messages are right-aligned bubbles on `bg-tertiary`; assistant and tool messages flow full-width next to an avatar; system messages are a centred line between hairlines. Every message is an `<article>` named by its speaker, so it is always clear who said what. Part of the Agent kit.
 
-Figma: planned component. The properties below are the Figma properties to come; React props already use the same names.
+Figma: component set `Message` on the 🤖 Agent kit page of Atomus 4.0 (node `25552:1473`), connected to React with Code Connect. Default avatars: `Message avatar` (node `25552:989`). React props use the same names as the Figma properties below.
 
 | Property | Type / options |
 |---|---|

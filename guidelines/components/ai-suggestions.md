@@ -4,7 +4,7 @@
 
 Follow-up prompts and prompt starters. Chips sit in one row that scrolls sideways with soft faded edges; cards make a grid of starters for an empty conversation. Each chip either sends its prompt or inserts it into the Prompt input for editing. Part of the Agent kit.
 
-Figma: planned component. The properties below are the Figma properties to come; React props already use the same names.
+Figma: component set `Suggestions` on the 🤖 Agent kit page of Atomus 4.0 (node `25545:453`), connected to React with Code Connect. Items: `Suggestion` (node `25545:252`). React props use the same names as the Figma properties below.
 
 | Property | Type / options |
 |---|---|
