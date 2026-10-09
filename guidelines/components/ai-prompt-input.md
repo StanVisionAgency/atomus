@@ -4,7 +4,7 @@
 
 The composer of an AI chat or agent panel: an auto-growing text area, attachment chips, a toolbar slot for the Model selector and tool toggles, and one button that switches between Send and Stop. Typing `/` or `@` opens a command or mention menu. Part of the Agent kit.
 
-Figma: planned component. The properties below are the Figma properties to come; React props already use the same names.
+Figma: component set `Prompt input` on the 🤖 Agent kit page of Atomus 4.0 (node `25553:1955`), connected to React with Code Connect. Attachment chips: `Prompt attachment` (node `25553:1183`). React props use the same names as the Figma properties below.
 
 | Property | Type / options |
 |---|---|

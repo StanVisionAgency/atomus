@@ -4,7 +4,7 @@
 
 Select for AI models: the trigger shows the provider icon and model name; each option shows the name, a "New" badge, provider and one line on when to pick it, and capability badges (Reasoning, Tools, Vision, Fast). It uses the same select-only combobox pattern as Select. Part of the Agent kit.
 
-Figma: planned component. The properties below are the Figma properties to come; React props already use the same names.
+Figma: component set `Model selector` on the 🤖 Agent kit page of Atomus 4.0 (node `25546:1208`), connected to React with Code Connect. List rows: `Model option` (node `25546:397`). React props use the same names as the Figma properties below.
 
 | Property | Type / options |
 |---|---|
