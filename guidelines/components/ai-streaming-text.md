@@ -4,7 +4,7 @@
 
 Renders an AI reply as it arrives: the text grows, a caret filled with `--gradient-ai` blinks at the end, and screen readers hear finished sentences in calm batches instead of every token. It takes any growing string, so it works with every AI SDK or backend. Part of the Agent kit.
 
-Figma: planned component. The properties below are the Figma properties to come; React props already use the same names.
+Figma: component set `Streaming text` on the 🤖 Agent kit page of Atomus 4.0 (node `25544:55`), connected to React with Code Connect. Status text: `Shimmer` (node `25544:34`). React props use the same names as the Figma properties below.
 
 | Property | Type / options |
 |---|---|
